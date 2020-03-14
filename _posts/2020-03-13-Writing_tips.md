@@ -3,6 +3,8 @@ I waited for ten full minutes to write but not a single words comes in to the pa
 
 TL:DR: Too much thougts in mind doesn't help in writing.  
 
-This is where the great writers are different from average writers. I believe they possesses the wider varities of the thougths. But they can thread their thoughts into a nice line that reader, writer himself/herself can follow alone.
+There lies great hardship, little bit of luck and hard works to put those thoughts into meaningful words. The *meaningful words*  terms can be put to questionary arrows like what is meaningful, to whom its meaningful, what the writer meants, for whom the writing means, why, what, how it means? One writing can't explicitly answar all the questions. Rather they focus on some parts. The more we think about the more it becomes vague and complex. The more we want to cram in our writings it takes more effort to follow alone and cover every of the answars.**But is it?** Short answer is Yes. This is where I find a great similarity between *research* and *writings*. To write effectively we must explicitely or implicitely state what and how much boundaries  are covered via this writings. Like a particular research project a writing takes care of a minor length of a grand line towards one of the infinite direction. But similar to a particular research project, writing describes us about the writer and serve a piece of puzzle towards grand scheme. 
 
-Writing full of wondering thoughts are not easy for the followers. Here come the most important piece of the information for the writer. Why someone wants to write? **Well it depends**. 
+**TL:DR:** I will be talking about academic and research writing via eye of me as a researchers. 
+
+Writing full of wondering thoughts are not easy for the followers. Here come the most important piece of the information for the writer. Why someone wants to write? **Well it depends**. In this blog, I want to go over my experience of the first grand writings. I want to know how I am developing and evolving my thoughts throughout the my careers. I will elaborate what I think of that will help me next time as a proposal writer. 
