@@ -1,6 +1,6 @@
 # Optical Flow
 For frames in video, we assume object moves but the intensity of pixel remains same. 
-$$I(x, y, t) = I(x +dx, y+dy, t+dy)$$ 
+$$ I(x, y, t) = I(x +dx, y+dy, t+dy) $$ 
 Now using taylors formula 
 $$I(x +dx, y+dy, t+dy) = I(x, y, t)+ \frac{\delta I}{\delta t} \delta x+ \frac{\delta I}{\delta t}\delta y +\frac{\delta I}{\delta t}\delta t + ...$$ 
 Combining the earlier two gives,
