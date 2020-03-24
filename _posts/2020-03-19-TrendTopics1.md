@@ -60,10 +60,10 @@ Learning joint distribution <img src = "https://latex.codecogs.com/gif.latex?p(x
 
 ##### Probabilistic interpretation of PCA
 Prior;
-<img src = "https://latex.codecogs.com/gif.latex?p(h)=&space;\mathcal{N}(h;0,\sigma_h^2, I)">
+<img src = "https://latex.codecogs.com/gif.latex?p(h)=&space;\mathcal{N}(h;0,\sigma_h^2,I)">
 
 And the likelihood
-<img src = "https://latex.codecogs.com/gif.latex?p(x|h)=&space;\mathcal{N}(x;Wh+\mu_x,\sigma_x^2, I)">
+<img src = "https://latex.codecogs.com/gif.latex?p(x|h)=&space;\mathcal{N}(x;Wh+\mu_x,\sigma_x^2,I)">
 
 ##### Sparse Coding
 
