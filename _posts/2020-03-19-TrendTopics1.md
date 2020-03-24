@@ -120,3 +120,125 @@ May be I will add later.
 #### Convolution and pooling
 #### Temporal coherence and Slow features
 #### Algorithms to disentangle factors of Variation
+
+
+
+
+
+# Region based Object Detectors
+
+[original post link](https://medium.com/@jonathan_hui/what-do-we-learn-from-region-based-object-detectors-faster-r-cnn-r-fcn-fpn-7e354377a7c9)
+
+3 Parts:
+
+- Faster R-CNN, R-FCN, FPN
+- SSD, YOLO, FPN and Focal loss
+- Design choices, Lessons learned, and trend for object detection
+
+#### Sliding-window Detectors
+
+
+```Pseudocode
+For window in windows
+  patch = get_patch(image, window)
+  results =  detector(patch)
+```
+![image](https://miro.medium.com/max/1453/1*BYSA3iip3Cdr0L_x5r468A.png)
+
+#### Selective Search (SS)
+
+Region proposal method to find Region of interest (ROIs).
+
+#### R-CNN
+
+Cares about 2000 ROIs by using a region proposal method. The regions are warped into fixed size images and feed into a CNN network individually. Then followed by fully connected layers to classify and refine the boundary box.
+
+![img](https://miro.medium.com/max/2574/1*Wmw21tBUez37bj-1ws7XEw.jpeg)
+
+The system flow
+
+![image](https://miro.medium.com/max/1484/1*ciyhZpgEvxDm1YxZd1SJWg.png)
+
+Pseudocode
+```
+ROIs = region_proposal(image)
+for ROI in ROIs
+    patch = get_patch(image, ROI)
+    results = detector(patch)
+```
+
+#### Boundary box regressor
+
+#### Fast R-CNN
+
+R-CNN is slow. Instead use feature extraction for whole image. It proposes a feature extractor and region proposal method.
+
+![image](https://miro.medium.com/max/2400/1*Dd3-sugNKInTIv12u8cWkw.jpeg)
+
+Network flow:
+
+![image](https://miro.medium.com/max/1642/1*fLMNHfe_QFxW569s4eR7Dg.jpeg)
+
+Pseudocode
+```
+feature_maps = process(image)
+ROIs = region_proposal(image)
+for ROI in ROIs
+    patch = roi_pooling(feature_maps, ROI)
+    results = detector2(patch)
+```
+Here comes the multitask loss (Classification and localization loss)
+
+#### ROI Pooling
+
+#### Faster R-CNN
+
+```
+feature_maps = process(image)
+ROIs = region_proposal(image)         # Expensive!
+for ROI in ROIs
+    patch = roi_pooling(feature_maps, ROI)
+    results = detector2(patch)
+```
+
+Network flow
+
+![image](https://miro.medium.com/max/1746/1*F-WbcUMpWSE1tdKRgew2Ug.png)
+
+The region proposal is replaced by a Region Proposal network (convolutional network)
+
+![image](https://miro.medium.com/max/3636/1*0cxB2pAxQ0A7AhTl-YT2JQ.jpeg)
+
+#### Region Proposal network
+
+ZF networks structure
+
+![image](https://miro.medium.com/max/1210/1*z0OHn89t0bOIHwoIOwNDtg.jpeg)
+
+#### Region-based Fully convolutional Networks (R-FCN)
+
+Faster R-CNN
+
+```
+feature_maps = process(image)
+ROIs = region_proposal(feature_maps)
+for ROI in ROIs
+    patch = roi_pooling(feature_maps, ROI)
+    class_scores, box = detector(patch)         # Expensive!
+    class_probabilities = softmax(class_scores)
+```
+F-FCN
+
+```
+feature_maps = process(image)
+ROIs = region_proposal(feature_maps)         
+score_maps = compute_score_map(feature_maps)
+for ROI in ROIs
+    V = region_roi_pool(score_maps, ROI)     
+    class_scores, box = average(V)                   # Much simpler!
+    class_probabilities = softmax(class_scores)
+```
+
+Networks
+
+![image](https://miro.medium.com/max/2744/1*Gv45peeSM2wRQEdaLG_YoQ.png)
