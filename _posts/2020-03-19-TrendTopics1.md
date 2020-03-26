@@ -1,4 +1,4 @@
-# Representation Learning
+# 1. Representation Learning
 ### Representation learning: A review and new perspective - (Bengio, Y. et al. 2014)
 [original paper](https://arxiv.org/pdf/1206.5538.pdf)
 
@@ -125,7 +125,7 @@ May be I will add later.
 
 
 
-# Region based Object Detectors
+# 2. Region based Object Detectors
 
 [original post link](https://medium.com/@jonathan_hui/what-do-we-learn-from-region-based-object-detectors-faster-r-cnn-r-fcn-fpn-7e354377a7c9)
 
@@ -243,7 +243,7 @@ Networks
 
 ![image](https://miro.medium.com/max/2744/1*Gv45peeSM2wRQEdaLG_YoQ.png)
 
-# Region based Fully Convolutional networks (R-FCN)
+# 3. Region based Fully Convolutional networks (R-FCN)
 
 [Original post link](https://medium.com/@jonathan_hui/understanding-region-based-fully-convolutional-networks-r-fcn-for-object-detection-828316f07c99)
 
