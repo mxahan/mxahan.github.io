@@ -227,7 +227,7 @@ for ROI in ROIs
     class_scores, box = detector(patch)         # Expensive!
     class_probabilities = softmax(class_scores)
 ```
-F-FCN
+R-FCN
 
 ```
 feature_maps = process(image)
@@ -242,3 +242,33 @@ for ROI in ROIs
 Networks
 
 ![image](https://miro.medium.com/max/2744/1*Gv45peeSM2wRQEdaLG_YoQ.png)
+
+# Region based Fully Convolutional networks (R-FCN)
+
+[Original post link](https://medium.com/@jonathan_hui/understanding-region-based-fully-convolutional-networks-r-fcn-for-object-detection-828316f07c99)
+
+Two stage detection
+- Generate region proposals (ROIs)
+- Make Classification and localization predictions from ROIs
+
+There is a notion of position, leads to position sensitive score maps. Example: For 9 nine features we get nine feature maps.
+![imag](https://miro.medium.com/max/1336/1*HaOHsDYAf8LU2YQ7D3ymOg.png)
+
+Now we take map from each feature map depending on the position. From each 9 feature maps we get select one box per feature map and select if for voting.
+
+
+![image](https://miro.medium.com/max/949/1*K4brSqensF8wL5i6JV1Eig.png)
+
+![image](https://miro.medium.com/max/1937/1*ZJiWcIl2DUyx1-ZqArw33A.png)
+
+The creates total (C+1)x3x3 score maps. Further example: Person detectors. Total 9 features leads to 9 feature maps. And we select 9 feature maps and get one box from each map to get the voting.
+
+![image](https://miro.medium.com/max/1603/1*DjPNw7AAIUh4OhHi3o4nlA.png)
+
+The image of network R-FCN showed above and the following is network followed
+
+![image](https://miro.medium.com/max/1718/1*nwGLuSFHkhJV3OELc76fBg.png)
+
+#### Boundary Box Regression
+
+Convolutional filter creates kxkx(C+1) scope maps. Another convolutional filter to create 4xkxk maps from same features maps. We apply the position based ROI pool to compute KxK array with each element containing boundary box and finally average them.
