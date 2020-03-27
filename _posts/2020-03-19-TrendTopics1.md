@@ -272,3 +272,55 @@ The image of network R-FCN showed above and the following is network followed
 #### Boundary Box Regression
 
 Convolutional filter creates kxkx(C+1) scope maps. Another convolutional filter to create 4xkxk maps from same features maps. We apply the position based ROI pool to compute KxK array with each element containing boundary box and finally average them.
+
+
+## Region Proposal Network (RPN) - Backbone of Faster R-CNN
+
+[original post link](https://medium.com/egen/region-proposal-network-rpn-backbone-of-faster-r-cnn-4a744a38d7f9)
+
+![images](https://miro.medium.com/max/413/1*WJsEQnhr4puR4k-29uD80Q.png)
+
+![iamg](https://miro.medium.com/max/450/1*JDQw0RwmnIKeRABw3ZDI7Q.png)
+
+
+# 4. Deep learning for object Detection P2
+
+[original post](https://www.alegion.com/object-detection-part-2)
+
+### R-CNN and Fast R-CNN
+
+![image](https://www.alegion.com/hs-fs/hubfs/1*CP3X0CXeCIUki5NB4cjsTA.png?width=764&name=1*CP3X0CXeCIUki5NB4cjsTA.png)
+Figure: R-CNN modules
+
+![image](https://www.alegion.com/hs-fs/hubfs/1*GrqJeumA9QUSxyry6JLMaA.png?width=709&name=1*GrqJeumA9QUSxyry6JLMaA.png)
+Figure: Fast R-CNN module
+
+#### Faster R-CNN Architecture
+
+- Region Proposal network
+- Feature extraction using CNN
+- ROI pooling layer - (Key part)
+- Classification and localization
+
+![ig](https://www.alegion.com/hs-fs/hubfs/1*ATyBsAsDQNqT4GYKLrO81w.png?width=759&name=1*ATyBsAsDQNqT4GYKLrO81w.png)
+Figure: Building blocks of Fast R-CNN
+
+### Spatial Pyramid pooling
+
+- Pyramid Representation
+- Bag-of-words
+
+![img](https://www.alegion.com/hs-fs/hubfs/1*9C-HXo2-AfY-pF6bGwJeOQ.png?width=588&name=1*9C-HXo2-AfY-pF6bGwJeOQ.png)
+Figure: network with Spatial pyramid pooling layer
+
+Fixed size constraint comes only in the fully connected layers.
+
+![img](https://www.alegion.com/hs-fs/hubfs/1*Z4MZlKHE0wpkTOk-OQ_U5A-1.png?width=812&name=1*Z4MZlKHE0wpkTOk-OQ_U5A-1.png)
+
+### ROI pooling layer
+
+![img](https://www.alegion.com/hs-fs/hubfs/1*FnDKNXBA0ZSSUczEOFbMFQ.png?width=1079&name=1*FnDKNXBA0ZSSUczEOFbMFQ.png)
+*ROI vs SPP*
+
+![img](https://www.alegion.com/hs-fs/hubfs/1*0BJEv0i2OCptYL0PWZve7g.png?width=941&name=1*0BJEv0i2OCptYL0PWZve7g.png)
+*Zooming into the network*
