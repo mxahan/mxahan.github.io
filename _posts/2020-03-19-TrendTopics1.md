@@ -282,10 +282,33 @@ Convolutional filter creates kxkx(C+1) scope maps. Another convolutional filter 
 
 ![iamg](https://miro.medium.com/max/450/1*JDQw0RwmnIKeRABw3ZDI7Q.png)
 
+## Feature Pyramid Networks (FPN)
+
+![img](https://miro.medium.com/max/1400/1*UtfPTLB53cR8EathGBOT2Q.jpeg)
+
+Key Idea: Multi-scale Feature map
+
+Top-down and bottom up data structure:
+
+![imga](https://miro.medium.com/max/1400/1*UvGM-OSoebgJDYAjNwX26w.png)
+Figure: FPN with RPN (3x3 and 1x1 conv are RPN Head)
+
+Total structure
+
+![img](https://miro.medium.com/max/2000/1*Wvn0WG4XZ0w9Ed2fFYPrXw.jpeg)
+
+
+
+
+
+
+
 
 # 4. Deep learning for object Detection P2
 
 [original post](https://www.alegion.com/object-detection-part-2)
+
+
 
 ### R-CNN and Fast R-CNN
 
