@@ -29,6 +29,11 @@ Keep track of what you need/want to know both in broad and project focus senses.
 
 Make absolute sure to look back and edit, organize and rethink things sometimes.
 
+#### Take some times off
+Think, study and take sometimes out off your focus once in a while (may be days, week or at least once in a month). Balance this with your focus project or research works. Utilize this time either to look back or look beyond your researches. In my case I take some times off to write blogs. This eventually increases my writing skills and helps my research. I love playing badminton and table tennis. Streaming off the body takes my mind off and aid me with a clearer mind for the next time to focus on the long term goals.
+
+One Keynote to remember that this taking time off should still focus on research in a passive ways. Be sure to balance the time and keep main focus and labor on the original researches and projects.
+
 #### Know where you want to reach
 
 #### Know and master your logistics
