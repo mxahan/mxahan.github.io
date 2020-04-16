@@ -1,3 +1,5 @@
+
+
 # How to be a good researcher!
 Never doubt yourselves. Leaves the negativity away. Don't listen to the negative thoughts or negative people. Stay close to the people who love or stay alone.
 
@@ -37,6 +39,9 @@ Make absolute sure to look back and edit, organize and rethink things sometimes.
 #### Be Proactive
 Don't wait for things to happens automatically. This is research. You have to do your own work. It's not wise to sit and follow order and wait hoping to complete the Ph.D. in 5 years. It may works for some Ph. D. but not for research. We have to be proactive and try our own things. I do understand the value of collaborations. We can be very proactive in collaborations. Try your own things it will work eventually in the right way after you figure the way by proactive attempting.
 
+#### Don't Be ignorant about your limitation
+Every Research has some limitation in its own ways. It not the work but the idea should be limitless. So, keep and identify your problems and limitation of your works. Don't be hesitant to write and put forth the limitations of your research before someone else put finger at it. Prepare and think of appropriate answer to the limitation. We can think our ways around the limitations and these limitations will energize our works to limitless. But we must make sure we acknowledge all the issues, problems and limitations of our current researches.
+
 #### Take some times off
 Think, study and take sometimes out off your focus once in a while (may be days, week or at least once in a month). Balance this with your focus project or research works. Utilize this time either to look back or look beyond your researches. In my case I take some times off to write blogs. This eventually increases my writing skills and helps my research. I love playing badminton and table tennis. Streaming off the body takes my mind off and aid me with a clearer mind for the next time to focus on the long term goals.
 
@@ -53,3 +58,7 @@ If you have nothing above! No worries and start from first line of this blog aga
 ## Reading a Scientific Paper
 
 Look at the authors name, groups, affiliations, Previous works, PIs. Look at the conference/journal or publication platform for particular paper. Then start reading. My thoughts on approaching the paper to [critical review](https://drive.google.com/file/d/1ZtCiIMHxB-XXlwHbkXsm_uYBx7nPuW41/view?usp=sharing). Special thanks to [Professor Asif Salekin](https://asalekin.github.io/) for sharing his initial slides.
+
+## Be extreme curious about alternatives with drawbacks
+
+It's more important to guess while taking state-of-the-art knowledge. Don't randomly put problems and wrong doing in front. Be aware of the probable alternatives ways to do that thing and then come for curiosity to know the alternatives experiments and outcomes. Get ideas how you can improve it? Where and what to improve?

@@ -1,10 +1,26 @@
-# Broad to Focus 
-I waited for ten full minutes to write but not a single words comes in to the page. It's not because of the fact that my mind is empty but the opposite. My mind is full of thougts each leading to different direction in multi dimensional setting. These facts contribute the most to make our writing uninteresting for both readers and writers. Our mind is fast but not eye and brain. Eye and mind can focus on very specific things while reading. Writers can't continue because too many direction and reader can't follow.  In both way writing becomes ineffective. 
+
+
+# Broad to Focus
+I waited for ten full minutes to write but not a single words comes in to the page. It's not because of the fact that my mind is empty but the opposite. My mind is full of thougts each leading to different direction in multi dimensional setting. These facts contribute the most to make our writing uninteresting for both readers and writers. Our mind is fast but not eye and brain. Eye and mind can focus on very specific things while reading. Writers can't continue because too many direction and reader can't follow.  In both way writing becomes ineffective.
 
 TL:DR: Too much thougts in mind doesn't help in writing.  
 
-There lies great hardship, little bit of luck and hard works to put those thoughts into meaningful words. The *meaningful words*  terms can be put to questionary arrows like what is meaningful, to whom its meaningful, what the writer meants, for whom the writing means, why, what, how it means? One writing can't explicitly answar all the questions. Rather they focus on some parts. The more we think about the more it becomes vague and complex. The more we want to cram in our writings it takes more effort to follow alone and cover every of the answars.**But is it?** Short answer is Yes. This is where I find a great similarity between *research* and *writings*. To write effectively we must explicitely or implicitely state what and how much boundaries  are covered via this writings. Like a particular research project a writing takes care of a minor length of a grand line towards one of the infinite direction. But similar to a particular research project, writing describes us about the writer and serve a piece of puzzle towards grand scheme. 
+There lies great hardship, little bit of luck and hard works to put those thoughts into meaningful words. The *meaningful words*  terms can be put to questionary arrows like what is meaningful, to whom its meaningful, what the writer meants, for whom the writing means, why, what, how it means? One writing can't explicitly answar all the questions. Rather they focus on some parts. The more we think about the more it becomes vague and complex. The more we want to cram in our writings it takes more effort to follow alone and cover every of the answars.**But is it?** Short answer is Yes. This is where I find a great similarity between *research* and *writings*. To write effectively we must explicitely or implicitely state what and how much boundaries  are covered via this writings. Like a particular research project a writing takes care of a minor length of a grand line towards one of the infinite direction. But similar to a particular research project, writing describes us about the writer and serve a piece of puzzle towards grand scheme.
 
-**TL:DR:** I will be talking about academic and research writing via eye of me as a researchers. 
+**TL:DR:** I will be talking about academic and research writing via eye of me as a researchers.
 
-Writing full of wondering thoughts are not easy for the followers. Here come the most important piece of the information for the writer. Why someone wants to write? **Well it depends**. In this blog, I want to go over my experience of the first grand writings. I want to know how I am developing and evolving my thoughts throughout the my careers. I will elaborate what I think of that will help me next time as a proposal writer. 
+Writing full of wondering thoughts are not easy for the followers. Here come the most important piece of the information for the writer. Why someone wants to write? **Well it depends**. In this blog, I want to go over my experience of the first grand writings. I want to know how I am developing and evolving my thoughts throughout the my careers. I will elaborate what I think of that will help me next time as a proposal writer.
+
+#### Quantity over Quality and vice-versa
+I regard different opinions with utmost respect. I believe about the number of work more than quality of the works. I understand the importance of the quality too. But I prioritize the quantity with keen focus of quality. I think the power is the editing. I can't put a perfect paragraph and can't wait till I put a perfect paragraph. I know, in my whole life I will never find a perfect things. Tell me one thing that is perfect I will argue. Please don't put religious stuff down here. I am thankful to God for every single things.
+
+Saying that what I want to point out that, don't wait for the perfect writings. Write, write, write even if is a garbage. Work, work, Work even if its not perfect. One day you will look back and will realize you have done some good or may be better works. Nobody can put perfect theory of works. You don't trust me! Well you might trust this guy, he was a genius. [Richard Feynman of on research](https://www.youtube.com/watch?v=0KmimDq4cSU)
+
+Now you have contents. Work to improve it. Take some time to stop going for quantity and focus on quality. And after that tiny time off. Repeat - Quantity first with keeping mind to quality.
+
+
+#### Problem First!
+
+#### Results first!
+
+#### Describe the experiments with assumption and motivation.
