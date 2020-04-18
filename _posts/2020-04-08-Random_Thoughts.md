@@ -1,8 +1,9 @@
 
 
 # How to be a good researcher!
-Never doubt yourselves. Leaves the negativity away. Don't listen to the negative thoughts or negative people. Stay close to the people who love or stay alone.
+First and foremost, Be honest, Be absolutely honest. Give credit. We never achieve anything alone, we grow together as a researcher. Read! Understand! Site! and repeat till death. It's a Profession, and definitely with fun.  
 
+The second point, Never doubt yourselves. Leaves the negativity away. Don't listen to the negative thoughts or negative people. Stay close to the people who love or stay alone and continue to perform hard work, reading, research.
 #### Know where you want to work
 
 #### Keep eye wide open (Don't be over-focused)
