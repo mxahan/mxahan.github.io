@@ -51,6 +51,8 @@ One Keynote to remember that this taking time off should still focus on research
 
 #### Know and master your logistics
 
+#### Focus on the problems, not your current skills
+
 
 If you have nothing above! No worries and start from first line of this blog again.
 
@@ -62,3 +64,7 @@ Look at the authors name, groups, affiliations, Previous works, PIs. Look at the
 ## Be extreme curious about alternatives with drawbacks
 
 It's more important to guess while taking state-of-the-art knowledge. Don't randomly put problems and wrong doing in front. Be aware of the probable alternatives ways to do that thing and then come for curiosity to know the alternatives experiments and outcomes. Get ideas how you can improve it? Where and what to improve?
+
+## Definitely Argue till one of you gets corrected
+
+If something is fundamentally wrong to you definitely dive deep and argue till either your thoughts or the counter thoughts have a clear edges.
