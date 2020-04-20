@@ -1,3 +1,17 @@
+---
+layout: post
+title: "TrendingTopics1"
+categories: Hotopics
+---
+
+So far In this writing I have covered
+
+- [Representation](#representation-learning)
+- [Region based object detectors](#region-based-object-detectors)
+- [Region based Convolutional networks](#region-based-fully-convolutional-networks)
+- [Deep learning for object detection P2](#deep-learning-for-object-detection-p2)
+
+
 # 1. Representation Learning
 ### Representation learning: A review and new perspective - (Bengio, Y. et al. 2014)
 [original paper](https://arxiv.org/pdf/1206.5538.pdf)
