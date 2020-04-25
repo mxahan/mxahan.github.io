@@ -60,7 +60,7 @@ used base line models:
 - Compositional visual reasoning: IEP,
 combined with Various implementation tricks.
 
-<img src ="https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/6-Table2-1.png" width=600>
+<img src ="https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/6-Table2-1.png">
 
 Figure: Evaluated models [1]
 
@@ -131,7 +131,7 @@ From random vector, z, to a vector space, w, of same size (I guess loss backprop
 
 Noise (Gaussian noise) introduction cause stochastic variation in the generated images.
 
-<img src="https://miro.medium.com/max/1400/0*ANwSHXJDmwqjNSxi.png" width=600>
+<img src="https://miro.medium.com/max/1400/0*ANwSHXJDmwqjNSxi.png">
 
 Figure: [Source](https://towardsdatascience.com/explained-a-style-based-generator-architecture-for-gans-generating-and-tuning-realistic-6cb2be0f431)
 
@@ -163,7 +163,7 @@ and
 #### Results:
 - Experiment without any styles
 
-<img src="https://miro.medium.com/max/1400/0*eKvFqsrzvHdc70dp.png" width=600>
+<img src="https://miro.medium.com/max/1400/0*eKvFqsrzvHdc70dp.png">
 
 Figure: Source [2]
 
@@ -266,7 +266,7 @@ And reconstructed image
 
 uses pretrained VGG19 models
 
-<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/architecture.jpg" width=600>
+<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/architecture.jpg">
 
 Figure: Mind the AdaIN layer in between enc-dec. [3]
 
@@ -310,7 +310,7 @@ Convex interpolation between output of encoder and the AdaIN.
 
 Example
 
-<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_weight.jpg" width=600>
+<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_weight.jpg">
 
 Figure: Source [3]
 
@@ -325,7 +325,7 @@ To interpolate set of K styles, the authors performs convex weighted sum of the 
 
 Example
 
-<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_interp.jpg" width=600>
+<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_interp.jpg">
 
 Figure: Source [3]
 
