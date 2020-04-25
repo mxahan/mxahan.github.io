@@ -3,6 +3,7 @@ layout: post
 title: "Paper_Summary1"
 categories: papers
 ---
+# Paper Review Part 1
 
 I understand the hard-work a researcher has to go through to get a publication or continuing research. As a researcher I take ideas from multiple sources for my own research to contribute in a effective way towards my fields. It is absolutely devilish/unacceptable to knowingly plagiarize/steal ideas from people without properly crediting them.
 
@@ -10,13 +11,14 @@ This blog contains review of different interesting papers for my personal intere
 
 Paper List
 
-- [Clevrer: Kexin et al 2019](#clevrer:-collision-events-for-video-representation-and-reasoning-[1])
-- [Style Gan- Tero Karras et al 2018](#a-style-based-generator-architecture-for-generative-adversarial-networks-[2])
-- [Style transfer - Xun Huang et al 2017](#arbitrary-style-transfer-in-real-time-with-adaptive-instance-normalization-[3])
+- [Clevrer: Kexin et al 2019](#paper1)
+- [Style Gan- Tero Karras et al 2018](#paper2)
+- [Style transfer - Xun Huang et al 2017](#paper3)
 
 
 
-# Clevrer: Collision events for video representation and reasoning [1]
+# Paper1
+Clevrer: Collision events for video representation and reasoning [1]
 
 #### IMRAD
 Missing in datasets; underlying logic, temporal and causal structure behind the reasoning process!! they study these gaps from **complementary perspective**.
@@ -88,56 +90,106 @@ Better dataset preparation
 [1] Yi, Kexin, Chuang Gan, Yunzhu Li, Pushmeet Kohli, Jiajun Wu, Antonio Torralba, and Joshua B. Tenenbaum. "Clevrer: Collision events for video representation and reasoning." arXiv preprint arXiv:1910.01442 (2019).
 
 
-# A Style-Based Generator Architecture for Generative Adversarial Networks [2]
+# Paper2
+A Style-Based Generator Architecture for Generative Adversarial Networks [2]
 
+[Interesting blog](https://towardsdatascience.com/explained-a-style-based-generator-architecture-for-gans-generating-and-tuning-realistic-6cb2be0f431)
 
 #### IMRAD
 - Gap in GAN latent spaces properties understanding
+- Gap in measuring factor of variation without enc-dec.
 - Generator comparison!
 - Motivation from style transfer literature
+- No change in loss function
 
-Contribution:
-- Generator adjusts at each layer
-- Directly noise injection into the networks
-- No change in GAN loss/ Discriminator
-- Input latent code to intermediate latent space
-- Argues - intermediate latent space doesn't have to follow the distribution of Input
-- Two metrics propose -  Perceptual path length and Linear separability
-- FFHQ dataset
 
-Style based generator
 
 ### Prior Arts
 
 #### Argument and Assumption/ Context
+- AdaIN can be expanded beyond encoder-decoder settings.
+- Disentanglement can be used as generator improvement measures.
 
 
 #### Problem statement
 
+Traditional GAN generator improvement via style learning layer by layer. Can the feature be better selected by introducing a trick before feeding to generator? Is it possible to entangle the styles and features?  
+
 #### contribution
+
+- Style based generator proposal
+- No change in GAN loss/ Discriminator
+- Argues - intermediate latent space doesn't have to follow the distribution of Input
+- Two metrics propose -  Perceptual path length and Linear separability
+- FFHQ dataset
 
 
 #### Approach and Experiments:
 
+Style based Generator:
+
+- Architecture:
+
+From random vector, z, to a vector space, w, of same size (I guess loss backpropagates here too). Affine transformation learn (how?) from w to y (Get y from random vector instead of style image!). Then the AdaIN layer.  
+
+<img src="https://latex.codecogs.com/gif.latex?AdaIN(x_i,y)=y_{s,i}(\frac{x_i-\mu(x_i)}{\sigma(x_i)})+y_{b,i}">  
+
+Noise (Gaussian noise) introduction cause stochastic variation in the generated images.
+
+<img src="https://miro.medium.com/max/1400/0*ANwSHXJDmwqjNSxi.png" width=600>
+
+Figure: [Source](https://towardsdatascience.com/explained-a-style-based-generator-architecture-for-gans-generating-and-tuning-realistic-6cb2be0f431)
+
+Important Note about Style generator: Each layer overridden by next AdaIN operation. Each AdaIN controls one CNN. As normalization and rescaling happen after each layers.
+
+- Style Mixing: Mixing regularization. Switch from one latent code to another at random points. Has option to add the style at different scale in the generator network. Two latent codes z1 and z1 generated for the two sets of images.
+- stochastic variation: Hair line, number, eye color etc. - controlled by the noise. 
+- Separation of global effects from stochasticity: Pose, lightening, - controlled by the latent space.
+
+Disentanglement studies: Latent space consists of linear subspaces each basis controls one factor of variation. Latent space W can be learned from the random vector by f(z).
+
+- Perceptual path length: Pairwise image distance as a weighted difference between two VGG16 embeddings. The authors used R. Zhang et al 2018 metrics. A bit different from only taking layerwise distance in VGG16 layers, spherical interpolation between latent space vectors.
+
+<img src="https://latex.codecogs.com/gif.latex?l_z=E[\frac{1}{\epsilon^2}d(G(slerp(z_1,z_2;t)),G(slerp(z_1,z_2;\epsilon+t)))]">
+
+where,
+
+<img src="https://latex.codecogs.com/gif.latex?slerp(x,y;t=\frac{\sin[(1-t)\Omega]}{\sin\Omega}x+\frac{\sin[t\Omega]}{\sin\Omega}y">
+
+and
+<img src="https://latex.codecogs.com/gif.latex?l_z=E[\frac{1}{\epsilon^2}d(G(lerp(f(z_1),f(z_2);t)),G(lerp(f(z_1),f(z_2);\epsilon+t)))]">
+
+- Linear separability: Distinguished set for distinguished features. How much entropy has reduce in H(Y|X); Where Y is the image label and X is the feature label.
 
 #### Evaluations
 
 
 #### Results:
+- Experiment without any styles
 
+<img src="https://miro.medium.com/max/1400/0*eKvFqsrzvHdc70dp.png" width=600>
+
+Figure: Source [2]
 
 
 #### My thoughts
-
+Not the traditional style transfer from one image to another. Rather a group to another. There is no image input here, only the random vector like the original GAN.
 #### Key ideas & Piece of Pie
 
+AdaIN in generator. Feature transform network for the latent random variables.
 
 #### Reference
 
 
 [2] Karras, Tero, Samuli Laine, and Timo Aila. "A style-based generator architecture for generative adversarial networks." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019.
 
-# Arbitrary Style transfer in Real-time with Adaptive Instance Normalization [3]
+(R. Zhang et al 2018) R. Zhang, P. Isola, A. A. Efros, E. Shechtman, and O. Wang. The unreasonable effectiveness of deep features as a perceptual metric. In Proc. CVPR, 2018. 6, 7
+
+
+
+
+# Paper3
+Arbitrary Style transfer in Real-time with Adaptive Instance Normalization [3]
 
 #### IMRAD
 - Gap in finite styles and slower
