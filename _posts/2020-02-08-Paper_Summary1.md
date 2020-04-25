@@ -22,7 +22,7 @@ Video reasoning models! - provide benchmark - Video dataset proposal!
 
 Motivation: CLEVR, psychology
 
-<img src = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/2-Figure1-1.png" width=600>
+<img src = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/2-Figure1-1.png">
 
 Figure: Sample from the dataset [1]
 
@@ -33,7 +33,7 @@ Video Understanding, VQA, Physical and Causal reasoning.
 #### Argument and Assumption/ Context
 Dataset to fill the missing domain should: Video, diagnostic annotation, temporal relation, Explanation, prediction, counterfactual. Need to match this.
 
-<img src  = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/3-Table1-1.png" width=600>
+<img src  = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/3-Table1-1.png">
 
 Figure: Dataset Comparison [1]
 
