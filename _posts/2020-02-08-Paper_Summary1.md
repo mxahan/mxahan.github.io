@@ -1,8 +1,3 @@
----
-layout: post
-title: "Paper_Summary1"
-categories: papers
----
 # Paper Review Part 1
 
 I understand the hard-work a researcher has to go through to get a publication or continuing research. As a researcher I take ideas from multiple sources for my own research to contribute in a effective way towards my fields. It is absolutely devilish/unacceptable to knowingly plagiarize/steal ideas from people without properly crediting them.
@@ -27,7 +22,7 @@ Video reasoning models! - provide benchmark - Video dataset proposal!
 
 Motivation: CLEVR, psychology
 
-<img src = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/2-Figure1-1.png">
+<img src = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/2-Figure1-1.png" width=400>
 
 Figure: Sample from the dataset [1]
 
@@ -38,7 +33,7 @@ Video Understanding, VQA, Physical and Causal reasoning.
 #### Argument and Assumption/ Context
 Dataset to fill the missing domain should: Video, diagnostic annotation, temporal relation, Explanation, prediction, counterfactual. Need to match this.
 
-<img src  = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/3-Table1-1.png">
+<img src  = "https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/3-Table1-1.png" width=400>
 
 Figure: Dataset Comparison [1]
 
@@ -65,7 +60,7 @@ used base line models:
 - Compositional visual reasoning: IEP,
 combined with Various implementation tricks.
 
-<img src ="https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/6-Table2-1.png">
+<img src ="https://d3i71xaburhd42.cloudfront.net/7f3ecbe546efed8ba42812f977354c16590bad77/6-Table2-1.png" width=400>
 
 Figure: Evaluated models [1]
 
@@ -136,14 +131,14 @@ From random vector, z, to a vector space, w, of same size (I guess loss backprop
 
 Noise (Gaussian noise) introduction cause stochastic variation in the generated images.
 
-<img src="https://miro.medium.com/max/1400/0*ANwSHXJDmwqjNSxi.png" width=600>
+<img src="https://miro.medium.com/max/1400/0*ANwSHXJDmwqjNSxi.png" width=400>
 
 Figure: [Source](https://towardsdatascience.com/explained-a-style-based-generator-architecture-for-gans-generating-and-tuning-realistic-6cb2be0f431)
 
 Important Note about Style generator: Each layer overridden by next AdaIN operation. Each AdaIN controls one CNN. As normalization and rescaling happen after each layers.
 
 - Style Mixing: Mixing regularization. Switch from one latent code to another at random points. Has option to add the style at different scale in the generator network. Two latent codes z1 and z1 generated for the two sets of images.
-- stochastic variation: Hair line, number, eye color etc. - controlled by the noise. 
+- stochastic variation: Hair line, number, eye color etc. - controlled by the noise.
 - Separation of global effects from stochasticity: Pose, lightening, - controlled by the latent space.
 
 Disentanglement studies: Latent space consists of linear subspaces each basis controls one factor of variation. Latent space W can be learned from the random vector by f(z).
@@ -157,6 +152,7 @@ where,
 <img src="https://latex.codecogs.com/gif.latex?slerp(x,y;t=\frac{\sin[(1-t)\Omega]}{\sin\Omega}x+\frac{\sin[t\Omega]}{\sin\Omega}y">
 
 and
+
 <img src="https://latex.codecogs.com/gif.latex?l_z=E[\frac{1}{\epsilon^2}d(G(lerp(f(z_1),f(z_2);t)),G(lerp(f(z_1),f(z_2);\epsilon+t)))]">
 
 - Linear separability: Distinguished set for distinguished features. How much entropy has reduce in H(Y|X); Where Y is the image label and X is the feature label.
@@ -167,7 +163,7 @@ and
 #### Results:
 - Experiment without any styles
 
-<img src="https://miro.medium.com/max/1400/0*eKvFqsrzvHdc70dp.png" width=600>
+<img src="https://miro.medium.com/max/1400/0*eKvFqsrzvHdc70dp.png" width=400>
 
 Figure: Source [2]
 
@@ -232,6 +228,7 @@ AdaIN
 <img src="https://latex.codecogs.com/gif.latex?BN(x)=\gamma(\frac{x-\mu(x)}{\sigma(x)})+\beta">
 
 Where
+
 <img src="https://latex.codecogs.com/gif.latex?\mu_c(x)=\sum_{n=1}^N\sum_{h=1}^H\sum_{w=1}^Wx_{nchw}/(NHW)"> and SD accordingly.  
 
 - Instance Normalization layer: The difference in computing mean and SD from the BN.
@@ -269,17 +266,18 @@ And reconstructed image
 
 uses pretrained VGG19 models
 
-<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/architecture.jpg" width=600>
+<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/architecture.jpg" width=400>
 
 Figure: Mind the AdaIN layer in between enc-dec. [3]
 
 Loss Function: Weighted sum of the two losses
-- Content Loss
-Euclidean distance between the AdaIN features and dec-enc(AdaIN features).
+- Content Loss: Euclidean distance between the AdaIN features and dec-enc(AdaIN features).
+
 <img src="https://latex.codecogs.com/gif.latex?\mathcal{L}_c=\sqrt{||f(g(t))-t||}">
 
-- Style loss
-Measures the loss between the statistics of the generated image and the style image in the VGG19 Layer stages (Authors used relu 1 to 4).
+
+- Style loss: Measures the loss between the statistics of the generated image and the style image in the VGG19 Layer stages (Authors used relu 1 to 4).
+
 <img src="https://latex.codecogs.com/gif.latex?\mathcal{L}_s=\sum_{i=1}^L(||\mu(\phi_i(g(t))) - \mu(\phi_i(s)||^{.5}+||\sigma(\phi_i(g(t))) - \sigma(\phi_i(s)||^{.5})">
 
 
@@ -312,7 +310,7 @@ Convex interpolation between output of encoder and the AdaIN.
 
 Example
 
-<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_weight.jpg" width=600>
+<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_weight.jpg" width=400>
 
 Figure: Source [3]
 
@@ -327,7 +325,7 @@ To interpolate set of K styles, the authors performs convex weighted sum of the 
 
 Example
 
-<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_interp.jpg" width=600>
+<img src="https://github.com/xunhuang1995/AdaIN-style/raw/master/examples/style_interp.jpg" width=400>
 
 Figure: Source [3]
 
