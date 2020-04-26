@@ -69,3 +69,7 @@ It's more important to guess while taking state-of-the-art knowledge. Don't rand
 ## Definitely Argue till one of you gets corrected
 
 If something is fundamentally wrong to you definitely dive deep and argue till either your thoughts or the counter thoughts have a clear edges.
+
+# Life and Balance
+
+Extreme of anything is very bad. Why we work hard? To get a better life. If we don't enjoy it what's the point? Make sure you have a balance. 
