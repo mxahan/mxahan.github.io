@@ -316,7 +316,7 @@ SSD eliminates the necessary for the region proposal networks.
 - Extract feature maps (VGG16)
 - Apply CNN filter to detect objects (4 object predictions) - Each prediction composes of all score + no_object score.
 
-<img src="https://miro.medium.com/max/1400/1*aex5im2aYcsk4RVKUD4zeg.jpeg" width=600>
+<img src="https://miro.medium.com/max/1400/1*aex5im2aYcsk4RVKUD4zeg.jpeg">
 
 Figure: [source](https://medium.com/@jonathan_hui/ssd-object-detection-single-shot-multibox-detector-for-real-time-processing-9bd8deac0e06) (38x38x512 to 38x38x4x(21+4)) The addition 4 are because of the box coordinates.
 
@@ -336,7 +336,7 @@ Default boundary box are similar ideas like anchors in Faster R-CNN. This is the
 
 To boxes are annotated as positive/negative based on the IoU of matching boxes with the ground truth.
 
-<img src="https://miro.medium.com/max/1400/1*-KVIXjvBO5m2MQZrzWx-wg.png" width=600>
+<img src="https://miro.medium.com/max/1400/1*-KVIXjvBO5m2MQZrzWx-wg.png">
 
 Figure: [source](https://medium.com/@jonathan_hui/ssd-object-detection-single-shot-multibox-detector-for-real-time-processing-9bd8deac0e06) Multiscale features and default boundary boxes. Higher resolution maps can detect small objects.
 
