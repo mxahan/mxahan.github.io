@@ -72,4 +72,21 @@ If something is fundamentally wrong to you definitely dive deep and argue till e
 
 # Life and Balance
 
-Extreme of anything is very bad. Why we work hard? To get a better life. If we don't enjoy it what's the point? Make sure you have a balance. 
+Extreme of anything is very bad. Why we work hard? To get a better life. If we don't enjoy it what's the point? Make sure you have a balance.
+
+
+# Stay Focus and Relevant
+
+I consider staying focus in life a crucial parts of happiness. Divergence mind rarely finds peace. As thoughts that I can't control agitate my minds and destroy inner happiness. There are millions of things I can't control neither I will be ever able to control. For example, what will happen tomorrow morning in Barcelona board, who they will buy, how Barcelona will do this season, a random government office saying bullshit... yeah, I got the point. Thinking these really stresses me out and keep me away from things I love/enjoy to do.
+
+I understand it's hard to stay focused only on the things that can be somewhat controlled by my inputs. Like I can make my parents, spouses happy with my good behavior, completing responsibilities to them. My input has value towards my research but I can't control the reviewer boards of my researches, but I can try to make my work more solid and important, I can try to better present and express my thoughts for people to understand and value it. I am not seeking acceptance from anyone but trying to offer help for the well-being of human and sciences. I can be honest, diligent and hard-working to the things that I enjoy to do.
+
+To summarize, I should focus on what we can do. Ask ourselves question can we do it better? How and what can we do better? And guide ourselves to do so. Manage and schedule our time to do so instead of spending time and energy on things we can't control in the grand contexts of the Universe.
+
+Relevance is a big word. What is Relevant to me? What I choose to be? What I have been like to choose to be relevant? Lets put an adversarial situation, suddenly I want to be president of Sudan. Now, the politics of Sudan is very relevant to me. So I believe what we target becomes our relevance.
+
+### Focus on System to achieve on goal; not the goal itself
+
+### Always try to be proactive:
+
+Don't expect people to do your work. I should do my works. I like to ask myself can I do more and better? And try pull the answer to NO by doing more and better. For example, I need to submit my research paper to a conference. I will try to do all the things I can do, search all the thing I can do. After that I will definitely reach out for additional helps. As we human are social creature. We need each other to thrive in this material life. I want to find peace by staying I could do little better but I tried my best.
