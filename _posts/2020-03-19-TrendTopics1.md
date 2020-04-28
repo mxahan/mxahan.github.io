@@ -322,7 +322,7 @@ SSD eliminates the necessary for the region proposal networks.
 
 Figure: [source](https://medium.com/@jonathan_hui/ssd-object-detection-single-shot-multibox-detector-for-real-time-processing-9bd8deac0e06) (38x38x512 to 38x38x4x(21+4)) The addition 4 are because of the box coordinates.
 
-<img src="https://miro.medium.com/max/2000/1*mvF9g_zH2DaQK2KgutndFg.jpeg" width=600>
+<img src="https://miro.medium.com/max/2000/1*mvF9g_zH2DaQK2KgutndFg.jpeg">
 
 Figure: [source](https://medium.com/@jonathan_hui/ssd-object-detection-single-shot-multibox-detector-for-real-time-processing-9bd8deac0e06)
 
@@ -330,7 +330,7 @@ Multibox: Making multiple prediction containing boundary boxes with class score.
 
 The core advantages of SSD are the multiscale features.
 
-<img src="https://miro.medium.com/max/2000/1*up-gIJ9rPkHXUGRoqWuULQ.jpeg" width=600>
+<img src="https://miro.medium.com/max/2000/1*up-gIJ9rPkHXUGRoqWuULQ.jpeg">
 
 Figure: [source paper](https://arxiv.org/pdf/1512.02325.pdf) (At some auxiliary stage SSD takes 6 box predictions)
 
@@ -348,7 +348,7 @@ Figure: [source](https://medium.com/@jonathan_hui/ssd-object-detection-single-sh
 
 Loss Function: sum of localization (mismatch between gt and predicted positive matches) loss and confidence loss (Classification loss).
 
-<img src="https://miro.medium.com/max/1400/1*cIE7bbicMOokWQ6w41I-NA.png" width=600>
+<img src="https://miro.medium.com/max/1400/1*cIE7bbicMOokWQ6w41I-NA.png">
 
 - data mining for negative match as the background selectors. Select a moderate negative example to balance between class imbalances.
 - Data augmentation
