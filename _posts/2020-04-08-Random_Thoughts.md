@@ -90,3 +90,7 @@ Relevance is a big word. What is Relevant to me? What I choose to be? What I hav
 ### Always try to be proactive:
 
 Don't expect people to do your work. I should do my works. I like to ask myself can I do more and better? And try pull the answer to NO by doing more and better. For example, I need to submit my research paper to a conference. I will try to do all the things I can do, search all the thing I can do. After that I will definitely reach out for additional helps. As we human are social creature. We need each other to thrive in this material life. I want to find peace by staying I could do little better but I tried my best.
+
+### Do what you need/require; not what you Desire.
+
+Just imagine if human had wings and could fly! It seems great the by looking at this prospect, or is it? Evolution doesn't work this way. Evolution provides us with what we need for survive not what we need for extravagant. The big dinosaurs went extinct; thanks to the 10KM asteroid and the climatic change. We mammal survived as we suited more. The big snake, big shark Megalodon all went extinct. They were stronger, fancier but not suitable to survive in the environments. It would be great If I had excellent knowledge about biology, organic chemistry, physiology, natural science, etc. It would be great if I could recite and cram all the religious book at a time. The question is do i need it? I should answer this question before devotion towards. 
