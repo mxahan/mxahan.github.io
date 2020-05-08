@@ -375,7 +375,7 @@ Only few weights are important (they depends on the initialization). Different i
 #### Problem statement
 Can we train smaller network, not prune. - by initialization appropriately.
 #### contribution (Piece of Pie)
-Computer vision task small subnet with appropriate initialization learns the same task of the big network with parameters. 
+Computer vision task small subnet with appropriate initialization learns the same task of the big network with parameters.
 #### Background
 
 #### Approach and Experiments:
