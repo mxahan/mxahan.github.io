@@ -9,7 +9,7 @@ Paper List
 - [Clevrer: Kexin et al 2019](#paper1)
 - [Style Gan- Tero Karras et al 2018](#paper2)
 - [Style transfer - Xun Huang et al 2017](#paper3)
-- [Lottery ticket hypothesis - J. Frankel et al 2018] (#paper4)
+- [Lottery ticket hypothesis - J. Frankel et al 2018](#paper4)
 
 
 
