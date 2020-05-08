@@ -9,6 +9,7 @@ Paper List
 - [Clevrer: Kexin et al 2019](#paper1)
 - [Style Gan- Tero Karras et al 2018](#paper2)
 - [Style transfer - Xun Huang et al 2017](#paper3)
+- [Lottery ticket hypothesis - J. Frankel et al 2018] (#paper4)
 
 
 
@@ -343,3 +344,98 @@ Figure: Source [3]
 #### Reference
 
 [3] Huang, Xun, and Serge Belongie. "Arbitrary style transfer in real-time with adaptive instance normalization." In Proceedings of the IEEE International Conference on Computer Vision, pp. 1501-1510. 2017.
+
+
+# Paper4
+THE LOTTERY TICKET HYPOTHESIS: FINDING SPARSE, TRAINABLE NEURAL NETWORKS [4]
+#### IMRAD
+Train smaller network instead of prune. Pruned network hard to train. Sparse network slow learning. Smaller subnetwork!
+
+Randomly-initialized, dense NN contains subnetwork already initialized such way - trained in isolation - it can match the test accuracy of the original network after training at most same number of iteration.
+Mathematically
+Initially
+<img src="https://latex.codecogs.com/gif.latex?f(x,\theta);\theta=\theta_0fromD_\theta">
+Finally reach, test accuracy a, validation loss l, at iteration j
+<img src="https://latex.codecogs.com/gif.latex?f(x,\theta\odot m);\theta=\theta_0fromD_\theta">
+And reach, test accuracy a', validation loss l', at iteration j'. Now according to lottery ticket hypothesis, there exist such m that j>j', a<a' and finally m has fewer 1.
+
+Need appropriate initialization. Train with full network, and prune to get wining tickets. And reset to original initial values to the remaining weights.
+
+- Pruning uncovers trainable subnrtwork
+- Faster training
+- propose lottery ticket hypothesis.
+
+Implication - Improve training performance, design better network, and improve theoretical understand.
+
+### Prior Arts
+
+
+#### Argument and Assumption/ Context
+Only few weights are important (they depends on the initialization). Different initialization gives different important weights. Given same initialization the weights will reach same conclusion.  
+#### Problem statement
+Can we train smaller network, not prune. - by initialization appropriately.
+#### contribution (Piece of Pie)
+Computer vision task small subnet with appropriate initialization learns the same task of the big network with parameters. 
+#### Background
+
+#### Approach and Experiments:
+On Fully connected
+- iterative Pruning
+- Random reinitialization
+- One-shot pruning
+
+Convolutional network.
+- Finding wining tickets
+- Random reinitialization
+- Dropout
+More experiment on the VGG and RESNET for cifar dataset
+
+
+#### Evaluations strengths and Weakness
+Weakness: Only on image and small dataset! Learning rate dependency
+
+#### Results:
+Exhaustive result on   1. Pruning strategy 2. Early stopping 3. Training accuracy 4. Comparing random reinitialization and random sparsity 5. Examine winning tickets. 6. Hyperparameter exploration for fully connected networks 7. Hyperparameter exploration for CNN 8. Hyperparameter for VGG and RESNET
+
+#### My thoughts
+
+#### Key ideas & Piece of Pie
+Different initialization gives different important weights. Given same initialization the weights will reach same conclusion.  
+
+#### Reference
+
+[4] Frankle, Jonathan, and Michael Carbin. "The lottery ticket hypothesis: Finding sparse, trainable neural networks." arXiv preprint arXiv:1803.03635 (2018).
+
+
+# Paper5
+#### IMRAD
+
+
+### Prior Arts
+
+
+#### Argument and Assumption/ Context
+
+#### Problem statement
+
+#### contribution (Piece of Pie)
+
+#### Background
+
+#### Approach and Experiments:
+
+
+
+
+#### Evaluations strengths and Weakness
+
+
+#### Results:
+
+
+#### My thoughts
+
+#### Key ideas & Piece of Pie
+
+
+#### Reference
