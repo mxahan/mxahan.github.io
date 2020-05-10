@@ -12,6 +12,7 @@ So far In this writing I have covered
 - [Region based object detectors](#region-based-object-detectors)
 - [Region based Convolutional networks](#region-based-fully-convolutional-networks)
 - [Deep learning for object detection P2](#deep-learning-for-object-detection-p2)
+- [Neural Networks Pruning](#nn-prune)
 
 
 # 1. Representation Learning
@@ -468,3 +469,24 @@ ROI takes two inputs
 - It takes indexes and corresponding coordinates for proposal of RPN
 
 ROI pooling layers converts each ROI (regardless of the input feature map or proposal sizes) into a fixed dimension map.
+
+
+# NN prune
+[detail](https://towardsdatascience.com/pruning-deep-neural-network-56cae1ec5505)
+TL-DR: original inspiration comes from biological synaptic pruning. In neural network, rank the individual weights and drop p% by setting smaller p's to zero. This is **weight pruning**. The neurons can also be dropped by dropping the neuron itself. This is done by deleting a whole column of weight matrix based on their L2 norms.
+
+[detail](https://jacobgil.github.io/deeplearning/pruning-deep-learning)
+TL-DR: Old ideas from Yan Lecun's. The main point concerns about ranking the neurons. The ranking is usually done by L1/L2 norm of weights, activation, or zero occurance of neuron in validation time, etc. After pruning the NN performance drops which is recovered by retraining iteratively.
+
+Not Popular yet because pain of implemenation, Unstability of ranking method and some genius peoples unwillingness to share.
+
+##### Some keypoints with reference
+- For CNN the deeper the layer the more it gets pruned [paper from Nvidia](https://arxiv.org/pdf/1611.06440.pdf). Pruning the entire filter. Pruning in each filter or remove some filters entirely. Pruning works better in case of transfer learning.
+
+- Prune the entire convolutional filter. The following layers also need to be cared. The paper used L1 for ranking and removed the lowest m filters and following layers. [Hao Li. et al, UMD and labs america](https://arxiv.org/pdf/1608.08710.pdf)
+
+- The idea is similar to above but the ranking is complex. The validation set performance of the neurons are considered for the ranking assignment for pruning. [paper](https://arxiv.org/pdf/1512.08571.pdf)
+
+- Formalize the combinatorial optimization problem. <img src = "https://latex.codecogs.com/gif.latex?min_w|\mathcal{C(D|W')-C(D|W')}|s.t.\mathcal{||W'||_0}<=B">. Where B is subset of weights. This introduces the notion of loss function in pruning to provide more stable results. [paper from NVIDIA](https://arxiv.org/pdf/1611.06440.pdf)
+  - Oracle Pruning: Consider removing each filter and observe the effect. They come up with a Ranking method based on first order Taylor expansion of the cost function. Two subsequent point differ by presence of a filter. The ranking of a particular filer h can be expressed as
+  <img src = "https://latex.codecogs.com/gif.latex?\Theta_{TE}(h_i)=|\Delta\mathcal{C}(h_i)|=|\Delta\mathcal{C(D,}h_i)-\frac{\delta\mathcal{C}}{\delta h_i}h_i-\Delta\mathcal{C(D,}h_i)|=|\frac{\delta\mathcal{C}}{\delta h_i}h_i|"> and <img src = "https://latex.codecogs.com/gif.latex?\Theta_{TE}(z_l^{(k)})=|\frac{1}{M}\sum_m\frac{\delta C}{\delta z_{l,m}^{(k)}}z_{l,m}^{(k)}|">. This would provide the rank of the layer after L2 norm.
