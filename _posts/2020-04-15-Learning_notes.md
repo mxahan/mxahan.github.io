@@ -82,7 +82,7 @@ This command tells to build a image using ubuntu and perform a echo command in b
 ```
 docker build -t my-ubuntu-image .
 ```
-Now we can check the images. Its name will be my-ubuntu-image
+Now we can check the images. Its name will be my-ubuntu-image. So basically Dockerfile gives us an image and we can use it in our own ways to make container discussed earlier.
 ```
 docker images
 ```
@@ -97,7 +97,7 @@ RUN apt-get upgrade && apt-get update && apt-get install -y python3
 ```
 Now the same routine docker build and then run the image instances in a container. Last not the least is the Docker compose. Align multiple image together.
 ```
-Ask Question Before you Learn. Search the right question. 
+Ask Question Before you Learn. Search the right question.
 ```
 ## Github
 
