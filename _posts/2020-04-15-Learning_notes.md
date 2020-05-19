@@ -28,6 +28,22 @@ To remove the docker container we created earlier. The way to get out of contain
 ```
 docker rm random_hello
 ```
+We can also keep the docker container but stop it from executing.
+```
+docker kill random_hello
+```
+We can start docker and pause docker containers
+```
+docker start hello_random
+docker pause hello_random
+```
+But unpause before reconnect again
+```
+docker unpause hello_random
+docker exec it hello_random bash # if it has bash anyway
+```
+The exec command execute command in a running container. [for more](https://docs.docker.com/engine/reference/commandline/container_attach/) and [alternative](https://docs.docker.com/engine/reference/commandline/docker/)
+
 Now the interesting part; getting ubuntu inside ubuntu for me
 ```
 docker run -it --name my-linux-container ubuntu bash
