@@ -14,7 +14,7 @@ So far In this writing I have covered
 - [Deep learning for object detection P2](#deep-learning-for-object-detection-p2)
 - [Neural Networks Pruning](#nn-prune)
 - [Graph Neural Network](#graphnn)
-
+- [Energy Based Learning](#energy-based-learning)
 
 # 1. Representation Learning
 ### Representation learning: A review and new perspective - (Bengio, Y. et al. 2014)
@@ -493,3 +493,34 @@ Not Popular yet because pain of implemenation, Unstability of ranking method and
   <img src = "https://latex.codecogs.com/gif.latex?\Theta_{TE}(h_i)=|\Delta\mathcal{C}(h_i)|=|\Delta\mathcal{C(D,}h_i)-\frac{\delta\mathcal{C}}{\delta h_i}h_i-\Delta\mathcal{C(D,}h_i)|=|\frac{\delta\mathcal{C}}{\delta h_i}h_i|"> and <img src = "https://latex.codecogs.com/gif.latex?\Theta_{TE}(z_l^{(k)})=|\frac{1}{M}\sum_m\frac{\delta C}{\delta z_{l,m}^{(k)}}z_{l,m}^{(k)}|">. This would provide the rank of the layer after L2 norm.
 
 # GraphNN
+
+
+# Energy Based learning
+
+[key tutorial](http://yann.lecun.com/exdb/publis/pdf/lecun-06.pdf)
+### Introduction
+
+- Capture Dependencies between variables
+- Associate scalar energy (measure of capability) to each variable configuration.
+- Interferce: Finding remain variables values based on given observed variables to minimize energy Function
+- Learning: Associate low energies to *correct values* of remaining variables.  
+- Loss function: measure the quality of energy function.
+- Unification between probabilitics and non-probabilitic methods.
+- <img src = "https://latex.codecogs.com/gif.latex?Y^*=argmin_{Y\epsilon\mathcal{Y}}E(X,Y)"> - Compute energy for all possible Y!
+- Energy function has many possible Form
+- Appropriate Question
+    - Which Y most compatible with X
+    - is Y_1 or Y_2 more compatible with X
+    - is Y compatible with X
+    - what is conditional prob. dist. over space of Y given X.
+- Cares only about lower energy for correct answer! problem with combining other variables. So, energy to probabilities again!
+- <img src = "https://latex.codecogs.com/gif.latex?P(X|Y)=\frac{e^{-\beta E(X,Y))}}{\sum_{Y\epsilon \mathcal Y}e^{-\beta E(X,Y)}}"> ; beta akin to inverser temrature, Gibbs distribution.
+
+### training
+- <img src = "https://latex.codecogs.com/gif.latex?\mathcal E={E(W,X,Y):W\epsilon\mathcal W}"> Same old parameters, can be parameters to NN
+- So the target becomes <img src = "https://latex.codecogs.com/gif.latex?W^*=min_{W\epsilon \mathcal W}\mathcal L(W,\mathcal S)"> Where S is the total dataset. Can be expanded to traditional instance based formula.
+- IN summary Four components
+  - Architecture: E(W,Y,X)
+  - Interference algorithm: Method of finding Y to minimize the E(W,X,Y)
+  - Loss function: Measure the quality of energy function based on the training data
+  - Learning algorithm: fining W that minimize the loss from a family of energy functions <img src = "https://latex.codecogs.com/gif.latex?\mathcal E">
