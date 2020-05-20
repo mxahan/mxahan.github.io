@@ -3,7 +3,8 @@
 # How to be a good researcher!
 First and foremost, Be honest, Be absolutely honest. Give credit. We never achieve anything alone, we grow together as a researcher. Read! Understand! Site! and repeat till death. It's a Profession, and definitely with fun.  
 
-The second point, Never doubt yourselves. Leaves the negativity away. Don't listen to the negative thoughts or negative people. Stay close to the people who love or stay alone and continue to perform hard work, reading, research.
+The second point, **Never doubt yourselves**, not even for a second, not even in the against largest possible odds. Leaves the negativity away. Don't listen to the negative thoughts or negative people. Stay close to the people who love or stay alone and continue to perform hard work, reading, research.
+
 #### Know where you want to work
 
 #### Keep eye wide open (Don't be over-focused)
@@ -60,7 +61,12 @@ If you have nothing above! No worries and start from first line of this blog aga
 
 ## Reading a Scientific Paper
 
+A interesting point while reading to keep in subconcious mind that read and let your mind feel it. I can do it by reading and moving my eye from it to notes and write the words from mind about what I read between few and far.
+
+
 Look at the authors name, groups, affiliations, Previous works, PIs. Look at the conference/journal or publication platform for particular paper. Then start reading. My thoughts on approaching the paper to [critical review](https://drive.google.com/file/d/1ZtCiIMHxB-XXlwHbkXsm_uYBx7nPuW41/view?usp=sharing). Special thanks to [Professor Asif Salekin](https://asalekin.github.io/) for sharing his initial slides.
+
+
 
 ## Be extreme curious about alternatives with drawbacks
 
@@ -86,6 +92,8 @@ To summarize, I should focus on what we can do. Ask ourselves question can we do
 Relevance is a big word. What is Relevant to me? What I choose to be? What I have been like to choose to be relevant? Lets put an adversarial situation, suddenly I want to be president of Sudan. Now, the politics of Sudan is very relevant to me. So I believe what we target becomes our relevance.
 
 ### Focus on System to achieve on goal; not the goal itself
+
+Focus on short terms goals, system and good habits. 
 
 ### Always try to be proactive:
 
