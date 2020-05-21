@@ -519,8 +519,27 @@ Not Popular yet because pain of implemenation, Unstability of ranking method and
 ### training
 - <img src = "https://latex.codecogs.com/gif.latex?\mathcal E={E(W,X,Y):W\epsilon\mathcal W}"> Same old parameters, can be parameters to NN
 - So the target becomes <img src = "https://latex.codecogs.com/gif.latex?W^*=min_{W\epsilon \mathcal W}\mathcal L(W,\mathcal S)"> Where S is the total dataset. Can be expanded to traditional instance based formula.
+
 - IN summary Four components
   - Architecture: E(W,Y,X)
   - Interference algorithm: Method of finding Y to minimize the E(W,X,Y)
   - Loss function: Measure the quality of energy function based on the training data
   - Learning algorithm: fining W that minimize the loss from a family of energy functions <img src = "https://latex.codecogs.com/gif.latex?\mathcal E">
+- Loss function
+  - Energy loss - Value of E(X_i, Y_i, W)
+  - Generalized Perceptron Loss - E(X_i, Y_i, W) - min_y E(W, Y, X_i)
+  - Hinge loss - max(0, m + E(X_i, Y_i, W) - min_{Y_j/=Y_i}E(X_i, Y_i, W))
+  - Log loss - log(1+ e^{E(X_i, Y_i, W - min_{Y_j/=Y_i}E(X_i, Y_i, W))}
+  - MCE loss = f(E(X_i, Y_i, W - min_{Y_j/=Y_i}E(X_i, Y_i, W))) -  f may be step function
+  - Square - Square Loss function: <img src = "https://latex.codecogs.com/gif.latex?E(W,X_i,Y_i)^2-(max(0,min_{Y_j\ne Y_i}E(W,X_i,Y_j)))">
+  - Square exponential loss = <img src = "https://latex.codecogs.com/gif.latex?E(W,X_i,Y_i)^2-\gamma e^{min_{Y_j\ne Y_i}E(W,X_i,Y_j))}">
+
+- Simple Architecture:
+  - regressor
+  - two class classifiers
+  - Multiclass classifier
+  - Implicit regression
+- Latent Variable Architecture
+  - <img src = "https://latex.codecogs.com/gif.latex?E(Y,X)=min_{Z\epsilon\mathcal(Z)}E(Z,Y,X)">
+
+- Analysis of Loss function for EBM
