@@ -93,7 +93,7 @@ Relevance is a big word. What is Relevant to me? What I choose to be? What I hav
 
 ### Focus on System to achieve on goal; not the goal itself
 
-Focus on short terms goals, system and good habits. 
+Focus on short terms goals, system and good habits.
 
 ### Always try to be proactive:
 
@@ -105,10 +105,15 @@ Just imagine if human had wings and could fly! It seems great the by looking at 
 
 ## Don't Be afraid; Be caution, curious and plan for future
 
-There are lots of surrounding field I am not comfortable. As a Data Science major I am not comfortable with lots of data related fields like spark or C++ data handling. Well I was afraid to go beyond my comfort zone and afraid of new things. These fears don't help me to grow they may provide me with temporary peace but in the end they return to haunt me down. The point is being afraid and ignorant don't help. Instead acknowledgement of current weakness, and plan to overcome the weakness via self-training helps a lot. I don't have to be master of everything surrounding. But, I must at least have some ideas and working knowledge about surrounding. I want to be comfortable at my surrounding via practicing. The way around is to take some time off focus on one particular problem, plan to overcome that and execute it. That's it. They are doable but it need passion and activeness.
+There are lots of surrounding field I am not comfortable. As a Data Science major I am not comfortable with lots of data related fields like spark or C++ data handling. Well I was afraid to go beyond my comfort zone and afraid of new things. These fears don't help me to grow they may provide me with temporary peace but in the end they return to haunt me down. The point is being afraid and ignorant don't help. Instead acknowledgment of current weakness, and plan to overcome the weakness via self-training helps a lot. I don't have to be master of everything surrounding. But, I must at least have some ideas and working knowledge about surrounding. I want to be comfortable at my surrounding via practicing. The way around is to take some time off focus on one particular problem, plan to overcome that and execute it. That's it. They are doable but it need passion and activeness.
 
 By the way the next thing I am learning is the docker work for ubuntu. Like I said, I don't have to be master but must be comfortable.
 
 # My thoughts on Neural Network
 
 Neural network is universal function learner not any function learner. It can't understand our mind unless we properly formularise the problem in its own language. We can't teach NN what's on our mind. We need clear things to teach NN, at least in supervised setting. It will catch off guard our logic flaw in understanding things, put fingers at our the vagueness of our mind. This is what facinates me most. Most of the bottleneck is from us; Incorrect formularization of problems, bad representation, low bandwidth communication with our minds and brain. It also excites me to refine the way of thinking, reformulating and finally getting the appropriate things. This is not what NN wanted but we wanted in the first place in our subconcious minds. We wanted it but never could express it until the NN helped us. But we need to go to the correct doctor (architecture) for appropriate treatment. The real difference is that we can teach the doctor this time, considering the architecture is capable of learning the things in our mind. With NN we are the one who actually learns. Interesting!
+
+# You are Welcome!
+
+[The world from another point of view](https://www.youtube.com/watch?v=GNhlNSLQAFE)
+[Fun to imaginge](https://www.youtube.com/watch?v=P1ww1IXRfTA&t=323s)

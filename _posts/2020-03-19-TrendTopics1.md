@@ -543,3 +543,16 @@ Not Popular yet because pain of implemenation, Unstability of ranking method and
   - <img src = "https://latex.codecogs.com/gif.latex?E(Y,X)=min_{Z\epsilon\mathcal(Z)}E(Z,Y,X)">
 
 - Analysis of Loss function for EBM
+  - Architecture and loss function connection: Some loss works with some architecture... Contrastive terms (hinge, log and MCE) helps in complicated architecture.
+
+
+- Sufficient condition for Good Loss functions
+
+- conditions on the Energy
+  1. <img src = "https://latex.codecogs.com/gif.latex?E(W,Y^i,X^i)<E(W,Y,X^i), Y^i is GT and Y\neq Y^i">
+  1. <img src = "https://latex.codecogs.com/gif.latex?E(W,Y^i,X^i)<E(W,\bar Y,X^i)-m, Y^i is GT and Y\neq Y^i"> Y bar is the minimum energy among the non GT solution.
+  1. Existance of a point where energy for all other non GT solution are smaller than all the points outside the margin. (sufficient condition - without mentioning maths)
+
+  <img src="https://i.stack.imgur.com/VHZzi.png">
+
+- Efficient Interference
