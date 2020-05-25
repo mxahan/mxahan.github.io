@@ -61,6 +61,8 @@ If you have nothing above! No worries and start from first line of this blog aga
 
 ## Reading a Scientific Paper
 
+Be mindful of why you are reading it? Note the points of what you want to gain from the paper you will be reading and why are you are reading this. Each approach is different. For example, You are critiqueing a paper. Follow critique guideline. If you want to read a paper to learn newmethods or techniques focus on it. Focus on definition, terms, problems formulation, etc. The critiques guides are still valid here. 
+
 A interesting point while reading to keep in subconcious mind that read and let your mind feel it. I can do it by reading and moving my eye from it to notes and write the words from mind about what I read between few and far.
 
 

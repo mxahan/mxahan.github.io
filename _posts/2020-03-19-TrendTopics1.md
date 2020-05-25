@@ -494,6 +494,15 @@ Not Popular yet because pain of implemenation, Unstability of ranking method and
 
 # GraphNN
 
+Very nice [survey](https://arxiv.org/pdf/1812.08434.pdf)
+
+Motivation
+  - CNN
+  - Graph Embedding
+  - Non Euclidean
+
+Models:
+  - 
 
 # Energy Based learning
 
