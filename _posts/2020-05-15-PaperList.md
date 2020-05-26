@@ -1,6 +1,6 @@
 # Introduction
 
-This blog contains paperlist I want and plan to go through. For detail paper read please refer to the Paper summary section. Here we will store lots of papers title or maybe little summary considering I will be storing only interested papers. We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! By the way, I will appreciate any suggestion on the paperlist. I know the Feynman's concept of knowing name means nothing, it's just the entrance to the grand scheme of the world.
+This blog contains paperlist I want and plan to go through. For detail paper read please refer to the Paper summary section. Here we will store lots of papers title or maybe little summary considering I will be storing only interested papers. We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! By the way, I will appreciate any suggestion on the paperlist. I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world.
 
 1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
 
@@ -14,3 +14,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - affine coupling layers
 
 1. Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. "Density estimation using real nvp." arXiv preprint arXiv:1605.08803 (2016).
+
+1. Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S. Corrado, and Jeff Dean. "Distributed representations of words and phrases and their compositionality." In Advances in neural information processing systems, pp. 3111-3119. 2013.
+  - Skip gram model and its extensions: skip gram tries to maximize the log probaiblites <img src="https://latex.codecogs.com/gif.latex?1/T\sum_1^T\sum_{-c<=j<=c, j\neq 0}\log p(w_{t+j}|w_t)">; the probabilities are defined by softmax of the vector represenation of the words. The issue is computation of derivatives of log.
+  - Hierarchical Softmax: Tree structure from root to the word
+  - Negative Sampling: Adds with target and penalize for noise words. Noise Contrastive Estimation.
+  - Subsampling of Frequent words.
