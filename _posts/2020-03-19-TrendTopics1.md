@@ -15,6 +15,7 @@ So far In this writing I have covered
 - [Neural Networks Pruning](#nn-prune)
 - [Graph Neural Network](#graphnn)
 - [Energy Based Learning](#energy-based-learning)
+- [Video activity recognition](#video-activity-recognition)
 
 # 1. Representation Learning
 ### Representation learning: A review and new perspective - (Bengio, Y. et al. 2014)
@@ -502,7 +503,7 @@ Motivation
   - Non Euclidean
 
 Models:
-  - 
+  -
 
 # Energy Based learning
 
@@ -565,3 +566,5 @@ Models:
   <img src="https://i.stack.imgur.com/VHZzi.png">
 
 - Efficient Interference
+
+# Video Activity recognition
