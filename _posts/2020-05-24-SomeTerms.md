@@ -4,7 +4,7 @@ This blogs contains some of the commonly encountered terms in DL. Lets Move forw
 
 - [Embedding](#embedding)
 - [Collaborative Filter](#collaborative-filter)
-
+- [Boltzmann Machine](#boltzmann-machine)
 
 
 
@@ -53,4 +53,4 @@ Boltzmann machine learns the data distribution.
 
 A hidden layer and visible layers: Restriction: no hidden-hidden or visible-visible connection. Hidden units are conditionally independent of the visible layers. Now the data expectation can be found by one sweep but the model expectation needs multiple iteration. Introduced reconstruction instead of the total model expectation for s_i*s_j. Learning by contrastive divergence.
 
-Related to markov random field, Gibbs sampling, conditional random fields. 
+Related to markov random field, Gibbs sampling, conditional random fields.
