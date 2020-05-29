@@ -627,7 +627,31 @@ Contemporary works based on single and two stream papers
   - Long range temporal modeling and better long range losses
   - Multi-level fuses architecture
 
+5. TSN (Temporal segment Networks: Wang et al 2016)
+- Contribution
+  - Long range temporal Modeling
+  - Bath norm, dropout and pretrained
 
+6. ActionVLAD (Girdhar et al 2017)
+- Contributions:
+  - learnable video level aggregation of features (!) - Pooling from different regions
+  - End2end training
+
+7. HiddenTwoStream (Zhu et al 2017)
+- Contributions
+  - Novel architecture for optical flow input using separate network
+  - Spatial stream CNN, parallel with MotionNet (for optical flow) and Temporal Stream CNN then late fusion.
+
+8. I3D (Carreira et al. 2017)
+- Contributions
+  - 3D based model into two stream architecture
+  - New dataset
+  - Extension from C3D (2.)
+
+9. T3D (Diba et al. 2017)
+- Contributions
+ - Combining temporal information across variable depth
+ - Supervised transfer learning
 
 
 Some Dataset
