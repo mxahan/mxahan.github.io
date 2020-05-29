@@ -568,3 +568,79 @@ Models:
 - Efficient Interference
 
 # Video Activity recognition
+
+[informative resource](http://cs231n.stanford.edu/slides/2018/cs231n_2018_ds08.pdf)
+[blog post](http://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review)
+
+
+Approaches
+
+- Pre-deep Learning
+  - Local features: HOG and Histogram of optical flow
+  - Trajectory based: Motion boundary histogram
+  - Feature aggregation: Bag of visual wordd and fisher vectors
+  - Representing motion: Optical Flow and trajectory stacking
+  - 3 key steps:
+    - Local high dimensional feature, combine features, SVM classifiers
+
+- Deep Learning
+  - Fuse features from multiple frames: Single frame, late fusion, early fusion, slow fusion.
+  - Single stream network: Single frame, late fusion, early fusion, slow fusion.
+    - problem with Motion
+    - Detailed features for the diverse dataset
+  - Two stream Networks
+    - Hypothesis: Video = Appearance + Motion
+    - Special fusion, temporal fusion
+    - Problems with long range features
+    - Precomputed optical flow!
+  - Multi resolution: High res fovea stream and low-res image context stream
+
+- CNN+RNN
+  - Video as sequence
+  - Design choice: Modality (RGB and flow), features (CNN or hand crafted), Temporal aggregation (temporal pooling and RNN)
+  - global discriminator
+
+- 3D convolution
+  - Spatio temporal features
+
+Contemporary works based on single and two stream papers
+1. LRCN (long term recurrent Convolutional network for visual recognition and description, Donahue et al 2014)
+- Contribution
+  - Based on RNN (not stream)
+  - Encoder-decoder for video presentation
+  - End2End training (but use flow!)
+2. C3D (Learning spatiotemporal features with convolutional networks (Du tran et al 2014)
+- Contributions
+  - 3D CNN as feature extractors
+  - Extensive search for best 3D cnn kernel and architecture.
+  - Using deconvolutional layers for interpretation.
+  - Factorized Spatio-temporal CN
+
+3. Conv3D and attention (Yao et al, 2015)
+- Contributions
+  - Novel 3D CNN-RNN encoder-decoder for spatiotemporal
+  - Use of attention within CNN-RNN encoder decoder frameworks.
+- Not actually action recognition but cnn+lstm ..
+
+4. TwoStreamFusion (Feichtenhofer et al. 2016)
+- Contribution
+  - Long range temporal modeling and better long range losses
+  - Multi-level fuses architecture
+
+
+
+
+Some Dataset
+- Video classification
+  - UCF101
+  - Sports-1M
+  - Youtube 8M
+
+- Atomic action
+  - Charades
+  - Atomic Visual Actions
+  - Moments in Time
+
+- Movie Querying
+  - M-VAD and MPII-MD
+  - Large scale movie description Challenges (LSMDC)
