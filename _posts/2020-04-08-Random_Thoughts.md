@@ -121,7 +121,7 @@ Do a lot of planning for free time in the scheduled time like submission, exam o
 
 I think, I need to stop planning exhaustively rather take is slowly. Because the exhaustively planning continues the pressure I was initially in, which doesn't help in our pressure relief and effectively hinders the brain. So, to break the cycle first stop planning for the off time.
 
-But, but, I want to learn and grow! How! Well, stop planning doesn't means stop learning. What I think works for me is instant action. Peak a topic and go ahead. No planning! Just focus on learning. Its the time you spend on studying helps to learn not the planning. As simple as this. To summarize, take zero pressure and focus on learning.
+But, but, I want to learn and grow! How! Well, stop planning doesn't means stop learning. What I think works for me is instant action. Peak a (very important **a**, not more than one) topic and go ahead. No planning! Just focus on learning. Its the time you spend on studying helps to learn not the planning. As simple as this. To summarize, take zero pressure and focus on learning.
 
 # You are Welcome!
 
