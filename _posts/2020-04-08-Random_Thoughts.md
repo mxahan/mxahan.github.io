@@ -61,7 +61,7 @@ If you have nothing above! No worries and start from first line of this blog aga
 
 ## Reading a Scientific Paper
 
-Be mindful of why you are reading it? Note the points of what you want to gain from the paper you will be reading and why are you are reading this. Each approach is different. For example, You are critiqueing a paper. Follow critique guideline. If you want to read a paper to learn newmethods or techniques focus on it. Focus on definition, terms, problems formulation, etc. The critiques guides are still valid here. 
+Be mindful of why you are reading it? Note the points of what you want to gain from the paper you will be reading and why are you are reading this. Each approach is different. For example, You are critiqueing a paper. Follow critique guideline. If you want to read a paper to learn newmethods or techniques focus on it. Focus on definition, terms, problems formulation, etc. The critiques guides are still valid here.
 
 A interesting point while reading to keep in subconcious mind that read and let your mind feel it. I can do it by reading and moving my eye from it to notes and write the words from mind about what I read between few and far.
 
@@ -114,6 +114,14 @@ By the way the next thing I am learning is the docker work for ubuntu. Like I sa
 # My thoughts on Neural Network
 
 Neural network is universal function learner not any function learner. It can't understand our mind unless we properly formularise the problem in its own language. We can't teach NN what's on our mind. We need clear things to teach NN, at least in supervised setting. It will catch off guard our logic flaw in understanding things, put fingers at our the vagueness of our mind. This is what facinates me most. Most of the bottleneck is from us; Incorrect formularization of problems, bad representation, low bandwidth communication with our minds and brain. It also excites me to refine the way of thinking, reformulating and finally getting the appropriate things. This is not what NN wanted but we wanted in the first place in our subconcious minds. We wanted it but never could express it until the NN helped us. But we need to go to the correct doctor (architecture) for appropriate treatment. The real difference is that we can teach the doctor this time, considering the architecture is capable of learning the things in our mind. With NN we are the one who actually learns. Interesting!
+
+# Too much Free time!
+
+Do a lot of planning for free time in the scheduled time like submission, exam or other duties. After the pressure is gone so does the planning and thoughts. This story is repeating over and over. The cycle must be stopped as it is not contributing to learning or growing. The question is how?
+
+I think, I need to stop planning exhaustively rather take is slowly. Because the exhaustively planning continues the pressure I was initially in, which doesn't help in our pressure relief and effectively hinders the brain. So, to break the cycle first stop planning for the off time.
+
+But, but, I want to learn and grow! How! Well, stop planning doesn't means stop learning. What I think works for me is instant action. Peak a topic and go ahead. No planning! Just focus on learning. Its the time you spend on studying helps to learn not the planning. As simple as this. To summarize, take zero pressure and focus on learning.
 
 # You are Welcome!
 

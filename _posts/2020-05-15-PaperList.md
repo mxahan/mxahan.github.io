@@ -20,3 +20,5 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Hierarchical Softmax: Tree structure from root to the word
   - Negative Sampling: Adds with target and penalize for noise words. Noise Contrastive Estimation.
   - Subsampling of Frequent words.
+
+1. Wang, Yuxuan, R. J. Skerry-Ryan, Daisy Stanton, Yonghui Wu, Ron J. Weiss, Navdeep Jaitly, Zongheng Yang et al. "Tacotron: Towards end-to-end speech synthesis." arXiv preprint arXiv:1703.10135 (2017).
