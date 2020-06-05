@@ -22,3 +22,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Subsampling of Frequent words.
 
 1. Wang, Yuxuan, R. J. Skerry-Ryan, Daisy Stanton, Yonghui Wu, Ron J. Weiss, Navdeep Jaitly, Zongheng Yang et al. "Tacotron: Towards end-to-end speech synthesis." arXiv preprint arXiv:1703.10135 (2017).
+
+1. Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
+  - Knowledge distillation
+  - Training small network to mimic the large network.
+  - Train small network to learn the features and logits of the large network.
+  - Softmax, temperature and the MSE with the prediction
+  - Experimented with MNIST, speech and Specialist models.
