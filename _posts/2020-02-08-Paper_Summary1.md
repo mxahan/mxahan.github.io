@@ -10,6 +10,7 @@ Paper List
 - [Style Gan- Tero Karras et al 2018](#paper2)
 - [Style transfer - Xun Huang et al 2017](#paper3)
 - [Lottery ticket hypothesis - J. Frankel et al 2018](#paper4)
+- [Temporal 3D ConvNets](#paper5)
 
 
 
@@ -408,6 +409,77 @@ Different initialization gives different important weights. Given same initializ
 
 
 # Paper5
+Temporal 3D ConvNets:
+New Architecture and Transfer Learning for Video Classification [5]
+
+#### IMRAD
+
+Problems: Conv3d fails to capture long term relationships in video frames and over-parameterized! Dependencies on the optical-flow features.
+
+Propose net architecture (Motivated from cond2d DenseNet) for feature extraction in video action recognition. Notion of 3D temporal transition layer (TTL).
+
+Claim to be efficient representation, computational efficient and robust. Evaluated on three dataset: HMDB51, UCF101, Kinetics. (T3D)
+
+Additional contribution: Supervised transfer across architecture for weight initialization. (student teacher knowledge distillation).
+
+### Prior Arts
+Three related line of research: Video classification, temporal convNets, transfer learning.
+
+
+#### Argument and Assumption/ Context
+
+#### Problem statement
+
+#### contribution (Piece of Pie)
+Conv3D DenseNet with TTL for video AR. Cross architecture Knowledge distillation initialization for the AR from Image net. End2End training.
+
+#### Background
+Conv2D DenseNet, google Net,
+
+#### Approach and Experiments:
+
+Architecture:
+
+<img src ="https://d3i71xaburhd42.cloudfront.net/f5ce640bbb9d6417fd0853ed88a9e7b93d72910d/3-Figure1-1.png">
+Figure: Overall architecture [5] TTL with multiple temporal consideration. Denseblock is similar to 2d ConvNet but for 3D convnet.
+
+Transfer Leraning:
+  - Pretrained imagenet and random initialized conv3D net layers.
+  - Pass the considered frames throught imagenet and find average of 1024 points
+  - Pass the frames through conv3D architecture.
+  - 1 if the conv2D and Conv3d features are from *same video frames* else 0  (Different video frames) (matching pair): Unsupervised setting
+  - Train only the 3D convNet
+
+<img src = "https://d3i71xaburhd42.cloudfront.net/f5ce640bbb9d6417fd0853ed88a9e7b93d72910d/4-Figure2-1.png">
+Figure: Knowledge transfer from 2D Dense pre-trained imagenet to activity recognition. [5]
+
+Model depth increases accuracy!
+
+Experiments with multi frame resolutions.
+
+Pytorch and GPU implementation. Experiments with both the supervised transfer and train from scratch (Kinetics dataset).
+
+Comparison with 3D convnet based on inception and ResNet.
+
+#### Evaluations strengths and Weakness
+
+
+#### Results:
+State of the art performance using supervised pretraining.
+
+#### My thoughts
+
+Cross domain transfer! How long to pretrain! Parameters claim validation! Ablation study description! Frame rate and size dependency.
+
+#### Key ideas & Piece of Pie
+
+Cross domain transfer prtraining.
+
+#### Reference
+[5] Diba, Ali, Mohsen Fayyaz, Vivek Sharma, Amir Hossein Karami, Mohammad Mahdi Arzani, Rahman Yousefzadeh, and Luc Van Gool. "Temporal 3d convnets: New architecture and transfer learning for video classification." arXiv preprint arXiv:1711.08200 (2017).
+
+
+# Paper6
 #### IMRAD
 
 
