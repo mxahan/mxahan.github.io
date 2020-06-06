@@ -480,6 +480,42 @@ Cross domain transfer prtraining.
 
 
 # Paper6
+
+#### IMRAD
+
+
+### Prior Arts
+
+
+#### Argument and Assumption/ Context
+
+#### Problem statement
+
+#### contribution (Piece of Pie)
+
+#### Background
+
+#### Approach and Experiments:
+
+
+
+
+#### Evaluations strengths and Weakness
+
+
+#### Results:
+
+
+#### My thoughts
+
+#### Key ideas & Piece of Pie
+
+
+#### Reference
+
+
+# Paper7
+
 #### IMRAD
 
 
