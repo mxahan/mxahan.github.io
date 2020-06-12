@@ -58,4 +58,12 @@ Related to markov random field, Gibbs sampling, conditional random fields.
 
 # RBM
 
-Key reminders: Introducing probabilities in Hopfield network to get boltzman machine. Now one hidden layer makes it RBM with some restriction like no input-output direct connection or hidden-hidden connection. One single layer NN. 
+[Nice post](https://towardsdatascience.com/restricted-boltzmann-machines-simplified-eab1e5878976)
+[by invertor](https://www.csrc.ac.cn/upload/file/20170703/1499052743888438.pdf)
+
+Key reminders: Introducing probabilities in Hopfield network to get boltzman machine. Now one hidden layer makes it RBM with some restriction like no input-output direct connection or hidden-hidden connection. One single layer NN.
+
+Learning rule: Contrastive divergence (approximation of learning rule of (data - model))
+<img src = "https://miro.medium.com/proxy/1*cPYfytQ30HP-2rpe_NKqmg.png">
+
+[More cool demonstration](http://www.robots.ox.ac.uk/~ojw/files/NotesOnCD.pdf) for contrastive divergence.
