@@ -65,6 +65,7 @@ Be mindful of why you are reading it? Note the points of what you want to gain f
 
 A interesting point while reading to keep in subconcious mind that read and let your mind feel it. I can do it by reading and moving my eye from it to notes and write the words from mind about what I read between few and far.
 
+A personal target while reading the paper is to know and understand the equations in the context of the paper. I think this helps to narrow down the paper knowledge. 
 
 Look at the authors name, groups, affiliations, Previous works, PIs. Look at the conference/journal or publication platform for particular paper. Then start reading. My thoughts on approaching the paper to [critical review](https://drive.google.com/file/d/1ZtCiIMHxB-XXlwHbkXsm_uYBx7nPuW41/view?usp=sharing). Special thanks to [Professor Asif Salekin](https://asalekin.github.io/) for sharing his initial slides.
 

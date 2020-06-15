@@ -6,7 +6,7 @@ This blogs contains some of the commonly encountered terms in DL. Lets Move forw
 - [Collaborative Filter](#collaborative-filter)
 - [Boltzmann Machine](#boltzmann-machine)
 - [Restricted Boltzmann Machine](#RBM)
-
+- [Noise contrastive Estimation](#noise-contrastive-estimation)
 
 
 # Embedding
@@ -67,3 +67,6 @@ Learning rule: Contrastive divergence (approximation of learning rule of (data -
 <img src = "https://miro.medium.com/proxy/1*cPYfytQ30HP-2rpe_NKqmg.png">
 
 [More cool demonstration](http://www.robots.ox.ac.uk/~ojw/files/NotesOnCD.pdf) for contrastive divergence.
+
+# Noise Contrastive Estimation
+[original Paper](http://proceedings.mlr.press/v9/gutmann10a/gutmann10a.pdf)
