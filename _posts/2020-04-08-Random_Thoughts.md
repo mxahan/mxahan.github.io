@@ -65,7 +65,7 @@ Be mindful of why you are reading it? Note the points of what you want to gain f
 
 A interesting point while reading to keep in subconcious mind that read and let your mind feel it. I can do it by reading and moving my eye from it to notes and write the words from mind about what I read between few and far.
 
-A personal target while reading the paper is to know and understand the equations in the context of the paper. I think this helps to narrow down the paper knowledge. 
+A personal target while reading the paper is to know and understand the equations in the context of the paper. I think this helps to narrow down the paper knowledge.
 
 Look at the authors name, groups, affiliations, Previous works, PIs. Look at the conference/journal or publication platform for particular paper. Then start reading. My thoughts on approaching the paper to [critical review](https://drive.google.com/file/d/1ZtCiIMHxB-XXlwHbkXsm_uYBx7nPuW41/view?usp=sharing). Special thanks to [Professor Asif Salekin](https://asalekin.github.io/) for sharing his initial slides.
 
@@ -123,6 +123,10 @@ Do a lot of planning for free time in the scheduled time like submission, exam o
 I think, I need to stop planning exhaustively rather take is slowly. Because the exhaustively planning continues the pressure I was initially in, which doesn't help in our pressure relief and effectively hinders the brain. So, to break the cycle first stop planning for the off time.
 
 But, but, I want to learn and grow! How! Well, stop planning doesn't means stop learning. What I think works for me is instant action. Peak a (very important **a**, not more than one) topic and go ahead. No planning! Just focus on learning. Its the time you spend on studying helps to learn not the planning. As simple as this. To summarize, take zero pressure and focus on learning.
+
+# Paper Selection
+
+Read abstract and figures, equation. Be sure that whether you want to read it or not?
 
 # You are Welcome!
 
