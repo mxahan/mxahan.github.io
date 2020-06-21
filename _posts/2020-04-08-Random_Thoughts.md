@@ -124,9 +124,11 @@ I think, I need to stop planning exhaustively rather take is slowly. Because the
 
 But, but, I want to learn and grow! How! Well, stop planning doesn't means stop learning. What I think works for me is instant action. Peak a (very important **a**, not more than one) topic and go ahead. No planning! Just focus on learning. Its the time you spend on studying helps to learn not the planning. As simple as this. To summarize, take zero pressure and focus on learning.
 
-# Paper Selection
+# Paper Selection and May read
 
 Read abstract and figures, equation. Be sure that whether you want to read it or not?
+
+Two things to remember. Papers you may want to read and papers you must read. These distinction is important as the total approaches changes based on the objective. My most topics covered for the paper I must read. This section will touch the papers I may want to read.
 
 # You are Welcome!
 

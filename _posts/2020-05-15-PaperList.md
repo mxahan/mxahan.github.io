@@ -37,5 +37,6 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Graves, Alex, Greg Wayne, and Ivo Danihelka. "Neural turing machines." arXiv preprint arXiv:1410.5401 (2014).
 
 1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).
-  - D: Assign low energy to data distribution
-  - G: Sample data from the low energy by a parameterized function. 
+  - D: Assign low energy to data distribution (not normalized probabilities)
+  - G: Sample data from the low energy by a parameterized function.
+  - Convergence proof using hinge loss. 
