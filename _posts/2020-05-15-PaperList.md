@@ -39,4 +39,6 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).
   - D: Assign low energy to data distribution (not normalized probabilities)
   - G: Sample data from the low energy by a parameterized function.
-  - Convergence proof using hinge loss. 
+  - Convergence proof using hinge loss.
+
+1. Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." In Advances in neural information processing systems, pp. 5998-6008. 2017.
