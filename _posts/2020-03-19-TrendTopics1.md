@@ -16,6 +16,7 @@ So far In this writing I have covered
 - [Graph Neural Network](#graphnn)
 - [Energy Based Learning](#energy-based-learning)
 - [Video activity recognition](#video-activity-recognition)
+- [Multi-task Learning](#multitask-learning)
 
 # 1. Representation Learning
 ### Representation learning: A review and new perspective - (Bengio, Y. et al. 2014)
@@ -668,3 +669,49 @@ Some Dataset
 - Movie Querying
   - M-VAD and MPII-MD
   - Large scale movie description Challenges (LSMDC)
+
+# Multitask Learning
+
+[Summary blog by S. Ruder](https://ruder.io/multi-task/)
+
+Motivation:
+ - Representation sharing among **multiple related task** or interdependent task
+ - Multiple objective and act as regularization, provide better generalization (domain specific information in related task. )
+
+Two major ways:
+ - Hard parameter sharing
+    - Use shared hidden layers (usually conv) and task specific layers
+ - Soft parameter sharing
+    - Uses some distance loss between two layers of two different tasks.
+
+Benefits:
+ - Implicit Data augmentations
+ - Attention focusing: In case of noisy data
+ - Eavesdropping: Learn one task to perform another implicitly  
+ - Bias for Representation
+ - regularization
+
+Two main line of focus
+ - MTL in non-neural models
+  - Block sparse regularization: Apply some constraint on the task parameters. Usually form a matrix (each column- parameters for a task) and apply regularization on the parameters.
+  - Learning task relationship: Cluster the columns of the matrix earlier. And apply constraints/ regularization on the parameters.
+
+ - Deep Learning
+  - Deep relational network (Conv layers shared and FC are task specific). IBM, [link](https://arxiv.org/abs/1506.02117)
+  - Fully adaptive feature sharing: Evolving layers (good way to initialize). Baidu [link](https://arxiv.org/abs/1611.05377)
+  - Cross stitch network: Linear combination of layers from two task and follow on. CMU, [link](https://arxiv.org/pdf/1604.03539.pdf)
+  - Low supervision: Focus on task hierarchies in NLP
+  - Joint Multi-task model: Built on top of low supervision ideas. [link](https://arxiv.org/pdf/1611.01587.pdf)
+  - Weighting losses with uncertainty: Shared and then orthogonal tasks, weight the loss of multiple tasks together.  [link](https://arxiv.org/pdf/1705.07115.pdf)
+  - Tensor factorization, interesting. [link](https://arxiv.org/pdf/1605.06391.pdf)
+  - Sluice Network: combination of different mentioned method earlier. By S. ruder et al.
+
+Auxiliary tasks:
+  - Related task: Most MTL does it. Work of object detection of R. Girshick.
+  - Adversarial task!: Unsupervised domain adaptation, [link](https://arxiv.org/pdf/1409.7495.pdf)
+  - Hint: In NLP
+  - Focusing Attention: Classical by Caruana, 1998. 
+  - Quantization Smoothing
+  - Predicting input
+  - Future to present
+  - Representation learning
