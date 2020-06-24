@@ -5,6 +5,21 @@ First and foremost, Be honest, Be absolutely honest. Give credit. We never achie
 
 The second point, **Never doubt yourselves**, not even for a second, not even in the against largest possible odds. Leaves the negativity away. Don't listen to the negative thoughts or negative people. Stay close to the people who love or stay alone and continue to perform hard work, reading, research.
 
+Well, Ph. D. is necessary to be a good mainstream researcher. A very good writing by [Sebastian Ruder](https://ruder.io/). He pointed 10 important tips for Ph. D. students. To be precise,
+
+1. Read Broadly
+2. Work on two things
+3. Be Ambitious
+4. Collaborative
+5. Be Proactive
+6. Write a Blog
+7. Keep a source of Positive Energy
+8. Play to your strengths
+9. Intern or visit a university
+10. Play the long game
+
+[Details](https://ruder.io/10-tips-for-research-and-a-phd/)
+
 #### Know where you want to work
 
 #### Keep eye wide open (Don't be over-focused)
