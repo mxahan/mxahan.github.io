@@ -11,6 +11,7 @@ Paper List
 - [Style transfer - Xun Huang et al 2017](#paper3)
 - [Lottery ticket hypothesis - J. Frankel et al 2018](#paper4)
 - [Temporal 3D ConvNets](#paper5)
+- [Virtual Pooling](#paper6)
 
 
 
@@ -481,6 +482,55 @@ Cross domain transfer prtraining.
 
 # Paper6
 
+ViP: Virtual Pooling for Accelerating CNN-based Image Classification and Object Detection [6]
+
+#### IMRAD
+New pooling method. Computes only some of the filtered activation layers and interpolate the rest. Can be added with existing network. Provide error bound by taking the ViP layer.
+
+### Prior Arts
+CNN acceleration:
+ - Model compression
+ - CNN binarization or quantization
+ - Low rank approximation
+ - PerforatedCNNs (closest)
+
+#### Argument and Assumption/ Context
+Redundancy in spatial can be removed by taking some intermediate values and interpolating the rest. So less compute for the closest values. Compute values in fixed interval and interpolate the missing points in each filter output for each channel.
+
+#### Problem statement
+Improve PerforatedCNNs by removing data dependency. Can we leverage the spatial Redundancy in CNN channel?
+
+#### contribution (Piece of Pie)
+CNN computation reduction. Find only some intermediate values and linear interpolate the rest.
+#### Background
+
+#### Approach and Experiments:
+Algorithm for the ViP
+
+Experimented on
+ - CNN models: VGG, ResNet, All-CNN, Faster RCNN with VGG-16
+ - Three dataset
+ - Two hardware: Mobile and desktop
+ - Two visual learning tasks
+
+
+#### Evaluations strengths and Weakness
+
+So basically dropping one value after another. Does it work on smaller resolution when information in one line! Or low pass filtering over the masked channel!
+
+#### Results:
+Accuracy drops little and computational speed increases significantly.
+
+#### My thoughts
+
+#### Key ideas & Piece of Pie
+Low pass filter over masked ConV output channel works!
+
+#### Reference
+[6] Chen, Zhuo, Jiyuan Zhang, Ruizhou Ding, and Diana Marculescu. "Vip: Virtual pooling for accelerating cnn-based image classification and object detection." In The IEEE Winter Conference on Applications of Computer Vision, pp. 1180-1189. 2020.
+
+# Paper7
+
 #### IMRAD
 
 
@@ -514,7 +564,8 @@ Cross domain transfer prtraining.
 #### Reference
 
 
-# Paper7
+
+# Paper8
 
 #### IMRAD
 
