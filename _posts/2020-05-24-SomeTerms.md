@@ -70,3 +70,6 @@ Learning rule: Contrastive divergence (approximation of learning rule of (data -
 
 # Noise Contrastive Estimation
 [original Paper](http://proceedings.mlr.press/v9/gutmann10a/gutmann10a.pdf)
+
+
+# Model Fairness 
