@@ -44,3 +44,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." In Advances in neural information processing systems, pp. 5998-6008. 2017.
 
 1. Radford, Alec, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. "Improving language understanding by generative pre-training." (2018): 12.
+
+1. Denton, Emily L. "Unsupervised learning of disentangled representations from video." In Advances in neural information processing systems, pp. 4414-4423. 2017.
+  - Encoder-Decoder set up for the disentangled
+  - Hypothesis: Content (time invariant) and Pose (time variant)
+  - Two Encoders for the pose and content; Concatenate the output for single Decoder
+  - Introduce adversarial loss
+  - Video generation conditioned on context, and pose modeling via LSTM. 
