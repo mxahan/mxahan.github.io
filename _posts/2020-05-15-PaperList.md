@@ -50,4 +50,22 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Hypothesis: Content (time invariant) and Pose (time variant)
   - Two Encoders for the pose and content; Concatenate the output for single Decoder
   - Introduce adversarial loss
-  - Video generation conditioned on context, and pose modeling via LSTM. 
+  - Video generation conditioned on context, and pose modeling via LSTM.
+
+1. Lu, Jiasen, Vedanuj Goswami, Marcus Rohrbach, Devi Parikh, and Stefan Lee. "12-in-1: Multi-task vision and language representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10437-10446. 2020.
+  - MTL + Dynamic "stop and go" schedule.
+  - ViLBERT base architecture.
+
+1. Misra, Ishan, and Laurens van der Maaten. "Self-supervised learning of pretext-invariant representations." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6707-6717. 2020.
+  - Pretraining method
+  - Pretext learning with transformation invariant + data augmentation invariant
+  - Use contrastive learning (See NCE)
+      - Maximize MI
+  - Motivation from predicting video frames
+  - Experiment of jigsaw pretext learning
+  - Hypothesis: Representation of image and its transformation should be same
+  - Use different head for image and jigsaw counterpart of that particular image.
+      - Motivation for learning some extra things by different head network
+  - Noise Contrastive learning (contrast with other images)
+  - As two head so two component of contrastive loss. (One component to dampen memory update.)
+  - Implemented on ResNet
