@@ -69,3 +69,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Noise Contrastive learning (contrast with other images)
   - As two head so two component of contrastive loss. (One component to dampen memory update.)
   - Implemented on ResNet
+
+1. Zhang, Richard, Phillip Isola, and Alexei A. Efros. "Split-brain autoencoders: Unsupervised learning by cross-channel prediction." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1058-1067. 2017.
+  - Extension of autoencoders to cross channel prediction
+    - Predict one portion to other and vice versa + loss on full reconstruction.
+    - Two disjoint auto-encoders.
+  - Tried both the regression and classification loss
+
+1. Srinivas, Aravind, Michael Laskin, and Pieter Abbeel. "Curl: Contrastive unsupervised representations for reinforcement learning." arXiv preprint arXiv:2004.04136 (2020).
