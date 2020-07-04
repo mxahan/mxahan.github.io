@@ -86,4 +86,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Two transfers for each image and representation
   - Same origin image should be more similar than the others.
   - Contrastive (negative) examples are from image other than that.
-  - A nonlinear projection head followed by the representation helps. 
+  - A nonlinear projection head followed by the representation helps.
+
+1. Donahue, Jeff, Philipp Krähenbühl, and Trevor Darrell. "Adversarial feature learning." arXiv preprint arXiv:1605.09782 (2016).
+  - Bidirectional GAN
+  - Image to feats, random feats to image
+  - Discriminator takes (image, feats)
+  - Discriminator needs to distinguish between joint distribution of (image, encoded), and (generate image, random latent space).
+  - Making sure the both are the same distribution!!
+
+1. Brock, Andrew, Jeff Donahue, and Karen Simonyan. "Large scale gan training for high fidelity natural image synthesis." arXiv preprint arXiv:1809.11096 (2018).
+  - Training large GAN and report of what happened! and analysis!
+  - Regularization for spectral norm and orthogonality constraint. 
