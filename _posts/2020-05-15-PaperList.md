@@ -90,11 +90,14 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Donahue, Jeff, Philipp Krähenbühl, and Trevor Darrell. "Adversarial feature learning." arXiv preprint arXiv:1605.09782 (2016).
   - Bidirectional GAN
-  - Image to feats, random feats to image
+  - Image to feats (encoder), random feats to image (generator)
+  - Encoder and Generator works together to fool the discriminator.
   - Discriminator takes (image, feats)
   - Discriminator needs to distinguish between joint distribution of (image, encoded), and (generate image, random latent space).
   - Making sure the both are the same distribution!!
 
 1. Brock, Andrew, Jeff Donahue, and Karen Simonyan. "Large scale gan training for high fidelity natural image synthesis." arXiv preprint arXiv:1809.11096 (2018).
   - Training large GAN and report of what happened! and analysis!
-  - Regularization for spectral norm and orthogonality constraint. 
+  - Regularization for spectral norm and orthogonality constraint.
+
+1. Miyato, Takeru, Toshiki Kataoka, Masanori Koyama, and Yuichi Yoshida. "Spectral normalization for generative adversarial networks." arXiv preprint arXiv:1802.05957 (2018).
