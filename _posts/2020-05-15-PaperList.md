@@ -101,3 +101,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Regularization for spectral norm and orthogonality constraint.
 
 1. Miyato, Takeru, Toshiki Kataoka, Masanori Koyama, and Yuichi Yoshida. "Spectral normalization for generative adversarial networks." arXiv preprint arXiv:1802.05957 (2018).
+  - Spectral normalization to tackle instability in gan training
+  - Discriminator network in focus. (needs restriction)
+  - Spectral normalization
+    - Lipschitz constant of hyperparameters are bounded
+  - matrix/l2norm(matrix) [consult paper for the derivation]
+  - Power iteration for calculation of l2norm (Dominant singular value)
