@@ -82,7 +82,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
 
 1. Chen, Ting, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton. "A simple framework for contrastive learning of visual representations." arXiv preprint arXiv:2002.05709 (2020).
-  - Truely simple!
+  - Truely simple! (SimCLR)
   - Two transfers for each image and representation
   - Same origin image should be more similar than the others.
   - Contrastive (negative) examples are from image other than that.
@@ -107,3 +107,14 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Lipschitz constant of hyperparameters are bounded
   - matrix/l2norm(matrix) [consult paper for the derivation]
   - Power iteration for calculation of l2norm (Dominant singular value)
+
+1. Chen, Xi, Yan Duan, Rein Houthooft, John Schulman, Ilya Sutskever, and Pieter Abbeel. "Infogan: Interpretable representation learning by information maximizing generative adversarial nets." In Advances in neural information processing systems, pp. 2172-2180. 2016.
+  - New component head (Q) from discriminator to find disentanglement representation.
+  - Regularization upon the MI between (c, G(z,c)) [we want it to maximum]
+  - Proof of ELBO to Mutual information (4 and 5 equation of paper)
+    - QQ: ELBO always negative and MI positive so why we need this bound! ?
+  - Notion of Q [potential posterior of x to content c] (takes fake_image to get c)
+  - G takes content and RVs [G, Q works against G]
+  - look back at code to better understand it [c, from the fake_image]
+
+1. Furlanello, Tommaso, Zachary C. Lipton, Michael Tschannen, Laurent Itti, and Anima Anandkumar. "Born again neural networks." arXiv preprint arXiv:1805.04770 (2018).
