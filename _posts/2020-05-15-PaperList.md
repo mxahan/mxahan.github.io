@@ -118,3 +118,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - look back at code to better understand it [c, from the fake_image]
 
 1. Furlanello, Tommaso, Zachary C. Lipton, Michael Tschannen, Laurent Itti, and Anima Anandkumar. "Born again neural networks." arXiv preprint arXiv:1805.04770 (2018).
+  - Knowledge distillation and repeated Training
+    - Not focus on the compression but improvement.
+  - Teacher to student1 to student2 to student3 and so on.
+    - Finally ensemble the learned weights.
+  - Dark Knowledge! Knowledge about similar things [soft label of images.]
+    - Nutshell math: Total gradient is sum of teacher + students cross entropy gradient [logits differences], if teacher is not so confident then reduces the contribution as in first term.
+    - [section 3.2] two treatment to reason the effectiveness of the dark knowledge.
+  - Sequence of teaching selves.
