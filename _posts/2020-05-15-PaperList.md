@@ -126,3 +126,5 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Nutshell math: Total gradient is sum of teacher + students cross entropy gradient [logits differences], if teacher is not so confident then reduces the contribution as in first term.
     - [section 3.2] two treatment to reason the effectiveness of the dark knowledge.
   - Sequence of teaching selves.
+
+1. Fort, Stanislav, Huiyi Hu, and Balaji Lakshminarayanan. "Deep ensembles: A loss landscape perspective." arXiv preprint arXiv:1912.02757 (2019).
