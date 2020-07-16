@@ -97,11 +97,12 @@ If something is fundamentally wrong to you definitely dive deep and argue till e
 ## Job description of a researcher
 
 One pick up answer I usually provide when asked about my job is that I am a researcher and I research. I would stop here but my inner self do need a little more clarification regarding the job description of researcher. Well in broad term, researcher finds problem and comes up with solution. He must knows what going on around and how much the problem has been solved so far and where particularly he is planning to solve and work with. This puts researcher in a different spectrum than thinkers and engineers. Well researcher is a weighted sum of both. I think a researcher has the following quality
-  - He understand and stay updated to current and probable solutions in his domains
+  - He understand and stay updated to current and probable solutions in his domains [read and understand scientific papers]
   - He sorts out particular problem he is trying to overcome
   - He search surroundings and outreaches for potential solution candidates.
   - Logical Hypothesis, supporting experiments and honest conclusion.
   - He looks into new problem and study backgrounds -- go back to 1st point
+  - In between he always reads and looks for potential problems and solutions.
 
 # Life and Balance
 
