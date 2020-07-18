@@ -141,3 +141,13 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Meta learning, NAS
   - how does Scale decreased model work as backbone in object detection?
   - Propose scale permuted network
+
+1. Khetan, Ashish, and Zohar Karnin. "PruneNet: Channel Pruning via Global Importance." arXiv preprint arXiv:2005.11282 (2020).
+  - Importance score: Variance of input layer after filtering
+  - New regularization scheme.
+
+1. Chen, Mark, Alec Radford, Rewon Child, Jeff Wu, Heewoo Jun, Prafulla Dhariwal, David Luan, and Ilya Sutskever. "Generative Pretraining from Pixels."
+  - Image -> low resolution -> 1D transform -> Think like BERT or AR problem
+  - Pretrain (BERT/ AR) -> FineTune (classification)
+
+1. Airoldi, Edoardo M., David M. Blei, Stephen E. Fienberg, and Eric P. Xing. "Mixed membership stochastic blockmodels." Journal of machine learning research 9, no. Sep (2008): 1981-2014.
