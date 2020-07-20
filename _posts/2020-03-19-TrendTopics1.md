@@ -17,6 +17,7 @@ So far In this writing I have covered
 - [Energy Based Learning](#energy-based-learning)
 - [Video activity recognition](#video-activity-recognition)
 - [Multi-task Learning](#multitask-learning)
+- [Matrix Factorization](#matrix-factorization)
 
 # 1. Representation Learning
 ### Representation learning: A review and new perspective - (Bengio, Y. et al. 2014)
@@ -710,8 +711,18 @@ Auxiliary tasks:
   - Related task: Most MTL does it. Work of object detection of R. Girshick.
   - Adversarial task!: Unsupervised domain adaptation, [link](https://arxiv.org/pdf/1409.7495.pdf)
   - Hint: In NLP
-  - Focusing Attention: Classical by Caruana, 1998. 
+  - Focusing Attention: Classical by Caruana, 1998.
   - Quantization Smoothing
   - Predicting input
   - Future to present
   - Representation learning
+
+# Matrix Factorization
+
+As the name suggests, the MF is expressing metrix as multiplication of matrixes. R = PQ<sup>T</sup>
+Interesting understanding begins with the multiply of P and Q-transpose. Each row of R, *r<sub>j</sub>* is the projection of each row over the rows of the Q [<img src = "https://latex.codecogs.com/gif.latex?r_j=p_jQ^T">]. Means, transforming each row of the P matrix by the row of the Q matrix to new projection on the row of the Q matrix.
+
+The object of MF is straightforward, to reconstruct the original matrix. Sometimes the objective is modified with regularization and weighting loss on reconstruction. As we get two matrix its connected with the embedding concept. So basically P and Q are embedding of row and columns of  the original matrix R. [link](https://developers.google.com/machine-learning/recommendation/collaborative/matrix)
+
+Way to find P or Q matrix. [link](http://www.quuxlabs.com/blog/2010/09/matrix-factorization-a-simple-tutorial-and-implementation-in-python/)
+  - Gradient descent and update the values.
