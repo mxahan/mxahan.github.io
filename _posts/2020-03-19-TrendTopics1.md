@@ -726,3 +726,4 @@ The object of MF is straightforward, to reconstruct the original matrix. Sometim
 
 Way to find P or Q matrix. [link](http://www.quuxlabs.com/blog/2010/09/matrix-factorization-a-simple-tutorial-and-implementation-in-python/)
   - Gradient descent and update the values.
+  - Weighted Alternating least squares.

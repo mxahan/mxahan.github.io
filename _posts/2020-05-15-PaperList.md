@@ -151,3 +151,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Pretrain (BERT/ AR) -> FineTune (classification)
 
 1. Airoldi, Edoardo M., David M. Blei, Stephen E. Fienberg, and Eric P. Xing. "Mixed membership stochastic blockmodels." Journal of machine learning research 9, no. Sep (2008): 1981-2014.
+
+1. Tang, Danhang, Saurabh Singh, Philip A. Chou, Christian Hane, Mingsong Dou, Sean Fanello, Jonathan Taylor et al. "Deep Implicit Volume Compression." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1293-1303. 2020.
+  - Well, little off chart for me!
+  - Learnable compression via encoder Decoder
+  - Addresses the need for compressing and streaming UV coordinates
+    - Allows Image based compress
+    - End-2-end entropy encoding 
