@@ -157,4 +157,6 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Learnable compression via encoder Decoder
   - Addresses the need for compressing and streaming UV coordinates
     - Allows Image based compress
-    - End-2-end entropy encoding 
+    - End-2-end entropy encoding
+
+1. Shocher, Assaf, Yossi Gandelsman, Inbar Mosseri, Michal Yarom, Michal Irani, William T. Freeman, and Tali Dekel. "Semantic Pyramid for Image Generation." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 7457-7466. 2020.
