@@ -158,4 +158,5 @@ Two things to remember. Papers you may want to read and papers you must read. Th
 # You are Welcome!
 
 [The world from another point of view](https://www.youtube.com/watch?v=GNhlNSLQAFE)
-[Fun to imaginge](https://www.youtube.com/watch?v=P1ww1IXRfTA&t=323s)
+
+[Fun to imagine](https://www.youtube.com/watch?v=P1ww1IXRfTA&t=323s)
