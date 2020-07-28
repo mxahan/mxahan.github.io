@@ -159,6 +159,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Allows Image based compress
     - End-2-end entropy encoding
 
+1. Shuster, Kurt, Samuel Humeau, Hexiang Hu, Antoine Bordes, and Jason Weston. "Engaging image captioning via personality." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 12516-12526. 2019.
+  - Dataset for image captioning based on the mood
+  - Used sentence and image representation models.
+  - Network (Input1 : Image > ResNet152 (Freeze pretrained) > FFNN > 500 (o1), input2 : Personality trait > Linear Layer > 500 (o2), Input3 : Caption > Transformer > FFNN > 500 (o3), [{o1 add o1} dotProd {o3}] > score. )
+  - Two models :
+    - Retriever model (output any caption)
+    - Generative model (conditioned caption output)
+    - Image Encoder parts common (o1)
+
 1. Shocher, Assaf, Yossi Gandelsman, Inbar Mosseri, Michal Yarom, Michal Irani, William T. Freeman, and Tali Dekel. "Semantic Pyramid for Image Generation." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 7457-7466. 2020.
 
 1. Ganin, Yaroslav, and Victor Lempitsky. "Unsupervised domain adaptation by backpropagation." In International conference on machine learning, pp. 1180-1189. 2015.
