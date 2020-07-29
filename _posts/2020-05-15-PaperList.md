@@ -171,3 +171,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Shocher, Assaf, Yossi Gandelsman, Inbar Mosseri, Michal Yarom, Michal Irani, William T. Freeman, and Tali Dekel. "Semantic Pyramid for Image Generation." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 7457-7466. 2020.
 
 1. Ganin, Yaroslav, and Victor Lempitsky. "Unsupervised domain adaptation by backpropagation." In International conference on machine learning, pp. 1180-1189. 2015.
+  - Simple and great Idea [eq: 1,2,3].
+    - Input to features (*f*), features to task (*y, loss<sub>y</sub>*), features to domain classifier (*d, loss<sub>d</sub>*).
+    - *f* tries to minimize the *loss<sub>y</sub>* and maximize the *loss<sub>d</sub>*, and *d, y* tries to minimize their corresponding losses.
+  - Final task need to be related (y) but the source may be different (f tries to find common ground).
+  - Gradient Reversal layer to implement via SGD.
+  - Reduces h delta h distance [eq 13]
