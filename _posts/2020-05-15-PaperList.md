@@ -177,3 +177,5 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Final task need to be related (y) but the source may be different (f tries to find common ground).
   - Gradient Reversal layer to implement via SGD.
   - Reduces h delta h distance [eq 13]
+
+1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
