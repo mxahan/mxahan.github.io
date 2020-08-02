@@ -179,3 +179,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Reduces h delta h distance [eq 13]
 
 1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
+  - Multiphase pretraining (PT) for NLP- (Domain and task specific)
+  - Pretraining dataset selection strategy
+  - Key motivation: RoBERTa
+  - Experimented with DAPT, TAPT and DAPT+TAPT
