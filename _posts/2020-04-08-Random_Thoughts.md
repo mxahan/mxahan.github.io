@@ -159,4 +159,17 @@ Two things to remember. Papers you may want to read and papers you must read. Th
 
 [The world from another point of view](https://www.youtube.com/watch?v=GNhlNSLQAFE)
 
-[Fun to imagine](https://www.youtube.com/watch?v=P1ww1IXRfTA&t=323s)
+[Fun to imagine](https://www.youtube.com/watch?v=P1ww1IXRfTA&t=323s
+
+
+# Dear Random reviewer
+
+With due respect, you cant just tell that the authors have very limited knowledge of ...../ This shows your potential problem in understanding other human's potential (always infinite) and their writing ways. This indicates your probable sense of innate self-greatness, superior and arrogance in your personality which hinders someones' growth as human since it provides a false sense of thinking others as lower tier. I can definitely argue with my point with someone with having respect towards other, not with insolent people; Solely driven by egocentric motive.
+
+Regardless, I appreciate the material you provided (Most of them I already knew) and you clearly wrote that I didn't know them (come on, respect others! You never know how long did I spent over the same PDF to grasp the point of the writers). Please be respectful to others. Rejection is fine, we reject lots of works due to some flow. We reject to encourage the researchers to execute better research, not to stop them from research. Please do understand the difference between the rejection of work and discouragement towards researchers to do some work. I hope the reviewer gets better at his wording with respect to fellow researchers, to make the world a better place all together.  
+
+Whatever, I still believe there should be some moderator in journal committee to appeach the false comments (also harsh) provided by the reviews to reevaluate before reaching out to the original authors. I will not stop or in any sense stumbles towards my path of researching. I will continue to read more and express my points in a clear way in the next time. Thank you reviewer for making me understand the existence of narcissist people among our community. Hope someone one day will make you look the world in a better way and help you to realize that we should respect others.
+
+To reverberate, I'm not really bother by the rejection of paper, I am disappointed with the reason and your wording for rejection. It's like you seems to have an angry frustrated time with your beloved ones and put it out to other researchers. Please be respectful next time. We researcher should be better man before being a researcher. Hope you better word your points next time and please do read the whole article and try to get the overall picture before actually make a comments. 
+
+PEACH.
