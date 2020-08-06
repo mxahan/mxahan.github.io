@@ -169,6 +169,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Image Encoder parts common (o1)
 
 1. Shocher, Assaf, Yossi Gandelsman, Inbar Mosseri, Michal Yarom, Michal Irani, William T. Freeman, and Tali Dekel. "Semantic Pyramid for Image Generation." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 7457-7466. 2020.
+  - architecture is crucial. [Figure 3]
+  - Loss function {adversarial loss + reconstruction loss(masked area) + diversity loss}
+  - Different application [especially image re-painting]
+  - inverting deep features and deep features for image manipulation
+  - Hierarchical generator setup.
 
 1. Ganin, Yaroslav, and Victor Lempitsky. "Unsupervised domain adaptation by backpropagation." In International conference on machine learning, pp. 1180-1189. 2015.
   - Simple and great Idea [eq: 1,2,3].
@@ -183,3 +188,5 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Pretraining dataset selection strategy
   - Key motivation: RoBERTa
   - Experimented with DAPT, TAPT and DAPT+TAPT
+
+1. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
