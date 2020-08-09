@@ -190,3 +190,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Experimented with DAPT, TAPT and DAPT+TAPT
 
 1. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
+  - Interesting way to improve the Classifier
+  - (labeled data) -> Build classifier (T) -> (predict unlabeled data) -> Train Student using both labeled + model predicted unlabeled data. Repeat.. [algo 1]
+  - Introduce noise for both T and S.
+    - Data noise, model noise (dropout)
+
+1. Park, Taesung, Alexei A. Efros, Richard Zhang, and Jun-Yan Zhu. "Contrastive Learning for Unpaired Image-to-Image Translation." arXiv preprint arXiv:2007.15651 (2020).
