@@ -196,6 +196,8 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Data noise, model noise (dropout)
 
 1. Park, Taesung, Alexei A. Efros, Richard Zhang, and Jun-Yan Zhu. "Contrastive Learning for Unpaired Image-to-Image Translation." arXiv preprint arXiv:2007.15651 (2020).
-- Contrastive loss (Same patch of input - output are +ve and rest of the patches are -ve example)
-- Trains the encoder parts more! (Fig 1, 2) ; Decoders train only on adversarial losses.
-- Contribution in loss (SimCLR) kinda motivation 
+  - Contrastive loss (Same patch of input - output are +ve and rest of the patches are -ve example)
+  - Trains the encoder parts more! (Fig 1, 2) ; Decoders train only on adversarial losses.
+  - Contribution in loss (SimCLR) kinda motivation
+
+1. Berthelot, David, Peyman Milanfar, and Ian Goodfellow. "Creating High Resolution Images with a Latent Adversarial Generator." arXiv preprint arXiv:2003.02365 (2020).
