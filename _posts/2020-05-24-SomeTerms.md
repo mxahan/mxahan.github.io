@@ -7,7 +7,7 @@ This blogs contains some of the commonly encountered terms in DL. Lets Move forw
 - [Boltzmann Machine](#boltzmann-machine)
 - [Restricted Boltzmann Machine](#RBM)
 - [Noise contrastive Estimation](#noise-contrastive-estimation)
-
+- [Active Learning](#active-learning)
 
 # Embedding
 
@@ -73,3 +73,5 @@ Learning rule: Contrastive divergence (approximation of learning rule of (data -
 
 
 # Model Fairness 
+
+# Active Learning

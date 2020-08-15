@@ -201,3 +201,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Contribution in loss (SimCLR) kinda motivation
 
 1. Berthelot, David, Peyman Milanfar, and Ian Goodfellow. "Creating High Resolution Images with a Latent Adversarial Generator." arXiv preprint arXiv:2003.02365 (2020).
+  - Close to super-resolution problem [but different as loss is perception loss.]
+    - When noise 0 we want the original image.
+  - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
+  - Gradient penalty loss (To ascertain 1-Lipschitz)
