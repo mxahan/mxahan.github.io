@@ -10,7 +10,11 @@ The part1 consists of 10 topics, this is continuation covering some other intere
 
 - [Collaborative Filtering](#collaborative-filtering)
 - [Metric Learning](#metric-learning)
-
+- [Federated Learning](#federated-learning)
 # Collaborative Filtering
 
-# Metric Learning 
+# Metric Learning
+
+
+# Federated Learning
+[Nice Introduction](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html) 
