@@ -1,6 +1,6 @@
 # Introduction
 
-This blog contains prospective job opportunities in different ML and AI research group. I will most summarize their necessary skill required by the company and the name of their corresponding groups. In some cases I will explore and share the groups work to get more into it. Well, lets start. They are mostly selected and chose from the linkedin, glassdoor advertisement and job openings.
+This blog contains prospective job / Internship / Collaboration opportunities in different ML and AI research group. I will most summarize their necessary skill required by the company and the name of their corresponding groups. In some cases I will explore and share the groups work to get more into it. Well, lets start. They are mostly selected and chose from the linkedin, glassdoor advertisement and job openings.
 
 **Disclaimer:** I will only note the parts interesting to me from a particular research group. Definitely there are more opportunities in the names I will put in my radar.
 
@@ -15,6 +15,11 @@ Qual: Python, Linux, DL frameworks, Attention based NLP model, statistical learn
 
 Note: Relatively new labs since mid 2020. [May need check time to time for the updates]
 
+##### Data and Applied sciences
+
+Options: apply ML with Microsoft devices,
+
+Qual: Ph. D. student.,  SQL, Hadoop, python, Perl, C#, statistical learning,
 
 ### Allen Institute for AI
 
@@ -39,3 +44,22 @@ Options: Recommendation system and ML
 Qual: Python, DL frameworks, Publication
 
 Note: Why they put on that the employee needs to communicate research group in China?!
+
+### Baidu research
+
+[Website](http://research.baidu.com/)
+
+##### Perception / Sensor Calibration
+
+Options: ML / DL visual recognition task.
+
+Qual: python, C++, pytorch, tf, caffe(2), MXNet, CUDA/OpenCL, Lidar, camera, radar
+
+
+### Apple
+
+##### ML Researcher, Machine Intelligence
+
+##### Object Tracking
+
+##### Perception
