@@ -217,4 +217,18 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Under Construction
 
 1. Guo, Daniel, Bernardo Avila Pires, Bilal Piot, Jean-bastien Grill, Florent Altché, Rémi Munos, and Mohammad Gheshlaghi Azar. "Bootstrap Latent-Predictive Representations for Multitask Reinforcement Learning." arXiv preprint arXiv:2004.14646 (2020).
+  - Notation Caution. Representation learning [latent space for observe and history]
+  - States to future latent observation to future state.
+  - Latent embedding of history.
+  - Alternative for Deep RL
+  - Experiments
+    - DMLab-30
+    - Compared for PopArt-IMPALA (RNN) with DRAW, Pixel-control, Contrastive predictive control.
+  - Partially observable environments and Predictive representation.
+  - Learn agent state by predictive representation.
+  - RNN compresses history from the observations and actions; History as input for new decision making
+  - Interesting section 3!
+
+
+1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
   - Under Construction
