@@ -214,7 +214,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - All about architecture. [encoder, projection, predictor and loss function]
 
 1. Caron, Mathilde, Piotr Bojanowski, Armand Joulin, and Matthijs Douze. "Deep clustering for unsupervised learning of visual features." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 132-149. 2018.
-  - Under Construction
+  - Cluster Deep features and make them pseudo labels. [fig 1]
+  - Cluster (k-means) for training CNN [Avoid trivial solution of all zeros!]
+  - Motivation from Unsupervised feature learning, self-supervised learning, generative model
+  - [More](https://github.com/facebookresearch/deepcluster)
 
 1. Guo, Daniel, Bernardo Avila Pires, Bilal Piot, Jean-bastien Grill, Florent Altché, Rémi Munos, and Mohammad Gheshlaghi Azar. "Bootstrap Latent-Predictive Representations for Multitask Reinforcement Learning." arXiv preprint arXiv:2004.14646 (2020).
   - Notation Caution. Representation learning [latent space for observe and history]
@@ -229,6 +232,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - RNN compresses history from the observations and actions; History as input for new decision making
   - Interesting section 3!
 
-
 1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
   - Under Construction
+
+1. Liu, Yinhan, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. "Roberta: A robustly optimized bert pretraining approach." arXiv preprint arXiv:1907.11692 (2019).
+  - Under Construction
+
+2. Radford, Alec, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. "Language models are unsupervised multitask learners." OpenAI Blog 1, no. 8 (2019): 9.
+  - Under construction

@@ -68,10 +68,24 @@ Learning rule: Contrastive divergence (approximation of learning rule of (data -
 
 [More cool demonstration](http://www.robots.ox.ac.uk/~ojw/files/NotesOnCD.pdf) for contrastive divergence.
 
+# Learning Vector Quantization
+
+Fairly simple Idea. [Notes](https://towardsdatascience.com/learning-vector-quantization-ed825f8c807d)
+
+Its a prototype-based learning method (Representation).  
+
+- Create Mean to initialize the vector for each class as initial representation.
+- Find Distance for each example
+  - Update only for the closest prototype (representation) by some distance metrics.
+  - If matches with original class (nearest to the actual class of representation) update the representation to go near the example
+  - If not agrees than the representation is updated to move away from it.
+  - Repeat for each examples to complete epoch1
+
+
 # Noise Contrastive Estimation
 [original Paper](http://proceedings.mlr.press/v9/gutmann10a/gutmann10a.pdf)
 
 
-# Model Fairness 
+# Model Fairness
 
 # Active Learning
