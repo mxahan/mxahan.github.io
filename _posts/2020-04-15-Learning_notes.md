@@ -6,6 +6,8 @@
 
 This blog contains some of the stuffs I have learnt and learning. I want to put them in one place for my personal references and call backs. This blog mostly contains the very basics item and stairs to the complex item. I will be putting the basic things with a probable next steps with basics. For data-science related development please follow my other github repositories.  
 
+I am also planning to expand the notes by putting some of the common stuffs that bugs me. Lets kill the bug!
+
 
 ## Docker
 
@@ -118,3 +120,32 @@ Ask Question Before you Learn. Search the right question.
 ## Github
 
 ## MarkDown
+
+## Python Super
+
+The first thing in my comes is class on top of class and class inheritance. [link](https://realpython.com/python-super/)
+
+As example talks best in coding
+```
+%python
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * self.length + 2 * self.width
+
+class Square(Rectangle):
+    def __init__(self, length):
+        super(Square, self).__init__(length, length) % same as super().__init__(...)
+```
+
+Here, Square class is an instance of Rectangle class by making the length equals [Square(Rectangle) define instances]. The super makes the square a new super class for future references. **The super(...) allows to call the method of superclass (rectangle) in the subclass (square).**
+
+We can inherit multiple classes and their methods.   
+
+[Fun with super](https://www.programiz.com/python-programming/methods/built-in/super)
