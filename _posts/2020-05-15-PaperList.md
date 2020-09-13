@@ -41,7 +41,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - G: Sample data from the low energy by a parameterized function.
   - Convergence proof using hinge loss.
 
-1. Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." In Advances in neural information processing systems, pp. 5998-6008. 2017.
+1. ani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." In Advances in neural information processing systems, pp. 5998-6008. 2017.
 
 1. Radford, Alec, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. "Improving language understanding by generative pre-training." (2018): 12.
   - GPT paper
@@ -233,10 +233,22 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Interesting section 3!
 
 1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
-  - Under Construction
+  - Multi scale atrous CNN for Semantic image segmentation & modified ASPP
+  - Enlarge Field-of-View
+  - Removed DenseCRF
+  - Dataset: PASCAL, VOC 2012
+  - All 3x3 with different rate
+  - Related works: Context Module!
 
 1. Liu, Yinhan, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. "Roberta: A robustly optimized bert pretraining approach." arXiv preprint arXiv:1907.11692 (2019).
-  - Under Construction
+  - Aim the undertrained issue of BERT + Some improvement both in dataset and hyperparameters [Pretraining]
+  - BERT decision choice + novel dataset + better accuracy
+  - Different training strategy [section 3]
+    -  Dynamic masking while training
+    - Full sequence NSP loss
+    - Large mini batch
+    - Bye level BPE
+    - {Combination of all this is RoBERTa}
 
 1. Radford, Alec, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. "Language models are unsupervised multitask learners." OpenAI Blog 1, no. 8 (2019): 9.
   - Under construction
