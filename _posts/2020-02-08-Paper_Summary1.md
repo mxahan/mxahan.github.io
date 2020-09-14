@@ -12,7 +12,7 @@ Paper List
 - [Lottery ticket hypothesis - J. Frankel et al 2018](#paper4)
 - [Temporal 3D ConvNets](#paper5)
 - [Virtual Pooling](#paper6)
-
+- [VitaMon](#paper7)
 
 
 # Paper1
@@ -530,6 +530,9 @@ Low pass filter over masked ConV output channel works!
 [6] Chen, Zhuo, Jiyuan Zhang, Ruizhou Ding, and Diana Marculescu. "Vip: Virtual pooling for accelerating cnn-based image classification and object detection." In The IEEE Winter Conference on Applications of Computer Vision, pp. 1180-1189. 2020.
 
 # Paper7
+[link](https://docs.google.com/presentation/d/1w3h0b1xqa4SBKISvUv4Yu_9kmAxiyG8j15_vwC9TEHI/edit?usp=sharing)
+
+# Paper8
 
 #### IMRAD
 
@@ -565,7 +568,7 @@ Low pass filter over masked ConV output channel works!
 
 
 
-# Paper8
+# Paper9
 
 #### IMRAD
 
