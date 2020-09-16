@@ -42,6 +42,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Convergence proof using hinge loss.
 
 1. ani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." In Advances in neural information processing systems, pp. 5998-6008. 2017.
+  - Under construction
 
 1. Radford, Alec, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. "Improving language understanding by generative pre-training." (2018): 12.
   - GPT paper
@@ -257,3 +258,12 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Coined and proposed the Federated Learning methods
   - Decouple model training and data [privacy and security]
   - Unbalanced and IID data works best [experimented on 4 dataset]
+
+1. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
+  - Under construction
+
+1. Roy, Aurko, Mohammad Saffar, Ashish Vaswani, and David Grangier. "Efficient content-based sparse attention with routing transformers." arXiv preprint arXiv:2003.05997 (2020).
+  - Under construction
+
+1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
+  - Under construction
