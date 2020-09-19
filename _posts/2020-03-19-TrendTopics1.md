@@ -484,6 +484,7 @@ TL-DR: Old ideas from Yan Lecun's. The main point concerns about ranking the neu
 
 Not Popular yet because pain of implemenation, Unstability of ranking method and some genius peoples unwillingness to share.
 
+
 ##### Some keypoints with reference
 - For CNN the deeper the layer the more it gets pruned [paper from Nvidia](https://arxiv.org/pdf/1611.06440.pdf). Pruning the entire filter. Pruning in each filter or remove some filters entirely. Pruning works better in case of transfer learning.
 
@@ -494,6 +495,16 @@ Not Popular yet because pain of implemenation, Unstability of ranking method and
 - Formalize the combinatorial optimization problem. <img src = "https://latex.codecogs.com/gif.latex?min_w|\mathcal{C(D|W')-C(D|W')}|s.t.\mathcal{||W'||_0}<=B">. Where B is subset of weights. This introduces the notion of loss function in pruning to provide more stable results. [paper from NVIDIA](https://arxiv.org/pdf/1611.06440.pdf)
   - Oracle Pruning: Consider removing each filter and observe the effect. They come up with a Ranking method based on first order Taylor expansion of the cost function. Two subsequent point differ by presence of a filter. The ranking of a particular filer h can be expressed as
   <img src = "https://latex.codecogs.com/gif.latex?\Theta_{TE}(h_i)=|\Delta\mathcal{C}(h_i)|=|\Delta\mathcal{C(D,}h_i)-\frac{\delta\mathcal{C}}{\delta h_i}h_i-\Delta\mathcal{C(D,}h_i)|=|\frac{\delta\mathcal{C}}{\delta h_i}h_i|"> and <img src = "https://latex.codecogs.com/gif.latex?\Theta_{TE}(z_l^{(k)})=|\frac{1}{M}\sum_m\frac{\delta C}{\delta z_{l,m}^{(k)}}z_{l,m}^{(k)}|">. This would provide the rank of the layer after L2 norm.
+
+
+  Another way to reduce memory is the Network quantization. [more](https://towardsdatascience.com/machine-learning-models-compression-and-quantization-simplified-a302ddf326f2). Two general steps
+  - Group similar weight values and assign centroid value to all of them
+  - Group their gradients and put a common value then update the group weights.
+
+
+  <img src="https://miro.medium.com/max/483/1*hqJqvVaSH-E5dSGqRCrgzg.jpeg">
+
+  Figure: Quantization simplified. [Source](https://towardsdatascience.com/machine-learning-models-compression-and-quantization-simplified-a302ddf326f2).
 
 # GraphNN
 
