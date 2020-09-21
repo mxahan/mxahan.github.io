@@ -252,7 +252,8 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Full sequence NSP loss
     - Large mini batch
     - Bye level BPE
-    - {Combination of all this is RoBERTa}
+    - {Combination of all this is RoBERTa
+    - [Full](https://docs.google.com/presentation/d/1xva3OiNm5qRG82stmkKpyGIIEt8KRZXWW04zIOkivUs/edit?usp=sharing)
 
 1. Radford, Alec, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. "Language models are unsupervised multitask learners." OpenAI Blog 1, no. 8 (2019): 9.
   - Under construction

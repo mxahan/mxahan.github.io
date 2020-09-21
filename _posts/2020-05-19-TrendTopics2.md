@@ -11,6 +11,7 @@ The part1 consists of 10 topics, this is continuation covering some other intere
 - [Collaborative Filtering](#collaborative-filtering)
 - [Metric Learning](#metric-learning)
 - [Federated Learning](#federated-learning)
+- [BERT](#bert)
 # Collaborative Filtering
 
 # Metric Learning
@@ -38,3 +39,50 @@ where rate, r is an positive integer and r = 1 means regular convolution. Allow 
 #### Atrous Spatial Pyramid Pooling (ASPP)
 
 #### Fully connected Conditional Random Field (CRF)
+
+
+# BERT
+
+one of the great post and [motivation](http://jalammar.github.io/illustrated-bert/).
+
+Two most important point
+  - Semi supervised training (Wiki, large language) [MLM, NSP]
+  - Supervised data specific training (QA, ....)
+
+BERT build on
+  - [Semi supervised sequence learning](https://arxiv.org/abs/1511.01432) - Fine tuning concept
+  - [ELMo](https://arxiv.org/abs/1802.05365) - Contextual embedding
+  - [ULM-Fit](https://arxiv.org/abs/1801.06146) - Fine tuning and **tx learning**
+  - OpenAI transformer
+  - Transformer (Vaswani et al)
+
+Model Architecture:
+  - BERT base
+  - BERT large
+
+Need to have ideas regarding the word embedding and contextual word embedding.
+
+Transformer: Better long term dependencies than LSTMs. Encoder-decoder for MT. But how to use it for sentence?
+
+OpenAI transformer: Decoder of transformer only!! Predict next words 7000 books for training. But unidirectional?
+
+BERT: Bidirectional, used encoders!!
+
+Pretraining:
+  - MLM: Mask to rescue from word seeing itself in bidirectional setting. 15% words masked in their approach.
+  - Two sentence task:
+
+Down-streaming Task:
+  - sentence classification
+    - Single
+    - Pair
+  - QA tasks
+  - Sentence tagging
+
+BERT for feature Extraction:
+  - Contextual word embedding
+  - Named entity recognition
+
+[another summary](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
+
+[original release](https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html)
