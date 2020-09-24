@@ -476,13 +476,14 @@ ROI pooling layers converts each ROI (regardless of the input feature map or pro
 
 
 # NN prune
+
 [detail](https://towardsdatascience.com/pruning-deep-neural-network-56cae1ec5505)
 TL-DR: original inspiration comes from biological synaptic pruning. In neural network, rank the individual weights and drop p% by setting smaller p's to zero. This is **weight pruning**. The neurons can also be dropped by dropping the neuron itself. This is done by deleting a whole column of weight matrix based on their L2 norms.
 
 [detail](https://jacobgil.github.io/deeplearning/pruning-deep-learning)
 TL-DR: Old ideas from Yan Lecun's. The main point concerns about ranking the neurons. The ranking is usually done by L1/L2 norm of weights, activation, or zero occurance of neuron in validation time, etc. After pruning the NN performance drops which is recovered by retraining iteratively.
 
-Not Popular yet because pain of implemenation, Unstability of ranking method and some genius peoples unwillingness to share.
+Not Popular yet because pain of implemenation, Unstability of ranking method and some genius people's unwillingness to share.
 
 
 ##### Some keypoints with reference
