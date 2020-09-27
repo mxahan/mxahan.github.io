@@ -21,6 +21,10 @@ Options: apply ML with Microsoft devices,
 
 Qual: Ph. D. student.,  SQL, Hadoop, python, Perl, C#, statistical learning,
 
+##### Brain-inspired Computing Lab
+Design and implement algo inspired from congitive and systems neuroscience
+MXNet.
+
 ### Allen Institute for AI
 
 [Website](https://allenai.org/). Go to the research tab to find their papers and resent projects.
@@ -60,6 +64,27 @@ Qual: python, C++, pytorch, tf, caffe(2), MXNet, CUDA/OpenCL, Lidar, camera, rad
 
 ##### ML Researcher, Machine Intelligence
 
+##### AI/ML pittsburgh, PA, US.
+Qual: NLP, Dynet, pytorch, tf, FairSeq, Marian, OpenNMT, Sockeye, NLP toolkits.
+
 ##### Object Tracking
 
 ##### Perception
+
+### Amazon
+
+[website](https://www.amazon.science/)
+Speech and Language technology
+ASR, MT, NLU, ML, CV
+Human language technology
+
+Qual: Experience with NLP/MT, Deep learning MT/NLP, tensorflow, pytorch, MxNet, AWS technology stack, pyspark,
+
+
+ML, multi-object optimization,
+### January.ai
+ML interns
+
+
+### Norfolk Southern Corporation
+end2end ML, SQL, DL architecture familiarity
