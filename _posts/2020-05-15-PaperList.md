@@ -270,7 +270,23 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Under construction
 
 1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
-  - Under construction
+  - SwAV (online algorithm) [swapped assignments between multiple vies of same image]
+  - Contrastive learning, clustering
+  - Predict cluster from different representation, memory efficiency!
+  - 'code' consistency between image and its transformation {target}
+  - online code computation
+  - Features and codes are learnt online
+  - multi-crop: Smaller image with multiple views
+  - validation: ImageNet linear evaluation protocol
+  - Interested related work section
+  - Key motivation: Contrastive instance learning
+  - Partition constraint to avoid trivial solution 
 
 1. Yang, Zhilin, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R. Salakhutdinov, and Quoc V. Le. "Xlnet: Generalized autoregressive pretraining for language understanding." In Advances in neural information processing systems, pp. 5753-5763. 2019.
   - under construction
+
+1. Asano, Yuki M., Mandela Patrick, Christian Rupprecht, and Andrea Vedaldi. "Labelling unlabelled videos from scratch with multi-modal self-supervision." arXiv preprint arXiv:2006.13662 (2020).
+  - Under consideration
+
+1. Patrick, Mandela, Yuki M. Asano, Ruth Fong, João F. Henriques, Geoffrey Zweig, and Andrea Vedaldi. "Multi-modal self-supervision from generalized data transformations." arXiv preprint arXiv:2003.04298 (2020).
+  -
