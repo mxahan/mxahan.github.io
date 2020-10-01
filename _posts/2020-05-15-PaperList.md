@@ -280,7 +280,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - validation: ImageNet linear evaluation protocol
   - Interested related work section
   - Key motivation: Contrastive instance learning
-  - Partition constraint to avoid trivial solution 
+  - Partition constraint to avoid trivial solution
 
 1. Yang, Zhilin, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R. Salakhutdinov, and Quoc V. Le. "Xlnet: Generalized autoregressive pretraining for language understanding." In Advances in neural information processing systems, pp. 5753-5763. 2019.
   - under construction
@@ -289,4 +289,6 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Under consideration
 
 1. Patrick, Mandela, Yuki M. Asano, Ruth Fong, João F. Henriques, Geoffrey Zweig, and Andrea Vedaldi. "Multi-modal self-supervision from generalized data transformations." arXiv preprint arXiv:2003.04298 (2020).
+
+1. Khosla, Prannay, Piotr Teterwak, Chen Wang, Aaron Sarna, Yonglong Tian, Phillip Isola, Aaron Maschinot, Ce Liu, and Dilip Krishnan. "Supervised contrastive learning." arXiv preprint arXiv:2004.11362 (2020).
   -
