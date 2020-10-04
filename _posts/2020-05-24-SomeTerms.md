@@ -85,6 +85,22 @@ Its a prototype-based learning method (Representation).
 # Noise Contrastive Estimation
 [original Paper](http://proceedings.mlr.press/v9/gutmann10a/gutmann10a.pdf)
 
+## Contrastive loss:
+
+[link 1](https://towardsdatascience.com/contrastive-loss-explaned-159f2d4a87ec)
+The idea that same things (positive example) should stay close and negative examples should be in orthogonal position.
+- SimCLR ideas
+<img src = "https://files.speakerdeck.com/presentations/456108c05a1b416999213faeab0f652d/slide_23.jpg">
+
+[link 2](https://towardsdatascience.com/contrastive-loss-for-supervised-classification-224ae35692e7)
+
+[link 3](https://gombru.github.io/2019/04/03/ranking_loss/) Same ideas different applications.
+
+[initial paper with algorithm](http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf) with a simpler explanation [resource](https://medium.com/@maksym.bekuzarov/losses-explained-contrastive-loss-f8f57fe32246).
+
+[concise resource](https://mc.ai/contrasting-contrastive-loss-functions-2/)
+
+[Triplet loss training tricks](https://sites.icmc.usp.br/moacir/p17sibgrapi-tutorial/2017-SIBGRAPI_Tutorial-DLCV-Part2-Regression-Deep-Learning-Siamese_and_Triplet_Nets.pdf)
 
 # Model Fairness
 
