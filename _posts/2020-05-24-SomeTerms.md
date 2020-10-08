@@ -102,6 +102,14 @@ The idea that same things (positive example) should stay close and negative exam
 
 [Triplet loss training tricks](https://sites.icmc.usp.br/moacir/p17sibgrapi-tutorial/2017-SIBGRAPI_Tutorial-DLCV-Part2-Regression-Deep-Learning-Siamese_and_Triplet_Nets.pdf)
 
+[some loss function to formulate](https://towardsdatascience.com/contrasting-contrastive-loss-functions-3c13ca5f055e)
+  - Max margin losses
+  - Triplet loss
+  - Multi-class N-pair loss
+  - Supervised NT-Xent loss
+
+[visual product similarity - Cornell](https://www.cs.cornell.edu/~kb/publications/SIG15ProductNet.pdf)
+
 # Model Fairness
 
 # Active Learning
