@@ -303,3 +303,13 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Lee, Kwot Sin, Ngoc-Trung Tran, and Ngai-Man Cheung. "InfoMax-GAN: Improved Adversarial Image Generation via Information Maximization and Contrastive Learning." arXiv preprint arXiv:2007.04589 (2020).
 
 1. Chuang, Ching-Yao, Joshua Robinson, Lin Yen-Chen, Antonio Torralba, and Stefanie Jegelka. "Debiased contrastive learning." arXiv preprint arXiv:2007.00224 (2020).
+
+1. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
+
+1. He, Kaiming, Haoqi Fan, Yuxin Wu, Saining Xie, and Ross Girshick. "Momentum contrast for unsupervised visual representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9729-9738. 2020.
+
+1. Wang, Xiaolong, and Abhinav Gupta. "Unsupervised learning of visual representations using videos." In Proceedings of the IEEE international conference on computer vision, pp. 2794-2802. 2015.
+
+1. Misra, Ishan, C. Lawrence Zitnick, and Martial Hebert. "Shuffle and learn: unsupervised learning using temporal order verification." In European Conference on Computer Vision, pp. 527-544. Springer, Cham, 2016.
+
+1. Fernando, Basura, Hakan Bilen, Efstratios Gavves, and Stephen Gould. "Self-supervised video representation learning with odd-one-out networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3636-3645. 2017.

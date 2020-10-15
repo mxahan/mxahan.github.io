@@ -12,6 +12,9 @@ The part1 consists of 10 topics, this is continuation covering some other intere
 - [Metric Learning](#metric-learning)
 - [Federated Learning](#federated-learning)
 - [BERT](#bert)
+- [Self-supervision](#self-supervision)
+
+
 # Collaborative Filtering
 
 # Metric Learning
@@ -86,3 +89,11 @@ BERT for feature Extraction:
 [another summary](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 
 [original release](https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html)
+
+# Self Supervision
+
+[Best starting point](https://lilianweng.github.io/lil-log/2019/11/10/self-supervised-learning.html#contrastive-predictive-coding)
+
+[great paper collection](https://github.com/jason718/awesome-self-supervised-learning) Definitely check it out.
+
+Self-supervised task also named as pretext task. Before the final/downstream tasks.
