@@ -83,8 +83,6 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Srinivas, Aravind, Michael Laskin, and Pieter Abbeel. "Curl: Contrastive unsupervised representations for reinforcement learning." arXiv preprint arXiv:2004.04136 (2020).
 
-1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
-
 1. Chen, Ting, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton. "A simple framework for contrastive learning of visual representations." arXiv preprint arXiv:2002.05709 (2020).
   - Truely simple! (SimCLR)
   - Two transfers for each image and representation
@@ -334,8 +332,25 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Representation is the reward
     - TCN - a embedding
   - imitation learning
-  - PILQR for RL parts 
+  - PILQR for RL parts
+  - Huber-style loss
 
 1. Liu, Sicong, Junzhao Du, Anshumali Shrivastava, and Lin Zhong. "Privacy Adversarial Network: Representation Learning for Mobile Data Privacy." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 3, no. 4 (2019): 1-18.
   - presented in my course work instructed by my supervisor Dr. Nirmalya Roy
   - [link](https://docs.google.com/presentation/d/1OF7Y6yoIAuLVQ_OtV5kdCEXzCp3MRAzusg1o8k6kTvo/edit?usp=sharing)
+
+1. Qi, Di, Lin Su, Jia Song, Edward Cui, Taroon Bharti, and Arun Sacheti. "Imagebert: Cross-modal pre-training with large-scale weak-supervised image-text data." arXiv preprint arXiv:2001.07966 (2020).
+  - vision pre-training /cross modal pretraining
+  - New data collection (LAIT)
+  - pretraining (see the loss functions)
+    - Image/text from same context? (ITM)
+    - Missing pixel detection?
+    - Masked object Classification (MOC)
+    - Masked region feature regression (MRFR)
+    - Masked Language Models
+  - Fine tune Tasks
+    - Binary classification losses
+    - Multi-class classification losses
+    - Triplet loss
+  - Multistage pretraining
+  - Experimented with VQA and others. image language
