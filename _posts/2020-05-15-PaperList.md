@@ -28,6 +28,8 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
   - Knowledge distillation
+  - Distillation and the effect of temperature.
+    - section 2 and 2.1 are important
   - Training small network to mimic the large network.
   - Train small network to learn the features and logits of the large network.
   - Softmax, temperature and the MSE with the prediction
@@ -324,6 +326,21 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Fernando, Basura, Hakan Bilen, Efstratios Gavves, and Stephen Gould. "Self-supervised video representation learning with odd-one-out networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3636-3645. 2017.
 
 1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
+  - non-parametric classifier via feature representation
+  - Memory bank stores instance features (used for kNN classifier)
+    - Dimention reduction
+  - Experiments
+    - obj detect and image classification
+  - connect to
+    - selfsupervised learning (related works) and Metric learning (unsupervised fashion)
+    - NCE (to tackle class numbers) - [great idea, just contrast with everything else in E we get the classifier]
+  - instance-level discrimination, non-parametric classifier.
+    - compared with known example (non-param.)
+  -  interesting setup section 3
+    - representation -> class (image itself) (compare with instance) -> loss function (plays the key role to distinguish)
+    - NCE from memory bank
+    - Monte carlo sampling to get the all contrastive normalizing value for denominator
+    - proximal parameter to ensure the smoothness for the representations 
 
 1. Sermanet, Pierre, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine, and Google Brain. "Time-contrastive networks: Self-supervised learning from video." In 2018 IEEE International Conference on Robotics and Automation (ICRA), pp. 1134-1141. IEEE, 2018.
   - Multi view point [same times are same, different time frames are different]
