@@ -340,7 +340,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - representation -> class (image itself) (compare with instance) -> loss function (plays the key role to distinguish)
     - NCE from memory bank
     - Monte carlo sampling to get the all contrastive normalizing value for denominator
-    - proximal parameter to ensure the smoothness for the representations 
+    - proximal parameter to ensure the smoothness for the representations
 
 1. Sermanet, Pierre, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine, and Google Brain. "Time-contrastive networks: Self-supervised learning from video." In 2018 IEEE International Conference on Robotics and Automation (ICRA), pp. 1134-1141. IEEE, 2018.
   - Multi view point [same times are same, different time frames are different]
@@ -371,3 +371,14 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Triplet loss
   - Multistage pretraining
   - Experimented with VQA and others. image language
+
+1. Wang, Feng, Xiang Xiang, Jian Cheng, and Alan Loddon Yuille. "Normface: L2 hypersphere embedding for face verification." In Proceedings of the 25th ACM international conference on Multimedia, pp. 1041-1049. 2017.
+  - Training using normalization features.
+    - modification of softmax and optimize cosine losses
+    - Metric learning
+  - Research gap of necessity of normalization
+  - Four contributions?
+    - why cosine doesn't converge? buy normalized dot succeed.
+    - different loss option explore? why!!
+
+1. Hoffer, Elad, and Nir Ailon. "Deep metric learning using triplet network." In International Workshop on Similarity-Based Pattern Recognition, pp. 84-92. Springer, Cham, 2015.
