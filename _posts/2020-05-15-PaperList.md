@@ -382,3 +382,25 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - different loss option explore? why!!
 
 1. Hoffer, Elad, and Nir Ailon. "Deep metric learning using triplet network." In International Workshop on Similarity-Based Pattern Recognition, pp. 84-92. Springer, Cham, 2015.
+  - Triplet networks
+  - Experimented on the MNIST dataset.
+
+1. Gao, Chen, Ayush Saraf, Jia-Bin Huang, and Johannes Kopf. "Flow-edge Guided Video Completion." In European Conference on Computer Vision, pp. 713-729. Springer, Cham, 2020.
+  - Gradient domain processing
+  - Three steps
+    - Flow-Completion
+    - Temporal propagation
+    - Fusion
+  - Research Gap:  memory for 3D, flow edges in flow based methods,
+  - Contribution
+    - Piecewise-smooth flow completion
+    - non-local flow for obscure objects
+    - Gradient domain operation (gradient of color through NN)
+  - Architecture is everything
+  - DAVIS dataset
+  - Poisson reconstruction
+
+1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive multiview coding." arXiv preprint arXiv:1906.05849 (2019).
+  - Find the invariant representation
+  - Multiple view of objects
+  - Follow-up of Contrastive Predictive coding 
