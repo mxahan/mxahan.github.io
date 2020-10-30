@@ -402,5 +402,24 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive multiview coding." arXiv preprint arXiv:1906.05849 (2019).
   - Find the invariant representation
-  - Multiple view of objects
-  - Follow-up of Contrastive Predictive coding 
+  - Multiple view of objects (image) (CMC) - multisensor view or same object!!]
+    - Experiment: ImageNEt, STL-10, two views, DIV2K cropped images
+  - Follow-up of Contrastive Predictive coding (no RNN but more generalized)
+  - Compared with baseline: cross-view prediction!!
+  - Interesting math: Section 3 and experiment 4
+    - Mutual information lower bound Log(k = negative samples)- L<sub>contrastive</sub>
+    -  Memory bank implementation
+
+1. Hjelm, R. Devon, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachman, Adam Trischler, and Yoshua Bengio. "Learning deep representations by mutual information estimation and maximization." arXiv preprint arXiv:1808.06670 (2018).
+
+1. Wang, T. and Isola, P., 2020. Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere. arXiv preprint arXiv:2005.10242.
+  - How to contraint on these and they perform better? weighted loss
+    - Alignment (how close the positive features) [E<sub>pos</sub>[f(x)-f(y)]<sup>2</sup>]
+    - Uniformly [take all spaces in the hyperplane] [little complex but tangible 4.1.2]
+      - l_uniform loss definition [!!]
+      - Interpretation of 4.2 see our future paper !!
+  - cluster need to form spherical cap
+  - Theoretical metric for above two constraints??
+    - Congruous with CL
+    - gaussing RBF kernel e^{[f(x) -f(y)]^2} helps on uniform distribution achieving.
+  - Result figure-7 [interesting]
