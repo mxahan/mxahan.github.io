@@ -13,6 +13,7 @@ The part1 consists of 10 topics, this is continuation covering some other intere
 - [Federated Learning](#federated-learning)
 - [BERT](#bert)
 - [Self-supervision](#self-supervision)
+- [Divergence algorithm](#divergence-algorithm)
 
 
 # Collaborative Filtering
@@ -97,3 +98,7 @@ BERT for feature Extraction:
 [great paper collection](https://github.com/jason718/awesome-self-supervised-learning) Definitely check it out.
 
 Self-supervised task also named as pretext task. Before the final/downstream tasks.
+
+# Divergence Algorithm
+
+[contrastive divergence medium](https://medium.com/datatype/restricted-boltzmann-machine-a-complete-analysis-part-3-contrastive-divergence-algorithm-3d06bbebb10c)
