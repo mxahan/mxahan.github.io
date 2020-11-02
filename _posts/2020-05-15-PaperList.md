@@ -411,6 +411,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     -  Memory bank implementation
 
 1. Hjelm, R. Devon, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachman, Adam Trischler, and Yoshua Bengio. "Learning deep representations by mutual information estimation and maximization." arXiv preprint arXiv:1808.06670 (2018).
+  - locality of input knowledge and match prior distribution adversarially
+    - Maximize input and output MI
+  -
 
 1. Wang, T. and Isola, P., 2020. Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere. arXiv preprint arXiv:2005.10242.
   - How to contraint on these and they perform better? weighted loss
@@ -423,3 +426,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Congruous with CL
     - gaussing RBF kernel e^{[f(x) -f(y)]^2} helps on uniform distribution achieving.
   - Result figure-7 [interesting]
+
+1. Tishby, Naftali, and Noga Zaslavsky. "Deep learning and the information bottleneck principle." In 2015 IEEE Information Theory Workshop (ITW), pp. 1-5. IEEE, 2015.
+
+1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
+
+1. Kingma, Diederik P., and Max Welling. "Auto-encoding variational bayes." arXiv preprint arXiv:1312.6114 (2013).
