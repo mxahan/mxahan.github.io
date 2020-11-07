@@ -411,9 +411,12 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     -  Memory bank implementation
 
 1. Hjelm, R. Devon, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachman, Adam Trischler, and Yoshua Bengio. "Learning deep representations by mutual information estimation and maximization." arXiv preprint arXiv:1808.06670 (2018).
-  - locality of input knowledge and match prior distribution adversarially
+  - locality of input knowledge and match prior distribution adversarially (DeepInfoMax)
     - Maximize input and output MI
-  -
+  - Experimented on Images
+    - Compared with VAE, BiGAN, CPC
+  - Evaluate represenation by Neural Dependency Measures (NDM)
+  - [personal note](https://github.com/mxahan/PDFS_notes/blob/master/deepinfomax_paper.pdf)
 
 1. Wang, T. and Isola, P., 2020. Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere. arXiv preprint arXiv:2005.10242.
   - How to contraint on these and they perform better? weighted loss
@@ -432,3 +435,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
 
 1. Kingma, Diederik P., and Max Welling. "Auto-encoding variational bayes." arXiv preprint arXiv:1312.6114 (2013).
+
+1. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
+
+1. Gutmann, Michael, and Aapo Hyvärinen. "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models." In Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics, pp. 297-304. 2010.
