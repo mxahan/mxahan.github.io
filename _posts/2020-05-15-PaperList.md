@@ -36,6 +36,8 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Experimented with MNIST, speech and Specialist models.
 
 1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
+  - Metric learning and augmented memory network 
+  -
 
 1. Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate." arXiv preprint arXiv:1409.0473 (2014).
 
@@ -439,3 +441,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
 
 1. Gutmann, Michael, and Aapo Hyvärinen. "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models." In Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics, pp. 297-304. 2010.
+
+1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
+  - Sentence to hidden features to probability distribution.  
+  - Contextual visual representation
+  - LM architecture with additional voken objective (BERT objective + voken classification)
+  - Need revisit!
+
+1. Peters, Matthew E., Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. "Deep contextualized word representations." arXiv preprint arXiv:1802.05365 (2018).
