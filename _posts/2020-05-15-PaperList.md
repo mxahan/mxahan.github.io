@@ -36,7 +36,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Experimented with MNIST, speech and Specialist models.
 
 1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
-  - Metric learning and augmented memory network 
+  - Metric learning and augmented memory network
   -
 
 1. Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate." arXiv preprint arXiv:1409.0473 (2014).
@@ -307,6 +307,16 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Chuang, Ching-Yao, Joshua Robinson, Lin Yen-Chen, Antonio Torralba, and Stefanie Jegelka. "Debiased contrastive learning." arXiv preprint arXiv:2007.00224 (2020).
 
 1. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
+  - Predicting the future
+  - probabilistic (AR) contrastive loss!!
+    - in latent space
+  - Experiments on the speech, image, text and RL
+  - CPC (3 things)
+    - compression, autoregressive and NCE
+  - Energy based like setup
+  - Figure 4: about what they did!
+  - [more notes](https://github.com/mxahan/PDFS_notes/blob/master/cpc_2017.pdf)
+
 
 1. He, Kaiming, Haoqi Fan, Yuxin Wu, Saining Xie, and Ross Girshick. "Momentum contrast for unsupervised visual representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9729-9738. 2020.
   - Dynamic dictionary with MA encoder
