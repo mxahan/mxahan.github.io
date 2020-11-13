@@ -317,7 +317,6 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Figure 4: about what they did!
   - [more notes](https://github.com/mxahan/PDFS_notes/blob/master/cpc_2017.pdf)
 
-
 1. He, Kaiming, Haoqi Fan, Yuxin Wu, Saining Xie, and Ross Girshick. "Momentum contrast for unsupervised visual representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9729-9738. 2020.
   - Dynamic dictionary with MA encoder
   - (query) encoder and (key) momentum encoder.
@@ -348,7 +347,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - NCE (to tackle class numbers) - [great idea, just contrast with everything else in E we get the classifier]
   - instance-level discrimination, non-parametric classifier.
     - compared with known example (non-param.)
-  -  interesting setup section 3
+  - interesting setup section 3
     - representation -> class (image itself) (compare with instance) -> loss function (plays the key role to distinguish)
     - NCE from memory bank
     - Monte carlo sampling to get the all contrastive normalizing value for denominator
@@ -403,7 +402,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Flow-Completion
     - Temporal propagation
     - Fusion
-  - Research Gap:  memory for 3D, flow edges in flow based methods,
+  - Research Gap: memory for 3D, flow edges in flow based methods.
   - Contribution
     - Piecewise-smooth flow completion
     - non-local flow for obscure objects
@@ -459,3 +458,25 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Need revisit!
 
 1. Peters, Matthew E., Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. "Deep contextualized word representations." arXiv preprint arXiv:1802.05365 (2018).
+
+1. Tian, Yonglong, Chen Sun, Ben Poole, Dilip Krishnan, Cordelia Schmid, and Phillip Isola. "What makes for good views for contrastive learning." arXiv preprint arXiv:2005.10243 (2020).
+  - Multi-view in-variance
+  - What is invariant?? (shared information between views)
+  - balance to share the information we need in view!!
+  - Questions
+    - Knowing task what will be the view??!
+    - generate views to control the MI
+  - Maximize task related shared information, minimize nuisance variables. (InfoMin principle)
+  - Contributions (4 - method, representation and task-dependencies, ImageNet experimentation)
+  - Figure 1: summary.
+  - Optimal view encoder.
+    - Sufficient (careful notation overloaded! all info there), minimal sufficient (someinfo dropped), optimal representation (4.3)- only task specific information retrieved
+  - InfoMin Principle: views should have different background noise else min encoder reduces the nuisance variable info. (proposition 4.1 with constraints.)
+  - suggestion: Make contrastive learning hard
+  - Figure 2: interesting. [experiment - 4.2]
+  - Figure 3: U-shape MI curve.
+  - section 6: different views and info sharing.
+
+1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive representation distillation." arXiv preprint arXiv:1910.10699 (2019).
+
+1. Liang, Weixin, James Zou, and Zhou Yu. "Alice: Active learning with contrastive natural language explanations." arXiv preprint arXiv:2009.10259 (2020).

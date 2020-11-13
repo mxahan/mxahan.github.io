@@ -127,3 +127,8 @@ Table: Summary [source paper]
 - MovileNet [v1](https://arxiv.org/abs/1704.04861) [v2](https://arxiv.org/abs/1801.04381)
 
 - SepNet[link](https://arxiv.org/abs/1706.03912)
+
+
+# Importance Sampling
+
+[medium link](https://towardsdatascience.com/importance-sampling-introduction-e76b2c32e744)

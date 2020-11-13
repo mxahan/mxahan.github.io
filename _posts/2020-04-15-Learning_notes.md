@@ -149,3 +149,10 @@ Here, Square class is an instance of Rectangle class by making the length equals
 We can inherit multiple classes and their methods.   
 
 [Fun with super](https://www.programiz.com/python-programming/methods/built-in/super)
+
+
+### Ubuntu Problems and solution
+
+Well recently I encountered a problem of internal microphone. It wasn't working. Well, I was restarting and trying bunch of thing, still not working. Then
+
+- Totally turn PC off for some time and boom, started manually and worked again :)
