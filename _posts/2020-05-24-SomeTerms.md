@@ -113,3 +113,38 @@ The idea that same things (positive example) should stay close and negative exam
 # Model Fairness
 
 # Active Learning
+[good Start](datacamp.com/community/tutorials/active-learning)
+Three ways to select the data to annotate
+- Least Confidence
+- Margin sampling
+- Entropy Sampling
+
+[another source](https://algorithmia.com/blog/active-learning-machine-learning)
+Three types
+- Stream based selective sampling
+  - Model chooses the data required (budget issue)
+- Pool-based Sampling (most used)
+  - Train with all and retrain with some cases
+- Membership query synthesis
+  - Create synthetic data to train
+
+[common link resource](https://towardsdatascience.com/active-learning-in-machine-learning-525e61be16e5)
+- very basic stuff on what and how to select data.
+
+[very good resource](https://www.kdnuggets.com/2018/10/introduction-active-learning.html)
+Which row to label?
+- Uncertainty Sampling
+  - Least confidence, Margin sampling and Entropy
+- Query by committee (aka, QBC)
+  - Multiple model trained with same data and find disagreement over the test data!
+- Expected Impact
+  - Which data samples addition would change the model most! (how!!) to reduce the generalized error
+  - look into the input spaces!!
+- Density Weighted methods
+  - Representative and underlying data distribution consideration.
+
+### Deep learning and Active learning
+
+[introductory blog](https://jacobgil.github.io/deeplearning/activelearning)
+- Connection to semi-supervised learning
+- Uncertainty sampling and diversity sampling

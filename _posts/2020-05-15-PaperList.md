@@ -480,3 +480,16 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive representation distillation." arXiv preprint arXiv:1910.10699 (2019).
 
 1. Liang, Weixin, James Zou, and Zhou Yu. "Alice: Active learning with contrastive natural language explanations." arXiv preprint arXiv:2009.10259 (2020).
+  - Contrastive natural language!!
+  - Experiments -  (bird classification and Social relationship classifier!!)
+  - key steps
+    - run basic Classifier
+    - fit multivariate gaussian for all class (embedding!!), and find b pair of classes with lowest JS divergence.
+    - contrastive query to machine understandable form (important and critical part!!). [crop the most informative parts and retrain.]
+    - neural arch. morphing!! (heuristic and interesting parts) [local, super classifier and attention mechanism!]
+
+1. Ma, Shuang, Zhaoyang Zeng, Daniel McDuff, and Yale Song. "Learning Audio-Visual Representations with Active Contrastive Coding." arXiv preprint arXiv:2009.09805 (2020).
+
+1. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
+
+1. Shen, Yanyao, Hyokun Yun, Zachary C. Lipton, Yakov Kronrod, and Animashree Anandkumar. "Deep active learning for named entity recognition." arXiv preprint arXiv:1707.05928 (2017).
