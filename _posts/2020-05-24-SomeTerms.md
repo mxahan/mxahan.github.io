@@ -145,6 +145,20 @@ Which row to label?
 
 ### Deep learning and Active learning
 
-[introductory blog](https://jacobgil.github.io/deeplearning/activelearning)
+one of the nicest [introductory blog](https://jacobgil.github.io/deeplearning/activelearning)
 - Connection to semi-supervised learning
-- Uncertainty sampling and diversity sampling
+- ranking image
+  - Uncertainty sampling - images that model is not certain about
+  - diversity sampling - most diverse example finding
+- two issue to combine DL and AL
+  - NN are not sure about their Uncertainty
+  - It processes data as batch instead of single !
+- [key paper- see paperlist](https://arxiv.org/pdf/1703.02910.pdf)
+  - use of the dropout to create multiple models and check confidence.
+- [BALD paper](https://papers.nips.cc/paper/2019/file/95323660ed2124450caaac2c46b5ed90-Paper.pdf)
+  - Additional loss for entropy
+- [Learning loss for AL](https://arxiv.org/pdf/1905.03677.pdf)
+- Batch aware method [link](https://arxiv.org/pdf/1906.08158.pdf)
+- Active learning for the CNN [link](https://arxiv.org/pdf/1708.00489.pdf)
+  - Diversity Sampling
+-  

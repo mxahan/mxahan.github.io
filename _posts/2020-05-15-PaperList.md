@@ -493,3 +493,5 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
 
 1. Shen, Yanyao, Hyokun Yun, Zachary C. Lipton, Yakov Kronrod, and Animashree Anandkumar. "Deep active learning for named entity recognition." arXiv preprint arXiv:1707.05928 (2017).
+
+1. Gal, Yarin, Riashat Islam, and Zoubin Ghahramani. "Deep bayesian active learning with image data." arXiv preprint arXiv:1703.02910 (2017).
