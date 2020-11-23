@@ -478,6 +478,14 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - section 6: different views and info sharing.
 
 1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive representation distillation." arXiv preprint arXiv:1910.10699 (2019).
+  - Missed structural knowledge of the teacher network!!
+  - Cross modal distillation!!
+  - KD -all dimension are independent (intro 1.2)
+    - Capture the correlation/higher-order dependencies in the representation (how??).
+    - Maximize MI between teacher and student.
+  - Three scenario considered [fig 1]
+  - KD and representation learning connection (!!)
+  - 
 
 1. Liang, Weixin, James Zou, and Zhou Yu. "Alice: Active learning with contrastive natural language explanations." arXiv preprint arXiv:2009.10259 (2020).
   - Contrastive natural language!!
@@ -495,3 +503,5 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Shen, Yanyao, Hyokun Yun, Zachary C. Lipton, Yakov Kronrod, and Animashree Anandkumar. "Deep active learning for named entity recognition." arXiv preprint arXiv:1707.05928 (2017).
 
 1. Gal, Yarin, Riashat Islam, and Zoubin Ghahramani. "Deep bayesian active learning with image data." arXiv preprint arXiv:1703.02910 (2017).
+
+1. Ganin, Yaroslav, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario Marchand, and Victor Lempitsky. "Domain-adversarial training of neural networks." The Journal of Machine Learning Research 17, no. 1 (2016): 2096-2030.   
