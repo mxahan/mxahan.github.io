@@ -315,6 +315,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - compression, autoregressive and NCE
   - Energy based like setup
   - Figure 4: about what they did!
+  - Aka- InfoNCE
   - [more notes](https://github.com/mxahan/PDFS_notes/blob/master/cpc_2017.pdf)
 
 1. He, Kaiming, Haoqi Fan, Yuxin Wu, Saining Xie, and Ross Girshick. "Momentum contrast for unsupervised visual representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9729-9738. 2020.
@@ -485,7 +486,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Maximize MI between teacher and student.
   - Three scenario considered [fig 1]
   - KD and representation learning connection (!!)
-  - 
+  - large temperature increases entropy  [look into the equation! easy-pesy]
+  - interesting proof and section 3.1 [great!]
+  - Equation 20 is cross entropy (stupid notation)
+  - Key contribution: New loss function: 3.4 eq21
+  - [notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_representation_distillation.pdf)
 
 1. Liang, Weixin, James Zou, and Zhou Yu. "Alice: Active learning with contrastive natural language explanations." arXiv preprint arXiv:2009.10259 (2020).
   - Contrastive natural language!!
