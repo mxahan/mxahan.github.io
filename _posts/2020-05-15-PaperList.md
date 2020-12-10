@@ -525,7 +525,13 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Problem (2): Efficient sampling? sol:  efficient importance sampling!!! (consider lack of dissimilarity information)!!!
   - Section 3 most important!
   - section 4 interesting
+  - [Notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_sampling_debias_hardMining.pdf)
 
 1. Chuang, Ching-Yao, Joshua Robinson, Yen-Chen Lin, Antonio Torralba, and Stefanie Jegelka. "Debiased contrastive learning." Advances in Neural Information Processing Systems 33 (2020).
+  - Sample bias [negatives are actually positive! since randomly smapled]
+  - need unbiased - improves vision, NLP and reinforcement tasks.
+  - Related to Positive unlabeled learning
+  - interesting results
+  - [Notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_sampling_debias_hardMining.pdf)
 
 1. Huynh, Tri, Simon Kornblith, Matthew R. Walter, Michael Maire, and Maryam Khademi. "Boosting Contrastive Self-Supervised Learning with False Negative Cancellation." arXiv preprint arXiv:2011.11765 (2020).
