@@ -511,7 +511,17 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Ganin, Yaroslav, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario Marchand, and Victor Lempitsky. "Domain-adversarial training of neural networks." The Journal of Machine Learning Research 17, no. 1 (2016): 2096-2030.   
 
+1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
+
 1. Chen, Xinlei, and Kaiming He. "Exploring Simple Siamese Representation Learning." arXiv preprint arXiv:2011.10566 (2020).
+  - Not using Negative samples, large batch or Momentum encoder!!
+  - Care about Prevention of collapsing to constant *(one way is contrastive learning, another way - Clustering, or online clustering, BYOL)
+  - Concepts in figure 1
+  - Stop collapsing by introducing the stop gradient operation.
+  - interesting section in 3
+    - Loss SimCLR (but differently ) [eq 1 and eq 2]
+    - Detailed Eq 3 and eq 4
+    - Empirically shown to avoid the trivial solution 
 
 1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." Advances in Neural Information Processing Systems 33 (2020).
 
@@ -555,3 +565,13 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Izacard, Gautier, and Edouard Grave. "Distilling Knowledge from Reader to Retriever for Question Answering." arXiv preprint arXiv:2012.04584 (2020).
 
 1. Bhardwaj, Sangnie, Ian Fischer, Johannes Ballé, and Troy Chinen. "An Unsupervised Information-Theoretic Perceptual Quality Metric." Advances in Neural Information Processing Systems 33 (2020).
+
+1. Qian, Rui, Tianjian Meng, Boqing Gong, Ming-Hsuan Yang, Huisheng Wang, Serge Belongie, and Yin Cui. "Spatiotemporal contrastive video representation learning." arXiv preprint arXiv:2008.03800 (2020).
+  - unlabeled videos! video representation, pretext task!
+  - simple idea: same video together and different videos differ in embedding space.  (TCN works on same video)
+  - Video SimCLR?
+  - method
+    - Simclr setup for video (InfoNCE loss)
+    - Video encoder (3D resnets)
+    - Temporal augmentation for same video (good for them but not Ubiquitous)
+    - Image based spatial augmentation

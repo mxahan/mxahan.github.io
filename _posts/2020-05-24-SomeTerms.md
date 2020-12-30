@@ -110,6 +110,82 @@ The idea that same things (positive example) should stay close and negative exam
 
 [visual product similarity - Cornell](https://www.cs.cornell.edu/~kb/publications/SIG15ProductNet.pdf)
 
+Some notes on [Recent review](https://arxiv.org/pdf/2010.05113.pdf)
+- Property of representation - Distributed, invariant and disentangled
+- What is contrastive learning
+  - Representation learning
+     - Generative and Discriminative Models
+     - Supervised and unsupervised learning
+     - Objective and Evaluation of Representations? Interesting
+  - Contrastive representation learning
+    - Learning by comparing
+  - Instance discrimination
+    - Figure 2
+    - Feature Encoders (Body)
+    - MLP heads (Projection layer) [discarded after training]
+    - Loss function itself
+  - CL taxonomy
+    - Figure 3
+    - Data taken from p(k,q) distribution instead of the P(x) distribution [see the description if needed]. In practice quiry is sampled first the positive and negative keys.
+    - Models and encoder, transformer head and losses.
+    - Figure 5 [interesting notion of the similarity]
+  - Notable works
+    - multisensors
+      -Time contrastive network
+    - Data transform
+      - SimCLR
+    - Context-instance relationship
+      - Deep InforMax
+      - Contrastive predictive coding
+    - Sequential coherence and Consistency
+      - Figure 8 [multiframe TCN]
+    - Natural Clustering
+      - Metric learning
+      - Prototypical Constrastive Learning [??]
+      - SwAV
+    - Taxonomy of the encoders  
+      - End to end
+      - Online offline encoder
+        - MoCo
+        - Memory bank
+      - Pre-trained encoder
+        - BERT (!)
+        - Distillation (Contrastive representation distillation)
+    - Head Taxonomy
+      - Projection Head
+      - Contextualization head [context-instance relationship (section 2) - Aggregate multiple heads together]
+        - Contrastive Predictive Coding
+        - Deep InfoMax
+      - Quantization Head (!) [Map multiple representation into same representation]
+        - SwAv
+    - Loss Function Taxonomy [interesting ]
+      - minimize distance between pairs but problem with collapse
+        - Negative pair or architectural constraint
+        - Scoring function
+          - Distance loss (minimize)
+          - Dot product/Cosine loss (similarity - Maximize)
+          - Bi-linear Model q^T *A *k
+        - Energy-Based Margin Loss
+          - Max-Margin loss
+          - Triplet loss [eq3]
+        - Probabilistic NCE-Based Losses
+          - NCE loss [there exists many variations]
+          - Normalized-temperature cross-entropy (NT-Xent)
+        - Mutual information based losses
+          - InfoNCE, DeepInfoMax
+        - History [fun topics]
+          - 1992 Hinton and becker invariant representation
+          - 2005 lecun
+          - Gutmann (NCE 2010)
+          - Word embedding
+          - CPC, DIM (2018)
+          - Table 1
+        - Applications [interesting too]
+
+
+
+
+
 # Model Fairness
 
 # Active Learning

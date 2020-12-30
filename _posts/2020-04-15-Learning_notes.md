@@ -156,3 +156,23 @@ We can inherit multiple classes and their methods.
 Well recently I encountered a problem of internal microphone. It wasn't working. Well, I was restarting and trying bunch of thing, still not working. Then
 
 - Totally turn PC off for some time and boom, started manually and worked again :)
+
+
+# Initramfs Ubuntu reboot
+
+Prospective solution to the
+https://proposedsolution.com/solutions/ubuntu-booting-to-initramfs-prompt/
+
+```
+type "exit"
+```
+
+Find the error in particular sata port
+/dev/sdaX: Unexpected ....
+
+/dev/sdax - X for the number
+
+then type
+```
+(initramfs)fsck /dev/sda1
+```
