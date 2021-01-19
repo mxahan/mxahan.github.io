@@ -521,7 +521,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - interesting section in 3
     - Loss SimCLR (but differently ) [eq 1 and eq 2]
     - Detailed Eq 3 and eq 4
-    - Empirically shown to avoid the trivial solution 
+    - Empirically shown to avoid the trivial solution
 
 1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." Advances in Neural Information Processing Systems 33 (2020).
 
@@ -545,6 +545,17 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - [Notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_sampling_debias_hardMining.pdf)
 
 1. Huynh, Tri, Simon Kornblith, Matthew R. Walter, Michael Maire, and Maryam Khademi. "Boosting Contrastive Self-Supervised Learning with False Negative Cancellation." arXiv preprint arXiv:2011.11765 (2020).
+  - False negative Problem!! (detail analysis)
+  - Methods to Mitigate false negative impacts (how? what? how much impact! significant means?? what are other methods?)
+  - Hypothesis: RAndomly taken negative samples (leaked negative)
+  - Overview
+    - identify false negative (how?)
+    - Then false negative elimination and false negative attraction
+  - Contributions
+    - find false positive strategy (simple?)
+      - section 3.2.3 (obvious one but a tricky - heavy computation)
+    - False neg elimination and attraction
+    - applicable on top of existing cont. learning
 
 1. Karras, Tero, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, and Timo Aila. "Training generative adversarial networks with limited data." Advances in Neural Information Processing Systems 33 (2020).
   - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
