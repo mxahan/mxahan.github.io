@@ -8,6 +8,7 @@ This blogs contains some of the commonly encountered terms in DL. Lets Move forw
 - [Restricted Boltzmann Machine](#RBM)
 - [Noise contrastive Estimation](#noise-contrastive-estimation)
 - [Active Learning](#active-learning)
+- [Encoder](Encoder)
 
 # Embedding
 
@@ -238,3 +239,9 @@ one of the nicest [introductory blog](https://jacobgil.github.io/deeplearning/ac
 - Active learning for the CNN [link](https://arxiv.org/pdf/1708.00489.pdf)
   - Diversity Sampling
 -  
+# Encoder
+
+Here we will be discussing autoencoders and variational autoencoders with math
+
+[link1](https://www.jeremyjordan.me/variational-autoencoders/)
+[link2](https://www.jeremyjordan.me/autoencoders/)

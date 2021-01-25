@@ -17,9 +17,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S. Corrado, and Jeff Dean. "Distributed representations of words and phrases and their compositionality." In Advances in neural information processing systems, pp. 3111-3119. 2013.
   - Skip gram model and its extensions: skip gram tries to maximize the log probaiblites <img src="https://latex.codecogs.com/gif.latex?1/T\sum_1^T\sum_{-c<=j<=c, j\neq 0}\log p(w_{t+j}|w_t)">; the probabilities are defined by softmax of the vector represenation of the words. The issue is computation of derivatives of log.
-  - Hierarchical Softmax: Tree structure from root to the word
+  - Hierarchical Softmax: Tree structure from root to the word [link]((https://towardsdatascience.com/hierarchical-softmax-and-negative-sampling-short-notes-worth-telling-2672010dbe08) )
   - Negative Sampling: Adds with target and penalize for noise words. Noise Contrastive Estimation.
   - Subsampling of Frequent words.
+  - input output word embedding [link](https://stats.stackexchange.com/questions/263284/what-exactly-are-input-and-output-word-representations)
+   - Word representations [link](https://towardsdatascience.com/word-embeddings-exploration-explanation-and-exploitation-with-code-in-python-5dac99d5d795)
+   - Trained on google dataset (billion!)
+   - Phase considered by data driven approach – Bigram model
+      - ind score (> th then phase!)
+   - Reports for the phase skip gram model
 
 1. Wang, Yuxuan, R. J. Skerry-Ryan, Daisy Stanton, Yonghui Wu, Ron J. Weiss, Navdeep Jaitly, Zongheng Yang et al. "Tacotron: Towards end-to-end speech synthesis." arXiv preprint arXiv:1703.10135 (2017).
 

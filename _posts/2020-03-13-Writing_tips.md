@@ -18,9 +18,36 @@ Saying that what I want to point out that, don't wait for the perfect writings. 
 
 Now you have contents. Work to improve it. Take some time to stop going for quantity and focus on quality. And after that tiny time off. Repeat - Quantity first with keeping mind to quality.
 
-
 #### Problem First!
 
 #### Results first!
 
 #### Describe the experiments with assumption and motivation.
+
+
+## Improve your writings
+
+[link](https://www.editage.com/insights/6-actionable-tips-to-improve-academic-writing?refer=scroll-to-1-article&refer-type=article)
+
+- Concise
+- Formal
+- Precise
+- Impersonal
+- Tentative
+- Carefully structured
+
+Avoid wasting words: Redundant expressions
+  - Remove repetitious information
+  - Using action verb - shun 'tion'
+  - No use for redundant expression
+
+Avoid Contractions and colloquial expressions
+
+Using Exact words
+
+Maintain an objective, detached tone.
+
+Use qualifiers but in moderation.
+  - not to use may or similar Tentative words mostly
+
+Organize your paper to help readers.
