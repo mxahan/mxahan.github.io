@@ -51,3 +51,10 @@ Use qualifiers but in moderation.
   - not to use may or similar Tentative words mostly
 
 Organize your paper to help readers.
+
+Check for repetition in text and remove it by keeping information in right place. Iterate and reiterate.
+
+The 2.5 writing method. Write a mess and clean it. This would help to get over the cold start problem and writers block. practice the style and master it for yourselves.
+- Write 10 minutes to simulate the flow states. Write everything down and shrink it later. Think with the fingers. Write every angle down, every thing down (the 0.5 step). Now the actual process begins. Make outline and reiterate.
+- logical flow of ideas (after 0.5), still think about ideas. beginning of the clean up process! look into the text and highlight important phase or point in what we wrote. Now make coherent sentences out of those highlighters. The ideas are in logical orders now (Draft one) Most interesting parts
+- Polish the writing (Draft 2). Now the fine-tuning. Don't be afraid to add new sentences later on at any mentioned stages if you need it.

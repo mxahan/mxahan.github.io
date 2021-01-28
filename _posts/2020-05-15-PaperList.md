@@ -148,6 +148,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Trained on two unsupervised task
     - Masked language model (masked word to predict)
     - Next sentence Prediction (sentence relationship)
+  - Interesting [link](http://jalammar.github.io/illustrated-bert/)
 
 1. Du, Xianzhi, Tsung-Yi Lin, Pengchong Jin, Golnaz Ghiasi, Mingxing Tan, Yin Cui, Quoc V. Le, and Xiaodan Song. "SpineNet: Learning scale-permuted backbone for recognition and localization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11592-11601. 2020.
   - Meta learning, NAS
