@@ -54,7 +54,117 @@ Organize your paper to help readers.
 
 Check for repetition in text and remove it by keeping information in right place. Iterate and reiterate.
 
-The 2.5 writing method. Write a mess and clean it. This would help to get over the cold start problem and writers block. practice the style and master it for yourselves.
-- Write 10 minutes to simulate the flow states. Write everything down and shrink it later. Think with the fingers. Write every angle down, every thing down (the 0.5 step). Now the actual process begins. Make outline and reiterate.
-- logical flow of ideas (after 0.5), still think about ideas. beginning of the clean up process! look into the text and highlight important phase or point in what we wrote. Now make coherent sentences out of those highlighters. The ideas are in logical orders now (Draft one) Most interesting parts
-- Polish the writing (Draft 2). Now the fine-tuning. Don't be afraid to add new sentences later on at any mentioned stages if you need it.
+### Academic Writing: From the MOOC edx writing course.
+
+[course link](https://courses.edx.org/courses/course-v1:TUMx+AWMEx+3T2020/course/)
+
+- The 2.5 writing method. Write a mess and clean it. This would help to get over the cold start problem and writers block (solution: 0.5 step, focus free writing to simulate the flow). practice the style and master it for yourselves.
+  - Write 10 minutes to simulate the flow states. Write everything down and shrink it later. Think with the fingers. Write every angle down, every thing down (the 0.5 step). Now the actual process begins. Make outline and reiterate.
+  - logical flow of ideas (after 0.5), still think about ideas. beginning of the clean up process! look into the text and highlight important phase or point in what we wrote. Now make coherent sentences out of those highlighters. The ideas are in logical orders now (Draft 1) Most interesting parts
+  - Polish the writing (Draft 2). Now the fine-tuning. Don't be afraid to add new sentences later on at any mentioned stages if you need it.
+
+  Interesting points: Outlining writing should be between the 0.5 and 1 step.
+
+- cohesion and Paragraph
+  - 101: Present familiar(?) before new information (need meticulous care to perform)
+    - Familiar!! Subjects that are themes of the text
+    - Information from previous sentences
+    - Connected phase (beware not to put many! may fake cohesion! not to overuse)
+    - universal subjects (we, current research) - familiar
+  - paragraph
+    - Topic sentence (moderate; not to broad or narrow)
+    - Provide clear milestone (sense from the topic sentences)
+    - Main idea first / hypothesis - now let me prove it!!
+    - evidence and details to prove the topic sentence
+    - Paragraph transition - connect it with previous topic sentence -
+    - Paragraph to paragraph cohesion.
+
+
+- Avoid Nominalization (verbs to noun/adjective)
+  - Aviod 'tion' as much as we can (modify them to verbs)
+    - Both noun and adjective !!
+  - When okay (3 scenario)
+    - Refer to previous sentences
+    - instead of the face!!
+    - unnatural wordiness
+
+- Eliminating redundancy (VVI)
+  - repetitive wording  (use clause or merge adjectives)
+  - Redundant pairs
+  - Prepositional phrases (look for reduce the preposition - should be easy but careful) - vital parts - use them in the best possible way
+  - Redundant modifier and determiners
+
+- Active voice writings
+  - passive creates confusions and add extra words.
+  - permitted when agents is not important. or to keep cohesion.
+
+- Avoid sprawling sentences -cause stylistic problem
+  - Sprawling: fit too many ideas altogether.
+  - Read the sentence in one breathe! read the writing out loud (no tripping)
+  - should go to subject immediately/quickly (Keep introductory phase concise)
+  - try to Go with concrete subject  
+  - stop interruption between subject-verb-object. (keep them as close as possible)
+  - not too many relative clauses (eliminate redundancy)
+
+- Credibility -
+  - Register - level of formality (word choice)
+    - not conversational (avoid you)
+    - Use Precise word and neutral tone
+    - Avoid but/and/so at beginning
+    - Avoid rhetoric question.
+    - Avoid informal words!
+  - Hedging - Tone
+    - Modal verbs: May/can
+    - Seems to: appear,
+    - Possibly: probable, if, occasionally
+  - Avoid Plagiarism: Must  
+    - Cite and Refer Must
+    - Distinguish what is your and others
+    - Paraphrasing is important.
+      - careful synonyms
+      - changing sentence structure.
+
+-Punctuation
+  - Comma - no hard fast rule !!
+    - not to use comma to separate independent clauses (comma splice error)
+    - use comma to clear introductory element
+    - No comma after coordinating conjunction, but use before them.
+    - Comma to emphasis.
+    - No comma that separates subject-verb-object, but may use pair comma. (great solution)
+    - no comma for defining Relative clauses (may use comma for non-defining comma.)
+    - The oxford comma! (comma before and)
+  - Others ;:.''
+    - : for list (independent clause and list) / mostly sub-clauses
+    - ; Separates independent cluases.  
+    - Non-essential information () or double comma.
+    - ! not recommendation.
+
+- Why we write?
+  - Keep the big picture in mind: Motivation, and goal. -why is it interesting, how did you get there, what does the work brings?
+  - Choose Genre and think audience - What are you writing.
+  - Organize and structure of the paper - Create outline. (change logically if requires.)
+
+- Paragraph and Sentence level
+  - keep the writing clear
+    - cohesion and paragraphing
+    - subject active verbs
+  - making writing interesting
+    - Active
+  - Explaining complex ideas
+    - syncing sentence  - subject(at beginning) verb object close together. Modifier and coordination to extend the sentences.
+  - Write responsibly
+    - Register and citation.
+
+- Common mistakes to Avoid
+  - Small
+    - Be consistent
+    - Cut out the jargon
+    - Stick with your outline (be flexible only conscious need) -plan an do.
+    - Read our own text loud.
+  - Big
+    - Not getting bogged down in details     
+      - Give only what they need
+    - Have fun
+    - **Your work's place in the world**
+
+[good checklist](https://courses.edx.org/assets/courseware/v1/4b9cce9525a0f23bc7280299cf96e90a/asset-v1:TUMx+AWMEx+3T2020+type@asset+block/Academic_Writing_Checklist.pdf)
