@@ -585,7 +585,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Bhardwaj, Sangnie, Ian Fischer, Johannes Ballé, and Troy Chinen. "An Unsupervised Information-Theoretic Perceptual Quality Metric." Advances in Neural Information Processing Systems 33 (2020).
 
 1. Qian, Rui, Tianjian Meng, Boqing Gong, Ming-Hsuan Yang, Huisheng Wang, Serge Belongie, and Yin Cui. "Spatiotemporal contrastive video representation learning." arXiv preprint arXiv:2008.03800 (2020).
-  - unlabeled videos! video representation, pretext task!
+  - unlabeled videos! video representation, pretext task! (CVRL)
   - simple idea: same video together and different videos differ in embedding space.  (TCN works on same video)
   - Video SimCLR?
   - method
