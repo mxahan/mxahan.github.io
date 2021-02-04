@@ -84,6 +84,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Noise Contrastive learning (contrast with other images)
   - As two head so two component of contrastive loss. (One component to dampen memory update.)
   - Implemented on ResNet
+  - PIRL
 
 1. Zhang, Richard, Phillip Isola, and Alexei A. Efros. "Split-brain autoencoders: Unsupervised learning by cross-channel prediction." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1058-1067. 2017.
   - Extension of autoencoders to cross channel prediction
@@ -220,11 +221,13 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Gradient penalty loss (To ascertain 1-Lipschitz)
 
 1. Grill, Jean-Bastien, Florian Strub, Florent Altché, Corentin Tallec, Pierre H. Richemond, Elena Buchatskaya, Carl Doersch et al. "Bootstrap your own latent: A new approach to self-supervised learning." arXiv preprint arXiv:2006.07733 (2020).
-  - Unsupervised Representation learning in a discriminative method.
+  - Unsupervised Representation learning in a discriminative method. (BOYL)
   - Alternative of contrastive learning methods (as CL depends on batch size, image augmentation method, memory bank, resilient). [No negative examples]
   - Online and Target network. [Augmented image output in online network should be close to main image in target network.] What about all zeros! (Empirically slow moving average helps to avoid that)
   - Motivation [section 3 method]
   - All about architecture. [encoder, projection, predictor and loss function]
+  - Works only with batch normalization - else mode collapse
+  - [More criticism](https://generallyintelligent.ai/understanding-self-supervised-contrastive-learning.html)
 
 1. Caron, Mathilde, Piotr Bojanowski, Armand Joulin, and Matthijs Douze. "Deep clustering for unsupervised learning of visual features." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 132-149. 2018.
   - Cluster Deep features and make them pseudo labels. [fig 1]
@@ -345,7 +348,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Fernando, Basura, Hakan Bilen, Efstratios Gavves, and Stephen Gould. "Self-supervised video representation learning with odd-one-out networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3636-3645. 2017.
 
 1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
-  - non-parametric classifier via feature representation
+  - non-parametric classifier via feature representation **(Memory Bank)**
   - Memory bank stores instance features (used for kNN classifier)
     - Dimention reduction
   - Experiments
@@ -511,6 +514,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Ma, Shuang, Zhaoyang Zeng, Daniel McDuff, and Yale Song. "Learning Audio-Visual Representations with Active Contrastive Coding." arXiv preprint arXiv:2009.09805 (2020).
 
 1. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
+  - Under Construction
 
 1. Shen, Yanyao, Hyokun Yun, Zachary C. Lipton, Yakov Kronrod, and Animashree Anandkumar. "Deep active learning for named entity recognition." arXiv preprint arXiv:1707.05928 (2017).
 
@@ -593,3 +597,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Video encoder (3D resnets)
     - Temporal augmentation for same video (good for them but not Ubiquitous)
     - Image based spatial augmentation
+
+1. Ye, Mang, Xu Zhang, Pong C. Yuen, and Shih-Fu Chang. "Unsupervised embedding learning via invariant and spreading instance feature." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6210-6219. 2019.
+
+1. Li, Junnan, Pan Zhou, Caiming Xiong, Richard Socher, and Steven CH Hoi. "Prototypical contrastive learning of unsupervised representations." arXiv preprint arXiv:2005.04966 (2020).
+
+1. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).

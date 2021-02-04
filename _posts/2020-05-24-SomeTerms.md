@@ -184,7 +184,7 @@ Some notes on [Recent review](https://arxiv.org/pdf/2010.05113.pdf)
         - Applications [interesting too]
 
 
-
+[prototypical CL](https://blog.einstein.ai/prototypical-contrastive-learning-pushing-the-frontiers-of-unsupervised-learning/)
 
 
 # Model Fairness
