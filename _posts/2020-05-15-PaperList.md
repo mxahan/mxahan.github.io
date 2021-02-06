@@ -74,6 +74,8 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Misra, Ishan, and Laurens van der Maaten. "Self-supervised learning of pretext-invariant representations." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6707-6717. 2020.
   - Pretraining method
   - Pretext learning with transformation invariant + data augmentation invariant
+  - See the loss functions  
+    - Tries to retain small amount of the transformation properties too !!
   - Use contrastive learning (See NCE)
       - Maximize MI
   - Motivation from predicting video frames
@@ -451,6 +453,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Congruous with CL
     - gaussing RBF kernel e^{[f(x) -f(y)]^2} helps on uniform distribution achieving.
   - Result figure-7 [interesting]
+  - Alignment and uniform loss
 
 1. Tishby, Naftali, and Noga Zaslavsky. "Deep learning and the information bottleneck principle." In 2015 IEEE Information Theory Workshop (ITW), pp. 1-5. IEEE, 2015.
 
@@ -603,3 +606,31 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Li, Junnan, Pan Zhou, Caiming Xiong, Richard Socher, and Steven CH Hoi. "Prototypical contrastive learning of unsupervised representations." arXiv preprint arXiv:2005.04966 (2020).
 
 1. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
+
+1. Chen, Xinlei, Haoqi Fan, Ross Girshick, and Kaiming He. "Improved baselines with momentum contrastive learning." arXiv preprint arXiv:2003.04297 (2020).
+
+1. Goyal, Priya, Dhruv Mahajan, Abhinav Gupta, and Ishan Misra. "Scaling and benchmarking self-supervised visual representation learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6391-6400. 2019.
+
+1. Tao, Li, Xueting Wang, and Toshihiko Yamasaki. "Self-Supervised Video Representation Using Pretext-Contrastive Learning." arXiv preprint arXiv:2010.15464 (2020).
+  - Tasks and Contrastive setup connection  (PCL)
+  - hypersphere features spaces
+  - Combine Pretext(some tasks, intra information)+Contrastive (similar/dissimilarity, inter-information) losses
+  - Assumption: pretext and contrastive learning doing the same representation.
+  - Loss function: Contrast+pretext task!
+
+1. Doersch, Carl, Abhinav Gupta, and Alexei A. Efros. "Unsupervised visual representation learning by context prediction." In Proceedings of the IEEE international conference on computer vision, pp. 1422-1430. 2015.
+  - Crop position learning pretext!
+  - Figure 2 (problem formulation) and 3 (architectures) shows the key contribution
+
+1. Noroozi, Mehdi, and Paolo Favaro. "Unsupervised learning of visual representations by solving jigsaw puzzles." In European conference on computer vision, pp. 69-84. Springer, Cham, 2016.
+  - Pretext tasks (solving jigsaw puzzle) - self-supervised
+
+1. Han, Tengda, Weidi Xie, and Andrew Zisserman. "Video representation learning by dense predictive coding." In Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops, pp. 0-0. 2019.
+  - Self-supervised AR (DPC)
+  - Care for both temporal and spatial negatives.
+  - Look at their case for  - easy, spatial, temporal (hard) negatives.
+  - performance evaluated by Downstream tasks
+
+1. Sohn, Kihyuk. "Improved deep metric learning with multi-class n-pair loss objective." In Proceedings of the 30th International Conference on Neural Information Processing Systems, pp. 1857-1865. 2016.
+
+1. Dosovitskiy, Alexey, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with convolutional neural networks." NIPS, 2014.
