@@ -294,7 +294,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - validation: ImageNet linear evaluation protocol
   - Interested related work section
   - Key motivation: Contrastive instance learning
-  - Partition constraint to avoid trivial solution
+  - Partition constraint (batch wise normalization) to avoid trivial solution
 
 1. Yang, Zhilin, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R. Salakhutdinov, and Quoc V. Le. "Xlnet: Generalized autoregressive pretraining for language understanding." In Advances in neural information processing systems, pp. 5753-5763. 2019.
   - under construction
@@ -367,7 +367,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - proximal parameter to ensure the smoothness for the representations
 
 1. Sermanet, Pierre, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine, and Google Brain. "Time-contrastive networks: Self-supervised learning from video." In 2018 IEEE International Conference on Robotics and Automation (ICRA), pp. 1134-1141. IEEE, 2018.
-  - Multi view point [same times are same, different time frames are different]
+  - Multiple view point [same times are same, different time frames are different]
     - Regardless of the viewpoint [same time same thing , same representation]
     - Considered images
     - Representation is the reward
@@ -427,7 +427,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive multiview coding." arXiv preprint arXiv:1906.05849 (2019).
   - Find the invariant representation
   - Multiple view of objects (image) (CMC) - multisensor view or same object!!]
+    - Same object but different sensors (positive keys)
+    - Different object same sensors (negative keys)
     - Experiment: ImageNEt, STL-10, two views, DIV2K cropped images
+  - Positive pairs (augmentation)
   - Follow-up of Contrastive Predictive coding (no RNN but more generalized)
   - Compared with baseline: cross-view prediction!!
   - Interesting math: Section 3 and experiment 4
@@ -440,6 +443,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Experimented on Images
     - Compared with VAE, BiGAN, CPC
   - Evaluate represenation by Neural Dependency Measures (NDM)
+  - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images (-)
   - [personal note](https://github.com/mxahan/PDFS_notes/blob/master/deepinfomax_paper.pdf)
 
 1. Wang, T. and Isola, P., 2020. Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere. arXiv preprint arXiv:2005.10242.
@@ -599,9 +603,14 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Simclr setup for video (InfoNCE loss)
     - Video encoder (3D resnets)
     - Temporal augmentation for same video (good for them but not Ubiquitous)
-    - Image based spatial augmentation
+    - Image based spatial augmentation (positive)
+    - Different video (negative)
+  - Downstream Tasks
+    - Action Classification
+    - Action Detection
 
 1. Ye, Mang, Xu Zhang, Pong C. Yuen, and Shih-Fu Chang. "Unsupervised embedding learning via invariant and spreading instance feature." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6210-6219. 2019.
+  - Contrastive idea but uses siamese network.
 
 1. Li, Junnan, Pan Zhou, Caiming Xiong, Richard Socher, and Steven CH Hoi. "Prototypical contrastive learning of unsupervised representations." arXiv preprint arXiv:2005.04966 (2020).
 
@@ -616,7 +625,12 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - hypersphere features spaces
   - Combine Pretext(some tasks, intra information)+Contrastive (similar/dissimilarity, inter-information) losses
   - Assumption: pretext and contrastive learning doing the same representation.
-  - Loss function: Contrast+pretext task!
+  - Loss function (Eq-6): Contrast (same body +head1)+pretext task (same body + head2)! - Joint optimization
+  - Figure 1- tells the story
+  - Three pretext tasks (3DRotNet, VCOP, VCP) - Experiment section
+  - Both RGB and Frame difference
+  - Downstrem tasks (UCF and HMDB51)
+  - Some drawbacks at the discussion section.
 
 1. Doersch, Carl, Abhinav Gupta, and Alexei A. Efros. "Unsupervised visual representation learning by context prediction." In Proceedings of the IEEE international conference on computer vision, pp. 1422-1430. 2015.
   - Crop position learning pretext!
@@ -627,10 +641,46 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Han, Tengda, Weidi Xie, and Andrew Zisserman. "Video representation learning by dense predictive coding." In Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops, pp. 0-0. 2019.
   - Self-supervised AR (DPC)
+    - Learn dense coding of spatio-temporal blocks by predicting future frames (decrease with time!)
+    - Training scheme for future prediction  (using less temporal data)
   - Care for both temporal and spatial negatives.
   - Look at their case for  - easy, spatial, temporal (hard) negatives.
-  - performance evaluated by Downstream tasks
+  - performance evaluated by Downstream tasks (Kinetics-400 dataset (pretrain), UCF101, HMDB51- AR tasks)
+  - Section 3.1 and 3.2 are core (contrastive equation - 5)
 
 1. Sohn, Kihyuk. "Improved deep metric learning with multi-class n-pair loss objective." In Proceedings of the 30th International Conference on Neural Information Processing Systems, pp. 1857-1865. 2016.
 
 1. Dosovitskiy, Alexey, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with convolutional neural networks." NIPS, 2014.
+
+1. Tschannen, Michael, Josip Djolonga, Marvin Ritter, Aravindh Mahendran, Neil Houlsby, Sylvain Gelly, and Mario Lucic. "Self-supervised learning of video-induced visual invariances." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 13806-13815. 2020.
+
+1. Ma, Shuang, Zhaoyang Zeng, Daniel McDuff, and Yale Song. "Learning Audio-Visual Representations with Active Contrastive Coding." arXiv preprint arXiv:2009.09805 (2020).
+
+1. Sun, Chen, Fabien Baradel, Kevin Murphy, and Cordelia Schmid. "Learning video representations using contrastive bidirectional transformer." arXiv preprint arXiv:1906.05743 (2019).
+
+1. Xiao, Tete, Xiaolong Wang, Alexei A. Efros, and Trevor Darrell. "What should not be contrastive in contrastive learning." arXiv preprint arXiv:2008.05659 (2020).
+
+1. Weinberger, Kilian Q., John Blitzer, and Lawrence K. Saul. "Distance metric learning for large margin nearest neighbor classification." In Advances in neural information processing systems, pp. 1473-1480. 2006.
+
+1. Liu, Yang, Keze Wang, Haoyuan Lan, and Liang Lin. "Temporal Contrastive Graph for Self-supervised Video Representation Learning." arXiv preprint arXiv:2101.00820 (2021).
+  - Graph Neural Network And Contrastive Learning
+  - Video frame shuffling
+
+1. Tao, Li, Xueting Wang, and Toshihiko Yamasaki. "Self-supervised video representation learning using inter-intra contrastive framework." In Proceedings of the 28th ACM International Conference on Multimedia, pp. 2193-2201. 2020.
+  - Notion of intra-positive (augmentation, optical flow, frame differences, color of same frames)
+  - Notion of intra-negative (frame shuffling, repeating)
+  - Inter negative (irrelevant video clips - Different time or videos)
+  - Two (Multi) Views (same time - positive keys) - and intra-negative
+  - Figure 2 (memory bank approach)
+  - Consider contrastive from both views.
+
+1. Chen, Ting, and Lala Li. "Intriguing Properties of Contrastive Losses." arXiv preprint arXiv:2011.02803 (2020).
+
+1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
+
+1. Gordon, Daniel, Kiana Ehsani, Dieter Fox, and Ali Farhadi. "Watching the world go by: Representation learning from unlabeled videos." arXiv preprint arXiv:2003.07990 (2020).
+  - Multi-frame multi-pairs positive negative (single imgae)- instance discrimination
+
+1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
+
+1. Devon, R. "Representation Learning with Video Deep InfoMax." arXiv preprint arXiv:2007.13278 (2020).
