@@ -155,6 +155,13 @@ Check for repetition in text and remove it by keeping information in right place
   - Write responsibly
     - Register and citation.
 
+- Paragraph [tips](https://www.masterclass.com/articles/how-to-write-a-perfect-paragraph#5-tips-for-structuring-and-writing-better-paragraphs)
+  - Make the first sentence of the topic sentences
+  - Provide supports for the topic points via middle sentences
+  - Last sentence - A conclusion or transition
+  - Understanding when to start a new paragraph
+  - Using transitional words when necessary
+
 - Common mistakes to Avoid
   - Small
     - Be consistent
@@ -169,7 +176,7 @@ Check for repetition in text and remove it by keeping information in right place
 
 [good checklist](https://courses.edx.org/assets/courseware/v1/4b9cce9525a0f23bc7280299cf96e90a/asset-v1:TUMx+AWMEx+3T2020+type@asset+block/Academic_Writing_Checklist.pdf)
 
-*Personal Summary*: Writing concerns about expressing the thoughts. It's the writers responsibly to clearly write the thoughts for readers. Thoughts runs around neuron to neuron inside head. To express it inside the pen-paper, a good guidelines are necessary. Good structure sews the thread of thoughts like an expert. The structure should reflect the big picture. It should be stand-alone to express and support the thoughts' materialization over paper in a black-box manner. A good structure requires some good amount of plannings and thoughts itself.
+*Personal Summary*: Writing concerns about expressing the thoughts. It's the writers responsibly to clearly write the thoughts for readers. Thoughts runs around neuron to neuron inside head. To express it inside the pen-paper, a good guidelines are necessary. Good structure sews the thread of thoughts like an expert. The structure should reflect the big picture. It should be stand-alone to express and support the thoughts' materialization over paper in a black-box manner. However, in practice, the ideas/thoughts will govern the shape structure to fully fit itself within the body of those created structure. A good structure requires some good amount of plannings and thoughts itself.
 
 The structure serves two special goals. Firstly, forms a basis of what to write to express. A bad structure fails to provides spaces for thoughts to take shape in writing. If writers has still information to structure beyond the current framework the structure requires to be reformulated. So, it becomes an iterative process. This can be expressed by a simple algorithm. **(i) Formulate a structure based on the thoughts/goal/big picture (ii)Does that structure holds the necessary spaces for thoughts to take shape? If yes No worries. If No, please reconstruct the structure**. Secondly, it provides a platform for the writers to focus on what to put in a particular place. I believes, the structuring accelerates the writing. This can be again traced back to first goal. While filling if the writer really heat bottom of spaces to put his thoughts, he requires to reformulate the structure.
 

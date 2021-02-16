@@ -170,6 +170,10 @@ Regardless, I appreciate the material you provided (Most of them I already knew)
 
 Whatever, I still believe there should be some moderator in journal committee to appeach the false comments (also harsh) provided by the reviews to reevaluate before reaching out to the original authors. I will not stop or in any sense stumbles towards my path of researching. I will continue to read more and express my points in a clear way in the next time. Thank you reviewer for making me understand the existence of narcissist people among our community. Hope someone one day will make you look the world in a better way and help you to realize that we should respect others.
 
-To reverberate, I'm not really bother by the rejection of paper, I am disappointed with the reason and your wording for rejection. It's like you seems to have an angry frustrated time with your beloved ones and put it out to other researchers. Please be respectful next time. We researcher should be better man before being a researcher. Hope you better word your points next time and please do read the whole article and try to get the overall picture before actually make a comments. 
+To reverberate, I'm not really bother by the rejection of paper, I am disappointed with the reason and your wording for rejection. It's like you seems to have an angry frustrated time with your beloved ones and put it out to other researchers. Please be respectful next time. We researcher should be better man before being a researcher. Hope you better word your points next time and please do read the whole article and try to get the overall picture before actually make a comments.
 
 PEACH.
+
+## Why AI research
+
+Personally, I feel I want to improve, implement AI to make human life better by selecting potential problem and offering AI based solutions. 

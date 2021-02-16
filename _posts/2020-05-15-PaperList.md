@@ -93,6 +93,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Predict one portion to other and vice versa + loss on full reconstruction.
     - Two disjoint auto-encoders.
   - Tried both the regression and classification loss
+  - Section 3 sums it up
+    - Cross-channel encoders
+    - Split-brain autoencoders.
+    -
 
 1. Srinivas, Aravind, Michael Laskin, and Pieter Abbeel. "Curl: Contrastive unsupervised representations for reinforcement learning." arXiv preprint arXiv:2004.04136 (2020).
 
@@ -227,7 +231,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Alternative of contrastive learning methods (as CL depends on batch size, image augmentation method, memory bank, resilient). [No negative examples]
   - Online and Target network. [Augmented image output in online network should be close to main image in target network.] What about all zeros! (Empirically slow moving average helps to avoid that)
   - Motivation [section 3 method]
-  - All about architecture. [encoder, projection, predictor and loss function]
+  - similarity constraint between positive keys are also enforced through a prediction problem from an online network to an offline momentum-updated network
+  - BYOL tries to match the prediction from an online network to a randomly initialised offline
+  network. This iterations lead to better representation than those of the random offline network.
+  -By continually improving the offline network through the momentum update, the quality of the representation is bootstrapped from just the random initialised network
+  - All about architecture! [encoder, projection, predictor and loss function]
   - Works only with batch normalization - else mode collapse
   - [More criticism](https://generallyintelligent.ai/understanding-self-supervised-contrastive-learning.html)
 
@@ -288,6 +296,9 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Contrastive learning, clustering
   - Predict cluster from different representation, memory efficiency!
   - 'code' consistency between image and its transformation {target}
+    - similarity is formulated as a swapped prediction problem between positive pairs
+    - no negative examples
+    - the minibatch clustering methods implicitly prevent collapse of the representation space by encouraging samples in a batch to be distributed evenly to different clusters.
   - online code computation
   - Features and codes are learnt online
   - multi-crop: Smaller image with multiple views
@@ -505,6 +516,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - KD and representation learning connection (!!)
   - large temperature increases entropy  [look into the equation! easy-pesy]
   - interesting proof and section 3.1 [great!]
+  - Student takes query - matches with positive keys from teacher and contrast with negative keys from the teacher network.
   - Equation 20 is cross entropy (stupid notation)
   - Key contribution: New loss function: 3.4 eq21
   - [notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_representation_distillation.pdf)
@@ -599,6 +611,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - unlabeled videos! video representation, pretext task! (CVRL)
   - simple idea: same video together and different videos differ in embedding space.  (TCN works on same video)
   - Video SimCLR?
+  - Inter video clips (positive negatives)
   - method
     - Simclr setup for video (InfoNCE loss)
     - Video encoder (3D resnets)
@@ -644,13 +657,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Learn dense coding of spatio-temporal blocks by predicting future frames (decrease with time!)
     - Training scheme for future prediction  (using less temporal data)
   - Care for both temporal and spatial negatives.
-  - Look at their case for  - easy, spatial, temporal (hard) negatives.
+  - Look at their case for  - the easy negatives (patches encoded from different videos), the spatial negatives (same video but at different spatial locations), and the hard negatives (TCN)
   - performance evaluated by Downstream tasks (Kinetics-400 dataset (pretrain), UCF101, HMDB51- AR tasks)
   - Section 3.1 and 3.2 are core (contrastive equation - 5)
 
 1. Sohn, Kihyuk. "Improved deep metric learning with multi-class n-pair loss objective." In Proceedings of the 30th International Conference on Neural Information Processing Systems, pp. 1857-1865. 2016.
 
 1. Dosovitskiy, Alexey, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with convolutional neural networks." NIPS, 2014.
+
+1. Dosovitskiy, Alexey, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with exemplar convolutional neural networks." IEEE transactions on pattern analysis and machine intelligence 38, no. 9 (2015): 1734-1747.
 
 1. Tschannen, Michael, Josip Djolonga, Marvin Ritter, Aravindh Mahendran, Neil Houlsby, Sylvain Gelly, and Mario Lucic. "Self-supervised learning of video-induced visual invariances." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 13806-13815. 2020.
 
@@ -684,3 +699,35 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
 1. Devon, R. "Representation Learning with Video Deep InfoMax." arXiv preprint arXiv:2007.13278 (2020).
+
+1. Bromley, Jane, J. W. Bentz, L. Bottou, I. Guyon, Y. LeCun, C. Moore, E. Sackinger, and R. Shah. "Signature Veriﬁcation using a “Siamese” Time Delay Neural Network." Int.]. Pattern Recognit. Artzf Intell 7 (1993).
+  - Gold in old
+  - Siamese network early application for hand writing
+
+1. Ebbers, Janek, Michael Kuhlmann, and Reinhold Haeb-Umbach. "Adversarial Contrastive Predictive Coding for Unsupervised Learning of Disentangled Representations." arXiv preprint arXiv:2005.12963 (2020).
+
+1. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
+
+1. Oh Song, Hyun, Yu Xiang, Stefanie Jegelka, and Silvio Savarese. "Deep metric learning via lifted structured feature embedding." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 4004-4012. 2016.
+
+1. G. W. Taylor, I. Spiro, C. Bregler, and R. Fergus, ‘‘Learning invariance through imitation,’’ in Proc. CVPR, Jun. 2011, pp. 2729–2736, doi:10.1109/CVPR.2011.5995538
+
+1. Zhuang, Chengxu, Alex Lin Zhai, and Daniel Yamins. "Local aggregation for unsupervised learning of visual embeddings." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6002-6012. 2019.
+
+1. Purushwalkam, Senthil, and Abhinav Gupta. "Demystifying contrastive self-supervised learning: Invariances, augmentations and dataset biases." arXiv preprint arXiv:2007.13916 (2020).
+
+1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
+
+1. Tschannen, Michael, Josip Djolonga, Paul K. Rubenstein, Sylvain Gelly, and Mario Lucic. "On mutual information maximization for representation learning." arXiv preprint arXiv:1907.13625 (2019).
+
+1. Kalantidis, Yannis, Mert Bulent Sariyildiz, Noe Pion, Philippe Weinzaepfel, and Diane Larlus. "Hard negative mixing for contrastive learning." arXiv preprint arXiv:2010.01028 (2020).
+
+1. Löwe, Sindy, Peter O'Connor, and Bastiaan S. Veeling. "Putting an end to end-to-end: Gradient-isolated learning of representations." arXiv preprint arXiv:1905.11786 (2019).
+
+1. Xiong, Yuwen, Mengye Ren, and Raquel Urtasun. "LoCo: Local contrastive representation learning." arXiv preprint arXiv:2008.01342 (2020).
+
+1. Szegedy, Christian, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew Wojna. "Rethinking the inception architecture for computer vision." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 2818-2826. 2016.
+
+1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
+
+1. Alwassel, Humam, Dhruv Mahajan, Bruno Korbar, Lorenzo Torresani, Bernard Ghanem, and Du Tran. "Self-supervised learning by cross-modal audio-video clustering." arXiv preprint arXiv:1911.12667 (2019).
