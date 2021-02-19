@@ -185,3 +185,18 @@ The structure is not always the big heading! It may also provide cohesion for ea
 In all scenarios (macro basis given or formulated), micro basis structure plays a vital role. The writer's choice of best micro basis creates the best writing conditioned on the provided information. The micro basis treads the information already exists. This is where the 2.5 writing comes to play. As soon as we have macro basis we use our 0.5 draft to put the information altogether. Micro basis structure takes those and edit them in a comprehensible manner, the 2 writing. **Macro basis threads key information from 0.5 draft to support and clarify each of the macro basis. Micro basis aims to uphold and help one specific macro basis itself towards overall goal, eventually filling the purpose of expressing thoughts clearly**. In case of left over information from the 0.5 draft, the writers need to rethink the micro structure to address those missed points.
 
 Personal Motto: **Each Written Word Matters Towards Going Forward. So Write Wisely only in the final Drafts.**
+
+## Paragraph Writing Generalization
+
+Paragraph characteristics by keeping the "ARGUMENT" or "Thesis Statement" in the head
+- Unified - One paragraph revolving the idea of the topic sentences
+- Related to the "Thesis Statement" - Why we need the paragraph in the first place
+- Logical Sentence flow - Coherence: Known idea First
+- Well developed - Concludes within it or provide a good transitional step
+
+Knowing the characteristics helps to organization and development of the paragraphs. Here we point out some of the ways to ensure the characteristics of the paragraph are matched. Based on the situation there are multiple ways to develop a paragraph
+- Narration
+- Description
+- Process
+- Classification
+- Illustration
