@@ -188,15 +188,29 @@ Personal Motto: **Each Written Word Matters Towards Going Forward. So Write Wise
 
 ## Paragraph Writing Generalization
 
+[source](https://writingcenter.unc.edu/tips-and-tools/paragraphs/)
+[organization of Drafts](https://writingcenter.unc.edu/tips-and-tools/reorganizing-drafts/)
+
 Paragraph characteristics by keeping the "ARGUMENT" or "Thesis Statement" in the head
 - Unified - One paragraph revolving the idea of the topic sentences
 - Related to the "Thesis Statement" - Why we need the paragraph in the first place
 - Logical Sentence flow - Coherence: Known idea First
 - Well developed - Concludes within it or provide a good transitional step
 
-Knowing the characteristics helps to organization and development of the paragraphs. Here we point out some of the ways to ensure the characteristics of the paragraph are matched. Based on the situation there are multiple ways to develop a paragraph
+Knowing the characteristics helps to organization and development of the paragraphs. Here we point out some of the ways to ensure the characteristics of the paragraph are matched. Based on the situation, context, and writers preference there are multiple ways to develop a paragraph
 - Narration
 - Description
 - Process
 - Classification
 - Illustration
+
+We can follow 5 steps to develop a paragraph
+- Decide on the controlling idea and create a topic Sentence
+- Explain the controlling idea
+- Give an example & Explain the example
+- Complete paragraph's idea or Transition to the next paragraph.
+
+To editing is divine and makes first draft better. The paragraph requires multiple revision, iteration to get to the better shape. Here's some interesting ways to debug the paragraph.
+- Problem 1: The paragraph has no Topic Sentence - Try to cover whats coming as much extent as possible without harming the sentence. Requires a lot of practices.
+- Problem 2: Well, the paragraph has more than one controlling ideas, which I do a lot. I definitely should be proactively care for it to avoid.
+- Problem 3: What if I need a transition internally in the paragraph? [link](https://writingcenter.unc.edu/tips-and-tools/transitions/). Try to use single word/phrase transition inside the paragraph to do so. If you requires more than single word/phrase for transition inside the paragraph, then rethink the organization linked above.
