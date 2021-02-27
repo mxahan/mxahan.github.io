@@ -214,3 +214,11 @@ To editing is divine and makes first draft better. The paragraph requires multip
 - Problem 1: The paragraph has no Topic Sentence - Try to cover whats coming as much extent as possible without harming the sentence. Requires a lot of practices.
 - Problem 2: Well, the paragraph has more than one controlling ideas, which I do a lot. I definitely should be proactively care for it to avoid.
 - Problem 3: What if I need a transition internally in the paragraph? [link](https://writingcenter.unc.edu/tips-and-tools/transitions/). Try to use single word/phrase transition inside the paragraph to do so. If you requires more than single word/phrase for transition inside the paragraph, then rethink the organization linked above.
+
+## Tips on good presentation preparation
+
+Constructive negative feedback helps personal development by helping us to drop the learning redundancy, especially in cases where we have some basics. This narrow us down the problems we need to focus and work on to improve effectively. A good tutorial may contain lots of element that we already may know. These known information reinforces our beliefs but fails to push forward to fast and necessary adjustments for visible improvements. Moreover, reinforcing already established developed good practices may be not worth of our valuable time. Constructive Negative feedback loops solves this loopy improvement. By detecting problems/faults/bad habits to focus on, negative feedback provides a tangential direction to explore and enhance horizon of developments.
+
+In general, we have basics presentation skills and lots of spaces to upgrade. We somewhat knows how to prepare presentation slides and deliver them. 
+
+what is good is fine, definitley reinforce the good habits and remove the bad practices. focus on to not to make mistake instead of becoming perfect.

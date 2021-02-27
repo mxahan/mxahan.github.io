@@ -15,7 +15,13 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. "Density estimation using real nvp." arXiv preprint arXiv:1605.08803 (2016).
 
+1. Mikolov, Tomas, Kai Chen, Greg Corrado, and Jeffrey Dean. "Efficient estimation of word representations in vector space." arXiv preprint arXiv:1301.3781 (2013).
+  - word2vec
+  - Comparison with others [link](https://medium.com/@kashyapkathrani/all-about-embeddings-829c8ff0bf5b)
+
 1. Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S. Corrado, and Jeff Dean. "Distributed representations of words and phrases and their compositionality." In Advances in neural information processing systems, pp. 3111-3119. 2013.
+  - non-contextual embedding
+  - Word2vec extensions
   - Skip gram model and its extensions: skip gram tries to maximize the log probaiblites <img src="https://latex.codecogs.com/gif.latex?1/T\sum_1^T\sum_{-c<=j<=c, j\neq 0}\log p(w_{t+j}|w_t)">; the probabilities are defined by softmax of the vector represenation of the words. The issue is computation of derivatives of log.
   - Hierarchical Softmax: Tree structure from root to the word [link]((https://towardsdatascience.com/hierarchical-softmax-and-negative-sampling-short-notes-worth-telling-2672010dbe08) )
   - Negative Sampling: Adds with target and penalize for noise words. Noise Contrastive Estimation.
@@ -26,6 +32,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
    - Phase considered by data driven approach – Bigram model
       - ind score (> th then phase!)
    - Reports for the phase skip gram model
+   - Learning Explanation [link](https://arxiv.org/pdf/1411.2738.pdf)
 
 1. Wang, Yuxuan, R. J. Skerry-Ryan, Daisy Stanton, Yonghui Wu, Ron J. Weiss, Navdeep Jaitly, Zongheng Yang et al. "Tacotron: Towards end-to-end speech synthesis." arXiv preprint arXiv:1703.10135 (2017).
 
@@ -156,6 +163,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Masked language model (masked word to predict)
     - Next sentence Prediction (sentence relationship)
   - Interesting [link](http://jalammar.github.io/illustrated-bert/)
+  - Self-attention, query-key value - [link](https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a)
+  - [you tube](https://www.youtube.com/watch?v=rBCqOTEfxvg)
+  - [another nice explanation](https://medium.com/swlh/what-exactly-is-happening-inside-the-transformer-b7f713d7aded)
+  - All layers (q, k, v, decoder and encoders) are subjected to backpropagation
+  - full paper breakdown [link](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
 
 1. Du, Xianzhi, Tsung-Yi Lin, Pengchong Jin, Golnaz Ghiasi, Mingxing Tan, Yin Cui, Quoc V. Le, and Xiaodan Song. "SpineNet: Learning scale-permuted backbone for recognition and localization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11592-11601. 2020.
   - Meta learning, NAS
