@@ -79,6 +79,34 @@ Check for repetition in text and remove it by keeping information in right place
     - Paragraph transition - connect it with previous topic sentence -
     - Paragraph to paragraph cohesion.
 
+- More on Cohesion [link](https://www.youtube.com/watch?v=TScPcKfQ9ds)
+  - The use of vocabulary and grammar to connect ideas in a text/paragraph
+  - English - writer responsible language
+  - Cohesive Devices
+    - Use of pronoun (it, he, ... from previous sentence)
+    - Lexical Signposts (control /organize the writing )
+      - Listing words
+      - Words to make examples
+      - words/ phares for generalized
+      - show a result/consequences
+      - Words to summarize
+      - words to express alternative
+    - Repeating Key-words in the paragraph - connected to the topic sentences
+    - Anaphoric Nouns
+      - This view/situation/claims/explanation, .... etc
+    - Review and edit
+  - [link](https://www.youtube.com/watch?v=9H0e5XNQz1g)
+  - Coherent Paragrpah
+    - Topic Sentences
+    - Relevant Supporting sentences
+    - Logical order of sentences (time, space, importance)
+    - Cohesive Devices
+      - Linking Words
+        - conjunction (coordinating {for, and, nor, but, or, yet, ..} and Subordinating {although, if, while, until ,... } )
+        - Adverbs
+          - However, therefore, as a result
+          - Time order - first, second, then
+
 
 - Avoid Nominalization (verbs to noun/adjective)
   - Aviod 'tion' as much as we can (modify them to verbs)
@@ -97,6 +125,7 @@ Check for repetition in text and remove it by keeping information in right place
 - Active voice writings
   - passive creates confusions and add extra words.
   - permitted when agents is not important. or to keep cohesion.
+    - The doer is not important
 
 - Avoid sprawling sentences -cause stylistic problem
   - Sprawling: fit too many ideas altogether.
@@ -189,7 +218,6 @@ Personal Motto: **Each Written Word Matters Towards Going Forward. So Write Wise
 ## Paragraph Writing Generalization
 
 [source](https://writingcenter.unc.edu/tips-and-tools/paragraphs/)
-[organization of Drafts](https://writingcenter.unc.edu/tips-and-tools/reorganizing-drafts/)
 
 Paragraph characteristics by keeping the "ARGUMENT" or "Thesis Statement" in the head
 - Unified - One paragraph revolving the idea of the topic sentences
@@ -197,7 +225,8 @@ Paragraph characteristics by keeping the "ARGUMENT" or "Thesis Statement" in the
 - Logical Sentence flow - Coherence: Known idea First
 - Well developed - Concludes within it or provide a good transitional step
 
-Knowing the characteristics helps to organization and development of the paragraphs. Here we point out some of the ways to ensure the characteristics of the paragraph are matched. Based on the situation, context, and writers preference there are multiple ways to develop a paragraph
+The characteristics of paragraphs may act as a good baseline to judge the written section and Here we point out some of the ways to ensure the characteristics of the paragraph are satisfied. The ways to develop paragraph are context dependent. Based on the situation, context, and writers preference there are multiple ways to develop a paragraph
+
 - Narration
 - Description
 - Process
@@ -210,10 +239,55 @@ We can follow 5 steps to develop a paragraph
 - Give an example & Explain the example
 - Complete paragraph's idea or Transition to the next paragraph.
 
-To editing is divine and makes first draft better. The paragraph requires multiple revision, iteration to get to the better shape. Here's some interesting ways to debug the paragraph.
-- Problem 1: The paragraph has no Topic Sentence - Try to cover whats coming as much extent as possible without harming the sentence. Requires a lot of practices.
-- Problem 2: Well, the paragraph has more than one controlling ideas, which I do a lot. I definitely should be proactively care for it to avoid.
-- Problem 3: What if I need a transition internally in the paragraph? [link](https://writingcenter.unc.edu/tips-and-tools/transitions/). Try to use single word/phrase transition inside the paragraph to do so. If you requires more than single word/phrase for transition inside the paragraph, then rethink the organization linked above.
+To edit is divine and makes first draft better. The paragraph requires multiple revision, iteration to get to the better shape. Here's some interesting ways to debug the paragraph.
+- Problem 1: The paragraph **has no Topic Sentence** - Try to cover whats coming as much extent as possible without harming the sentence. Requires a lot of practices.
+- Problem 2: Well, the paragraph has **more than one controlling ideas**, which I do a lot. I definitely should be proactively care for it to avoid.
+- Problem 3: What if I need a *transition internally* in the paragraph? [link](https://writingcenter.unc.edu/tips-and-tools/transitions/). Try to use single word/phrase transition inside the paragraph to do so. If you requires more than single word/phrase for transition inside the paragraph, then rethink the organization linked above.
+
+
+### Thesis Statement
+
+[source](https://writingcenter.unc.edu/tips-and-tools/thesis-statements/)
+
+A thesis statement
+  - How the writer will interpret the significance of the subject matter
+  - roadmap of paper - what to expect from the paper
+  - The sentences that presents the argument (may be at beginning or ending)
+
+
+## Organization of Drafts
+
+[source](https://writingcenter.unc.edu/tips-and-tools/reorganizing-drafts/)
+
+
+Reorganize: To connect the ideas in a logical ways.
+
+Two prerequisites for organizing the ideas.
+  - Having good idea about thesis statement
+  - Knowing how to develop a good paragraph
+
+5 Strategies to organize the paper
+  - Reverse Outlining
+    - Make an draft outline
+    - Examine the output by questioning
+      - Coherence: how the idea related to the original aim and what ideas come after and before it
+      - Repetition: Do the same words, ideas, and phrases appear again and again?
+      - Overall Logic: will the order easy for the readers? Why did we put up this organization? is there any place where topics change suddenly? Have we cover everything we promised? Do we have right balance between the sections?
+      - Repeat the cycle
+  - Talking it out
+    - Explain what is the paper about
+    - Take notes or record the conversation
+    - Get some listener!!
+  - Sectioning
+    - Put paragraphs under section heading
+    - Re-examine each section
+    - Re-examine entire argument
+  - Listing and narrowing your arguments
+    - Re-examine the thesis
+    - Re-examine the drafts general structure
+    - Reorganize the argument
+  - Visualizing
+
 
 ## Tips on good presentation preparation
 
