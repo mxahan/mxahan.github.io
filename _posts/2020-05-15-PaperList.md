@@ -638,6 +638,27 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Contrastive idea but uses siamese network.
 
 1. Li, Junnan, Pan Zhou, Caiming Xiong, Richard Socher, and Steven CH Hoi. "Prototypical contrastive learning of unsupervised representations." arXiv preprint arXiv:2005.04966 (2020).
+  - Addresses the issues of instance wise learning (?)
+    - issue 1: semantic structure missing
+  - claims to do two things
+    - Learn low-level features for instance discrimination
+    - encode semantic structure of the data
+  - prototypes as latent variables to help find the maximum-likelihood estimation of the network parameters in an Expectation-Maximization framework.
+    - E-step as finding the distribution of prototypes via clustering
+    - M-step as optimizing the network via contrastive learning
+  - Offers new loss function ProtoNCE (Generalized InfoNCE)
+  - Show performance for the unsupervised representation learning benchmarking (?) and low-resolution transfer tasks
+  - Prototype: a representative embedding for a group of semantically similar instances
+    - prototype finding by standard clustering methods
+  - Goal described in figure 1
+  - EM problem?
+    - goal is to find the parameters of a Deep Neural Network (DNN) that best describes the data distribution, by iteratively approximating and maximizing the log-likelihood function.
+    - assumption that the data distribution around each prototype is isotropic Gaussian
+  - Related works: MoCo
+    - Deep unsupervised Clustering: not transferable?
+  - Prototypical Contrastive Learning
+    - See the math notes from section 3
+  - Figure 2 - Overview of methods 
 
 1. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
 
