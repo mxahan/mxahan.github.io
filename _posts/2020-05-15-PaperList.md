@@ -658,7 +658,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Deep unsupervised Clustering: not transferable?
   - Prototypical Contrastive Learning
     - See the math notes from section 3
-  - Figure 2 - Overview of methods 
+  - Figure 2 - Overview of methods
 
 1. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
 
@@ -748,6 +748,27 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Zhuang, Chengxu, Alex Lin Zhai, and Daniel Yamins. "Local aggregation for unsupervised learning of visual embeddings." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6002-6012. 2019.
 
 1. Purushwalkam, Senthil, and Abhinav Gupta. "Demystifying contrastive self-supervised learning: Invariances, augmentations and dataset biases." arXiv preprint arXiv:2007.13916 (2020).
+  - object detection and classification
+  - quantitative experiment to Demystify CL gains! (reason behind success)
+    - Observation1: MOCO and PIRL (occlusion invariant)
+      - but Fails to capture viewpoint
+    - gain from object-centric dataset - imagenet!
+    - Propose methods to leverage learn from unstructured video (viewpoint invariant)
+  - Utility of systems: How much invarinces the system encodes
+  - most contrastive setup - occlusion invariant! what about viewpoint invariant?
+  - Related works
+    - Pretext tasks
+    - Video SSL
+    - Understanding SSRL
+      - Mutual information
+    - This work - Why CL is useful
+      - study two aspects: (invariances encoding & role of dataset)
+  - Demystifying Contrastive SSL
+    - what is good Representation? Utilitarian analysis: how good the downstream task is?
+      - What about the insights? and qualitative analysis?
+    - Measuring Invariances
+      - What invariance do we need? - invariant to all transformation!!
+        - Viewpoint change, deformation, illumination, occlusion, category instance  
 
 1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
 
