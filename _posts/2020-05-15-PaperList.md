@@ -707,6 +707,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Sun, Chen, Fabien Baradel, Kevin Murphy, and Cordelia Schmid. "Learning video representations using contrastive bidirectional transformer." arXiv preprint arXiv:1906.05743 (2019).
 
 1. Xiao, Tete, Xiaolong Wang, Alexei A. Efros, and Trevor Darrell. "What should not be contrastive in contrastive learning." arXiv preprint arXiv:2008.05659 (2020).
+  -
 
 1. Weinberger, Kilian Q., John Blitzer, and Lawrence K. Saul. "Distance metric learning for large margin nearest neighbor classification." In Advances in neural information processing systems, pp. 1473-1480. 2006.
 
@@ -769,6 +770,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Measuring Invariances
       - What invariance do we need? - invariant to all transformation!!
         - Viewpoint change, deformation, illumination, occlusion, category instance  
+      - Metrics: Firing representation, global firing rate, local firing rate, target conditioned invariance, representation invariant score.
+      - Experimental dataset
+        - occlusion (GOR-10K), viewpoint+instance invariance (Pascal3D+)
+      - image and video careful augmentation
 
 1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
 
@@ -785,3 +790,33 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
 
 1. Alwassel, Humam, Dhruv Mahajan, Bruno Korbar, Lorenzo Torresani, Bernard Ghanem, and Du Tran. "Self-supervised learning by cross-modal audio-video clustering." arXiv preprint arXiv:1911.12667 (2019).
+
+1. Chen, Ting, Simon Kornblith, Kevin Swersky, Mohammad Norouzi, and Geoffrey Hinton. "Big self-supervised models are strong semi-supervised learners." arXiv preprint arXiv:2006.10029 (2020).
+  - Empirical paper
+  - unsupervised pretrain (task agnostic), semi-supervised learning (task dependent), fine-tuning
+  - Impact of Big (wide and deep) network
+    - More benefited from the unsupervised pretraining
+    - Big Network: Good for learning all the Representations  
+      - Not necessarily require in one particular task - So we can leave the unnecessary information
+    - More improve by distillation after fine tuneing
+  - Wow: Maximum use of works: Big network to learn representations, and fine-tune then distill the task (supervised and task specific fine-tune) to a smaller network
+  - Proposed Methods (3 steps) [this paper]
+    - Unsupervised pretraining (SimCLR v2)
+    - Supervised fine-tune using smaller labeled data
+    - Distilling with unlabeled examples from big network for transferring task-specific knowledge into smaller network
+  - This paper:
+    - Investigate unsupervised pretraining and selfsupervised fine-tune
+      - Finds: network size is important
+      - Propose to use big unsupervised_pretraining-fine-tuning network to distill the task-specific knowledge to small network.
+    - Figure 3 says all
+  - Key contribution
+    - Big networks works best (in unsupervised pretraining - very few data fine-tune) althought they may overfit!!!
+    - Big model learns general representations, may not necessary when task-specific requirement
+    - Importance of multilayer transform head (intuitive because of the transfer properties!! great: since we are going away from metric dimension projection, so more general features)
+  - Section 2: Methods (details from loss to implementation)
+  - Empirical study findings
+    - Bigger model are label efficient
+    - Bigger/Deeper Projection Heads Improve Representation Learning  
+    - Distillation using unlabeled data improves semi-supervised learning
+
+1. Zbontar, Jure, Li Jing, Ishan Misra, Yann LeCun, and Stéphane Deny. "Barlow Twins: Self-Supervised Learning via Redundancy Reduction." arXiv preprint arXiv:2103.03230 (2021).
