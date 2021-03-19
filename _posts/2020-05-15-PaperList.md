@@ -820,3 +820,8 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Distillation using unlabeled data improves semi-supervised learning
 
 1. Zbontar, Jure, Li Jing, Ishan Misra, Yann LeCun, and Stéphane Deny. "Barlow Twins: Self-Supervised Learning via Redundancy Reduction." arXiv preprint arXiv:2103.03230 (2021).
+  - Tries to avoid trivial solution (by new objective function, cross-correlation matrix)!!
+  - Same images ~ augmentation representations are distorted version of each other.
+  - Motivation: Barlows Redundancy-reduction principle
+  - Pair of identical neurons
+  - Just WOW: The hell the idea is!! 

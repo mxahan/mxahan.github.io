@@ -158,6 +158,16 @@ Well recently I encountered a problem of internal microphone. It wasn't working.
 - Totally turn PC off for some time and boom, started manually and worked again :)
 
 
+# Ubuntu Sending Email
+https://www.cier.tech/blog/tech-tutorials-4/post/how-to-install-and-configure-sendmail-on-ubuntu-35
+
+
+https://gist.github.com/adamstac/7462202
+
+```
+sendmail -t sender@domain.com -t <text.txt
+```
+
 # Initramfs Ubuntu reboot
 
 Prospective solution to the
