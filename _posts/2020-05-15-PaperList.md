@@ -821,7 +821,37 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 
 1. Zbontar, Jure, Li Jing, Ishan Misra, Yann LeCun, and Stéphane Deny. "Barlow Twins: Self-Supervised Learning via Redundancy Reduction." arXiv preprint arXiv:2103.03230 (2021).
   - Tries to avoid trivial solution (by new objective function, cross-correlation matrix)!!
+    - A new loss function
   - Same images ~ augmentation representations are distorted version of each other.
   - Motivation: Barlows Redundancy-reduction principle
   - Pair of identical neurons
-  - Just WOW: The hell the idea is!! 
+  - Just WOW: The hell the idea is!!
+    - Intriguingly avoids trivial solutions
+    - Should require large batch size
+  - Figure 1 & algorithm 1: Crack of all jack
+  - BOYL follow up works
+  - Contrastive learning
+    - Either Negative examples
+    - Or architectural constraint/ Asymmetric update  
+  - Motivated from Barlow-twin (redundancy-reduction principle) 1961!
+    - H. Barlow hypothesized that the goal of sensory processing is to recode highly redundant sensory inputs into a factorial code (a code with statistically independent components).  
+    - propose new loss function:  tries to make the cross-correlation matrix computed from twin representations as close to the identity matrix as possible
+      - Advantages: Not required Asymmetric update or large batch size
+  - Methods description
+    - What is Barlow twins
+      - connection to Information bottleneck (IB)
+    - Implementation details
+  - Result  
+    - Linear and Semi-supervised Evalution of imagenet
+    - Transfer learning
+    - Object detection and segmentation
+  - Ablation study
+    - Variation of Loss function
+    - Impacts of Batch Size
+      - Outperformed by Large BS with BYOL and SimCLR
+    - network selection impacts
+      - projection head importance
+    - Importance of the data augmentation
+  - Discussion (interesting)
+    - Comparison with Prior Art
+      - InfoNCE

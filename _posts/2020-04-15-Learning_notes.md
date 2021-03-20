@@ -164,6 +164,8 @@ https://www.cier.tech/blog/tech-tutorials-4/post/how-to-install-and-configure-se
 
 https://gist.github.com/adamstac/7462202
 
+write the text.txt file and ka boom
+
 ```
 sendmail -t sender@domain.com -t <text.txt
 ```
