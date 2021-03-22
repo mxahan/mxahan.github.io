@@ -741,7 +741,10 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
       - Algorithm 1
     - Impacts of temperature and loss weights
   - Feature suppression
-    - Target: Remove easy-to-learn but less transferable features for CL
+    - Target: Remove easy-to-learn but less transferable features for CL (e.g. Color distribution)
+    - Experiments by creating the dataset
+      - Digit on imagenet dataset
+      - RandBit dataset 
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
