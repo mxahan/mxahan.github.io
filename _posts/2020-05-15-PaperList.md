@@ -724,6 +724,24 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Consider contrastive from both views.
 
 1. Chen, Ting, and Lala Li. "Intriguing Properties of Contrastive Losses." arXiv preprint arXiv:2011.02803 (2020).
+  - Generalize the CL loss to broader family of losses
+    - weighted sum of alignment and distribution loss
+      - Alignment: align under some transformation
+      - Distribution: Match a prior distribution
+  - Experiment with weights, temperature, and multihead projection
+  - Study feature suppression!! (competing features)
+    - Impacts of final loss!
+    - Impacts of data augmentation
+  - Suppression feature phenomena: Reduce unimportant features
+  - Experiments
+    - two ways to construct data
+  - Expand beyond the uniform hyperspace prior
+    - Can't rely on logSumExp setting in NT-Xent loss
+    - Requires new optimization (Sliced Wasserstein distance loss)
+      - Algorithm 1
+    - Impacts of temperature and loss weights
+  - Feature suppression
+    - Target: Remove easy-to-learn but less transferable features for CL
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
@@ -855,3 +873,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Discussion (interesting)
     - Comparison with Prior Art
       - InfoNCE
+
+1. Goodfellow, Ian, Honglak Lee, Quoc Le, Andrew Saxe, and Andrew Ng. "Measuring invariances in deep networks." Advances in neural information processing systems 22 (2009): 646-654.
+  - Evaluate invariant features
+    - Proposed some empirical metrics to measure the degree of invariance
+  - Experiment with stacked auto-encoder and CNN
+  - Proposed invariant set and invariance measurement metrics
+  - Empirical answer of why DL is useful - increasing depth increase invariance in representations
+  - Network architecture
+    - Stacked auto-encoder
+    - CNN Deep belief network
+  - Invariance measurement
+    - Finding neurons firing under invariance
