@@ -707,7 +707,25 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Sun, Chen, Fabien Baradel, Kevin Murphy, and Cordelia Schmid. "Learning video representations using contrastive bidirectional transformer." arXiv preprint arXiv:1906.05743 (2019).
 
 1. Xiao, Tete, Xiaolong Wang, Alexei A. Efros, and Trevor Darrell. "What should not be contrastive in contrastive learning." arXiv preprint arXiv:2008.05659 (2020).
-  -
+  - What if downstream tasks violates data augmentation (invariance) assumption!
+    - Requires prior knowledge of the final tasks
+  - This paper: Task-independent invariance
+    - Requires separate embedding spaces!  (how much computation increases, redundant!)
+      - Surely, multihead networks and shared backbones
+      - new idea: Invariance to all but one augmentation !!
+  - Pretext tasks: Tries to recover transformation between views
+  - Contrastive learning: learn the invariant of the transformations
+  - Is augmentation helpful: Not always!
+    - rotation invariance removes the orientation senses! Why not keep both! disentanglement and the multitask!
+  - This paper: Multi embedding space (transfer the shared backbones and task specific heads)
+    - Each head is sensitive to all but one transformations
+    - LooC: (Leave-one-out Contrastive Learning)
+      - Multi augmentation contrastive learning
+      - view generation and embedded space
+      - Figure 2 (crack of jack)
+    - Good setup to apply the ranking loss function
+    - Careful with the notation (bad notation)
+    -  instances and their augmentations!
 
 1. Weinberger, Kilian Q., John Blitzer, and Lawrence K. Saul. "Distance metric learning for large margin nearest neighbor classification." In Advances in neural information processing systems, pp. 1473-1480. 2006.
 
@@ -744,7 +762,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Target: Remove easy-to-learn but less transferable features for CL (e.g. Color distribution)
     - Experiments by creating the dataset
       - Digit on imagenet dataset
-      - RandBit dataset 
+      - RandBit dataset
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
