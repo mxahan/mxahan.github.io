@@ -906,3 +906,38 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - CNN Deep belief network
   - Invariance measurement
     - Finding neurons firing under invariance
+
+1. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
+
+1. Piergiovanni, A. J., Anelia Angelova, and Michael S. Ryoo. "Evolving losses for unsupervised video representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 133-142. 2020.
+  - video representation learning! (generic and transfer) (ELo)
+    - Video object detection
+  - Zeroshot and fewshot AcRecog
+  - introduce concept of loss function evolving (automatically find optimal combination of loss functions capturing many (self-supervised) tasks and modalities)
+      - using an evolutionary search algorithm (!!)
+  - Evaluation using distribution matching and Zipf's law!
+  - only outperformed by fully labeled dataset
+  - This paper: new unsupervised learning of video representations from unlabeled video data.
+    - multimodal, multitask, unsupervised learning
+    - combination of single modal tasks and multi-modal tasks
+    - too much task! how they combined it!! Engineering problem
+      - evolutionary algorithm to solve these puzzle
+      - Power law constraints and KL divergence  
+    - Evolutionary search for a loss function that automatically combines self-supervised and distillation task
+    - unsupervised representation evaluation metric based on power law distribution matching
+  - Multimodal task, multimodal distillation
+    - show their efficacy by the power distribution of video classes (zipf's law)
+  - Figure 2:
+    - overwhelming of tasks! what if no commonalities.
+  - Hypo: Synchronized multi-modal data source should benefit representation learning
+    - Distillation losses between the multiple streams of networks + self supervised loss
+  - Methods
+    - Multimodal learning
+    - Evolving loss function
+      - [0-1] constraints
+      - zipfs distribution matching
+        - Fitness measurement - k-means clustering
+        - use smaller subset of data for representation learning
+        - Cluster the learned representations
+        
+1. Hénaff, Olivier J., Skanda Koppula, Jean-Baptiste Alayrac, Aaron van den Oord, Oriol Vinyals, and João Carreira. "Efficient Visual Pretraining with Contrastive Detection." arXiv preprint arXiv:2103.10957 (2021).
