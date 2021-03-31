@@ -908,6 +908,30 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
     - Finding neurons firing under invariance
 
 1. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
+  - Alternative to instance-level pretext learning - Pixel-level pretext learning!
+    - Pixel level pretext learning! pixel to propagation consistency!!
+      - Avail both backbone and head network! to reuse
+      - complementary to instance level CL
+      - How to define pixel level pretext tasks!
+    - Why instance-label is suboptimal? How? Benchmarking!
+    - Dense feature learning
+  - Application
+    - Object detection (Pascal VOC object detection)
+  - Pixel level pretext tasks
+    - Each pixel is a class!! what!!
+      - Features from same pixels are same !
+    - PixContrast: Training data collected in self-supervised manner
+    - requires pixel feature vector !
+    - Feature map is warped into the original image space
+    - Now closer pictures together and .... contrastive setup
+    - Learns spatially sensitive information
+  - Pixel-to-propagation consistency !! (pixpro)
+    - positive pair obtaining methods
+    - asymmetric pipeline
+    - Learns spatial smoothness information
+      - Pixel propagation module
+      - pixel to propagation  consisency loss
+    - Figure 3
 
 1. Piergiovanni, A. J., Anelia Angelova, and Michael S. Ryoo. "Evolving losses for unsupervised video representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 133-142. 2020.
   - video representation learning! (generic and transfer) (ELo)
@@ -919,6 +943,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - only outperformed by fully labeled dataset
   - This paper: new unsupervised learning of video representations from unlabeled video data.
     - multimodal, multitask, unsupervised learning
+      - Youtube dataset
     - combination of single modal tasks and multi-modal tasks
     - too much task! how they combined it!! Engineering problem
       - evolutionary algorithm to solve these puzzle
@@ -939,5 +964,12 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
         - Fitness measurement - k-means clustering
         - use smaller subset of data for representation learning
         - Cluster the learned representations
-        
+        - the activity classes of videos follow a Zipf distribution
+        - HMDB, AVA, Kinetics dataset, UCF101
+      - ELo methods with baseline weakly-supervised methods
+      - Self-supervised learning
+        - reconstruction and prediction tasks (L2 distance minimization)
+        - Temporal ordering
+        - Multi-modal contrastive loss {maxmargin loss}
+
 1. Hénaff, Olivier J., Skanda Koppula, Jean-Baptiste Alayrac, Aaron van den Oord, Oriol Vinyals, and João Carreira. "Efficient Visual Pretraining with Contrastive Detection." arXiv preprint arXiv:2103.10957 (2021).
