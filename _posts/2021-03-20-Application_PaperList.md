@@ -10,7 +10,7 @@ This blog contains state of the art application and research on different applic
   - Three approaches (i) Data (ii) Model (iii) Algorithm, all of them uses prior knowledge!
     - What is prior knowledge
   - Interesting section that distinguish between FSL with other learning problems (2.2)
-    - FSL avails various options as prior knowledge. For example: Weak-supervised (semi-supervised, active learning) learning is a kind of FSL (when prior knowledge is the unlabeled data); alternatively, the prior knowledge may be the learned model (aka transfer learning.)
+    - FSL avails various options as prior knowledge. For example: Weak-supervised (semi-supervised, active learning) learning is a kind of FSL (when prior knowledge is the unlabeled data); alternatively, the prior knowledge may be the learned model (aka transfer learning.) [figure 3]
     - Unreliable empirical risk minimization
   - (i) data prior knowledge
     - Data augmentation - Transforming samples from the labeled training data
@@ -23,7 +23,7 @@ This blog contains state of the art application and research on different applic
     - Embedding Learning
       - Task specific
       - Task invariant: Matching net, prototypical networks
-      - hybrid
+      - hybrid embedding model
     - External memory: Key-value memory
       - Refining representation
       - Refining parameters
@@ -43,3 +43,5 @@ This blog contains state of the art application and research on different applic
     - Techniques
     - applications
     - Theories
+
+1. Munkhdalai, Tsendsuren, and Hong Yu. "Meta networks." In International Conference on Machine Learning, pp. 2554-2563. PMLR, 2017.

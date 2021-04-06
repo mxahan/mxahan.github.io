@@ -661,6 +661,7 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Figure 2 - Overview of methods
 
 1. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
+  - Multiple view & shared context 
 
 1. Chen, Xinlei, Haoqi Fan, Ross Girshick, and Kaiming He. "Improved baselines with momentum contrastive learning." arXiv preprint arXiv:2003.04297 (2020).
 
@@ -973,3 +974,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
         - Multi-modal contrastive loss {maxmargin loss}
 
 1. Hénaff, Olivier J., Skanda Koppula, Jean-Baptiste Alayrac, Aaron van den Oord, Oriol Vinyals, and João Carreira. "Efficient Visual Pretraining with Contrastive Detection." arXiv preprint arXiv:2103.10957 (2021).
+
+1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
+  - learning and adapting quickly
+    - The key idea: train the initial parameters to maximize performance on a new task after the parameters have been updated through few gradient steps computed with a small data from that new task.
+    - Where it works! Why don't everybody used it afterwords!
+    - Contribution: trains a model’s parameters such that a small number of gradient updates will lead to fast learning on a new task.
+  - Prior arts: Learn update function!
+    - MAML: more flexible (loss function and architectures)
+  - MAML
+    - Problem setup:
+
+1. Weston, Jason, Sumit Chopra, and Antoine Bordes. "Memory networks." arXiv preprint arXiv:1410.3916 (2014).

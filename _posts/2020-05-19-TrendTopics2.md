@@ -14,6 +14,7 @@ The part1 consists of 10 topics, this is continuation covering some other intere
 - [BERT](#bert)
 - [Self-supervision](#self-supervision)
 - [Divergence algorithm](#divergence-algorithm)
+- [Meta Learning](#meta-learning)
 
 
 # Collaborative Filtering
@@ -102,3 +103,23 @@ Self-supervised task also named as pretext task. Before the final/downstream tas
 # Divergence Algorithm
 
 [contrastive divergence medium](https://medium.com/datatype/restricted-boltzmann-machine-a-complete-analysis-part-3-contrastive-divergence-algorithm-3d06bbebb10c)
+
+# Meta-learning
+[initial ideas](https://lilianweng.github.io/lil-log/2018/11/30/meta-learning.html)
+
+learning to learn. Generalized approach in learning ! (supervised, RL)
+
+Where we can apply! Problem definition:
+
+Solutions: Model-based, metric-based, optimization Based
+
+Metric-based: Siamese Neural Network, Matching Network, Relation Network, Prototypical Network
+
+Model-based: Memory-augmented NN, Meta-Network
+
+Optimization-based: Meta-learner, MAML, first order MAML, Reptile 
+
+
+# Attention
+
+[link](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html#neural-turing-machines)
