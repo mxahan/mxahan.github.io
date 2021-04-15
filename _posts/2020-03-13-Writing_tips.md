@@ -66,7 +66,7 @@ Check for repetition in text and remove it by keeping information in right place
   Interesting points: Outlining writing should be between the 0.5 and 1 step.
 
 - cohesion and Paragraph
-  - 101: Present familiar(?) before new information (need meticulous care to perform)
+  - 101: **Present familiar(?) before new information** (need meticulous care to perform)
     - Familiar!! Subjects that are themes of the text
     - Information from previous sentences
     - Connected phase (beware not to put many! may fake cohesion! not to overuse)

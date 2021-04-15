@@ -1,6 +1,8 @@
 # Introduction
 
-This blog contains paperlist I want and plan to go through. For detail paper read please refer to the Paper summary section. Here we will store lots of papers title or maybe little summary considering I will be storing only interested papers. We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! By the way, I will appreciate any suggestion on the paperlist. I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world.
+This blog contains regularly updated paperlist, I have or plan to go through. Here we will store lots of papers title or maybe little summary considering I will be capturing only interested papers. Any suggestion regarding some new papers are highly appreciated. For some of the detail paper read please refer to the Paper summary section.
+
+We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world. however, the papers (many papers!) are as follows
 
 1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
 
@@ -55,8 +57,11 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate." arXiv preprint arXiv:1409.0473 (2014).
 
 1. Graves, Alex, Greg Wayne, and Ivo Danihelka. "Neural turing machines." arXiv preprint arXiv:1410.5401 (2014).
+  - External memory source coupling for attention  (analogous to turing machine )
+    - How to show it? what's the background? Experiments? How much they differ and align? Whats the perspective?
+  - copying, storing and associative recall
 
-1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).
+1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).li
   - D: Assign low energy to data distribution (not normalized probabilities)
   - G: Sample data from the low energy by a parameterized function.
   - Convergence proof using hinge loss.
@@ -568,6 +573,23 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
 1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." Advances in Neural Information Processing Systems 33 (2020).
 
 1. Morgado, Pedro, Nuno Vasconcelos, and Ishan Misra. "Audio-visual instance discrimination with cross-modal agreement." arXiv preprint arXiv:2004.12943 (2020).
+  - learning audio and video representation [audio to video and video to audio!]
+    - How they showed its better??
+    - Exploit cross-modal agreement [what setup!] how it make sense!
+  - consider in-sync audio video, proposed AVID (au-visu-instan-discrim)
+  - Experiments with UCF-101, HMDB-51
+  - Discussed limitation AVID & proposed improvement
+    - Optimization method - [dimentional reduction by LeCunn and NCE paper]
+      - Training procedure in section 3.2 AVID
+    - Cross modal agreement!! it groups (how?) similar videos [both audio and visual]
+  - Prior arts - binary task of audio-video alignment instance-based
+    - This paper: matches in the representation embedding domain.
+  - AVID calibrated by formulating CMA??
+  - Figure 2: Variant of avids [summary of the papers]
+    - This people are first to do it!!
+    - Joint and Self AVID are bad in result! Cross AVID is the best for generalization in results!
+  - CMA - Extension of the AVID [used for fine tuning]
+    - section 4: Loss function extension with cross- AVID and why we need this? 
 
 1. Robinson, Joshua, Ching-Yao Chuang, Suvrit Sra, and Stefanie Jegelka. "Contrastive Learning with Hard Negative Samples." arXiv preprint arXiv:2010.04592 (2020).
   - Sample good negative (difficult to distinguish) leads better represenation
@@ -661,7 +683,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Figure 2 - Overview of methods
 
 1. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
-  - Multiple view & shared context 
+  - Multiple view of shared context
+  - Why MI (analogous to human representation, How??) - same understanding regardless of view
+    - Whats the problem with others !!
+  - Experimented with Imagenet
+  - Extension of local DIM in 3 ways (this paper calls it - augmented multi-scale DIM (AMDIM))
+    - Predicts features for independently-augmented views
+    - predicts features across multiple views
+    - Uses more powerful encoder
+  - Methods relevance: Local DIM, NCE, Efficient NCE computation, Data Augmentation, Multi-scale MI, Encoder, mixture based representation
 
 1. Chen, Xinlei, Haoqi Fan, Ross Girshick, and Kaiming He. "Improved baselines with momentum contrastive learning." arXiv preprint arXiv:2003.04297 (2020).
 
@@ -696,8 +726,15 @@ This blog contains paperlist I want and plan to go through. For detail paper rea
   - Section 3.1 and 3.2 are core (contrastive equation - 5)
 
 1. Sohn, Kihyuk. "Improved deep metric learning with multi-class n-pair loss objective." In Proceedings of the 30th International Conference on Neural Information Processing Systems, pp. 1857-1865. 2016.
+  - Deep metric learning (solves the slow convergence for the contrastive and triple loss)
+    - what is the penalty??
+    - How they compared the convergences
+  - This paper: Multi-class N-pair loss
+    - developed in two steps (i) Generalization of triplet loss (ii) reduces computational complexity by efficient batch construction (??) taking (N+1)xN examples!!
+  - Experiments on visual recognition, object recognition, and verification, image clustering and retrieval, face verification and identification tasks.
+  - identify multiple negatives [section 3], efficient batch construction
 
-1. Dosovitskiy, Alexey, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with convolutional neural networks." NIPS, 2014.
+1. Dosovitskiy, Alexey, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with convolutional neural networks. "NIPS, 2014.
 
 1. Dosovitskiy, Alexey, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with exemplar convolutional neural networks." IEEE transactions on pattern analysis and machine intelligence 38, no. 9 (2015): 1734-1747.
 

@@ -117,7 +117,16 @@ Metric-based: Siamese Neural Network, Matching Network, Relation Network, Protot
 
 Model-based: Memory-augmented NN, Meta-Network
 
-Optimization-based: Meta-learner, MAML, first order MAML, Reptile 
+Optimization-based: Meta-learner, MAML, first order MAML, Reptile
+
+
+Algorithms for Few shot learning [link](https://neptune.ai/blog/understanding-few-shot-learning-in-computer-vision)
+  - Model-Agnostic Meta-Learning (MAML) [gradient based meta-learning]
+  - Matching network
+  - Prototypical Network
+  - Relation network
+
+[further details](https://blog.floydhub.com/n-shot-learning/)
 
 
 # Attention
