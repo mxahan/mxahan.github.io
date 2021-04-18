@@ -589,7 +589,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - This people are first to do it!!
     - Joint and Self AVID are bad in result! Cross AVID is the best for generalization in results!
   - CMA - Extension of the AVID [used for fine tuning]
-    - section 4: Loss function extension with cross- AVID and why we need this? 
+    - section 4: Loss function extension with cross- AVID and why we need this?
 
 1. Robinson, Joshua, Ching-Yao Chuang, Suvrit Sra, and Stefanie Jegelka. "Contrastive Learning with Hard Negative Samples." arXiv preprint arXiv:2010.04592 (2020).
   - Sample good negative (difficult to distinguish) leads better represenation
@@ -996,7 +996,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Distillation losses between the multiple streams of networks + self supervised loss
   - Methods
     - Multimodal learning
-    - Evolving loss function
+    - Evolving an unsupervised loss function
       - [0-1] constraints
       - zipfs distribution matching
         - Fitness measurement - k-means clustering
@@ -1006,9 +1006,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
         - HMDB, AVA, Kinetics dataset, UCF101
       - ELo methods with baseline weakly-supervised methods
       - Self-supervised learning
-        - reconstruction and prediction tasks (L2 distance minimization)
+        - reconstruction (encoder-decoder) and prediction tasks (L2 distance minimization)
         - Temporal ordering
         - Multi-modal contrastive loss {maxmargin loss}
+      - ELo and ELo+Distillation
 
 1. Hénaff, Olivier J., Skanda Koppula, Jean-Baptiste Alayrac, Aaron van den Oord, Oriol Vinyals, and João Carreira. "Efficient Visual Pretraining with Contrastive Detection." arXiv preprint arXiv:2103.10957 (2021).
 
@@ -1023,3 +1024,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Problem setup:
 
 1. Weston, Jason, Sumit Chopra, and Antoine Bordes. "Memory networks." arXiv preprint arXiv:1410.3916 (2014).
+
+1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
+  -

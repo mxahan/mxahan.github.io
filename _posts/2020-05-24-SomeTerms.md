@@ -245,3 +245,14 @@ Here we will be discussing autoencoders and variational autoencoders with math
 
 [link1](https://www.jeremyjordan.me/variational-autoencoders/)
 [link2](https://www.jeremyjordan.me/autoencoders/)
+
+# Bregman Divergence
+
+can be [101](http://mark.reid.name/blog/meet-the-bregman-divergences.html)
+
+Three key things to cover:
+Definition:
+
+properties: Convexity
+
+application: ML optimization 

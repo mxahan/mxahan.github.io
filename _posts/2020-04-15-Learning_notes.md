@@ -188,3 +188,10 @@ then type
 ```
 (initramfs)fsck /dev/sda1
 ```
+
+## Tensorflow GPU memory hack
+use the following instead of just running the network to free gpu memory after kernel restart.
+```
+with tf.device('gpu:0'): #very important
+    trainNet(neural_net)
+```
