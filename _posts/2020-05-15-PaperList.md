@@ -820,6 +820,17 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
 
 1. Oh Song, Hyun, Yu Xiang, Stefanie Jegelka, and Silvio Savarese. "Deep metric learning via lifted structured feature embedding." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 4004-4012. 2016.
+  - Proposes a different loss function (Equation-3)
+    - Non-smooth and requires special data mining
+    - Solution: This paper: optimize upper bound of eq3, instead of mining use stochastic approach!!
+    - This paper: all pairwise combination in a batch!! O(m<sup>2</sup>)
+      - uses mini batch
+      - Not-random batch formation: Importance Sampling
+      - Hard-negative mining
+      - Gradient finding in the algorithm-1, mathematical analysis
+  - Discusses one of the fundamental issues with contrastive loss and triplet loss!
+    - different batches puts same class in different position
+  - Experiment: Amazon Object dataset- multiview .
 
 1. G. W. Taylor, I. Spiro, C. Bregler, and R. Fergus, ‘‘Learning invariance through imitation,’’ in Proc. CVPR, Jun. 2011, pp. 2729–2736, doi:10.1109/CVPR.2011.5995538
 
@@ -1012,6 +1023,18 @@ We can't worry about everything and nothing. We must stay focused and broad at t
       - ELo and ELo+Distillation
 
 1. Hénaff, Olivier J., Skanda Koppula, Jean-Baptiste Alayrac, Aaron van den Oord, Oriol Vinyals, and João Carreira. "Efficient Visual Pretraining with Contrastive Detection." arXiv preprint arXiv:2103.10957 (2021).
+  - Tackles the computational complexity of the self-supervised learning
+    - By providing new objective (extract rich information from each image!! ) named *Contrastive Detection* (Figure 2)
+      - Two variants: SimCLR and the BYOL
+      - Knowledge tx across the dataset
+      - Heuristic mask on image and train!
+        - Of the shelf unsupervised/human annotators [external methods]
+      - Pull the features spaces close!!
+    -  maximizes the similarity of object-level features across augmentations.
+    - Result 5x less pretraining
+    - Compared with SEER!!
+  - Experiment with imagenet to COCO dataset
+  - This paper: Special Data augmentation scheme
 
 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
   - learning and adapting quickly
@@ -1027,3 +1050,13 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
   -
+
+1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
+
+1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
+  - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation"
+    - How they separate the subject background in the first places!! What prior knowledge!!
+    - May use different existing methods!!
+  - Augmentation Scheme: Another data engineering
+    - Used with methods like BYOL, SwAV, MoCo to push SOTA forward
+    - Figure 1: Shows all
