@@ -1,6 +1,8 @@
 # Introduction
 
-This blog contains regularly updated paperlist, I have or plan to go through. Here we will store lots of papers title or maybe little summary considering I will be capturing only interested papers. Any suggestion regarding some new papers are highly appreciated. For some of the detail paper read please refer to the Paper summary section.
+This blog contains regularly updated paperlist of my personal interest with minimal summary.
+
+Any suggestion regarding some new papers are highly appreciated. For some of the detail paper read please refer to the Paper summary section.
 
 We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world. however, the papers (many papers!) are as follows
 
@@ -50,10 +52,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Softmax, temperature and the MSE with the prediction
   - Experimented with MNIST, speech and Specialist models.
 
-1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
-  - Metric learning and augmented memory network
-  -
-
 1. Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate." arXiv preprint arXiv:1409.0473 (2014).
 
 1. Graves, Alex, Greg Wayne, and Ivo Danihelka. "Neural turing machines." arXiv preprint arXiv:1410.5401 (2014).
@@ -71,53 +69,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Radford, Alec, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. "Improving language understanding by generative pre-training." (2018): 12.
   - GPT paper
-
-1. Denton, Emily L. "Unsupervised learning of disentangled representations from video." In Advances in neural information processing systems, pp. 4414-4423. 2017.
-  - Encoder-Decoder set up for the disentangled
-  - Hypothesis: Content (time invariant) and Pose (time variant)
-  - Two Encoders for the pose and content; Concatenate the output for single Decoder
-  - Introduce adversarial loss
-  - Video generation conditioned on context, and pose modeling via LSTM.
-
-1. Lu, Jiasen, Vedanuj Goswami, Marcus Rohrbach, Devi Parikh, and Stefan Lee. "12-in-1: Multi-task vision and language representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10437-10446. 2020.
-  - MTL + Dynamic "stop and go" schedule.
-  - ViLBERT base architecture.
-
-1. Misra, Ishan, and Laurens van der Maaten. "Self-supervised learning of pretext-invariant representations." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6707-6717. 2020.
-  - Pretraining method
-  - Pretext learning with transformation invariant + data augmentation invariant
-  - See the loss functions  
-    - Tries to retain small amount of the transformation properties too !!
-  - Use contrastive learning (See NCE)
-      - Maximize MI
-  - Motivation from predicting video frames
-  - Experiment of jigsaw pretext learning
-  - Hypothesis: Representation of image and its transformation should be same
-  - Use different head for image and jigsaw counterpart of that particular image.
-      - Motivation for learning some extra things by different head network
-  - Noise Contrastive learning (contrast with other images)
-  - As two head so two component of contrastive loss. (One component to dampen memory update.)
-  - Implemented on ResNet
-  - PIRL
-
-1. Zhang, Richard, Phillip Isola, and Alexei A. Efros. "Split-brain autoencoders: Unsupervised learning by cross-channel prediction." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1058-1067. 2017.
-  - Extension of autoencoders to cross channel prediction
-    - Predict one portion to other and vice versa + loss on full reconstruction.
-    - Two disjoint auto-encoders.
-  - Tried both the regression and classification loss
-  - Section 3 sums it up
-    - Cross-channel encoders
-    - Split-brain autoencoders.
-    -
-
-1. Srinivas, Aravind, Michael Laskin, and Pieter Abbeel. "Curl: Contrastive unsupervised representations for reinforcement learning." arXiv preprint arXiv:2004.04136 (2020).
-
-1. Chen, Ting, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton. "A simple framework for contrastive learning of visual representations." arXiv preprint arXiv:2002.05709 (2020).
-  - Truely simple! (SimCLR)
-  - Two transfers for each image and representation
-  - Same origin image should be more similar than the others.
-  - Contrastive (negative) examples are from image other than that.
-  - A nonlinear projection head followed by the representation helps.
 
 1. Donahue, Jeff, Philipp Krähenbühl, and Trevor Darrell. "Adversarial feature learning." arXiv preprint arXiv:1605.09782 (2016).
   - Bidirectional GAN
@@ -226,54 +177,11 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Key motivation: RoBERTa
   - Experimented with DAPT, TAPT and DAPT+TAPT
 
-1. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
-  - Interesting way to improve the Classifier
-  - (labeled data) -> Build classifier (T) -> (predict unlabeled data) -> Train Student using both labeled + model predicted unlabeled data. Repeat.. [algo 1]
-  - Introduce noise for both T and S.
-    - Data noise, model noise (dropout)
-
-1. Park, Taesung, Alexei A. Efros, Richard Zhang, and Jun-Yan Zhu. "Contrastive Learning for Unpaired Image-to-Image Translation." arXiv preprint arXiv:2007.15651 (2020).
-  - Contrastive loss (Same patch of input - output are +ve and rest of the patches are -ve example)
-  - Trains the encoder parts more! (Fig 1, 2) ; Decoders train only on adversarial losses.
-  - Contribution in loss (SimCLR) kinda motivation
-
 1. Berthelot, David, Peyman Milanfar, and Ian Goodfellow. "Creating High Resolution Images with a Latent Adversarial Generator." arXiv preprint arXiv:2003.02365 (2020).
   - Close to super-resolution problem [but different as loss is perception loss.]
     - When noise 0 we want the original image.
   - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
   - Gradient penalty loss (To ascertain 1-Lipschitz)
-
-1. Grill, Jean-Bastien, Florian Strub, Florent Altché, Corentin Tallec, Pierre H. Richemond, Elena Buchatskaya, Carl Doersch et al. "Bootstrap your own latent: A new approach to self-supervised learning." arXiv preprint arXiv:2006.07733 (2020).
-  - Unsupervised Representation learning in a discriminative method. (BOYL)
-  - Alternative of contrastive learning methods (as CL depends on batch size, image augmentation method, memory bank, resilient). [No negative examples]
-  - Online and Target network. [Augmented image output in online network should be close to main image in target network.] What about all zeros! (Empirically slow moving average helps to avoid that)
-  - Motivation [section 3 method]
-  - similarity constraint between positive keys are also enforced through a prediction problem from an online network to an offline momentum-updated network
-  - BYOL tries to match the prediction from an online network to a randomly initialised offline
-  network. This iterations lead to better representation than those of the random offline network.
-  -By continually improving the offline network through the momentum update, the quality of the representation is bootstrapped from just the random initialised network
-  - All about architecture! [encoder, projection, predictor and loss function]
-  - Works only with batch normalization - else mode collapse
-  - [More criticism](https://generallyintelligent.ai/understanding-self-supervised-contrastive-learning.html)
-
-1. Caron, Mathilde, Piotr Bojanowski, Armand Joulin, and Matthijs Douze. "Deep clustering for unsupervised learning of visual features." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 132-149. 2018.
-  - Cluster Deep features and make them pseudo labels. [fig 1]
-  - Cluster (k-means) for training CNN [Avoid trivial solution of all zeros!]
-  - Motivation from Unsupervised feature learning, self-supervised learning, generative model
-  - [More](https://github.com/facebookresearch/deepcluster)
-
-1. Guo, Daniel, Bernardo Avila Pires, Bilal Piot, Jean-bastien Grill, Florent Altché, Rémi Munos, and Mohammad Gheshlaghi Azar. "Bootstrap Latent-Predictive Representations for Multitask Reinforcement Learning." arXiv preprint arXiv:2004.14646 (2020).
-  - Notation Caution. Representation learning [latent space for observe and history]
-  - States to future latent observation to future state.
-  - Latent embedding of history.
-  - Alternative for Deep RL
-  - Experiments
-    - DMLab-30
-    - Compared for PopArt-IMPALA (RNN) with DRAW, Pixel-control, Contrastive predictive control.
-  - Partially observable environments and Predictive representation.
-  - Learn agent state by predictive representation.
-  - RNN compresses history from the observations and actions; History as input for new decision making
-  - Interesting section 3!
 
 1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
   - Multi scale atrous CNN for Semantic image segmentation & modified ASPP
@@ -308,43 +216,135 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Roy, Aurko, Mohammad Saffar, Ashish Vaswani, and David Grangier. "Efficient content-based sparse attention with routing transformers." arXiv preprint arXiv:2003.05997 (2020).
   - Under construction
 
-1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
-  - SwAV (online algorithm) [swapped assignments between multiple vies of same image]
-  - Contrastive learning, clustering
-  - Predict cluster from different representation, memory efficiency!
-  - 'code' consistency between image and its transformation {target}
-    - similarity is formulated as a swapped prediction problem between positive pairs
-    - no negative examples
-    - the minibatch clustering methods implicitly prevent collapse of the representation space by encouraging samples in a batch to be distributed evenly to different clusters.
-  - online code computation
-  - Features and codes are learnt online
-  - multi-crop: Smaller image with multiple views
-  - validation: ImageNet linear evaluation protocol
-  - Interested related work section
-  - Key motivation: Contrastive instance learning
-  - Partition constraint (batch wise normalization) to avoid trivial solution
-
 1. Yang, Zhilin, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R. Salakhutdinov, and Quoc V. Le. "Xlnet: Generalized autoregressive pretraining for language understanding." In Advances in neural information processing systems, pp. 5753-5763. 2019.
   - under construction
-
-1. Asano, Yuki M., Mandela Patrick, Christian Rupprecht, and Andrea Vedaldi. "Labelling unlabelled videos from scratch with multi-modal self-supervision." arXiv preprint arXiv:2006.13662 (2020).
-  - Under consideration
-
-1. Patrick, Mandela, Yuki M. Asano, Ruth Fong, João F. Henriques, Geoffrey Zweig, and Andrea Vedaldi. "Multi-modal self-supervision from generalized data transformations." arXiv preprint arXiv:2003.04298 (2020).
-
-1. Khosla, Prannay, Piotr Teterwak, Chen Wang, Aaron Sarna, Yonglong Tian, Phillip Isola, Aaron Maschinot, Ce Liu, and Dilip Krishnan. "Supervised contrastive learning." arXiv preprint arXiv:2004.11362 (2020).
-  -
-
-1. Hadsell, Raia, Sumit Chopra, and Yann LeCun. "Dimensionality reduction by learning an invariant mapping." In 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'06), vol. 2, pp. 1735-1742. IEEE, 2006.
-
-1. Koch, Gregory, Richard Zemel, and Ruslan Salakhutdinov. "Siamese neural networks for one-shot image recognition." In ICML deep learning workshop, vol. 2. 2015.
 
 1. Hu, Baotian, Zhengdong Lu, Hang Li, and Qingcai Chen. "Convolutional neural network architectures for matching natural language sentences." In Advances in neural information processing systems, pp. 2042-2050. 2014.
   - Matching network
 
 1. Lee, Kwot Sin, Ngoc-Trung Tran, and Ngai-Man Cheung. "InfoMax-GAN: Improved Adversarial Image Generation via Information Maximization and Contrastive Learning." arXiv preprint arXiv:2007.04589 (2020).
 
-1. Chuang, Ching-Yao, Joshua Robinson, Lin Yen-Chen, Antonio Torralba, and Stefanie Jegelka. "Debiased contrastive learning." arXiv preprint arXiv:2007.00224 (2020).
+1. Liu, Sicong, Junzhao Du, Anshumali Shrivastava, and Lin Zhong. "Privacy Adversarial Network: Representation Learning for Mobile Data Privacy." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 3, no. 4 (2019): 1-18.
+  - presented in my course work instructed by my supervisor Dr. Nirmalya Roy
+  - [link](https://docs.google.com/presentation/d/1OF7Y6yoIAuLVQ_OtV5kdCEXzCp3MRAzusg1o8k6kTvo/edit?usp=sharing)
+
+1. Wang, Feng, Xiang Xiang, Jian Cheng, and Alan Loddon Yuille. "Normface: L2 hypersphere embedding for face verification." In Proceedings of the 25th ACM international conference on Multimedia, pp. 1041-1049. 2017.
+  - Training using normalization features.
+    - modification of softmax and optimize cosine losses
+    - Metric learning
+  - Research gap of necessity of normalization
+  - Four contributions?
+    - why cosine doesn't converge? buy normalized dot succeed.
+    - different loss option explore? why!!
+
+1. Gao, Chen, Ayush Saraf, Jia-Bin Huang, and Johannes Kopf. "Flow-edge Guided Video Completion." In European Conference on Computer Vision, pp. 713-729. Springer, Cham, 2020.
+  - Gradient domain processing
+  - Three steps
+    - Flow-Completion
+    - Temporal propagation
+    - Fusion
+  - Research Gap: memory for 3D, flow edges in flow based methods.
+  - Contribution
+    - Piecewise-smooth flow completion
+    - non-local flow for obscure objects
+    - Gradient domain operation (gradient of color through NN)
+  - Architecture is everything
+  - DAVIS dataset
+  - Poisson reconstruction
+
+1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
+  - Sentence to hidden features to probability distribution.  
+  - Contextual visual representation
+  - LM architecture with additional voken objective (BERT objective + voken classification)
+  - Need revisit!
+
+1. Peters, Matthew E., Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. "Deep contextualized word representations." arXiv preprint arXiv:1802.05365 (2018).
+
+1. Shen, Yanyao, Hyokun Yun, Zachary C. Lipton, Yakov Kronrod, and Animashree Anandkumar. "Deep active learning for named entity recognition." arXiv preprint arXiv:1707.05928 (2017).
+
+1. Gal, Yarin, Riashat Islam, and Zoubin Ghahramani. "Deep bayesian active learning with image data." arXiv preprint arXiv:1703.02910 (2017).
+
+1. Ganin, Yaroslav, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario Marchand, and Victor Lempitsky. "Domain-adversarial training of neural networks." The Journal of Machine Learning Research 17, no. 1 (2016): 2096-2030.   
+
+1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
+
+1. Karras, Tero, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, and Timo Aila. "Training generative adversarial networks with limited data." Advances in Neural Information Processing Systems 33 (2020).
+  - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
+  - prevent the leaking!
+  - nonleaking operation -invertible trasnformation (2.2: Point made)
+  - augmentation Scheme
+  - balanced consistency regularization! (old approach)
+  - stochastic discriminator augmentation
+    - Figure 2 (Whats the benefit!!)
+    - fig2(b): Generator output always go through Augmentation (with p [most significant param]) before hitting D
+  - Adaptive discriminator augmentation (section 3)
+    - Point: What if the D learns nothing for anyone! then r = 0 [Eq1], right? No! Oh got it! [solved :)] 0 (real) < D < 1(generated)
+
+1. Izacard, Gautier, and Edouard Grave. "Distilling Knowledge from Reader to Retriever for Question Answering." arXiv preprint arXiv:2012.04584 (2020).
+
+1. Szegedy, Christian, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew Wojna. "Rethinking the inception architecture for computer vision." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 2818-2826. 2016.
+
+1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
+
+1. Goodfellow, Ian, Honglak Lee, Quoc Le, Andrew Saxe, and Andrew Ng. "Measuring invariances in deep networks." Advances in neural information processing systems 22 (2009): 646-654.
+  - Evaluate invariant features
+    - Proposed some empirical metrics to measure the degree of invariance
+  - Experiment with stacked auto-encoder and CNN
+  - Proposed invariant set and invariance measurement metrics
+  - Empirical answer of why DL is useful - increasing depth increase invariance in representations
+  - Network architecture
+    - Stacked auto-encoder
+    - CNN Deep belief network
+  - Invariance measurement
+    - Finding neurons firing under invariance
+
+1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
+  -
+
+1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
+  - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
+    - Adaptive gradient clipping (AGC)
+    - Experiment: Normalization free ResNet
+  - Section 3: reasons and alternative to BN
+  - Section 4: This papers key contribution (AGC)
+    - Hypothesis: 1<sup>st</sup> paragraph: accelerating converge in poorly conditioned loss function for large Batch Size.
+    - Key point in equation 3 (adaptive)
+
+# Self-Supervised Learning
+
+
+1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
+  - Pretext task of rotation angle prediction!!
+    - Rotation, invariant across augmentation
+  - Baseline: vitrural adversarial training [inject noise with the original images],
+
+1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
+  - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation"
+    - How they separate the subject background in the first places!! What prior knowledge!!
+    - May use different existing methods!!
+  - Augmentation Scheme: Another data engineering
+    - Used with methods like BYOL, SwAV, MoCo to push SOTA forward
+    - Figure 1: Shows all
+
+1. Denton, Emily L. "Unsupervised learning of disentangled representations from video." In Advances in neural information processing systems, pp. 4414-4423. 2017.
+  - Encoder-Decoder set up for the disentangled
+  - Hypothesis: Content (time invariant) and Pose (time variant)
+  - Two Encoders for the pose and content; Concatenate the output for single Decoder
+  - Introduce adversarial loss
+  - Video generation conditioned on context, and pose modeling via LSTM.
+
+1. Huynh, Tri, Simon Kornblith, Matthew R. Walter, Michael Maire, and Maryam Khademi. "Boosting Contrastive Self-Supervised Learning with False Negative Cancellation." arXiv preprint arXiv:2011.11765 (2020).
+  - False negative Problem!! (detail analysis)
+  - Methods to Mitigate false negative impacts (how? what? how much impact! significant means?? what are other methods?)
+  - Hypothesis: RAndomly taken negative samples (leaked negative)
+  - Overview
+    - identify false negative (how?)
+    - Then false negative elimination and false negative attraction
+  - Contributions
+    - find false positive strategy (simple?)
+      - section 3.2.3 (obvious one but a tricky - heavy computation)
+    - False neg elimination and attraction
+    - applicable on top of existing cont. learning
 
 1. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
   - Predicting the future
@@ -404,106 +404,87 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - PILQR for RL parts
   - Huber-style loss
 
-1. Liu, Sicong, Junzhao Du, Anshumali Shrivastava, and Lin Zhong. "Privacy Adversarial Network: Representation Learning for Mobile Data Privacy." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 3, no. 4 (2019): 1-18.
-  - presented in my course work instructed by my supervisor Dr. Nirmalya Roy
-  - [link](https://docs.google.com/presentation/d/1OF7Y6yoIAuLVQ_OtV5kdCEXzCp3MRAzusg1o8k6kTvo/edit?usp=sharing)
+1. Lu, Jiasen, Vedanuj Goswami, Marcus Rohrbach, Devi Parikh, and Stefan Lee. "12-in-1: Multi-task vision and language representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10437-10446. 2020.
+  - MTL + Dynamic "stop and go" schedule.
+  - ViLBERT base architecture.
 
-1. Qi, Di, Lin Su, Jia Song, Edward Cui, Taroon Bharti, and Arun Sacheti. "Imagebert: Cross-modal pre-training with large-scale weak-supervised image-text data." arXiv preprint arXiv:2001.07966 (2020).
-  - vision pre-training /cross modal pretraining
-  - New data collection (LAIT)
-  - pretraining (see the loss functions)
-    - Image/text from same context? (ITM)
-    - Missing pixel detection?
-    - Masked object Classification (MOC)
-    - Masked region feature regression (MRFR)
-    - Masked Language Models
-  - Fine tune Tasks
-    - Binary classification losses
-    - Multi-class classification losses
-    - Triplet loss
-  - Multistage pretraining
-  - Experimented with VQA and others. image language
+1. Misra, Ishan, and Laurens van der Maaten. "Self-supervised learning of pretext-invariant representations." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6707-6717. 2020.
+  - Pretraining method
+  - Pretext learning with transformation invariant + data augmentation invariant
+  - See the loss functions  
+    - Tries to retain small amount of the transformation properties too !!
+  - Use contrastive learning (See NCE)
+      - Maximize MI
+  - Motivation from predicting video frames
+  - Experiment of jigsaw pretext learning
+  - Hypothesis: Representation of image and its transformation should be same
+  - Use different head for image and jigsaw counterpart of that particular image.
+      - Motivation for learning some extra things by different head network
+  - Noise Contrastive learning (contrast with other images)
+  - As two head so two component of contrastive loss. (One component to dampen memory update.)
+  - Implemented on ResNet
+  - PIRL
 
-1. Wang, Feng, Xiang Xiang, Jian Cheng, and Alan Loddon Yuille. "Normface: L2 hypersphere embedding for face verification." In Proceedings of the 25th ACM international conference on Multimedia, pp. 1041-1049. 2017.
-  - Training using normalization features.
-    - modification of softmax and optimize cosine losses
-    - Metric learning
-  - Research gap of necessity of normalization
-  - Four contributions?
-    - why cosine doesn't converge? buy normalized dot succeed.
-    - different loss option explore? why!!
+1. Zhang, Richard, Phillip Isola, and Alexei A. Efros. "Split-brain autoencoders: Unsupervised learning by cross-channel prediction." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1058-1067. 2017.
+  - Extension of autoencoders to cross channel prediction
+    - Predict one portion to other and vice versa + loss on full reconstruction.
+    - Two disjoint auto-encoders.
+  - Tried both the regression and classification loss
+  - Section 3 sums it up
+    - Cross-channel encoders
+    - Split-brain autoencoders.
+    -
 
-1. Hoffer, Elad, and Nir Ailon. "Deep metric learning using triplet network." In International Workshop on Similarity-Based Pattern Recognition, pp. 84-92. Springer, Cham, 2015.
-  - Triplet networks
-  - Experimented on the MNIST dataset.
+1. Srinivas, Aravind, Michael Laskin, and Pieter Abbeel. "Curl: Contrastive unsupervised representations for reinforcement learning." arXiv preprint arXiv:2004.04136 (2020).
 
-1. Gao, Chen, Ayush Saraf, Jia-Bin Huang, and Johannes Kopf. "Flow-edge Guided Video Completion." In European Conference on Computer Vision, pp. 713-729. Springer, Cham, 2020.
-  - Gradient domain processing
-  - Three steps
-    - Flow-Completion
-    - Temporal propagation
-    - Fusion
-  - Research Gap: memory for 3D, flow edges in flow based methods.
-  - Contribution
-    - Piecewise-smooth flow completion
-    - non-local flow for obscure objects
-    - Gradient domain operation (gradient of color through NN)
-  - Architecture is everything
-  - DAVIS dataset
-  - Poisson reconstruction
+1. Chen, Ting, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton. "A simple framework for contrastive learning of visual representations." arXiv preprint arXiv:2002.05709 (2020).
+  - Truely simple! (SimCLR)
+  - Two transfers for each image and representation
+  - Same origin image should be more similar than the others.
+  - Contrastive (negative) examples are from image other than that.
+  - A nonlinear projection head followed by the representation helps.
 
-1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive multiview coding." arXiv preprint arXiv:1906.05849 (2019).
-  - Find the invariant representation
-  - Multiple view of objects (image) (CMC) - multisensor view or same object!!]
-    - Same object but different sensors (positive keys)
-    - Different object same sensors (negative keys)
-    - Experiment: ImageNEt, STL-10, two views, DIV2K cropped images
-  - Positive pairs (augmentation)
-  - Follow-up of Contrastive Predictive coding (no RNN but more generalized)
-  - Compared with baseline: cross-view prediction!!
-  - Interesting math: Section 3 and experiment 4
-    - Mutual information lower bound Log(k = negative samples)- L<sub>contrastive</sub>
-    -  Memory bank implementation
+1. Asano, Yuki M., Mandela Patrick, Christian Rupprecht, and Andrea Vedaldi. "Labelling unlabelled videos from scratch with multi-modal self-supervision." arXiv preprint arXiv:2006.13662 (2020).
+  - Under consideration
 
-1. Hjelm, R. Devon, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachman, Adam Trischler, and Yoshua Bengio. "Learning deep representations by mutual information estimation and maximization." arXiv preprint arXiv:1808.06670 (2018).
-  - locality of input knowledge and match prior distribution adversarially (DeepInfoMax)
-    - Maximize input and output MI
-  - Experimented on Images
-    - Compared with VAE, BiGAN, CPC
-  - Evaluate represenation by Neural Dependency Measures (NDM)
-  - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images (-)
-  - [personal note](https://github.com/mxahan/PDFS_notes/blob/master/deepinfomax_paper.pdf)
+1. Patrick, Mandela, Yuki M. Asano, Ruth Fong, João F. Henriques, Geoffrey Zweig, and Andrea Vedaldi. "Multi-modal self-supervision from generalized data transformations." arXiv preprint arXiv:2003.04298 (2020).
 
-1. Wang, T. and Isola, P., 2020. Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere. arXiv preprint arXiv:2005.10242.
-  - How to contraint on these and they perform better? weighted loss
-    - Alignment (how close the positive features) [E<sub>pos</sub>[f(x)-f(y)]<sup>2</sup>]
-    - Uniformly [take all spaces in the hyperplane] [little complex but tangible 4.1.2]
-      - l_uniform loss definition [!!]
-      - Interpretation of 4.2 see our future paper !!
-  - cluster need to form spherical cap
-  - Theoretical metric for above two constraints??
-    - Congruous with CL
-    - gaussing RBF kernel e^{[f(x) -f(y)]^2} helps on uniform distribution achieving.
-  - Result figure-7 [interesting]
-  - Alignment and uniform loss
+1. Khosla, Prannay, Piotr Teterwak, Chen Wang, Aaron Sarna, Yonglong Tian, Phillip Isola, Aaron Maschinot, Ce Liu, and Dilip Krishnan. "Supervised contrastive learning." arXiv preprint arXiv:2004.11362 (2020).
+  -
 
-1. Tishby, Naftali, and Noga Zaslavsky. "Deep learning and the information bottleneck principle." In 2015 IEEE Information Theory Workshop (ITW), pp. 1-5. IEEE, 2015.
+1. Hadsell, Raia, Sumit Chopra, and Yann LeCun. "Dimensionality reduction by learning an invariant mapping." In 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'06), vol. 2, pp. 1735-1742. IEEE, 2006.
 
-1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
+1. Koch, Gregory, Richard Zemel, and Ruslan Salakhutdinov. "Siamese neural networks for one-shot image recognition." In ICML deep learning workshop, vol. 2. 2015.
 
-1. Kingma, Diederik P., and Max Welling. "Auto-encoding variational bayes." arXiv preprint arXiv:1312.6114 (2013).
+1. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
+  - Interesting way to improve the Classifier
+  - (labeled data) -> Build classifier (T) -> (predict unlabeled data) -> Train Student using both labeled + model predicted unlabeled data. Repeat.. [algo 1]
+  - Introduce noise for both T and S.
+    - Data noise, model noise (dropout)
 
-1. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
+1. Park, Taesung, Alexei A. Efros, Richard Zhang, and Jun-Yan Zhu. "Contrastive Learning for Unpaired Image-to-Image Translation." arXiv preprint arXiv:2007.15651 (2020).
+  - Contrastive loss (Same patch of input - output are +ve and rest of the patches are -ve example)
+  - Trains the encoder parts more! (Fig 1, 2) ; Decoders train only on adversarial losses.
+  - Contribution in loss (SimCLR) kinda motivation
 
-1. Gutmann, Michael, and Aapo Hyvärinen. "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models." In Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics, pp. 297-304. 2010.
+1. Caron, Mathilde, Piotr Bojanowski, Armand Joulin, and Matthijs Douze. "Deep clustering for unsupervised learning of visual features." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 132-149. 2018.
+  - Cluster Deep features and make them pseudo labels. [fig 1]
+  - Cluster (k-means) for training CNN [Avoid trivial solution of all zeros!]
+  - Motivation from Unsupervised feature learning, self-supervised learning, generative model
+  - [More](https://github.com/facebookresearch/deepcluster)
 
-1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
-  - Sentence to hidden features to probability distribution.  
-  - Contextual visual representation
-  - LM architecture with additional voken objective (BERT objective + voken classification)
-  - Need revisit!
-
-1. Peters, Matthew E., Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. "Deep contextualized word representations." arXiv preprint arXiv:1802.05365 (2018).
+1. Guo, Daniel, Bernardo Avila Pires, Bilal Piot, Jean-bastien Grill, Florent Altché, Rémi Munos, and Mohammad Gheshlaghi Azar. "Bootstrap Latent-Predictive Representations for Multitask Reinforcement Learning." arXiv preprint arXiv:2004.14646 (2020).
+  - Notation Caution. Representation learning [latent space for observe and history]
+  - States to future latent observation to future state.
+  - Latent embedding of history.
+  - Alternative for Deep RL
+  - Experiments
+    - DMLab-30
+    - Compared for PopArt-IMPALA (RNN) with DRAW, Pixel-control, Contrastive predictive control.
+  - Partially observable environments and Predictive representation.
+  - Learn agent state by predictive representation.
+  - RNN compresses history from the observations and actions; History as input for new decision making
+  - Interesting section 3!
 
 1. Tian, Yonglong, Chen Sun, Ben Poole, Dilip Krishnan, Cordelia Schmid, and Phillip Isola. "What makes for good views for contrastive learning." arXiv preprint arXiv:2005.10243 (2020).
   - Multi-view in-variance
@@ -552,13 +533,165 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
   - Under Construction
 
-1. Shen, Yanyao, Hyokun Yun, Zachary C. Lipton, Yakov Kronrod, and Animashree Anandkumar. "Deep active learning for named entity recognition." arXiv preprint arXiv:1707.05928 (2017).
+1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
-1. Gal, Yarin, Riashat Islam, and Zoubin Ghahramani. "Deep bayesian active learning with image data." arXiv preprint arXiv:1703.02910 (2017).
+1. Devon, R. "Representation Learning with Video Deep InfoMax." arXiv preprint arXiv:2007.13278 (2020).
 
-1. Ganin, Yaroslav, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario Marchand, and Victor Lempitsky. "Domain-adversarial training of neural networks." The Journal of Machine Learning Research 17, no. 1 (2016): 2096-2030.   
+1. Bromley, Jane, J. W. Bentz, L. Bottou, I. Guyon, Y. LeCun, C. Moore, E. Sackinger, and R. Shah. "Signature Veriﬁcation using a “Siamese” Time Delay Neural Network." Int.]. Pattern Recognit. Artzf Intell 7 (1993).
+  - Gold in old
+  - Siamese network early application for hand writing
 
-1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
+1. Ebbers, Janek, Michael Kuhlmann, and Reinhold Haeb-Umbach. "Adversarial Contrastive Predictive Coding for Unsupervised Learning of Disentangled Representations." arXiv preprint arXiv:2005.12963 (2020).
+
+1. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
+
+1. Oh Song, Hyun, Yu Xiang, Stefanie Jegelka, and Silvio Savarese. "Deep metric learning via lifted structured feature embedding." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 4004-4012. 2016.
+  - Proposes a different loss function (Equation-3)
+    - Non-smooth and requires special data mining
+    - Solution: This paper: optimize upper bound of eq3, instead of mining use stochastic approach!!
+    - This paper: all pairwise combination in a batch!! O(m<sup>2</sup>)
+      - uses mini batch
+      - Not-random batch formation: Importance Sampling
+      - Hard-negative mining
+      - Gradient finding in the algorithm-1, mathematical analysis
+  - Discusses one of the fundamental issues with contrastive loss and triplet loss!
+    - different batches puts same class in different position
+  - Experiment: Amazon Object dataset- multiview .
+
+1. G. W. Taylor, I. Spiro, C. Bregler, and R. Fergus, ‘‘Learning invariance through imitation,’’ in Proc. CVPR, Jun. 2011, pp. 2729–2736, doi:10.1109/CVPR.2011.5995538
+
+1. Zhuang, Chengxu, Alex Lin Zhai, and Daniel Yamins. "Local aggregation for unsupervised learning of visual embeddings." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6002-6012. 2019.
+
+1. Purushwalkam, Senthil, and Abhinav Gupta. "Demystifying contrastive self-supervised learning: Invariances, augmentations and dataset biases." arXiv preprint arXiv:2007.13916 (2020).
+  - object detection and classification
+  - quantitative experiment to Demystify CL gains! (reason behind success)
+    - Observation1: MOCO and PIRL (occlusion invariant)
+      - but Fails to capture viewpoint
+    - gain from object-centric dataset - imagenet!
+    - Propose methods to leverage learn from unstructured video (viewpoint invariant)
+  - Utility of systems: How much invarinces the system encodes
+  - most contrastive setup - occlusion invariant! what about viewpoint invariant?
+  - Related works
+    - Pretext tasks
+    - Video SSL
+    - Understanding SSRL
+      - Mutual information
+    - This work - Why CL is useful
+      - study two aspects: (invariances encoding & role of dataset)
+  - Demystifying Contrastive SSL
+    - what is good Representation? Utilitarian analysis: how good the downstream task is?
+      - What about the insights? and qualitative analysis?
+    - Measuring Invariances
+      - What invariance do we need? - invariant to all transformation!!
+        - Viewpoint change, deformation, illumination, occlusion, category instance  
+      - Metrics: Firing representation, global firing rate, local firing rate, target conditioned invariance, representation invariant score.
+      - Experimental dataset
+        - occlusion (GOR-10K), viewpoint+instance invariance (Pascal3D+)
+      - image and video careful augmentation
+
+1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
+
+1. Tschannen, Michael, Josip Djolonga, Paul K. Rubenstein, Sylvain Gelly, and Mario Lucic. "On mutual information maximization for representation learning." arXiv preprint arXiv:1907.13625 (2019).
+
+1. Kalantidis, Yannis, Mert Bulent Sariyildiz, Noe Pion, Philippe Weinzaepfel, and Diane Larlus. "Hard negative mixing for contrastive learning." arXiv preprint arXiv:2010.01028 (2020).
+
+1. Löwe, Sindy, Peter O'Connor, and Bastiaan S. Veeling. "Putting an end to end-to-end: Gradient-isolated learning of representations." arXiv preprint arXiv:1905.11786 (2019).
+
+1. Xiong, Yuwen, Mengye Ren, and Raquel Urtasun. "LoCo: Local contrastive representation learning." arXiv preprint arXiv:2008.01342 (2020).
+
+1. Grill, Jean-Bastien, Florian Strub, Florent Altché, Corentin Tallec, Pierre H. Richemond, Elena Buchatskaya, Carl Doersch et al. "Bootstrap your own latent: A new approach to self-supervised learning." arXiv preprint arXiv:2006.07733 (2020).
+  - Unsupervised Representation learning in a discriminative method. (BOYL)
+  - Alternative of contrastive learning methods (as CL depends on batch size, image augmentation method, memory bank, resilient). [No negative examples]
+  - Online and Target network. [Augmented image output in online network should be close to main image in target network.] What about all zeros! (Empirically slow moving average helps to avoid that)
+  - Motivation [section 3 method]
+  - similarity constraint between positive keys are also enforced through a prediction problem from an online network to an offline momentum-updated network
+  - BYOL tries to match the prediction from an online network to a randomly initialised offline
+  network. This iterations lead to better representation than those of the random offline network.
+  -By continually improving the offline network through the momentum update, the quality of the representation is bootstrapped from just the random initialised network
+  - All about architecture! [encoder, projection, predictor and loss function]
+  - Works only with batch normalization - else mode collapse
+  - [More criticism](https://generallyintelligent.ai/understanding-self-supervised-contrastive-learning.html)
+
+1. Qi, Di, Lin Su, Jia Song, Edward Cui, Taroon Bharti, and Arun Sacheti. "Imagebert: Cross-modal pre-training with large-scale weak-supervised image-text data." arXiv preprint arXiv:2001.07966 (2020).
+  - vision pre-training /cross modal pretraining
+  - New data collection (LAIT)
+  - pretraining (see the loss functions)
+    - Image/text from same context? (ITM)
+    - Missing pixel detection?
+    - Masked object Classification (MOC)
+    - Masked region feature regression (MRFR)
+    - Masked Language Models
+  - Fine tune Tasks
+    - Binary classification losses
+    - Multi-class classification losses
+    - Triplet loss
+  - Multistage pretraining
+  - Experimented with VQA and others. image language
+
+1. Hoffer, Elad, and Nir Ailon. "Deep metric learning using triplet network." In International Workshop on Similarity-Based Pattern Recognition, pp. 84-92. Springer, Cham, 2015.
+  - Triplet networks
+  - Experimented on the MNIST dataset.
+
+1. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive multiview coding." arXiv preprint arXiv:1906.05849 (2019).
+  - Find the invariant representation
+  - Multiple view of objects (image) (CMC) - multisensor view or same object!!]
+    - Same object but different sensors (positive keys)
+    - Different object same sensors (negative keys)
+    - Experiment: ImageNEt, STL-10, two views, DIV2K cropped images
+  - Positive pairs (augmentation)
+  - Follow-up of Contrastive Predictive coding (no RNN but more generalized)
+  - Compared with baseline: cross-view prediction!!
+  - Interesting math: Section 3 and experiment 4
+    - Mutual information lower bound Log(k = negative samples)- L<sub>contrastive</sub>
+    -  Memory bank implementation
+
+1. Hjelm, R. Devon, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachman, Adam Trischler, and Yoshua Bengio. "Learning deep representations by mutual information estimation and maximization." arXiv preprint arXiv:1808.06670 (2018).
+  - locality of input knowledge and match prior distribution adversarially (DeepInfoMax)
+    - Maximize input and output MI
+  - Experimented on Images
+    - Compared with VAE, BiGAN, CPC
+  - Evaluate represenation by Neural Dependency Measures (NDM)
+  - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images (-)
+  - [personal note](https://github.com/mxahan/PDFS_notes/blob/master/deepinfomax_paper.pdf)
+
+1. Wang, T. and Isola, P., 2020. Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere. arXiv preprint arXiv:2005.10242.
+  - How to contraint on these and they perform better? weighted loss
+    - Alignment (how close the positive features) [E<sub>pos</sub>[f(x)-f(y)]<sup>2</sup>]
+    - Uniformly [take all spaces in the hyperplane] [little complex but tangible 4.1.2]
+      - l_uniform loss definition [!!]
+      - Interpretation of 4.2 see our future paper !!
+  - cluster need to form spherical cap
+  - Theoretical metric for above two constraints??
+    - Congruous with CL
+    - gaussing RBF kernel e^{[f(x) -f(y)]^2} helps on uniform distribution achieving.
+  - Result figure-7 [interesting]
+  - Alignment and uniform loss
+
+1. Tishby, Naftali, and Noga Zaslavsky. "Deep learning and the information bottleneck principle." In 2015 IEEE Information Theory Workshop (ITW), pp. 1-5. IEEE, 2015.
+
+1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
+
+1. Kingma, Diederik P., and Max Welling. "Auto-encoding variational bayes." arXiv preprint arXiv:1312.6114 (2013).
+
+1. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
+
+1. Gutmann, Michael, and Aapo Hyvärinen. "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models." In Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics, pp. 297-304. 2010.
+
+1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
+  - SwAV (online algorithm) [swapped assignments between multiple vies of same image]
+  - Contrastive learning, clustering
+  - Predict cluster from different representation, memory efficiency!
+  - 'code' consistency between image and its transformation {target}
+    - similarity is formulated as a swapped prediction problem between positive pairs
+    - no negative examples
+    - the minibatch clustering methods implicitly prevent collapse of the representation space by encouraging samples in a batch to be distributed evenly to different clusters.
+  - online code computation
+  - Features and codes are learnt online
+  - multi-crop: Smaller image with multiple views
+  - validation: ImageNet linear evaluation protocol
+  - Interested related work section
+  - Key motivation: Contrastive instance learning
+  - Partition constraint (batch wise normalization) to avoid trivial solution
 
 1. Chen, Xinlei, and Kaiming He. "Exploring Simple Siamese Representation Learning." arXiv preprint arXiv:2011.10566 (2020).
   - Not using Negative samples, large batch or Momentum encoder!!
@@ -602,42 +735,15 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - [Notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_sampling_debias_hardMining.pdf)
 
 1. Chuang, Ching-Yao, Joshua Robinson, Yen-Chen Lin, Antonio Torralba, and Stefanie Jegelka. "Debiased contrastive learning." Advances in Neural Information Processing Systems 33 (2020).
-  - Sample bias [negatives are actually positive! since randomly smapled]
+  - Sample bias [negatives are actually positive! since randomly sampled]
   - need unbiased - improves vision, NLP and reinforcement tasks.
   - Related to Positive unlabeled learning
   - interesting results
   - [Notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_sampling_debias_hardMining.pdf)
 
-1. Huynh, Tri, Simon Kornblith, Matthew R. Walter, Michael Maire, and Maryam Khademi. "Boosting Contrastive Self-Supervised Learning with False Negative Cancellation." arXiv preprint arXiv:2011.11765 (2020).
-  - False negative Problem!! (detail analysis)
-  - Methods to Mitigate false negative impacts (how? what? how much impact! significant means?? what are other methods?)
-  - Hypothesis: RAndomly taken negative samples (leaked negative)
-  - Overview
-    - identify false negative (how?)
-    - Then false negative elimination and false negative attraction
-  - Contributions
-    - find false positive strategy (simple?)
-      - section 3.2.3 (obvious one but a tricky - heavy computation)
-    - False neg elimination and attraction
-    - applicable on top of existing cont. learning
-
-1. Karras, Tero, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, and Timo Aila. "Training generative adversarial networks with limited data." Advances in Neural Information Processing Systems 33 (2020).
-  - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
-  - prevent the leaking!
-  - nonleaking operation -invertible trasnformation (2.2: Point made)
-  - augmentation Scheme
-  - balanced consistency regularization! (old approach)
-  - stochastic discriminator augmentation
-    - Figure 2 (Whats the benefit!!)
-    - fig2(b): Generator output always go through Augmentation (with p [most significant param]) before hitting D
-  - Adaptive discriminator augmentation (section 3)
-    - Point: What if the D learns nothing for anyone! then r = 0 [Eq1], right? No! Oh got it! [solved :)] 0 (real) < D < 1(generated)
-
 1. Zhao, Nanxuan, Zhirong Wu, Rynson WH Lau, and Stephen Lin. "What makes instance discrimination good for transfer learning?." arXiv preprint arXiv:2006.06606 (2020).
 
 1. Metzger, Sean, Aravind Srinivas, Trevor Darrell, and Kurt Keutzer. "Evaluating Self-Supervised Pretraining Without Using Labels." arXiv preprint arXiv:2009.07724 (2020).
-
-1. Izacard, Gautier, and Edouard Grave. "Distilling Knowledge from Reader to Retriever for Question Answering." arXiv preprint arXiv:2012.04584 (2020).
 
 1. Bhardwaj, Sangnie, Ian Fischer, Johannes Ballé, and Troy Chinen. "An Unsupervised Information-Theoretic Perceptual Quality Metric." Advances in Neural Information Processing Systems 33 (2020).
 
@@ -734,8 +840,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Experiments on visual recognition, object recognition, and verification, image clustering and retrieval, face verification and identification tasks.
   - identify multiple negatives [section 3], efficient batch construction
 
-1. Dosovitskiy, Alexey, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with convolutional neural networks. "NIPS, 2014.
-
 1. Dosovitskiy, Alexey, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with exemplar convolutional neural networks." IEEE transactions on pattern analysis and machine intelligence 38, no. 9 (2015): 1734-1747.
 
 1. Tschannen, Michael, Josip Djolonga, Marvin Ritter, Aravindh Mahendran, Neil Houlsby, Sylvain Gelly, and Mario Lucic. "Self-supervised learning of video-induced visual invariances." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 13806-13815. 2020.
@@ -807,76 +911,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Gordon, Daniel, Kiana Ehsani, Dieter Fox, and Ali Farhadi. "Watching the world go by: Representation learning from unlabeled videos." arXiv preprint arXiv:2003.07990 (2020).
   - Multi-frame multi-pairs positive negative (single imgae)- instance discrimination
 
-1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
-
-1. Devon, R. "Representation Learning with Video Deep InfoMax." arXiv preprint arXiv:2007.13278 (2020).
-
-1. Bromley, Jane, J. W. Bentz, L. Bottou, I. Guyon, Y. LeCun, C. Moore, E. Sackinger, and R. Shah. "Signature Veriﬁcation using a “Siamese” Time Delay Neural Network." Int.]. Pattern Recognit. Artzf Intell 7 (1993).
-  - Gold in old
-  - Siamese network early application for hand writing
-
-1. Ebbers, Janek, Michael Kuhlmann, and Reinhold Haeb-Umbach. "Adversarial Contrastive Predictive Coding for Unsupervised Learning of Disentangled Representations." arXiv preprint arXiv:2005.12963 (2020).
-
-1. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
-
-1. Oh Song, Hyun, Yu Xiang, Stefanie Jegelka, and Silvio Savarese. "Deep metric learning via lifted structured feature embedding." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 4004-4012. 2016.
-  - Proposes a different loss function (Equation-3)
-    - Non-smooth and requires special data mining
-    - Solution: This paper: optimize upper bound of eq3, instead of mining use stochastic approach!!
-    - This paper: all pairwise combination in a batch!! O(m<sup>2</sup>)
-      - uses mini batch
-      - Not-random batch formation: Importance Sampling
-      - Hard-negative mining
-      - Gradient finding in the algorithm-1, mathematical analysis
-  - Discusses one of the fundamental issues with contrastive loss and triplet loss!
-    - different batches puts same class in different position
-  - Experiment: Amazon Object dataset- multiview .
-
-1. G. W. Taylor, I. Spiro, C. Bregler, and R. Fergus, ‘‘Learning invariance through imitation,’’ in Proc. CVPR, Jun. 2011, pp. 2729–2736, doi:10.1109/CVPR.2011.5995538
-
-1. Zhuang, Chengxu, Alex Lin Zhai, and Daniel Yamins. "Local aggregation for unsupervised learning of visual embeddings." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6002-6012. 2019.
-
-1. Purushwalkam, Senthil, and Abhinav Gupta. "Demystifying contrastive self-supervised learning: Invariances, augmentations and dataset biases." arXiv preprint arXiv:2007.13916 (2020).
-  - object detection and classification
-  - quantitative experiment to Demystify CL gains! (reason behind success)
-    - Observation1: MOCO and PIRL (occlusion invariant)
-      - but Fails to capture viewpoint
-    - gain from object-centric dataset - imagenet!
-    - Propose methods to leverage learn from unstructured video (viewpoint invariant)
-  - Utility of systems: How much invarinces the system encodes
-  - most contrastive setup - occlusion invariant! what about viewpoint invariant?
-  - Related works
-    - Pretext tasks
-    - Video SSL
-    - Understanding SSRL
-      - Mutual information
-    - This work - Why CL is useful
-      - study two aspects: (invariances encoding & role of dataset)
-  - Demystifying Contrastive SSL
-    - what is good Representation? Utilitarian analysis: how good the downstream task is?
-      - What about the insights? and qualitative analysis?
-    - Measuring Invariances
-      - What invariance do we need? - invariant to all transformation!!
-        - Viewpoint change, deformation, illumination, occlusion, category instance  
-      - Metrics: Firing representation, global firing rate, local firing rate, target conditioned invariance, representation invariant score.
-      - Experimental dataset
-        - occlusion (GOR-10K), viewpoint+instance invariance (Pascal3D+)
-      - image and video careful augmentation
-
-1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
-
-1. Tschannen, Michael, Josip Djolonga, Paul K. Rubenstein, Sylvain Gelly, and Mario Lucic. "On mutual information maximization for representation learning." arXiv preprint arXiv:1907.13625 (2019).
-
-1. Kalantidis, Yannis, Mert Bulent Sariyildiz, Noe Pion, Philippe Weinzaepfel, and Diane Larlus. "Hard negative mixing for contrastive learning." arXiv preprint arXiv:2010.01028 (2020).
-
-1. Löwe, Sindy, Peter O'Connor, and Bastiaan S. Veeling. "Putting an end to end-to-end: Gradient-isolated learning of representations." arXiv preprint arXiv:1905.11786 (2019).
-
-1. Xiong, Yuwen, Mengye Ren, and Raquel Urtasun. "LoCo: Local contrastive representation learning." arXiv preprint arXiv:2008.01342 (2020).
-
-1. Szegedy, Christian, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew Wojna. "Rethinking the inception architecture for computer vision." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 2818-2826. 2016.
-
-1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
-
 1. Alwassel, Humam, Dhruv Mahajan, Bruno Korbar, Lorenzo Torresani, Bernard Ghanem, and Du Tran. "Self-supervised learning by cross-modal audio-video clustering." arXiv preprint arXiv:1911.12667 (2019).
 
 1. Chen, Ting, Simon Kornblith, Kevin Swersky, Mohammad Norouzi, and Geoffrey Hinton. "Big self-supervised models are strong semi-supervised learners." arXiv preprint arXiv:2006.10029 (2020).
@@ -944,19 +978,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Comparison with Prior Art
       - InfoNCE
 
-1. Goodfellow, Ian, Honglak Lee, Quoc Le, Andrew Saxe, and Andrew Ng. "Measuring invariances in deep networks." Advances in neural information processing systems 22 (2009): 646-654.
-  - Evaluate invariant features
-    - Proposed some empirical metrics to measure the degree of invariance
-  - Experiment with stacked auto-encoder and CNN
-  - Proposed invariant set and invariance measurement metrics
-  - Empirical answer of why DL is useful - increasing depth increase invariance in representations
-  - Network architecture
-    - Stacked auto-encoder
-    - CNN Deep belief network
-  - Invariance measurement
-    - Finding neurons firing under invariance
-
-1. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
+1. 1. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
   - Alternative to instance-level pretext learning - Pixel-level pretext learning!
     - Pixel level pretext learning! pixel to propagation consistency!!
       - Avail both backbone and head network! to reuse
@@ -1035,37 +1057,3 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Compared with SEER!!
   - Experiment with imagenet to COCO dataset
   - This paper: Special Data augmentation scheme
-
-1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
-  - learning and adapting quickly
-    - The key idea: train the initial parameters to maximize performance on a new task after the parameters have been updated through few gradient steps computed with a small data from that new task.
-    - Where it works! Why don't everybody used it afterwords!
-    - Contribution: trains a model’s parameters such that a small number of gradient updates will lead to fast learning on a new task.
-  - Prior arts: Learn update function!
-    - MAML: more flexible (loss function and architectures)
-  - MAML
-    - Problem setup:
-
-1. Weston, Jason, Sumit Chopra, and Antoine Bordes. "Memory networks." arXiv preprint arXiv:1410.3916 (2014).
-
-1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
-  -
-
-1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
-
-1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
-  - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation"
-    - How they separate the subject background in the first places!! What prior knowledge!!
-    - May use different existing methods!!
-  - Augmentation Scheme: Another data engineering
-    - Used with methods like BYOL, SwAV, MoCo to push SOTA forward
-    - Figure 1: Shows all
-
-1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
-  - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
-    - Adaptive gradient clipping (AGC)
-    - Experiment: Normalization free ResNet
-  - Section 3: reasons and alternative to BN
-  - Section 4: This papers key contribution (AGC)
-    - Hypothesis: 1<sup>st</sup> paragraph: accelerating converge in poorly conditioned loss function for large Batch Size.
-    - Key point in equation 3 (adaptive)

@@ -38,11 +38,10 @@ This blog contains state of the art application and research on different applic
       - Fine-tuning existing parameter
     - Refining Meta-learned parameters
     - Learning the optimizer
-  - Future works: four possible directions : 
-    - Problem setup
-    - Techniques
-    - applications
-    - Theories
+  - Future works: four possible directions : Problem setup, Techniques, applications, and Theories
+
+1. 1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
+  - Metric learning and augmented memory network
 
 1. Munkhdalai, Tsendsuren, and Hong Yu. "Meta networks." In International Conference on Machine Learning, pp. 2554-2563. PMLR, 2017.
 
@@ -86,6 +85,17 @@ This blog contains state of the art application and research on different applic
 
 1. Ren, Mengye, Eleni Triantafillou, Sachin Ravi, Jake Snell, Kevin Swersky, Joshua B. Tenenbaum, Hugo Larochelle, and Richard S. Zemel. "Meta-learning for semi-supervised few-shot classification." arXiv preprint arXiv:1803.00676 (2018).
 
+1. 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
+  - learning and adapting quickly
+    - The key idea: train the initial parameters to maximize performance on a new task after the parameters have been updated through few gradient steps computed with a small data from that new task.
+    - Where it works! Why don't everybody used it afterwords!
+    - Contribution: trains a model’s parameters such that a small number of gradient updates will lead to fast learning on a new task.
+  - Prior arts: Learn update function!
+    - MAML: more flexible (loss function and architectures)
+  - MAML
+    - Problem setup:
+
+1. Weston, Jason, Sumit Chopra, and Antoine Bordes. "Memory networks." arXiv preprint arXiv:1410.3916 (2014).
 
 # UAV
 
