@@ -38,7 +38,7 @@ This blog contains state of the art application and research on different applic
       - Fine-tuning existing parameter
     - Refining Meta-learned parameters
     - Learning the optimizer
-  - Future works: four possible directions :
+  - Future works: four possible directions : 
     - Problem setup
     - Techniques
     - applications
@@ -51,7 +51,15 @@ This blog contains state of the art application and research on different applic
 1. Reed, Scott, Zeynep Akata, Honglak Lee, and Bernt Schiele. "Learning deep representations of fine-grained visual descriptions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 49-58. 2016.
 
 1. Sung, Flood, Yongxin Yang, Li Zhang, Tao Xiang, Philip HS Torr, and Timothy M. Hospedales. "Learning to compare: Relation network for few-shot learning." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1199-1208. 2018.
-  - Relation network 
+  - Relation network (RN) - simple! flexible! General! - end-2-end
+  - Utilizes meta-learning approach! keeps distance between small set of supports (metric learning based approach), reduces complexity in the inference
+  - Example based classification (FSL) and extension to ZSL
+  - Experiments with 5 benchmark dataset [2 FS: omniglot, MiniImagenet], [3 ZS: AwA1, AwA2 and CUB]
+  - Two branch Relation network for FSL: Embedding module, and relation module (nonlinear comparator, multi-layer NN) **Figure 1**
+    - Both modules are meta-learner
+  - Interesting related work section : learning to fine-tune (MAML), RNN memory based, Embedding and Metric learning approachs
+    - Mostly related to prototypical network and siamese network
+  - Problem definition and solution: Section 3
 
 1. Dinu, Georgiana, Angeliki Lazaridou, and Marco Baroni. "Improving zero-shot learning by mitigating the hubness problem." arXiv preprint arXiv:1412.6568 (2014).
 
@@ -90,6 +98,12 @@ This blog contains state of the art application and research on different applic
     - Requires all labeled !!
   - Detection approaches (YOLO, SSD)
   - Edge device implementation
+
+1. Samaras, Stamatios, Eleni Diamantidou, Dimitrios Ataloglou, Nikos Sakellariou, Anastasios Vafeiadis, Vasilis Magoulianitis, Antonios Lalas et al. "Deep learning on multi sensor data for counter UAV applications—A systematic review." Sensors 19, no. 22 (2019): 4837.
+  - Counter UAV (c-UAV): detect UAV to prevent criminal activities.
+    - Discusses recent advancement of c-UAV using multi-sensors.
+  - Figure 1: Good comparison among multiple individual sensors
+  - Scope: Figure 3 {4 types of sensors and their fusion strategy}
 
 # Action recognition
 1. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." arXiv preprint arXiv:2103.16516 (2021).

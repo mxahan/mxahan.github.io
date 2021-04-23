@@ -1060,3 +1060,12 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Augmentation Scheme: Another data engineering
     - Used with methods like BYOL, SwAV, MoCo to push SOTA forward
     - Figure 1: Shows all
+
+1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
+  - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
+    - Adaptive gradient clipping (AGC)
+    - Experiment: Normalization free ResNet
+  - Section 3: reasons and alternative to BN
+  - Section 4: This papers key contribution (AGC)
+    - Hypothesis: 1<sup>st</sup> paragraph: accelerating converge in poorly conditioned loss function for large Batch Size.
+    - Key point in equation 3 (adaptive)
