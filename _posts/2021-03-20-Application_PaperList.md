@@ -41,7 +41,9 @@ This blog contains state of the art application and research on different applic
   - Future works: four possible directions : Problem setup, Techniques, applications, and Theories
 
 1. 1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
-  - Metric learning and augmented memory network
+  - Metric learning and augmented memory network!!
+  - Non-parametric setup for metric learning
+  - Two novelty: Modeling & training
 
 1. Munkhdalai, Tsendsuren, and Hong Yu. "Meta networks." In International Conference on Machine Learning, pp. 2554-2563. PMLR, 2017.
 
@@ -84,6 +86,14 @@ This blog contains state of the art application and research on different applic
 1. Sun, Qianru, Yaoyao Liu, Tat-Seng Chua, and Bernt Schiele. "Meta-transfer learning for few-shot learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 403-412. 2019.
 
 1. Ren, Mengye, Eleni Triantafillou, Sachin Ravi, Jake Snell, Kevin Swersky, Joshua B. Tenenbaum, Hugo Larochelle, and Richard S. Zemel. "Meta-learning for semi-supervised few-shot classification." arXiv preprint arXiv:1803.00676 (2018).
+  - Extension (??) of Prototypical networks
+    - Application scenario: partially labeled data, some classes are missing labeled section.
+  - Experiment with omniglot and MiniImagenet , tieredImageNet (new proposed data!)
+    - With and without distractor classes
+    - Three novel extension of prototypical network!
+      - (i) Prototypical net with soft k-Means
+      - (ii) Prototypical net with soft k-Means with a distractor cluster
+      - (iii) Prototypical net with soft k-Means and Masking
 
 1. 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
   - learning and adapting quickly
@@ -117,3 +127,19 @@ This blog contains state of the art application and research on different applic
 
 # Action recognition
 1. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." arXiv preprint arXiv:2103.16516 (2021).
+
+# Imitation Learning
+
+1. Sermanet, Pierre, Kelvin Xu, and Sergey Levine. "Unsupervised perceptual rewards for imitation learning." arXiv preprint arXiv:1612.06699 (2016).
+  - intermediate steps and sub-goals
+  - Abstraction power of intermediate visualization!!
+  - pretraining, unsupervised [results a reward function !! ]
+  - Accumulate two ideas for imitation learning: usage of extensive prior knowledge!! & observation, trial-and-error learning !!
+  - This paper: proposes reward learning method
+    - Reward function (vision based learning) and discovering intermediate stages
+    - learning visual representations can be used to represent the goal (no fine-tuneing)
+  - Related field: learning from demonstration, inverse reinforcement learning
+  - video segmentation for notion of similarity
+
+1. Ziebart, Brian D., Andrew L. Maas, J. Andrew Bagnell, and Anind K. Dey. "Maximum entropy inverse reinforcement learning." In Aaai, vol. 8, pp. 1433-1438. 2008.
+  - Framing problem as Imitation learning as solutions to MDP

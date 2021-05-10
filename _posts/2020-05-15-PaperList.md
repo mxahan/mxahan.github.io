@@ -58,6 +58,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - External memory source coupling for attention  (analogous to turing machine )
     - How to show it? what's the background? Experiments? How much they differ and align? Whats the perspective?
   - copying, storing and associative recall
+  - Extension of RNN - NTM (differentiable unlike Turing Machine)
+  - Two components: controller and memory with i/o for external interaction
+    - Attending to memory (attention) [sharp or distributed attention]
 
 1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).li
   - D: Assign low energy to data distribution (not normalized probabilities)
@@ -310,13 +313,21 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Hypothesis: 1<sup>st</sup> paragraph: accelerating converge in poorly conditioned loss function for large Batch Size.
     - Key point in equation 3 (adaptive)
 
+1. Smirnov, Evgeny, Aleksandr Melnikov, Andrei Oleinik, Elizaveta Ivanova, Ilya Kalinovskiy, and Eugene Luckyanets. "Hard example mining with auxiliary embeddings." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops, pp. 37-46. 2018.
+  - Deep embedding learning and hard example mining!!
+    - Proposes auxiliary embedding [should solve the problem of mini-batch level, single class random selection] for hard mining [claims to be novel]: mini-batch with large number of hard exmples
+    - Multiple ways to create auxiliary embedding!
+  - Related works: mini-batch level hard exmaple mining, hard class mining
+  - Figure 2: selection of hard example! auxiliary embedding are final layers
+
+
 # Self-Supervised Learning
 
 
 1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
   - Pretext task of rotation angle prediction!!
     - Rotation, invariant across augmentation
-  - Baseline: vitrural adversarial training [inject noise with the original images],
+  - Baseline: vitrural adversarial training [inject noise with the original images], EntMin
 
 1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
   - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation"
@@ -870,6 +881,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     -  instances and their augmentations!
 
 1. Weinberger, Kilian Q., John Blitzer, and Lawrence K. Saul. "Distance metric learning for large margin nearest neighbor classification." In Advances in neural information processing systems, pp. 1473-1480. 2006.
+  - Triplet loss proposal
 
 1. Liu, Yang, Keze Wang, Haoyuan Lan, and Liang Lin. "Temporal Contrastive Graph for Self-supervised Video Representation Learning." arXiv preprint arXiv:2101.00820 (2021).
   - Graph Neural Network And Contrastive Learning
@@ -1057,3 +1069,23 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Compared with SEER!!
   - Experiment with imagenet to COCO dataset
   - This paper: Special Data augmentation scheme
+
+1. Grandvalet, Yves, and Yoshua Bengio. "Semi-supervised learning by entropy minimization." In CAP, pp. 281-296. 2005.
+  - Semi-supervised learning by minimun entropy regularization!
+    - result compared with mixture models ! (entropy methods are better)
+    - Connected to cluster assumption and manifold learning
+  - Motivation behind supervised training for unlabeled data
+    - Exhaustive generative search
+    - More parameters to be estimation that leads to more uncertainty
+  -
+
+1. Appalaraju, Srikar, Yi Zhu, Yusheng Xie, and István Fehérvári. "Towards Good Practices in Self-supervised Representation Learning." arXiv preprint arXiv:2012.00868 (2020).
+  - Tries to unravel the mysteries behind CL (!!)
+  - Empirical analysis: provide practice/insight tips
+  - Why data augmentation and adding projection head works in CL??
+    - not true in the supervised setting!!
+  - Design choice and good practice boost CL representation!
+  - This paper: Focuses (empirical analysis) on three of the key points
+  - (i) Importance of MLP heads
+  - (ii) semantic label shift problems by data augmentation
+  - (iii) Investigate on Negative Samples
