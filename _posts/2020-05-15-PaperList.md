@@ -1089,3 +1089,27 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - (i) Importance of MLP heads
   - (ii) semantic label shift problems by data augmentation
   - (iii) Investigate on Negative Samples
+
+1. Bulat, Adrian, Enrique Sánchez-Lozano, and Georgios Tzimiropoulos. "Improving memory banks for unsupervised learning with large mini-batch, consistency and hard negative mining." arXiv preprint arXiv:2102.04442 (2021).
+  - Improvement for the memory bank based formulation (whats the problem??)
+    - (I) Large mini-batch: Multiple augmentation! (II) Consistency: Not negative enforce! The heck? how to prevent collapse? (III) Hard Negative Mining
+    - Results: Improve the vanilla memory bank! Evidence!! Dataset experimentation!
+  - Exploration:  With Batch Size and visually similar instances (is the argument 2 is valid?)
+  - Contribution 2 seems important!
+  - Each image is augmented k times: More data augmentation!
+  - Interesting way to put the negative contrastive parts to avoid collapse (eq 3)
+  - Experiments: Seen testing categories (CIFAR, STL), & unseen testing categories (Stanford Online Product). ResNet-18 as baseline model   
+
+1. Tarvainen, Antti, and Harri Valpola. "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results." arXiv preprint arXiv:1703.01780 (2017).
+
+1. Laine, Samuli, and Timo Aila. "Temporal ensembling for semi-supervised learning." arXiv preprint arXiv:1610.02242 (2016).
+  - Self-ensemble, consensus prediction of unknown labels!!
+    - Ensemble Utilization of outputs of different network-in-training (same network: different epochs, different regularization!!, and input augmentations) to predict unlabeled data.
+    - The predicted unlabeled data can be used to train another network
+  - One point to put a distinction between semi-supervised learning and representation learning-fine tuning. In Semi-sup the methods uses the label from the beginning.
+  - Importance on the Data Augmentation and Regularization.
+  - This paper: Two self-ensemble methods: pi-model and temporal ensemble (Figure 1)
+  - Pi Model: Forces the embedding to be together (Contrastive parts is in the softmax portion; prevents collapse)
+  - Pi vs Temporal model:
+    - (Benefit of temporal) Temporal model is faster.In case of temporal, training target is less noisy.
+    - (Downside of temporal) Store auxiliary data! Memory mapped file.  
