@@ -1101,14 +1101,22 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Experiments: Seen testing categories (CIFAR, STL), & unseen testing categories (Stanford Online Product). ResNet-18 as baseline model   
 
 1. Tarvainen, Antti, and Harri Valpola. "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results." arXiv preprint arXiv:1703.01780 (2017).
+  - Improves Temporal Ensemble by average model weights (usual practice now!) instead of label prediction (WOW!)
+    - Temporal and Pi model suffers from confirmation bias (requires better target) as self-teacher!
+  - Two ways to improve: chose careful perturbation or chose careful teacher model  
+  - Result: Mean teacher is better! faster converge and higher accuracy
+  - Importance of good architecture (ThisPaper: Residual networks):
+  - TP: how to form better teacher model from students.
+  - TP: Large batch, large dataset, on-line learning.
 
 1. Laine, Samuli, and Timo Aila. "Temporal ensembling for semi-supervised learning." arXiv preprint arXiv:1610.02242 (2016).
-  - Self-ensemble, consensus prediction of unknown labels!!
+  - A form of consistency regularization.
+  - Self-ensemble (Exponential moving average), consensus prediction of unknown labels!!
     - Ensemble Utilization of outputs of different network-in-training (same network: different epochs, different regularization!!, and input augmentations) to predict unlabeled data.
     - The predicted unlabeled data can be used to train another network
   - One point to put a distinction between semi-supervised learning and representation learning-fine tuning. In Semi-sup the methods uses the label from the beginning.
   - Importance on the Data Augmentation and Regularization.
-  - This paper: Two self-ensemble methods: pi-model and temporal ensemble (Figure 1)
+  - This paper: Two self-ensemble methods: pi-model and temporal ensemble (Figure 1) based on consistency losses.
   - Pi Model: Forces the embedding to be together (Contrastive parts is in the softmax portion; prevents collapse)
   - Pi vs Temporal model:
     - (Benefit of temporal) Temporal model is faster.In case of temporal, training target is less noisy.
