@@ -1121,3 +1121,31 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Pi vs Temporal model:
     - (Benefit of temporal) Temporal model is faster.In case of temporal, training target is less noisy.
     - (Downside of temporal) Store auxiliary data! Memory mapped file.  
+
+1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "With a Little Help from My Friends: Nearest-Neighbor Contrastive Learning of Visual Representations." arXiv preprint arXiv:2104.14548 (2021).
+  - Positive from other instance (instead of augmented version of same image!)
+  - positive sampling: Nearest neighbor in the latent space (NNCLR) [this covers both same samples and Nearest neighbor in the latent spaces]
+  - Benefit: Less reliant on complex data augmentation (empirical results)
+  - Experiments: semi-sup benchmark, tx-learning benchmark
+  - Training: figure 1 (support set similar to memory bank but only provides positive samples)
+  - Similarity across previously seen objects! (tricky implementation)! Initialization!!
+  - Figure 2: details and key difference with others! (requires support set!)
+
+1. Han, Tengda, Weidi Xie, and Andrew Zisserman. "Self-supervised co-training for video representation learning." arXiv preprint arXiv:2010.09709 (2020).
+  - visual only selfsupervised Representation learning!!
+  - new form of supervised CL (adding semantic positive to instance based Infor NCE loss)!!
+  - co-training scheme with infoNCE loss!! (Explore complementary information from different views
+  - evaluating the quality of learned representations (two downstream tasks: action recognition and video retrieval)
+  - Question of "is instance discrimination is best??" - NO
+    - hard positves! oracle experiment (UberNCE!)
+    - CoCLR!! mining positive samples of data. (TCN extension by adding another modality, different network for each modality! how it is trained? Dynamic objective!!)
+  - Focused more on sampling procedure
+  - Experimented with RGB and FLOW network (aim to improve their representation)
+  - Related works: Visual-only supervised learning, Multi-modal self-supervised learning, Co-training Paired networks and Video action recognition
+  - InfoNCE and UberNCE *differs in sampling positives*
+  - CoCLR algorithm (Initialization: flow and RGB net trained individually, Alternation: mine hard positive based on others Eq 3,4)
+  - Dataset: UCF101, Kinetics-400, HMDB51
+
+1. Goyal, Priya, Mathilde Caron, Benjamin Lefaudeux, Min Xu, Pengchao Wang, Vivek Pai, Mannat Singh et al. "Self-supervised pretraining of visual features in the wild." arXiv preprint arXiv:2103.01988 (2021).
+
+1. Miech, Antoine, Jean-Baptiste Alayrac, Lucas Smaira, Ivan Laptev, Josef Sivic, and Andrew Zisserman. "End-to-end learning of visual representations from uncurated instructional videos." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9879-9889. 2020.
