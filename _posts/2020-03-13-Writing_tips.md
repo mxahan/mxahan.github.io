@@ -74,7 +74,7 @@ Whereas the general purpose of writing is to express thoughts, academic writing 
 
 A scientific paper requires organized reporting of substantial elements concerning the research work efficiently. For instance, the final writing should contain necessary evidence besides the belief that persuades the readers to the research outcome with fluency. These additional writing requirements in reporting research work encourage the researchers to develop skills in a particular branch of writing named academic writing. Academic writing provides researchers the right tools to present their work comprehensively and fluently for the audiences in the concerned community.
 
-As academic writing ensures the clarity of reporting research work for the audiences, many researchers have investigated and reported various methods and techniques concerning academic writing to help other researchers. Here we will sort out some of the techniques of academic writing for presenting research works, 
+As academic writing ensures the clarity of reporting research work for the audiences, many researchers have investigated and reported various methods and techniques concerning academic writing to help other researchers. Here we will sort out some of the techniques of academic writing for presenting research works,
 
 ### Academic Writing: From the MOOC edx writing course.
 
@@ -227,6 +227,7 @@ As academic writing ensures the clarity of reporting research work for the audie
 
 [good checklist](https://courses.edx.org/assets/courseware/v1/4b9cce9525a0f23bc7280299cf96e90a/asset-v1:TUMx+AWMEx+3T2020+type@asset+block/Academic_Writing_Checklist.pdf)
 
+
 ## Paragraph Writing Generalization
 
 [source](https://writingcenter.unc.edu/tips-and-tools/paragraphs/)
@@ -300,6 +301,19 @@ Two prerequisites for organizing the ideas.
     - Reorganize the argument
   - Visualizing
 
+## Writing an Abstract in scientific Paper
+
+[link](https://writing.wisc.edu/handbook/assignments/writing-an-abstract-for-your-research-paper/)
+
+What things should be in a good abstract
+  - Context; The general topic under study
+  - Central research questions
+  - A bit of previous research
+  - Reasons, rationales, and goals of the research.  
+  - Research or the methods
+  - Main results
+  - Importance of the findings
+  - Depicts unbiased picture
 
 ## Tips on good presentation preparation
 

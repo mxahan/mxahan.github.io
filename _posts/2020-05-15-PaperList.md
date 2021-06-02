@@ -1149,3 +1149,12 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Goyal, Priya, Mathilde Caron, Benjamin Lefaudeux, Min Xu, Pengchao Wang, Vivek Pai, Mannat Singh et al. "Self-supervised pretraining of visual features in the wild." arXiv preprint arXiv:2103.01988 (2021).
 
 1. Miech, Antoine, Jean-Baptiste Alayrac, Lucas Smaira, Ivan Laptev, Josef Sivic, and Andrew Zisserman. "End-to-end learning of visual representations from uncurated instructional videos." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9879-9889. 2020.
+  - Experiments with Dataset: HowTo100M (task progression) [video with narration]
+  - This paper: (multi-instance learning) MIL-NCE (to address misalignment in video narration)!! HOW? Requires instructional videos! (video with text)
+  - Video representation learning: shows effectiveness in four downstream tasks: AR (HMDB, UCF, Kinetics), action localization (Youtube8M, crosstask), action segmentation (COIN), Text-to-video retrieval (YouCook2, MSR-VTT).
+  - TP: Learn video representation from narration only (instructional video)!
+  - Related works: Learning visual representation from unlabeled videos. (ii) Multiple instance learning for video understanding (MIL) [TP: connect MCE with MIL]
+  - Two networks in the NCE Calculation : [unstable targets!!]
+  - Experiments: Network: 3D CNN 
+
+1. Assran, Mahmoud, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Armand Joulin, Nicolas Ballas, and Michael Rabbat. "Semi-Supervised Learning of Visual Features by Non-Parametrically Predicting View Assignments with Support Samples." arXiv preprint arXiv:2104.13963 (2021).
