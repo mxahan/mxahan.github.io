@@ -315,6 +315,15 @@ What things should be in a good abstract
   - Importance of the findings
   - Depicts unbiased picture
 
+Abstract type [link](https://libguides.usc.edu/writingguide/abstract)
+
+Usually Contains -  (i) Overall purpose of the study (research problems) (ii) Basic study design (iii) Major finding as result in analysis (iv) Brief summary of interpretation. Based on the contents the abstract can be categorized as follow: 
+ - Critical Abstract: Main finding with additional comments/judgements
+ - Descriptive abstract:
+ - Informative Abstract: The majority of the abstract.
+ - Highlight abstract: Rarely used in research paper
+
+
 ## Tips on good presentation preparation
 
 Constructive negative feedback helps personal development by helping us to drop the learning redundancy, especially in cases where we have some basics as it narrows down the problems we need to focus and work on to improve effectively. A good tutorial may contain lots of elements that we already may know. These known information definitely reinforces our beliefs but fails to push forward to fast and necessary adjustments for earlier ignored/unenlightened mistakes. Reinforcing already established developed good practices may be not worth of our valuable time. Moreover, in case of individual-specific problems, general tutorials provide little information to take in. Constructive Negative feedback loops solves this loopy problems by showing us the new/ignored field to explore. By detecting individual's problems/faults/bad habits to focus on, negative feedback provides a tangential direction to explore and enhance horizon of developments.

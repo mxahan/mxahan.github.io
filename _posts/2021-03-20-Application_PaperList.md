@@ -148,3 +148,15 @@ This blog contains state of the art application and research on different applic
   - Model navigation and driving behavior -> under noisy data
   - Issues in imitation learning during the imperfect demonstration
     - alternative solution: IRL : Matching feature count (algo 1)
+
+# Architectural contributions
+
+1. Radosavovic, Ilija, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, and Piotr Dollár. "Designing network design spaces." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10428-10436. 2020.
+  -
+
+1. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
+  - ResNeXt: highly modulated network (figure 1) [another network engineering]
+    - Not Inception as no downsampling in between.
+  - Why? how is it better than the ResNet? Introduces new parameters " Cardinality (the size of set of transformation)"! [with addition of deeper and wider in ResNet]
+
+1. Radosavovic, Ilija, Justin Johnson, Saining Xie, Wan-Yen Lo, and Piotr Dollár. "On network design spaces for visual recognition." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1882-1890. 2019.

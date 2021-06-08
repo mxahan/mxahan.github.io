@@ -1147,6 +1147,14 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Dataset: UCF101, Kinetics-400, HMDB51
 
 1. Goyal, Priya, Mathilde Caron, Benjamin Lefaudeux, Min Xu, Pengchao Wang, Vivek Pai, Mannat Singh et al. "Self-supervised pretraining of visual features in the wild." arXiv preprint arXiv:2103.01988 (2021).
+  - SEER and connection to few shot learning
+  - RQ: pretraining extremely large collection of uncurated, unlabeled images for good achievement?
+    - Solution: Continuous learning in a self-supervised manner! (online fashion training)
+  - TP: pretrain high capacity model (RegNet Architecture!! 700M params) on billions images! using SwAV approaches with large BS.
+  - Results: One of the best model!! both on curated and uncarated data.
+  - Related works: Scale on large uncurated images. (also scaling the network - Good Reads)
+  - Results on finetuning large models, low shot learning and transfer learning.
+  - Ablation studies: Model architecture, scaling the training data, scaling the self-supervised model head
 
 1. Miech, Antoine, Jean-Baptiste Alayrac, Lucas Smaira, Ivan Laptev, Josef Sivic, and Andrew Zisserman. "End-to-end learning of visual representations from uncurated instructional videos." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9879-9889. 2020.
   - Experiments with Dataset: HowTo100M (task progression) [video with narration]
@@ -1155,6 +1163,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - TP: Learn video representation from narration only (instructional video)!
   - Related works: Learning visual representation from unlabeled videos. (ii) Multiple instance learning for video understanding (MIL) [TP: connect MCE with MIL]
   - Two networks in the NCE Calculation : [unstable targets!!]
-  - Experiments: Network: 3D CNN 
+  - Experiments: Network: 3D CNN
 
 1. Assran, Mahmoud, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Armand Joulin, Nicolas Ballas, and Michael Rabbat. "Semi-Supervised Learning of Visual Features by Non-Parametrically Predicting View Assignments with Support Samples." arXiv preprint arXiv:2104.13963 (2021).
+  - PAWS (Predicting view assignments with support samples)
+  -
+
+1. Joulin, Armand, Laurens Van Der Maaten, Allan Jabri, and Nicolas Vasilache. "Learning visual features from large weakly supervised data." In European Conference on Computer Vision, pp. 67-84. Springer, Cham, 2016.
