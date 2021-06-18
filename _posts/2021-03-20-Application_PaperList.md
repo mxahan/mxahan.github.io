@@ -6,6 +6,12 @@ This blog contains state of the art application and research on different applic
 
 # Few-Shot learning
 
+1. Chen, Wei-Yu, Yen-Cheng Liu, Zsolt Kira, Yu-Chiang Frank Wang, and Jia-Bin Huang. "A closer look at few-shot classification." arXiv preprint arXiv:1904.04232 (2019).
+  - Consistent!  comparative analysis of few shot learning methods! (algorithm performance depends on the backbone networks) [deeper backbone reduces performance difference] **algo comparison varies as backbone network changes**
+  - Modified baseline methods (imagenet and CUB dataset)!
+  - new experimental setting for the cross domain generalization of FSL
+  - Some empirical results (comments on backbone network size! small - then intra-class variation should be low [as expected])
+
 1. Wang, Yaqing, Quanming Yao, James T. Kwok, and Lionel M. Ni. "Generalizing from a few examples: A survey on few-shot learning." ACM Computing Surveys (CSUR) 53, no. 3 (2020): 1-34.
   - Three approaches (i) Data (ii) Model (iii) Algorithm, all of them uses prior knowledge!
     - What is prior knowledge
@@ -130,6 +136,10 @@ This blog contains state of the art application and research on different applic
 
 1. van Amsterdam, Beatrice, Matthew J. Clarkson, and Danail Stoyanov. "Multi-task recurrent neural network for surgical gesture recognition and progress prediction." In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 1380-1386. IEEE, 2020.
 
+1. Zhu, Yi, Xinyu Li, Chunhui Liu, Mohammadreza Zolfaghari, Yuanjun Xiong, Chongruo Wu, Zhi Zhang, Joseph Tighe, R. Manmatha, and Mu Li. "A Comprehensive Study of Deep Video Action Recognition." arXiv preprint arXiv:2012.06567 (2020).
+  - Popular dataset descriptions
+  - 
+
 # Imitation Learning
 
 1. Sermanet, Pierre, Kelvin Xu, and Sergey Levine. "Unsupervised perceptual rewards for imitation learning." arXiv preprint arXiv:1612.06699 (2016).
@@ -151,12 +161,26 @@ This blog contains state of the art application and research on different applic
 
 # Architectural contributions
 
+1. Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems 25 (2012): 1097-1105.
+
+1. 1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
+
 1. Radosavovic, Ilija, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, and Piotr Dollár. "Designing network design spaces." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10428-10436. 2020.
   -
 
 1. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
-  - ResNeXt: highly modulated network (figure 1) [another network engineering]
+  - ResNeXt: highly modulated network (figure 1) [another network engineering with a very simple idea]
+  - Name origin: as it adds **Next dimension: Cardinality** so it refers to ResNeXt
     - Not Inception as no downsampling in between.
   - Why? how is it better than the ResNet? Introduces new parameters " Cardinality (the size of set of transformation)"! [with addition of deeper and wider in ResNet]
+  - TP: extends *split-transform-merge* and ResNet
+  - TP: Transformation to Low dimension and outputs are *aggregated* by summation.
+  - Related works: Multi-branch CN, grouped CN, compressed CN, Ensembling.
+  - Experiments with ImageNet, COCO object detection. [outperforms ResNet, Inception, VGG.]
 
 1. Radosavovic, Ilija, Justin Johnson, Saining Xie, Wan-Yen Lo, and Piotr Dollár. "On network design spaces for visual recognition." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1882-1890. 2019.
+
+1. Liu, Hanxiao, Karen Simonyan, and Yiming Yang. "Darts: Differentiable architecture search." arXiv preprint arXiv:1806.09055 (2018).
+  - Architectural search in Differentiable manner (why? How? )
+    - Why: differential search space for gradient descent in architecture search (using some relaxations), faster than non-differential counterparts (RL based)!
+  - Experiments with both images and NLP tasks.  
