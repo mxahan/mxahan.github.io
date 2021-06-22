@@ -318,6 +318,25 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Related works: mini-batch level hard exmaple mining, hard class mining
   - Figure 2: selection of hard example! auxiliary embedding are final layers
 
+1. Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. "Datasheets for datasets." arXiv preprint arXiv:1803.09010 (2018).
+  - Nice guide for dataset documentation.
+  - Propose to contain: Motivation, composition, collection process, recommended users, ... Cleaning, labeling, distribution, and maintenance.
+  - Aim: Provide better Communication, standardization.
+  - Clear intend of dataset creator and consumer.
+  - Question and WorkFlow:
+    - Motivation: why?
+    - Composition: what modalities? Data Volume? Data variability? Instance elements? missing information, Labels? Any recommendation or comments on dataset? Self-content? confidential information? Data sample groups?
+    - Collection Process: Description of collecting each instance, Sensors and settings, time frame, ethical review, any comments
+    - Preprocessing: Cleaning and labeling, Meta-data, Any software?
+    - Uses: tasks, order to use? application and not-applicable cases
+    - Distribution: To whom, how, Any IP or copyright?
+    - maintenance: supporter, owner, how to update, version, extension?
+
+1. Foret, Pierre, Ariel Kleiner, Hossein Mobahi, and Behnam Neyshabur. "Sharpness-Aware Minimization for Efficiently Improving Generalization." arXiv preprint arXiv:2010.01412 (2020).
+  - Aim to reduce the loss value and **loss sharpness** (motivated by geometry of loss space and generalization)
+  - TP about increasing generalization (how to claim such results, what will be the evidence): Performance over the noisy dataset!
+  - TP: Sharpness-Aware Minimization (SAM) : Aims to find params with uniform low-loss in their neighborhood. *still works with SGD*
+  -
 
 # Self-Supervised Learning
 
@@ -1177,3 +1196,17 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
 
 1. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
+  - semi supervised learning (should cover the labeled and unlabeled at the beginning)
+  - teacher network - to generate - pseudo labels [extension of pseudo label work]
+    - TP: Contrary to the Pseudo label work: *The teacher network is not fixed* and constantly adapting [claim: teacher learn better pseudo labels]
+    - Connected to Pseudo Labels/self-training (semi-supervised)
+  - Issues with the confirmation bias of pseudo label? does TP solve this??
+    - correct the confirmation bias using a systematic mechanism!!! (how pseudo-label affect the student network) [figure 1]
+    - Parallel training [student's learning feedback goes to teacher]!! (dynamic target!)
+  - assumption: Pseudo label of teacher can be adjusted
+    - However, extremely complication optimization as it requires to unroll everything!
+  - Sampling hard pseudo labels (modified version of REINFORCE algorithm!)
+  - Nice experiment section: Dataset, network, and baseline
+  -
+
+1. Xie, Qizhe, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le. "Unsupervised data augmentation for consistency training." arXiv preprint arXiv:1904.12848 (2019).
