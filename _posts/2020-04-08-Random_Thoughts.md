@@ -176,4 +176,9 @@ PEACH.
 
 ## Why AI research
 
-Personally, I feel I want to improve, implement AI to make human life better by selecting potential problem and offering AI based solutions. 
+Personally, I feel I want to improve, implement AI to make human life better by selecting potential problem and offering AI based solutions.
+
+
+# Research Guide
+
+Summary of the following [blog](https://libguides.usc.edu/writingguide/researchdesigns)

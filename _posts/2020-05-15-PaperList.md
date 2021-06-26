@@ -336,7 +336,14 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Aim to reduce the loss value and **loss sharpness** (motivated by geometry of loss space and generalization)
   - TP about increasing generalization (how to claim such results, what will be the evidence): Performance over the noisy dataset!
   - TP: Sharpness-Aware Minimization (SAM) : Aims to find params with uniform low-loss in their neighborhood. *still works with SGD*
-  -
+  - Why only Cross-Entropy! Not sufficient everytime!
+  - Efficient, scalable and effective method!! (what results it requires?)
+    - Minimize loss value and loss sharpness!
+    - Model generalization: Experiment with (CIFAR, ImageNet, SVHN, MNIST, ....)
+    - coins m-sharpness terms
+  - Reducing the gap between training loss and the population loss (generalization)
+  - Algorithm 1 summarizes the ways to train the network!
+  - Detailed experiment and discussion section
 
 # Self-Supervised Learning
 
@@ -1210,3 +1217,52 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   -
 
 1. Xie, Qizhe, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le. "Unsupervised data augmentation for consistency training." arXiv preprint arXiv:1904.12848 (2019).
+  - TP: how to effectively noise unlabeled examples (1) and importance of advanced data augmentation (2)
+    - Investigate the role of noise injection and advanced data augmentation
+    - Proposes better data augmentation in consistency training: Unsupervised Data Augmentation (UDA)
+    - Experiments with vision and language tasks
+  - Bunch of experiment with six language tasks and three vision tasks.
+  - Consistency training as regularization.
+  - UDA: Augment unlabeled data!! and quality of the noise for augmentations.
+  - Noise types: Valid noise, Diverse noise, and Targeted Inductive biases
+  - Augmentation types: RandAugment for image, backtranslating the language
+  - Training techniques: confidence based masking, Sharpening Predictions, Domain relevance data filtering.
+  - Interesting graph comparison under three assumption.
+
+1. Miyato, Takeru, Shin-ichi Maeda, Masanori Koyama, and Shin Ishii. "Virtual adversarial training: a regularization method for supervised and semi-supervised learning." IEEE transactions on pattern analysis and machine intelligence 41, no. 8 (2018): 1979-1993.
+
+1. Cubuk, Ekin D., Barret Zoph, Jonathon Shlens, and Quoc V. Le. "Randaugment: Practical automated data augmentation with a reduced search space." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 702-703. 2020.
+
+1. Dave, Ishan, Rohit Gupta, Mamshad Nayeem Rizve, and Mubarak Shah. "TCLR: Temporal Contrastive Learning for Video Representation." arXiv preprint arXiv:2101.07974 (2021).
+
+1. Tian, Yuandong, Xinlei Chen, and Surya Ganguli. "Understanding self-supervised learning dynamics without contrastive pairs." arXiv preprint arXiv:2102.06810 (2021).
+
+1. Caron, Mathilde, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. "Emerging properties in self-supervised vision transformers." arXiv preprint arXiv:2104.14294 (2021).
+  - DINO
+
+1. Aljalbout, Elie, Vladimir Golkov, Yawar Siddiqui, Maximilian Strobel, and Daniel Cremers. "Clustering with deep learning: Taxonomy and new methods." arXiv preprint arXiv:1801.07648 (2018).
+  - Three components: Main encoder networks (concerns with architecture, Losses, and cluster assignments)
+  - Non-cluster loss: Autoencoder reconstruction losses
+  - Various types of clustering loss (note)
+  - Combine losses: Pretraining / jointly training / variaable scheduleing
+  - Cluster update: Jointly update with the network model / Alternating update with network models
+  - Relevant methods: Deep Embedded Clustering (Xie et al, 2016), Deep Clustering Network (yang et al, 2016), Discriminatively Boosted Clustering (Li et al, 2017), ..  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1
