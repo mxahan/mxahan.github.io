@@ -46,7 +46,7 @@ This blog contains state of the art application and research on different applic
     - Learning the optimizer
   - Future works: four possible directions : Problem setup, Techniques, applications, and Theories
 
-1. 1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
+1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
   - Metric learning and augmented memory network!!
   - Non-parametric setup for metric learning
   - Two novelty: Modeling & training
@@ -101,15 +101,14 @@ This blog contains state of the art application and research on different applic
       - (ii) Prototypical net with soft k-Means with a distractor cluster
       - (iii) Prototypical net with soft k-Means and Masking
 
-1. 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
+1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
   - learning and adapting quickly
     - The key idea: train the initial parameters to maximize performance on a new task after the parameters have been updated through few gradient steps computed with a small data from that new task.
     - Where it works! Why don't everybody used it afterwords!
     - Contribution: trains a model’s parameters such that a small number of gradient updates will lead to fast learning on a new task.
   - Prior arts: Learn update function!
     - MAML: more flexible (loss function and architectures)
-  - MAML
-    - Problem setup:
+  - MAML: Problem setup:
 
 1. Weston, Jason, Sumit Chopra, and Antoine Bordes. "Memory networks." arXiv preprint arXiv:1410.3916 (2014).
 
@@ -138,7 +137,7 @@ This blog contains state of the art application and research on different applic
 
 1. Zhu, Yi, Xinyu Li, Chunhui Liu, Mohammadreza Zolfaghari, Yuanjun Xiong, Chongruo Wu, Zhi Zhang, Joseph Tighe, R. Manmatha, and Mu Li. "A Comprehensive Study of Deep Video Action Recognition." arXiv preprint arXiv:2012.06567 (2020).
   - Popular dataset descriptions
-  - 
+  -
 
 # Imitation Learning
 
@@ -163,7 +162,7 @@ This blog contains state of the art application and research on different applic
 
 1. Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems 25 (2012): 1097-1105.
 
-1. 1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
+1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
 
 1. Radosavovic, Ilija, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, and Piotr Dollár. "Designing network design spaces." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10428-10436. 2020.
   -
@@ -184,3 +183,17 @@ This blog contains state of the art application and research on different applic
   - Architectural search in Differentiable manner (why? How? )
     - Why: differential search space for gradient descent in architecture search (using some relaxations), faster than non-differential counterparts (RL based)!
   - Experiments with both images and NLP tasks.  
+
+1. Dosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020).
+  - CNN matching performance: large amount of data pretrain and transfer on mid/small sized classification tasks.
+
+# Data augmentation
+
+1. Cubuk, Ekin D., Barret Zoph, Jonathon Shlens, and Quoc V. Le. "Randaugment: Practical automated data augmentation with a reduced search space." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 702-703. 2020.
+  - TP tackles: (i) Reduce search spaces for automatic data augmentations! {by Simplifying the search spaces: avails grid search} (ii) adjust regularization strengths
+  - Experimentation with the role of data augmentations.
+  - Related works: Learning automatic data augmentations! AutoAugment RL basede methods! Population based augmentation,
+  - Interesting empirical results: data augmentation depends on model sizes and dataset training set sizes. Experiments with cifar, SVHN and ImageNET, object detection.
+  - Methods:
+
+1. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).

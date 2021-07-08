@@ -361,13 +361,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Used with methods like BYOL, SwAV, MoCo to push SOTA forward
     - Figure 1: Shows all
 
-1. Denton, Emily L. "Unsupervised learning of disentangled representations from video." In Advances in neural information processing systems, pp. 4414-4423. 2017.
-  - Encoder-Decoder set up for the disentangled
-  - Hypothesis: Content (time invariant) and Pose (time variant)
-  - Two Encoders for the pose and content; Concatenate the output for single Decoder
-  - Introduce adversarial loss
-  - Video generation conditioned on context, and pose modeling via LSTM.
-
 1. Huynh, Tri, Simon Kornblith, Matthew R. Walter, Michael Maire, and Maryam Khademi. "Boosting Contrastive Self-Supervised Learning with False Negative Cancellation." arXiv preprint arXiv:2011.11765 (2020).
   - False negative Problem!! (detail analysis)
   - Methods to Mitigate false negative impacts (how? what? how much impact! significant means?? what are other methods?)
@@ -380,6 +373,13 @@ We can't worry about everything and nothing. We must stay focused and broad at t
       - section 3.2.3 (obvious one but a tricky - heavy computation)
     - False neg elimination and attraction
     - applicable on top of existing cont. learning
+
+1. Denton, Emily L. "Unsupervised learning of disentangled representations from video." In Advances in neural information processing systems, pp. 4414-4423. 2017.
+  - Encoder-Decoder set up for the disentangled
+  - Hypothesis: Content (time invariant) and Pose (time variant)
+  - Two Encoders for the pose and content; Concatenate the output for single Decoder
+  - Introduce adversarial loss
+  - Video generation conditioned on context, and pose modeling via LSTM.
 
 1. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
   - Predicting the future
@@ -407,10 +407,21 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Kolesnikov, Alexander, Xiaohua Zhai, and Lucas Beyer. "Revisiting self-supervised visual representation learning." In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition, pp. 1920-1929. 2019.
 
 1. Wang, Xiaolong, and Abhinav Gupta. "Unsupervised learning of visual representations using videos." In Proceedings of the IEEE international conference on computer vision, pp. 2794-2802. 2015.
+  - Visual tracking provides the supervision!!!
+  - Siamese-triplet networks
+  - Experiments: VOC 2012 dataset (100k Unlabeled videos)
+  - interesting loss functions (self note: please update the pdf files)
 
 1. Misra, Ishan, C. Lawrence Zitnick, and Martial Hebert. "Shuffle and learn: unsupervised learning using temporal order verification." In European Conference on Computer Vision, pp. 527-544. Springer, Cham, 2016.
+  - Pretext Task: a sequence of frames from a video is in the correct temporal order (figure 1)
+  - experiment Net: CNN Based network, data: UCF101, HMDB51 & FLIC, MPII (pose Estimation)
+  - self note: There's more.
 
 1. Fernando, Basura, Hakan Bilen, Efstratios Gavves, and Stephen Gould. "Self-supervised video representation learning with odd-one-out networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3636-3645. 2017.
+  - Pretext tasks: Finding the odd-one (O3N) video using fusion.
+    - Temporal odd one!
+  - Network: CNN with fusion methods.
+  - Experiments: HMDB51, UCF101
 
 1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
   - non-parametric classifier via feature representation **(Memory Bank)**
@@ -480,7 +491,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - A nonlinear projection head followed by the representation helps.
 
 1. Asano, Yuki M., Mandela Patrick, Christian Rupprecht, and Andrea Vedaldi. "Labelling unlabelled videos from scratch with multi-modal self-supervision." arXiv preprint arXiv:2006.13662 (2020).
-  - Under consideration
+  - clustering method that allows pseudo-labelling of a video dataset without any human annotations, by leveraging the natural correspondence between the audio and visual modalities
 
 1. Patrick, Mandela, Yuki M. Asano, Ruth Fong, João F. Henriques, Geoffrey Zweig, and Andrea Vedaldi. "Multi-modal self-supervision from generalized data transformations." arXiv preprint arXiv:2003.04298 (2020).
 
@@ -566,7 +577,12 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Ma, Shuang, Zhaoyang Zeng, Daniel McDuff, and Yale Song. "Learning Audio-Visual Representations with Active Contrastive Coding." arXiv preprint arXiv:2009.09805 (2020).
 
 1. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
-  - Under Construction
+  - present a framework for analyzing CL (is there any previous?)
+    - introduce latent class!! shows generalization bound.
+  - Unsupervised representation learning
+  - TP: notion of latent classes (downstream tasks are subset of latent classes), rademacher complexity of the architecture! (limitation of negative sampling), extension!
+  - CL gives representation learning with plentiful labeled data! TP asks this question. \
+  - Theoretical results to include in the works.
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
@@ -577,6 +593,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Siamese network early application for hand writing
 
 1. Ebbers, Janek, Michael Kuhlmann, and Reinhold Haeb-Umbach. "Adversarial Contrastive Predictive Coding for Unsupervised Learning of Disentangled Representations." arXiv preprint arXiv:2005.12963 (2020).
+  - video deep infomax: UCF101 dataset
+  - Local and global features:
+  - self note: go over this 
 
 1. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
 
@@ -1014,7 +1033,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Comparison with Prior Art
       - InfoNCE
 
-1. 1. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
+1. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
   - Alternative to instance-level pretext learning - Pixel-level pretext learning!
     - Pixel level pretext learning! pixel to propagation consistency!!
       - Avail both backbone and head network! to reuse
@@ -1231,9 +1250,13 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Miyato, Takeru, Shin-ichi Maeda, Masanori Koyama, and Shin Ishii. "Virtual adversarial training: a regularization method for supervised and semi-supervised learning." IEEE transactions on pattern analysis and machine intelligence 41, no. 8 (2018): 1979-1993.
 
-1. Cubuk, Ekin D., Barret Zoph, Jonathon Shlens, and Quoc V. Le. "Randaugment: Practical automated data augmentation with a reduced search space." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 702-703. 2020.
-
 1. Dave, Ishan, Rohit Gupta, Mamshad Nayeem Rizve, and Mubarak Shah. "TCLR: Temporal Contrastive Learning for Video Representation." arXiv preprint arXiv:2101.07974 (2021).
+  - temporal CL framework!!- (why?) - two novel loss functions
+    - (local-local): non-overlapping of same videos!!
+    - (global-local): increase temporal diversity!!
+    - NCE based loss function formulation.
+  - Interesting way to sample local and global (why is it necessary???) [figure 2, 3, and 4]
+  - Architecture: 3D ResNet-18
 
 1. Tian, Yuandong, Xinlei Chen, and Surya Ganguli. "Understanding self-supervised learning dynamics without contrastive pairs." arXiv preprint arXiv:2102.06810 (2021).
 
@@ -1244,15 +1267,31 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Three components: Main encoder networks (concerns with architecture, Losses, and cluster assignments)
   - Non-cluster loss: Autoencoder reconstruction losses
   - Various types of clustering loss (note)
-  - Combine losses: Pretraining / jointly training / variaable scheduleing
+  - Combine losses: Pretraining / jointly training / variable scheduleing
   - Cluster update: Jointly update with the network model / Alternating update with network models
   - Relevant methods: Deep Embedded Clustering (Xie et al, 2016), Deep Clustering Network (yang et al, 2016), Discriminatively Boosted Clustering (Li et al, 2017), ..  
 
+1. Tan, Hao, Jie Lei, Thomas Wolf, and Mohit Bansal. "VIMPAC: Video Pre-Training via Masked Token Prediction and Contrastive Learning." arXiv preprint arXiv:2106.11250 (2021).
 
+1. Tian, Yonglong, Olivier J. Henaff, and Aaron van den Oord. "Divide and Contrast: Self-supervised Learning from Uncurated Data." arXiv preprint arXiv:2105.08054 (2021).
+  - Effects of contrastive learning from larger, less-curated image datasets such as YFCC
+    - Finds a large difference in the resulting representation quality
+    - because (hypothesis) distribution shift in image class (less relevant negative to learn)
+  - TP: new approach DnC (divide and contrast) - alternate between CL and cluster based hard negative mining
+    - Methods: Train individual models on subset and distill them into single model
+    - Application Scope: less curated data to train! Aim: attempts to recover local consistency.
+    - The distillation parts requires k+1 networks!
+  - what if: the networks reaches different embedding in each running (from scratch!)
+    - How come predicting both simultaneously makes sense?
+  - Experiment dataset: JFT-300, YFCC100M, 95M Flickr
 
-
-
-
+1. Zheltonozhskii, Evgenii, Chaim Baskin, Avi Mendelson, Alex M. Bronstein, and Or Litany. "Contrast to Divide: Self-Supervised Pre-Training for Learning with Noisy Labels." arXiv preprint arXiv:2103.13646 (2021).
+  - **warm-up obstacle**: the inability of standard warm-up stages to train high quality feature extractors and avert memorization of noisy labels.!!
+    - SoTA depends on warm-up stage where standard supervised training is performed using the full (noisy) training set
+  - TP: contrast to divide (C2D)
+    - benefit: drastically reducing the warm-up stage’s susceptibility to noise level, shortening its duration, and increasing extracted feature quality
+  - warp-up stages!! Current works focus on warm up length only! requires optimal warm-up length! or relying on external dataset! TP: Self-supervised pretraining!
+  - TP: firstly perform simclr, then proceed with standard LNL algorithm (: ELR+ and DivideMix!!)
 
 
 
