@@ -61,6 +61,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Extension of RNN - NTM (differentiable unlike Turing Machine)
   - Two components: controller and memory with i/o for external interaction
     - Attending to memory (attention) [sharp or distributed attention]
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).li
   - D: Assign low energy to data distribution (not normalized probabilities)
@@ -298,6 +299,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - CNN Deep belief network
   - Invariance measurement
     - Finding neurons firing under invariance
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
   -
@@ -344,14 +346,11 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Reducing the gap between training loss and the population loss (generalization)
   - Algorithm 1 summarizes the ways to train the network!
   - Detailed experiment and discussion section
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 # Self-Supervised Learning
 
 
-1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
-  - Pretext task of rotation angle prediction!!
-    - Rotation, invariant across augmentation
-  - Baseline: vitrural adversarial training [inject noise with the original images], EntMin
 
 1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
   - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation"
@@ -587,6 +586,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
 1. Devon, R. "Representation Learning with Video Deep InfoMax." arXiv preprint arXiv:2007.13278 (2020).
+  - DIM: prediction tasks between local and global features.
+    - For video (playing with sampling rate of the views)
 
 1. Bromley, Jane, J. W. Bentz, L. Bottou, I. Guyon, Y. LeCun, C. Moore, E. Sackinger, and R. Shah. "Signature Veriﬁcation using a “Siamese” Time Delay Neural Network." Int.]. Pattern Recognit. Artzf Intell 7 (1993).
   - Gold in old
@@ -595,7 +596,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Ebbers, Janek, Michael Kuhlmann, and Reinhold Haeb-Umbach. "Adversarial Contrastive Predictive Coding for Unsupervised Learning of Disentangled Representations." arXiv preprint arXiv:2005.12963 (2020).
   - video deep infomax: UCF101 dataset
   - Local and global features:
-  - self note: go over this 
+  - self note: go over this
 
 1. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
 
@@ -611,6 +612,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Discusses one of the fundamental issues with contrastive loss and triplet loss!
     - different batches puts same class in different position
   - Experiment: Amazon Object dataset- multiview .
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. G. W. Taylor, I. Spiro, C. Bregler, and R. Fergus, ‘‘Learning invariance through imitation,’’ in Proc. CVPR, Jun. 2011, pp. 2729–2736, doi:10.1109/CVPR.2011.5995538
 
@@ -642,6 +644,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
       - Experimental dataset
         - occlusion (GOR-10K), viewpoint+instance invariance (Pascal3D+)
       - image and video careful augmentation
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers2.pdf)
 
 1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
 
@@ -722,8 +725,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Alignment and uniform loss
 
 1. Tishby, Naftali, and Noga Zaslavsky. "Deep learning and the information bottleneck principle." In 2015 IEEE Information Theory Workshop (ITW), pp. 1-5. IEEE, 2015.
-
-1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
 
 1. Kingma, Diederik P., and Max Welling. "Auto-encoding variational bayes." arXiv preprint arXiv:1312.6114 (2013).
 
@@ -838,9 +839,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - assumption that the data distribution around each prototype is isotropic Gaussian
   - Related works: MoCo
     - Deep unsupervised Clustering: not transferable?
-  - Prototypical Contrastive Learning
+  - Prototypical Contrastive Learning (PCL)
     - See the math notes from section 3
   - Figure 2 - Overview of methods
+  -[github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers2.pdf)
 
 1. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
   - Multiple view of shared context
@@ -893,6 +895,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - developed in two steps (i) Generalization of triplet loss (ii) reduces computational complexity by efficient batch construction (??) taking (N+1)xN examples!!
   - Experiments on visual recognition, object recognition, and verification, image clustering and retrieval, face verification and identification tasks.
   - identify multiple negatives [section 3], efficient batch construction
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Dosovitskiy, Alexey, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with exemplar convolutional neural networks." IEEE transactions on pattern analysis and machine intelligence 38, no. 9 (2015): 1734-1747.
 
@@ -922,6 +925,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Good setup to apply the ranking loss function
     - Careful with the notation (bad notation)
     -  instances and their augmentations!
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Weinberger, Kilian Q., John Blitzer, and Lawrence K. Saul. "Distance metric learning for large margin nearest neighbor classification." In Advances in neural information processing systems, pp. 1473-1480. 2006.
   - Triplet loss proposal
@@ -960,6 +964,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Experiments by creating the dataset
       - Digit on imagenet dataset
       - RandBit dataset
+  -[github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
@@ -1032,6 +1037,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Discussion (interesting)
     - Comparison with Prior Art
       - InfoNCE
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers2.pdf)
 
 1. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
   - Alternative to instance-level pretext learning - Pixel-level pretext learning!
@@ -1098,6 +1104,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
         - Temporal ordering
         - Multi-modal contrastive loss {maxmargin loss}
       - ELo and ELo+Distillation
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Hénaff, Olivier J., Skanda Koppula, Jean-Baptiste Alayrac, Aaron van den Oord, Oriol Vinyals, and João Carreira. "Efficient Visual Pretraining with Contrastive Detection." arXiv preprint arXiv:2103.10957 (2021).
   - Tackles the computational complexity of the self-supervised learning
@@ -1113,15 +1120,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Experiment with imagenet to COCO dataset
   - This paper: Special Data augmentation scheme
 
-1. Grandvalet, Yves, and Yoshua Bengio. "Semi-supervised learning by entropy minimization." In CAP, pp. 281-296. 2005.
-  - Semi-supervised learning by minimun entropy regularization!
-    - result compared with mixture models ! (entropy methods are better)
-    - Connected to cluster assumption and manifold learning
-  - Motivation behind supervised training for unlabeled data
-    - Exhaustive generative search
-    - More parameters to be estimation that leads to more uncertainty
-  -
-
 1. Appalaraju, Srikar, Yi Zhu, Yusheng Xie, and István Fehérvári. "Towards Good Practices in Self-supervised Representation Learning." arXiv preprint arXiv:2012.00868 (2020).
   - Tries to unravel the mysteries behind CL (!!)
   - Empirical analysis: provide practice/insight tips
@@ -1129,41 +1127,19 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - not true in the supervised setting!!
   - Design choice and good practice boost CL representation!
   - This paper: Focuses (empirical analysis) on three of the key points
-  - (i) Importance of MLP heads
-  - (ii) semantic label shift problems by data augmentation
-  - (iii) Investigate on Negative Samples
+  - (i) Importance of MLP heads (key factor)
+  - (ii) semantic label shift problems by data augmentation:  breakdown of class boundaries in strong augmentations
+  - (iii) Investigate on Negative Samples: Quality and Quantity
 
 1. Bulat, Adrian, Enrique Sánchez-Lozano, and Georgios Tzimiropoulos. "Improving memory banks for unsupervised learning with large mini-batch, consistency and hard negative mining." arXiv preprint arXiv:2102.04442 (2021).
   - Improvement for the memory bank based formulation (whats the problem??)
-    - (I) Large mini-batch: Multiple augmentation! (II) Consistency: Not negative enforce! The heck? how to prevent collapse? (III) Hard Negative Mining
+    - TP: (I) Large mini-batch: Multiple augmentation! (II) Consistency: Not negative enforce! The heck? how to prevent collapse? (III) Hard Negative Mining
     - Results: Improve the vanilla memory bank! Evidence!! Dataset experimentation!
   - Exploration:  With Batch Size and visually similar instances (is the argument 2 is valid?)
   - Contribution 2 seems important!
   - Each image is augmented k times: More data augmentation!
   - Interesting way to put the negative contrastive parts to avoid collapse (eq 3)
   - Experiments: Seen testing categories (CIFAR, STL), & unseen testing categories (Stanford Online Product). ResNet-18 as baseline model   
-
-1. Tarvainen, Antti, and Harri Valpola. "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results." arXiv preprint arXiv:1703.01780 (2017).
-  - Improves Temporal Ensemble by average model weights (usual practice now!) instead of label prediction (WOW!)
-    - Temporal and Pi model suffers from confirmation bias (requires better target) as self-teacher!
-  - Two ways to improve: chose careful perturbation or chose careful teacher model  
-  - Result: Mean teacher is better! faster converge and higher accuracy
-  - Importance of good architecture (ThisPaper: Residual networks):
-  - TP: how to form better teacher model from students.
-  - TP: Large batch, large dataset, on-line learning.
-
-1. Laine, Samuli, and Timo Aila. "Temporal ensembling for semi-supervised learning." arXiv preprint arXiv:1610.02242 (2016).
-  - A form of consistency regularization.
-  - Self-ensemble (Exponential moving average), consensus prediction of unknown labels!!
-    - Ensemble Utilization of outputs of different network-in-training (same network: different epochs, different regularization!!, and input augmentations) to predict unlabeled data.
-    - The predicted unlabeled data can be used to train another network
-  - One point to put a distinction between semi-supervised learning and representation learning-fine tuning. In Semi-sup the methods uses the label from the beginning.
-  - Importance on the Data Augmentation and Regularization.
-  - This paper: Two self-ensemble methods: pi-model and temporal ensemble (Figure 1) based on consistency losses.
-  - Pi Model: Forces the embedding to be together (Contrastive parts is in the softmax portion; prevents collapse)
-  - Pi vs Temporal model:
-    - (Benefit of temporal) Temporal model is faster.In case of temporal, training target is less noisy.
-    - (Downside of temporal) Store auxiliary data! Memory mapped file.  
 
 1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "With a Little Help from My Friends: Nearest-Neighbor Contrastive Learning of Visual Representations." arXiv preprint arXiv:2104.14548 (2021).
   - Positive from other instance (instead of augmented version of same image!)
@@ -1173,6 +1149,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Training: figure 1 (support set similar to memory bank but only provides positive samples)
   - Similarity across previously seen objects! (tricky implementation)! Initialization!!
   - Figure 2: details and key difference with others! (requires support set!)
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Han, Tengda, Weidi Xie, and Andrew Zisserman. "Self-supervised co-training for video representation learning." arXiv preprint arXiv:2010.09709 (2020).
   - visual only selfsupervised Representation learning!!
@@ -1208,32 +1185,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Two networks in the NCE Calculation : [unstable targets!!]
   - Experiments: Network: 3D CNN
 
-1. Assran, Mahmoud, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Armand Joulin, Nicolas Ballas, and Michael Rabbat. "Semi-Supervised Learning of Visual Features by Non-Parametrically Predicting View Assignments with Support Samples." arXiv preprint arXiv:2104.13963 (2021).
-  - PAWS (Predicting view assignments with support samples)
-  - Minimize a consistency loss!! different view to get same pseudo labels
-  - RQ: can we leverage the labeled data throughout training while also building on advances in self-supervised learning?
-  - How it is different than augmentation (may be using some unlabeled counterparts)
-  - How the heck the distance between view representation and labeled representation is used to provide weights over class labels (why is makes sense, and what benefits it offers??)
-  - Related works: Semi-supervised learning, few shot learning, and self-supervised learning
-  - Interesting ways to stop the collapse [sharpening functions] (section 3.2)
-
 1. Joulin, Armand, Laurens Van Der Maaten, Allan Jabri, and Nicolas Vasilache. "Learning visual features from large weakly supervised data." In European Conference on Computer Vision, pp. 67-84. Springer, Cham, 2016.
-
-1. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
-
-1. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
-  - semi supervised learning (should cover the labeled and unlabeled at the beginning)
-  - teacher network - to generate - pseudo labels [extension of pseudo label work]
-    - TP: Contrary to the Pseudo label work: *The teacher network is not fixed* and constantly adapting [claim: teacher learn better pseudo labels]
-    - Connected to Pseudo Labels/self-training (semi-supervised)
-  - Issues with the confirmation bias of pseudo label? does TP solve this??
-    - correct the confirmation bias using a systematic mechanism!!! (how pseudo-label affect the student network) [figure 1]
-    - Parallel training [student's learning feedback goes to teacher]!! (dynamic target!)
-  - assumption: Pseudo label of teacher can be adjusted
-    - However, extremely complication optimization as it requires to unroll everything!
-  - Sampling hard pseudo labels (modified version of REINFORCE algorithm!)
-  - Nice experiment section: Dataset, network, and baseline
-  -
 
 1. Xie, Qizhe, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le. "Unsupervised data augmentation for consistency training." arXiv preprint arXiv:1904.12848 (2019).
   - TP: how to effectively noise unlabeled examples (1) and importance of advanced data augmentation (2)
@@ -1247,8 +1199,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Augmentation types: RandAugment for image, backtranslating the language
   - Training techniques: confidence based masking, Sharpening Predictions, Domain relevance data filtering.
   - Interesting graph comparison under three assumption.
-
-1. Miyato, Takeru, Shin-ichi Maeda, Masanori Koyama, and Shin Ishii. "Virtual adversarial training: a regularization method for supervised and semi-supervised learning." IEEE transactions on pattern analysis and machine intelligence 41, no. 8 (2018): 1979-1993.
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Dave, Ishan, Rohit Gupta, Mamshad Nayeem Rizve, and Mubarak Shah. "TCLR: Temporal Contrastive Learning for Video Representation." arXiv preprint arXiv:2101.07974 (2021).
   - temporal CL framework!!- (why?) - two novel loss functions
@@ -1293,13 +1244,85 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - warp-up stages!! Current works focus on warm up length only! requires optimal warm-up length! or relying on external dataset! TP: Self-supervised pretraining!
   - TP: firstly perform simclr, then proceed with standard LNL algorithm (: ELR+ and DivideMix!!)
 
+1. Huang, Lianghua, Yu Liu, Bin Wang, Pan Pan, Yinghui Xu, and Rong Jin. "Self-supervised Video Representation Learning by Context and Motion Decoupling." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 13886-13895. 2021.
+  - a method that explicitly decouples motion supervision from context bias through a *carefully designed* pretext task
+    - (i) Context matching (CL between key frame (how to find it?? - Random frame selection) and video clips) & Motion Prediction (estimate motion features in the future & also a regularizer)
+    - Architecture: Shared backbone and separate head for the tasks
+  - Figure 2: says all: Two target for the V-network (context {top, extracted from image} & motion {bottom, derived using the motion vectors?})
+  - Related works: representation learning, AR in compressed videos, Motion prediction
+  - Experiments:
+    - Networks: Video backbone: C3D, R(2+1)D-26 and R3D-26 (V, video), shallow R2D-10 (I, context), and R3D-10 (video).
+    - Data: UCF, Kinetics, HMDB51, with augmentation (same for one example), hard negatives,  
 
 
+# Semi-Supervised
+
+1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
+  - Pretext task of rotation angle prediction!!
+    - Rotation, invariant across augmentation
+  - Baseline: vitrural adversarial training [inject noise with the original images], EntMin
+
+1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
+
+1. Grandvalet, Yves, and Yoshua Bengio. "Semi-supervised learning by entropy minimization." In CAP, pp. 281-296. 2005.
+  - Semi-supervised learning by minimun entropy regularization!
+    - result compared with mixture models ! (entropy methods are better)
+    - Connected to cluster assumption and manifold learning
+  - Motivation behind supervised training for unlabeled data
+    - Exhaustive generative search
+    - More parameters to be estimation that leads to more uncertainty
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+
+1. Tarvainen, Antti, and Harri Valpola. "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results." arXiv preprint arXiv:1703.01780 (2017).
+  - Improves Temporal Ensemble by average model weights (usual practice now!) instead of label prediction (WOW!)
+    - Temporal and Pi model suffers from confirmation bias (requires better target) as self-teacher!
+  - Two ways to improve: chose careful perturbation or chose careful teacher model  
+  - Result: Mean teacher is better! faster converge and higher accuracy
+  - Importance of good architecture (ThisPaper: Residual networks):
+  - TP: how to form better teacher model from students.
+  - TP: Large batch, large dataset, on-line learning.
+
+1. Laine, Samuli, and Timo Aila. "Temporal ensembling for semi-supervised learning." arXiv preprint arXiv:1610.02242 (2016).
+  - A form of consistency regularization.
+  - Self-ensemble (Exponential moving average), consensus prediction of unknown labels!!
+    - Ensemble Utilization of outputs of different network-in-training (same network: different epochs, different regularization!!, and input augmentations) to predict unlabeled data.
+    - The predicted unlabeled data can be used to train another network
+  - One point to put a distinction between semi-supervised learning and representation learning-fine tuning. In Semi-sup the methods uses the label from the beginning.
+  - Importance on the Data Augmentation and Regularization.
+  - TP: Two self-ensemble methods: pi-model and temporal ensemble (Figure 1) based on consistency losses.
+  - Pi Model: Forces the embedding to be together (Contrastive parts is in the softmax portion; prevents collapse)
+  - Pi vs Temporal model:
+    - (Benefit of temporal) Temporal model is faster.In case of temporal, training target is less noisy.
+    - (Downside of temporal) Store auxiliary data! Memory mapped file.  
+
+1. Assran, Mahmoud, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Armand Joulin, Nicolas Ballas, and Michael Rabbat. "Semi-Supervised Learning of Visual Features by Non-Parametrically Predicting View Assignments with Support Samples." arXiv preprint arXiv:2104.13963 (2021).
+  - PAWS (Predicting view assignments with support samples)
+  - Minimize a consistency loss!! different view to get same pseudo labels
+  - RQ: can we leverage the labeled data throughout training while also building on advances in self-supervised learning?
+  - How it is different than augmentation (may be using some unlabeled counterparts)
+  - How the heck the distance between view representation and labeled representation is used to provide weights over class labels (why is makes sense, and what benefits it offers??)
+  - Related works: Semi-supervised learning, few shot learning, and self-supervised learning
+  - Interesting ways to stop the collapse [sharpening functions] (section 3.2)
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 
+1. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
 
+1. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
+  - semi supervised learning (should cover the labeled and unlabeled at the beginning)
+  - teacher network - to generate - pseudo labels [extension of pseudo label work]
+    - TP: Contrary to the Pseudo label work: *The teacher network is not fixed* and constantly adapting [claim: teacher learn better pseudo labels]
+    - Connected to Pseudo Labels/self-training (semi-supervised)
+  - Issues with the confirmation bias of pseudo label? does TP solve this??
+    - correct the confirmation bias using a systematic mechanism!!! (how pseudo-label affect the student network) [figure 1]
+    - Parallel training [student's learning feedback goes to teacher]!! (dynamic target!)
+  - assumption: Pseudo label of teacher can be adjusted
+    - However, extremely complication optimization as it requires to unroll everything!
+  - Sampling hard pseudo labels (modified version of REINFORCE algorithm!)
+  - Nice experiment section: Dataset, network, and baseline
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
-
+1. Miyato, Takeru, Shin-ichi Maeda, Masanori Koyama, and Shin Ishii. "Virtual adversarial training: a regularization method for supervised and semi-supervised learning." IEEE transactions on pattern analysis and machine intelligence 41, no. 8 (2018): 1979-1993.
 
 
 

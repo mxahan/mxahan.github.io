@@ -67,6 +67,7 @@ This blog contains state of the art application and research on different applic
   - Interesting related work section : learning to fine-tune (MAML), RNN memory based, Embedding and Metric learning approachs
     - Mostly related to prototypical network and siamese network
   - Problem definition and solution: Section 3
+  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Dinu, Georgiana, Angeliki Lazaridou, and Marco Baroni. "Improving zero-shot learning by mitigating the hubness problem." arXiv preprint arXiv:1412.6568 (2014).
 
@@ -100,6 +101,7 @@ This blog contains state of the art application and research on different applic
       - (i) Prototypical net with soft k-Means
       - (ii) Prototypical net with soft k-Means with a distractor cluster
       - (iii) Prototypical net with soft k-Means and Masking
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
   - learning and adapting quickly
@@ -151,12 +153,14 @@ This blog contains state of the art application and research on different applic
     - learning visual representations can be used to represent the goal (no fine-tuneing)
   - Related field: learning from demonstration, inverse reinforcement learning
   - video segmentation for notion of similarity
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Ziebart, Brian D., Andrew L. Maas, J. Andrew Bagnell, and Anind K. Dey. "Maximum entropy inverse reinforcement learning." In Aaai, vol. 8, pp. 1433-1438. 2008.
   - Framing problem as Imitation learning as solutions to MDP
   - Model navigation and driving behavior -> under noisy data
   - Issues in imitation learning during the imperfect demonstration
     - alternative solution: IRL : Matching feature count (algo 1)
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 # Architectural contributions
 
