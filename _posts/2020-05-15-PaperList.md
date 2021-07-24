@@ -651,6 +651,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Tschannen, Michael, Josip Djolonga, Paul K. Rubenstein, Sylvain Gelly, and Mario Lucic. "On mutual information maximization for representation learning." arXiv preprint arXiv:1907.13625 (2019).
 
 1. Kalantidis, Yannis, Mert Bulent Sariyildiz, Noe Pion, Philippe Weinzaepfel, and Diane Larlus. "Hard negative mixing for contrastive learning." arXiv preprint arXiv:2010.01028 (2020).
+  - TP (MoCHi): The effect of Hard negatives (how, definition?)
+  - TP: feature level mixing for hard negatives (minimal computational overhead, momentum encoder) by synthesizing hard negatives (!!)
+  - Related works: Mixup workshop
 
 1. Löwe, Sindy, Peter O'Connor, and Bastiaan S. Veeling. "Putting an end to end-to-end: Gradient-isolated learning of representations." arXiv preprint arXiv:1905.11786 (2019).
 
@@ -1212,7 +1215,13 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Tian, Yuandong, Xinlei Chen, and Surya Ganguli. "Understanding self-supervised learning dynamics without contrastive pairs." arXiv preprint arXiv:2102.06810 (2021).
 
 1. Caron, Mathilde, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. "Emerging properties in self-supervised vision transformers." arXiv preprint arXiv:2104.14294 (2021).
-  - DINO
+  - DINO: knowledge DIstillation with NO labels (Figure 2, Algorithm 1)
+  - Self-supervised learning with vision transformer
+  - Observations: (i) T features contain explicit information (!!!) about the semantic segmentation of an image
+    - explicit information: scene layout, object boundaries (directly accessible)
+    - Performs basic k-NN without any supervision.
+  - Cross entropy loss (sharpening and centering requires to avoid collapse)
+  - Experiments: Architecture (i) ViT and (ii) ResNet
 
 1. Aljalbout, Elie, Vladimir Golkov, Yawar Siddiqui, Maximilian Strobel, and Daniel Cremers. "Clustering with deep learning: Taxonomy and new methods." arXiv preprint arXiv:1801.07648 (2018).
   - Three components: Main encoder networks (concerns with architecture, Losses, and cluster assignments)
@@ -1253,6 +1262,15 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Experiments:
     - Networks: Video backbone: C3D, R(2+1)D-26 and R3D-26 (V, video), shallow R2D-10 (I, context), and R3D-10 (video).
     - Data: UCF, Kinetics, HMDB51, with augmentation (same for one example), hard negatives,  
+
+1. Feichtenhofer, Christoph, Haoqi Fan, Bo Xiong, Ross Girshick, and Kaiming He. "A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3299-3309. 2021.
+
+1. Xie, Junyuan, Ross Girshick, and Ali Farhadi. "Unsupervised deep embedding for clustering analysis." In International conference on machine learning, pp. 478-487. PMLR, 2016.
+  - Deep Embedded Clustering (DEC) Learns (i) Feature representation (ii) cluster assignments
+  - Experiment: Image and text corpora
+  - Contribution: (a) joint optimization of deep embedding and clustering; (b) a novel iterative refinement via soft assignment (??); (c) state-of-the-art clustering results in terms of clustering accuracy and speed
+  - target distribution properties: (1) strengthen predictions (i.e., improve cluster purity), (2) put more emphasis on data points assigned with high confidence, and (3) normalize loss contribution of each centroid to prevent large clusters from distorting the hidden feature space.
+  - Computational complexity as iteration over large data samples
 
 
 # Semi-Supervised
@@ -1305,7 +1323,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Interesting ways to stop the collapse [sharpening functions] (section 3.2)
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
-
 1. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
 
 1. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
@@ -1323,6 +1340,23 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Miyato, Takeru, Shin-ichi Maeda, Masanori Koyama, and Shin Ishii. "Virtual adversarial training: a regularization method for supervised and semi-supervised learning." IEEE transactions on pattern analysis and machine intelligence 41, no. 8 (2018): 1979-1993.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

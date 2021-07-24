@@ -141,6 +141,16 @@ This blog contains state of the art application and research on different applic
   - Popular dataset descriptions
   -
 
+1. Jenni, Simon, and Paolo Favaro. "Self-Supervised Multi-View Synchronization Learning for 3D Pose Estimation." In Proceedings of the Asian Conference on Computer Vision. 2020.
+  - Experiment Data: Human3.6M dataset, ResNet architectures
+  - Self-supervised task: Transformation and synchronous prediction
+
+1. Wang, Keze, Liang Lin, Chenhan Jiang, Chen Qian, and Pengxu Wei. "3D human pose machines with self-supervised learning." IEEE transactions on pattern analysis and machine intelligence 42, no. 5 (2019): 1069-1082.
+  - Experiment data: HumanEva-I and Human3.6M
+
+1. heng, Ce, Wenhan Wu, Taojiannan Yang, Sijie Zhu, Chen Chen, Ruixu Liu, Ju Shen, Nasser Kehtarnavaz, and Mubarak Shah. "Deep learning-based human pose estimation: A survey." arXiv preprint arXiv:2012.13392 (2020).
+
+
 # Imitation Learning
 
 1. Sermanet, Pierre, Kelvin Xu, and Sergey Levine. "Unsupervised perceptual rewards for imitation learning." arXiv preprint arXiv:1612.06699 (2016).
@@ -171,6 +181,8 @@ This blog contains state of the art application and research on different applic
 1. Radosavovic, Ilija, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, and Piotr Dollár. "Designing network design spaces." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10428-10436. 2020.
   -
 
+1. Tolstikhin, Ilya, Neil Houlsby, Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung et al. "Mlp-mixer: An all-mlp architecture for vision." arXiv preprint arXiv:2105.01601 (2021).
+
 1. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
   - ResNeXt: highly modulated network (figure 1) [another network engineering with a very simple idea]
   - Name origin: as it adds **Next dimension: Cardinality** so it refers to ResNeXt
@@ -191,7 +203,18 @@ This blog contains state of the art application and research on different applic
 1. Dosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020).
   - CNN matching performance: large amount of data pretrain and transfer on mid/small sized classification tasks.
 
+1. Tran, Du, Heng Wang, Lorenzo Torresani, Jamie Ray, Yann LeCun, and Manohar Paluri. "A closer look at spatiotemporal convolutions for action recognition." In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition, pp. 6450-6459. 2018.
+ - In github notes
+ - factorizing the 3D convolutional filters into separate spatial and temporal components yields significantly gains in accuracy
+ - Empirical studies (?? types of studies) leads to design choices R(2+1)D
+ - 3D network with residual learning
+ - Benefits:
+
+1. Liu, Ze, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu. "Video Swin Transformer." arXiv preprint arXiv:2106.13230 (2021).
+
 # Data augmentation
+
+1. Zhang, Hongyi, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. "mixup: Beyond empirical risk minimization." arXiv preprint arXiv:1710.09412 (2017).
 
 1. Cubuk, Ekin D., Barret Zoph, Jonathon Shlens, and Quoc V. Le. "Randaugment: Practical automated data augmentation with a reduced search space." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 702-703. 2020.
   - TP tackles: (i) Reduce search spaces for automatic data augmentations! {by Simplifying the search spaces: avails grid search} (ii) adjust regularization strengths
