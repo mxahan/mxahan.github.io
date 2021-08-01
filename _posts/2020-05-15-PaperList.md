@@ -1272,6 +1272,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - target distribution properties: (1) strengthen predictions (i.e., improve cluster purity), (2) put more emphasis on data points assigned with high confidence, and (3) normalize loss contribution of each centroid to prevent large clusters from distorting the hidden feature space.
   - Computational complexity as iteration over large data samples
 
+1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Temporal cycle-consistency learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1801-1810. 2019.
+  - Temporal video alignment problem: the task of finding correspondences across multiple videos despite many factors of variation
+  - TP: Temporal cycle consistency losses (complementary to other methods [TCN, shuffle and learn])
+  - Dataset: Penn AR
 
 # Semi-Supervised
 
@@ -1350,8 +1354,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Algorithm is nice to work with
 
 1. Berthelot, David, Nicholas Carlini, Ian Goodfellow, Nicolas Papernot, Avital Oliver, and Colin Raffel. "Mixmatch: A holistic approach to semi-supervised learning." arXiv preprint arXiv:1905.02249 (2019).
-  - TP: guesses low-entropy labels for data-augmented unlabeled examples and mixes labeled and unlabeled data using MixUp
-
+  - TP: guesses low-entropy labels for data-augmented unlabeled examples and mixes labeled and unlabeled data using MixUp (Algorithm 1)
+  - Related works: Consistency Regularization, Entropy Minimization
 
 
 
