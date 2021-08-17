@@ -182,3 +182,32 @@ Personally, I feel I want to improve, implement AI to make human life better by 
 # Research Guide
 
 Summary of the following [blog](https://libguides.usc.edu/writingguide/researchdesigns)
+
+# What's PhD
+
+what is phd? what requires to succed here? [Good Talk](youtube.com/watch?v=VrMwAOtB9S4)
+
+
+3 Main Objective
+  - Get to know your literature
+  - Develop Professional level research skill and publish publication worthy works
+  - Demonstrate those mentioned above knowledge and skills
+
+### Get to know your literature
+Papers that help you achieve the specific goals (challenging as we require to chose paper on short readings most of the time.)
+
+Identify: The context requires for understanding individual papers
+  - Common concepts
+  - Common techniques
+  - Major breakthroughs
+  - Current trends
+
+Well how to do it?
+  - Practice, test, and refine every parts of the process
+  - Facing issues: Please slow down to narrow the focus to stay with it ...
+  - Ask for help!
+
+Some key notes form the speaker
+  - Focus on each parts as carefully as possible
+  - Got rid of internet connection in case of focus issues
+  - Stop worrying about the end results 

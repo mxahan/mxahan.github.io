@@ -353,7 +353,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 
 1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
-  - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation"
+  - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation" [sampling method for CL]
     - How they separate the subject background in the first places!! What prior knowledge!!
     - May use different existing methods!!
   - Augmentation Scheme: Another data engineering
@@ -361,27 +361,26 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Figure 1: Shows all
 
 1. Huynh, Tri, Simon Kornblith, Matthew R. Walter, Michael Maire, and Maryam Khademi. "Boosting Contrastive Self-Supervised Learning with False Negative Cancellation." arXiv preprint arXiv:2011.11765 (2020).
-  - False negative Problem!! (detail analysis)
+  - False negative Problem!! (detail analysis) [sampling method for CL]
+    - Aim: Boosting results
   - Methods to Mitigate false negative impacts (how? what? how much impact! significant means?? what are other methods?)
   - Hypothesis: RAndomly taken negative samples (leaked negative)
   - Overview
-    - identify false negative (how?)
-    - Then false negative elimination and false negative attraction
+    - identify false negative (how?): Finding potential False negative sample [3.2.3]
+    - Then false **negative elimination** and **false negative attraction**
   - Contributions
-    - find false positive strategy (simple?)
-      - section 3.2.3 (obvious one but a tricky - heavy computation)
-    - False neg elimination and attraction
     - applicable on top of existing cont. learning
 
 1. Denton, Emily L. "Unsupervised learning of disentangled representations from video." In Advances in neural information processing systems, pp. 4414-4423. 2017.
-  - Encoder-Decoder set up for the disentangled
+  - Encoder-Decoder set up for the disentangled [disentanglement representation]
   - Hypothesis: Content (time invariant) and Pose (time variant)
   - Two Encoders for the pose and content; Concatenate the output for single Decoder
   - Introduce adversarial loss
   - Video generation conditioned on context, and pose modeling via LSTM.
 
 1. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
-  - Predicting the future
+  - Predicting the future [self-supervised task design]
+  - TP: Great works with some foundation of CL
   - probabilistic (AR) contrastive loss!!
     - in latent space
   - Experiments on the speech, image, text and RL
@@ -393,39 +392,46 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - [more notes](https://github.com/mxahan/PDFS_notes/blob/master/cpc_2017.pdf)
 
 1. He, Kaiming, Haoqi Fan, Yuxin Wu, Saining Xie, and Ross Girshick. "Momentum contrast for unsupervised visual representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9729-9738. 2020.
-  - Dynamic dictionary with MA encoder
+  - Dynamic dictionary with MA encoder [Algorithmic] Contribution
   - (query) encoder and (key) momentum encoder.
   - The update of key encoder in a momentum fashion
       - Query updated by back propagation
-  - Algorithm is the Core
+  - Algorithm [1] is the Core: A combination of **end-end & the Memory bank**
   - key and query match but the queue would not match!
   - Momentum parametric dependencies
   - Start with the key and query encoder as the Same
     - key updates slowly, query updates with SGD.
 
 1. Kolesnikov, Alexander, Xiaohua Zhai, and Lucas Beyer. "Revisiting self-supervised visual representation learning." In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition, pp. 1920-1929. 2019.
+  - Insight about the network used for learning [experimentation]
+  - Challenges the choice of different CNNs as network for vision tasks.
+  - Experimentation with different architectures [ResNet, RevNet, VGG] and their widths and depths.
+  - key findings : hat (1) lessons from architecture design in the fully supervised setting do not necessarily translate to the self-supervised setting; (2) contrary to previously popular architectures like AlexNet, in residual architectures, the final prelogits layer consistently results in the best performance; (3) the widening factor of CNNs has a drastic effect on performance of self-supervised techniques and (4) SGD training of linear logistic regression may require very long time to converge
+  - pretext tasks for self-supervised learning should not be considered in isolation, but in conjunction with underlying architectures.
 
 1. Wang, Xiaolong, and Abhinav Gupta. "Unsupervised learning of visual representations using videos." In Proceedings of the IEEE international conference on computer vision, pp. 2794-2802. 2015.
-  - Visual tracking provides the supervision!!!
-  - Siamese-triplet networks
+  - Visual tracking provides the supervision!!! [sampling method for CL]
+  - Siamese-triplet networks: energy based max-margin loss
   - Experiments: VOC 2012 dataset (100k Unlabeled videos)
   - interesting loss functions (self note: please update the pdf files)
 
 1. Misra, Ishan, C. Lawrence Zitnick, and Martial Hebert. "Shuffle and learn: unsupervised learning using temporal order verification." In European Conference on Computer Vision, pp. 527-544. Springer, Cham, 2016.
-  - Pretext Task: a sequence of frames from a video is in the correct temporal order (figure 1)
+  - Pretext Task: a sequence of frames from a video is in the correct temporal order (figure 1) [sampling method for CL]
+    - Capture temporary variations
+    - Fusion and classification [not the CL directly]
   - experiment Net: CNN Based network, data: UCF101, HMDB51 & FLIC, MPII (pose Estimation)
   - self note: There's more.
 
 1. Fernando, Basura, Hakan Bilen, Efstratios Gavves, and Stephen Gould. "Self-supervised video representation learning with odd-one-out networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3636-3645. 2017.
-  - Pretext tasks: Finding the odd-one (O3N) video using fusion.
-    - Temporal odd one!
+  - Pretext tasks: Finding the odd-one (O3N) video using fusion. [sampling method for CL]
+    - Temporal odd one! Target: Regression task
   - Network: CNN with fusion methods.
   - Experiments: HMDB51, UCF101
 
 1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
   - non-parametric classifier via feature representation **(Memory Bank)**
   - Memory bank stores instance features (used for kNN classifier)
-    - Dimention reduction
+    - Dimention reduction: one of the key [algorithmic] contribution
   - Experiments
     - obj detect and image classification
   - connect to
@@ -437,29 +443,30 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - representation -> class (image itself) (compare with instance) -> loss function (plays the key role to distinguish)
     - NCE from memory bank
     - Monte carlo sampling to get the all contrastive normalizing value for denominator
-    - proximal parameter to ensure the smoothness for the representations
+    - proximal parameter to ensure the smoothness for the representations {proximal regularization:}
 
 1. Sermanet, Pierre, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine, and Google Brain. "Time-contrastive networks: Self-supervised learning from video." In 2018 IEEE International Conference on Robotics and Automation (ICRA), pp. 1134-1141. IEEE, 2018.
-  - Multiple view point [same times are same, different time frames are different]
+  - Multiple view point [same times are same, different time frames are different], motion blur, viewpoint invariant
     - Regardless of the viewpoint [same time same thing , same representation]
-    - Considered images
+    - Considered images [sampling method for CL]
     - Representation is the reward
-    - TCN - a embedding
+    - TCN - a embedding {multitask embedding!}
   - imitation learning
   - PILQR for RL parts
   - Huber-style loss
 
 1. Lu, Jiasen, Vedanuj Goswami, Marcus Rohrbach, Devi Parikh, and Stefan Lee. "12-in-1: Multi-task vision and language representation learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10437-10446. 2020.
-  - MTL + Dynamic "stop and go" schedule.
+  - MTL + Dynamic "stop and go" schedule. [multi-modal representation learning]
   - ViLBERT base architecture.
 
 1. Misra, Ishan, and Laurens van der Maaten. "Self-supervised learning of pretext-invariant representations." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6707-6717. 2020.
-  - Pretraining method
+  - Pre-training method [algorithmic]
   - Pretext learning with transformation invariant + data augmentation invariant
   - See the loss functions  
     - Tries to retain small amount of the transformation properties too !!
   - Use contrastive learning (See NCE)
       - Maximize MI
+      - Utilizes extra head on the features.
   - Motivation from predicting video frames
   - Experiment of jigsaw pretext learning
   - Hypothesis: Representation of image and its transformation should be same
@@ -471,7 +478,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - PIRL
 
 1. Zhang, Richard, Phillip Isola, and Alexei A. Efros. "Split-brain autoencoders: Unsupervised learning by cross-channel prediction." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1058-1067. 2017.
-  - Extension of autoencoders to cross channel prediction
+  - Extension of autoencoders to cross channel prediction [algorithmic]
     - Predict one portion to other and vice versa + loss on full reconstruction.
     - Two disjoint auto-encoders.
   - Tried both the regression and classification loss
@@ -483,7 +490,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Srinivas, Aravind, Michael Laskin, and Pieter Abbeel. "Curl: Contrastive unsupervised representations for reinforcement learning." arXiv preprint arXiv:2004.04136 (2020).
 
 1. Chen, Ting, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton. "A simple framework for contrastive learning of visual representations." arXiv preprint arXiv:2002.05709 (2020).
-  - Truely simple! (SimCLR)
+  - Truely simple! (SimCLR) [algorithmic]
   - Two transfers for each image and representation
   - Same origin image should be more similar than the others.
   - Contrastive (negative) examples are from image other than that.
@@ -491,13 +498,16 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Asano, Yuki M., Mandela Patrick, Christian Rupprecht, and Andrea Vedaldi. "Labelling unlabelled videos from scratch with multi-modal self-supervision." arXiv preprint arXiv:2006.13662 (2020).
   - clustering method that allows pseudo-labelling of a video dataset without any human annotations, by leveraging the natural correspondence between the audio and visual modalities
+  - [Multi-Modal representation learning]
 
 1. Patrick, Mandela, Yuki M. Asano, Ruth Fong, João F. Henriques, Geoffrey Zweig, and Andrea Vedaldi. "Multi-modal self-supervision from generalized data transformations." arXiv preprint arXiv:2003.04298 (2020).
+  - [Multi-Modal representation learning]
 
 1. Khosla, Prannay, Piotr Teterwak, Chen Wang, Aaron Sarna, Yonglong Tian, Phillip Isola, Aaron Maschinot, Ce Liu, and Dilip Krishnan. "Supervised contrastive learning." arXiv preprint arXiv:2004.11362 (2020).
-  -
+  - [Algorithmic]
 
 1. Hadsell, Raia, Sumit Chopra, and Yann LeCun. "Dimensionality reduction by learning an invariant mapping." In 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'06), vol. 2, pp. 1735-1742. IEEE, 2006.
+  - Algorithm 1: distance based loss optimization [algorithmic]
 
 1. Koch, Gregory, Richard Zemel, and Ruslan Salakhutdinov. "Siamese neural networks for one-shot image recognition." In ICML deep learning workshop, vol. 2. 2015.
 
@@ -647,6 +657,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers2.pdf)
 
 1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
+  - New loss function (why? and where it works?)
+    - Generalization of the BYOL approach?
+    - No negative examples (the scatters are preserved)
+  - Whitening operation (scattering effect)
 
 1. Tschannen, Michael, Josip Djolonga, Paul K. Rubenstein, Sylvain Gelly, and Mario Lucic. "On mutual information maximization for representation learning." arXiv preprint arXiv:1907.13625 (2019).
 
@@ -656,6 +670,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Related works: Mixup workshop
 
 1. Löwe, Sindy, Peter O'Connor, and Bastiaan S. Veeling. "Putting an end to end-to-end: Gradient-isolated learning of representations." arXiv preprint arXiv:1905.11786 (2019).
+
+1. Tsai, Yao-Hung Hubert, Martin Q. Ma, Muqiao Yang, Han Zhao, Louis-Philippe Morency, and Ruslan Salakhutdinov. "Self-supervised representation learning with relative predictive coding." arXiv preprint arXiv:2103.11275 (2021).
+  -
 
 1. Xiong, Yuwen, Mengye Ren, and Raquel Urtasun. "LoCo: Local contrastive representation learning." arXiv preprint arXiv:2008.01342 (2020).
 
@@ -1275,7 +1292,16 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Temporal cycle-consistency learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1801-1810. 2019.
   - Temporal video alignment problem: the task of finding correspondences across multiple videos despite many factors of variation
   - TP: Temporal cycle consistency losses (complementary to other methods [TCN, shuffle and learn])
-  - Dataset: Penn AR
+  - Dataset: Penn AR, Pouring dataset
+  - TP: Focus on temporal reasoning!! (metrics)
+    - learns representations by aligning video sequences of the same action
+    - Requires differentiable cycle-consistency losses
+  - Figure 2: interesting but little hard to understand
+
+1. Liu, Xiao, Fanjin Zhang, Zhenyu Hou, Li Mian, Zhaoyu Wang, Jing Zhang, and Jie Tang. "Self-supervised learning: Generative or contrastive." IEEE Transactions on Knowledge and Data Engineering (2021).
+  - Another Survey Paper
+
+1. Akbari, Hassan, Linagzhe Yuan, Rui Qian, Wei-Hong Chuang, Shih-Fu Chang, Yin Cui, and Boqing Gong. "Vatt: Transformers for multimodal self-supervised learning from raw video, audio and text." arXiv preprint arXiv:2104.11178 (2021).
 
 # Semi-Supervised
 
