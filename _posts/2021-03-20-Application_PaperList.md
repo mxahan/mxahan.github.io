@@ -153,6 +153,8 @@ This blog contains state of the art application and research on different applic
 
 1. heng, Ce, Wenhan Wu, Taojiannan Yang, Sijie Zhu, Chen Chen, Ruixu Liu, Ju Shen, Nasser Kehtarnavaz, and Mubarak Shah. "Deep learning-based human pose estimation: A survey." arXiv preprint arXiv:2012.13392 (2020).
 
+1. Kocabas, Muhammed, Salih Karagoz, and Emre Akbas. "Self-supervised learning of 3d human pose using multi-view geometry." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1077-1086. 2019.
+
 
 # Imitation Learning
 

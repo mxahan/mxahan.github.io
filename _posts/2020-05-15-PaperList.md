@@ -510,15 +510,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Algorithm 1: distance based loss optimization [algorithmic]
 
 1. Koch, Gregory, Richard Zemel, and Ruslan Salakhutdinov. "Siamese neural networks for one-shot image recognition." In ICML deep learning workshop, vol. 2. 2015.
-
-1. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
-  - Interesting way to improve the Classifier
-  - (labeled data) -> Build classifier (T) -> (predict unlabeled data) -> Train Student using both labeled + model predicted unlabeled data. Repeat.. [algo 1]
-  - Introduce noise for both T and S.
-    - Data noise, model noise (dropout)
+  - Original contrastive approach with two (either similar or dissimilarity) images [algorithmic]
 
 1. Park, Taesung, Alexei A. Efros, Richard Zhang, and Jun-Yan Zhu. "Contrastive Learning for Unpaired Image-to-Image Translation." arXiv preprint arXiv:2007.15651 (2020).
-  - Contrastive loss (Same patch of input - output are +ve and rest of the patches are -ve example)
+  - Contrastive loss (Same patch of input - output are +ve and rest of the patches are -ve example) [algorithmic]
   - Trains the encoder parts more! (Fig 1, 2) ; Decoders train only on adversarial losses.
   - Contribution in loss (SimCLR) kinda motivation
 
@@ -1303,6 +1298,17 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Akbari, Hassan, Linagzhe Yuan, Rui Qian, Wei-Hong Chuang, Shih-Fu Chang, Yin Cui, and Boqing Gong. "Vatt: Transformers for multimodal self-supervised learning from raw video, audio and text." arXiv preprint arXiv:2104.11178 (2021).
 
+1. Zhu, Benjin, Junqiang Huang, Zeming Li, Xiangyu Zhang, and Jian Sun. "EqCo: Equivalent Rules for Self-supervised Contrastive Learning." arXiv preprint arXiv:2010.01929 (2020).
+  - Theoretical paper: Challenges the large number of negative samples [algorithmic]
+    - Though more negative pairs are usually reported to derive better results, Interpretation: it may be because the hyper-parameters in the loss are not set to the optimum according to different numbers of keys respectively
+    - Rule to set the hyperparameters
+    - SiMo: Alternate for the InfoNCE
+  - EqCo: Concept of Batch Size (N) and Negative Sample number (K)
+    - CPC work follow-up
+    - the learning rate should be adjusted proportional to the number of queries N per batch
+    - linear scaling rule needs to be applied corresponding to N rather than K
+  - SiMo: cancel the memory bank as rely on a few negative samples per batch. Instead, use the momentum encoder to extract both positive and negative key embeddings from the current batch.
+
 # Semi-Supervised
 
 1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
@@ -1383,7 +1389,11 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - TP: guesses low-entropy labels for data-augmented unlabeled examples and mixes labeled and unlabeled data using MixUp (Algorithm 1)
   - Related works: Consistency Regularization, Entropy Minimization
 
-
+1. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
+  - Interesting way to improve the Classifier
+  - (labeled data) -> Build classifier (T) -> (predict unlabeled data) -> Train Student using both labeled + model predicted unlabeled data. Repeat.. [algo 1]
+  - Introduce noise for both T and S.
+    - Data noise, model noise (dropout)
 
 
 
