@@ -210,4 +210,6 @@ Well how to do it?
 Some key notes form the speaker
   - Focus on each parts as carefully as possible
   - Got rid of internet connection in case of focus issues
-  - Stop worrying about the end results 
+  - Stop worrying about the end results
+
+# Pitching your research 

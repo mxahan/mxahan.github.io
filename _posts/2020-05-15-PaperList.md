@@ -350,7 +350,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 # Self-Supervised Learning
 
-
+1. Sordoni, Alessandro, Nouha Dziri, Hannes Schulz, Geoff Gordon, Philip Bachman, and Remi Tachet Des Combes. "Decomposed Mutual Information Estimation for Contrastive Representation Learning." In International Conference on Machine Learning, pp. 9859-9869. PMLR, 2021.
 
 1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
   - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation" [sampling method for CL]
@@ -364,7 +364,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - False negative Problem!! (detail analysis) [sampling method for CL]
     - Aim: Boosting results
   - Methods to Mitigate false negative impacts (how? what? how much impact! significant means?? what are other methods?)
-  - Hypothesis: RAndomly taken negative samples (leaked negative)
+  - Hypothesis: Randomly taken negative samples (leaked negative)
   - Overview
     - identify false negative (how?): Finding potential False negative sample [3.2.3]
     - Then false **negative elimination** and **false negative attraction**
@@ -1167,8 +1167,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Han, Tengda, Weidi Xie, and Andrew Zisserman. "Self-supervised co-training for video representation learning." arXiv preprint arXiv:2010.09709 (2020).
-  - visual only selfsupervised Representation learning!!
-  - new form of supervised CL (adding semantic positive to instance based Infor NCE loss)!!
+  - visual only selfsupervised Representation learning!! [sampling method for CL]
+  - new form of supervised CL (adding semantic positive to instance based Infor NCE loss)!! HOW? {explanation in figure 1}
   - co-training scheme with infoNCE loss!! (Explore complementary information from different views
   - evaluating the quality of learned representations (two downstream tasks: action recognition and video retrieval)
   - Question of "is instance discrimination is best??" - NO
@@ -1308,6 +1308,17 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - the learning rate should be adjusted proportional to the number of queries N per batch
     - linear scaling rule needs to be applied corresponding to N rather than K
   - SiMo: cancel the memory bank as rely on a few negative samples per batch. Instead, use the momentum encoder to extract both positive and negative key embeddings from the current batch.
+
+1. Sordoni, Alessandro, Nouha Dziri, Hannes Schulz, Geoff Gordon, Philip Bachman, and Remi Tachet Des Combes. "Decomposed Mutual Information Estimation for Contrastive Representation Learning." In International Conference on Machine Learning, pp. 9859-9869. PMLR, 2021.
+
+1. Yang, Mouxing, Yunfan Li, Zhenyu Huang, Zitao Liu, Peng Hu, and Xi Peng. "Partially view-aligned representation learning with noise-robust contrastive loss." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1134-1143. 2021.
+  - Partially view alignment Problem (PVP)???
+  - Objective: aligning data and learning representation (why it is important??)
+  - TP: Propose noise robust Contrastive loss to eliminate False negative {related to learning with noisy labels, any evidence on this?}
+  - New definition of noisy labels (why, is it valid?) [false negative pair as noisy label! ]
+  - Experiment: 10 SOTA classification and clustering tasks!
+  - Two assumption on Data: Completeness (contains all views [partially data-missing problem]) and Consistency (no false negative/positive [partial view alignment problem]) of views.  
+  - Proposed modified distance loss for the negative pairs. 
 
 # Semi-Supervised
 

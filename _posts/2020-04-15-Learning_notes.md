@@ -170,6 +170,22 @@ write the text.txt file and ka boom
 sendmail -t sender@domain.com -t <text.txt
 ```
 
+# Conda issues
+
+### The environment is inconsistent, please check the package plan carefully The following packages are causing the inconsistency:
+
+Try the following in the terminal:
+
+```
+conda install anaconda
+
+conda install conda
+
+conda update conda
+```
+
+[link](https://stackoverflow.com/questions/55527354/the-environment-is-inconsistent-please-check-the-package-plan-carefully)
+
 # Initramfs Ubuntu reboot
 
 Prospective solution to the
