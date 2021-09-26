@@ -1318,7 +1318,26 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - New definition of noisy labels (why, is it valid?) [false negative pair as noisy label! ]
   - Experiment: 10 SOTA classification and clustering tasks!
   - Two assumption on Data: Completeness (contains all views [partially data-missing problem]) and Consistency (no false negative/positive [partial view alignment problem]) of views.  
-  - Proposed modified distance loss for the negative pairs. 
+  - Proposed modified distance loss for the negative pairs.
+
+1. Huang, Zhenyu, Peng Hu, Joey Tianyi Zhou, Jiancheng Lv, and Xi Peng. "Partially view-aligned clustering." Advances in Neural Information Processing Systems 33 (2020).
+
+1. Chen, Kai, Lanqing Hong, Hang Xu, Zhenguo Li, and Dit-Yan Yeung. "MultiSiam: Self-supervised Multi-instance Siamese Representation Learning for Autonomous Driving." arXiv preprint arXiv:2108.12178 (2021).
+  - TP: Two issues: (1) define positive samples for cross-view consistency ? (2) measure similarity in multi-instance circumstances ?
+  - Experiments data: WayMo, SODA10M
+  - Global consistency to local consistency?
+  - basic assumption of instance discrimination: different views of the same image should be consistent in the feature space
+    - what about multi-instance in a single image (realistic case)!!!
+    - definition of positive samples is definitely needed to extend cross-view consistency framework to multi-instance circumstances. (multiple things in single image)
+  - Methods: Uses IoU as proxy for data and Noise. (les IoU - More Noise)
+    - Remove global pooling (counter the multiple instance collapse)
+    - Well, very complex loss function!
+
+1. Yang, Ceyuan, Zhirong Wu, Bolei Zhou, and Stephen Lin. "Instance localization for self-supervised detection pretraining." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3987-3996. 2021.
+  - Propose a new self-supervised tasks : Instance Localization. [self-supervised task design]
+  - Put image crop into another and try to predict using RPN!! 
+
+1. Wang, Feng, and Huaping Liu. "Understanding the behaviour of contrastive loss." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 2495-2504. 2021.
 
 # Semi-Supervised
 

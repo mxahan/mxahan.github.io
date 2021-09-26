@@ -179,7 +179,13 @@ This blog contains state of the art application and research on different applic
 
 # Architectural contributions
 
+1. Jaegle, Andrew, Felix Gimeno, Andrew Brock, Andrew Zisserman, Oriol Vinyals, and Joao Carreira. "Perceiver: General perception with iterative attention." arXiv preprint arXiv:2103.03206 (2021).
+
+1. Jaegle, Andrew, Sebastian Borgeaud, Jean-Baptiste Alayrac, Carl Doersch, Catalin Ionescu, David Ding, Skanda Koppula et al. "Perceiver IO: A General Architecture for Structured Inputs & Outputs." arXiv preprint arXiv:2107.14795 (2021).
+
 1. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
+  - TP: proposes computational efficient 3D CNN (and their extensions)
+    - Decomposes 3D CNN as DD spatial filter and 1D temporal filter
 
 1. Xie, Saining, Chen Sun, Jonathan Huang, Zhuowen Tu, and Kevin Murphy. "Rethinking spatiotemporal feature learning: Speed-accuracy trade-offs in video classification." In Proceedings of the European conference on computer vision (ECCV), pp. 305-321. 2018.
 
@@ -225,6 +231,19 @@ This blog contains state of the art application and research on different applic
 
 # Data augmentation
 
+1. Liu, Zhuang, Tinghui Zhou, Hung-Ju Wang, Zhiqiang Shen, Bingyi Kang, Evan Shelhamer, and Trevor Darrell. "Transferable recognition-aware image processing." arXiv preprint arXiv:1910.09185 (2019).
+  - optimizing the recognition loss directly on the image processing network or through an intermediate transforming model (transferable)
+    -a neural network for image processing: maps an input image to an output image with some desired properties.
+  - propose add a recognition loss optimized jointly with the image processing loss.
+  - Figure 2: sums the work. (process loss + recognition task)
+
+1. Talebi, Hossein, and Peyman Milanfar. "Learning to Resize Images for Computer Vision Tasks." arXiv preprint arXiv:2103.09950 (2021).
+  - Does exactly what it's saying!! learn to resize using CNN layer for better downstream Tasks (proposes a resizer block )
+    - Why in the first place!  
+    - What will be the loss function for resize? (architecture: Figure 3)
+    - Wait: are the extracting another feature! (calling it as resizer!)
+  - ImageNet experiment, uses different model
+
 1. Zhang, Hongyi, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. "mixup: Beyond empirical risk minimization." arXiv preprint arXiv:1710.09412 (2017).
 
 1. Cubuk, Ekin D., Barret Zoph, Jonathon Shlens, and Quoc V. Le. "Randaugment: Practical automated data augmentation with a reduced search space." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 702-703. 2020.
@@ -235,3 +254,11 @@ This blog contains state of the art application and research on different applic
   - Methods:
 
 1. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).
+
+# Metrics and Losses
+
+1. Sainburg, Tim, Leland McInnes, and Timothy Q. Gentner. "Parametric UMAP embeddings for representation and semi-supervised learning." arXiv preprint arXiv:2009.12981 (2020).
+  - Good starting note for the UMAP and tSNE. Parametric extension for the UMAP
+  - [link](https://towardsdatascience.com/how-exactly-umap-works-13e3040e1668) May contain Some bias towards UMAP
+
+1. Sun, Yifan, Changmao Cheng, Yuhan Zhang, Chi Zhang, Liang Zheng, Zhongdao Wang, and Yichen Wei. "Circle loss: A unified perspective of pair similarity optimization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6398-6407. 2020.
