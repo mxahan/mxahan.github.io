@@ -1335,9 +1335,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Yang, Ceyuan, Zhirong Wu, Bolei Zhou, and Stephen Lin. "Instance localization for self-supervised detection pretraining." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3987-3996. 2021.
   - Propose a new self-supervised tasks : Instance Localization. [self-supervised task design]
-  - Put image crop into another and try to predict using RPN!! 
+  - Put image crop into another and try to predict using RPN!!
 
 1. Wang, Feng, and Huaping Liu. "Understanding the behaviour of contrastive loss." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 2495-2504. 2021.
+  - Studies the impact of the temperature in loss function.
 
 # Semi-Supervised
 
