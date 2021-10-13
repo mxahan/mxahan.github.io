@@ -1338,7 +1338,14 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Put image crop into another and try to predict using RPN!!
 
 1. Wang, Feng, and Huaping Liu. "Understanding the behaviour of contrastive loss." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 2495-2504. 2021.
-  - Studies the impact of the temperature in loss function.
+  - Studies the impact of the temperature in loss function (uniformity and temperature).
+    - How to ensure tolerant for semantic similar examples [uniformity tolerance dilemma]
+  - This paper: studies hardness aware properties (parameter in loss function).
+
+1. Pan, Tian, Yibing Song, Tianyu Yang, Wenhao Jiang, and Wei Liu. "Videomoco: Contrastive video representation learning with temporally adversarial examples." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11205-11214. 2021.
+
+1. Xu, Jiarui, and Xiaolong Wang. "Rethinking Self-supervised Correspondence Learning: A Video Frame-level Similarity Perspective." arXiv preprint arXiv:2103.17263 (2021).
+
 
 # Semi-Supervised
 

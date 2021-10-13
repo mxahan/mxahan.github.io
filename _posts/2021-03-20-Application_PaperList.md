@@ -165,7 +165,7 @@ This blog contains state of the art application and research on different applic
   - Accumulate two ideas for imitation learning: usage of extensive prior knowledge!! & observation, trial-and-error learning !!
   - This paper: proposes reward learning method
     - Reward function (vision based learning) and discovering intermediate stages
-    - learning visual representations can be used to represent the goal (no fine-tuneing)
+    - learning visual representations can be used to represent the goal (no fine-tuning)
   - Related field: learning from demonstration, inverse reinforcement learning
   - video segmentation for notion of similarity
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
@@ -178,6 +178,25 @@ This blog contains state of the art application and research on different applic
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 # Architectural contributions
+
+1. Feichtenhofer, Christoph, Haoqi Fan, Jitendra Malik, and Kaiming He. "Slowfast networks for video recognition." In Proceedings of the IEEE/CVF international conference on computer vision, pp. 6202-6211. 2019.
+  - Motivation: No need to treat spatial (semantics) and temporal dimension equally (Retinal ganglion cells)
+  - TP: Two pathway model (Slow {low fps} and fast {high fps})
+    - slow is the heavyweight computation (higher number of channel) and fast is the lightweight computation (lower number of channel)
+    - Two pathway fused by lateral connections (fast to slow)
+  - Experiments: kinetics, charades, AVA dataset
+  - Nice ablation study sections
+
+1. Wang, Xiaolong, Ross Girshick, Abhinav Gupta, and Kaiming He. "Non-local neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 7794-7803. 2018.
+
+1. Feichtenhofer, Christoph. "X3d: Expanding architectures for efficient video recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 203-213. 2020.
+  - progressive forward expansion and backward contraction approaches!!
+
+1. Neimark, Daniel, Omri Bar, Maya Zohar, and Dotan Asselmann. "Video transformer network." arXiv preprint arXiv:2102.00719 (2021).
+
+1. Kondratyuk, Dan, Liangzhe Yuan, Yandong Li, Li Zhang, Mingxing Tan, Matthew Brown, and Boqing Gong. "Movinets: Mobile video networks for efficient video recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 16020-16030. 2021.
+
+1. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
 
 1. Jaegle, Andrew, Felix Gimeno, Andrew Brock, Andrew Zisserman, Oriol Vinyals, and Joao Carreira. "Perceiver: General perception with iterative attention." arXiv preprint arXiv:2103.03206 (2021).
 
