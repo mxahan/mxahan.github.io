@@ -1276,6 +1276,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Data: UCF, Kinetics, HMDB51, with augmentation (same for one example), hard negatives,  
 
 1. Feichtenhofer, Christoph, Haoqi Fan, Bo Xiong, Ross Girshick, and Kaiming He. "A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3299-3309. 2021.
+  - A large-scale study on unsupervised spatiotemporal representation learning from videos
+    - Generalize image based method into space-time. (e.g. crop [image] to clip [video])
+    - *Provides many empirical results*
 
 1. Xie, Junyuan, Ross Girshick, and Ali Farhadi. "Unsupervised deep embedding for clustering analysis." In International conference on machine learning, pp. 478-487. PMLR, 2016.
   - Deep Embedded Clustering (DEC) Learns (i) Feature representation (ii) cluster assignments
