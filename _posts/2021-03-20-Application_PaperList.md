@@ -4,7 +4,13 @@ This blog contains state of the art application and research on different applic
 
 # Multi View Application
 
+# NN Pruning
+
+1. Blalock, Davis, Jose Javier Gonzalez Ortiz, Jonathan Frankle, and John Guttag. "What is the state of neural network pruning?." arXiv preprint arXiv:2003.03033 (2020).
+
 # Few-Shot learning
+
+1. Ramesh, Aditya, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever. "Zero-shot text-to-image generation." arXiv preprint arXiv:2102.12092 (2021).
 
 1. Chen, Wei-Yu, Yen-Cheng Liu, Zsolt Kira, Yu-Chiang Frank Wang, and Jia-Bin Huang. "A closer look at few-shot classification." arXiv preprint arXiv:1904.04232 (2019).
   - Consistent!  comparative analysis of few shot learning methods! (algorithm performance depends on the backbone networks) [deeper backbone reduces performance difference] **algo comparison varies as backbone network changes**
@@ -155,6 +161,20 @@ This blog contains state of the art application and research on different applic
 
 1. Kocabas, Muhammed, Salih Karagoz, and Emre Akbas. "Self-supervised learning of 3d human pose using multi-view geometry." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1077-1086. 2019.
 
+# Disentangled Representation learning
+
+1. Locatello, Francesco, Stefan Bauer, Mario Lucic, Gunnar Raetsch, Sylvain Gelly, Bernhard Schölkopf, and Olivier Bachem. "Challenging common assumptions in the unsupervised learning of disentangled representations." In international conference on machine learning, pp. 4114-4124. PMLR, 2019.
+
+1. Wang, Tan, Zhongqi Yue, Jianqiang Huang, Qianru Sun, and Hanwang Zhang. "Self-Supervised Learning Disentangled Group Representation as Feature." arXiv preprint arXiv:2110.15255 (2021).
+  - Higgins definition of disentanglement representation
+
+1. Higgins, Irina, David Amos, David Pfau, Sebastien Racaniere, Loic Matthey, Danilo Rezende, and Alexander Lerchner. "Towards a definition of disentangled representations." arXiv preprint arXiv:1812.02230 (2018).
+  - Formal *Definition(s)* of the disentangled representation learning
+  - A vector representation is called a disentangled representation with respect to a particular decomposition of a symmetry group into subgroups, if it decomposes into **independent subspaces**, where each subspace is affected by the action of a single subgroup, and the actions of all other subgroups leave the subspace unaffected.
+
+1. Wu, Zhenyu, Karthik Suresh, Priya Narayanan, Hongyu Xu, Heesung Kwon, and Zhangyang Wang. "Delving into robust object detection from unmanned aerial vehicles: A deep nuisance disentanglement approach." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1201-1210. 2019.
+  - Utilization of meta-data
+  - Multitask setup
 
 # Imitation Learning
 
@@ -178,6 +198,10 @@ This blog contains state of the art application and research on different applic
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 # Architectural contributions
+
+1. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
+
+1. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
 
 1. He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. "Deep residual learning for image recognition." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770-778. 2016.
 
@@ -255,6 +279,8 @@ This blog contains state of the art application and research on different applic
 1. Liu, Ze, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu. "Video Swin Transformer." arXiv preprint arXiv:2106.13230 (2021).
 
 1. Ke, Junjie, Qifei Wang, Yilin Wang, Peyman Milanfar, and Feng Yang. "MUSIQ: Multi-scale Image Quality Transformer." arXiv preprint arXiv:2108.05997 (2021).
+
+1. Anonymous, . "Patches Are All You Need?." . In Submitted to The Tenth International Conference on Learning Representations .2022.
 
 # Data augmentation
 
