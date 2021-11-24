@@ -348,7 +348,34 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Detailed experiment and discussion section
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
+1. Madry, Aleksander, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, and Adrian Vladu. "Towards deep learning models resistant to adversarial attacks." arXiv preprint arXiv:1706.06083 (2017).
+  - study a set of approaches [the adversarial robustness of neural networks through the lens of robust optimization]
+    - (unifies earlier works).
+    - provides security against first order adversarial attack.
+  - Projected gradient descent. 
+
+1. Goodfellow, Ian J., Jonathon Shlens, and Christian Szegedy. "Explaining and harnessing adversarial examples." arXiv preprint arXiv:1412.6572 (2014).
+
 # Self-Supervised Learning
+
+1. Jing, Li, Pascal Vincent, Yann LeCun, and Yuandong Tian. "Understanding Dimensional Collapse in Contrastive Self-supervised Learning." arXiv preprint arXiv:2110.09348 (2021).
+  - Discusses about dimension collapse ( the embedding vectors end up spanning a lower-dimensional subspace instead of the entire available embedding space.)
+  - key findins.
+    - along the feature direction where data augmentation variance is larger than the data distribution variance, the weight collapses. (strong augmentation along feature dimensions)
+    - even if the covariance of data augmentation has a smaller magnitude than the data variance along all dimensions, the weight will still collapse due to the interplay of weight matrices at different layers known as [implicit regularization](http://old.ins.sjtu.edu.cn/files/paper/20200722191948_slide.pdf). (implicit regularization driving models toward low-rank solutions)
+
+1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Counting out time: Class agnostic video repetition counting in the wild." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10387-10396. 2020.
+  - Countix Dataset for video repeatation count. (part of Kinetics dataset)
+    - annotated with segments of repeated actions and corresponding counts.
+  - Per-frame embedding and similarity!! (RepNet)
+  - Compared with benchmark:  PERTUBE and QUVA
+  - Not really a self-supervised set up, rather a multitask setup.
+  - Propose to create synthetic dataset by frame repeatation and reversal! Camera motion augmentation (Augmentation)
+
+1. Hendrycks, Dan, Mantas Mazeika, Saurav Kadavath, and Dawn Song. "Using self-supervised learning can improve model robustness and uncertainty." arXiv preprint arXiv:1906.12340 (2019).
+  - TP: self-supervision can benefit robustness in a variety of ways, including robustness to adversarial examples, label corruption, and common input corruptions (how is this new!!)
+    - Interesting problem and experiment setup for each of the problems
+  - Besides a collection of techniques allowing models to catch up to full supervision, SSL is used two in conjunction of providing strong regularization that improves robustness and uncertainty estimation
 
 1. Sordoni, Alessandro, Nouha Dziri, Hannes Schulz, Geoff Gordon, Philip Bachman, and Remi Tachet Des Combes. "Decomposed Mutual Information Estimation for Contrastive Representation Learning." In International Conference on Machine Learning, pp. 9859-9869. PMLR, 2021.
 

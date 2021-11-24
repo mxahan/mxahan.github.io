@@ -9,6 +9,21 @@ This blog contains some of the stuffs I have learnt and learning. I want to put 
 I am also planning to expand the notes by putting some of the common stuffs that bugs me. Lets kill the bug!
 
 
+## Cleaning GPU linux
+
+In the terminal type "nvtop"
+
+Find and note the activity PID with most GPU usage. Lets assume the number is 85954 (a random one).
+
+Exit the nvtop place and type the following, of course replace the 85954 with the noted number.
+
+```
+sudo kill PID -85954
+
+```
+
+If it doesn't work, I am afraid it might require the reboot :( .
+
 ## Docker
 
 The most important thing regarding the docker is the concept of images and container. Images stay in locally, we open container from images each time. There are vice versa too. The image can be think of the class and container are class instances. Container starts and gets deleted unless there are volume assignment. The docker is used to run virtual machine inside os or virtual os. There are tons of tutorial available. I am going to make my own collection based on other.
@@ -119,6 +134,17 @@ Ask Question Before you Learn. Search the right question.
 ```
 ## Github
 
+[Uncommit](https://stackoverflow.com/questions/2845731/how-to-uncommit-my-last-commit-in-git) last commit (Will keep the modified changes in your working tree.)
+
+```
+git reset --soft HEAD^
+```
+
+However, care about the following, as it WILL THROW AWAY THE CHANGES YOU MADE !!!
+```
+git reset --hard HEAD^
+```
+
 ## MarkDown
 
 ## Python Super
@@ -185,6 +211,21 @@ conda update conda
 ```
 
 [link](https://stackoverflow.com/questions/55527354/the-environment-is-inconsistent-please-check-the-package-plan-carefully)
+
+If the problem persists, use the following
+
+```
+conda remove conda
+conda remove anaconda
+conda install conda
+conda install anaconda
+```
+
+If the problem still persists, remove the problematic package manually by
+
+```
+conda remove "PACKAGE_name"
+```
 
 # Initramfs Ubuntu reboot
 

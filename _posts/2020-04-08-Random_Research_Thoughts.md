@@ -123,6 +123,8 @@ Relevance is a big word. What is Relevant to me? What I choose to be? What I hav
 
 Focus on short terms goals, system and good habits.
 
+[improve yourselves on daily basis](https://www.youtube.com/watch?v=PZ7lDrwYdZc&t=99s)
+
 ### Always try to be proactive:
 
 Don't expect people to do your work. I should do my works. I like to ask myself can I do more and better? And try pull the answer to NO by doing more and better. For example, I need to submit my research paper to a conference. I will try to do all the things I can do, search all the thing I can do. After that I will definitely reach out for additional helps. As we human are social creature. We need each other to thrive in this material life. I want to find peace by staying I could do little better but I tried my best.
@@ -212,4 +214,4 @@ Some key notes form the speaker
   - Got rid of internet connection in case of focus issues
   - Stop worrying about the end results
 
-# Pitching your research 
+# Pitching your research
