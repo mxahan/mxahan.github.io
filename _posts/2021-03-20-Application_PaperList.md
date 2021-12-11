@@ -163,8 +163,10 @@ This blog contains state of the art application and research on different applic
 
 # Disentangled Representation learning
 
+1. Do, Kien, and Truyen Tran. "Theory and evaluation metrics for learning disentangled representations." arXiv preprint arXiv:1908.09961 (2019).
+
 1. Zhu, Yizhe, Martin Renqiang Min, Asim Kadav, and Hans Peter Graf. "S3VAE: Self-supervised sequential VAE for representation disentanglement and data generation." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6538-6547. 2020.
-  - 
+  -
 
 1. Zamir, Amir R., Alexander Sax, William Shen, Leonidas J. Guibas, Jitendra Malik, and Silvio Savarese. "Taskonomy: Disentangling task transfer learning." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3712-3722. 2018.
   - Encoder decoder (VAE) set up for different self-supervised pretext tasks and experimentation  on the transfer learning.

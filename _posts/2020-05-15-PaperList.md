@@ -352,17 +352,44 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - study a set of approaches [the adversarial robustness of neural networks through the lens of robust optimization]
     - (unifies earlier works).
     - provides security against first order adversarial attack.
-  - Projected gradient descent. 
+  - Projected gradient descent.
 
 1. Goodfellow, Ian J., Jonathon Shlens, and Christian Szegedy. "Explaining and harnessing adversarial examples." arXiv preprint arXiv:1412.6572 (2014).
 
 # Self-Supervised Learning
+
+1. Tosh, Christopher, Akshay Krishnamurthy, and Daniel Hsu. "Contrastive estimation reveals topic posterior information to linear models." Journal of Machine Learning Research 22, no. 281 (2021): 1-31.
+
+1. Tosh, Christopher, Akshay Krishnamurthy, and Daniel Hsu. "Contrastive learning, multi-view redundancy, and linear models." In Algorithmic Learning Theory, pp. 1179-1206. PMLR, 2021.
+  - TP: Theory for contrastive learning in the multi-view setting, where two views of each datum are available.
+  - learned representations are nearly optimal on downstream prediction tasks whenever the two views provide **redundant information** about the label.
+    - what is redundant information!! := whenever the best linear prediction of the label on each individual view is nearly as good as the best linear prediction of the label when both views are used together.
+
+1. Teng, Jiaye, Weiran Huang, and Haowei He. "Can pretext-based self-supervised learning be boosted by downstream data? a theoretical analysis." arXiv preprint arXiv:2103.03568 (2021).
+  - Highly theoretical paper.
+  - whether we can make the CI (conditional independence) condition hold by using downstream data to refine the unlabeled data to boost self-supervised learning [*Not always true though it seems intuitive*]
+    - Shows some result to prove the counter intuitive results (Hence focusing the importance of the conditional independence)
+    - Can we make the CI condition hold with the help of downstream data to boost self-supervised learning? (as CI rearly helds)
+    - Validate self-supervised approach (not to used fine-tune data during pretraining)
+
+1. Lee, Jason D., Qi Lei, Nikunj Saunshi, and Jiacheng Zhuo. "Predicting what you already know helps: Provable self-supervised learning." arXiv preprint arXiv:2008.01064 (2020).
+  - Highly theoretical paper.
+  - TP:  is to investigate the statistical connections between the random variables of input features and downstream labels
+    - Two important notion for the tasks: i) Expressivity (does the ssl good enough) ii) Sample complexity (reduce the complexity of sampling)
+  - TP: analysis on the reconstruction based SSL
+  - section 3 describes the paper summary. (connected to simsiam: Section 6
+  - Discusses about conditional independence ([CI](!https://www.probabilitycourse.com/chapter1/1_4_4_conditional_independence.php)) condition of the samples w.r.t the labels
+
+1. Ren, Xuanchi, Tao Yang, Yuwang Wang, and Wenjun Zeng. "Do Generative Models Know Disentanglement? Contrastive Learning is All You Need." arXiv preprint arXiv:2102.10543 (2021).
 
 1. Jing, Li, Pascal Vincent, Yann LeCun, and Yuandong Tian. "Understanding Dimensional Collapse in Contrastive Self-supervised Learning." arXiv preprint arXiv:2110.09348 (2021).
   - Discusses about dimension collapse ( the embedding vectors end up spanning a lower-dimensional subspace instead of the entire available embedding space.)
   - key findins.
     - along the feature direction where data augmentation variance is larger than the data distribution variance, the weight collapses. (strong augmentation along feature dimensions)
     - even if the covariance of data augmentation has a smaller magnitude than the data variance along all dimensions, the weight will still collapse due to the interplay of weight matrices at different layers known as [implicit regularization](http://old.ins.sjtu.edu.cn/files/paper/20200722191948_slide.pdf). (implicit regularization driving models toward low-rank solutions)
+  - looks into the covariance matrix (their eigen decomposition; some eigenvalues become zeros) to measure dimensional collapse
+  - Theoretically justify the importance of the projection layers.
+  - TP: proposed DirectCLR (uses direct Optimization on the representation layer by selecting a subsection of the layer for loss calculation. remove the requirement of trainable projection. )
 
 1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Counting out time: Class agnostic video repetition counting in the wild." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10387-10396. 2020.
   - Countix Dataset for video repeatation count. (part of Kinetics dataset)
@@ -407,6 +434,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
   - Predicting the future [self-supervised task design]
+    - derive the concept of context vector (from earlier representation)
+      - use the context vector for future representation prediction.
   - TP: Great works with some foundation of CL
   - probabilistic (AR) contrastive loss!!
     - in latent space
@@ -942,6 +971,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Dosovitskiy, Alexey, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with exemplar convolutional neural networks." IEEE transactions on pattern analysis and machine intelligence 38, no. 9 (2015): 1734-1747.
 
 1. Tschannen, Michael, Josip Djolonga, Marvin Ritter, Aravindh Mahendran, Neil Houlsby, Sylvain Gelly, and Mario Lucic. "Self-supervised learning of video-induced visual invariances." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 13806-13815. 2020.
+  - Framework to learn image representations from non-curated videos in the wild by learning **frame-**, **shot-**, and **video-level invariances**
+    -  benefit greatly from exploiting video-induced invariances,
+  - Experiment with Youtube8M (3.7 M
+  - Scale-able to image and video data. (however requires frame label encoding!! what about video AR networks)
 
 1. Ma, Shuang, Zhaoyang Zeng, Daniel McDuff, and Yale Song. "Learning Audio-Visual Representations with Active Contrastive Coding." arXiv preprint arXiv:2009.09805 (2020).
 
@@ -1376,13 +1409,22 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Xu, Jiarui, and Xiaolong Wang. "Rethinking Self-supervised Correspondence Learning: A Video Frame-level Similarity Perspective." arXiv preprint arXiv:2103.17263 (2021).
 
+1. Li, Xueting, Sifei Liu, Shalini De Mello, Xiaolong Wang, Jan Kautz, and Ming-Hsuan Yang. "Joint-task self-supervised learning for temporal correspondence." arXiv preprint arXiv:1909.11895 (2019).
+
 
 # Semi-Supervised
+
+
+
+1. Blum, Avrim, and Tom Mitchell. "Combining labeled and unlabeled data with co-training." In Proceedings of the eleventh annual conference on Computational learning theory, pp. 92-100. 1998.
+  - Early semi-supervised learning (mathematical framework with graph setting)
+    - Web page (and its augmentation)
 
 1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
   - Pretext task of rotation angle prediction!!
     - Rotation, invariant across augmentation
   - Baseline: vitrural adversarial training [inject noise with the original images], EntMin
+    - EntMin is bad: because the model can easily become extremely confident by increasing the weights of the last layer
 
 1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
 
@@ -1444,6 +1486,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Miyato, Takeru, Shin-ichi Maeda, Masanori Koyama, and Shin Ishii. "Virtual adversarial training: a regularization method for supervised and semi-supervised learning." IEEE transactions on pattern analysis and machine intelligence 41, no. 8 (2018): 1979-1993.
+  - Find the distortion in allowed range for a given input to maximize the loss. (gradient ascent for the input spaces)
+    - Network trains to minimize the loss on the distorted input. (Gradient descent in the network parameter spaces)
 
 1. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
   - TP:  divide the training data into a labeled set with clean samples and an unlabeled set with noisy samples (co-training two networks), and trains the model on both data (?). Improved MixMatch

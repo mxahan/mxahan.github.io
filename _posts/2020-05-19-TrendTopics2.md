@@ -15,7 +15,14 @@ The part1 consists of 10 topics, this is continuation covering some other intere
 - [Self-supervision](#self-supervision)
 - [Divergence algorithm](#divergence-algorithm)
 - [Meta Learning](#meta-learning)
+- [Adversarial Training](#adversarial-training)
 
+# Adversarial Training
+[link](https://towardsdatascience.com/know-your-enemy-7f7c5038bdf3)
+
+Defend against adversarial attack
+  - The PGD (projected gradient descent)
+    - Optimization Problem:  PGD attempts to find the perturbation that maximises the loss of a model on a particular input while keeping the size of the perturbation smaller than a specified amount referred to as epsilon. 
 
 # Collaborative Filtering
 
