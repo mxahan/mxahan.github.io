@@ -222,6 +222,8 @@ This blog contains state of the art application and research on different applic
 
 # Architectural contributions
 
+1. Beltagy, Iz, Matthew E. Peters, and Arman Cohan. "Longformer: The long-document transformer." arXiv preprint arXiv:2004.05150 (2020).
+
 1. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
 
 1. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
@@ -246,6 +248,12 @@ This blog contains state of the art application and research on different applic
   - progressive forward expansion and backward contraction approaches!!
 
 1. Neimark, Daniel, Omri Bar, Maya Zohar, and Dotan Asselmann. "Video transformer network." arXiv preprint arXiv:2102.00719 (2021).
+  - long term information in the videos. (unlike 3D CNN that focus on 2s of video)[full video decision]
+  - Focus on global attention.
+  - Related works: i) spatial-temporal network: Slowfast, X3d, 3d convs ii) Transformer in CV: ViT, DeiT!, DETR!, VisTR!, iii) Transformer for long sequences:
+  - VTN description: i) Spatial Backbone (2D image network). ii) temporal attention based encoder (Longformer) iii) Classification MLP head
+  - Experimented with Three networks i) ViT-B-VTN (Imagenet 21K backbone, transformer) ii) R50/101 VTN (ResNET -50 /101 as backbone) iii) DeiT-B/BD/Ti-VTN (distilled as the backbone for VTN)
+  - Ablation Study: Section 5
 
 1. Kondratyuk, Dan, Liangzhe Yuan, Yandong Li, Li Zhang, Mingxing Tan, Matthew Brown, and Boqing Gong. "Movinets: Mobile video networks for efficient video recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 16020-16030. 2021.
 
@@ -333,12 +341,16 @@ This blog contains state of the art application and research on different applic
 
 # Metrics and Losses
 
+## 2020
+1. Boudiaf, Malik, Jérôme Rony, Imtiaz Masud Ziko, Eric Granger, Marco Pedersoli, Pablo Piantanida, and Ismail Ben Ayed. "A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses." In European Conference on Computer Vision, pp. 548-564. Springer, Cham, 2020.
+
 1. Sainburg, Tim, Leland McInnes, and Timothy Q. Gentner. "Parametric UMAP embeddings for representation and semi-supervised learning." arXiv preprint arXiv:2009.12981 (2020).
   - Good starting note for the UMAP and tSNE. Parametric extension for the UMAP
   - [link](https://towardsdatascience.com/how-exactly-umap-works-13e3040e1668) May contain Some bias towards UMAP
 
 1. Sun, Yifan, Changmao Cheng, Yuhan Zhang, Chi Zhang, Liang Zheng, Zhongdao Wang, and Yichen Wei. "Circle loss: A unified perspective of pair similarity optimization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6398-6407. 2020.
 
+## 2017
 1. Lin, Tsung-Yi, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. "Focal loss for dense object detection." In Proceedings of the IEEE international conference on computer vision, pp. 2980-2988. 2017.
 
 # Unsorted Papers

@@ -177,14 +177,19 @@ We can inherit multiple classes and their methods.
 [Fun with super](https://www.programiz.com/python-programming/methods/built-in/super)
 
 
-### Ubuntu Problems and solution
+## Ubuntu Problems and solution
 
 Well recently I encountered a problem of internal microphone. It wasn't working. Well, I was restarting and trying bunch of thing, still not working. Then
 
 - Totally turn PC off for some time and boom, started manually and worked again :)
 
+### Ubuntu Brightness issues
 
-# Ubuntu Sending Email
+
+http://sandipbgt.com/2015/10/01/control-screen-brightness-from-commandline-in-ubuntu/
+
+
+### Ubuntu Sending Email
 https://www.cier.tech/blog/tech-tutorials-4/post/how-to-install-and-configure-sendmail-on-ubuntu-35
 
 
@@ -226,6 +231,16 @@ If the problem still persists, remove the problematic package manually by
 ```
 conda remove "PACKAGE_name"
 ```
+### ModuleNotFoundError: No module named 'torchvision.ops'
+
+Remove the pytorch from the environment and reinstall everything. (Cuda 10.2 version worked for me).
+
+Install the **right version** of the pytorch, torchvision. (try both conda and pip for the right version)
+
+### plt.imshow taking forever/ not working
+
+Use plt.show() at the end of plt.imshow()
+
 
 # Initramfs Ubuntu reboot
 
