@@ -401,7 +401,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - what is the penalty??
     - How they compared the convergences
   - This paper: Multi-class N-pair loss
-    - developed in two steps (i) Generalization of triplet loss (ii) reduces computational complexity by efficient batch construction (??) taking (N+1)xN examples!!
+    - developed in two steps (i) Generalization of triplet loss (ii) reduces computational complexity by efficient batch construction (figrue 2) taking (N+1)xN examples!!
   - Experiments on visual recognition, object recognition, and verification, image clustering and retrieval, face verification and identification tasks.
   - identify multiple negatives [section 3], efficient batch construction
   - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
@@ -479,6 +479,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - [personal note](https://github.com/mxahan/PDFS_notes/blob/master/deepinfomax_paper.pdf)
 
 1. Wu, Zhirong, Alexei A. Efros, and Stella X. Yu. "Improving generalization via scalable neighborhood component analysis." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 685-701. 2018.
+ - SCNA (Modified version of the NCA approach)
+ - Aim to reduce the computation complexity of the NCA by taking two assumptions
+  - Partial gradient update making the mini-batch gradient update possible
+  - TP: Device a mechanism called augmented memory for the generalization. (a version of momentum update!)
 
 1. Caron, Mathilde, Piotr Bojanowski, Armand Joulin, and Matthijs Douze. "Deep clustering for unsupervised learning of visual features." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 132-149. 2018.
   - Cluster Deep features and make them pseudo labels. [fig 1]
@@ -494,11 +498,10 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - probabilistic (AR) contrastive loss!!
     - in latent space
   - Experiments on the speech, image, text and RL
-  - CPC (3 things)
+  - CPC (3 things)  - Aka- InfoNCE (coining the term)
     - compression, autoregressive and NCE
   - Energy based like setup
   - Figure 4: about what they did!
-  - Aka- InfoNCE
   - [more notes](https://github.com/mxahan/PDFS_notes/blob/master/cpc_2017.pdf)
 
 1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
@@ -528,11 +531,16 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - PILQR for RL parts
   - Huber-style loss
 
+1. Kim, Wonsik, Bhavya Goyal, Kunal Chawla, Jungmin Lee, and Keunjoo Kwon. "Attention-based ensemble for deep metric learning." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 736-751. 2018.
 
 ## 2019
 
 
-
+1. Wang, Xun, Xintong Han, Weilin Huang, Dengke Dong, and Matthew R. Scott. "Multi-similarity loss with general pair weighting for deep metric learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5022-5030. 2019.
+  - (TP) Establish a General Pair Weighting (GPW) framework: casts the sampling problem of deep metric learning into a unified view of pair weighting through gradient analysis, (tool for understanding recent pair-based loss functions)
+  - (TP) Various existing pair-based methods are compared and discussed comprehensively, with clear differences and key limitations identified;
+  - (TP) Proposes new loss called multi-similarity loss (MS loss) under the GPW,
+    - implemented in two iterative steps (i.e., mining and weighting): consider three similarities for pair weighting, providing a more principled approach for collecting and weighting informative pairs (state-of-the-art performance on four image retrieval benchmarks)
 
 1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Temporal cycle-consistency learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1801-1810. 2019.
   - Temporal video alignment problem: the task of finding correspondences across multiple videos despite many factors of variation
@@ -649,6 +657,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Besides a collection of techniques allowing models to catch up to full supervision, SSL is used two in conjunction of providing strong regularization that improves robustness and uncertainty estimation
 
 ## 2020
+
+
 
 1. Patacchiola, Massimiliano, and Amos Storkey. "Self-supervised relational reasoning for representation learning." arXiv preprint arXiv:2006.05849 (2020).
   - Relation network head instead of direct contrastivie loss [architectural][Pretext task design]
@@ -1212,6 +1222,21 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2021
 
+1. Das, Srijan, and Michael S. Ryoo. "ViewCLR: Learning Self-supervised Video Representation for Unseen Viewpoints." arXiv preprint arXiv:2112.03905 (2021).
+  - View generator (3d geometric transformations): Learnable augmentation for pretext task (maximizing viewpoint similarities).
+  - **Aim: Generalize over unseen camera viewpoints**. Camera invariant features
+    - learnable augmentation to induce viewpoint (by VG) changes while for self-supervised representation.
+  - Dataset: NTU RGB+D and NUCLA, MOCO for instance discrimination. (New PRETraining!!), arch: S3D
+
+1. Hua, Tianyu, Wenxiao Wang, Zihui Xue, Sucheng Ren, Yue Wang, and Hang Zhao. "On feature decorrelation in self-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 9598-9608. 2021.
+  - analysis the collapse issues (looks detail of complete and dimensional collapse: figure 1)
+  - Verification of collapse (!!) by standardizing variance.
+  - Reveal connection between dimensional collapse and strong correlation. (where??) [dimension collapse is indicated by strong correlation among the features]
+  - Performance gain by feature decorrelation
+  - TP: Proposes decorrelated Batch normalization layer
+    - Earlier findings: BN in projection layer avoids vanishing variances (complete collapse).
+  - Main read: Section 3 is interesting to read (some key findings)- may be transcribed to work.
+
 1. Desai, Karan, and Justin Johnson. "Virtex: Learning visual representations from textual annotations." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11162-11173. 2021.
 
 1. Chen, Kai, Lanqing Hong, Hang Xu, Zhenguo Li, and Dit-Yan Yeung. "MultiSiam: Self-supervised Multi-instance Siamese Representation Learning for Autonomous Driving." arXiv preprint arXiv:2108.12178 (2021).
@@ -1446,6 +1471,13 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 ## 2022
 
 ## 2014 and previous
+
+1. Goldberger, Jacob, Geoffrey E. Hinton, Sam Roweis, and Russ R. Salakhutdinov. "Neighbourhood components analysis." Advances in neural information processing systems 17 (2004).
+  - Non-parametric classification model (Early projection)
+    - application: Dimensional reduction and metric learning.
+  - Simple metric based learning (projection and check distance with the same group):
+  - The neighborhood class instance should be closure.
+  - The non-similar instance should be projected far away.
 
 1. Divvala, Santosh K., Ali Farhadi, and Carlos Guestrin. "Learning everything about anything: Webly-supervised visual concept learning." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3270-3277. 2014.
   - a fully-automated approach for learning extensive models for a wide range of variations (e.g. actions, interactions, attributes and beyond) within any concept

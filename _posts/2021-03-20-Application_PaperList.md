@@ -138,11 +138,23 @@ This blog contains state of the art application and research on different applic
   - Figure 1: Good comparison among multiple individual sensors
   - Scope: Figure 3 {4 types of sensors and their fusion strategy}
 
-# Action recognition and Progression
+# Action recognition, # progression, # 3D # Pose
 
-1. Ionescu, Catalin, Dragos Papava, Vlad Olaru, and Cristian Sminchisescu. "Human3. 6m: Large scale datasets and predictive methods for 3d human sensing in natural environments." IEEE transactions on pattern analysis and machine intelligence 36, no. 7 (2013): 1325-1339.
+## 2021
+1. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 4124-4132. 2021.
+  - How to learn the camera matrix
+  - Camera matrix background (pinhole camera model) [ref 1](https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf), [ref 2](https://hedivision.github.io/Pinhole.html), [short course](https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/CV/index.html)
+  - TP: i) approaches based on 3D representations ii) introduce a new geometric convolutional layer (neural projection layer: an architectural contribution, key contribution) to learn viewpoint invariant representations (target)  iii) new dataset (MLB-Youtube dataset)
+    - Neural Projection Layer:
+  - Invariant represtation: by learning global 3D pose
+  - Hypothesis to obtain target: i) implicitly learning from large data ii) use 3D posture information (!! how)
+  - TP: Testimating 3D pose directly from the videos (latent 3D representation and it's multiview 2d projection), then explores using different representations of it for AR.
+  - TP: 3D representation by using 3D geometric transformation and projection.
+  - Network: PoseNet (3D posture), and CalibNet (external camera matrix, however deems error-prone): Loss Function: sum of three losses (cross entropy, metric loss, and camera distribution loss !!!), Dataset: Human3.6M, MLB (baseball), TSH (toyota smart home)
 
 1. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." arXiv preprint arXiv:2103.16516 (2021).
+
+## 2020
 
 1. van Amsterdam, Beatrice, Matthew J. Clarkson, and Danail Stoyanov. "Multi-task recurrent neural network for surgical gesture recognition and progress prediction." In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 1380-1386. IEEE, 2020.
 
@@ -154,12 +166,34 @@ This blog contains state of the art application and research on different applic
   - Experiment Data: Human3.6M dataset, ResNet architectures
   - Self-supervised task: Transformation and synchronous prediction
 
+1. heng, Ce, Wenhan Wu, Taojiannan Yang, Sijie Zhu, Chen Chen, Ruixu Liu, Ju Shen, Nasser Kehtarnavaz, and Mubarak Shah. "Deep learning-based human pose estimation: A survey." arXiv preprint arXiv:2012.13392 (2020).
+
+## 2019
+
 1. Wang, Keze, Liang Lin, Chenhan Jiang, Chen Qian, and Pengxu Wei. "3D human pose machines with self-supervised learning." IEEE transactions on pattern analysis and machine intelligence 42, no. 5 (2019): 1069-1082.
   - Experiment data: HumanEva-I and Human3.6M
 
-1. heng, Ce, Wenhan Wu, Taojiannan Yang, Sijie Zhu, Chen Chen, Ruixu Liu, Ju Shen, Nasser Kehtarnavaz, and Mubarak Shah. "Deep learning-based human pose estimation: A survey." arXiv preprint arXiv:2012.13392 (2020).
-
 1. Kocabas, Muhammed, Salih Karagoz, and Emre Akbas. "Self-supervised learning of 3d human pose using multi-view geometry." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1077-1086. 2019.
+
+
+## 2018
+
+1. Sun, Xiao, Bin Xiao, Fangyin Wei, Shuang Liang, and Yichen Wei. "Integral human pose regression." In Proceedings of the European conference on computer vision (ECCV), pp. 529-545. 2018.
+  - unifies heatmap representation and joint regression using integral operation
+    - addresses the differentiable and quantization error of heatmap
+    - Compatible with any heatmap based approach (!!), 3D pose estimation
+  - Experiments: Architecture: ResNet backbone and simple head network, L2 loss, Dataset: Human3.6M, MPII, COCO keypoint detection
+
+1. Choutas, Vasileios, Philippe Weinzaepfel, Jérôme Revaud, and Cordelia Schmid. "Potion: Pose motion representation for action recognition." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 7024-7033. 2018.
+  - Process appearance and motion (movement of few relevant keypoints, human joints, over an entire video clip) jointly (Figure 1, aggregation of features)
+    - TP:  novel representation (just aggregation and coloring!!!) that gracefully encodes the movement of some semantic keypoints
+  - Interesting related works: pose detection and beyond
+  - Two major steps i) PoTion representation [extracting joint heatmap, time dependent heatmap colorization, aggregation of colorized heatmap (three ways, unit, intensity, and normalized)] ii) CNN on PoTion representation
+  - Experiment  i) Architecture: I3D, both 1 and 2 streams, Temporal segment network (TSN) ii) Dataset: JHMDB, HMDB and UCF101
+
+1. Ionescu, Catalin, Dragos Papava, Vlad Olaru, and Cristian Sminchisescu. "Human3. 6m: Large scale datasets and predictive methods for 3d human sensing in natural environments." IEEE transactions on pattern analysis and machine intelligence 36, no. 7 (2013): 1325-1339.
+
+
 
 # Disentangled Representation learning
 
@@ -222,30 +256,14 @@ This blog contains state of the art application and research on different applic
 
 # Architectural contributions
 
-1. Beltagy, Iz, Matthew E. Peters, and Arman Cohan. "Longformer: The long-document transformer." arXiv preprint arXiv:2004.05150 (2020).
+## 2021
 
-1. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
 
-1. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
+1. Liu, Ze, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu. "Video Swin Transformer." arXiv preprint arXiv:2106.13230 (2021).
 
-1. He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. "Deep residual learning for image recognition." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770-778. 2016.
+1. Ke, Junjie, Qifei Wang, Yilin Wang, Peyman Milanfar, and Feng Yang. "MUSIQ: Multi-scale Image Quality Transformer." arXiv preprint arXiv:2108.05997 (2021).
 
-1. Feichtenhofer, Christoph, Haoqi Fan, Jitendra Malik, and Kaiming He. "Slowfast networks for video recognition." In Proceedings of the IEEE/CVF international conference on computer vision, pp. 6202-6211. 2019.
-  - Motivation: No need to treat spatial (semantics) and temporal dimension equally (Retinal ganglion cells)
-  - TP: Two pathway model (Slow {low fps} and fast {high fps})
-    - slow is the heavyweight computation (higher number of channel) and fast is the lightweight computation (lower number of channel)
-    - Two pathway fused by lateral connections (fast to slow)
-  - Experiments: kinetics, charades, AVA dataset
-  - Nice ablation study sections
-
-1. Wang, Xiaolong, Ross Girshick, Abhinav Gupta, and Kaiming He. "Non-local neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 7794-7803. 2018.
-  - Computes the response at a position as a weighted sum of the features at all positions.
-    - Plugged in with may static image recognition system (pose, object detections).
-    - Aim to capture long-term dependencies
-  - Figure 2 sums all (design choice of f and g)
-
-1. Feichtenhofer, Christoph. "X3d: Expanding architectures for efficient video recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 203-213. 2020.
-  - progressive forward expansion and backward contraction approaches!!
+1. Anonymous, . "Patches Are All You Need?." . In Submitted to The Tenth International Conference on Learning Representations .2022.
 
 1. Neimark, Daniel, Omri Bar, Maya Zohar, and Dotan Asselmann. "Video transformer network." arXiv preprint arXiv:2102.00719 (2021).
   - long term information in the videos. (unlike 3D CNN that focus on 2s of video)[full video decision]
@@ -257,28 +275,87 @@ This blog contains state of the art application and research on different applic
 
 1. Kondratyuk, Dan, Liangzhe Yuan, Yandong Li, Li Zhang, Mingxing Tan, Matthew Brown, and Boqing Gong. "Movinets: Mobile video networks for efficient video recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 16020-16030. 2021.
 
-1. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
-
-1. Howard, Andrew, Mark Sandler, Grace Chu, Liang-Chieh Chen, Bo Chen, Mingxing Tan, Weijun Wang et al. "Searching for mobilenetv3." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1314-1324. 2019.
-
 1. Jaegle, Andrew, Felix Gimeno, Andrew Brock, Andrew Zisserman, Oriol Vinyals, and Joao Carreira. "Perceiver: General perception with iterative attention." arXiv preprint arXiv:2103.03206 (2021).
 
 1. Jaegle, Andrew, Sebastian Borgeaud, Jean-Baptiste Alayrac, Carl Doersch, Catalin Ionescu, David Ding, Skanda Koppula et al. "Perceiver IO: A General Architecture for Structured Inputs & Outputs." arXiv preprint arXiv:2107.14795 (2021).
 
-1. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
-  - TP: proposes computational efficient 3D CNN (and their extensions)
-    - Decomposes 3D CNN as DD spatial filter and 1D temporal filter
+1. Tolstikhin, Ilya, Neil Houlsby, Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung et al. "Mlp-mixer: An all-mlp architecture for vision." arXiv preprint arXiv:2105.01601 (2021).
 
-1. Xie, Saining, Chen Sun, Jonathan Huang, Zhuowen Tu, and Kevin Murphy. "Rethinking spatiotemporal feature learning: Speed-accuracy trade-offs in video classification." In Proceedings of the European conference on computer vision (ECCV), pp. 305-321. 2018.
+## 2020
 
-1. Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems 25 (2012): 1097-1105.
-
-1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
 
 1. Radosavovic, Ilija, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, and Piotr Dollár. "Designing network design spaces." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10428-10436. 2020.
   -
 
-1. Tolstikhin, Ilya, Neil Houlsby, Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung et al. "Mlp-mixer: An all-mlp architecture for vision." arXiv preprint arXiv:2105.01601 (2021).
+1. Beltagy, Iz, Matthew E. Peters, and Arman Cohan. "Longformer: The long-document transformer." arXiv preprint arXiv:2004.05150 (2020).
+
+1. Feichtenhofer, Christoph. "X3d: Expanding architectures for efficient video recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 203-213. 2020.
+  - progressive forward expansion and backward contraction approaches!!
+
+1. Dosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020).
+  - CNN matching performance: large amount of data pretrain and transfer on mid/small sized classification tasks.
+
+
+## 2019
+
+1. Moon, Gyeongsik, Ju Yong Chang, and Kyoung Mu Lee. "Camera distance-aware top-down approach for 3d multi-person pose estimation from a single rgb image." In Proceedings of the ieee/cvf international conference on computer vision, pp. 10133-10142. 2019.
+  - PoseNet for 3D posture estimation for multi person simultaneously.
+    - Pipeline: human detection, root detection, and 3D mapping (fully learning based) [figure 1]
+      - DetectNet: Mark R-CNN to crop human images
+      - RootNet: Returns camera centered location of the cropped images (assign depth values to them) [kinda noisy process]
+      - PoseNet: Parallel to RootNet
+  - Experiment: Dataset: Human3.6M, MuCo-3DHP
+
+1. Howard, Andrew, Mark Sandler, Grace Chu, Liang-Chieh Chen, Bo Chen, Mingxing Tan, Weijun Wang et al. "Searching for mobilenetv3." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1314-1324. 2019.
+
+1. Feichtenhofer, Christoph, Haoqi Fan, Jitendra Malik, and Kaiming He. "Slowfast networks for video recognition." In Proceedings of the IEEE/CVF international conference on computer vision, pp. 6202-6211. 2019.
+  - Motivation: No need to treat spatial (semantics) and temporal dimension equally (Retinal ganglion cells)
+  - TP: Two pathway model (Slow {low fps} and fast {high fps})
+    - slow is the heavyweight computation (higher number of channel) and fast is the lightweight computation (lower number of channel)
+    - Two pathway fused by lateral connections (fast to slow)
+  - Experiments: kinetics, charades, AVA dataset
+  - Nice ablation study sections
+
+1. Radosavovic, Ilija, Justin Johnson, Saining Xie, Wan-Yen Lo, and Piotr Dollár. "On network design spaces for visual recognition." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1882-1890. 2019.
+
+
+## 2018
+
+1. Iyer, Ganesh, R. Karnik Ram, J. Krishna Murthy, and K. Madhava Krishna. "CalibNet: Geometrically supervised extrinsic calibration using 3D spatial transformer networks." In 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 1110-1117. IEEE, 2018.
+  - Used for lidar.
+
+1. Tran, Du, Heng Wang, Lorenzo Torresani, Jamie Ray, Yann LeCun, and Manohar Paluri. "A closer look at spatiotemporal convolutions for action recognition." In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition, pp. 6450-6459. 2018.
+ - In github notes
+ - factorizing the 3D convolutional filters into separate spatial and temporal components yields significantly gains in accuracy
+ - Empirical studies (?? types of studies) leads to design choices R(2+1)D
+ - 3D network with residual learning
+ - Benefits:
+
+1. Wang, Xiaolong, Ross Girshick, Abhinav Gupta, and Kaiming He. "Non-local neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 7794-7803. 2018.
+  - Computes the response at a position as a weighted sum of the features at all positions.
+    - Plugged in with may static image recognition system (pose, object detections).
+    - Aim to capture long-term dependencies
+  - Figure 2 sums all (design choice of f and g)
+
+1. Xie, Saining, Chen Sun, Jonathan Huang, Zhuowen Tu, and Kevin Murphy. "Rethinking spatiotemporal feature learning: Speed-accuracy trade-offs in video classification." In Proceedings of the European conference on computer vision (ECCV), pp. 305-321. 2018.
+
+1. Liu, Hanxiao, Karen Simonyan, and Yiming Yang. "Darts: Differentiable architecture search." arXiv preprint arXiv:1806.09055 (2018).
+  - Architectural search in Differentiable manner (why? How? )
+    - Why: differential search space for gradient descent in architecture search (using some relaxations), faster than non-differential counterparts (RL based)!
+  - Experiments with both images and NLP tasks.  
+
+
+## 2017
+
+1. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
+
+1. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
+
+1. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
+
+1. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
+  - TP: proposes computational efficient 3D CNN (and their extensions)
+    - Decomposes 3D CNN as DD spatial filter and 1D temporal filter
 
 1. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
   - ResNeXt: highly modulated network (figure 1) [another network engineering with a very simple idea]
@@ -290,28 +367,22 @@ This blog contains state of the art application and research on different applic
   - Related works: Multi-branch CN, grouped CN, compressed CN, Ensembling.
   - Experiments with ImageNet, COCO object detection. [outperforms ResNet, Inception, VGG.]
 
-1. Radosavovic, Ilija, Justin Johnson, Saining Xie, Wan-Yen Lo, and Piotr Dollár. "On network design spaces for visual recognition." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1882-1890. 2019.
 
-1. Liu, Hanxiao, Karen Simonyan, and Yiming Yang. "Darts: Differentiable architecture search." arXiv preprint arXiv:1806.09055 (2018).
-  - Architectural search in Differentiable manner (why? How? )
-    - Why: differential search space for gradient descent in architecture search (using some relaxations), faster than non-differential counterparts (RL based)!
-  - Experiments with both images and NLP tasks.  
 
-1. Dosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020).
-  - CNN matching performance: large amount of data pretrain and transfer on mid/small sized classification tasks.
+## 2016  and Earlier
 
-1. Tran, Du, Heng Wang, Lorenzo Torresani, Jamie Ray, Yann LeCun, and Manohar Paluri. "A closer look at spatiotemporal convolutions for action recognition." In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition, pp. 6450-6459. 2018.
- - In github notes
- - factorizing the 3D convolutional filters into separate spatial and temporal components yields significantly gains in accuracy
- - Empirical studies (?? types of studies) leads to design choices R(2+1)D
- - 3D network with residual learning
- - Benefits:
+1. Wang, Limin, Yuanjun Xiong, Zhe Wang, Yu Qiao, Dahua Lin, Xiaoou Tang, and Luc Van Gool. "Temporal segment networks: Towards good practices for deep action recognition." In European conference on computer vision, pp. 20-36. Springer, Cham, 2016.
+  - Video activity recognition: segmentation and aggregation with multimodal (figure 1)
+  - Experiments: i) Dataset: HMDB51 and UCF101
 
-1. Liu, Ze, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu. "Video Swin Transformer." arXiv preprint arXiv:2106.13230 (2021).
+1. He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. "Deep residual learning for image recognition." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770-778. 2016.
 
-1. Ke, Junjie, Qifei Wang, Yilin Wang, Peyman Milanfar, and Feng Yang. "MUSIQ: Multi-scale Image Quality Transformer." arXiv preprint arXiv:2108.05997 (2021).
+1. Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems 25 (2012): 1097-1105.
 
-1. Anonymous, . "Patches Are All You Need?." . In Submitted to The Tenth International Conference on Learning Representations .2022.
+1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
+
+
+
 
 # Data augmentation
 
@@ -321,14 +392,21 @@ This blog contains state of the art application and research on different applic
   - propose add a recognition loss optimized jointly with the image processing loss.
   - Figure 2: sums the work. (process loss + recognition task)
 
-1. Talebi, Hossein, and Peyman Milanfar. "Learning to Resize Images for Computer Vision Tasks." arXiv preprint arXiv:2103.09950 (2021).
-  - Does exactly what it's saying!! learn to resize using CNN layer for better downstream Tasks (proposes a resizer block )
-    - Why in the first place!  
-    - What will be the loss function for resize? (architecture: Figure 3)
-    - Wait: are the extracting another feature! (calling it as resizer!)
-  - ImageNet experiment, uses different model
+1. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).
 
 1. Zhang, Hongyi, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. "mixup: Beyond empirical risk minimization." arXiv preprint arXiv:1710.09412 (2017).
+  - supervised setup, linear interpolation between input and corresponding labels
+  - a regularization method: design choices in ablation studies
+  - A connection with ERM (interesting read)
+
+## 2020
+
+1. Lee, Kibok, Yian Zhu, Kihyuk Sohn, Chun-Liang Li, Jinwoo Shin, and Honglak Lee. "i-mix: A domain-agnostic strategy for contrastive representation learning." arXiv preprint arXiv:2010.08887 (2020).
+  - i-mix: regularization strategy for improving contrastive representation learning (data augmentation approaches)
+    - assigning a unique virtual class to each data in a batch and mixing them in both the input and virtual label spaces
+      - Weighted Mixing two images and weighted sum of their virtual labels (self-supervision.) with N-Pair contrastive loss
+    - Application: image, speech, and tabular data
+    - Compatible with different CL frameworks (simclr, moco, boyl) [requires modification (nice!): Section 3]
 
 1. Cubuk, Ekin D., Barret Zoph, Jonathon Shlens, and Quoc V. Le. "Randaugment: Practical automated data augmentation with a reduced search space." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 702-703. 2020.
   - TP tackles: (i) Reduce search spaces for automatic data augmentations! {by Simplifying the search spaces: avails grid search} (ii) adjust regularization strengths
@@ -337,7 +415,16 @@ This blog contains state of the art application and research on different applic
   - Interesting empirical results: data augmentation depends on model sizes and dataset training set sizes. Experiments with cifar, SVHN and ImageNET, object detection.
   - Methods:
 
-1. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).
+## 2021
+
+1. Talebi, Hossein, and Peyman Milanfar. "Learning to Resize Images for Computer Vision Tasks." arXiv preprint arXiv:2103.09950 (2021).
+  - Does exactly what it's saying!! learn to resize using CNN layer for better downstream Tasks (proposes a resizer block )
+    - Why in the first place!  
+    - What will be the loss function for resize? (architecture: Figure 3)
+    - Wait: are the extracting another feature! (calling it as resizer!)
+  - ImageNet experiment, uses different model
+
+
 
 # Metrics and Losses
 
