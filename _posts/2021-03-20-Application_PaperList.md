@@ -4,6 +4,32 @@ This blog contains state of the art application and research on different applic
 
 # Multi View Application
 
+# Domain Adaptation
+
+## 2020
+
+1. Wilson, Garrett, and Diane J. Cook. "A survey of unsupervised deep domain adaptation." ACM Transactions on Intelligent Systems and Technology (TIST) 11, no. 5 (2020): 1-46.
+  - unsupervised domain adaptation can handle situations where a network is trained on labeled data (source domain) and unlabeled target data (related but different domain) with the goal of performing well at target domain
+  - 3 TL: i) inductive (target and source tasks are different) ii) transductive (tasks remain the same while the domains are different, domain adaptation) iii) Unsupervised (inductive with no labels)
+  - Domain invariant feature learning
+    - aligning distribution by divergence (i) Maximum Mean Discrepency ii) correlation alignment iii) Contrastive domain D. iv) Wasserstein
+    - reconstruction
+    - Adversarial
+  - Domain mapping: Image-image mapping
+  - Normalization Statistics
+  - Ensemble methods
+  - Target Discriminative methods
+
+## 2016 and prior
+
+1. Ganin, Yaroslav, and Victor Lempitsky. "Unsupervised domain adaptation by backpropagation." In International conference on machine learning, pp. 1180-1189. 2015.
+  - Simple and great Idea [eq: 1,2,3].
+    - Input to features (*f*), features to task (*y, loss<sub>y</sub>*), features to domain classifier (*d, loss<sub>d</sub>*).
+    - *f* tries to minimize the *loss<sub>y</sub>* and maximize the *loss<sub>d</sub>*, and *d, y* tries to minimize their corresponding losses.
+  - Final task need to be related (y) but the source may be different (f tries to find common ground).
+  - Gradient Reversal layer to implement via SGD.
+  - Reduces h delta h distance [eq 13]
+
 # NN Pruning
 
 1. Blalock, Davis, Jose Javier Gonzalez Ortiz, Jonathan Frankle, and John Guttag. "What is the state of neural network pruning?." arXiv preprint arXiv:2003.03033 (2020).
@@ -338,6 +364,14 @@ This blog contains state of the art application and research on different applic
   - Figure 2 sums all (design choice of f and g)
 
 1. Xie, Saining, Chen Sun, Jonathan Huang, Zhuowen Tu, and Kevin Murphy. "Rethinking spatiotemporal feature learning: Speed-accuracy trade-offs in video classification." In Proceedings of the European conference on computer vision (ECCV), pp. 305-321. 2018.
+  - Four types of network to combine 3D with 2D
+    - I2D: 2D CNN on multiple frames
+    - I3D: 3D over space and time
+    - Bottom Heavy I3D: 3D in lower layer and 2D on higher layers
+    - Top Heavy I3D: 2D on lower and 3D on higher layers
+  - TP: Proposes separable 3D convolution [figure 2]
+  - Read intro: says all
+    - Performs network surgery (empirical analysis) to create new networks
 
 1. Liu, Hanxiao, Karen Simonyan, and Yiming Yang. "Darts: Differentiable architecture search." arXiv preprint arXiv:1806.09055 (2018).
   - Architectural search in Differentiable manner (why? How? )
@@ -346,6 +380,8 @@ This blog contains state of the art application and research on different applic
 
 
 ## 2017
+
+1. Carreira, Joao, and Andrew Zisserman. "Quo vadis, action recognition? a new model and the kinetics dataset." In proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 6299-6308. 2017.
 
 1. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
 
@@ -370,6 +406,10 @@ This blog contains state of the art application and research on different applic
 
 
 ## 2016  and Earlier
+
+1. Zeiler, Matthew D., and Rob Fergus. "Visualizing and understanding convolutional networks." In European conference on computer vision, pp. 818-833. Springer, Cham, 2014.
+  - Visualization for diagnostic role: study to discover the performance contribution from different model layers
+  - TP: multi-layered Deconvolutional Network (deconvnet) to project the feature activations back to the input pixel space.
 
 1. Wang, Limin, Yuanjun Xiong, Zhe Wang, Yu Qiao, Dahua Lin, Xiaoou Tang, and Luc Van Gool. "Temporal segment networks: Towards good practices for deep action recognition." In European conference on computer vision, pp. 20-36. Springer, Cham, 2016.
   - Video activity recognition: segmentation and aggregation with multimodal (figure 1)
@@ -426,10 +466,15 @@ This blog contains state of the art application and research on different applic
 
 
 
-# Metrics and Losses
+# Metrics and # Losses
 
 ## 2020
 1. Boudiaf, Malik, Jérôme Rony, Imtiaz Masud Ziko, Eric Granger, Marco Pedersoli, Pablo Piantanida, and Ismail Ben Ayed. "A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses." In European Conference on Computer Vision, pp. 548-564. Springer, Cham, 2020.
+  - TP: a theoretical analysis to link the cross-entropy to several well-known and recent pairwise losses from two perspective
+    - i) explicit optimization insight and ii) discriminative and generative views of the mutual information between the labels and the learned features
+  - Experimented with four different DML benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop)) [also used by MS loss]
+  - TP proves that minimizing cross-entropy can be viewed as an approximate bound optimization of a more complex pairwise loss. [interesting section 4.3]
+
 
 1. Sainburg, Tim, Leland McInnes, and Timothy Q. Gentner. "Parametric UMAP embeddings for representation and semi-supervised learning." arXiv preprint arXiv:2009.12981 (2020).
   - Good starting note for the UMAP and tSNE. Parametric extension for the UMAP
@@ -437,10 +482,37 @@ This blog contains state of the art application and research on different applic
 
 1. Sun, Yifan, Changmao Cheng, Yuhan Zhang, Chi Zhang, Liang Zheng, Zhongdao Wang, and Yichen Wei. "Circle loss: A unified perspective of pair similarity optimization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6398-6407. 2020.
 
-## 2017
-1. Lin, Tsung-Yi, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. "Focal loss for dense object detection." In Proceedings of the IEEE international conference on computer vision, pp. 2980-2988. 2017.
+## 2019
 
-# Unsorted Papers
+1. Wang, Xun, Xintong Han, Weilin Huang, Dengke Dong, and Matthew R. Scott. "Multi-similarity loss with general pair weighting for deep metric learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5022-5030. 2019.
+  - (TP) Establish a General Pair Weighting (GPW) framework: casts the sampling problem of deep metric learning into a unified view of pair weighting through gradient analysis, (tool for understanding recent pair-based loss functions)
+  - (TP) Various existing pair-based methods are compared and discussed comprehensively, with clear differences and key limitations identified;
+  - (TP) Proposes new loss called multi-similarity loss (MS loss) under the GPW,
+    - implemented in two iterative steps (i.e., **mining**: involves P and **weighting**: Involves S,N): consider three similarities for pair weighting, providing a more principled approach for collecting and weighting informative pairs
+      - 3 similarities (self-similarity: S, Negative relative similarity: N, Positive relative similarity: P) [figure 2]
+      - state-of-the-art performance on four image retrieval benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop))
+  - [github notes]
 
 1. Cheung, Brian, Alex Terekhov, Yubei Chen, Pulkit Agrawal, and Bruno Olshausen. "Superposition of many models into one." arXiv preprint arXiv:1902.05522 (2019).
   - Multiply weights to project them in orthogonal space and sum them.
+
+## 2018
+
+1. Kim, Wonsik, Bhavya Goyal, Kunal Chawla, Jungmin Lee, and Keunjoo Kwon. "Attention-based ensemble for deep metric learning." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 736-751. 2018.
+  - Target:  learners should be diverse in their feature embeddings.
+    - Divergence loss for diversity in attention map on M-head
+    - attention-based ensemble, which uses multiple attention masks, to attend different parts of the object.
+    - ABE-M (M way attention based Ensemble)
+  - Section 3 describe it all [setup, and divergence loss to enforce different attention (section 3.4)]
+  - Experiments: 4 dataset (CUB200, ... ), Arch: GoogLeNet (pretrained on ILSVRC dataset), M = 8
+
+## 2017
+1. Lin, Tsung-Yi, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. "Focal loss for dense object detection." In Proceedings of the IEEE international conference on computer vision, pp. 2980-2988. 2017.
+
+## 2016 and Earlier
+
+1. Hoffer, Elad, and Nir Ailon. "Deep metric learning using triplet network." In International Workshop on Similarity-Based Pattern Recognition, pp. 84-92. Springer, Cham, 2015.
+  - Triplet networks
+  - Experimented on the MNIST dataset.
+
+1. Yi, Dong, Zhen Lei, Shengcai Liao, and Stan Z. Li. "Deep metric learning for person re-identification." In 2014 22nd international conference on pattern recognition, pp. 34-39. IEEE, 2014.

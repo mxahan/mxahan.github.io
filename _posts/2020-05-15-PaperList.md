@@ -167,13 +167,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - inverting deep features and deep features for image manipulation
   - Hierarchical generator setup.
 
-1. Ganin, Yaroslav, and Victor Lempitsky. "Unsupervised domain adaptation by backpropagation." In International conference on machine learning, pp. 1180-1189. 2015.
-  - Simple and great Idea [eq: 1,2,3].
-    - Input to features (*f*), features to task (*y, loss<sub>y</sub>*), features to domain classifier (*d, loss<sub>d</sub>*).
-    - *f* tries to minimize the *loss<sub>y</sub>* and maximize the *loss<sub>d</sub>*, and *d, y* tries to minimize their corresponding losses.
-  - Final task need to be related (y) but the source may be different (f tries to find common ground).
-  - Gradient Reversal layer to implement via SGD.
-  - Reduces h delta h distance [eq 13]
+
 
 1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
   - Multiphase pretraining (PT) for NLP- (Domain and task specific)
@@ -370,10 +364,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Tishby, Naftali, and Noga Zaslavsky. "Deep learning and the information bottleneck principle." In 2015 IEEE Information Theory Workshop (ITW), pp. 1-5. IEEE, 2015.
 
-1. Hoffer, Elad, and Nir Ailon. "Deep metric learning using triplet network." In International Workshop on Similarity-Based Pattern Recognition, pp. 84-92. Springer, Cham, 2015.
-  - Triplet networks
-  - Experimented on the MNIST dataset.
-
 1. Koch, Gregory, Richard Zemel, and Ruslan Salakhutdinov. "Siamese neural networks for one-shot image recognition." In ICML deep learning workshop, vol. 2. 2015.
   - Original contrastive approach with two (either similar or dissimilarity) images [algorithmic]
 
@@ -531,16 +521,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - PILQR for RL parts
   - Huber-style loss
 
-1. Kim, Wonsik, Bhavya Goyal, Kunal Chawla, Jungmin Lee, and Keunjoo Kwon. "Attention-based ensemble for deep metric learning." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 736-751. 2018.
 
 ## 2019
 
-
-1. Wang, Xun, Xintong Han, Weilin Huang, Dengke Dong, and Matthew R. Scott. "Multi-similarity loss with general pair weighting for deep metric learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5022-5030. 2019.
-  - (TP) Establish a General Pair Weighting (GPW) framework: casts the sampling problem of deep metric learning into a unified view of pair weighting through gradient analysis, (tool for understanding recent pair-based loss functions)
-  - (TP) Various existing pair-based methods are compared and discussed comprehensively, with clear differences and key limitations identified;
-  - (TP) Proposes new loss called multi-similarity loss (MS loss) under the GPW,
-    - implemented in two iterative steps (i.e., mining and weighting): consider three similarities for pair weighting, providing a more principled approach for collecting and weighting informative pairs (state-of-the-art performance on four image retrieval benchmarks)
 
 1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Temporal cycle-consistency learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1801-1810. 2019.
   - Temporal video alignment problem: the task of finding correspondences across multiple videos despite many factors of variation
@@ -657,8 +640,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Besides a collection of techniques allowing models to catch up to full supervision, SSL is used two in conjunction of providing strong regularization that improves robustness and uncertainty estimation
 
 ## 2020
-
-
 
 1. Patacchiola, Massimiliano, and Amos Storkey. "Self-supervised relational reasoning for representation learning." arXiv preprint arXiv:2006.05849 (2020).
   - Relation network head instead of direct contrastivie loss [architectural][Pretext task design]
@@ -1222,11 +1203,21 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2021
 
+1. Ayush, Kumar, Burak Uzkent, Chenlin Meng, Kumar Tanmay, Marshall Burke, David Lobell, and Stefano Ermon. "Geography-aware self-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 10181-10190. 2021.
+  - training methods that exploit the spatio-temporal structure (!) of remote sensing data (!!). [application to satellite dataset]
+    - [requires specialized dataset]: spatially aligned images over time to construct temporal positive pairs (temporal positive pairs) in i) contrastive learning and ii) geo-location to design pre-text tasks (predicting image location, utilizing geo-location data's metadata info)
+      - MT: Can we also contrast based on that (disentangled)
+    - Experiments: Functional Mop of the world (*fMoW*)benchmark, **Geo-tagged imagenet** dataset. Arch: ResNet
+    - *Hypothesis*: Existance of remote sensing data's geo-located and multiple images of the same location over time.
+    - representations to be invariant to subtle variations over time (object detection or semantic segmentation) [task 1: contrastive]
+    - representations that reflect geographical information (useful in remote sensing tasks) [task 2: meta-data prediction]
+  - TP: Combine two loss function specialized in remote sensing image dataset.
+
 1. Das, Srijan, and Michael S. Ryoo. "ViewCLR: Learning Self-supervised Video Representation for Unseen Viewpoints." arXiv preprint arXiv:2112.03905 (2021).
   - View generator (3d geometric transformations): Learnable augmentation for pretext task (maximizing viewpoint similarities).
   - **Aim: Generalize over unseen camera viewpoints**. Camera invariant features
     - learnable augmentation to induce viewpoint (by VG) changes while for self-supervised representation.
-  - Dataset: NTU RGB+D and NUCLA, MOCO for instance discrimination. (New PRETraining!!), arch: S3D
+  - Dataset: NTU RGB+D and NUCLA, MOCO for instance discrimination. (New PRETraining!!), arch: S3D, Evaluation: Cross subject and cross setting protocol.
 
 1. Hua, Tianyu, Wenxiao Wang, Zihui Xue, Sucheng Ren, Yue Wang, and Hang Zhao. "On feature decorrelation in self-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 9598-9608. 2021.
   - analysis the collapse issues (looks detail of complete and dimensional collapse: figure 1)
@@ -1468,9 +1459,21 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Tosh, Christopher, Akshay Krishnamurthy, and Daniel Hsu. "Contrastive estimation reveals topic posterior information to linear models." Journal of Machine Learning Research 22, no. 281 (2021): 1-31.
 
+1. Ericsson, Linus, Henry Gouk, Chen Change Loy, and Timothy M. Hospedales. "Self-Supervised Representation Learning: Introduction, Advances and Challenges." arXiv preprint arXiv:2110.09327 (2021).
+  - Provides a good workflow for selfsupervised Learning
+    - extractor function, classifer function, pretext output function (good terminology)
+  - (Four pretext): masked prediction, transformation prediction, instance discrimination, and clustering
+    - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well modelled.
+
 ## 2022
 
+1. Lee, Hyungtae, and Heesung Kwon. "Self-supervised Contrastive Learning for Cross-domain Hyperspectral Image Representation." arXiv preprint arXiv:2202.03968 (2022).
+  - Method: Contrative learning for Hyperspectral image
+    - uses a property of Hyperspectral: same area's image are in same class
+  - Network: Cross-Domain CNN
 ## 2014 and previous
+
+
 
 1. Goldberger, Jacob, Geoffrey E. Hinton, Sam Roweis, and Russ R. Salakhutdinov. "Neighbourhood components analysis." Advances in neural information processing systems 17 (2004).
   - Non-parametric classification model (Early projection)
