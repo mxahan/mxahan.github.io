@@ -261,6 +261,18 @@ then type
 (initramfs)fsck /dev/sda1
 ```
 
+### jupyter notebook reload python file
+
+Refresh the jupyer notebook and we should get the updated py files.
+
+```
+import importlib
+importlib.reload(python_file_name_without_dot_py)
+```
+
+
+[link](https://www.pauldesalvo.com/how-to-refresh-an-imported-python-file-in-a-jupyter-notebook/)
+
 ## Tensorflow GPU memory hack
 use the following instead of just running the network to free gpu memory after kernel restart.
 ```
