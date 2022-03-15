@@ -287,6 +287,15 @@
 
 ## 2020
 
+1. Sohoni, Nimit, Jared Dunnmon, Geoffrey Angus, Albert Gu, and Christopher Ré. "No subclass left behind: Fine-grained robustness in coarse-grained classification problems." Advances in Neural Information Processing Systems 33 (2020): 19339-19352.
+  - Hidden stratification: unavailable subclass labels
+  - TP: GEORGE, a method to both measure and mitigate hidden stratification even when subclass labels are unknown.
+    - TP: estimate subclass labels for the training data via clustering techniques (Estimation)
+    - use these approximate subclass labels as a form of noisy supervision in a distributionally robust optimization objective (exploiting)
+  - Paper construction: generative background for data labeling process [figure 2]
+  - Reason of hidden stratification: Inherent hardness and Dataset imbalance
+  - Method overview [figure 4]: includes two step training (i. training with classification, dimentional reduction of last layer and ii. fine tune.)
+
 1. Patacchiola, Massimiliano, and Amos Storkey. "Self-supervised relational reasoning for representation learning." arXiv preprint arXiv:2006.05849 (2020).
   - Relation network head instead of direct contrastivie loss [architectural][Pretext task design]
   - differentiate from previous one in several ways:
@@ -849,11 +858,40 @@
 
 ## 2021
 
+1. Islam, Ashraful, Chun-Fu Richard Chen, Rameswar Panda, Leonid Karlinsky, Richard Radke, and Rogerio Feris. "A broad study on the transferability of visual representations with contrastive learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 8845-8855. 2021.
+  - TP: *comprehensive study* on the transferability of learned representations of different contrastive approaches for **linear evaluation, full-network transfer, and few-shot recognition**
+  - Experiment: 12 downstream datasets from different domains, and object detection tasks on MSCOCO and VOC0712
+  - Results shows the great transferability of the SSL (expected)
+  - Good terminology: Self-SupCon (augmented version) and SupCon (different instances)
+
+1. Graf, Florian, Christoph Hofer, Marc Niethammer, and Roland Kwitt. "Dissecting supervised constrastive learning." In International Conference on Machine Learning, pp. 3821-3830. PMLR, 2021.
+  - Discusses the problem of class collapse when minimal loss is attained
+  - TP address the question whether there are fundamental differences (between softmax and supcon loss) in the sought-for representation geometry in the output space of the encoder at minimal loss.
+    - *Insight-1*. both losses attain their minimum once the representations of each class collapse to the vertices of a regular simplex, inscribed in a hypersphere. (theoretical)
+    - reaching a close-to-optimal state typically indicates good generalization performance.
+    - *Insight-2*. Supcon works **superlinearly** and Softmax works linearly. (empirical)
+
+1. Fu, Daniel Yang, Mayee F. Chen, Michael Zhang, Kayvon Fatahalian, and Christopher Ré. "The Details Matter: Preventing Class Collapse in Supervised Contrastive Learning." (2021).
+  - modification to supervised contrastive (SupCon) loss that prevents class collapse (keeps strata) by uniformly pulling apart individual points from the same class.
+    - SupCon losses information. (collapse the strata information), not good for the downstream tasks.
+      - Enforces one embedding per class: a regular simplex inscribed in hypersphere.
+    - Proposes L_{spread} loss [a slight modification of L_{sc}] to preserve the strata in embedding space.
+  - Hypothesis: Rarer and distinct strata are further away from common strata. (nice idea, in a unsupervised setup what is even important??) : has entropy flavour.
+
+1. Shah, Anshul, Suvrit Sra, Rama Chellappa, and Anoop Cherian. "Max-Margin Contrastive Learning." arXiv preprint arXiv:2112.11450 (2021).
+  - Addresses the slow convergence of contrastive methods (uses SVM objective)
+    - by selecting negative examples using SVM methods (maximizes the boundary)
+  - TP: simplification of SVM for alleviating computations and maximizing boundaries for hard negatives (MMCL)
+    - Essentially a hard-negative mining problem!! (quality over quantity)
+  - TP: Propose to separate the embedding using powerful SVM classifier.
+    - One vs all fashion detection!!!
+  - Experiment with vision, video, S3D network, tanh kernel.
+
 1. Bardes, Adrien, Jean Ponce, and Yann LeCun. "Vicreg: Variance-invariance-covariance regularization for self-supervised learning." arXiv preprint arXiv:2105.04906 (2021).
   - TP: Variance-Invariance-Covariance Regularization (how to avoid collapse)
     - Applies two regularization term separately with the embeddings : term (1) maintains the variance of each embedding dimension above a threshold, term (2) decorrelates each pair of variables.
     - Key contribution: Loss function (triple objective)
-  - Related works: prevent collapse by i) Contrastive methods / vector quantization , ii) Information maximization (prevents information collapse).
+  - Related works: prevent collapse by i) Contrastive methods / vector quantization (Simclr, MoCo, memory bank, etc) , ii) Information maximization (prevents information collapse).
   - Great intuition however, requires good sampling. [invariant mean between embeddings, variance of embeddings over a batch > th, covariance between a pair in batches &#8594; 0]
   - Requires asymmetric stop gradient (no weight sharing between two branches: allow mutlimodal)
   - As always interesting related work section. [related to decorrelation of barlow twin]
@@ -936,6 +974,7 @@
   - Architecture: 3D ResNet-18
 
 1. Tian, Yuandong, Xinlei Chen, and Surya Ganguli. "Understanding self-supervised learning dynamics without contrastive pairs." arXiv preprint arXiv:2102.06810 (2021).
+  -
 
 1. Caron, Mathilde, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. "Emerging properties in self-supervised vision transformers." arXiv preprint arXiv:2104.14294 (2021).
   - DINO: knowledge DIstillation with NO labels (Figure 2, Algorithm 1)
@@ -1122,6 +1161,23 @@
     - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well modelled.
 
 ## 2022
+
+1. Saunshi, Nikunj, Jordan Ash, Surbhi Goel, Dipendra Misra, Cyril Zhang, Sanjeev Arora, Sham Kakade, and Akshay Krishnamurthy. "Understanding Contrastive Learning Requires Incorporating Inductive Biases." arXiv preprint arXiv:2202.14037 (2022).
+  - Argues that requires to include **inductive biases of function class and training algorithm** to explain the success of CL with previous attempts (augmentation and loss function.) [algorithmic]
+  - Key findings:  ignoring the architecture and the training algorithm can make the current theoretical analyses of contrastive learning vacuous
+    - Theoretical result: incorporating inductive *biases of the function class (ResNet/VGGNet)* allows contrastive learning to work with less stringent conditions compared to prior analyses
+    - different function classes and algorithms (SGD/ADAM) behave very differently on downstream tasks,
+  - Some outcoms
+    -  Is the contrastive loss indeed a good indicator of downstream performance? **No**
+    - Do augmentations overlap sufficiently enough in practice to explain the success of contrastive learning? **NO**
+    - Can contrastive learning succeed even when there is little to no overlap? **YES**
+  - Three key terms:
+    - i) Function class sensitivity (encoder architecture and optimization)
+    - ii) Brittleness of transfer (sometime CL loss reduction cause detrimental impact)
+    - iii) The disjoint augmentation regime: (when augmentation distribution do not overlap it may lead to false sense of security [may not work for downstream task, especially using linear classifier head]) [figure 1].
+      - Details in section 3 example
+    - Easy but interesting theory in lemma 4.1
+      - if augmentation distribution is disjoint then even if contrastive loss is low, the downstream classification loss can be high.
 
 1. Lee, Hyungtae, and Heesung Kwon. "Self-supervised Contrastive Learning for Cross-domain Hyperspectral Image Representation." arXiv preprint arXiv:2202.03968 (2022).
   - Method: Contrative learning for Hyperspectral image

@@ -2,6 +2,11 @@
 
 This blog contains state of the art application and research on different applications. The applications will be stated in the subheadings. Although one paper can fall into multiple categories we will be mostly going with one tag per papers. However, the tag is subjected to change time-to-times.
 
+### Table of contents
+
+- [Multiview application](#Multi-View-Application)
+- [Domain Adaptation](#Domain-Adaptation)
+
 # Multi View Application
 
 # Domain Adaptation
@@ -171,6 +176,8 @@ This blog contains state of the art application and research on different applic
 
 # Data augmentation
 
+## 2019 and Earlier
+
 1. Liu, Zhuang, Tinghui Zhou, Hung-Ju Wang, Zhiqiang Shen, Bingyi Kang, Evan Shelhamer, and Trevor Darrell. "Transferable recognition-aware image processing." arXiv preprint arXiv:1910.09185 (2019).
   - optimizing the recognition loss directly on the image processing network or through an intermediate transforming model (transferable)
     -a neural network for image processing: maps an input image to an output image with some desired properties.
@@ -208,3 +215,14 @@ This blog contains state of the art application and research on different applic
     - What will be the loss function for resize? (architecture: Figure 3)
     - Wait: are the extracting another feature! (calling it as resizer!)
   - ImageNet experiment, uses different model
+
+## 2022
+
+1. Balestriero, Randall, Ishan Misra, and Yann LeCun. "A Data-Augmentation Is Worth A Thousand Samples: Exact Quantification From Analytical Augmented Sample Moments." arXiv preprint arXiv:2202.08325 (2022).
+  - Theoretically analyze the effect of DA by studying:
+    - how many augmented samples are needed to correctly estimate the information encoded by that DA?
+    - How does the augmentation policy impact the final parameters of a model?
+  - TP: Close form derivation of the expectation and variance of an image, loss, and model’s output given a DA (quantify the benefits and limitations of DA)
+  - training loss to be stable under DA sampling, the model’s saliency map (gradient of the loss with respect to the model’s input) must align with the smallest eigenvector of the sample variance under the considered DA
+    - explanation on why models tend to shift their focus from edges to textures!
+  - TP: proposes **data space transform** instead of *coordinating space tx*
