@@ -148,7 +148,9 @@ This blog contains state of the art application and research on different applic
   - Multitask setup
 
 1. Maziarka, Łukasz, Aleksandra Nowak, Maciej Wołczyk, and Andrzej Bedychaj. "On the relationship between disentanglement and multi-task learning." arXiv preprint arXiv:2110.03498 (2021).
-  - TP conclusion: a hard-parameter sharing scenario multi-task learning indeed seems to encourage disentanglement, however, it is inconclusive whether disentangled representations have a clear positive impact on the models performance.
+  - TP conclusion: a hard-parameter sharing scenario multi-task learning indeed seems to encourage disentanglement,
+  - however, it is inconclusive whether disentangled representations have a clear positive impact on the models performance.
+  - A synthetic dataset!
 
 1. Yin, Xi, and Xiaoming Liu. "Multi-task convolutional neural network for pose-invariant face recognition." IEEE Transactions on Image Processing 27, no. 2 (2017): 964-975.
 

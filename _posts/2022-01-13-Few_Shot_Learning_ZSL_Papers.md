@@ -2,6 +2,10 @@
 
 ## 2021
 
+1. Chen, Da, Yuefeng Chen, Yuhong Li, Feng Mao, Yuan He, and Hui Xue. "Self-supervised learning for few-shot image classification." In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1745-1749. IEEE, 2021.
+  - TP: apply a much larger embedding network with self-supervised learning (SSL) to incorporate with episodic task based meta-learning.
+    - WTF: Pretraining and then Meta-learning!! 
+
 1. Ramesh, Aditya, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever. "Zero-shot text-to-image generation." arXiv preprint arXiv:2102.12092 (2021).
 
 1. Dumoulin, Vincent, Neil Houlsby, Utku Evci, Xiaohua Zhai, Ross Goroshin, Sylvain Gelly, and Hugo Larochelle. "Comparing Transfer and Meta Learning Approaches on a Unified Few-Shot Classification Benchmark." arXiv preprint arXiv:2104.02638 (2021).
@@ -32,6 +36,15 @@
   - Future works: four possible directions : Problem setup, Techniques, applications, and Theories
 
 ## 2019
+
+1. Bennequin, Etienne. "Meta-learning algorithms for few-shot computer vision." arXiv preprint arXiv:1909.13579 (2019).
+  - meta-learning algorithms, i.e. algorithms that learn to learn
+  - TP: Meta learning review (N-way K-shot image classification) reviews
+      - Support set (N number of classes, K example per class)
+      - Query set, Q
+      - Base-dataset, they are different from support set classes.
+  - Solution: i) Memory augmented networks ii) Metric learning (there are some approach combined with meta-learning) iii) Gradient based meta-learner iv) data generation  
+  - Meta-learning Definition: given a task, an algorithm is learning “if its performance at the task improves with experience”, while, *given a family of tasks*, an algorithm is learning to learn if “its performance at each task *improves with experience and with the number of tasks*”: referred as a meta-learning algorithm.
 
 1. Chen, Wei-Yu, Yen-Cheng Liu, Zsolt Kira, Yu-Chiang Frank Wang, and Jia-Bin Huang. "A closer look at few-shot classification." arXiv preprint arXiv:1904.04232 (2019).
   - Consistent!  comparative analysis of few shot learning methods! (algorithm performance depends on the backbone networks) [deeper backbone reduces performance difference] **algo comparison varies as backbone network changes**
@@ -71,6 +84,8 @@
 
 ## 2017 and Earlier
 
+1. Santoro, Adam, Sergey Bartunov, Matthew Botvinick, Daan Wierstra, and Timothy Lillicrap. "Meta-learning with memory-augmented neural networks." In International conference on machine learning, pp. 1842-1850. PMLR, 2016.
+
 1. Vinyals, Oriol, Charles Blundell, Timothy Lillicrap, and Daan Wierstra. "Matching networks for one shot learning." In Advances in neural information processing systems, pp. 3630-3638. 2016.
   - Metric learning and augmented memory network!!
   - Non-parametric setup for metric learning
@@ -103,7 +118,7 @@
 
 
 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
-  - learning and adapting quickly
+  - learning and adapting quickly (MAML)
     - The key idea: train the initial parameters to maximize performance on a new task after the parameters have been updated through few gradient steps computed with a small data from that new task.
     - Where it works! Why don't everybody used it afterwords!
     - Contribution: trains a model’s parameters such that a small number of gradient updates will lead to fast learning on a new task.

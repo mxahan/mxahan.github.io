@@ -543,8 +543,8 @@
 
 1. Chen, Xinlei, and Kaiming He. "Exploring Simple Siamese Representation Learning." arXiv preprint arXiv:2011.10566 (2020).
   - Not using Negative samples, large batch or Momentum encoder!!
-  - Care about Prevention of collapsing to constant *(one way is contrastive learning, another way - Clustering, or online clustering, BYOL)
-  - Concepts in figure 1
+  - Care about Prevention of collapsing to constant (one way is contrastive learning, another way - *Clustering*, or *online clustering*, BYOL)
+  - Concepts in figure 1 (SimSiam method)
   - Stop collapsing by introducing the stop gradient operation.
   - interesting section in 3
     - Loss SimCLR (but differently ) [eq 1 and eq 2]
@@ -858,6 +858,21 @@
 
 ## 2021
 
+1. HaoChen, Jeff Z., Colin Wei, Adrien Gaidon, and Tengyu Ma. "Provable guarantees for self-supervised deep learning with spectral contrastive loss." Advances in Neural Information Processing Systems 34 (2021).
+  - Proposes graph theoretic based spectral contrastive losses
+
+1. Jahanian, Ali, Xavier Puig, Yonglong Tian, and Phillip Isola. "Generative models as a data source for multiview representation learning." arXiv preprint arXiv:2106.05258 (2021).
+  - RQ: why bother using dataset when you have generator!! (used no real-data)
+    - off-the-shelf image generator to get multiview data
+    - Requires careful sampling and training method (!!!)
+      - *Hypothesis*: Generator (a organized copy of compressed dataset)
+  -  we provide an exploratory study of representation learning in the setting of synthetic data sampled from pre-trained generative models:
+  - **Assumption** Generator is able to get a good multiview data (sufficient capable generator)
+  - **Findings**: i) CL can be naturally extended to learning from generative samples (different “views” of the data are created via transformations in the model’s latent space) ii) further can be combined with data augmentation iii) sub-logarithmic performance improvement with generator  
+  - Interesting related work section
+  - Figure 1: summary
+  - Key analysis on how to make latent tx to get multiview data. i) gaussian approaches, ii) steered latent views
+
 1. Islam, Ashraful, Chun-Fu Richard Chen, Rameswar Panda, Leonid Karlinsky, Richard Radke, and Rogerio Feris. "A broad study on the transferability of visual representations with contrastive learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 8845-8855. 2021.
   - TP: *comprehensive study* on the transferability of learned representations of different contrastive approaches for **linear evaluation, full-network transfer, and few-shot recognition**
   - Experiment: 12 downstream datasets from different domains, and object detection tasks on MSCOCO and VOC0712
@@ -974,10 +989,17 @@
   - Architecture: 3D ResNet-18
 
 1. Tian, Yuandong, Xinlei Chen, and Surya Ganguli. "Understanding self-supervised learning dynamics without contrastive pairs." arXiv preprint arXiv:2102.06810 (2021).
-  -
+  - Theoretical: Why non-contrastive (without negative pairs) methods do not collapse (BYOL, SimSiam by using extra predictors/stop-gradient)
+    - TP: DirectPred (Directly sets the linear predictor based on the statistics of its inputs, without gradient training)
+    - motivated by theoretical study of the nonlinear learning dynamics of non-contrastive SSL in simple linear networks
+      - yields conceptual insights into how non-contrastive SSL methods learn, how they avoid representational collapse, and impact of multiple factors, like *predictor networks, stop-gradients, exponential moving averages, and weight decay*
+  - Empirical impacts of multiple hyperparams: i) EMA/momentum encoder ii) predictor optimality and LR iii) Weight decay (good ablation studies) [**section 3.2**]
+  - [**Essential part of non-contrastive SSL: existance of the predictor and the stop-gradient**]
+  - TP directPred: thereby avoiding complicated predictor dynamics and initialization issues by using PCA and setting predictor weight [*section 4*].
+  - Th 1: ((Weight decay promotes balancing of the predictor and online networks), Th 2: (The stop-gradient signal is essential for success.)
 
 1. Caron, Mathilde, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. "Emerging properties in self-supervised vision transformers." arXiv preprint arXiv:2104.14294 (2021).
-  - DINO: knowledge DIstillation with NO labels (Figure 2, Algorithm 1)
+  - DINO: knowledge Distillation with NO labels (Figure 2, Algorithm 1)
   - Self-supervised learning with vision transformer
   - Observations: (i) T features contain explicit information (!!!) about the semantic segmentation of an image
     - explicit information: scene layout, object boundaries (directly accessible)
@@ -1161,6 +1183,13 @@
     - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well modelled.
 
 ## 2022
+
+1. Goyal, Priya, Quentin Duval, Isaac Seessel, Mathilde Caron, Mannat Singh, Ishan Misra, Levent Sagun, Armand Joulin, and Piotr Bojanowski. "Vision Models Are More Robust And Fair When Pretrained On Uncurated Images Without Supervision." arXiv preprint arXiv:2202.08360 (2022).
+  - Utilized Uncurated Image data across the globe [LOL! GPU please] (fair group)
+    - Dense 10 Million model params
+    - 50 benchmarks including fairness, robustness to distribution shift, geographical diversity, fine grained recognition, image copy detection and many image classification datasets
+  - obvious result: the more data the better
+  - key findings: self-supervised learning on random internet data leads to models that are more fair, less biased and less harmful
 
 1. Saunshi, Nikunj, Jordan Ash, Surbhi Goel, Dipendra Misra, Cyril Zhang, Sanjeev Arora, Sham Kakade, and Akshay Krishnamurthy. "Understanding Contrastive Learning Requires Incorporating Inductive Biases." arXiv preprint arXiv:2202.14037 (2022).
   - Argues that requires to include **inductive biases of function class and training algorithm** to explain the success of CL with previous attempts (augmentation and loss function.) [algorithmic]
