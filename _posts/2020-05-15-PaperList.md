@@ -1,16 +1,96 @@
 # Introduction
 
-This blog contains regularly updated paperlist of my personal interest with minimal summary.
+This blog contains regularly updated paperlist (generlized but top-notch) of my personal interest with minimal summary.
 
 Any suggestion regarding some new papers are highly appreciated. For some of the detail paper read please refer to the Paper summary section.
 
 We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world. however, the papers (many papers!) are as follows
 
-1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
+## 2022
+1. Lee, Yoonho, Huaxiu Yao, and Chelsea Finn. "Diversify and Disambiguate: Learning From Underspecified Data." arXiv preprint arXiv:2202.03418 (2022).
+
+## 2021
+
+1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
+  -
+
+1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
+  - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
+    - Adaptive gradient clipping (AGC)
+    - Experiment: Normalization free ResNet
+  - Section 3: reasons and alternative to BN
+  - Section 4: This papers key contribution (AGC)
+    - Hypothesis: 1<sup>st</sup> paragraph: accelerating converge in poorly conditioned loss function for large Batch Size.
+    - Key point in equation 3 (adaptive)
+
+## 2020
+
+1. Lee, Kwot Sin, Ngoc-Trung Tran, and Ngai-Man Cheung. "InfoMax-GAN: Improved Adversarial Image Generation via Information Maximization and Contrastive Learning." arXiv preprint arXiv:2007.04589 (2020).
+
+1. Karras, Tero, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, and Timo Aila. "Training generative adversarial networks with limited data." Advances in Neural Information Processing Systems 33 (2020).
+  - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
+  - prevent the leaking!
+  - nonleaking operation -invertible trasnformation (2.2: Point made)
+  - augmentation Scheme
+  - balanced consistency regularization! (old approach)
+  - stochastic discriminator augmentation
+    - Figure 2 (Whats the benefit!!)
+    - fig2(b): Generator output always go through Augmentation (with p [most significant param]) before hitting D
+  - Adaptive discriminator augmentation (section 3)
+    - Point: What if the D learns nothing for anyone! then r = 0 [Eq1], right? No! Oh got it! [solved :)] 0 (real) < D < 1(generated)
+
+1. Izacard, Gautier, and Edouard Grave. "Distilling Knowledge from Reader to Retriever for Question Answering." arXiv preprint arXiv:2012.04584 (2020).
+
+1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
+
+1. Foret, Pierre, Ariel Kleiner, Hossein Mobahi, and Behnam Neyshabur. "Sharpness-Aware Minimization for Efficiently Improving Generalization." arXiv preprint arXiv:2010.01412 (2020).
+  - Aim to reduce the loss value and **loss sharpness** (motivated by geometry of loss space and generalization)
+  - TP about increasing generalization (how to claim such results, what will be the evidence): Performance over the noisy dataset!
+  - TP: Sharpness-Aware Minimization (SAM) : Aims to find params with uniform low-loss in their neighborhood. *still works with SGD*
+  - Why only Cross-Entropy! Not sufficient everytime!
+  - Efficient, scalable and effective method!! (what results it requires?)
+    - Minimize loss value and loss sharpness!
+    - Model generalization: Experiment with (CIFAR, ImageNet, SVHN, MNIST, ....)
+    - coins m-sharpness terms
+  - Reducing the gap between training loss and the population loss (generalization)
+  - Algorithm 1 summarizes the ways to train the network!
+  - Detailed experiment and discussion section
+  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+
+1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
+  - Sentence to hidden features to probability distribution.  
+  - Contextual visual representation
+  - LM architecture with additional voken objective (BERT objective + voken classification)
+  - Need revisit!
+
+1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
+  - Multiphase pretraining (PT) for NLP- (Domain and task specific)
+  - Pretraining dataset selection strategy
+  - Key motivation: RoBERTa
+  - Experimented with DAPT, TAPT and DAPT+TAPT
+
+1. Berthelot, David, Peyman Milanfar, and Ian Goodfellow. "Creating High Resolution Images with a Latent Adversarial Generator." arXiv preprint arXiv:2003.02365 (2020).
+  - Close to super-resolution problem [but different as loss is perception loss.]
+    - When noise 0 we want the original image.
+  - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
+  - Gradient penalty loss (To ascertain 1-Lipschitz)
+
+1. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
+  - Under construction
+
+1. Roy, Aurko, Mohammad Saffar, Ashish Vaswani, and David Grangier. "Efficient content-based sparse attention with routing transformers." arXiv preprint arXiv:2003.05997 (2020).
+  - Under construction
+
+## 2019
 
 1. Du, Yilun, and Igor Mordatch. "Implicit Generation and Modeling with Energy Based Models." In Advances in Neural Information Processing Systems, pp. 3603-3613. 2019.
 
 1. Grathwohl, Will, Kuan-Chieh Wang, Jörn-Henrik Jacobsen, David Duvenaud, Mohammad Norouzi, and Kevin Swersky. "Your Classifier is Secretly an Energy Based Model and You Should Treat it Like One." arXiv preprint arXiv:1912.03263 (2019).
+
+
+## 2018
+
+1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
 
 1. Kingma, Durk P., and Prafulla Dhariwal. "Glow: Generative flow with invertible 1x1 convolutions." In Advances in Neural Information Processing Systems, pp. 10215-10224. 2018.
   - Actnorm
@@ -42,15 +122,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Sinh Huynh, Rajesh Krishna Balan, JeongGil Ko, and Youngki Lee. 2019. VitaMon: measuring heart rate variability using smartphone front camera. In Proceedings of the 17th Conference on Embedded Networked Sensor Systems (SenSys ’19). Association for Computing Machinery, New York, NY, USA, 1–14. DOI:https://doi.org/10.1145/3356250.3360036
   - [link](https://docs.google.com/presentation/d/1w3h0b1xqa4SBKISvUv4Yu_9kmAxiyG8j15_vwC9TEHI/edit?usp=sharing)
-
-1. Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
-  - Knowledge distillation
-  - Distillation and the effect of temperature.
-    - section 2 and 2.1 are important
-  - Training small network to mimic the large network.
-  - Train small network to learn the features and logits of the large network.
-  - Softmax, temperature and the MSE with the prediction
-  - Experimented with MNIST, speech and Specialist models.
 
 1. Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate." arXiv preprint arXiv:1409.0473 (2014).
 
@@ -129,15 +200,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - All layers (q, k, v, decoder and encoders) are subjected to backpropagation
   - full paper breakdown [link](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
 
-1. Du, Xianzhi, Tsung-Yi Lin, Pengchong Jin, Golnaz Ghiasi, Mingxing Tan, Yin Cui, Quoc V. Le, and Xiaodan Song. "SpineNet: Learning scale-permuted backbone for recognition and localization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11592-11601. 2020.
-  - Meta learning, NAS
-  - how does Scale decreased model work as backbone in object detection?
-  - Propose scale permuted network
-
-1. Khetan, Ashish, and Zohar Karnin. "PruneNet: Channel Pruning via Global Importance." arXiv preprint arXiv:2005.11282 (2020).
-  - Importance score: Variance of input layer after filtering
-  - New regularization scheme.
-
 1. Chen, Mark, Alec Radford, Rewon Child, Jeff Wu, Heewoo Jun, Prafulla Dhariwal, David Luan, and Ilya Sutskever. "Generative Pretraining from Pixels."
   - Image -> low resolution -> 1D transform -> Think like BERT or AR problem
   - Pretrain (BERT/ AR) -> FineTune (classification)
@@ -165,29 +227,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Loss function {adversarial loss + reconstruction loss(masked area) + diversity loss}
   - Different application [especially image re-painting]
   - inverting deep features and deep features for image manipulation
-  - Hierarchical generator setup.
-
-
-
-1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
-  - Multiphase pretraining (PT) for NLP- (Domain and task specific)
-  - Pretraining dataset selection strategy
-  - Key motivation: RoBERTa
-  - Experimented with DAPT, TAPT and DAPT+TAPT
-
-1. Berthelot, David, Peyman Milanfar, and Ian Goodfellow. "Creating High Resolution Images with a Latent Adversarial Generator." arXiv preprint arXiv:2003.02365 (2020).
-  - Close to super-resolution problem [but different as loss is perception loss.]
-    - When noise 0 we want the original image.
-  - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
-  - Gradient penalty loss (To ascertain 1-Lipschitz)
-
-1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
-  - Multi scale atrous CNN for Semantic image segmentation & modified ASPP
-  - Enlarge Field-of-View
-  - Removed DenseCRF
-  - Dataset: PASCAL, VOC 2012
-  - All 3x3 with different rate
-  - Related works: Context Module!
+  - Hierarchical generator setup
 
 1. Liu, Yinhan, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. "Roberta: A robustly optimized bert pretraining approach." arXiv preprint arXiv:1907.11692 (2019).
   - Aim the undertrained issue of BERT + Some improvement both in dataset and hyperparameters [Pretraining]
@@ -208,32 +248,15 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Decouple model training and data [privacy and security]
   - Unbalanced and IID data works best [experimented on 4 dataset]
 
-1. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
-  - Under construction
-
-1. Roy, Aurko, Mohammad Saffar, Ashish Vaswani, and David Grangier. "Efficient content-based sparse attention with routing transformers." arXiv preprint arXiv:2003.05997 (2020).
-  - Under construction
-
 1. Yang, Zhilin, Zihang Dai, Yiming Yang, Jaime Carbonell, Russ R. Salakhutdinov, and Quoc V. Le. "Xlnet: Generalized autoregressive pretraining for language understanding." In Advances in neural information processing systems, pp. 5753-5763. 2019.
   - under construction
 
 1. Hu, Baotian, Zhengdong Lu, Hang Li, and Qingcai Chen. "Convolutional neural network architectures for matching natural language sentences." In Advances in neural information processing systems, pp. 2042-2050. 2014.
   - Matching network
 
-1. Lee, Kwot Sin, Ngoc-Trung Tran, and Ngai-Man Cheung. "InfoMax-GAN: Improved Adversarial Image Generation via Information Maximization and Contrastive Learning." arXiv preprint arXiv:2007.04589 (2020).
-
 1. Liu, Sicong, Junzhao Du, Anshumali Shrivastava, and Lin Zhong. "Privacy Adversarial Network: Representation Learning for Mobile Data Privacy." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 3, no. 4 (2019): 1-18.
   - presented in my course work instructed by my supervisor Dr. Nirmalya Roy
   - [link](https://docs.google.com/presentation/d/1OF7Y6yoIAuLVQ_OtV5kdCEXzCp3MRAzusg1o8k6kTvo/edit?usp=sharing)
-
-1. Wang, Feng, Xiang Xiang, Jian Cheng, and Alan Loddon Yuille. "Normface: L2 hypersphere embedding for face verification." In Proceedings of the 25th ACM international conference on Multimedia, pp. 1041-1049. 2017.
-  - Training using normalization features.
-    - modification of softmax and optimize cosine losses
-    - Metric learning
-  - Research gap of necessity of normalization
-  - Four contributions?
-    - why cosine doesn't converge? buy normalized dot succeed.
-    - different loss option explore? why!!
 
 1. Gao, Chen, Ayush Saraf, Jia-Bin Huang, and Johannes Kopf. "Flow-edge Guided Video Completion." In European Conference on Computer Vision, pp. 713-729. Springer, Cham, 2020.
   - Gradient domain processing
@@ -250,11 +273,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - DAVIS dataset
   - Poisson reconstruction
 
-1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
-  - Sentence to hidden features to probability distribution.  
-  - Contextual visual representation
-  - LM architecture with additional voken objective (BERT objective + voken classification)
-  - Need revisit!
+
 
 1. Peters, Matthew E., Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. "Deep contextualized word representations." arXiv preprint arXiv:1802.05365 (2018).
 
@@ -264,23 +283,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Ganin, Yaroslav, Evgeniya Ustinova, Hana Ajakan, Pascal Germain, Hugo Larochelle, François Laviolette, Mario Marchand, and Victor Lempitsky. "Domain-adversarial training of neural networks." The Journal of Machine Learning Research 17, no. 1 (2016): 2096-2030.   
 
-1. Karras, Tero, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, and Timo Aila. "Training generative adversarial networks with limited data." Advances in Neural Information Processing Systems 33 (2020).
-  - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
-  - prevent the leaking!
-  - nonleaking operation -invertible trasnformation (2.2: Point made)
-  - augmentation Scheme
-  - balanced consistency regularization! (old approach)
-  - stochastic discriminator augmentation
-    - Figure 2 (Whats the benefit!!)
-    - fig2(b): Generator output always go through Augmentation (with p [most significant param]) before hitting D
-  - Adaptive discriminator augmentation (section 3)
-    - Point: What if the D learns nothing for anyone! then r = 0 [Eq1], right? No! Oh got it! [solved :)] 0 (real) < D < 1(generated)
-
-1. Izacard, Gautier, and Edouard Grave. "Distilling Knowledge from Reader to Retriever for Question Answering." arXiv preprint arXiv:2012.04584 (2020).
 
 1. Szegedy, Christian, Vincent Vanhoucke, Sergey Ioffe, Jon Shlens, and Zbigniew Wojna. "Rethinking the inception architecture for computer vision." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 2818-2826. 2016.
-
-1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
 
 1. Goodfellow, Ian, Honglak Lee, Quoc Le, Andrew Saxe, and Andrew Ng. "Measuring invariances in deep networks." Advances in neural information processing systems 22 (2009): 646-654.
   - Evaluate invariant features
@@ -294,18 +298,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Invariance measurement
     - Finding neurons firing under invariance
   - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
-
-1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
-  -
-
-1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
-  - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
-    - Adaptive gradient clipping (AGC)
-    - Experiment: Normalization free ResNet
-  - Section 3: reasons and alternative to BN
-  - Section 4: This papers key contribution (AGC)
-    - Hypothesis: 1<sup>st</sup> paragraph: accelerating converge in poorly conditioned loss function for large Batch Size.
-    - Key point in equation 3 (adaptive)
 
 1. Smirnov, Evgeny, Aleksandr Melnikov, Andrei Oleinik, Elizaveta Ivanova, Ilya Kalinovskiy, and Eugene Luckyanets. "Hard example mining with auxiliary embeddings." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops, pp. 37-46. 2018.
   - Deep embedding learning and hard example mining!!
@@ -328,19 +320,6 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - Distribution: To whom, how, Any IP or copyright?
     - maintenance: supporter, owner, how to update, version, extension?
 
-1. Foret, Pierre, Ariel Kleiner, Hossein Mobahi, and Behnam Neyshabur. "Sharpness-Aware Minimization for Efficiently Improving Generalization." arXiv preprint arXiv:2010.01412 (2020).
-  - Aim to reduce the loss value and **loss sharpness** (motivated by geometry of loss space and generalization)
-  - TP about increasing generalization (how to claim such results, what will be the evidence): Performance over the noisy dataset!
-  - TP: Sharpness-Aware Minimization (SAM) : Aims to find params with uniform low-loss in their neighborhood. *still works with SGD*
-  - Why only Cross-Entropy! Not sufficient everytime!
-  - Efficient, scalable and effective method!! (what results it requires?)
-    - Minimize loss value and loss sharpness!
-    - Model generalization: Experiment with (CIFAR, ImageNet, SVHN, MNIST, ....)
-    - coins m-sharpness terms
-  - Reducing the gap between training loss and the population loss (generalization)
-  - Algorithm 1 summarizes the ways to train the network!
-  - Detailed experiment and discussion section
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
 
 1. Madry, Aleksander, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, and Adrian Vladu. "Towards deep learning models resistant to adversarial attacks." arXiv preprint arXiv:1706.06083 (2017).
   - study a set of approaches [the adversarial robustness of neural networks through the lens of robust optimization]

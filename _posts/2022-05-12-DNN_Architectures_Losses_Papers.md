@@ -1,5 +1,7 @@
 # Architectural contributions
 
+
+
 ## 2021
 
 
@@ -77,11 +79,12 @@
   - Used for lidar.
 
 1. Tran, Du, Heng Wang, Lorenzo Torresani, Jamie Ray, Yann LeCun, and Manohar Paluri. "A closer look at spatiotemporal convolutions for action recognition." In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition, pp. 6450-6459. 2018.
- - In github notes
- - factorizing the 3D convolutional filters into separate spatial and temporal components yields significantly gains in accuracy
- - Empirical studies (?? types of studies) leads to design choices R(2+1)D
- - 3D network with residual learning
- - Benefits:
+  - factorizing the 3D convolutional filters into separate spatial and temporal components yields significantly gains in accuracy
+  - Empirical studies (?? types of studies) leads to design choices **R(2+1)D**
+  - 3D network with residual learning
+  - Really close to P3D network (especially P3D-A block)
+    - Difference: Instead of three P3D interleaving blocks TP proposes homogeneous block
+  - Benefits: Provides SOTA results, homogeneous block, Matches R3D params.
 
 1. Wang, Xiaolong, Ross Girshick, Abhinav Gupta, and Kaiming He. "Non-local neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 7794-7803. 2018.
   - Computes the response at a position as a weighted sum of the features at all positions.
@@ -108,8 +111,16 @@
 
 
 ## 2017
+1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
+  - Multi scale atrous CNN for Semantic image segmentation & modified ASPP
+  - Enlarge Field-of-View
+  - Removed DenseCRF
+  - Dataset: PASCAL, VOC 2012
+  - All 3x3 with different rate
+  - Related works: Context Module!
 
 1. Carreira, Joao, and Andrew Zisserman. "Quo vadis, action recognition? a new model and the kinetics dataset." In proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 6299-6308. 2017.
+  - I3D/R3D model
 
 1. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
 
@@ -118,8 +129,9 @@
 1. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
 
 1. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
-  - TP: proposes computational efficient 3D CNN (and their extensions)
+  - TP: proposes computational efficient 3D CNN (and their extensions) [p3d network]
     - Decomposes 3D CNN as DD spatial filter and 1D temporal filter
+    - Combines of 3-inter-leaving P3D blocks [figure 3].
 
 1. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
   - ResNeXt: highly modulated network (figure 1) [another network engineering with a very simple idea]
@@ -160,6 +172,8 @@
 1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
 
 # Metrics and # Losses
+
+
 
 ## 2020
 1. Boudiaf, Malik, Jérôme Rony, Imtiaz Masud Ziko, Eric Granger, Marco Pedersoli, Pablo Piantanida, and Ismail Ben Ayed. "A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses." In European Conference on Computer Vision, pp. 548-564. Springer, Cham, 2020.
@@ -204,10 +218,19 @@
   - related works: i. View based ii. Model based
   - Experiment: Dataset - ModelNet40 and ShapeNet Core55,
   - Joint optimization with softmax losses
-  - Benefits: require less samples 
+  - Benefits: require less samples
 
 ## 2017
 1. Lin, Tsung-Yi, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. "Focal loss for dense object detection." In Proceedings of the IEEE international conference on computer vision, pp. 2980-2988. 2017.
+
+1. Wang, Feng, Xiang Xiang, Jian Cheng, and Alan Loddon Yuille. "Normface: L2 hypersphere embedding for face verification." In Proceedings of the 25th ACM international conference on Multimedia, pp. 1041-1049. 2017.
+  - Training using normalization features.
+    - modification of softmax and optimize cosine losses
+    - Metric learning
+  - Research gap of necessity of normalization
+  - Four contributions?
+    - why cosine doesn't converge? buy normalized dot succeed.
+    - different loss option explore? why!!
 
 ## 2016 and Earlier
 

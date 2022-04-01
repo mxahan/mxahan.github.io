@@ -4,7 +4,7 @@
 
 1. Chen, Da, Yuefeng Chen, Yuhong Li, Feng Mao, Yuan He, and Hui Xue. "Self-supervised learning for few-shot image classification." In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1745-1749. IEEE, 2021.
   - TP: apply a much larger embedding network with self-supervised learning (SSL) to incorporate with episodic task based meta-learning.
-    - WTF: Pretraining and then Meta-learning!! 
+    - WTF: Pretraining and then Meta-learning!!
 
 1. Ramesh, Aditya, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever. "Zero-shot text-to-image generation." arXiv preprint arXiv:2102.12092 (2021).
 
@@ -13,6 +13,11 @@
 
 
 ## 2020
+
+1. Du, Xianzhi, Tsung-Yi Lin, Pengchong Jin, Golnaz Ghiasi, Mingxing Tan, Yin Cui, Quoc V. Le, and Xiaodan Song. "SpineNet: Learning scale-permuted backbone for recognition and localization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11592-11601. 2020.
+  - Meta learning, NAS
+  - how does Scale decreased model work as backbone in object detection?
+  - Propose scale permuted network
 
 1. Wang, Yaqing, Quanming Yao, James T. Kwok, and Lionel M. Ni. "Generalizing from a few examples: A survey on few-shot learning." ACM Computing Surveys (CSUR) 53, no. 3 (2020): 1-34.
   - Three approaches (i) Data (ii) Model (iii) Algorithm, all of them uses prior knowledge!

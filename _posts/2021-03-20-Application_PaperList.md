@@ -35,9 +35,22 @@ This blog contains state of the art application and research on different applic
   - Gradient Reversal layer to implement via SGD.
   - Reduces h delta h distance [eq 13]
 
-# NN Pruning
+# Model Compression
 
 1. Blalock, Davis, Jose Javier Gonzalez Ortiz, Jonathan Frankle, and John Guttag. "What is the state of neural network pruning?." arXiv preprint arXiv:2003.03033 (2020).
+
+1. Khetan, Ashish, and Zohar Karnin. "PruneNet: Channel Pruning via Global Importance." arXiv preprint arXiv:2005.11282 (2020).
+  - Importance score: Variance of input layer after filtering
+  - New regularization scheme.
+
+1. 1. Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
+  - Knowledge distillation
+  - Distillation and the effect of temperature.
+    - section 2 and 2.1 are important
+  - Training small network to mimic the large network.
+  - Train small network to learn the features and logits of the large network.
+  - Softmax, temperature and the MSE with the prediction
+  - Experimented with MNIST, speech and Specialist models.
 
 
 # UAV
@@ -117,17 +130,30 @@ This blog contains state of the art application and research on different applic
 
 # Disentangled Representation learning
 
-1. Do, Kien, and Truyen Tran. "Theory and evaluation metrics for learning disentangled representations." arXiv preprint arXiv:1908.09961 (2019).
+## 2022
+1. Hou, Wenjie, Zheyun Qin, Xiaoming Xi, Xiankai Lu, and Yilong Yin. "Learning Disentangled Representation for Self-supervised Video Object Segmentation." Neurocomputing (2022).
 
+## 2021
+
+1. Hu, Jie, Liujuan Cao, Tong Tong, Qixiang Ye, Shengchuan Zhang, Ke Li, Feiyue Huang, Ling Shao, and Rongrong Ji. "Architecture disentanglement for deep neural networks." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 672-681. 2021.
+
+1. Wang, Tan, Zhongqi Yue, Jianqiang Huang, Qianru Sun, and Hanwang Zhang. "Self-Supervised Learning Disentangled Group Representation as Feature." arXiv preprint arXiv:2110.15255 (2021).
+  - Higgins definition of disentanglement representation
+  - Group theoretic approach [Learn distinguished matrix for each tasks]
+
+1. Maziarka, Łukasz, Aleksandra Nowak, Maciej Wołczyk, and Andrzej Bedychaj. "On the relationship between disentanglement and multi-task learning." arXiv preprint arXiv:2110.03498 (2021).
+  - TP conclusion: a hard-parameter sharing scenario multi-task learning indeed seems to encourage disentanglement,
+  - however, it is inconclusive whether disentangled representations have a clear positive impact on the models performance.
+  - A synthetic dataset!
+
+
+## 2020
 1. Zhu, Yizhe, Martin Renqiang Min, Asim Kadav, and Hans Peter Graf. "S3VAE: Self-supervised sequential VAE for representation disentanglement and data generation." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6538-6547. 2020.
   -
 
-1. Zamir, Amir R., Alexander Sax, William Shen, Leonidas J. Guibas, Jitendra Malik, and Silvio Savarese. "Taskonomy: Disentangling task transfer learning." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3712-3722. 2018.
-  - Encoder decoder (VAE) set up for different self-supervised pretext tasks and experimentation  on the transfer learning.
-  - Provide a good benchmark to transfer one task learning to other tasks. [relationship among tasks]
-  - Provided their own dataset
+## 2019
 
-1. Hu, Jie, Liujuan Cao, Tong Tong, Qixiang Ye, Shengchuan Zhang, Ke Li, Feiyue Huang, Ling Shao, and Rongrong Ji. "Architecture disentanglement for deep neural networks." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 672-681. 2021.
+1. Do, Kien, and Truyen Tran. "Theory and evaluation metrics for learning disentangled representations." arXiv preprint arXiv:1908.09961 (2019).
 
 1. Arjovsky, Martin, Léon Bottou, Ishaan Gulrajani, and David Lopez-Paz. "Invariant risk minimization." arXiv preprint arXiv:1907.02893 (2019).
 
@@ -135,9 +161,12 @@ This blog contains state of the art application and research on different applic
   - Requires inductive bias (implicit supervision)
   - (i) The role of inductive biases and implicit and explicit supervision should be made explicit: unsupervised model selection persists as a key question. (ii) practical benefits of enforcing a specific notion of disentanglement of the learned representations should be demonstrated.
 
-1. Wang, Tan, Zhongqi Yue, Jianqiang Huang, Qianru Sun, and Hanwang Zhang. "Self-Supervised Learning Disentangled Group Representation as Feature." arXiv preprint arXiv:2110.15255 (2021).
-  - Higgins definition of disentanglement representation
-  - Group theoretic approach [Learn distinguished matrix for each tasks]
+## 2018
+
+1. Zamir, Amir R., Alexander Sax, William Shen, Leonidas J. Guibas, Jitendra Malik, and Silvio Savarese. "Taskonomy: Disentangling task transfer learning." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3712-3722. 2018.
+  - Encoder decoder (VAE) set up for different self-supervised pretext tasks and experimentation  on the transfer learning.
+  - Provide a good benchmark to transfer one task learning to other tasks. [relationship among tasks]
+  - Provided their own dataset
 
 1. Higgins, Irina, David Amos, David Pfau, Sebastien Racaniere, Loic Matthey, Danilo Rezende, and Alexander Lerchner. "Towards a definition of disentangled representations." arXiv preprint arXiv:1812.02230 (2018).
   - Formal *Definition(s)* of the disentangled representation learning
@@ -147,13 +176,7 @@ This blog contains state of the art application and research on different applic
   - Utilization of meta-data
   - Multitask setup
 
-1. Maziarka, Łukasz, Aleksandra Nowak, Maciej Wołczyk, and Andrzej Bedychaj. "On the relationship between disentanglement and multi-task learning." arXiv preprint arXiv:2110.03498 (2021).
-  - TP conclusion: a hard-parameter sharing scenario multi-task learning indeed seems to encourage disentanglement,
-  - however, it is inconclusive whether disentangled representations have a clear positive impact on the models performance.
-  - A synthetic dataset!
-
 1. Yin, Xi, and Xiaoming Liu. "Multi-task convolutional neural network for pose-invariant face recognition." IEEE Transactions on Image Processing 27, no. 2 (2017): 964-975.
-
 
 # Imitation Learning
 

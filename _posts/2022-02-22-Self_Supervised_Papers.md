@@ -1157,7 +1157,7 @@
 
 1. Jing, Li, Pascal Vincent, Yann LeCun, and Yuandong Tian. "Understanding Dimensional Collapse in Contrastive Self-supervised Learning." arXiv preprint arXiv:2110.09348 (2021).
   - Discusses about dimension collapse ( the embedding vectors end up spanning a lower-dimensional subspace instead of the entire available embedding space.)
-  - key findins.
+  - key findings.
     - along the feature direction where data augmentation variance is larger than the data distribution variance, the weight collapses. (strong augmentation along feature dimensions)
     - even if the covariance of data augmentation has a smaller magnitude than the data variance along all dimensions, the weight will still collapse due to the interplay of weight matrices at different layers known as [implicit regularization](http://old.ins.sjtu.edu.cn/files/paper/20200722191948_slide.pdf). (implicit regularization driving models toward low-rank solutions)
   - looks into the covariance matrix (their eigen decomposition; some eigenvalues become zeros) to measure dimensional collapse
@@ -1180,7 +1180,7 @@
   - Provides a good workflow for selfsupervised Learning
     - extractor function, classifer function, pretext output function (good terminology)
   - (Four pretext): masked prediction, transformation prediction, instance discrimination, and clustering
-    - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well modelled.
+    - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well-modeled.
 
 ## 2022
 
