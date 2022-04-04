@@ -858,6 +858,23 @@
 
 ## 2021
 
+1. Zhong, Huasong, Jianlong Wu, Chong Chen, Jianqiang Huang, Minghua Deng, Liqiang Nie, Zhouchen Lin, and Xian-Sheng Hua. "Graph contrastive clustering." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 9224-9233. 2021.
+
+1. Wang, Jingyu, Zhenyu Ma, Feiping Nie, and Xuelong Li. "Progressive self-supervised clustering with novel category discovery." IEEE Transactions on Cybernetics (2021).
+  - Parameter-insensitive anchor-based graph obtained from balanced K-means and hierarchical K-means
+  - a novel representative point selected strategy based on a semisupervised framework
+  - Something to do with the laplacian!! and its decomposition. 
+
+1. Li, Yunfan, Peng Hu, Zitao Liu, Dezhong Peng, Joey Tianyi Zhou, and Xi Peng. "Contrastive clustering." In 2021 AAAI Conference on Artificial Intelligence (AAAI). 2021.
+  - One stage online clustering method (CC) [instance and cluster label contrast]
+    - TP: reveal that the row and column of the feature matrix intrinsically correspond to the instance and cluster representation
+    - TP: Similar to **Multitask network** setup
+      - Figure 1: Explains the idea
+    - PQ: why don't they use the entropy loss!! (making single node go up)
+  - Two different projection head (instance [row] and cluster label [column])
+    - Figure 2: Methods overview.
+  - NMI metric for clustering
+
 1. HaoChen, Jeff Z., Colin Wei, Adrien Gaidon, and Tengyu Ma. "Provable guarantees for self-supervised deep learning with spectral contrastive loss." Advances in Neural Information Processing Systems 34 (2021).
   - Proposes graph theoretic based spectral contrastive losses
 
@@ -1183,6 +1200,11 @@
     - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well-modeled.
 
 ## 2022
+
+
+1. Lee, Yoonho, Huaxiu Yao, and Chelsea Finn. "Diversify and Disambiguate: Learning From Underspecified Data." arXiv preprint arXiv:2202.03418 (2022).
+    - DivDis: Two stage framework (learn diverse hypothesis [pretraining] and Disambiguate by selecting one of these hypothesis [fine tune])
+    - Loss function of diversify is interesting
 
 1. Goyal, Priya, Quentin Duval, Isaac Seessel, Mathilde Caron, Mannat Singh, Ishan Misra, Levent Sagun, Armand Joulin, and Piotr Bojanowski. "Vision Models Are More Robust And Fair When Pretrained On Uncurated Images Without Supervision." arXiv preprint arXiv:2202.08360 (2022).
   - Utilized Uncurated Image data across the globe [LOL! GPU please] (fair group)

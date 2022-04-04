@@ -4,6 +4,11 @@
 
 ## 2021
 
+1. Li, Duo, Jie Hu, Changhu Wang, Xiangtai Li, Qi She, Lei Zhu, Tong Zhang, and Qifeng Chen. "Involution: Inverting the inherence of convolution for visual recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 12321-12330. 2021.
+  - inherent principles of standard convolution for vision tasks, specifically spatialagnostic and channel-specific.
+  - TP: Involution: a novel atomic operation for deep neural networks by inverting the aforementioned design principles of convolution
+    - Claim: Involution is a simple instantiation of the attention.
+  - involution operator could be leveraged as fundamental bricks to build the new generation of neural networks for visual recognition
 
 1. Liu, Ze, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu. "Video Swin Transformer." arXiv preprint arXiv:2106.13230 (2021).
 
@@ -173,7 +178,22 @@
 
 # Metrics and # Losses
 
+## 2021
 
+1. Kornblith, S., Chen, T., Lee, H., & Norouzi, M. (2021). Why do better loss functions lead to less transferable features?. Advances in Neural Information Processing Systems, 34.
+  - how the choice of training objective affects the transferability of the hidden representations of CNNs trained on ImageNet 
+    - **Experimental paper**
+    - Vanilla Cross-entropy loss as the final layers with different regularizers
+  - Too much class separation it bad!
+    - How did they measure the transfer accuracy?
+      - transferability of the fixed features of our ImageNet-pretrained models by training linear or k-nearest neighbors (kNN) classifiers to classify 8 different natural image datasets (section 3.1)
+  - Linear centered kernel alignment (CKA) provides a way to measure similarity of neural network representations that is invariant to rotation and isotropic scaling in representation space
+  - Important findings
+    - Better objectives improve accuracy, but do not transfer better
+    - The choice of objective primarily affects hidden representations close to the output
+    - Regularization and alternative losses increase class separation
+    - Greater class separation is associated with less transferable features
+  - limited to moderately sized datasets with moderately sized models, and our conclusions are limited to supervised classification settings
 
 ## 2020
 1. Boudiaf, Malik, Jérôme Rony, Imtiaz Masud Ziko, Eric Granger, Marco Pedersoli, Pablo Piantanida, and Ismail Ben Ayed. "A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses." In European Conference on Computer Vision, pp. 548-564. Springer, Cham, 2020.
