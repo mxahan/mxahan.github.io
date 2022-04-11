@@ -859,11 +859,18 @@
 ## 2021
 
 1. Zhong, Huasong, Jianlong Wu, Chong Chen, Jianqiang Huang, Minghua Deng, Liqiang Nie, Zhouchen Lin, and Xian-Sheng Hua. "Graph contrastive clustering." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 9224-9233. 2021.
+  - Well they use some sort of supervised information about latent classes.
+    - Not directly the instance contrastive approach.
+  - *representation:* a graph Laplacian based contrastive loss is proposed (discriminative and clustering-friendly features).
+  - *assignment:* a novel graph-based contrastive learning strategy is proposed (compact clustering assignments.)
+  - Overveiw in Figure 2
+  - However Heavy computations
+  - Math on note 
 
 1. Wang, Jingyu, Zhenyu Ma, Feiping Nie, and Xuelong Li. "Progressive self-supervised clustering with novel category discovery." IEEE Transactions on Cybernetics (2021).
   - Parameter-insensitive anchor-based graph obtained from balanced K-means and hierarchical K-means
   - a novel representative point selected strategy based on a semisupervised framework
-  - Something to do with the laplacian!! and its decomposition. 
+  - Something to do with the laplacian!! and its decomposition.
 
 1. Li, Yunfan, Peng Hu, Zitao Liu, Dezhong Peng, Joey Tianyi Zhou, and Xi Peng. "Contrastive clustering." In 2021 AAAI Conference on Artificial Intelligence (AAAI). 2021.
   - One stage online clustering method (CC) [instance and cluster label contrast]
@@ -877,13 +884,14 @@
 
 1. HaoChen, Jeff Z., Colin Wei, Adrien Gaidon, and Tengyu Ma. "Provable guarantees for self-supervised deep learning with spectral contrastive loss." Advances in Neural Information Processing Systems 34 (2021).
   - Proposes graph theoretic based spectral contrastive losses
+  - [background for graph clustering](https://people.csail.mit.edu/dsontag/courses/ml14/notes/Luxburg07_tutorial_spectral_clustering.pdf)
 
 1. Jahanian, Ali, Xavier Puig, Yonglong Tian, and Phillip Isola. "Generative models as a data source for multiview representation learning." arXiv preprint arXiv:2106.05258 (2021).
   - RQ: why bother using dataset when you have generator!! (used no real-data)
     - off-the-shelf image generator to get multiview data
     - Requires careful sampling and training method (!!!)
       - *Hypothesis*: Generator (a organized copy of compressed dataset)
-  -  we provide an exploratory study of representation learning in the setting of synthetic data sampled from pre-trained generative models:
+  - We provide an exploratory study of representation learning in the setting of synthetic data sampled from pre-trained generative models:
   - **Assumption** Generator is able to get a good multiview data (sufficient capable generator)
   - **Findings**: i) CL can be naturally extended to learning from generative samples (different “views” of the data are created via transformations in the model’s latent space) ii) further can be combined with data augmentation iii) sub-logarithmic performance improvement with generator  
   - Interesting related work section

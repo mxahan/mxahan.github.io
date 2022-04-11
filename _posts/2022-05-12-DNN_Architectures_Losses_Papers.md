@@ -181,7 +181,7 @@
 ## 2021
 
 1. Kornblith, S., Chen, T., Lee, H., & Norouzi, M. (2021). Why do better loss functions lead to less transferable features?. Advances in Neural Information Processing Systems, 34.
-  - how the choice of training objective affects the transferability of the hidden representations of CNNs trained on ImageNet 
+  - how the choice of training objective affects the transferability of the hidden representations of CNNs trained on ImageNet
     - **Experimental paper**
     - Vanilla Cross-entropy loss as the final layers with different regularizers
   - Too much class separation it bad!
