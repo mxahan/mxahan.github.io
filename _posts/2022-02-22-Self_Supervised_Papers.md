@@ -858,6 +858,27 @@
 
 ## 2021
 
+1. Zimmermann, Roland S., Yash Sharma, Steffen Schneider, Matthias Bethge, and Wieland Brendel. "Contrastive learning inverts the data generating process." In International Conference on Machine Learning, pp. 12979-12990. PMLR, 2021.
+  -  prove that *feedforward models* trained with objectives belonging to the commonly used *InfoNCE family* learn to implicitly *invert the underlying generative model* of the observed data
+    - proofs make certain *statistical assumptions* about the generative model, however, hold empirically even if these assumptions are severely violated
+  - highlights a fundamental connection between CL, generative modeling, and nonlinear ICA
+
+1. Cui, Jiequan, Zhisheng Zhong, Shu Liu, Bei Yu, and Jiaya Jia. "Parametric contrastive learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 715-724. 2021.
+  - Application scenario: Unbalanced classes
+  - tackle long-tailed recognition
+    - Too much **complex paper** for then.
+
+
+1. Kuang, Haofei, Yi Zhu, Zhi Zhang, Xinyu Li, Joseph Tighe, Sören Schwertfeger, Cyrill Stachniss, and Mu Li. "Video Contrastive Learning with Global Context." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 3195-3204. 2021.
+  - Why we require the global context though?? what is even global context??
+  - TP:  video-level CL method based on *segments* to formulate positive pairs
+  - Key contribution: uniformly divide the video into several segments, and randomly pick a clip from each segment (anchor) and randomly pick a clip from each segment again to form the positive tuple
+    - a temporal order regularization term (enforce the inherent video sequential structure)
+  - Video-level contrastive learning (VCLR)
+  - Well! they contrast within contrast!! (although different head for losses)
+  - applied to dataset with notion of global and local tasks.
+  - Segment losses: Frame shuffling reformulated as classification problem
+
 1. Zhong, Huasong, Jianlong Wu, Chong Chen, Jianqiang Huang, Minghua Deng, Liqiang Nie, Zhouchen Lin, and Xian-Sheng Hua. "Graph contrastive clustering." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 9224-9233. 2021.
   - Well they use some sort of supervised information about latent classes.
     - Not directly the instance contrastive approach.
@@ -865,7 +886,7 @@
   - *assignment:* a novel graph-based contrastive learning strategy is proposed (compact clustering assignments.)
   - Overveiw in Figure 2
   - However Heavy computations
-  - Math on note 
+  - Math on note
 
 1. Wang, Jingyu, Zhenyu Ma, Feiping Nie, and Xuelong Li. "Progressive self-supervised clustering with novel category discovery." IEEE Transactions on Cybernetics (2021).
   - Parameter-insensitive anchor-based graph obtained from balanced K-means and hierarchical K-means
@@ -1209,6 +1230,14 @@
 
 ## 2022
 
+1. Hoffmann, David T., Nadine Behrmann, Juergen Gall, Thomas Brox, and Mehdi Noroozi. "Ranking Info Noise Contrastive Estimation: Boosting Contrastive Learning via Ranked Positives." arXiv preprint arXiv:2201.11736 (2022).
+  - TP: New loss function: Ranking Info Noise Contrastive Estimation (RINCE) (modified InfoNCE losses)
+    - preserved the ranked ordering of the InfoNCE loss. (not all negatives are equal)
+      - Okay: Now how?: Does it use the supervised information!!!
+        - Requires a strong notion of hierarchical positive sets!!
+        - Very irritating formulation [equation 5] - learn to avoid such
+        - Variation of temperature allows ranking (weight of the losses)
+      - Application: Class similarities and gradual changes in video (!!)
 
 1. Lee, Yoonho, Huaxiu Yao, and Chelsea Finn. "Diversify and Disambiguate: Learning From Underspecified Data." arXiv preprint arXiv:2202.03418 (2022).
     - DivDis: Two stage framework (learn diverse hypothesis [pretraining] and Disambiguate by selecting one of these hypothesis [fine tune])

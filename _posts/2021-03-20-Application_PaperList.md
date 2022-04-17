@@ -240,8 +240,24 @@ This blog contains state of the art application and research on different applic
     - What will be the loss function for resize? (architecture: Figure 3)
     - Wait: are the extracting another feature! (calling it as resizer!)
   - ImageNet experiment, uses different model
+  -  designing novel regularizers without class-dependent bias remains an open research question
 
 ## 2022
+
+1. Balestriero, Randall, Leon Bottou, and Yann LeCun. "The Effects of Regularization and Data Augmentation are Class Dependent." arXiv preprint arXiv:2204.03632 (2022).
+  - Aims to understand the impact of regularization
+  - Discuss the impacts of two regularizers (implicit [model independent] regu: DA and explicit regu: weight decay [L2 norm on weights]) [very specific research problem]
+    - Key finding:  DA or weight decay produce a model with a reduced complexity that is unfair across classes. The optimal amount of DA or weight decay found from cross-validation leads to disastrous model performances on some classes.
+      - demonstrate that when employing regularization such as DA or weight decay, a significant bias is introduced into the trained model
+      - Regu introduces bias (mostly good): HOWEVER, the bias introduced by regularization treats classes differently, including on transfer learning
+    - Search for ever increasing generalization performance (averaged over all classes and samples) has left us with models and regularizers that silently sacrifice performances on some classes.
+      - the regularized model exhibits strong per-class favoritism i.e. while the average test accuracy over all classes improves when employing regularization, it is at the cost of the model becoming arbitrarily inaccurate on some specific classes
+    - DA introduce bias but not necessarily balanced throughout all classes
+      - DA that is not label preserving introduce bias.
+      - Unchecked Uniform DA the average test accuracy for overall classes, and decrease in some per-class test accuracies
+    - Weight decay also create class dependent bias models
+      - even for uninformative regularizers such as weight decay a per-class bias is introduced, reducing performances for some of the classes
+    - The Class-Dependent Bias Transfers to Other Downstream Tasks
 
 1. Balestriero, Randall, Ishan Misra, and Yann LeCun. "A Data-Augmentation Is Worth A Thousand Samples: Exact Quantification From Analytical Augmented Sample Moments." arXiv preprint arXiv:2202.08325 (2022).
   - Theoretically analyze the effect of DA by studying:

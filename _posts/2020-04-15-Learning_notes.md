@@ -24,6 +24,11 @@ sudo kill PID -85954
 
 If it doesn't work, I am afraid it might require the reboot :( .
 
+### Bluetooth Headphone connection Ubuntu
+Well I did many things
+The following worked finally. not sure if it was sole responsible of sum of many previous things. However, 
+https://kumarvinay.com/how-to-enable-bluetooth-headset-microphone-support-in-ubuntu-20-04/
+
 ## Docker
 
 The most important thing regarding the docker is the concept of images and container. Images stay in locally, we open container from images each time. There are vice versa too. The image can be think of the class and container are class instances. Container starts and gets deleted unless there are volume assignment. The docker is used to run virtual machine inside os or virtual os. There are tons of tutorial available. I am going to make my own collection based on other.
