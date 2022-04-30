@@ -9,6 +9,48 @@ This blog contains state of the art application and research on different applic
 
 # Multi View Application
 
+# Open-Set Recognition problem (OSR)
+
+## 2022
+
+1. Dietterich, Thomas G., and Alexander Guyer. "The Familiarity Hypothesis: Explaining the Behavior of Deep Open Set Methods." arXiv preprint arXiv:2203.02486 (2022).
+  - GAP: Detecting such “novel category” objects is formulated as an anomaly detection problem
+  - TP demonstrate: the Familiarity Hypothesis that these methods succeed because they are detecting the absence of familiar learned features rather than the presence of novelty
+    - reviews evidence from the literature (how to show them!!) and presents additional evidence and  suggest some promising research directions.
+    - Looked into the penultimate layer activation norm (low for unseen classes): as Network was not activated enough [no feature found!!]
+  - Claim: computer vision systems should master two functions: (a) detecting when an object belongs to a new category [TP] (b) learning to recognize that new category
+  - The Familiarity Hypothesis (FH): **The standard model succeeds by detecting the absence of familiar features in an image rather than by detecting the presence of novel features in the image.**
+  - interesting ways to find feature activation [validity!!]
+  - Discussion section is a **gem**!!
+
+
+## 2021
+
+1. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
+  - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
+  - RQ: whether a well-trained closed-set classifier can perform as well as recent algorithms
+  - TP: show that the open-set performance of a classifier can be improved by enhancing its closed-set accuracy
+     - TP: simentic shift benchmark??
+  - Interested related works: Out-of-Distribution (OOD) detection, novelty detection, anomaly detection, novel category discovery, novel feature discovery
+  - Different Baseline: Maximum Softmax probability (MSP), ARPL: Reciprocal point learning, (varies on how to calculate the confidence score)
+
+1. Kodama, Yuto, Yinan Wang, Rei Kawakami, and Takeshi Naemura. "Open-set Recognition with Supervised Contrastive Learning." In 2021 17th International Conference on Machine Vision and Applications (MVA), pp. 1-5. IEEE, 2021.
+  - TP: Explicitly uses distance learning (CL!!) to obtain the feature space for the open-set problem
+    - Supcon, EVT to find the normality score.
+
+## 2020
+
+1. Geng, Chuanxing, Sheng-jun Huang, and Songcan Chen. "Recent advances in open set recognition: A survey." IEEE transactions on pattern analysis and machine intelligence 43, no. 10 (2020): 3614-3631.
+  - Very good terminologies to get
+  - Four types of class categories: Known known class (KKC), K Unknown C (KUC), UKC: provided side information, UUC
+    - Figure 2 demonstrate goal for OSR
+
+## 2018 and Earlier
+
+1. Scheirer, Walter J., Anderson de Rezende Rocha, Archana Sapkota, and Terrance E. Boult. "Toward open set recognition." IEEE transactions on pattern analysis and machine intelligence 35, no. 7 (2012): 1757-1772.
+  - “open set” recognition: incomplete world knowledge is present at training, and unknown classes can be submitted during testing
+  - TP:  “1-vs-Set Machine,” which sculpts a decision space from the marginal distances of a 1-class or binary SVM with a linear kernel
+
 # Domain Adaptation
 
 ## 2020
@@ -162,6 +204,8 @@ This blog contains state of the art application and research on different applic
   - (i) The role of inductive biases and implicit and explicit supervision should be made explicit: unsupervised model selection persists as a key question. (ii) practical benefits of enforcing a specific notion of disentanglement of the learned representations should be demonstrated.
 
 ## 2018
+
+1. Hsieh, Jun-Ting, Bingbin Liu, De-An Huang, Li F. Fei-Fei, and Juan Carlos Niebles. "Learning to decompose and disentangle representations for video prediction." Advances in neural information processing systems 31 (2018).
 
 1. Zamir, Amir R., Alexander Sax, William Shen, Leonidas J. Guibas, Jitendra Malik, and Silvio Savarese. "Taskonomy: Disentangling task transfer learning." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3712-3722. 2018.
   - Encoder decoder (VAE) set up for different self-supervised pretext tasks and experimentation  on the transfer learning.

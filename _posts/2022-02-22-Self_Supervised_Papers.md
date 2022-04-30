@@ -659,7 +659,7 @@
   - Multistage pretraining
   - Experimented with VQA and others. image language
 
-1. Purushwalkam, Senthil, and Abhinav Gupta. "Demystifying contrastive self-supervised learning: Invariances, augmentations and dataset biases." arXiv preprint arXiv:2007.13916 (2020).
+1. Purushwalkam, Senthil, and Abhinav Gupta. "demystifying contrastive self-supervised learning: Invariances, augmentations and dataset biases." arXiv preprint arXiv:2007.13916 (2020).
   - object detection and classification
   - quantitative experiment to Demystify CL gains! (reason behind success)
     - Observation1: MOCO and PIRL (occlusion invariant)
@@ -858,6 +858,26 @@
 
 ## 2021
 
+1. Diba, Ali, Vivek Sharma, Reza Safdari, Dariush Lotfi, Saquib Sarfraz, Rainer Stiefelhagen, and Luc Van Gool. "Vi2clr: Video and image for visual contrastive learning of representation." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1502-1512. 2021.
+  - Joint video and image representation learning (kinda new data sampling approach for CL)
+    - Experiment: action recog, object detection, image.
+    - C center NCE loss for joint representation [requires tricky computation]
+      - Concat representation of both and pass through more MLP for Centre loss
+      - Kinda cluster loss.
+
+1. Nan, Guoshun, Rui Qiao, Yao Xiao, Jun Liu, Sicong Leng, Hao Zhang, and Wei Lu. "Interventional video grounding with dual contrastive learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 2765-2775. 2021.
+  - [Video Understanding]
+  - Gap: models may suffer from spurious correlations between the language and video features due to the dataset selection bias
+  - TP: used some form of causal inference (Interventional video grounding) based on Structural causal model
+  - a dual CL approach (DCL) to better align the text and video i) query and video clips, and the ii) between start/end frames of a target moment and the others within a video [figure 2 - trivial approach]
+
+1. Wang, Yu, Jingyang Lin, Jingjing Zou, Yingwei Pan, Ting Yao, and Tao Mei. "Improving Self-supervised Learning with Automated Unsupervised Outlier Arbitration." Advances in Neural Information Processing Systems 34 (2021).
+  - Chanllanges the instance label DA for selfsupervised
+    - argue that the existing DA for positive views naturally introduces out-of-distribution (OOD) samples that undermine the downstream tasks.
+    - introduce a lightweight latent variable model UOTA, targeting the view sampling issue for SSL
+    - adaptively searches for the most important sampling region to produce views, and provides viable choice for outlier-robust SSL
+    - explore the potential OOD noise issue for SSL approaches.
+
 1. Zimmermann, Roland S., Yash Sharma, Steffen Schneider, Matthias Bethge, and Wieland Brendel. "Contrastive learning inverts the data generating process." In International Conference on Machine Learning, pp. 12979-12990. PMLR, 2021.
   -  prove that *feedforward models* trained with objectives belonging to the commonly used *InfoNCE family* learn to implicitly *invert the underlying generative model* of the observed data
     - proofs make certain *statistical assumptions* about the generative model, however, hold empirically even if these assumptions are severely violated
@@ -884,7 +904,7 @@
     - Not directly the instance contrastive approach.
   - *representation:* a graph Laplacian based contrastive loss is proposed (discriminative and clustering-friendly features).
   - *assignment:* a novel graph-based contrastive learning strategy is proposed (compact clustering assignments.)
-  - Overveiw in Figure 2
+  - Overview in Figure 2
   - However Heavy computations
   - Math on note
 
@@ -892,6 +912,7 @@
   - Parameter-insensitive anchor-based graph obtained from balanced K-means and hierarchical K-means
   - a novel representative point selected strategy based on a semisupervised framework
   - Something to do with the laplacian!! and its decomposition.
+  - related to OSR
 
 1. Li, Yunfan, Peng Hu, Zitao Liu, Dezhong Peng, Joey Tianyi Zhou, and Xi Peng. "Contrastive clustering." In 2021 AAAI Conference on Artificial Intelligence (AAAI). 2021.
   - One stage online clustering method (CC) [instance and cluster label contrast]
@@ -1007,6 +1028,10 @@
   - This paper: studies hardness aware properties (parameter in loss function).
 
 1. Pan, Tian, Yibing Song, Tianyu Yang, Wenhao Jiang, and Wei Liu. "Videomoco: Contrastive video representation learning with temporally adversarial examples." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11205-11214. 2021.
+  - TP:  adversarial learning as a temporal data augmentation strategy to improve feature representations.
+    - The output of ConvLSTM predicts the importance of each frame and drops some of them.
+    - C3D architecture as our encoder.
+    - An extra generator to kinda get hard negative query and temporal decay for the keys.
 
 1. Xu, Jiarui, and Xiaolong Wang. "Rethinking Self-supervised Correspondence Learning: A Video Frame-level Similarity Perspective." arXiv preprint arXiv:2103.17263 (2021).
 
@@ -1230,6 +1255,19 @@
 
 ## 2022
 
+1. Karim, Nazmul, Mamshad Nayeem Rizve, Nazanin Rahnavard, Ajmal Mian, and Mubarak Shah. "UNICON: Combating Label Noise Through Uniform Selection and Contrastive Learning." arXiv preprint arXiv:2203.14542 (2022).
+  - SOTA: To combat label noise, : i) label correction and ii) sample separation
+    - employ sort of sample selection mechanism to select a possibly clean data subset
+    - an off-the-shelf semi-supervised learning method is used for training where rejected samples are treated as unlabeled data.
+    - **Issues:** TP shows that current selection methods disproportionately select samples from easy (fast learnable) classes and create class imbalance. [close claim with LeCunn's DA paper [2022]]
+  - TP: UNICON: noble! **sample selection method**, robust to high label noise
+    - a JS divergence based uniform selection mechanism (no probabilistic modelling or hyperparameter tuning)
+      - Figure 1 could be more efficient !! just use two of them and a loop.
+    - Class layer and CL projection layer in parallel.
+    - Computational issues! divergence for all the samples!!
+    - Section 4.1 reveals all.
+  - More of a Semi-sup paper, CL part is auxiliary. [anyways]
+
 1. Hoffmann, David T., Nadine Behrmann, Juergen Gall, Thomas Brox, and Mehdi Noroozi. "Ranking Info Noise Contrastive Estimation: Boosting Contrastive Learning via Ranked Positives." arXiv preprint arXiv:2201.11736 (2022).
   - TP: New loss function: Ranking Info Noise Contrastive Estimation (RINCE) (modified InfoNCE losses)
     - preserved the ranked ordering of the InfoNCE loss. (not all negatives are equal)
@@ -1244,7 +1282,7 @@
     - Loss function of diversify is interesting
 
 1. Goyal, Priya, Quentin Duval, Isaac Seessel, Mathilde Caron, Mannat Singh, Ishan Misra, Levent Sagun, Armand Joulin, and Piotr Bojanowski. "Vision Models Are More Robust And Fair When Pretrained On Uncurated Images Without Supervision." arXiv preprint arXiv:2202.08360 (2022).
-  - Utilized Uncurated Image data across the globe [LOL! GPU please] (fair group)
+  - Utilized Uncurated Image data across the globe [LOL! GPU please] (fair!! group): Jokes: Guys be fair in GPU usage.
     - Dense 10 Million model params
     - 50 benchmarks including fairness, robustness to distribution shift, geographical diversity, fine grained recognition, image copy detection and many image classification datasets
   - obvious result: the more data the better
