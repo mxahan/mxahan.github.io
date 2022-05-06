@@ -262,7 +262,7 @@
   - Student takes query - matches with positive keys from teacher and contrast with negative keys from the teacher network.
   - Equation 20 is cross entropy (stupid notation)
   - Key contribution: New loss function: 3.4 eq21
-  - [notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_representation_distillation.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/contrastive_representation_distillation.pdf" width="100%" height="850px"/>
 
 1. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
   - present a framework for analyzing CL (is there any previous?)
@@ -581,14 +581,13 @@
   - Problem (2): Efficient sampling? sol:  efficient importance sampling!!! (consider lack of dissimilarity information)!!!
   - Section 3 most important!
   - section 4 interesting
-  - [Notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_sampling_debias_hardMining.pdf)
 
 1. Chuang, Ching-Yao, Joshua Robinson, Yen-Chen Lin, Antonio Torralba, and Stefanie Jegelka. "Debiased contrastive learning." Advances in Neural Information Processing Systems 33 (2020).
   - Sample bias [negatives are actually positive! since randomly sampled]
   - need unbiased - improves vision, NLP and reinforcement tasks.
   - Related to Positive unlabeled learning
   - interesting results
-  - [Notes](https://github.com/mxahan/PDFS_notes/blob/master/contrastive_sampling_debias_hardMining.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/contrastive_sampling_debias_hardMining.pdf" width="100%" height="850px"/>
 
 1. Zhao, Nanxuan, Zhirong Wu, Rynson WH Lau, and Stephen Lin. "What makes instance discrimination good for transfer learning?." arXiv preprint arXiv:2006.06606 (2020).
 
@@ -913,7 +912,7 @@
   - *assignment:* a novel graph-based contrastive learning strategy is proposed (compact clustering assignments.)
   - Overview in Figure 2
   - However Heavy computations
-  - Math on note
+  - <embed src="https://mxahan.github.io/PDF_files/contrastive_clustering.pdf" width="100%" height="850px"/>
 
 1. Wang, Jingyu, Zhenyu Ma, Feiping Nie, and Xuelong Li. "Progressive self-supervised clustering with novel category discovery." IEEE Transactions on Cybernetics (2021).
   - Parameter-insensitive anchor-based graph obtained from balanced K-means and hierarchical K-means
@@ -985,6 +984,7 @@
   - Requires asymmetric stop gradient (no weight sharing between two branches: allow mutlimodal)
   - As always interesting related work section. [related to decorrelation of barlow twin]
   - Network setup: Encoder and Expander [(1) eliminate the information by which the two representations differ, (2) expand the dimension in a non-linear fashion so that decorrelating the embedding variables will reduce the dependencies (not just the correlations) between the variables of the representation vector]
+ - <embed src="https://mxahan.github.io/PDF_files/vICReg.pdf" width="100%" height="850px"/>
 
 1. Ayush, Kumar, Burak Uzkent, Chenlin Meng, Kumar Tanmay, Marshall Burke, David Lobell, and Stefano Ermon. "Geography-aware self-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 10181-10190. 2021.
   - training methods that exploit the spatio-temporal structure (!) of remote sensing data (!!). [application to satellite dataset]
@@ -1292,6 +1292,7 @@
         - Very irritating formulation [equation 5] - learn to avoid such
         - Variation of temperature allows ranking (weight of the losses)
       - Application: Class similarities and gradual changes in video (!!)
+  - <embed src="https://mxahan.github.io/PDF_files/ranking_infonce.pdf" width="100%" height="850px"/>
 
 1. Lee, Yoonho, Huaxiu Yao, and Chelsea Finn. "Diversify and Disambiguate: Learning From Underspecified Data." arXiv preprint arXiv:2202.03418 (2022).
     - DivDis: Two stage framework (learn diverse hypothesis [pretraining] and Disambiguate by selecting one of these hypothesis [fine tune])

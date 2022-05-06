@@ -242,6 +242,7 @@
   - Experiment: Dataset - ModelNet40 and ShapeNet Core55,
   - Joint optimization with softmax losses
   - Benefits: require less samples
+  - <embed src="https://mxahan.github.io/PDF_files/triplet_center_loss.pdf" width="100%" height="850px"/>
 
 ## 2017
 1. Lin, Tsung-Yi, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. "Focal loss for dense object detection." In Proceedings of the IEEE international conference on computer vision, pp. 2980-2988. 2017.
