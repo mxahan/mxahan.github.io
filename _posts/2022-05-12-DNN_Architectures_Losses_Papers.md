@@ -174,7 +174,7 @@
 
 1. Srivastava, Nitish, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. "Dropout: a simple way to prevent neural networks from overfitting." The journal of machine learning research 15, no. 1 (2014): 1929-1958.
 
-# Metrics and # Losses
+# Metrics and Losses
 
 ## 2021
 
@@ -219,7 +219,6 @@
       - 3 similarities (self-similarity: S, Negative relative similarity: N, Positive relative similarity: P) [figure 2]
       - state-of-the-art performance on four image retrieval benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop))
   - [github notes]
-  - <a href= "mxahan.github.io/PDF_files/msgpw.pdf" target="_blank">PDF.</a>
 
 1. Cheung, Brian, Alex Terekhov, Yubei Chen, Pulkit Agrawal, and Bruno Olshausen. "Superposition of many models into one." arXiv preprint arXiv:1902.05522 (2019).
   - Multiply weights to project them in orthogonal space and sum them.
