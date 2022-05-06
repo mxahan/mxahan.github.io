@@ -1,7 +1,5 @@
 # Architectural contributions
 
-
-
 ## 2021
 
 1. Li, Duo, Jie Hu, Changhu Wang, Xiangtai Li, Qi She, Lei Zhu, Tong Zhang, and Qifeng Chen. "Involution: Inverting the inherence of convolution for visual recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 12321-12330. 2021.
@@ -221,7 +219,7 @@
       - 3 similarities (self-similarity: S, Negative relative similarity: N, Positive relative similarity: P) [figure 2]
       - state-of-the-art performance on four image retrieval benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop))
   - [github notes]
-  - <a href= "mxahan.github.io/Multi-similarity\with\GPW\for\deep\metric\learning.pdf" target="_blank">PDF.</a>
+  - <a href= "mxahan.github.io/PDF_files/msgpw.pdf" target="_blank">PDF.</a>
 
 1. Cheung, Brian, Alex Terekhov, Yubei Chen, Pulkit Agrawal, and Bruno Olshausen. "Superposition of many models into one." arXiv preprint arXiv:1902.05522 (2019).
   - Multiply weights to project them in orthogonal space and sum them.
