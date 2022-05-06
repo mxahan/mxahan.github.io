@@ -111,9 +111,9 @@
   - Experimented on Images
     - Compared with VAE, BiGAN, CPC
   - Evaluate represenation by Neural Dependency Measures (NDM)
-  - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images (-)
+  - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images
   - [personal note](https://github.com/mxahan/PDFS_notes/blob/master/deepinfomax_paper.pdf)
-  - <embed src="https://mxahan.github.io/PDFS_notes/deepinfomax_paper.pdf" width="100%" height="850px"/>
+  - <embed src="https://mxahan.github.io/PDF_files/deepinfomax_paper.pdf" width="100%" height="850px"/>
 
 1. Wu, Zhirong, Alexei A. Efros, and Stella X. Yu. "Improving generalization via scalable neighborhood component analysis." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 685-701. 2018.
  - SCNA (Modified version of the NCA approach)
