@@ -858,6 +858,12 @@
 
 ## 2021
 
+1. Li, R., Zhang, Y., Qiu, Z., Yao, T., Liu, D., & Mei, T. (2021). Motion-Focused Contrastive Learning of Video Representations. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 2105-2114).
+  - RQ: how important is the motion particularly for self-supervised video representation learning.
+  - TP: motion-centered CL (MCL)! compose a duet??
+  - i) MCL capitalizes on optical flow based data augmentations. ii) aligns gradient maps of the CNN layers to optical flow maps from S, T and ST perspectives (incorporate motion information in feature).
+    - 1) leveraging motion information in achieving DatAug, and 2) taking motion into account in optimizing learning
+
 1. Diba, Ali, Vivek Sharma, Reza Safdari, Dariush Lotfi, Saquib Sarfraz, Rainer Stiefelhagen, and Luc Van Gool. "Vi2clr: Video and image for visual contrastive learning of representation." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1502-1512. 2021.
   - Joint video and image representation learning (kinda new data sampling approach for CL)
     - Experiment: action recog, object detection, image.
@@ -1254,6 +1260,15 @@
     - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well-modeled.
 
 ## 2022
+
+1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
+  - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
+    - Siamese Network with masked augmentation!!
+    - Pretext task for Network: Vision transformer [data sampling approach]
+    - Low-shot detection
+    - Loss function (cross entropy with Mean entropy maximization regularization)
+  - Joint-embedding architecture avoids reconstruction
+    - TP leverages the idea of mask-denoising while avoiding pixel and token-level reconstruction
 
 1. Karim, Nazmul, Mamshad Nayeem Rizve, Nazanin Rahnavard, Ajmal Mian, and Mubarak Shah. "UNICON: Combating Label Noise Through Uniform Selection and Contrastive Learning." arXiv preprint arXiv:2203.14542 (2022).
   - SOTA: To combat label noise, : i) label correction and ii) sample separation

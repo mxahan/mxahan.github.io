@@ -180,6 +180,9 @@
 
 ## 2021
 
+1. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
+  -
+
 1. Kornblith, S., Chen, T., Lee, H., & Norouzi, M. (2021). Why do better loss functions lead to less transferable features?. Advances in Neural Information Processing Systems, 34.
   - how the choice of training objective affects the transferability of the hidden representations of CNNs trained on ImageNet
     - **Experimental paper**
@@ -218,6 +221,7 @@
       - 3 similarities (self-similarity: S, Negative relative similarity: N, Positive relative similarity: P) [figure 2]
       - state-of-the-art performance on four image retrieval benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop))
   - [github notes]
+  - <a href= "mxahan.github.io/Multi-similarity\with\GPW\for\deep\metric\learning.pdf" target="_blank">PDF.</a>
 
 1. Cheung, Brian, Alex Terekhov, Yubei Chen, Pulkit Agrawal, and Bruno Olshausen. "Superposition of many models into one." arXiv preprint arXiv:1902.05522 (2019).
   - Multiply weights to project them in orthogonal space and sum them.
