@@ -62,8 +62,10 @@
   - TP: Two pathway model (Slow {low fps} and fast {high fps})
     - slow is the heavyweight computation (higher number of channel) and fast is the lightweight computation (lower number of channel)
     - Two pathway fused by lateral connections (fast to slow)
+    - Table 1: summarizes the model 
   - Experiments: kinetics, charades, AVA dataset
   - Nice ablation study sections
+  - Non-degenerate temporal filter (CNN filter with temporal kernel size >1)
 
 1. Radosavovic, Ilija, Justin Johnson, Saining Xie, Wan-Yen Lo, and Piotr Dollár. "On network design spaces for visual recognition." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1882-1890. 2019.
 
@@ -179,7 +181,15 @@
 ## 2021
 
 1. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
-  -
+  - New framework for loss function (taylor series expansion of log function)
+  - PolyLoss allows the adjustment of polynomial bases depending on the tasks and datasets (subsumes cross-entropy loss and focal loss as special cases)
+    - Experiment to support the requirement of adjustment.
+    - Introduces an extra hyperparameters
+  - Contributions: i) insight of common losses ii)  intuitive understanding of requirement to design different loss functions tailored to different imbalanced datasets!!
+  - Proposes to manipulate the weight so the polynomial components
+    - modifying the polynomial weights helps to go beyond the CE loss accuracy?
+      - is it individual class dependent? For all classes or biased setup?
+    - *the idea is to provide extra weights for the initial terms*
 
 1. Kornblith, S., Chen, T., Lee, H., & Norouzi, M. (2021). Why do better loss functions lead to less transferable features?. Advances in Neural Information Processing Systems, 34.
   - how the choice of training objective affects the transferability of the hidden representations of CNNs trained on ImageNet

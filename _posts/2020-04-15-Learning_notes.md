@@ -26,8 +26,14 @@ If it doesn't work, I am afraid it might require the reboot :( .
 
 ### Bluetooth Headphone connection Ubuntu
 Well I did many things
-The following worked finally. not sure if it was sole responsible of sum of many previous things. However, 
+The following worked finally. not sure if it was sole responsible of sum of many previous things. However,
 https://kumarvinay.com/how-to-enable-bluetooth-headset-microphone-support-in-ubuntu-20-04/
+
+After following those, I still require to run the following command everytime after I reconnect my bluetooth device. 
+
+```
+systemctl --user --now enable pipewire-media-session.serviceon.
+```
 
 ## Docker
 

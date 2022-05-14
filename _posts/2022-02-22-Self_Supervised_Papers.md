@@ -860,9 +860,16 @@
 
 1. Li, R., Zhang, Y., Qiu, Z., Yao, T., Liu, D., & Mei, T. (2021). Motion-Focused Contrastive Learning of Video Representations. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 2105-2114).
   - RQ: how important is the motion particularly for self-supervised video representation learning.
-  - TP: motion-centered CL (MCL)! compose a duet??
+  - TP: motion-centered CL (MCL) [kind of augmentation approach]! compose a duet??
   - i) MCL capitalizes on optical flow based data augmentations. ii) aligns gradient maps of the CNN layers to optical flow maps from S, T and ST perspectives (incorporate motion information in feature).
     - 1) leveraging motion information in achieving DatAug, and 2) taking motion into account in optimizing learning
+    - Experiment: R(2+1)D models, UCF and kinetics dataset.
+  - Motion estimation and motion-focused video augmentation.
+    - optical flow (TV-L1 based) based motion estimation.
+    - using gradinent in the loss function {match with the flow estimation.}
+      - Whats the motivation?  (only 2% accuracy finally)
+      - Why we want average gradient to be equal to motion map?
+        - What if no motion at all (lying activities)
 
 1. Diba, Ali, Vivek Sharma, Reza Safdari, Dariush Lotfi, Saquib Sarfraz, Rainer Stiefelhagen, and Luc Van Gool. "Vi2clr: Video and image for visual contrastive learning of representation." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1502-1512. 2021.
   - Joint video and image representation learning (kinda new data sampling approach for CL)

@@ -27,6 +27,27 @@ This blog contains state of the art application and research on different applic
 ## 2021
 
 1. Chen, G., Peng, P., Wang, X., & Tian, Y. (2021). Adversarial reciprocal points learning for open set recognition. arXiv preprint arXiv:2103.00953.
+  - Target: reduce the empirical classification risk on the labeled known data and the open space risk on the potential unknown data simultaneously.
+  - TP formulate the open space risk problem from multi-class integration perspective, and model the unexploited extra-class space with a novel concept **Reciprocal Point**
+    - ARPL: minimize the overlap of known and unknown distributions without loss of known classification accuracy **by**
+      - RP is learned by the extra-class space with the corresponding known class
+      - the confrontation among multiple known categories are employed to reduce the empirical risk.!!
+      - an adversarial margin constraint to reduce the open space risk by limiting the latent open space constructed by RP!!
+      - an instantiated adversarial enhancement method generate diverse and confusing training samples (To estimate the unknown distribution from open space) [using RP and known classes]
+  - SOTA problems: Figure 1
+  - argue that not only the known classes but also the potential unknown deep space should be modeled in the training
+    - Well how? - By RP: - RP: Whats not something. (Reciprocal of the prototypical learning) [figure 3]
+      - **key Idea**: finds the non-catness and tell cat if otherwise happens (nice), however, is it that easy?? computationally possible
+      - Example based solutions!!
+      - kinda one vs all setting!! (centre for all other classes)
+  - Related work: Classifier with rejection option. OOD, Prototype learning
+  - Good problem formulation: The adversarial section constrain open space.
+  - Algo 1 (IDEA), **Algo 2 (implemntation details)**
+  - **Gems** in 3.4 section
+  - Adversarial setup for generating confusion samples. [Architecture in fig 5]
+  - TP: adds an extra entropy based terms with GAN G maximization.
+  - Look into the experimentation of the batch normalization.
+  - Somehow connected to the disentanglement settings.
 
 1. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
   - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
@@ -41,6 +62,10 @@ This blog contains state of the art application and research on different applic
     - Supcon, EVT to find the normality score.
 
 ## 2020
+
+1. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
+  - Reciprocal Point (RP), a potential representation of the extra-class space corresponding to each known category.
+    - sample is classified to known or unknown by the otherness with RP
 
 1. Geng, Chuanxing, Sheng-jun Huang, and Songcan Chen. "Recent advances in open set recognition: A survey." IEEE transactions on pattern analysis and machine intelligence 43, no. 10 (2020): 3614-3631.
   - Very good terminologies to get
