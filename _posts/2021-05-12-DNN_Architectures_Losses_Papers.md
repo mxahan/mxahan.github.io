@@ -62,7 +62,7 @@
   - TP: Two pathway model (Slow {low fps} and fast {high fps})
     - slow is the heavyweight computation (higher number of channel) and fast is the lightweight computation (lower number of channel)
     - Two pathway fused by lateral connections (fast to slow)
-    - Table 1: summarizes the model 
+    - Table 1: summarizes the model
   - Experiments: kinetics, charades, AVA dataset
   - Nice ablation study sections
   - Non-degenerate temporal filter (CNN filter with temporal kernel size >1)
@@ -71,6 +71,11 @@
 
 
 ## 2018
+
+1. Chen, L. C., Zhu, Y., Papandreou, G., Schroff, F., & Adam, H. (2018). Encoder-decoder with atrous separable convolution for semantic image segmentation. In Proceedings of the European conference on computer vision (ECCV) (pp. 801-818).
+   - Deeplab-V3 (semantic segmentation network)
+   - combine the advantages from both spatial pyramid pooling and encoder-decoder sturcture.
+   - explore the Xception model and apply the depthwise separable convolution to both Atrous Spatial Pyramid Pooling and decoder modules, resulting in a faster and stronger encoder-decoder network 
 
 1. Ulyanov, Dmitry, Andrea Vedaldi, and Victor Lempitsky. "Deep image prior." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 9446-9454. 2018.
   - Struction of the network matters (it contains information)

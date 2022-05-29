@@ -62,6 +62,8 @@
 
 ## 2018 and earlier
 
+1. Rasmus, A., Berglund, M., Honkala, M., Valpola, H., & Raiko, T. (2015). Semi-supervised learning with ladder networks. Advances in neural information processing systems, 28.
+
 1. Blum, Avrim, and Tom Mitchell. "Combining labeled and unlabeled data with co-training." In Proceedings of the eleventh annual conference on Computational learning theory, pp. 92-100. 1998.
   - Early semi-supervised learning (mathematical framework with graph setting)
     - Web page (and its augmentation)

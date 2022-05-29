@@ -52,6 +52,12 @@ if pretrain == 1:
     model.load_state_dict(wt["model_state"])
 ```
 
+However, to load the model zoo weight of slowfast 100 model do the followings
+
+```
+model = create_slowfast(model_depth=101, slowfast_fusion_conv_kernel_size = (5, 1, 1,))
+```
+
 ### Inferring using the model
 
 The pytorchvideo slowfast model takes list (formatted in a specific way) as input. It builds upon a class called *multiPathWayWithFuse* that takes list as input. Anyways, we require to do the following to infer using the model
@@ -156,4 +162,4 @@ model.blocks[6].proj = nn.Linear(in_features=2304, out_features=1000)
 
 However, beware of the following [bug](https://discuss.pytorch.org/t/pytorch-is-allowing-incorrect-matrix-multiplication-when-using-cuda/130664) of pytorch 1.9 version.
 
-Happy coding. 
+Happy coding.

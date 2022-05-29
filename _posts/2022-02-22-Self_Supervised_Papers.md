@@ -528,6 +528,7 @@
 
 1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
   - SwAV (online algorithm) [swapped assignments between multiple vies of same image]
+    - [awesome note](https://m0nads.wordpress.com/tag/sinkhorn-knopp-algorithm/)
   - Contrastive learning, clustering
   - Predict cluster from different representation, memory efficiency!
   - 'code' consistency between image and its transformation {target}

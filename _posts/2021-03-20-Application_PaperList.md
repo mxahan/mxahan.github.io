@@ -10,8 +10,32 @@ This blog contains state of the art application and research on different applic
 # Multi View Application
 
 # Open-Set Recognition problem (OSR)
+# Out-of-Distribution (OOD)
 
 ## 2022
+
+1. Vaze, S., Han, K., Vedaldi, A., & Zisserman, A. (2022). Generalized Category Discovery. arXiv preprint arXiv:2201.02609.
+  - leverages the CL trained vision transformers to assign labels directly through clustering.
+  - Existing recognition methods have several restrictive assumptions,  
+    - the unlabelled instances only coming from known — or unknown
+    - classes and the number of unknown classes being known a-priori.
+    - TP: **Challenges these** and propose GCD. (improved NCD)
+  - Approaches: Baseline, ViT, CL, Semi-supervised setup.
+    - Dataset: CIFAR10, CIFAR100 and ImageNet-100
+  - OSR: aims detect test-time images which do not belong to one of the labeled classes, does not require any further classification
+  - NCD: aim to discover new classes in the unlabelled set, prone to overfit.
+  - key insight is to leverage the strong ‘NN’ classification property of vision transformers along with CL
+    - TP: use of contrastive training and a semi-supervised k-means clustering
+    - TP: estimating the number of categories in unlabelled data
+  - Related works: Semi-supervised, OSR,
+
+1. Yang, H. M., Zhang, X. Y., Yin, F., Yang, Q., & Liu, C. L. (2020). Convolutional prototype network for open set recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence.
+ - CNN for representation learning but replaces the closed-world assumed softmax with an open-world oriented prototype model. [CPN]
+ - design several discriminative losses [OVA loss]
+ - propose a generative loss (maximizing the log-likelihood) to act as a latent regularization. [is that as vague as their earlier paper??]
+  - Nice but very easy: It bounds the class distance by some distance (eventually increases the **log(distance)** increases log likelihood)
+  - Discusses two rejection rules (distance based and probability based)
+    - Pretty straight forward
 
 1. Dietterich, Thomas G., and Alexander Guyer. "The Familiarity Hypothesis: Explaining the Behavior of Deep Open Set Methods." arXiv preprint arXiv:2203.02486 (2022).
   - GAP: Detecting such “novel category” objects is formulated as an anomaly detection problem
@@ -25,6 +49,30 @@ This blog contains state of the art application and research on different applic
 
 
 ## 2021
+
+1. Schott, L., von Kügelgen, J., Träuble, F., Gehler, P., Russell, C., Bethge, M., ... & Brendel, W. (2021). Visual representation learning does not generalize strongly within the same domain. arXiv preprint arXiv:2107.08221.
+  - Empirical paper to test if representation learning approaches correctly infer the generative factors of variation in simple datasets (visual tasks).
+  - To learn effective statistical relationships, the training data needs to cover most combinations of factors of variation (like shape, size, color, viewpoint, etc.) [exponential issues]
+    - large factor variation leads to out-of distribution.
+      - As soon as a factor of variation is outside the training distribution, models consistently predict previously observed value
+    - learning the underlying mechanisms behind the factors of variation should greatly reduce the need for training data and scale more with factors.
+    - underlying data generation process
+  - TP: Four dataset with various factors of variations. [dSprites, Shapes3D, MPI3D, celebglow]
+    -  shape, size, color, viewpoint, etc
+  - TP: models mostly struggle to learn the underlying mechanisms regardless of supervision signal and architecture.
+    - Experimented with different controllable factor of variations.
+  - Thoughts on assumption (inductive biases) for learning generalization
+    - Representation format: PCA
+    - Architectural bias: invariance and equivalence.
+  - Demonstrate empirical results by varying FoVs (6 in totals)
+    - Check for composition, interpolation, extrapolation, and decomposition (4.2)
+      - Modular performance (good on the in-distribution data)
+  - Good insights for different cases (section 5 conclusion)
+    - Disentanglement helps on downstream task but not necessarily in the OOD cases
+    - **empirically show that among a large variety of models, no tested model succeeds in generalizing to all our proposed OOD settings (extrapolation, interpolation, composition)**
+    - Instead of extrapolating, all models regress the OOD factor towards the mean in the training set
+    - The performance generally decreases when factors are OOD regardless of the supervision signal and architecture
+  - Reiterate the importance of the data. (Even gan fails to learn that)
 
 1. Chen, G., Peng, P., Wang, X., & Tian, Y. (2021). Adversarial reciprocal points learning for open set recognition. arXiv preprint arXiv:2103.00953.
   - Target: reduce the empirical classification risk on the labeled known data and the open space risk on the potential unknown data simultaneously.
@@ -44,7 +92,7 @@ This blog contains state of the art application and research on different applic
   - Good problem formulation: The adversarial section constrain open space.
   - Algo 1 (IDEA), **Algo 2 (implemntation details)**
   - **Gems** in 3.4 section
-  - Adversarial setup for generating confusion samples. [Architecture in fig 5]
+  - Adversarial setup for generating confusion samples. [Architecture in figure 5]
   - TP: adds an extra entropy based terms with GAN G maximization.
   - Look into the experimentation of the batch normalization.
   - Somehow connected to the disentanglement settings.
@@ -72,11 +120,37 @@ This blog contains state of the art application and research on different applic
   - Four types of class categories: Known known class (KKC), K Unknown C (KUC), UKC: provided side information, UUC
     - Figure 2 demonstrate goal for OSR
 
-## 2018 and Earlier
+## 2019 and Earlier
+
+1. Hsu, Yen-Chang, Zhaoyang Lv, and Zsolt Kira. "Learning to cluster in order to transfer across domains and tasks." arXiv preprint arXiv:1711.10125 (2017).
+  - perform tx learning across domains and tasks, formulating it as a problem of learning to cluster
+  - TP: i) design a loss function to regularize classification with a constrained clustering loss (learn a clustering network with the transferred similarity metric)!!
+  - TP: ii) for cross-task learning (unsupervised clustering with unseen categories) propose a framework to reconstruct and estimate the no of semantic clusters
+
+1. Han, K., Vedaldi, A., & Zisserman, A. (2019). Learning to discover novel visual categories via deep transfer clustering. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 8401-8409).
+  - problem of discovering novel object categories in an image collection
+  - assumption: prior knowledge of related but different image classes
+  - use such prior knowledge to reduce the ambiguity of clustering, and improve the quality of the newly discovered classes (how??)
+  - TP: i) Extend DEC ii) improve the algorithm by introducing a representation bottleneck, temporal ensembling, and consistency (how??) [a method to estimate the number of classes in the unlabelled data]
+    - ii) **modification:** account unlabeled data, include bottleneck, incorporate temporal ensemble and consistency.
+  - TP: o transfers knowledge from the known classes, using them as probes to diagnose different choices for the number of classes in the unlabelled subset.
+    - transfers knowledge from the known classes, using them as probes to diagnose different choices for the number of classes in the unlabelled subset.
+  - learn representation from labeled data and fine-tune using unlabeled data!!!
+  - Algorithm 1 [warm-up training, final training], algo 1 [estimate class no]
+    - learning model params and centre simultaneously.
 
 1. Scheirer, Walter J., Anderson de Rezende Rocha, Archana Sapkota, and Terrance E. Boult. "Toward open set recognition." IEEE transactions on pattern analysis and machine intelligence 35, no. 7 (2012): 1757-1772.
   - “open set” recognition: incomplete world knowledge is present at training, and unknown classes can be submitted during testing
   - TP:  “1-vs-Set Machine,” which sculpts a decision space from the marginal distances of a 1-class or binary SVM with a linear kernel
+
+1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3474-3482).
+  - lack of robustness for CNN is caused by the softmax layer (discriminative and based on the assumption of closed world)
+    - TP: Proposes convolutional prototype learning (CPL)
+      - design multiple classification criteria to train
+      - prototypical loss as regularizers
+      - Looks like requires a lot of computations!
+      - Put a constraint: classes need to be inside a circle [prototype loss]!!
+        - How the heck it got connected to generative model !!
 
 # Domain Adaptation
 
@@ -218,7 +292,11 @@ This blog contains state of the art application and research on different applic
 
 ## 2020
 1. Zhu, Yizhe, Martin Renqiang Min, Asim Kadav, and Hans Peter Graf. "S3VAE: Self-supervised sequential VAE for representation disentanglement and data generation." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6538-6547. 2020.
-  -
+
+1. Dittadi, A., Träuble, F., Locatello, F., Wüthrich, M., Agrawal, V., Winther, O., ... & Schölkopf, B. (2020). On the transfer of disentangled representations in realistic settings. arXiv preprint arXiv:2010.14407.
+  - Provide new dataset (1M simulated and real-world 1800 images)
+  - TP: propose new architectures to scale disentangled representation learning in realistic high-resolution settings and conduct a large-scale empirical study
+    - disentanglement is a good predictor for out-of-distribution (OOD) task performance.
 
 ## 2019
 
