@@ -2,6 +2,8 @@
 
 ## 2021
 
+1. Ren, S., Gao, Z., Hua, T., Xue, Z., Tian, Y., He, S., & Zhao, H. (2021). Co-advise: Cross inductive bias distillation. arXiv preprint arXiv:2106.12378.
+
 1. Li, Duo, Jie Hu, Changhu Wang, Xiangtai Li, Qi She, Lei Zhu, Tong Zhang, and Qifeng Chen. "Involution: Inverting the inherence of convolution for visual recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 12321-12330. 2021.
   - inherent principles of standard convolution for vision tasks, specifically spatialagnostic and channel-specific.
   - TP: Involution: a novel atomic operation for deep neural networks by inverting the aforementioned design principles of convolution
@@ -75,7 +77,7 @@
 1. Chen, L. C., Zhu, Y., Papandreou, G., Schroff, F., & Adam, H. (2018). Encoder-decoder with atrous separable convolution for semantic image segmentation. In Proceedings of the European conference on computer vision (ECCV) (pp. 801-818).
    - Deeplab-V3 (semantic segmentation network)
    - combine the advantages from both spatial pyramid pooling and encoder-decoder sturcture.
-   - explore the Xception model and apply the depthwise separable convolution to both Atrous Spatial Pyramid Pooling and decoder modules, resulting in a faster and stronger encoder-decoder network 
+   - explore the Xception model and apply the depthwise separable convolution to both Atrous Spatial Pyramid Pooling and decoder modules, resulting in a faster and stronger encoder-decoder network
 
 1. Ulyanov, Dmitry, Andrea Vedaldi, and Victor Lempitsky. "Deep image prior." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 9446-9454. 2018.
   - Struction of the network matters (it contains information)

@@ -50,6 +50,29 @@ This blog contains state of the art application and research on different applic
 
 ## 2021
 
+1. Zhong, Z., Zhu, L., Luo, Z., Li, S., Yang, Y., & Sebe, N. (2021). Openmix: Reviving known knowledge for discovering novel visual categories in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9462-9470).
+  - mix the unlabeled examples from an open set and the labeled examples from known classes
+    - non-overlapping labels and pseudo-labels are simultaneously mixed into a joint label distribution
+    - kinda *data augmentation* approach like MixUp
+      - generates training samples by incorporating both labeled and unlabeled samples
+    - Assumption: : 1) labeled samples of old classes are exactly clean, and 2) L intersection U = empty set.
+    - prevent the model from fitting on wrong pseudo-labels
+    - proposes simple baseline. 
+
+1. Zhao, B., & Han, K. (2021). Novel visual category discovery with dual ranking statistics and mutual knowledge distillation. Advances in Neural Information Processing Systems, 34.
+  - semantic partitions of unlabelled images (new classes) by leveraging a labelled dataset (contains different but relevant categories of images)
+  - two branch learning (one branch focusing on local part-level information and the other branch focusing on overall characteristics)
+  - dual ranking statistics on both branches to generate pseudo labels for training on the unlabelled data
+    - transfer knowledge from labelled data to unlabelled data,
+  -  introduce a mutual knowledge distillation method to allow information exchange and encourage agreement between the two branches for discovering new categories
+
+1. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2021). Autonovel: Automatically discovering and learning novel visual categories. IEEE Transactions on Pattern Analysis and Machine Intelligence.
+  - self-supervised learning to train the representation from scratch on the union of labelled and unlabelled data (avoid bias of labelled data) [low-level features]
+  - ranking statistics to transfer the model’s knowledge of the labelled classes [high level features]
+  - optimizing a joint objective function on the labelled and unlabelled subsets of the data
+  - Enable estimating the number of classes
+  - Utilization of average clustering accuracy (ACC) and Cluster validity index (CVI) [silohouette index]
+
 1. Schott, L., von Kügelgen, J., Träuble, F., Gehler, P., Russell, C., Bethge, M., ... & Brendel, W. (2021). Visual representation learning does not generalize strongly within the same domain. arXiv preprint arXiv:2107.08221.
   - Empirical paper to test if representation learning approaches correctly infer the generative factors of variation in simple datasets (visual tasks).
   - To learn effective statistical relationships, the training data needs to cover most combinations of factors of variation (like shape, size, color, viewpoint, etc.) [exponential issues]
@@ -110,6 +133,11 @@ This blog contains state of the art application and research on different applic
     - Supcon, EVT to find the normality score.
 
 ## 2020
+1. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2020). Automatically discovering and learning new visual categories with ranking statistics. arXiv preprint arXiv:2002.05714.
+  - hypothesize that a general notion of what constitutes a “good class” can be extracted from labeled to Unlabeled
+  - later paper worked on various ranking methods for unlabeled data.
+  - utilize the metrics of deep transfer clustering.
+  - very good visualization but kind of build on previous works.
 
 1. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
   - Reciprocal Point (RP), a potential representation of the extra-class space corresponding to each known category.
@@ -122,13 +150,23 @@ This blog contains state of the art application and research on different applic
 
 ## 2019 and Earlier
 
+1. Hsu, Y. C., Lv, Z., Schlosser, J., Odom, P., & Kira, Z. (2019). Multi-class classification without multi-class labels. arXiv preprint arXiv:1901.00544.
+  - a new strategy for multi-class classification (no class-specific labels) using pairwise similarity between examples
+  - present a probabilistic graphical model for it, and derive a loss function for DL
+  - generalizes to the supervised, unsupervised cross-task, and semi-supervised settings
+  - reduce the problem of classification to a meta problem (siamese network)
+    - has the vibe of student teacher model [MCL]
+    - pretty standard approach for forming a binary class from multi-class.
+
 1. Hsu, Yen-Chang, Zhaoyang Lv, and Zsolt Kira. "Learning to cluster in order to transfer across domains and tasks." arXiv preprint arXiv:1711.10125 (2017).
-  - perform tx learning across domains and tasks, formulating it as a problem of learning to cluster
+  - perform tx learning across domains and tasks, formulating it as a problem of learning to cluster [KCL]
   - TP: i) design a loss function to regularize classification with a constrained clustering loss (learn a clustering network with the transferred similarity metric)!!
   - TP: ii) for cross-task learning (unsupervised clustering with unseen categories) propose a framework to reconstruct and estimate the no of semantic clusters
+  - utilize the pairwise information in a fashion similar to constrained clustering
+    - LCO: pairwise similarity (pre-contratstive set up: matching network)
 
 1. Han, K., Vedaldi, A., & Zisserman, A. (2019). Learning to discover novel visual categories via deep transfer clustering. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 8401-8409).
-  - problem of discovering novel object categories in an image collection
+  - problem of discovering novel object categories in an image collection [DTC]
   - assumption: prior knowledge of related but different image classes
   - use such prior knowledge to reduce the ambiguity of clustering, and improve the quality of the newly discovered classes (how??)
   - TP: i) Extend DEC ii) improve the algorithm by introducing a representation bottleneck, temporal ensembling, and consistency (how??) [a method to estimate the number of classes in the unlabelled data]
