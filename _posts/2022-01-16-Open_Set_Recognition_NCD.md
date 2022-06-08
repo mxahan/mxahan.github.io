@@ -1,0 +1,233 @@
+# Open-Set Recognition problem (OSR)
+
+Here, we will review papers regarding novel class detection (NCD), Out of distribution detection (OOD) mostly in computer vision.
+
+
+
+- L for labeled
+- cl for contrastive learning
+- u for unlabeled or unknown
+- gt - ground truth  
+
+# Out-of-Distribution (OOD)
+
+## 2022
+
+1. Vaze, S., Han, K., Vedaldi, A., & Zisserman, A. (2022). Generalized Category Discovery. arXiv preprint arXiv:2201.02609.
+  - leverages the CL trained vision transformers to assign labels directly through clustering.
+  - Existing recognition methods have several restrictive assumptions,  
+    - the unlabelled instances only coming from known — or unknown
+    - classes and the number of unknown classes being known a-priori.
+    - TP: **Challenges these** and propose GCD. (improved NCD)
+  - Approaches: Baseline, ViT, CL, Semi-supervised setup.
+    - Dataset: CIFAR10, CIFAR100 and ImageNet-100
+  - OSR: aims detect test-time images which do not belong to one of the labeled classes, does not require any further classification
+  - NCD: aim to discover new classes in the unlabelled set, prone to overfit.
+  - key insight is to leverage the strong ‘NN’ classification property of vision transformers along with CL
+    - TP: use of contrastive training and a semi-supervised k-means clustering
+    - TP: *estimating the number of categories* in unlabelled data
+  - Related works: Semi-supervised, OSR,
+  - how that existing NCD methods are prone to overfit the labelled classes in this generalized setting
+  - CL and a semi-supervised k-means clustering to recognize images without a parametric classifier
+  - Approach overview:
+    - CL pretraining (ViT, DiNo pretrained) [kinda SCL setup]
+    - Label assignment with semi-supervised k-means (use a non-parametric method)
+      - Appendices [figure 4]
+      - utilization of [k++](https://towardsdatascience.com/understanding-k-means-k-means-and-k-medoids-clustering-algorithms-ad9c9fbf47ca#:~:text=K%2DMeans%2B%2B%20is%20a%20smart%20centroid%20initialization%20technique%20and,dataset%20from%20the%20selected%20centroid.) for smart initialization and clustering methods. [elbow for finding K?]
+
+1. Yang, H. M., Zhang, X. Y., Yin, F., Yang, Q., & Liu, C. L. (2020). Convolutional prototype network for open set recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence.
+ - CNN for representation learning but replaces the closed-world assumed softmax with an open-world oriented prototype model. [CPN]
+ - design several discriminative losses [OVA loss]
+ - propose a generative loss (maximizing the log-likelihood) to act as a latent regularization. [is that as vague as their earlier paper??]
+  - Nice but very easy: It bounds the class distance by some distance (eventually increases the **log(distance)** increases log likelihood)
+  - Discusses two rejection rules (distance based and probability based)
+    - Pretty straight forward
+
+1. Zhou, Y., Liu, P., & Qiu, X. (2022, May). KNN-Contrastive Learning for Out-of-Domain Intent Classification. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) (pp. 5129-5141).
+  - Modified contrastive loss KNN-CL (T)
+    - NLP works
+    - KNN clustering and contrastive learning.
+      - apply loss in different labels.
+
+
+1. Dietterich, Thomas G., and Alexander Guyer. "The Familiarity Hypothesis: Explaining the Behavior of Deep Open Set Methods." arXiv preprint arXiv:2203.02486 (2022).
+  - GAP: Detecting such “novel category” objects is formulated as an anomaly detection problem
+  - TP demonstrate: the Familiarity Hypothesis that these methods succeed because they are detecting the absence of familiar learned features rather than the presence of novelty
+    - reviews evidence from the literature (how to show them!!) and presents additional evidence and  suggest some promising research directions.
+    - Looked into the penultimate layer activation norm (low for unseen classes): as Network was not activated enough [no feature found!!]
+  - Claim: computer vision systems should master two functions: (a) detecting when an object belongs to a new category [TP] (b) learning to recognize that new category
+  - The Familiarity Hypothesis (FH): **The standard model succeeds by detecting the absence of familiar features in an image rather than by detecting the presence of novel features in the image.**
+  - interesting ways to find feature activation [validity!!]
+  - Discussion section is a **gem**!!
+
+
+## 2021
+
+1. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
+  - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
+    - favoring synergy between supervised and unsupervised learning
+    - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
+    - overview figure 2 [multihead network (L and U data)]
+      - replace multi-objective using the multitask setting.
+      - look at the **gradient flow strategy**
+    - similar idea of **swav**
+    - *dimension mismatch* in eq 4 and 5  
+      - can be fixed by altering Y and L in the eq 4
+
+1. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
+  - New framework for NCD [NCL]
+    - i) a encoder trained on the L to generates representations (a generic query sample and its neighbors are likely to share the same class)
+      - retrieve and aggregate pseudo-positive pairs with CL
+    - ii) propose to generate hard negatives by mixing L and U samples in the *feature space*.
+  - first idea: the local neighborhood of a query in the embedding space will contain samples most likely belong to the same semantic category (pseudo-+ve)
+    - *numerous positives* obtain a much stronger learning signal compared to the traditional CL with only two views
+  - second idea: address the better selection of -ve to further improve CL
+  - related works: negative mining.
+    - Their approach [figure 3]
+  - Well: add bunch of losses together for joint optimization.
+  - kind of avoid false-ve in CL
+  - Assumption of L intersection U = {}
+
+1. Zhong, Z., Zhu, L., Luo, Z., Li, S., Yang, Y., & Sebe, N. (2021). Openmix: Reviving known knowledge for discovering novel visual categories in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9462-9470).
+  - mix the unlabeled examples from an open set and the labeled examples from known classes
+    - non-overlapping labels and pseudo-labels are simultaneously mixed into a joint label distribution
+    - kinda *data augmentation* approach like MixUp
+      - generates training samples by incorporating both labeled and unlabeled samples
+    - Assumption: : 1) labeled samples of old classes are exactly clean, and 2) L intersection U = empty set.
+    - prevent the model from fitting on wrong pseudo-labels
+    - proposes simple baseline.
+    - effectively leveraging the labeled data during the unsupervised clustering in unlabeled data [unsupervised step described in section 3.1]
+    - compounds examples in two ways: 1) mix U examples with L samples; and 2) mix U examples with reliable anchors.
+
+1. Zhao, B., & Han, K. (2021). Novel visual category discovery with dual ranking statistics and mutual knowledge distillation. Advances in Neural Information Processing Systems, 34.
+  - semantic partitions of unlabelled images (new classes) by leveraging a labelled dataset (contains different but relevant categories of images)
+  - two branch learning (one branch focusing on local part-level information and the other branch focusing on overall characteristics)
+  - dual ranking statistics on both branches to generate pseudo labels for training on the unlabelled data
+    - transfer knowledge from labelled data to unlabelled data
+  -  introduce a mutual KD method to allow information exchange and encourage agreement between the two branches for discovering new categories
+
+1. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2021). Autonovel: Automatically discovering and learning novel visual categories. IEEE Transactions on Pattern Analysis and Machine Intelligence.
+  - self-supervised learning to train the representation from scratch on the union of labelled and unlabelled data (avoid bias of labelled data) [low-level features]
+  - ranking statistics to transfer the model’s knowledge of the labelled classes [high level features]
+  - optimizing a joint objective function on the labelled and unlabelled subsets of the data
+  - Enable estimating the number of classes
+  - Utilization of average clustering accuracy (ACC) and Cluster validity index (CVI) [silohouette index]
+
+1. Schott, L., von Kügelgen, J., Träuble, F., Gehler, P., Russell, C., Bethge, M., ... & Brendel, W. (2021). Visual representation learning does not generalize strongly within the same domain. arXiv preprint arXiv:2107.08221.
+  - Empirical paper to test if representation learning approaches correctly infer the generative factors of variation in simple datasets (visual tasks).
+  - To learn effective statistical relationships, the training data needs to cover most combinations of factors of variation (like shape, size, color, viewpoint, etc.) [exponential issues]
+    - large factor variation leads to out-of distribution.
+      - As soon as a factor of variation is outside the training distribution, models consistently predict previously observed value
+    - learning the underlying mechanisms behind the factors of variation should greatly reduce the need for training data and scale more with factors.
+    - underlying data generation process
+  - TP: Four dataset with various factors of variations. [dSprites, Shapes3D, MPI3D, celebglow]
+    -  shape, size, color, viewpoint, etc
+  - TP: models mostly struggle to learn the underlying mechanisms regardless of supervision signal and architecture.
+    - Experimented with different controllable factor of variations.
+  - Thoughts on assumption (inductive biases) for learning generalization
+    - Representation format: PCA
+    - Architectural bias: invariance and equivalence.
+  - Demonstrate empirical results by varying FoVs (6 in totals)
+    - Check for composition, interpolation, extrapolation, and decomposition (4.2)
+      - Modular performance (good on the in-distribution data)
+  - Good insights for different cases (section 5 conclusion)
+    - Disentanglement helps on downstream task but not necessarily in the OOD cases
+    - **empirically show that among a large variety of models, no tested model succeeds in generalizing to all our proposed OOD settings (extrapolation, interpolation, composition)**
+    - Instead of extrapolating, all models regress the OOD factor towards the mean in the training set
+    - The performance generally decreases when factors are OOD regardless of the supervision signal and architecture
+  - Reiterate the importance of the data. (Even gan fails to learn that)
+
+1. Chen, G., Peng, P., Wang, X., & Tian, Y. (2021). Adversarial reciprocal points learning for open set recognition. arXiv preprint arXiv:2103.00953.
+  - Target: reduce the empirical classification risk on the labeled known data and the open space risk on the potential unknown data simultaneously.
+  - TP formulate the open space risk problem from multi-class integration perspective, and model the unexploited extra-class space with a novel concept **Reciprocal Point**
+    - ARPL: minimize the overlap of known and unknown distributions without loss of known classification accuracy **by**
+      - RP is learned by the extra-class space with the corresponding known class
+      - the confrontation among multiple known categories are employed to reduce the empirical risk.!!
+      - an adversarial margin constraint to reduce the open space risk by limiting the latent open space constructed by RP!!
+      - an instantiated adversarial enhancement method generate diverse and confusing training samples (To estimate the unknown distribution from open space) [using RP and known classes]
+  - SOTA problems: Figure 1
+  - argue that not only the known classes but also the potential unknown deep space should be modeled in the training
+    - Well how? - By RP: - RP: Whats not something. (Reciprocal of the prototypical learning) [figure 3]
+      - **key Idea**: finds the non-catness and tell cat if otherwise happens (nice), however, is it that easy?? computationally possible
+      - Example based solutions!!
+      - kinda one vs all setting!! (centre for all other classes)
+  - Related work: Classifier with rejection option. OOD, Prototype learning
+  - Good problem formulation: The adversarial section constrain open space.
+  - Algo 1 (IDEA), **Algo 2 (implemntation details)**
+  - **Gems** in 3.4 section
+  - Adversarial setup for generating confusion samples. [Architecture in figure 5]
+  - TP: adds an extra entropy based terms with GAN G maximization.
+  - Look into the experimentation of the batch normalization.
+  - Somehow connected to the disentanglement settings.
+
+1. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
+  - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
+  - RQ: whether a well-trained closed-set classifier can perform as well as recent algorithms
+  - TP: show that the open-set performance of a classifier can be improved by enhancing its closed-set accuracy
+     - TP: simentic shift benchmark??
+  - Interested related works: Out-of-Distribution (OOD) detection, novelty detection, anomaly detection, novel category discovery, novel feature discovery
+  - Different Baseline: Maximum Softmax probability (MSP), ARPL: Reciprocal point learning, (varies on how to calculate the confidence score)
+
+1. Kodama, Yuto, Yinan Wang, Rei Kawakami, and Takeshi Naemura. "Open-set Recognition with Supervised Contrastive Learning." In 2021 17th International Conference on Machine Vision and Applications (MVA), pp. 1-5. IEEE, 2021.
+  - TP: Explicitly uses distance learning (CL!!) to obtain the feature space for the open-set problem
+    - Supcon, EVT to find the normality score.
+
+## 2020
+1. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2020). Automatically discovering and learning new visual categories with ranking statistics. arXiv preprint arXiv:2002.05714.
+  - hypothesize that a general notion of what constitutes a “good class” can be extracted from labeled to Unlabeled
+  - later paper worked on various ranking methods for unlabeled data.
+  - utilize the metrics of deep transfer clustering.
+  - very good visualization but kind of build on previous works.
+
+1. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
+  - Reciprocal Point (RP), a potential representation of the extra-class space corresponding to each known category.
+    - sample is classified to known or unknown by the otherness with RP
+
+1. Geng, Chuanxing, Sheng-jun Huang, and Songcan Chen. "Recent advances in open set recognition: A survey." IEEE transactions on pattern analysis and machine intelligence 43, no. 10 (2020): 3614-3631.
+  - Very good terminologies to get
+  - Four types of class categories: Known known class (KKC), K Unknown C (KUC), UKC: provided side information, UUC
+    - Figure 2 demonstrate goal for OSR
+
+## 2019 and Earlier
+
+1. Bendale, A., & Boult, T. E. (2016). Towards open set deep networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1563-1572).
+
+1. Hsu, Y. C., Lv, Z., Schlosser, J., Odom, P., & Kira, Z. (2019). Multi-class classification without multi-class labels. arXiv preprint arXiv:1901.00544.
+  - a new strategy for multi-class classification (no class-specific labels) using pairwise similarity between examples
+  - present a probabilistic graphical model for it, and derive a loss function for DL
+  - generalizes to the supervised, unsupervised cross-task, and semi-supervised settings
+  - reduce the problem of classification to a meta problem (siamese network)
+    - has the vibe of student teacher model [MCL]
+    - pretty standard approach for forming a binary class from multi-class.
+
+1. Hsu, Yen-Chang, Zhaoyang Lv, and Zsolt Kira. "Learning to cluster in order to transfer across domains and tasks." arXiv preprint arXiv:1711.10125 (2017).
+  - perform tx learning across domains and tasks, formulating it as a problem of learning to cluster [KCL]
+  - TP: i) design a loss function to regularize classification with a constrained clustering loss (learn a clustering network with the transferred similarity metric)!!
+  - TP: ii) for cross-task learning (unsupervised clustering with unseen categories) propose a framework to reconstruct and estimate the no of semantic clusters
+  - utilize the pairwise information in a fashion similar to constrained clustering
+    - LCO: pairwise similarity (pre-contratstive set up: matching network)
+
+1. Han, K., Vedaldi, A., & Zisserman, A. (2019). Learning to discover novel visual categories via deep transfer clustering. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 8401-8409).
+  - problem of discovering novel object categories in an image collection [DTC]
+  - assumption: prior knowledge of related but different image classes
+  - use such prior knowledge to reduce the ambiguity of clustering, and improve the quality of the newly discovered classes (how??)
+  - TP: i) Extend DEC ii) improve the algorithm by introducing a representation bottleneck, temporal ensembling, and consistency (how??) [a method to estimate the number of classes in the unlabelled data]
+    - ii) **modification:** account unlabeled data, include bottleneck, incorporate temporal ensemble and consistency.
+  - TP: o transfers knowledge from the known classes, using them as probes to diagnose different choices for the number of classes in the unlabelled subset.
+    - transfers knowledge from the known classes, using them as probes to diagnose different choices for the number of classes in the unlabelled subset.
+  - learn representation from labeled data and fine-tune using unlabeled data!!!
+  - Algorithm 1 [warm-up training, final training], algo 1 [estimate class no]
+    - learning model params and centre simultaneously.
+
+1. Scheirer, Walter J., Anderson de Rezende Rocha, Archana Sapkota, and Terrance E. Boult. "Toward open set recognition." IEEE transactions on pattern analysis and machine intelligence 35, no. 7 (2012): 1757-1772.
+  - “open set” recognition: incomplete world knowledge is present at training, and unknown classes can be submitted during testing
+  - TP:  “1-vs-Set Machine,” which sculpts a decision space from the marginal distances of a 1-class or binary SVM with a linear kernel
+
+1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3474-3482).
+  - lack of robustness for CNN is caused by the softmax layer (discriminative and based on the assumption of closed world)
+    - TP: Proposes convolutional prototype learning (CPL)
+      - design multiple classification criteria to train
+      - prototypical loss as regularizers
+      - Looks like requires a lot of computations!
+      - Put a constraint: classes need to be inside a circle [prototype loss]!!
+        - How the heck it got connected to generative model !!

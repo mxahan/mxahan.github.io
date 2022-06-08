@@ -1086,7 +1086,7 @@
 
 1. Caron, Mathilde, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. "Emerging properties in self-supervised vision transformers." arXiv preprint arXiv:2104.14294 (2021).
   - DINO: knowledge Distillation with NO labels (Figure 2, Algorithm 1)
-  - Self-supervised learning with vision transformer
+  - Self-supervised learning with ViT
   - Observations: (i) T features contain explicit information (!!!) about the semantic segmentation of an image
     - explicit information: scene layout, object boundaries (directly accessible)
     - Performs basic k-NN without any supervision.

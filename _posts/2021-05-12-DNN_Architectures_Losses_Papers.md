@@ -2,6 +2,29 @@
 
 ## 2021
 
+1. Tuli, S., Dasgupta, I., Grant, E., & Griffiths, T. L. (2021). Are Convolutional Neural Networks or Transformers more like human vision?. arXiv preprint arXiv:2105.07197.
+  - decision function in a ML system is determined by i) the data to which the system is exposed, ii) model inductive bias
+  - study and compare CNNs) and the Vision Transformer (ViT)
+    - ViT has weaker inductive bias (relax the translation invariance)
+      - CNN: each patch in an image is processed by the same weights.
+      -  have higher shape bias and are largely more consistent with human errors
+    - using new metrics for examining error consistency with more granularity
+    - CNN tend to classify images by texture rather than by shape
+    - CNNs struggle to recognize sketches that preserve the shape rather than texture
+  - Stylized ImageNet: can be used to check model bias.
+  - **Metrics for error consistency:** two systems can differ in which stimuli they fail to classify correctly, which is not captured by accuracy metrics.
+    - Shape bias testing: SIN dataset
+    - ViT has a higher shape bias than traditional CNNs
+
+1. Touvron, H., Cord, M., Douze, M., Massa, F., Sablayrolles, A., & Jégou, H. (2021, July). Training data-efficient image transformers & distillation through attention. In International Conference on Machine Learning (pp. 10347-10357). PMLR.
+  - competitive convolution-free transformers by training on Imagenet only
+  - a teacher-student distillation strategy specific to transformers (distillation token)
+    - Extra token like the class token.
+    -  using a convnet teacher gives better performance than using a transformer
+  -  interest of this token-based distillation (convnet as a teacher)
+  - Transformer “do not generalize well when trained on insufficient amounts of data” (research gap)
+  - This Paper:  Data-efficient image Transformers (Deit 4)
+
 1. Ren, S., Gao, Z., Hua, T., Xue, Z., Tian, Y., He, S., & Zhao, H. (2021). Co-advise: Cross inductive bias distillation. arXiv preprint arXiv:2106.12378.
 
 1. Li, Duo, Jie Hu, Changhu Wang, Xiangtai Li, Qi She, Lei Zhu, Tong Zhang, and Qifeng Chen. "Involution: Inverting the inherence of convolution for visual recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 12321-12330. 2021.
