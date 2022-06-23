@@ -62,6 +62,14 @@
 
 ## 2018 and earlier
 
+1. Chang, J., Wang, L., Meng, G., Xiang, S., & Pan, C. (2017). Deep adaptive image clustering. In Proceedings of the IEEE international conference on computer vision (pp. 5879-5887).
+  - adopts a binary pairwise classification framework for image clustering [DAC]
+  - learned label features tend to be one-hot vectors (constraint into DAC)
+  - single-stage named Adaptive Learning algorithm to  streamline the learning procedure for image clustering
+    - dynamically learn the threshold for pairwise label selection [section 3.3]
+  - *summary:* chose two adaptive th for pairwise labels. iterative fix the network and th to reduce number of unlabeled images.  
+  - *metrics:* Adjusted Rand Index (ARI), Normalized Mutual Information (NMI) and clustering Accuracy (ACC).
+
 1. Rasmus, A., Berglund, M., Honkala, M., Valpola, H., & Raiko, T. (2015). Semi-supervised learning with ladder networks. Advances in neural information processing systems, 28.
   - trained to simultaneously minimize the sum of sup and unsup cost functions by backpropagation, avoiding the need for layer-wise pre-training
     - builds on top of the Ladder network [bit out of my interest for now]

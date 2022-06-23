@@ -2,8 +2,6 @@
 
 Here, we will review papers regarding novel class detection (NCD), Out of distribution detection (OOD) mostly in computer vision.
 
-
-
 - L for labeled
 - cl for contrastive learning
 - u for unlabeled or unknown
@@ -49,7 +47,6 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - KNN clustering and contrastive learning.
       - apply loss in different labels.
 
-
 1. Dietterich, Thomas G., and Alexander Guyer. "The Familiarity Hypothesis: Explaining the Behavior of Deep Open Set Methods." arXiv preprint arXiv:2203.02486 (2022).
   - GAP: Detecting such “novel category” objects is formulated as an anomaly detection problem
   - TP demonstrate: the Familiarity Hypothesis that these methods succeed because they are detecting the absence of familiar learned features rather than the presence of novelty
@@ -62,6 +59,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 
 ## 2021
+
+1. Jia, X., Han, K., Zhu, Y., & Green, B. (2021). Joint representation learning and novel category discovery on single-and multi-modal data. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 610-619).
 
 1. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
   - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
@@ -104,7 +103,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - two branch learning (one branch focusing on local part-level information and the other branch focusing on overall characteristics)
   - dual ranking statistics on both branches to generate pseudo labels for training on the unlabelled data
     - transfer knowledge from labelled data to unlabelled data
-  -  introduce a mutual KD method to allow information exchange and encourage agreement between the two branches for discovering new categories
+  - introduce a mutual KD method to allow information exchange and encourage agreement between the two branches for discovering new categories
 
 1. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2021). Autonovel: Automatically discovering and learning novel visual categories. IEEE Transactions on Pattern Analysis and Machine Intelligence.
   - self-supervised learning to train the representation from scratch on the union of labelled and unlabelled data (avoid bias of labelled data) [low-level features]
@@ -190,7 +189,32 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2019 and Earlier
 
+1. Oza, P., & Patel, V. M. (2019). C2ae: Class conditioned auto-encoder for open-set recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2307-2316).
+  - TO: an OSR algorithm using class conditioned auto-encoders with novel training and testing methodologies
+    - 2 steps: 1. closed-set classification and, 2. open-set identification
+    - utilize EVT to find the threshold for known/unknown.
+    - *Encoder* learns the first task following the closed-set classification training pipeline, *decoder* learns the second task by reconstructing conditioned on class identity
+
+
+1. Scheirer, W. J., Rocha, A., Micheals, R. J., & Boult, T. E. (2011). Meta-recognition: The theory and practice of recognition score analysis. IEEE transactions on pattern analysis and machine intelligence, 33(8), 1689-1695.
+  - Utilize EVT for OSR (rough note to start)
+  - figure 3 summarizes:
+    - matches the distribution with EVT distribution and check for tail cases.
+  -  EVT is analogous to a CTL, but tells us what the distribution of extreme values should look like as we approach the limit
+    - Extreme value distributions are the limiting distributions that occur for the maximum (or minimum, depending on the data representation) of a large collection of random observations from an arbitrary distribution
+    - falls in one of the three exponential family format.
+  - *observation*: most recognition systems, the distance or similarity scores are bounded from both above and below
+  - takes the tail of these scores, which are likely to have been sampled from the extrema of their underlying portfolios, and fits a Weibull distribution to that data.
+
 1. Bendale, A., & Boult, T. E. (2016). Towards open set deep networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1563-1572).
+  - Introduce OpenMax layer **[alternative to softmax]** to incorporate open set setting.
+    - Modify the activation weights before softmax function [eq 2, aglo 1,2]
+    - estimates the probability of an input being from an unknown class
+    -  greatly reduces the number of obvious errors made by a deep network!!!
+    -  provides bounded open space risk, thereby formally providing OSR solution
+  - *key element in detecting unknown probability is to adapt Meta-Recognition concepts in the networks' penultimate layer activation patterns*
+  - Utilize EVT to incorporate rejection probability.
+
 
 1. Hsu, Y. C., Lv, Z., Schlosser, J., Odom, P., & Kira, Z. (2019). Multi-class classification without multi-class labels. arXiv preprint arXiv:1901.00544.
   - a new strategy for multi-class classification (no class-specific labels) using pairwise similarity between examples

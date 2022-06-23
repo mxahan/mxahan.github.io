@@ -1,6 +1,34 @@
 # Architectural contributions
 
+## 2022
+
+1. Chan, S. C., Santoro, A., Lampinen, A. K., Wang, J. X., Singh, A., Richemond, P. H., ... & Hill, F. (2022). Data Distributional Properties Drive Emergent Few-Shot Learning in Transformers. arXiv preprint arXiv:2205.05055.
+  - In-context learning emerges when the training data exhibits particular distributional properties such as *burstiness* (items appear in clusters rather than being uniformly distributed over time) and having *large numbers of rarely occurring classes*.
+    - ‘in-context learning’: output is conditioned on a context. (kinda meta learning.)
+  - **finding 1:** in-context learning traded off against more conventional weight-based learning, and models were unable to achieve both simultaneously
+  - **finding 2:** the two modes of learning could co-exist in a single model when it was trained on data following a skewed Zipfian distribution
+  - How future work might encourage both in-context and in-weights learning in domains beyond language.
+  - architecture and data are both key to the emergence of in-context learning
+
 ## 2021
+
+1. Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., & Shah, M. (2021). Transformers in vision: A survey. ACM Computing Surveys (CSUR).
+  - Transformers require minimal inductive biases for their design and are naturally suited as set-functions.
+  - fundamental concepts behind the success of Transformers i.e., self-attention, large-scale pre-training, and bidirectional feature encoding.
+  - taxonomy of the network design space and highlight the major strengths and shortcomings of the existing methods.
+  - Foundation: Self-attention and pre-training
+  - difference of self-attention with convolution:
+    - CNN static filter, permutation invariant
+    - SA theoretically a more flexible operation (can model the behavior of CNN towards encoding local features
+    - self-attention provides the capability to learn the global as well as local features (provide expressivity to adaptively learn CNN kernel weights as well as the receptive field)
+  - Multi-head vision tx
+    - Uniform Scale: ViT
+    - Multi-scale:  number of tokens is gradually reduced while the token feature dimension is progressively increased
+      - P-ViT and co.
+    - vision transformer with convolution
+    - 
+
+1. Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., & Shah, M. (2021). Transformers in vision: A survey. ACM Computing Surveys (CSUR).
 
 1. Tuli, S., Dasgupta, I., Grant, E., & Griffiths, T. L. (2021). Are Convolutional Neural Networks or Transformers more like human vision?. arXiv preprint arXiv:2105.07197.
   - decision function in a ML system is determined by i) the data to which the system is exposed, ii) model inductive bias
@@ -57,6 +85,10 @@
 
 ## 2020
 
+1. Goyal, A., & Bengio, Y. (2020). Inductive biases for deep learning of higher-level cognition. arXiv preprint arXiv:2011.15091.
+  - *empirical* paper on model architecture and learning.
+  - argue that having larger and more diverse datasets is important but insufficient without good architectural inductive biases.
+  -  can compensate lack of sufficiently powerful priors by more data
 
 1. Radosavovic, Ilija, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, and Piotr Dollár. "Designing network design spaces." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10428-10436. 2020.
   -
