@@ -15,6 +15,12 @@
 
 ## 2020
 
+1. Van Gansbeke, W., Vandenhende, S., Georgoulis, S., Proesmans, M., & Van Gool, L. (2020, August). Scan: Learning to classify images without labels. In European conference on computer vision (pp. 268-285). Springer, Cham.
+  - advocate a two-step approach where feature learning and clustering are decoupled
+    - SSL and SSL prior for learnable clustering.
+    - remove the ability for cluster learning to depend on low-level features (current end-to-end learning approaches.)
+  - **Representation learning  leads to imbalanced clusters and there is no guarantee that the learned clusters aligns with the semantic classes**
+
 1. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
 
 1. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).

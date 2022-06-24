@@ -172,6 +172,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - Supcon, EVT to find the normality score.
 
 ## 2020
+
 1. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2020). Automatically discovering and learning new visual categories with ranking statistics. arXiv preprint arXiv:2002.05714.
   - hypothesize that a general notion of what constitutes a “good class” can be extracted from labeled to Unlabeled
   - later paper worked on various ranking methods for unlabeled data.
