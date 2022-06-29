@@ -19,7 +19,18 @@
   - advocate a two-step approach where feature learning and clustering are decoupled
     - SSL and SSL prior for learnable clustering.
     - remove the ability for cluster learning to depend on low-level features (current end-to-end learning approaches.)
-  - **Representation learning  leads to imbalanced clusters and there is no guarantee that the learned clusters aligns with the semantic classes**
+  - Representation **learning  leads to imbalanced clusters and there is no guarantee that the learned clusters aligns with the semantic classes**
+  - end-to-end learning pipelines combine feature learning with clustering.
+    - leverage the architecture of CNNs as a prior to cluster images (DEC)
+    - learn a clustering function by maximizing the mutual information between an image and its augmentations
+      - sensitive to initialization or prone to degenerate solutions
+      - since the cluster learning depends on the network initialization, they are likely to latch onto low-level features
+  - [TP]: SCAN (Semantic Clustering by Adopting Nearest neighbors) - 2-steps
+    - *leaverage advantage of both representation learning and end-end learning*
+    - encourage invariance w.r.t. the nearest neighbors, and not solely w.r.t. augmentations
+  - Methods summary: 1. Representation learning for semantic clustering,
+    - Contrastive learning (loss function 2) with entropy regularizer.
+    - Fine-tuning through self-labeling
 
 1. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
 

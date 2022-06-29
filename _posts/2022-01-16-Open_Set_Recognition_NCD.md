@@ -104,6 +104,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - dual ranking statistics on both branches to generate pseudo labels for training on the unlabelled data
     - transfer knowledge from labelled data to unlabelled data
   - introduce a mutual KD method to allow information exchange and encourage agreement between the two branches for discovering new categories
+  - *TP*: Joint optimization of many many losses (eq 10)
 
 1. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2021). Autonovel: Automatically discovering and learning novel visual categories. IEEE Transactions on Pattern Analysis and Machine Intelligence.
   - self-supervised learning to train the representation from scratch on the union of labelled and unlabelled data (avoid bias of labelled data) [low-level features]

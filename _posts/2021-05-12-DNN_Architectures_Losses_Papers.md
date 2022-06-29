@@ -2,6 +2,8 @@
 
 ## 2022
 
+1. Chen, T., Zhang, Z., Cheng, Y., Awadallah, A., & Wang, Z. (2022). The Principle of Diversity: Training Stronger Vision Transformers Calls for Reducing All Levels of Redundancy. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 12020-12030).
+
 1. Chan, S. C., Santoro, A., Lampinen, A. K., Wang, J. X., Singh, A., Richemond, P. H., ... & Hill, F. (2022). Data Distributional Properties Drive Emergent Few-Shot Learning in Transformers. arXiv preprint arXiv:2205.05055.
   - In-context learning emerges when the training data exhibits particular distributional properties such as *burstiness* (items appear in clusters rather than being uniformly distributed over time) and having *large numbers of rarely occurring classes*.
     - ‘in-context learning’: output is conditioned on a context. (kinda meta learning.)
@@ -26,7 +28,7 @@
     - Multi-scale:  number of tokens is gradually reduced while the token feature dimension is progressively increased
       - P-ViT and co.
     - vision transformer with convolution
-    - 
+    -
 
 1. Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., & Shah, M. (2021). Transformers in vision: A survey. ACM Computing Surveys (CSUR).
 
@@ -54,9 +56,22 @@
   - This Paper:  Data-efficient image Transformers (Deit 4)
 
 1. Ren, S., Gao, Z., Hua, T., Xue, Z., Tian, Y., He, S., & Zhao, H. (2021). Co-advise: Cross inductive bias distillation. arXiv preprint arXiv:2106.12378.
+  - a novel distillation-based method to train vision transformers
+    - TP: introduce lightweight teachers with different architectural inductive biases (e.g., convolution and involution) to co-advise the student ViT
+      - cross inductive bias distillation method
+      - Solve DeiT problems
+        - the trained transformer is over-influenced by the inductive bias of the teacher CNN and mirrors CNN’s classification error
+  - Three types of architecture: CNNs, transformers, INN
+  - teacher model’s intrinsic inductive bias matters much more than its accuracy
+  - CNNs and INNs are inclined to learn texture and structure respectively
+  - convolution operator is spatial agnostic and channel-specific, while an involution kernel is shared across channels and distinct in the spatial extent.
+  - theoretically proven that the self-attention mechanism used in transformers is at least as expressive as any convolution layer.
+  - *Summary*: Figure 2
 
 1. Li, Duo, Jie Hu, Changhu Wang, Xiangtai Li, Qi She, Lei Zhu, Tong Zhang, and Qifeng Chen. "Involution: Inverting the inherence of convolution for visual recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 12321-12330. 2021.
   - inherent principles of standard convolution for vision tasks, specifically spatialagnostic and channel-specific.
+    - spatial-agnostic: guarantees the efficiency of convolution kernels by reusing them among different locations and pursues translation equivalence
+    - Channel specific: responsible for collecting diverse information encoded in different channel
   - TP: Involution: a novel atomic operation for deep neural networks by inverting the aforementioned design principles of convolution
     - Claim: Involution is a simple instantiation of the attention.
   - involution operator could be leveraged as fundamental bricks to build the new generation of neural networks for visual recognition
@@ -274,6 +289,7 @@
     - i) explicit optimization insight and ii) discriminative and generative views of the mutual information between the labels and the learned features
   - Experimented with four different DML benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop)) [also used by MS loss]
   - TP proves that minimizing cross-entropy can be viewed as an approximate bound optimization of a more complex pairwise loss. [interesting section 4.3]
+  - <embed src="https://mxahan.github.io/PDF_files/A_unifying_MI_view_metric_learning_CE.pdf" width="100%" height="850px"/>
 
 1. Sainburg, Tim, Leland McInnes, and Timothy Q. Gentner. "Parametric UMAP embeddings for representation and semi-supervised learning." arXiv preprint arXiv:2009.12981 (2020).
   - Good starting note for the UMAP and tSNE. Parametric extension for the UMAP
