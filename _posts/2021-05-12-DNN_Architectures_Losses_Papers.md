@@ -138,6 +138,7 @@
   - Experiments: kinetics, charades, AVA dataset
   - Nice ablation study sections
   - Non-degenerate temporal filter (CNN filter with temporal kernel size >1)
+  - <embed src="https://mxahan.github.io/PDF_files/slowfast.pdf" width="100%" height="850px"/>
 
 1. Radosavovic, Ilija, Justin Johnson, Saining Xie, Wan-Yen Lo, and Piotr Dollár. "On network design spaces for visual recognition." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1882-1890. 2019.
 
@@ -173,6 +174,7 @@
     - Plugged in with may static image recognition system (pose, object detections).
     - Aim to capture long-term dependencies
   - Figure 2 sums all (design choice of f and g)
+  - <embed src="https://mxahan.github.io/PDF_files/non_local_neuron.pdf" width="100%" height="850px"/>
 
 1. Xie, Saining, Chen Sun, Jonathan Huang, Zhuowen Tu, and Kevin Murphy. "Rethinking spatiotemporal feature learning: Speed-accuracy trade-offs in video classification." In Proceedings of the European conference on computer vision (ECCV), pp. 305-321. 2018.
   - Four types of network to combine 3D with 2D
@@ -214,6 +216,7 @@
   - TP: proposes computational efficient 3D CNN (and their extensions) [p3d network]
     - Decomposes 3D CNN as DD spatial filter and 1D temporal filter
     - Combines of 3-inter-leaving P3D blocks [figure 3].
+  - <embed src="https://mxahan.github.io/PDF_files/pseudo_3D.pdf" width="100%" height="850px"/>
 
 1. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
   - ResNeXt: highly modulated network (figure 1) [another network engineering with a very simple idea]

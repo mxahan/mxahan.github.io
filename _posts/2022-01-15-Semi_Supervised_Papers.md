@@ -10,8 +10,7 @@
   - How the heck the distance between view representation and labeled representation is used to provide weights over class labels (why is makes sense, and what benefits it offers??)
   - Related works: Semi-supervised learning, few shot learning, and self-supervised learning
   - Interesting ways to stop the collapse [sharpening functions] (section 3.2)
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
-
+  -  <embed src="https://mxahan.github.io/PDF_files/PAWs.pdf" width="100%" height="850px"/>
 
 ## 2020
 
@@ -46,7 +45,7 @@
     - However, extremely complication optimization as it requires to unroll everything!
   - Sampling hard pseudo labels (modified version of REINFORCE algorithm!)
   - Nice experiment section: Dataset, network, and baseline
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Meta_pseudo_label.pdf" width="100%" height="850px"/>
 
 1. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
   - TP:  divide the training data into a labeled set with clean samples and an unlabeled set with noisy samples (co-training two networks), and trains the model on both data (?). Improved MixMatch
@@ -55,6 +54,7 @@
   - Application: Data with noisy label (social media image with tag!) may result poor generalization (as may overfit)!
   - Hypothesis: DNNs tend to learn simple patterns first before fitting label noise Therefore, many methods treat samples with small loss as clean ones (discards the sample labels that are highly likely to be noisy! and leverages them as unlabeled data)
   - Algorithm is nice to work with
+  - <embed src="https://mxahan.github.io/PDF_files/DivideMix.pdf" width="100%" height="850px"/>
 
 1. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
   - Interesting way to improve the Classifier
@@ -76,6 +76,7 @@
 1. Berthelot, David, Nicholas Carlini, Ian Goodfellow, Nicolas Papernot, Avital Oliver, and Colin Raffel. "Mixmatch: A holistic approach to semi-supervised learning." arXiv preprint arXiv:1905.02249 (2019).
   - TP: guesses low-entropy labels for data-augmented unlabeled examples and mixes labeled and unlabeled data using MixUp (Algorithm 1)
   - Related works: Consistency Regularization, Entropy Minimization
+  - <embed src="https://mxahan.github.io/PDF_files/mixmatch.pdf" width="100%" height="850px"/>
 
 ## 2018 and earlier
 
@@ -96,13 +97,13 @@
     - Web page (and its augmentation)
 
 1. Grandvalet, Yves, and Yoshua Bengio. "Semi-supervised learning by entropy minimization." In CAP, pp. 281-296. 2005.
-  - Semi-supervised learning by minimun entropy regularization!
+  - Semi-supervised learning by minimum entropy regularization!
     - result compared with mixture models ! (entropy methods are better)
     - Connected to cluster assumption and manifold learning
   - Motivation behind supervised training for unlabeled data
     - Exhaustive generative search
     - More parameters to be estimation that leads to more uncertainty
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Minimum_entropy_reg.pdf" width="100%" height="850px"/>
 
 1. Tarvainen, Antti, and Harri Valpola. "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results." arXiv preprint arXiv:1703.01780 (2017).
   - Improves Temporal Ensemble by average model weights (usual practice now!) instead of label prediction (WOW!)

@@ -197,14 +197,14 @@ This blog contains state of the art application and research on different applic
     - learning visual representations can be used to represent the goal (no fine-tuning)
   - Related field: learning from demonstration, inverse reinforcement learning
   - video segmentation for notion of similarity
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Perceptual_reward.pdf" width="100%" height="850px"/>
 
 1. Ziebart, Brian D., Andrew L. Maas, J. Andrew Bagnell, and Anind K. Dey. "Maximum entropy inverse reinforcement learning." In Aaai, vol. 8, pp. 1433-1438. 2008.
   - Framing problem as Imitation learning as solutions to MDP
   - Model navigation and driving behavior -> under noisy data
   - Issues in imitation learning during the imperfect demonstration
     - alternative solution: IRL : Matching feature count (algo 1)
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Maximum_entropy_IRL.pdf" width="100%" height="850px"/>
 
 # Data augmentation
 
@@ -274,3 +274,4 @@ This blog contains state of the art application and research on different applic
   - training loss to be stable under DA sampling, the model’s saliency map (gradient of the loss with respect to the model’s input) must align with the smallest eigenvector of the sample variance under the considered DA
     - explanation on why models tend to shift their focus from edges to textures!
   - TP: proposes **data space transform** instead of *coordinating space tx*
+  - <embed src="https://mxahan.github.io/PDF_files/DA_worth_thousand.pdf" width="100%" height="850px"/>

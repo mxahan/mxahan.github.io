@@ -50,6 +50,7 @@
       - Base-dataset, they are different from support set classes.
   - Solution: i) Memory augmented networks ii) Metric learning (there are some approach combined with meta-learning) iii) Gradient based meta-learner iv) data generation  
   - Meta-learning Definition: given a task, an algorithm is learning “if its performance at the task improves with experience”, while, *given a family of tasks*, an algorithm is learning to learn if “its performance at each task *improves with experience and with the number of tasks*”: referred as a meta-learning algorithm.
+  -
 
 1. Chen, Wei-Yu, Yen-Cheng Liu, Zsolt Kira, Yu-Chiang Frank Wang, and Jia-Bin Huang. "A closer look at few-shot classification." arXiv preprint arXiv:1904.04232 (2019).
   - Consistent!  comparative analysis of few shot learning methods! (algorithm performance depends on the backbone networks) [deeper backbone reduces performance difference] **algo comparison varies as backbone network changes**
@@ -73,7 +74,7 @@
       - (i) Prototypical net with soft k-Means
       - (ii) Prototypical net with soft k-Means with a distractor cluster
       - (iii) Prototypical net with soft k-Means and Masking
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Meta_learning_SSFSL.pdf" width="100%" height="850px"/>
 
 1. Sung, Flood, Yongxin Yang, Li Zhang, Tao Xiang, Philip HS Torr, and Timothy M. Hospedales. "Learning to compare: Relation network for few-shot learning." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1199-1208. 2018.
   - Relation network (RN) - simple! flexible! General! - end-2-end
@@ -85,7 +86,7 @@
   - Interesting related work section : learning to fine-tune (MAML), RNN memory based, Embedding and Metric learning approachs
     - Mostly related to prototypical network and siamese network
   - Problem definition and solution: Section 3
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/relation_net.pdf" width="100%" height="850px"/>
 
 ## 2017 and Earlier
 
@@ -120,6 +121,7 @@
   - One shot learning Scenario (single support example): Prototypical network == matching network
     - matching network: weighted nearest neighborhood classifier.
   - Experiments: (i) omniglot few-shot data (ii) MiniImagenet few-shot classification (iii) CUB zero-shot classification.
+  - <embed src="https://mxahan.github.io/PDF_files/Prototypical_net.pdf" width="100%" height="850px"/>
 
 
 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.

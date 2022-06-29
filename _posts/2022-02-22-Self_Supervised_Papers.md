@@ -29,6 +29,7 @@
   - Contribution: (a) joint optimization of deep embedding and clustering; (b) a novel iterative refinement via soft assignment (??); (c) state-of-the-art clustering results in terms of clustering accuracy and speed
   - target distribution properties: (1) strengthen predictions (i.e., improve cluster purity), (2) put more emphasis on data points assigned with high confidence, and (3) normalize loss contribution of each centroid to prevent large clusters from distorting the hidden feature space.
   - Computational complexity as iteration over large data samples
+  - <embed src="https://mxahan.github.io/PDF_files/U_DEC.pdf" width="100%" height="850px"/>
 
 1. Joulin, Armand, Laurens Van Der Maaten, Allan Jabri, and Nicolas Vasilache. "Learning visual features from large weakly supervised data." In European Conference on Computer Vision, pp. 67-84. Springer, Cham, 2016.
 
@@ -40,7 +41,7 @@
     - developed in two steps (i) Generalization of triplet loss (ii) reduces computational complexity by efficient batch construction (figrue 2) taking (N+1)xN examples!!
   - Experiments on visual recognition, object recognition, and verification, image clustering and retrieval, face verification and identification tasks.
   - identify multiple negatives [section 3], efficient batch construction
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  -  <embed src="https://mxahan.github.io/PDF_files/N_pair_loss.pdf" width="100%" height="850px"/>
 
 1. Noroozi, Mehdi, and Paolo Favaro. "Unsupervised learning of visual representations by solving jigsaw puzzles." In European conference on computer vision, pp. 69-84. Springer, Cham, 2016.
   - Pretext tasks (solving jigsaw puzzle) - self-supervised
@@ -64,7 +65,7 @@
   - Discusses one of the fundamental issues with contrastive loss and triplet loss!
     - different batches puts same class in different position
   - Experiment: Amazon Object dataset- multiview .
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/lifted_structure.pdf" width="100%" height="850px"/>
 
 ## 2017
 
@@ -102,6 +103,7 @@
   - Combine losses: Pretraining / jointly training / variable scheduleing
   - Cluster update: Jointly update with the network model / Alternating update with network models
   - Relevant methods: Deep Embedded Clustering (Xie et al, 2016), Deep Clustering Network (yang et al, 2016), Discriminatively Boosted Clustering (Li et al, 2017), ..
+  - <embed src="https://mxahan.github.io/PDF_files/clustering_DL.pdf" width="100%" height="850px"/>
 
 1. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
 
@@ -112,7 +114,6 @@
     - Compared with VAE, BiGAN, CPC
   - Evaluate represenation by Neural Dependency Measures (NDM)
   - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images
-  - [personal note](https://github.com/mxahan/PDFS_notes/blob/master/deepinfomax_paper.pdf)
   - <embed src="https://mxahan.github.io/PDF_files/deepinfomax_paper.pdf" width="100%" height="850px"/>
 
 1. Wu, Zhirong, Alexei A. Efros, and Stella X. Yu. "Improving generalization via scalable neighborhood component analysis." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 685-701. 2018.
@@ -139,7 +140,7 @@
     - compression, autoregressive and NCE
   - Energy based like setup
   - Figure 4: about what they did!
-  - [more notes](https://github.com/mxahan/PDFS_notes/blob/master/cpc_2017.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/cpc_2017.pdf" width="100%" height="850px"/>
 
 1. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
   - non-parametric classifier via feature representation **(Memory Bank)**
@@ -157,6 +158,7 @@
     - NCE from memory bank
     - Monte carlo sampling to get the all contrastive normalizing value for denominator
     - proximal parameter to ensure the smoothness for the representations {proximal regularization:}
+  - <embed src="https://mxahan.github.io/PDF_files/memory_bank.pdf" width="100%" height="850px"/>
 
 1. Sermanet, Pierre, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine, and Google Brain. "Time-contrastive networks: Self-supervised learning from video." In 2018 IEEE International Conference on Robotics and Automation (ICRA), pp. 1134-1141. IEEE, 2018.
   - Multiple view point [same times are same, different time frames are different], motion blur, viewpoint invariant
@@ -180,6 +182,7 @@
     - learns representations by aligning video sequences of the same action
     - Requires differentiable cycle-consistency losses
   - Figure 2: interesting but little hard to understand
+  - <embed src="https://mxahan.github.io/PDF_files/Temporal_consistency.pdf" width="100%" height="850px"/>
 
 1. Li, Xueting, Sifei Liu, Shalini De Mello, Xiaolong Wang, Jan Kautz, and Ming-Hsuan Yang. "Joint-task self-supervised learning for temporal correspondence." arXiv preprint arXiv:1909.11895 (2019).
 
@@ -195,7 +198,7 @@
   - Augmentation types: RandAugment for image, backtranslating the language
   - Training techniques: confidence based masking, Sharpening Predictions, Domain relevance data filtering.
   - Interesting graph comparison under three assumption.
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Unsup_DA.pdf" width="100%" height="850px"/>
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
@@ -269,8 +272,9 @@
     - introduce latent class!! shows generalization bound.
   - Unsupervised representation learning
   - TP: notion of latent classes (downstream tasks are subset of latent classes), rademacher complexity of the architecture! (limitation of negative sampling), extension!
-  - CL gives representation learning with plentiful labeled data! TP asks this question. \
+  - CL gives representation learning with plentiful labeled data! TP asks this question.
   - Theoretical results to include in the works.
+  - <embed src="https://mxahan.github.io/PDF_files/theory_cl.pdf" width="100%" height="850px"/>
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
@@ -296,6 +300,7 @@
   - Paper construction: generative background for data labeling process [figure 2]
   - Reason of hidden stratification: Inherent hardness and Dataset imbalance
   - Method overview [figure 4]: includes two step training (i. training with classification, dimentional reduction of last layer and ii. fine tune.)
+  - <embed src="https://mxahan.github.io/PDF_files/No_subclass_left_behind.pdf" width="100%" height="850px"/>
 
 1. Patacchiola, Massimiliano, and Amos Storkey. "Self-supervised relational reasoning for representation learning." arXiv preprint arXiv:2006.05849 (2020).
   - Relation network head instead of direct contrastivie loss [architectural][Pretext task design]
@@ -319,6 +324,7 @@
     - the learning rate should be adjusted proportional to the number of queries N per batch
     - linear scaling rule needs to be applied corresponding to N rather than K
   - SiMo: cancel the memory bank as rely on a few negative samples per batch. Instead, use the momentum encoder to extract both positive and negative key embeddings from the current batch.
+  - <embed src="https://mxahan.github.io/PDF_files/EqCo.pdf" width="100%" height="850px"/>
 
 1. Miech, Antoine, Jean-Baptiste Alayrac, Lucas Smaira, Ivan Laptev, Josef Sivic, and Andrew Zisserman. "End-to-end learning of visual representations from uncurated instructional videos." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9879-9889. 2020.
   - Experiments with Dataset: HowTo100M (task progression) [video with narration]
@@ -395,7 +401,7 @@
         - Temporal ordering
         - Multi-modal contrastive loss {maxmargin loss}
       - ELo and ELo+Distillation
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/evolving_loss.pdf" width="100%" height="850px"/>
 
 1. Chen, Ting, Simon Kornblith, Kevin Swersky, Mohammad Norouzi, and Geoffrey Hinton. "Big self-supervised models are strong semi-supervised learners." arXiv preprint arXiv:2006.10029 (2020).
   - Empirical paper
@@ -458,7 +464,7 @@
     - Experiments by creating the dataset
       - Digit on imagenet dataset
       - RandBit dataset
-  -[github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  -<embed src="https://mxahan.github.io/PDF_files/intriguing_pro_cl.pdf" width="100%" height="850px"/>
 
 1. Xiao, Tete, Xiaolong Wang, Alexei A. Efros, and Trevor Darrell. "What should not be contrastive in contrastive learning." arXiv preprint arXiv:2008.05659 (2020).
   - What if downstream tasks violates data augmentation (invariance) assumption!
@@ -480,7 +486,7 @@
     - Good setup to apply the ranking loss function
     - Careful with the notation (bad notation)
     -  instances and their augmentations!
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/what_contrastive.pdf" width="100%" height="850px"/>
 
 1. Tschannen, Michael, Josip Djolonga, Marvin Ritter, Aravindh Mahendran, Neil Houlsby, Sylvain Gelly, and Mario Lucic. "Self-supervised learning of video-induced visual invariances." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 13806-13815. 2020.
   - Framework to learn image representations from non-curated videos in the wild by learning **frame-**, **shot-**, and **video-level invariances**
@@ -524,7 +530,7 @@
   - Prototypical Contrastive Learning (PCL)
     - See the math notes from section 3
   - Figure 2 - Overview of methods
-  -[github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers2.pdf)
+  -<embed src="https://mxahan.github.io/PDF_files/Prototypical_CL.pdf" width="100%" height="850px"/>
 
 1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
   - SwAV (online algorithm) [swapped assignments between multiple vies of same image]
@@ -686,13 +692,14 @@
       - Experimental dataset
         - occlusion (GOR-10K), viewpoint+instance invariance (Pascal3D+)
       - image and video careful augmentation
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers2.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Demys_CL.pdf" width="100%" height="850px"/>)
 
 1. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
   - New loss function (why? and where it works?)
     - Generalization of the BYOL approach?
     - No negative examples (the scatters are preserved)
   - Whitening operation (scattering effect)
+  - <embed src="https://mxahan.github.io/PDF_files/whitening_loss.pdf" width="100%" height="850px"/>
 
 1. Ebbers, Janek, Michael Kuhlmann, and Reinhold Haeb-Umbach. "Adversarial Contrastive Predictive Coding for Unsupervised Learning of Disentangled Representations." arXiv preprint arXiv:2005.12963 (2020).
   - video deep infomax: UCF101 dataset
@@ -771,6 +778,7 @@
   - As two head so two component of contrastive loss. (One component to dampen memory update.)
   - Implemented on ResNet
   - PIRL
+  - <embed src="https://mxahan.github.io/PDF_files/PIRL.pdf" width="100%" height="850px"/>
 
 1. Srinivas, Aravind, Michael Laskin, and Pieter Abbeel. "Curl: Contrastive unsupervised representations for reinforcement learning." arXiv preprint arXiv:2004.04136 (2020).
 
@@ -920,7 +928,7 @@
   - *assignment:* a novel graph-based contrastive learning strategy is proposed (compact clustering assignments.)
   - Overview in Figure 2
   - However Heavy computations
-  - <embed src="https://mxahan.github.io/PDF_files/contrastive_clustering.pdf" width="100%" height="850px"/>
+  - <embed src="https://mxahan.github.io/PDF_files/Graph_contrastive_clustering.pdf" width="100%" height="850px"/>
 
 1. Wang, Jingyu, Zhenyu Ma, Feiping Nie, and Xuelong Li. "Progressive self-supervised clustering with novel category discovery." IEEE Transactions on Cybernetics (2021).
   - Parameter-insensitive anchor-based graph obtained from balanced K-means and hierarchical K-means
@@ -937,10 +945,12 @@
   - Two different projection head (instance [row] and cluster label [column])
     - Figure 2: Methods overview.
   - NMI metric for clustering
+  - <embed src="https://mxahan.github.io/PDF_files/contrastive_clustering.pdf" width="100%" height="850px"/>
 
 1. HaoChen, Jeff Z., Colin Wei, Adrien Gaidon, and Tengyu Ma. "Provable guarantees for self-supervised deep learning with spectral contrastive loss." Advances in Neural Information Processing Systems 34 (2021).
   - Proposes graph theoretic based spectral contrastive losses
   - [background for graph clustering](https://people.csail.mit.edu/dsontag/courses/ml14/notes/Luxburg07_tutorial_spectral_clustering.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Spectral_contrastive_loss.pdf" width="100%" height="850px"/>
 
 1. Jahanian, Ali, Xavier Puig, Yonglong Tian, and Phillip Isola. "Generative models as a data source for multiview representation learning." arXiv preprint arXiv:2106.05258 (2021).
   - RQ: why bother using dataset when you have generator!! (used no real-data)
@@ -953,6 +963,7 @@
   - Interesting related work section
   - Figure 1: summary
   - Key analysis on how to make latent tx to get multiview data. i) gaussian approaches, ii) steered latent views
+  - <embed src="https://mxahan.github.io/PDF_files/GM_as_data_source.pdf" width="100%" height="850px"/>
 
 1. Islam, Ashraful, Chun-Fu Richard Chen, Rameswar Panda, Leonid Karlinsky, Richard Radke, and Rogerio Feris. "A broad study on the transferability of visual representations with contrastive learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 8845-8855. 2021.
   - TP: *comprehensive study* on the transferability of learned representations of different contrastive approaches for **linear evaluation, full-network transfer, and few-shot recognition**
@@ -973,6 +984,7 @@
       - Enforces one embedding per class: a regular simplex inscribed in hypersphere.
     - Proposes L_{spread} loss [a slight modification of L_{sc}] to preserve the strata in embedding space.
   - Hypothesis: Rarer and distinct strata are further away from common strata. (nice idea, in a unsupervised setup what is even important??) : has entropy flavour.
+  - <embed src="https://mxahan.github.io/PDF_files/Details_matter_supcon.pdf" width="100%" height="850px"/>
 
 1. Shah, Anshul, Suvrit Sra, Rama Chellappa, and Anoop Cherian. "Max-Margin Contrastive Learning." arXiv preprint arXiv:2112.11450 (2021).
   - Addresses the slow convergence of contrastive methods (uses SVM objective)
@@ -982,6 +994,7 @@
   - TP: Propose to separate the embedding using powerful SVM classifier.
     - One vs all fashion detection!!!
   - Experiment with vision, video, S3D network, tanh kernel.
+  - <embed src="https://mxahan.github.io/PDF_files/MM_CL.pdf" width="100%" height="850px"/>
 
 1. Bardes, Adrien, Jean Ponce, and Yann LeCun. "Vicreg: Variance-invariance-covariance regularization for self-supervised learning." arXiv preprint arXiv:2105.04906 (2021).
   - TP: Variance-Invariance-Covariance Regularization (how to avoid collapse)
@@ -1032,6 +1045,7 @@
     - Remove global pooling (counter the multiple instance collapse)
     - Well, very complex loss function!
   - Related works: VirTex, ConVIRT, ICMLM (proof of concept)
+  - <embed src="https://mxahan.github.io/PDF_files/multisiam.pdf" width="100%" height="850px"/>
 
 1. Yang, Ceyuan, Zhirong Wu, Bolei Zhou, and Stephen Lin. "Instance localization for self-supervised detection pretraining." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3987-3996. 2021.
   - Propose a new self-supervised tasks : Instance Localization. [self-supervised task design]
@@ -1065,6 +1079,7 @@
   - Experiment: 10 SOTA classification and clustering tasks!
   - Two assumption on Data: Completeness (contains all views [partially data-missing problem]) and Consistency (no false negative/positive [partial view alignment problem]) of views.
   - Proposed modified distance loss for the negative pairs.
+  - <embed src="https://mxahan.github.io/PDF_files/partially_view_aligned.pdf" width="100%" height="850px"/>
 
 1. Dave, Ishan, Rohit Gupta, Mamshad Nayeem Rizve, and Mubarak Shah. "TCLR: Temporal Contrastive Learning for Video Representation." arXiv preprint arXiv:2101.07974 (2021).
   - temporal CL framework!!- (why?) - two novel loss functions
@@ -1083,6 +1098,7 @@
   - [**Essential part of non-contrastive SSL: existance of the predictor and the stop-gradient**]
   - TP directPred: thereby avoiding complicated predictor dynamics and initialization issues by using PCA and setting predictor weight [*section 4*].
   - Th 1: ((Weight decay promotes balancing of the predictor and online networks), Th 2: (The stop-gradient signal is essential for success.)
+  - <embed src="https://mxahan.github.io/PDF_files/Understanding_SSL_without_negative.pdf" width="100%" height="850px"/>
 
 1. Caron, Mathilde, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. "Emerging properties in self-supervised vision transformers." arXiv preprint arXiv:2104.14294 (2021).
   - DINO: knowledge Distillation with NO labels (Figure 2, Algorithm 1)
@@ -1092,6 +1108,7 @@
     - Performs basic k-NN without any supervision.
   - Cross entropy loss (sharpening and centering requires to avoid collapse)
   - Experiments: Architecture (i) ViT and (ii) ResNet
+  - <embed src="https://mxahan.github.io/PDF_files/Dino.pdf" width="100%" height="850px"/>
 
 1. Tan, Hao, Jie Lei, Thomas Wolf, and Mohit Bansal. "VIMPAC: Video Pre-Training via Masked Token Prediction and Contrastive Learning." arXiv preprint arXiv:2106.11250 (2021).
 
@@ -1190,7 +1207,7 @@
   - Discussion (interesting)
     - Comparison with Prior Art
       - InfoNCE
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers2.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/Barlow_twin.pdf" width="100%" height="850px"/>
 
 1. Tsai, Yao-Hung Hubert, Martin Q. Ma, Muqiao Yang, Han Zhao, Louis-Philippe Morency, and Ruslan Salakhutdinov. "Self-supervised representation learning with relative predictive coding." arXiv preprint arXiv:2103.11275 (2021).
   -
@@ -1208,6 +1225,7 @@
   - Each image is augmented k times: More data augmentation!
   - Interesting way to put the negative contrastive parts to avoid collapse (eq 3)
   - Experiments: Seen testing categories (CIFAR, STL), & unseen testing categories (Stanford Online Product). ResNet-18 as baseline model
+  - <embed src="https://mxahan.github.io/PDF_files/Improving_MB.pdf" width="100%" height="850px"/>
 
 1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "With a Little Help from My Friends: Nearest-Neighbor Contrastive Learning of Visual Representations." arXiv preprint arXiv:2104.14548 (2021).
   - Positive from other instance (instead of augmented version of same image!)
@@ -1217,7 +1235,7 @@
   - Training: figure 1 (support set similar to memory bank but only provides positive samples)
   - Similarity across previously seen objects! (tricky implementation)! Initialization!!
   - Figure 2: details and key difference with others! (requires support set!)
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/NNCLR.pdf" width="100%" height="850px"/>
 
 1. Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry et al. "Learning transferable visual models from natural language supervision." arXiv preprint arXiv:2103.00020 (2021).
   - CLIP (contrastive learning from language image pretraining)
@@ -1342,6 +1360,7 @@
   - Masked prediction with latent target representation.
   - Methods:  1. transformer architecture (Vit-B for vision tasks, ) 2. Masking input 3.  Training target
   - Interesing discussion and ablation studies section.
+  - <embed src="https://mxahan.github.io/PDF_files/Data2Vec.pdf" width="100%" height="850px"/>
 
 ## 2014 and previous
 

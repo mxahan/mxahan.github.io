@@ -55,7 +55,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Reducing the gap between training loss and the population loss (generalization)
   - Algorithm 1 summarizes the ways to train the network!
   - Detailed experiment and discussion section
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/SAM_p.pdf" width="100%" height="850px"/>
 
 1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
   - Sentence to hidden features to probability distribution.  
@@ -132,12 +132,13 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Extension of RNN - NTM (differentiable unlike Turing Machine)
   - Two components: controller and memory with i/o for external interaction
     - Attending to memory (attention) [sharp or distributed attention]
-  - [Github Notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
-
+  - <embed src="https://mxahan.github.io/PDF_files/Neural_turing_machine.pdf" width="100%" height="850px"/>
+  
 1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).li
   - D: Assign low energy to data distribution (not normalized probabilities)
   - G: Sample data from the low energy by a parameterized function.
   - Convergence proof using hinge loss.
+  - <embed src="https://mxahan.github.io/PDF_files/Gan_math.pdf" width="100%" height="850px"/>
 
 1. ani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." In Advances in neural information processing systems, pp. 5998-6008. 2017.
   - Under construction
@@ -297,7 +298,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
     - CNN Deep belief network
   - Invariance measurement
     - Finding neurons firing under invariance
-  - [github notes](https://github.com/mxahan/PDFS_notes/blob/master/papers/Papers.pdf)
+  - <embed src="https://mxahan.github.io/PDF_files/measuring_invariance_dl.pdf" width="100%" height="850px"/>
 
 1. Smirnov, Evgeny, Aleksandr Melnikov, Andrei Oleinik, Elizaveta Ivanova, Ilya Kalinovskiy, and Eugene Luckyanets. "Hard example mining with auxiliary embeddings." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops, pp. 37-46. 2018.
   - Deep embedding learning and hard example mining!!
