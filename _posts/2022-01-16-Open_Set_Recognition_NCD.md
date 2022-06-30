@@ -72,6 +72,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - similar idea of **swav**
     - *dimension mismatch* in eq 4 and 5  
       - can be fixed by altering Y and L in the eq 4
+  - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
 
 1. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
   - New framework for NCD [NCL]
@@ -86,6 +87,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - Well: add bunch of losses together for joint optimization.
   - kind of avoid false-ve in CL
   - Assumption of L intersection U = {}
+  - <embed src="https://mxahan.github.io/PDF_files/Neighborhood_CL.pdf" width="100%" height="850px"/>
 
 1. Zhong, Z., Zhu, L., Luo, Z., Li, S., Yang, Y., & Sebe, N. (2021). Openmix: Reviving known knowledge for discovering novel visual categories in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9462-9470).
   - mix the unlabeled examples from an open set and the labeled examples from known classes
@@ -97,6 +99,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - proposes simple baseline.
     - effectively leveraging the labeled data during the unsupervised clustering in unlabeled data [unsupervised step described in section 3.1]
     - compounds examples in two ways: 1) mix U examples with L samples; and 2) mix U examples with reliable anchors.
+  - <embed src="https://mxahan.github.io/PDF_files/Openmix.pdf" width="100%" height="850px"/>
 
 1. Zhao, B., & Han, K. (2021). Novel visual category discovery with dual ranking statistics and mutual knowledge distillation. Advances in Neural Information Processing Systems, 34.
   - semantic partitions of unlabelled images (new classes) by leveraging a labelled dataset (contains different but relevant categories of images)
@@ -159,6 +162,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - TP: adds an extra entropy based terms with GAN G maximization.
   - Look into the experimentation of the batch normalization.
   - Somehow connected to the disentanglement settings.
+  - <embed src="https://mxahan.github.io/PDF_files/Adv_RPL.pdf" width="100%" height="850px"/>
 
 1. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
   - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
@@ -167,6 +171,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - TP: simentic shift benchmark??
   - Interested related works: Out-of-Distribution (OOD) detection, novelty detection, anomaly detection, novel category discovery, novel feature discovery
   - Different Baseline: Maximum Softmax probability (MSP), ARPL: Reciprocal point learning, (varies on how to calculate the confidence score)
+  - <embed src="https://mxahan.github.io/PDF_files/osr_good_close.pdf" width="100%" height="850px"/>
 
 1. Kodama, Yuto, Yinan Wang, Rei Kawakami, and Takeshi Naemura. "Open-set Recognition with Supervised Contrastive Learning." In 2021 17th International Conference on Machine Vision and Applications (MVA), pp. 1-5. IEEE, 2021.
   - TP: Explicitly uses distance learning (CL!!) to obtain the feature space for the open-set problem
@@ -179,6 +184,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - later paper worked on various ranking methods for unlabeled data.
   - utilize the metrics of deep transfer clustering.
   - very good visualization but kind of build on previous works.
+  - <embed src="https://mxahan.github.io/PDF_files/Ncd_ranking_loss.pdf" width="100%" height="850px"/>
 
 1. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
   - Reciprocal Point (RP), a potential representation of the extra-class space corresponding to each known category.
@@ -232,6 +238,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - TP: ii) for cross-task learning (unsupervised clustering with unseen categories) propose a framework to reconstruct and estimate the no of semantic clusters
   - utilize the pairwise information in a fashion similar to constrained clustering
     - LCO: pairwise similarity (pre-contratstive set up: matching network)
+  - <embed src="https://mxahan.github.io/PDF_files/Learn_cluster.pdf" width="100%" height="850px"/>
 
 1. Han, K., Vedaldi, A., & Zisserman, A. (2019). Learning to discover novel visual categories via deep transfer clustering. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 8401-8409).
   - problem of discovering novel object categories in an image collection [DTC]
@@ -244,6 +251,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - learn representation from labeled data and fine-tune using unlabeled data!!!
   - Algorithm 1 [warm-up training, final training], algo 1 [estimate class no]
     - learning model params and centre simultaneously.
+  - <embed src="https://mxahan.github.io/PDF_files/deep_tx_cluster.pdf" width="100%" height="850px"/>
 
 1. Scheirer, Walter J., Anderson de Rezende Rocha, Archana Sapkota, and Terrance E. Boult. "Toward open set recognition." IEEE transactions on pattern analysis and machine intelligence 35, no. 7 (2012): 1757-1772.
   - “open set” recognition: incomplete world knowledge is present at training, and unknown classes can be submitted during testing
@@ -257,3 +265,4 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
       - Looks like requires a lot of computations!
       - Put a constraint: classes need to be inside a circle [prototype loss]!!
         - How the heck it got connected to generative model !!
+    - <embed src="https://mxahan.github.io/PDF_files/conv_proto_net.pdf" width="100%" height="850px"/>

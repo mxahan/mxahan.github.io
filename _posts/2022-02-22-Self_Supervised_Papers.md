@@ -548,6 +548,7 @@
   - Interested related work section
   - Key motivation: Contrastive instance learning
   - Partition constraint (batch wise normalization) to avoid trivial solution
+  - <embed src="https://mxahan.github.io/PDF_files/swav_note.pdf" width="100%" height="850px"/>
 
 1. Chen, Xinlei, and Kaiming He. "Exploring Simple Siamese Representation Learning." arXiv preprint arXiv:2011.10566 (2020).
   - Not using Negative samples, large batch or Momentum encoder!!

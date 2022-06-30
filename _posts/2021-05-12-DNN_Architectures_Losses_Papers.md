@@ -270,6 +270,7 @@
     - modifying the polynomial weights helps to go beyond the CE loss accuracy?
       - is it individual class dependent? For all classes or biased setup?
     - *the idea is to provide extra weights for the initial terms*
+  - <embed src="https://mxahan.github.io/PDF_files/polyloss.pdf" width="100%" height="850px"/>
 
 1. Kornblith, S., Chen, T., Lee, H., & Norouzi, M. (2021). Why do better loss functions lead to less transferable features?. Advances in Neural Information Processing Systems, 34.
   - how the choice of training objective affects the transferability of the hidden representations of CNNs trained on ImageNet
