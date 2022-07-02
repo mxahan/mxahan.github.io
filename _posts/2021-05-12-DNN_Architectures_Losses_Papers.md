@@ -3,6 +3,25 @@
 ## 2022
 
 1. Chen, T., Zhang, Z., Cheng, Y., Awadallah, A., & Wang, Z. (2022). The Principle of Diversity: Training Stronger Vision Transformers Calls for Reducing All Levels of Redundancy. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 12020-12030).
+  - ViT *believed to* higher modeling capacity and representation flexibility
+  - ViTs often suffer from over-smoothening (redundant models)
+    - makes effective learning capacity of ViTs “collapsed”
+  - studies the ubiquitous existence of *redundancy* at all three levels
+    - Patch embedding, attention map, weight space.
+  - **TP**: principle of diversity for training ViTs,
+    - presenting corresponding regularizers (encourage representation diversity and coverage at each of those levels)
+    - enabling capturing more discriminative information
+    - **Diversity Regularization**
+  - ViT training suffers from considerable instability, especially when going deeper
+    - Over-smoothening: global information aggregation among all patches encourages their representations to become overly similar (causing substantially degraded discrimination ability)
+    - **Solution**
+      - contrastive-based regularization to diversity patch embedding
+      - directly refines the self-attention maps via CNN aggregation to augment local patterns.
+    - systematically demonstrate the ubiquitous existence of redundancy!!!
+  - Related work: i) (re-)injecting locality via convolution-like structures and fusing global and local contexts, for self-attention
+    - adopting patch-wise contrastive or mixing loss to boost diversity, for patch embeddings
+  - **TP**: Measures redundancy by measuring distance based metrics (patch and attention and model weights).
+  - Eliminating tri-level redundancy: section 3.2
 
 1. Chan, S. C., Santoro, A., Lampinen, A. K., Wang, J. X., Singh, A., Richemond, P. H., ... & Hill, F. (2022). Data Distributional Properties Drive Emergent Few-Shot Learning in Transformers. arXiv preprint arXiv:2205.05055.
   - In-context learning emerges when the training data exhibits particular distributional properties such as *burstiness* (items appear in clusters rather than being uniformly distributed over time) and having *large numbers of rarely occurring classes*.
@@ -118,6 +137,10 @@
 
 
 ## 2019
+
+1. Cordonnier, J. B., Loukas, A., & Jaggi, M. (2019). On the relationship between self-attention and convolutional layers. arXiv preprint arXiv:1911.03584.
+  - attention layers can perform convolution and, indeed, they often learn to do so in practice.
+  - prove that a multi-head SA layer with sufficient number of heads is at least as powerful as any convolutional layer.
 
 1. Moon, Gyeongsik, Ju Yong Chang, and Kyoung Mu Lee. "Camera distance-aware top-down approach for 3d multi-person pose estimation from a single rgb image." In Proceedings of the ieee/cvf international conference on computer vision, pp. 10133-10142. 2019.
   - PoseNet for 3D posture estimation for multi person simultaneously.

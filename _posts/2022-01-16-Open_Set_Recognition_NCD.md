@@ -11,6 +11,10 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2022
 
+1. Zhao, Y., Zhong, Z., Sebe, N., & Lee, G. H. (2022). Novel Class Discovery in Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4340-4349).
+  - Three stage learning.
+    - LABELED data, Saliency map (another model dependent), ranking based MA training. 
+
 1. Vaze, S., Han, K., Vedaldi, A., & Zisserman, A. (2022). Generalized Category Discovery. arXiv preprint arXiv:2201.02609.
   - leverages the CL trained vision transformers to assign labels directly through clustering.
   - Existing recognition methods have several restrictive assumptions,  
@@ -48,7 +52,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
       - apply loss in different labels.
 
 1. Dietterich, Thomas G., and Alexander Guyer. "The Familiarity Hypothesis: Explaining the Behavior of Deep Open Set Methods." arXiv preprint arXiv:2203.02486 (2022).
-  - GAP: Detecting such “novel category” objects is formulated as an anomaly detection problem
+  - Research GAP: Detecting such “novel category” objects is formulated as an anomaly detection problem
   - TP demonstrate: the Familiarity Hypothesis that these methods succeed because they are detecting the absence of familiar learned features rather than the presence of novelty
     - reviews evidence from the literature (how to show them!!) and presents additional evidence and  suggest some promising research directions.
     - Looked into the penultimate layer activation norm (low for unseen classes): as Network was not activated enough [no feature found!!]
@@ -60,7 +64,29 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2021
 
+1. Choudhury, S., Laina, I., Rupprecht, C., & Vedaldi, A. (2021). Unsupervised part discovery from contrastive reconstruction. Advances in Neural Information Processing Systems, 34, 28104-28118.
+  - Res.Gap.: representation learning at part level has received significantly less attention (most work focus on object and scene level)
+  - Propose an unsup approach to object part discovery and segmentation
+  - three contributions
+    - construct a proxy task through a set of objectives (encourages the model to learn a meaningful decomposition of the image into its parts) [*CL*]
+    - prior work argues for reconstructing or clustering pre-computed features as a proxy to parts
+      - this paper shows that: this alone is unlikely to find meaningful parts;
+      - because of their low resolution and the tendency of classification networks to spatially smear out information
+      - image reconstruction at the level of pixels can alleviate this problem, acting as a complementary cue
+      - the standard evaluation based on keypoint regression does not correlate well with segmentation quality
+      - introduce different metrics, NMI and ARI (better characterize the decomposition of objects into parts)
+    - given a collection of images of a certain object category (e.g., birds) and corresponding object masks, we want to learn to decompose an object into a collection of repeatable and informative parts.
+      - no universally accepted formal definition for what constitutes a “part”, the nature of objects and object parts is accepted as different
+    -  (a) consistency to transformation (equivariance), (b) visual consistency (or self-similarity), and (c) distinctiveness among different parts.
+
 1. Jia, X., Han, K., Zhu, Y., & Green, B. (2021). Joint representation learning and novel category discovery on single-and multi-modal data. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 610-619).
+  - a generic, end-to-end framework to jointly learn a reliable representation and assign clusters to unlabelled data.
+  - Propose to overcluster than the original unknown classe (U Cardinality is known) [**Well! Gives something to work with!!!!**]
+  - Joint optimization of many Losses
+    - CL (both instance and cluster [for known label])
+    - BCE (siamese network setup) [pseudo label]
+    - Consistent MSE loss (different view of same data)
+    - CE loss
 
 1. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
   - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
