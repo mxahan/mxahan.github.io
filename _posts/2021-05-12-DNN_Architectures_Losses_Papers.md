@@ -33,6 +33,9 @@
 
 ## 2021
 
+1. Wang, W., Xie, E., Li, X., Fan, D. P., Song, K., Liang, D., ... & Shao, L. (2021). Pyramid vision transformer: A versatile backbone for dense prediction without convolutions. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 568-578).
+  - **TP**: Spatial reduction before the key and value encoding. (figure 4) [pvit]
+
 1. Khan, S., Naseer, M., Hayat, M., Zamir, S. W., Khan, F. S., & Shah, M. (2021). Transformers in vision: A survey. ACM Computing Surveys (CSUR).
   - Transformers require minimal inductive biases for their design and are naturally suited as set-functions.
   - fundamental concepts behind the success of Transformers i.e., self-attention, large-scale pre-training, and bidirectional feature encoding.
@@ -118,6 +121,9 @@
 1. Tolstikhin, Ilya, Neil Houlsby, Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung et al. "Mlp-mixer: An all-mlp architecture for vision." arXiv preprint arXiv:2105.01601 (2021).
 
 ## 2020
+
+1. Carion, N., Massa, F., Synnaeve, G., Usunier, N., Kirillov, A., & Zagoruyko, S. (2020, August). End-to-end object detection with transformers. In European conference on computer vision (pp. 213-229). Springer, Cham.
+  - DEtection TRansformer [DETR]
 
 1. Goyal, A., & Bengio, Y. (2020). Inductive biases for deep learning of higher-level cognition. arXiv preprint arXiv:2011.15091.
   - *empirical* paper on model architecture and learning.
