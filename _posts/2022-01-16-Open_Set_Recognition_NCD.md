@@ -11,6 +11,10 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2022
 
+1. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Spacing Loss for Discovering Novel Categories. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3761-3766).
+  - characterize existing NCD approaches into single stage and two-stage methods based on whether they require access to labeled and unlabeled data together while discovering new classes
+  - *Spacing loss* that enforces separability in the latent space using cues from multi-dimensional scaling,
+
 1. Zhao, Y., Zhong, Z., Sebe, N., & Lee, G. H. (2022). Novel Class Discovery in Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4340-4349).
   - Three stage learning.
     - LABELED data, Saliency map (another model dependent), ranking based MA training.
@@ -223,6 +227,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2019 and Earlier
 
+1. Bendale, A., & Boult, T. (2015). Towards open world recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1893-1902).
+
 1. Oza, P., & Patel, V. M. (2019). C2ae: Class conditioned auto-encoder for open-set recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2307-2316).
   - TO: an OSR algorithm using class conditioned auto-encoders with novel training and testing methodologies
     - 2 steps: 1. closed-set classification and, 2. open-set identification
@@ -282,7 +288,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 1. Scheirer, Walter J., Anderson de Rezende Rocha, Archana Sapkota, and Terrance E. Boult. "Toward open set recognition." IEEE transactions on pattern analysis and machine intelligence 35, no. 7 (2012): 1757-1772.
   - “open set” recognition: incomplete world knowledge is present at training, and unknown classes can be submitted during testing
   - TP:  “1-vs-Set Machine,” which sculpts a decision space from the marginal distances of a 1-class or binary SVM with a linear kernel
-  - <embed src="https://mxahan.github.io/PDF_files/deep_tx_cluster.pdf" width="100%" height="850px"/>
+  - In classification, one assumes there is a given set of classes between which we must discriminate. For recognition, we assume there are some classes we can recognize in a much larger space of things we do not recognize
 
 1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3474-3482).
   - lack of robustness for CNN is caused by the softmax layer (discriminative and based on the assumption of closed world)
