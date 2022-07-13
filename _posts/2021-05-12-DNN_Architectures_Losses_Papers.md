@@ -33,6 +33,12 @@
 
 ## 2021
 
+1. Srinivas, A., Lin, T. Y., Parmar, N., Shlens, J., Abbeel, P., & Vaswani, A. (2021). Bottleneck transformers for visual recognition. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 16519-16529).
+  - backbone architecture that incorporates self-attention for multiple computer vision tasks
+    - By just replacing the spatial convolutions with global self-attention in the final three bottleneck blocks of a ResNet
+  - ResNet bottleneck blocks with self-attention can be viewed as Transformer blocks
+  - Nice taxonomy in figure 2
+
 1. Wang, W., Xie, E., Li, X., Fan, D. P., Song, K., Liang, D., ... & Shao, L. (2021). Pyramid vision transformer: A versatile backbone for dense prediction without convolutions. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 568-578).
   - **TP**: Spatial reduction before the key and value encoding. (figure 4) [pvit]
 
@@ -140,6 +146,9 @@
 
 1. Dosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv preprint arXiv:2010.11929 (2020).
   - CNN matching performance: large amount of data pretrain and transfer on mid/small sized classification tasks.
+  - Seminal paper in vision architecture (tx in vision domain)
+  - Small sample size overfit the model
+  - Make fewer assumption about the data.
 
 
 ## 2019
@@ -173,6 +182,12 @@
 
 
 ## 2018
+
+1. Hu, J., Shen, L., & Sun, G. (2018). Squeeze-and-excitation networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7132-7141).
+  - focus on the channel relationship of CNN and propose a novel architectural unit “Squeeze-and-Excitation” (SE) block
+  - adaptively recalibrates channel-wise feature responses by explicitly modeling inter dependencies between channels
+  - improvements in performance over SoTA CNNs at slight additional computational cost
+  - Takes each channel, encode and decode them to finally marge again. (fig 2,3)
 
 1. Chen, L. C., Zhu, Y., Papandreou, G., Schroff, F., & Adam, H. (2018). Encoder-decoder with atrous separable convolution for semantic image segmentation. In Proceedings of the European conference on computer vision (ECCV) (pp. 801-818).
    - Deeplab-V3 (semantic segmentation network)
@@ -279,7 +294,8 @@
   - Video activity recognition: segmentation and aggregation with multimodal (figure 1)
   - Experiments: i) Dataset: HMDB51 and UCF101
 
-1. He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. "Deep residual learning for image recognition." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770-778. 2016.
+1. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).
+  - Resnet with bottleneck ideas.
 
 1. Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems 25 (2012): 1097-1105.
 

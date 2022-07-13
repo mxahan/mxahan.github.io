@@ -11,6 +11,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2022
 
+1. Zheng, J., Li, W., Hong, J., Petersson, L., & Barnes, N. (2022). Towards Open-Set Object Detection and Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3961-3970).
+
 1. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Spacing Loss for Discovering Novel Categories. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3761-3766).
   - characterize existing NCD approaches into single stage and two-stage methods based on whether they require access to labeled and unlabeled data together while discovering new classes
   - *Spacing loss* that enforces separability in the latent space using cues from multi-dimensional scaling,
