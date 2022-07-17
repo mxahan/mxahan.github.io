@@ -868,6 +868,15 @@
 
 ## 2021
 
+1. Zhao, L., Wang, Y., Zhao, J., Yuan, L., Sun, J. J., Schroff, F., ... & Liu, T. (2021). Learning view-disentangled human pose representation by contrastive cross-view mutual information maximization. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 12793-12802).
+  - Similar idea as our MV work but requires pose and view data
+    - Camera view augmentation (3D camera data requirement)
+      - Multiview 2D pose and produce pose estimation.
+      - *Equation 6* clarifies somethings
+    - Produce view and pose estimation.
+    - Image domain instead of video domain.
+  - Evaluate our performance on single-shot cross-view action recognition
+
 1. Li, R., Zhang, Y., Qiu, Z., Yao, T., Liu, D., & Mei, T. (2021). Motion-Focused Contrastive Learning of Video Representations. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 2105-2114).
   - RQ: how important is the motion particularly for self-supervised video representation learning.
   - TP: motion-centered CL (MCL) [kind of augmentation approach]! compose a duet??

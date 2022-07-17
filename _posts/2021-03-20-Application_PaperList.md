@@ -222,6 +222,7 @@ This blog contains state of the art application and research on different applic
   - supervised setup, linear interpolation between input and corresponding labels
   - a regularization method: design choices in ablation studies
   - A connection with ERM (interesting read)
+  - MT (my thoughts): mixing 1 and 2 still gives 1/2 of both of it? whats the significance of the weights between mixing. I get it still can it be improved?
 
 ## 2020
 
