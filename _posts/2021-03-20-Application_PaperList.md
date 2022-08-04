@@ -1,3 +1,4 @@
+
 # Introduction
 
 This blog contains state of the art application and research on different applications. The applications will be stated in the subheadings. Although one paper can fall into multiple categories we will be mostly going with one tag per papers. However, the tag is subjected to change time-to-times.
@@ -11,6 +12,21 @@ This blog contains state of the art application and research on different applic
 # Multi View Application
 
 # Domain Adaptation
+
+## 2022
+
+1. Xie, B., Yuan, L., Li, S., Liu, C. H., & Cheng, X. (2022). Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 8068-8078).
+  - TP: region-based active learning approach for semantic segmentation under a domain shift (RIPU)
+    - aiming to automatically query a *small partition* of image regions to be labeled while maximizing segmentation performance
+      - is to select the most diverse and uncertain regions
+    - a *new* acquisition strategy characterizing the spatial adjacency of image regions along with the prediction confidence.
+    - enforce local prediction consistency between a pixel and its nearest neighbors on a source image
+    - develop a negative learning loss to make the features more discriminative
+  - introduce two labeling mechanisms
+    - what is not? reducing what is not
+    - “Region-based Annotating (RA)”: every pixel in the selected regions—high annotation regime
+    - “Pixel-based Annotating (PA)”: focus more on the labeling efficiency by selecting the center pixel within the region
+  - Joint optimization: Pretty much like semi-supervised learning!
 
 ## 2020
 

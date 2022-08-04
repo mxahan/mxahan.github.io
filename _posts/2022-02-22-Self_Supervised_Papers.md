@@ -292,6 +292,19 @@
 
 ## 2020
 
+1. Cai, T. T., Frankle, J., Schwab, D. J., & Morcos, A. S. (2020). Are all negatives created equal in contrastive instance discrimination?. arXiv preprint arXiv:2010.06682.
+  - divided negatives by their difficulty for a given query
+    - studied which difficulty ranges were most important for learning useful representations (how?)
+  - a small minority of negatives (hardest 5%—were) both necessary and sufficient for the downstream task to reach full accuracy
+  - The hardest 0.1% of negatives are unnecessary and sometimes detrimental
+  - Hypothesis:  there may be unexploited opportunities to reduce CID computation for any particular query, only a small fraction of the negatives are necessary
+  - To compute the difficulty for a set of negatives given a particular query, the dot product between the normalized contrastive-space embedding of each negative with the normalized contrastive-space embedding of the query
+    - Hard negatives are more semantically similar to the query
+    - Some of the easiest negatives are both anti-correlated (dot prod -1) and semantically similar to the query
+      - only issue for cosine distance.
+    - Some negatives are consistently easy or hard across queries.
+
+
 1. Sohoni, Nimit, Jared Dunnmon, Geoffrey Angus, Albert Gu, and Christopher Ré. "No subclass left behind: Fine-grained robustness in coarse-grained classification problems." Advances in Neural Information Processing Systems 33 (2020): 19339-19352.
   - Hidden stratification: unavailable subclass labels
   - TP: GEORGE, a method to both measure and mitigate hidden stratification even when subclass labels are unknown.
@@ -868,6 +881,19 @@
 
 ## 2021
 
+1. Li, T., Fan, L., Yuan, Y., He, H., Tian, Y., Feris, R., ... & Katabi, D. (2020). Making contrastive learning robust to shortcuts. arXiv preprint arXiv:2012.09962.
+  - contrastive learning is susceptible to feature suppression
+  - TP: analyze the objective function of contrastive learning and formally prove that it is vulnerable to feature suppression.
+  - present predictive contrastive learning (PCL), a framework for learning unsupervised representations that are robust to feature suppression
+    - force the learned representation to predict the input, prevent it from discarding important information
+  - simple features are contrastive enough to separate +ve samples from -ve samples, CL might learn such simple (or simpler) features even if irrelevant to the tasks of interest, and other more relevant features are suppressed.
+    - addresses this problem by designing handcrafted data augmentations that eliminate the irrelevant features
+  - propose predictive contrastive learning (PCL) as a training scheme that prevents feature suppression
+    - predict the input, such as inpainting, colorization, or autoencoding.
+      - Helps to overcome the feature suppression issues.
+      - similar to auto-encoder but with contrastive flavour.
+    - [figure 1]: architecture and loss setup. 
+
 1. Zhao, L., Wang, Y., Zhao, J., Yuan, L., Sun, J. J., Schroff, F., ... & Liu, T. (2021). Learning view-disentangled human pose representation by contrastive cross-view mutual information maximization. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 12793-12802).
   - Similar idea as our MV work but requires pose and view data
     - Camera view augmentation (3D camera data requirement)
@@ -1297,6 +1323,8 @@
     - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well-modeled.
 
 ## 2022
+
+1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
   - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]

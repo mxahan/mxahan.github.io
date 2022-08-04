@@ -128,6 +128,7 @@ As academic writing ensures the clarity of reporting research work for the audie
         - Adverbs
           - However, therefore, as a result
           - Time order - first, second, then
+  - Wait for the right moment/place to drop the punch line. 
 
 
 - Avoid Nominalization (verbs to noun/adjective)
@@ -317,7 +318,7 @@ What things should be in a good abstract
 
 Abstract type [link](https://libguides.usc.edu/writingguide/abstract)
 
-Usually Contains -  (i) Overall purpose of the study (research problems) (ii) Basic study design (iii) Major finding as result in analysis (iv) Brief summary of interpretation. Based on the contents the abstract can be categorized as follow: 
+Usually Contains -  (i) Overall purpose of the study (research problems) (ii) Basic study design (iii) Major finding as result in analysis (iv) Brief summary of interpretation. Based on the contents the abstract can be categorized as follow:
  - Critical Abstract: Main finding with additional comments/judgements
  - Descriptive abstract:
  - Informative Abstract: The majority of the abstract.
