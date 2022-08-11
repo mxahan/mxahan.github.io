@@ -2,6 +2,13 @@
 
 ## 2022
 
+1. Paul, S., & Chen, P. Y. (2022, June). Vision transformers are robust learners. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 36, No. 2, pp. 2071-2081).
+  - Compared with CNN and showed the better performance by ViT
+  - Reason behind ViT robustness
+    - Attention, Role of pretraining, robust to image masking
+    - Fourier Spectrum Analysis Reveals Low Sensitivity for ViT
+    - Adversarial Perturbations of ViT Has Wider Spread in Energy Spectrum
+
 1. Chen, T., Zhang, Z., Cheng, Y., Awadallah, A., & Wang, Z. (2022). The Principle of Diversity: Training Stronger Vision Transformers Calls for Reducing All Levels of Redundancy. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 12020-12030).
   - ViT *believed to* higher modeling capacity and representation flexibility
   - ViTs often suffer from over-smoothening (redundant models)
@@ -152,6 +159,9 @@
 
 
 ## 2019
+
+
+1. Yin, D., Gontijo Lopes, R., Shlens, J., Cubuk, E. D., & Gilmer, J. (2019). A fourier perspective on model robustness in computer vision. Advances in Neural Information Processing Systems, 32.
 
 1. Cordonnier, J. B., Loukas, A., & Jaggi, M. (2019). On the relationship between self-attention and convolutional layers. arXiv preprint arXiv:1911.03584.
   - attention layers can perform convolution and, indeed, they often learn to do so in practice.

@@ -15,6 +15,17 @@ This blog contains state of the art application and research on different applic
 
 ## 2022
 
+1. Arnab, A., Xiong, X., Gritsenko, A., Romijnders, R., Djolonga, J., Dehghani, M., ... & Schmid, C. (2022). Beyond Transfer Learning: Co-finetuning for Action Localisation. arXiv preprint arXiv:2207.03807.
+  - question the traditional two-step TL approach, and propose co-finetuning
+  - co-finetuning significantly improves the performance on rare classes
+  - has a regularising effect, and enables the network to learn feature representations that transfer between different datasets.
+  - *TP*: Modify the training strategy.
+    - 2 tasks consequently, [figure 2] on multiple datasets together.
+      - classification and person detection bounding box.
+      - Avoid catastrophic forgetting & Tx overfitting & Small dataset.
+      - Helps improving mid and tail classes.
+  - Experiment: ViViT, AVA, Kinetics, Moments in time, Something-something v2
+
 1. Xie, B., Yuan, L., Li, S., Liu, C. H., & Cheng, X. (2022). Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 8068-8078).
   - TP: region-based active learning approach for semantic segmentation under a domain shift (RIPU)
     - aiming to automatically query a *small partition* of image regions to be labeled while maximizing segmentation performance
@@ -51,6 +62,14 @@ This blog contains state of the art application and research on different applic
   - Final task need to be related (y) but the source may be different (f tries to find common ground).
   - Gradient Reversal layer to implement via SGD.
   - Reduces h delta h distance [eq 13]
+
+1. Ben-David, S., Blitzer, J., Crammer, K., Kulesza, A., Pereira, F., & Vaughan, J. W. (2010). A theory of learning from different domains. Machine learning, 79(1), 151-175.
+  - Investigate
+    - under what conditions can a classifier trained from source data be expected to perform well on target data?
+      - bounding a classifier’s target error in terms of its source error and the divergence between the two domains
+    - given a small amount of L target data, how should we combine it during training with the large amount of L source data to achieve best performance?
+      - bounding the target error of a model which minimizes a convex combination of the empirical source and target errors.
+  -
 
 # Model Compression
 
@@ -267,6 +286,10 @@ This blog contains state of the art application and research on different applic
   -  designing novel regularizers without class-dependent bias remains an open research question
 
 ## 2022
+
+1. Alaa, A., Van Breugel, B., Saveliev, E. S., & van der Schaar, M. (2022, June). How faithful is your synthetic data? sample-level metrics for evaluating and auditing generative models. In International Conference on Machine Learning (pp. 290-306). PMLR.
+  - Devising domain- and model-agnostic evaluation for generative Models  
+    - 3 metrics, alpha-precision, beta-recall, authenticity, to characterize the fidelity, diversity and generalization
 
 1. Balestriero, Randall, Leon Bottou, and Yann LeCun. "The Effects of Regularization and Data Augmentation are Class Dependent." arXiv preprint arXiv:2204.03632 (2022).
   - Aims to understand the impact of regularization

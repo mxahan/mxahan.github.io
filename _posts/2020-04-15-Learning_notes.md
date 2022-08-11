@@ -29,7 +29,7 @@ Well I did many things
 The following worked finally. not sure if it was sole responsible of sum of many previous things. However,
 https://kumarvinay.com/how-to-enable-bluetooth-headset-microphone-support-in-ubuntu-20-04/
 
-After following those, I still require to run the following command everytime after I reconnect my bluetooth device. 
+After following those, I still require to run the following command everytime after I reconnect my bluetooth device.
 
 ```
 systemctl --user --now enable pipewire-media-session.serviceon.
@@ -251,6 +251,20 @@ Install the **right version** of the pytorch, torchvision. (try both conda and p
 ### plt.imshow taking forever/ not working
 
 Use plt.show() at the end of plt.imshow()
+
+### Tensorflow GPU install using anaconda (RTX-3090)
+
+I found the following most reliable:
+
+[source](https://www.tensorflow.org/install/pip#install_cuda_with_apt)
+
+```
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/
+python3 -m pip install tensorflow
+# Verify install:
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+```
 
 
 # Initramfs Ubuntu reboot

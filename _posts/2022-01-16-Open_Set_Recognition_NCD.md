@@ -14,8 +14,14 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 1. Zheng, J., Li, W., Hong, J., Petersson, L., & Barnes, N. (2022). Towards Open-Set Object Detection and Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3961-3970).
 
 1. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Spacing Loss for Discovering Novel Categories. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3761-3766).
-  - characterize existing NCD approaches into single stage and two-stage methods based on whether they require access to labeled and unlabeled data together while discovering new classes
-  - *Spacing loss* that enforces separability in the latent space using cues from multi-dimensional scaling,
+  - *Spacing loss* that enforces separability in the latent space using cues from multi-dimensional scaling
+    - an either operate as a standalone method or can be plugged into existing methods to enhance them
+  - characterize existing NCD approaches into single-stage and two-stage methods based on if they require access to L and U data together while discovering NC
+    - Single-stage NCD models can access L and U together
+  - common NCD methodologies: learn a feature extractor using the L and use clustering, psuedo-labelling or CL
+  - Experiment with CIFAR dataset
+  - Two characteristics: 1) the ability to transport similar samples to locations equidistant from other dissimilar samples in the latent manifold, 2) the datapoints to refresh their associativity to a group as the learning progresses
+  - Spacing loss summary: i) finding equidist point
 
 1. Zhao, Y., Zhong, Z., Sebe, N., & Lee, G. H. (2022). Novel Class Discovery in Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4340-4349).
   - Three stage learning.
@@ -134,7 +140,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - <embed src="https://mxahan.github.io/PDF_files/Openmix.pdf" width="100%" height="850px"/>
 
 1. Zhao, B., & Han, K. (2021). Novel visual category discovery with dual ranking statistics and mutual knowledge distillation. Advances in Neural Information Processing Systems, 34.
-  - semantic partitions of unlabelled images (new classes) by leveraging a labelled dataset (contains different but relevant categories of images)
+  - semantic partitions of unlabelled images (new classes) by leveraging a labelled dataset (contains different but relevant categories of images) [RS]
   - two branch learning (one branch focusing on local part-level information and the other branch focusing on overall characteristics)
   - dual ranking statistics on both branches to generate pseudo labels for training on the unlabelled data
     - transfer knowledge from labelled data to unlabelled data
@@ -301,3 +307,9 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
       - Put a constraint: classes need to be inside a circle [prototype loss]!!
         - How the heck it got connected to generative model !!
     - <embed src="https://mxahan.github.io/PDF_files/conv_proto_net.pdf" width="100%" height="850px"/>
+
+# 2020 and earlier
+
+1. Kim, Y., Yim, J., Yun, J., & Kim, J. (2019). Nlnl: Negative learning for noisy labels. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 101-110).
+  - “input image belongs to this label” (Positive Learning; PL)
+  - Negative learning: Randomly select other label than the not label !!!???

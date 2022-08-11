@@ -881,6 +881,30 @@
 
 ## 2021
 
+1. Zhao, X., Vemulapalli, R., Mansfield, P. A., Gong, B., Green, B., Shapira, L., & Wu, Y. (2021). Contrastive learning for label efficient semantic segmentation. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 10623-10633).
+  - pretrain the network using a *pixel-wise!!*, *label-based!!* contrastive loss, and then fine-tune it using the cross-entropy loss
+    - increases intra-class compactness and inter-class separability
+  - *RW:* Region-based loss i.e. region MI loss, affinity field loss
+    - Applied in label space but CL in feature space.
+  - *TP:* SCL setup for Semantic Segmentation
+    - MTL setup: Joint optimization.
+    - pixel-wise CL: within-image, across image (SCL)
+
+1. Wang, P., Han, K., Wei, X. S., Zhang, L., & Wang, L. (2021). Contrastive learning based hybrid networks for long-tailed image classification. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 943-952).
+  - explore effective SCL strategies to learn better image representations from imbalanced data to boost the classification accu.
+    - propose a novel hybrid network structure (SCL loss and a CE loss)
+    - progressively transited from feature learning to the classifier learning as better features make better classifier (**how are you sure of it**)
+    - Explore two variant, i) SC ii) prototypical SC (PSC)
+      - PSC overcome the memory issue by taking an prototype for classes  
+  - Head classes (more example for few classes) and long-tail (few example for many classes)
+    - Existing solutions: data re-sampling, loss re-weighting, margin modification, data augmentation.
+    - decoupling the representation and classifier into two stages
+  - **TP**: follow a curriculum to progressively transit the learning from feature learning to classifier learning.
+    - MTL but utilize the adaptive weights between them.
+    - Propose PSC and extention of PSC - MPSC loss.
+    - Overall architecture figure 2
+![image](https://aitechtogether.com/wp-content/uploads/2022/05/40fae979-d6da-4a84-b865-e88caca82dbf.webp)
+
 1. Li, T., Fan, L., Yuan, Y., He, H., Tian, Y., Feris, R., ... & Katabi, D. (2020). Making contrastive learning robust to shortcuts. arXiv preprint arXiv:2012.09962.
   - contrastive learning is susceptible to feature suppression
   - TP: analyze the objective function of contrastive learning and formally prove that it is vulnerable to feature suppression.
@@ -892,7 +916,7 @@
     - predict the input, such as inpainting, colorization, or autoencoding.
       - Helps to overcome the feature suppression issues.
       - similar to auto-encoder but with contrastive flavour.
-    - [figure 1]: architecture and loss setup. 
+    - [figure 1]: architecture and loss setup.
 
 1. Zhao, L., Wang, Y., Zhao, J., Yuan, L., Sun, J. J., Schroff, F., ... & Liu, T. (2021). Learning view-disentangled human pose representation by contrastive cross-view mutual information maximization. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 12793-12802).
   - Similar idea as our MV work but requires pose and view data
@@ -945,7 +969,6 @@
   - Application scenario: Unbalanced classes
   - tackle long-tailed recognition
     - Too much **complex paper** for then.
-
 
 1. Kuang, Haofei, Yi Zhu, Zhi Zhang, Xinyu Li, Joseph Tighe, Sören Schwertfeger, Cyrill Stachniss, and Mu Li. "Video Contrastive Learning with Global Context." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 3195-3204. 2021.
   - Why we require the global context though?? what is even global context??
@@ -1325,6 +1348,10 @@
 ## 2022
 
 1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
+  - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
+    - CL does not learn domain-invariant features, diverging from UDA intuitions.
+    - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
+    - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
   - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
