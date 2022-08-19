@@ -2,6 +2,9 @@
 
 ## 2022
 
+1. Abid, A., Yuksekgonul, M., & Zou, J. (2022, June). Meaningfully debugging model mistakes using conceptual counterfactual explanations. In International Conference on Machine Learning (pp. 66-88). PMLR.
+  -  propose a systematic approach, conceptual counterfactual explanations (CCE) to explain why a classifier makes a mistake on a particular test sample(s) in terms of human-understandable .
+
 1. Paul, S., & Chen, P. Y. (2022, June). Vision transformers are robust learners. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 36, No. 2, pp. 2071-2081).
   - Compared with CNN and showed the better performance by ViT
   - Reason behind ViT robustness
@@ -162,6 +165,13 @@
 
 
 1. Yin, D., Gontijo Lopes, R., Shlens, J., Cubuk, E. D., & Gilmer, J. (2019). A fourier perspective on model robustness in computer vision. Advances in Neural Information Processing Systems, 32.
+  - investigate recently observed tradeoffs caused by Gaussian data augmentation and adversarial training
+    - both methods improve robustness to corruptions that are concentrated in the high frequency domain while reducing robustness to corruptions in the low frequency domain
+    - **personal thought: Architectural texture bias**
+  - TP: AutoAugment is good
+  - TP result:
+    - Gaussian data augmentation and adversarial training bias models towards low frequency information
+    - Does low frequency data augmentation improve robustness to low frequency corruptions? - **No, low freq are important to learn**
 
 1. Cordonnier, J. B., Loukas, A., & Jaggi, M. (2019). On the relationship between self-attention and convolutional layers. arXiv preprint arXiv:1911.03584.
   - attention layers can perform convolution and, indeed, they often learn to do so in practice.
@@ -357,6 +367,9 @@
 1. Sun, Yifan, Changmao Cheng, Yuhan Zhang, Chi Zhang, Liang Zheng, Zhongdao Wang, and Yichen Wei. "Circle loss: A unified perspective of pair similarity optimization." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6398-6407. 2020.
 
 ## 2019
+
+1. Zhao, S., Wang, Y., Yang, Z., & Cai, D. (2019). Region mutual information loss for semantic segmentation. Advances in Neural Information Processing Systems, 32.
+  - Joint distribution for neighborhood pixels. 
 
 1. Wang, Xun, Xintong Han, Weilin Huang, Dengke Dong, and Matthew R. Scott. "Multi-similarity loss with general pair weighting for deep metric learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5022-5030. 2019.
   - (TP) Establish a General Pair Weighting (GPW) framework: casts the sampling problem of deep metric learning into a unified view of pair weighting through gradient analysis, (tool for understanding recent pair-based loss functions)

@@ -41,6 +41,10 @@ This blog contains state of the art application and research on different applic
 
 ## 2020
 
+1. Yuan, Y., Chen, X., & Wang, J. (2020, August). Object-contextual representations for semantic segmentation. In European conference on computer vision (pp. 173-190). Springer, Cham.
+  - study the context aggregation problem in semantic segmentation.
+  - TP: i) learn object regions under the supervision of the GT segmentation. ii) compute the object region representation by aggregating the representations of the pixels lying in the object region iii) compute the relation between each pixel and each object region, and augment the representation of each pixel with the *object-contextual representation* (weighted aggregation of all the object region representations)
+
 1. Wilson, Garrett, and Diane J. Cook. "A survey of unsupervised deep domain adaptation." ACM Transactions on Intelligent Systems and Technology (TIST) 11, no. 5 (2020): 1-46.
   - unsupervised domain adaptation can handle situations where a network is trained on labeled data (source domain) and unlabeled target data (related but different domain) with the goal of performing well at target domain
   - 3 TL: i) inductive (target and source tasks are different) ii) transductive (tasks remain the same while the domains are different, domain adaptation) iii) Unsupervised (inductive with no labels)
@@ -69,7 +73,6 @@ This blog contains state of the art application and research on different applic
       - bounding a classifier’s target error in terms of its source error and the divergence between the two domains
     - given a small amount of L target data, how should we combine it during training with the large amount of L source data to achieve best performance?
       - bounding the target error of a model which minimizes a convex combination of the empirical source and target errors.
-  -
 
 # Model Compression
 
@@ -110,6 +113,10 @@ This blog contains state of the art application and research on different applic
 # Action recognition, # progression, # 3D # Pose
 
 ## 2021
+
+1. Liu, X., Pintea, S. L., Nejadasl, F. K., Booij, O., & van Gemert, J. C. (2021). No frame left behind: Full video action recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 14892-14901).
+  - TP: propose to do away with sub-sampling heuristics and argue for leveraging all video frames: Full video action recognition
+
 1. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 4124-4132. 2021.
   - How to learn the camera matrix
   - Camera matrix background (pinhole camera model) [ref 1](https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf), [ref 2](https://hedivision.github.io/Pinhole.html), [short course](https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/CV/index.html)

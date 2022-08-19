@@ -12,6 +12,10 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 ## 2022
 
 1. Zheng, J., Li, W., Hong, J., Petersson, L., & Barnes, N. (2022). Towards Open-Set Object Detection and Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3961-3970).
+  - present a new task, namely Open-Set Object Detection and Discovery (OSODD)
+    - propose a two-stage method that first uses an open-set object detector to predict both known and unknown objects
+  - propose a category discovery method using *domain-agnostic augmentation*, CL and *semi-supervised clustering*.
+  - approach: Open-set object detector with memory module, object category discovery with representation learning,
 
 1. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Spacing Loss for Discovering Novel Categories. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3761-3766).
   - *Spacing loss* that enforces separability in the latent space using cues from multi-dimensional scaling
@@ -234,6 +238,13 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - Figure 2 demonstrate goal for OSR
 
 ## 2019 and Earlier
+
+
+1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
+  - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
+  - TP: OLTR learning from naturally distributed data and optimizing accuracy over a balanced test set of head, tail, and open classes
+  - methodologies: 1. dynamic Meta Embedding. .. conected to Self-attention
+  - overall figure 2
 
 1. Bendale, A., & Boult, T. (2015). Towards open world recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1893-1902).
 

@@ -573,8 +573,6 @@
     - Detailed Eq 3 and eq 4
     - Empirically shown to avoid the trivial solution
 
-1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." Advances in Neural Information Processing Systems 33 (2020).
-
 1. Morgado, Pedro, Nuno Vasconcelos, and Ishan Misra. "Audio-visual instance discrimination with cross-modal agreement." arXiv preprint arXiv:2004.12943 (2020).
   - learning audio and video representation [audio to video and video to audio!]
     - How they showed its better??
@@ -1347,11 +1345,33 @@
 
 ## 2022
 
+1. Yu, J., Wang, Z., Vasudevan, V., Yeung, L., Seyedhosseini, M., & Wu, Y. (2022). Coca: Contrastive captioners are image-text foundation models. arXiv preprint arXiv:2205.01917.
+  - Combination of two losses (Contrastive and captioning loss)
+    - MT: Contain a flavour of information theoretic losses.
+  - Attention mechanism: utilization of cross attention (image to text) 
+
+1. Pokle, A., Tian, J., Li, Y., & Risteski, A. (2022). Contrasting the landscape of contrastive and non-contrastive learning. arXiv preprint arXiv:2203.15702.
+  - via a combination of empirical and theoretical results, we provide evidence that non-contrastive methods based on data augmentation can lead to substantially worse representations.
+  - the non-contrastive loss has a prevalence of bad optima that are not collapsed (in neither way, complete or dimension collapse)
+  - prove that the training dynamics can remedy this situation—however, crucially tied to a careful choice of a predictor network model architecture.
+
+1. Zhang, C., Zhang, K., Zhang, C., Pham, T. X., Yoo, C. D., & Kweon, I. S. (2022). How does simsiam avoid collapse without negative samples? a unified understanding with self-supervised contrastive learning. arXiv preprint arXiv:2203.16262.
+  - Refute SimSiam claims and introduce vector decomposition for analyzing the collapse based on the gradient analysis of the l2-normalized representation
+    - unified perspective on how negative samples and SimSiam alleviate collapse
+  - SSL methods learn an encoder with augmentation-invariant representation
+  - center vector gradient helps prevent collapse via the de-centering effect and its residual gradient achieves de-correlation which also alleviates collapse
+  - Towards simplifying the predictor we have also found that a single bias layer is sufficient for preventing collapse
+
 1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
   - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
     - CL does not learn domain-invariant features, diverging from UDA intuitions.
     - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
     - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
+    - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
+      - That is where it comes connect this but not to collapse them.
+  - Assumption and definition of class domain connectivity (figure 1)
+  - Connected the graph theory [section 4.2]: Good read.
+    - discusses the importance of augmentation strengths.
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
   - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
