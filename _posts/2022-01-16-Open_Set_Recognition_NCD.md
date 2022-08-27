@@ -10,6 +10,18 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 # Out-of-Distribution (OOD)
 
 ## 2022
+1. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Novel Class Discovery without Forgetting. arXiv preprint arXiv:2207.10659.
+  - identify and formulate a new, pragmatic problem setting of NCDwF: Novel Class Discovery without Forgetting
+  - propose 1) a method to generate pseudo-latent representations for previously available L to alleviate forgetting 2) a MI based regularizer to enhance unsupervised NCD, and 3) a simple Known Class Identifier for generalized inference form L and U.
+  - Related works: Incremental learning: to alleviate the catastrophic forgetting of model when learning across a sequence of tasks (*requires all labels*) by some regularization, memory based approaches, dynamically expanding and parameter isolation.
+  - *TP*: labeled data can't be accessed during NCD time
+
+1. Yang, M., Zhu, Y., Yu, J., Wu, A., & Deng, C. (2022). Divide and Conquer: Compositional Experts for Generalized Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 14268-14277).
+  - focus on this generalized setting of NCD (GNCD) by challenging two-step setup for L and U.
+  - propose to divide and conquer it with two groups of Compositional Experts (ComEx).
+  - propose to strengthen ComEx with *global-to-local and local-to-local regularization*.
+  - Unsup clustering enforce neighborhood consistency and average entropy maximization: achieve clustering and avoid collapse.
+  - two group of experts (lol: final layers MTL)! batch and class-wise ![image](https://amingwu.github.io/assets/images/novelty.png)
 
 1. Zheng, J., Li, W., Hong, J., Petersson, L., & Barnes, N. (2022). Towards Open-Set Object Detection and Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3961-3970).
   - present a new task, namely Open-Set Object Detection and Discovery (OSODD)
@@ -238,7 +250,12 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - Figure 2 demonstrate goal for OSR
 
 ## 2019 and Earlier
+1. Asano, Y. M., Rupprecht, C., & Vedaldi, A. (2019). Self-labelling via simultaneous clustering and representation learning. arXiv preprint arXiv:1911.05371.
 
+1. Quintanilha, I. M., de ME Filho, R., Lezama, J., Delbracio, M., & Nunes, L. O. (2018). Detecting Out-Of-Distribution Samples Using Low-Order Deep Features Statistics.
+  - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
+  - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
+  - linear classifier over the neural activation stats. 
 
 1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
   - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
@@ -318,8 +335,6 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
       - Put a constraint: classes need to be inside a circle [prototype loss]!!
         - How the heck it got connected to generative model !!
     - <embed src="https://mxahan.github.io/PDF_files/conv_proto_net.pdf" width="100%" height="850px"/>
-
-# 2020 and earlier
 
 1. Kim, Y., Yim, J., Yun, J., & Kim, J. (2019). Nlnl: Negative learning for noisy labels. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 101-110).
   - “input image belongs to this label” (Positive Learning; PL)
