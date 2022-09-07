@@ -325,6 +325,17 @@
 
 ## 2021
 
+1. Liu, D., Ning, J., Wu, J., & Yang, G. (2021). Extending Ordinary-Label Learning Losses to Complementary-Label Learning. IEEE Signal Processing Letters, 28, 852-856.
+
+1. Kim, Y., Yun, J., Shon, H., & Kim, J. (2021). Joint negative and positive learning for noisy labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9442-9451).
+  - *Learning from complementary labels.*
+  - **TP**: JNPL (Improvement over NLNL)
+    - trains CNN via two losses, NL+ and PL+ (improved NL and PL and also addressing their issues)
+  - Related work: *Design noise-robust loss*, weighting samples, correction methods, selecting clean labels, **use of complementary labels**
+  - Problem: Underfitting of NL (section 3)
+    - focal loss flavor solution
+  - Bad and unclear notation!!
+
 1. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
   - New framework for loss function (taylor series expansion of log function)
   - PolyLoss allows the adjustment of polynomial bases depending on the tasks and datasets (subsumes cross-entropy loss and focal loss as special cases)
@@ -353,6 +364,11 @@
   - limited to moderately sized datasets with moderately sized models, and our conclusions are limited to supervised classification settings
 
 ## 2020
+
+1. Feng, L., Kaneko, T., Han, B., Niu, G., An, B., & Sugiyama, M. (2020, November). Learning with multiple complementary labels. In International Conference on Machine Learning (pp. 3072-3081). PMLR.
+  - design two wrappers that decompose MCLs into many single CLs
+  - Reverse the prediction and apply cross entropy loss.
+
 1. Boudiaf, Malik, Jérôme Rony, Imtiaz Masud Ziko, Eric Granger, Marco Pedersoli, Pablo Piantanida, and Ismail Ben Ayed. "A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses." In European Conference on Computer Vision, pp. 548-564. Springer, Cham, 2020.
   - TP: a theoretical analysis to link the cross-entropy to several well-known and recent pairwise losses from two perspective
     - i) explicit optimization insight and ii) discriminative and generative views of the mutual information between the labels and the learned features
@@ -368,8 +384,16 @@
 
 ## 2019
 
+1. Ishida, T., Niu, G., Menon, A., & Sugiyama, M. (2019, May). Complementary-label learning for arbitrary losses and models. In International Conference on Machine Learning (pp. 2971-2980). PMLR.
+  - derive a novel framework of complementary-label learning
+  - Idea of gradient ascend.
+
+1. Kim, Y., Yim, J., Yun, J., & Kim, J. (2019). Nlnl: Negative learning for noisy labels. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 101-110).
+  - “input image belongs to this label” (Positive Learning; PL)
+  - Negative learning: Randomly select other label than the not label !!!???
+
 1. Zhao, S., Wang, Y., Yang, Z., & Cai, D. (2019). Region mutual information loss for semantic segmentation. Advances in Neural Information Processing Systems, 32.
-  - Joint distribution for neighborhood pixels. 
+  - Joint distribution for neighborhood pixels.
 
 1. Wang, Xun, Xintong Han, Weilin Huang, Dengke Dong, and Matthew R. Scott. "Multi-similarity loss with general pair weighting for deep metric learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5022-5030. 2019.
   - (TP) Establish a General Pair Weighting (GPW) framework: casts the sampling problem of deep metric learning into a unified view of pair weighting through gradient analysis, (tool for understanding recent pair-based loss functions)
@@ -380,7 +404,6 @@
       - state-of-the-art performance on four image retrieval benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop))
   - [github notes]
   - <embed src="https://mxahan.github.io/PDF_files/msgpw.pdf" width="100%" height="850px"/>
-
 
 1. Cheung, Brian, Alex Terekhov, Yubei Chen, Pulkit Agrawal, and Bruno Olshausen. "Superposition of many models into one." arXiv preprint arXiv:1902.05522 (2019).
   - Multiply weights to project them in orthogonal space and sum them.
@@ -405,6 +428,15 @@
   - <embed src="https://mxahan.github.io/PDF_files/triplet_center_loss.pdf" width="100%" height="850px"/>
 
 ## 2017
+
+1. Ishida, T., Niu, G., Hu, W., & Sugiyama, M. (2017). Learning from complementary labels. Advances in neural information processing systems, 30.
+  - PDF formulation, risk minimization
+  - *complementary loss*: incurs a large loss if a predicted complementary label is not correct
+  - terminology: *Ordinary Label* and *complementary label*
+  - A bit strong assumption that the complementary examples are from all other classes!
+    - **I think** this is where the gradient flows to everybody
+      - Causes underfitting
+
 1. Lin, Tsung-Yi, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. "Focal loss for dense object detection." In Proceedings of the IEEE international conference on computer vision, pp. 2980-2988. 2017.
 
 1. Wang, Feng, Xiang Xiang, Jian Cheng, and Alan Loddon Yuille. "Normface: L2 hypersphere embedding for face verification." In Proceedings of the 25th ACM international conference on Multimedia, pp. 1041-1049. 2017.

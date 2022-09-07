@@ -10,6 +10,24 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 # Out-of-Distribution (OOD)
 
 ## 2022
+
+1. Fei, Y., Zhao, Z., Yang, S., & Zhao, B. (2022). XCon: Learning with Experts for Fine-grained Category Discovery. arXiv preprint arXiv:2208.01898.
+  - ViT architecture
+  - Really bad notation [eq 2]
+  - propose a fine graining loss (modified GCD, CL loss) after data partitioning.
+
+1. Sun, Y., & Li, Y. (2022). Open-world Contrastive Learning. arXiv preprint arXiv:2208.02764.
+  - OpenCon learns compact representations for both known and novel classes
+  - leverage the prototype vectors to separate known vs. novel classes in unlabeled data
+  - prototype-based learning can be rigorously interpreted from an Expectation-Maximization (EM) algorithm perspective.
+    - Utilize protoype based solution instead of sinkhorn-knopp approach of clustering novel classes.
+    - Kinda SupCon setting for the CL setting (generalized one).
+
+1. Zhang, C., Hu, C., Xu, R., Gao, Z., He, Q., & He, X. (2022). Mutual Information-guided Knowledge Transfer for Novel Class Discovery. arXiv preprint arXiv:2206.12063.
+  - propose  a principle and general method to transfer semantic knowledge between seen and unseen classes
+    - insight: MI measures the relation between seen and unseen classes in a *restricted label space* and maximizing MI promotes transferring semantic knowledge.
+    - Well there are some vague formulation!!!!
+
 1. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Novel Class Discovery without Forgetting. arXiv preprint arXiv:2207.10659.
   - identify and formulate a new, pragmatic problem setting of NCDwF: Novel Class Discovery without Forgetting
   - propose 1) a method to generate pseudo-latent representations for previously available L to alleviate forgetting 2) a MI based regularizer to enhance unsupervised NCD, and 3) a simple Known Class Identifier for generalized inference form L and U.
@@ -251,11 +269,16 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2019 and Earlier
 1. Asano, Y. M., Rupprecht, C., & Vedaldi, A. (2019). Self-labelling via simultaneous clustering and representation learning. arXiv preprint arXiv:1911.05371.
+  - Combining clustering and representation learning naively may leads to ill posed learning problems with degenerate solutions
+    - propose a novel principled MI based formulation to addresses these issues
+    - extends standard CE minimization to an optimal transport problem, which is solved efficiently by Sinkhorn-Knopp algorithm.
+    - Overcome DeepCluster Issue: combining inconventional representation learning with clustering: there exist degenerate solution.
+  - Utilize equi-partition condition for the labels
 
 1. Quintanilha, I. M., de ME Filho, R., Lezama, J., Delbracio, M., & Nunes, L. O. (2018). Detecting Out-Of-Distribution Samples Using Low-Order Deep Features Statistics.
   - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
   - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
-  - linear classifier over the neural activation stats. 
+  - linear classifier over the neural activation stats.
 
 1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
   - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
@@ -335,7 +358,3 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
       - Put a constraint: classes need to be inside a circle [prototype loss]!!
         - How the heck it got connected to generative model !!
     - <embed src="https://mxahan.github.io/PDF_files/conv_proto_net.pdf" width="100%" height="850px"/>
-
-1. Kim, Y., Yim, J., Yun, J., & Kim, J. (2019). Nlnl: Negative learning for noisy labels. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 101-110).
-  - “input image belongs to this label” (Positive Learning; PL)
-  - Negative learning: Randomly select other label than the not label !!!???
