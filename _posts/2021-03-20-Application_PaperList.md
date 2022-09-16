@@ -16,127 +16,231 @@ This blog contains state of the art application and research on different applic
 ## 2022
 
 1. Arnab, A., Xiong, X., Gritsenko, A., Romijnders, R., Djolonga, J., Dehghani, M., ... & Schmid, C. (2022). Beyond Transfer Learning: Co-finetuning for Action Localisation. arXiv preprint arXiv:2207.03807.
-  - question the traditional two-step TL approach, and propose co-finetuning
-  - co-finetuning significantly improves the performance on rare classes
-  - has a regularising effect, and enables the network to learn feature representations that transfer between different datasets.
-  - *TP*: Modify the training strategy.
-    - 2 tasks consequently, [figure 2] on multiple datasets together.
-      - classification and person detection bounding box.
-      - Avoid catastrophic forgetting & Tx overfitting & Small dataset.
-      - Helps improving mid and tail classes.
-  - Experiment: ViViT, AVA, Kinetics, Moments in time, Something-something v2
 
-1. Xie, B., Yuan, L., Li, S., Liu, C. H., & Cheng, X. (2022). Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 8068-8078).
-  - TP: region-based active learning approach for semantic segmentation under a domain shift (RIPU)
-    - aiming to automatically query a *small partition* of image regions to be labeled while maximizing segmentation performance
-      - is to select the most diverse and uncertain regions
-    - a *new* acquisition strategy characterizing the spatial adjacency of image regions along with the prediction confidence.
-    - enforce local prediction consistency between a pixel and its nearest neighbors on a source image
-    - develop a negative learning loss to make the features more discriminative
-  - introduce two labeling mechanisms
-    - what is not? reducing what is not
-    - “Region-based Annotating (RA)”: every pixel in the selected regions—high annotation regime
-    - “Pixel-based Annotating (PA)”: focus more on the labeling efficiency by selecting the center pixel within the region
-  - Joint optimization: Pretty much like semi-supervised learning!
+     - question the traditional two-step TL approach, and propose co-finetuning
+
+     - co-finetuning significantly improves the performance on rare classes
+
+     - has a regularising effect, and enables the network to learn feature representations that transfer between different datasets.
+         - *TP*: Modify the training strategy.
+           - 2 tasks consequently, [figure 2] on multiple datasets together.
+             - classification and person detection bounding box.
+             - Avoid catastrophic forgetting & Tx overfitting & Small dataset.
+             - Helps improving mid and tail classes.
+
+
+     - Experiment: ViViT, AVA, Kinetics, Moments in time, Something-something v2
+
+2. Xie, B., Yuan, L., Li, S., Liu, C. H., & Cheng, X. (2022). Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 8068-8078).
+
+     - TP: region-based active learning approach for semantic segmentation under a domain shift (RIPU)
+       - aiming to automatically query a *small partition* of image regions to be labeled while maximizing segmentation performance
+         - is to select the most diverse and uncertain regions
+       - a *new* acquisition strategy characterizing the spatial adjacency of image regions along with the prediction confidence.
+       - enforce local prediction consistency between a pixel and its nearest neighbors on a source image
+       - develop a negative learning loss to make the features more discriminative
+       
+         - introduce two labeling mechanisms
+           - what is not? reducing what is not
+           - “Region-based Annotating (RA)”: every pixel in the selected regions—high annotation regime
+           - “Pixel-based Annotating (PA)”: focus more on the labeling efficiency by selecting the center pixel within the region
+       
+- Joint optimization: Pretty much like semi-supervised learning!
 
 ## 2020
 
 1. Yuan, Y., Chen, X., & Wang, J. (2020, August). Object-contextual representations for semantic segmentation. In European conference on computer vision (pp. 173-190). Springer, Cham.
-  - study the context aggregation problem in semantic segmentation.
-  - TP: i) learn object regions under the supervision of the GT segmentation. ii) compute the object region representation by aggregating the representations of the pixels lying in the object region iii) compute the relation between each pixel and each object region, and augment the representation of each pixel with the *object-contextual representation* (weighted aggregation of all the object region representations)
+
+     - study the context aggregation problem in semantic segmentation.
+
+     - TP: i) learn object regions under the supervision of the GT segmentation. ii) compute the object region representation by aggregating the representations of the pixels lying in the object region iii) compute the relation between each pixel and each object region, and augment the representation of each pixel with the *object-contextual representation* (weighted aggregation of all the object region representations)
 
 1. Wilson, Garrett, and Diane J. Cook. "A survey of unsupervised deep domain adaptation." ACM Transactions on Intelligent Systems and Technology (TIST) 11, no. 5 (2020): 1-46.
-  - unsupervised domain adaptation can handle situations where a network is trained on labeled data (source domain) and unlabeled target data (related but different domain) with the goal of performing well at target domain
-  - 3 TL: i) inductive (target and source tasks are different) ii) transductive (tasks remain the same while the domains are different, domain adaptation) iii) Unsupervised (inductive with no labels)
-  - Domain invariant feature learning
-    - aligning distribution by divergence (i) Maximum Mean Discrepency ii) correlation alignment iii) Contrastive domain D. iv) Wasserstein
-    - reconstruction
-    - Adversarial
-  - Domain mapping: Image-image mapping
-  - Normalization Statistics
-  - Ensemble methods
-  - Target Discriminative methods
+
+     - unsupervised domain adaptation can handle situations where a network is trained on labeled data (source domain) and unlabeled target data (related but different domain) with the goal of performing well at target domain
+
+     - 3 TL: i) inductive (target and source tasks are different) ii) transductive (tasks remain the same while the domains are different, domain adaptation) iii) Unsupervised (inductive with no labels)
+         - Domain invariant feature learning
+           - aligning distribution by divergence (i) Maximum Mean Discrepency ii) correlation alignment iii) Contrastive domain D. iv) Wasserstein
+           - reconstruction
+           - Adversarial
+
+
+     - Domain mapping: Image-image mapping
+    
+     - Normalization Statistics
+    
+     - Ensemble methods
+    
+     - Target Discriminative methods
 
 ## 2016 and prior
 
 1. Ganin, Yaroslav, and Victor Lempitsky. "Unsupervised domain adaptation by backpropagation." In International conference on machine learning, pp. 1180-1189. 2015.
-  - Simple and great Idea [eq: 1,2,3].
-    - Input to features (*f*), features to task (*y, loss<sub>y</sub>*), features to domain classifier (*d, loss<sub>d</sub>*).
-    - *f* tries to minimize the *loss<sub>y</sub>* and maximize the *loss<sub>d</sub>*, and *d, y* tries to minimize their corresponding losses.
-  - Final task need to be related (y) but the source may be different (f tries to find common ground).
-  - Gradient Reversal layer to implement via SGD.
-  - Reduces h delta h distance [eq 13]
+
+     - Simple and great Idea [eq: 1,2,3].
+       - Input to features (*f*), features to task (*y, loss<sub>y</sub>*), features to domain classifier (*d, loss<sub>d</sub>*).
+       - *f* tries to minimize the *loss<sub>y</sub>* and maximize the *loss<sub>d</sub>*, and *d, y* tries to minimize their corresponding losses.
+
+     - Final task need to be related (y) but the source may be different (f tries to find common ground).
+
+     - Gradient Reversal layer to implement via SGD.
+
+     - Reduces h delta h distance [eq 13]
 
 1. Ben-David, S., Blitzer, J., Crammer, K., Kulesza, A., Pereira, F., & Vaughan, J. W. (2010). A theory of learning from different domains. Machine learning, 79(1), 151-175.
-  - Investigate
-    - under what conditions can a classifier trained from source data be expected to perform well on target data?
-      - bounding a classifier’s target error in terms of its source error and the divergence between the two domains
-    - given a small amount of L target data, how should we combine it during training with the large amount of L source data to achieve best performance?
-      - bounding the target error of a model which minimizes a convex combination of the empirical source and target errors.
+     - Investigate
+       - under what conditions can a classifier trained from source data be expected to perform well on target data?
+         - bounding a classifier’s target error in terms of its source error and the divergence between the two domains
+       - given a small amount of L target data, how should we combine it during training with the large amount of L source data to achieve best performance?
+         - bounding the target error of a model which minimizes a convex combination of the empirical source and target errors.
 
 # Model Compression
 
 1. Blalock, Davis, Jose Javier Gonzalez Ortiz, Jonathan Frankle, and John Guttag. "What is the state of neural network pruning?." arXiv preprint arXiv:2003.03033 (2020).
 
 1. Khetan, Ashish, and Zohar Karnin. "PruneNet: Channel Pruning via Global Importance." arXiv preprint arXiv:2005.11282 (2020).
-  - Importance score: Variance of input layer after filtering
-  - New regularization scheme.
 
-1. 1. Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
-  - Knowledge distillation
-  - Distillation and the effect of temperature.
-    - section 2 and 2.1 are important
-  - Training small network to mimic the large network.
-  - Train small network to learn the features and logits of the large network.
-  - Softmax, temperature and the MSE with the prediction
-  - Experimented with MNIST, speech and Specialist models.
+     - Importance score: Variance of input layer after filtering
+
+     - New regularization scheme.
+
+1. Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
+
+     - Knowledge distillation
+         - Distillation and the effect of temperature.
+           - section 2 and 2.1 are important
+
+
+     - Training small network to mimic the large network.
+    
+     - Train small network to learn the features and logits of the large network.
+    
+     - Softmax, temperature and the MSE with the prediction
+    
+     - Experimented with MNIST, speech and Specialist models.
 
 
 # UAV
 
 1. Narayanan, Priya, Christoph Borel-Donohue, Hyungtae Lee, Heesung Kwon, and Raghuveer Rao. "A real-time object detection framework for aerial imagery using deep neural networks and synthetic training images." In Signal Processing, Sensor/Information Fusion, and Target Recognition XXVII, vol. 10646, p. 1064614. International Society for Optics and Photonics, 2018.
-  - (key point): use of synthetic images (video games)
-    - Data augmentation
-    - How much it covers the real scenario and cases
-    - Are pixel distribution same as the real-time scenario!
-    - How about coordinating between sensors & viewpoints
-    - Requires all labeled !!
-  - Detection approaches (YOLO, SSD)
-  - Edge device implementation
+
+     - (key point): use of synthetic images (video games)
+       - Data augmentation
+       - How much it covers the real scenario and cases
+       - Are pixel distribution same as the real-time scenario!
+       - How about coordinating between sensors & viewpoints
+       - Requires all labeled !!
+
+     - Detection approaches (YOLO, SSD)
+
+     - Edge device implementation
 
 1. Samaras, Stamatios, Eleni Diamantidou, Dimitrios Ataloglou, Nikos Sakellariou, Anastasios Vafeiadis, Vasilis Magoulianitis, Antonios Lalas et al. "Deep learning on multi sensor data for counter UAV applications—A systematic review." Sensors 19, no. 22 (2019): 4837.
-  - Counter UAV (c-UAV): detect UAV to prevent criminal activities.
-    - Discusses recent advancement of c-UAV using multi-sensors.
-  - Figure 1: Good comparison among multiple individual sensors
-  - Scope: Figure 3 {4 types of sensors and their fusion strategy}
+
+     - Counter UAV (c-UAV): detect UAV to prevent criminal activities.
+       - Discusses recent advancement of c-UAV using multi-sensors.
+
+     - Figure 1: Good comparison among multiple individual sensors
+
+     - Scope: Figure 3 {4 types of sensors and their fusion strategy}
 
 # Action recognition, # progression, # 3D # Pose
+
+## 2022
+
+1. Liu, W., & Mei, T. (2022). Recent Advances of Monocular 2D and 3D Human Pose Estimation: A Deep Learning Perspective. *ACM Computing Surveys (CSUR)*.
+
+   - *TP*: Comprehensive review of th Human Pose estimation
+
+   - DL framework: Encoder-Decoder setting: body structural models, multi-scale feature fusion, multistage pipelines, refinement in a coarse-to-fine manner, multi-task learning.  
+
+   - Classification approaches
+     - Target: 2D or 3D pose
+     - Person: single person or multi-person
+     - Framework for multi-person: Top-down or bottom up
+
+   - Background:
+     - Human Body Representation:
+       - Key-point based representation: 
+         - key-point coordinates, heatmaps, orientation maps (part affinity fields in OpenPose), hierarchical bone vectors (spherical coordinate). 
+       - Model-based representation (3d): inherent structural characteristics of the human body
+         - Part-based volumetric model, Statistical 3D model. 
+
+   - Monocular 2D pose estimation. (image)
+
+     - Structure: Encoder (image classification network)-Decoder (more interesting and research focus)
+
+     - Regression: deepPose, iterative error feedback, Residual Log-Likelihood Estimation
+     - Detection-based methods:
+       - Structural Body Model, Multi-stage pipeline, Pose refinement, MTL, Improving efficiency
+
+   - Multi-person pose estimation (image)
+
+     - Top-Down: Pose non-maximum-suppression (NMS)
+       - Two Stage Pipeline (G-RMI, Faster RCNN+ResNet, Key-point based NMS for confidence)
+       - MTL: Mask-RCNN, Hand-face detector, ZoomNet Unifies all.
+       - Multi-stage or multi-branch fusion: Cascaded Pyramid Network (CPN), HRNet, MSPN
+       - Dealing with complex Scene: Siamese Net application by OASNet, CrowdPose Dataset, MIPNet
+       - Improving efficiency: Tx based model (TokenPose)
+
+     - Bottom-up: predicts key-point first. 
+       - Key-point grouping: Fast-rCNN, deepercut, deepcut
+         - Part-affinity field: OpenPose, Part Intensity Field, Part Aware PAF
+         - Associative Embedding: Detection and grouping method, HigherHRNet
+         - MTL: Pointset Net
+
+   - Single Person (video)
+
+     - Pose estimation with AR: AOG, kinda MTL
+     - Optical flow-based propagation: Spatial Net
+     - Sequence model-based feature propagation: Chained model, LSTM pose machine, RNN Encoder-decoder pipeline, Unipose
+
+   - Multi-person pose estimation and tracking (video): PoesTrack dataset
+
+     - Top-Down: 
+       - clip-based: 3D-mask r-cNN detects key-point and utilize key-point tracker, DCPose tackles motion blur
+       - single-frame based: PGPT, POINet, KeyTrack
+
+     - Bottom-up:  mostly single-frame based, Plosflow, PAF Openpose and temporal flow fields, spatio-temporal embedding
+
+   - Monocular 3D Pose Estimation: **IN Future**
+
+
+
 
 ## 2021
 
 1. Liu, X., Pintea, S. L., Nejadasl, F. K., Booij, O., & van Gemert, J. C. (2021). No frame left behind: Full video action recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 14892-14901).
-  - TP: propose to do away with sub-sampling heuristics and argue for leveraging all video frames: Full video action recognition
+     - TP: propose to do away with sub-sampling heuristics and argue for leveraging all video frames: Full video action recognition
 
 1. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 4124-4132. 2021.
-  - How to learn the camera matrix
-  - Camera matrix background (pinhole camera model) [ref 1](https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf), [ref 2](https://hedivision.github.io/Pinhole.html), [short course](https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/CV/index.html)
-  - TP: i) approaches based on 3D representations ii) introduce a new geometric convolutional layer (neural projection layer: an architectural contribution, key contribution) to learn viewpoint invariant representations (target)  iii) new dataset (MLB-Youtube dataset)
-    - Neural Projection Layer:
-  - Invariant represtation: by learning global 3D pose
-  - Hypothesis to obtain target: i) implicitly learning from large data ii) use 3D posture information (!! how)
-  - TP: Testimating 3D pose directly from the videos (latent 3D representation and it's multiview 2d projection), then explores using different representations of it for AR.
-  - TP: 3D representation by using 3D geometric transformation and projection.
-  - Network: PoseNet (3D posture), and CalibNet (external camera matrix, however deems error-prone): Loss Function: sum of three losses (cross entropy, metric loss, and camera distribution loss !!!), Dataset: Human3.6M, MLB (baseball), TSH (toyota smart home)
 
-1. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." arXiv preprint arXiv:2103.16516 (2021).
+     - How to learn the camera matrix
 
+     - Camera matrix background (pinhole camera model) [ref 1](https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf), [ref 2](https://hedivision.github.io/Pinhole.html), [short course](https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/CV/index.html)
+         - TP: i) approaches based on 3D representations ii) introduce a new geometric convolutional layer (neural projection layer: an architectural contribution, key contribution) to learn viewpoint invariant representations (target)  iii) new dataset (MLB-Youtube dataset)
+           - Neural Projection Layer:
+
+
+     - Invariant represtation: by learning global 3D pose
+    
+     - Hypothesis to obtain target: i) implicitly learning from large data ii) use 3D posture information (!! how)
+    
+     - TP: Testimating 3D pose directly from the videos (latent 3D representation and it's multiview 2d projection), then explores using different representations of it for AR.
+    
+     - TP: 3D representation by using 3D geometric transformation and projection.
+    
+     - Network: PoseNet (3D posture), and CalibNet (external camera matrix, however deems error-prone): Loss Function: sum of three losses (cross entropy, metric loss, and camera distribution loss !!!), Dataset: Human3.6M, MLB (baseball), TSH (toyota smart home)
+
+2. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." arXiv preprint arXiv:2103.16516 (2021).
 ## 2020
 
 1. van Amsterdam, Beatrice, Matthew J. Clarkson, and Danail Stoyanov. "Multi-task recurrent neural network for surgical gesture recognition and progress prediction." In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 1380-1386. IEEE, 2020.
 
 1. Zhu, Yi, Xinyu Li, Chunhui Liu, Mohammadreza Zolfaghari, Yuanjun Xiong, Chongruo Wu, Zhi Zhang, Joseph Tighe, R. Manmatha, and Mu Li. "A Comprehensive Study of Deep Video Action Recognition." arXiv preprint arXiv:2012.06567 (2020).
   - Popular dataset descriptions
-  -
+    -
 
 1. Jenni, Simon, and Paolo Favaro. "Self-Supervised Multi-View Synchronization Learning for 3D Pose Estimation." In Proceedings of the Asian Conference on Computer Vision. 2020.
   - Experiment Data: Human3.6M dataset, ResNet architectures

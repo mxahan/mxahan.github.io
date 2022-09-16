@@ -326,6 +326,8 @@
 ## 2021
 
 1. Liu, D., Ning, J., Wu, J., & Yang, G. (2021). Extending Ordinary-Label Learning Losses to Complementary-Label Learning. IEEE Signal Processing Letters, 28, 852-856.
+  - Weak supervision, learning from complementary label. (related works in intro is nice)
+  - Again distribute complementary output to all others.
 
 1. Kim, Y., Yun, J., Shon, H., & Kim, J. (2021). Joint negative and positive learning for noisy labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9442-9451).
   - *Learning from complementary labels.*
