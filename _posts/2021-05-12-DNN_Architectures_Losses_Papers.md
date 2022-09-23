@@ -3,14 +3,16 @@
 ## 2022
 
 1. Abid, A., Yuksekgonul, M., & Zou, J. (2022, June). Meaningfully debugging model mistakes using conceptual counterfactual explanations. In International Conference on Machine Learning (pp. 66-88). PMLR.
-  -  propose a systematic approach, conceptual counterfactual explanations (CCE) to explain why a classifier makes a mistake on a particular test sample(s) in terms of human-understandable .
+     -  propose a systematic approach, conceptual counterfactual explanations (CCE) to explain why a classifier makes a mistake on a particular test sample(s) in terms of human-understandable .
 
 1. Paul, S., & Chen, P. Y. (2022, June). Vision transformers are robust learners. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 36, No. 2, pp. 2071-2081).
-  - Compared with CNN and showed the better performance by ViT
-  - Reason behind ViT robustness
-    - Attention, Role of pretraining, robust to image masking
-    - Fourier Spectrum Analysis Reveals Low Sensitivity for ViT
-    - Adversarial Perturbations of ViT Has Wider Spread in Energy Spectrum
+
+     - Compared with CNN and showed the better performance by ViT
+
+     - Reason behind ViT robustness
+       - Attention, Role of pretraining, robust to image masking
+         - Fourier Spectrum Analysis Reveals Low Sensitivity for ViT
+         - Adversarial Perturbations of ViT Has Wider Spread in Energy Spectrum
 
 1. Chen, T., Zhang, Z., Cheng, Y., Awadallah, A., & Wang, Z. (2022). The Principle of Diversity: Training Stronger Vision Transformers Calls for Reducing All Levels of Redundancy. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 12020-12030).
   - ViT *believed to* higher modeling capacity and representation flexibility
@@ -147,7 +149,7 @@
   -  can compensate lack of sufficiently powerful priors by more data
 
 1. Radosavovic, Ilija, Raj Prateek Kosaraju, Ross Girshick, Kaiming He, and Piotr Dollár. "Designing network design spaces." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10428-10436. 2020.
-  -
+    -
 
 1. Beltagy, Iz, Matthew E. Peters, and Arman Cohan. "Longformer: The long-document transformer." arXiv preprint arXiv:2004.05150 (2020).
 
@@ -200,8 +202,9 @@
 
 1. Radosavovic, Ilija, Justin Johnson, Saining Xie, Wan-Yen Lo, and Piotr Dollár. "On network design spaces for visual recognition." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1882-1890. 2019.
 
-
 ## 2018
+
+1. Shang, C., Ai, H., Zhuang, Z., Chen, L., & Xing, J. (2018, November). Zoomnet: Deep aggregation learning for high-performance small pedestrian detection. In *Asian Conference on Machine Learning* (pp. 486-501). PMLR.
 
 1. Hu, J., Shen, L., & Sun, G. (2018). Squeeze-and-excitation networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 7132-7141).
   - focus on the channel relationship of CNN and propose a novel architectural unit “Squeeze-and-Excitation” (SE) block

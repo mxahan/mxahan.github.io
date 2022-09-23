@@ -2,9 +2,22 @@
 
 ## 2021
 
-1. Tai, K. S., Bailis, P. D., & Valiant, G. (2021, July). Sinkhorn label allocation: Semi-supervised classification via annealed self-training. In International Conference on Machine Learning (pp. 10065-10075). PMLR.
-
-1. Assran, Mahmoud, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Armand Joulin, Nicolas Ballas, and Michael Rabbat. "Semi-Supervised Learning of Visual Features by Non-Parametrically Predicting View Assignments with Support Samples." arXiv preprint arXiv:2104.13963 (2021).
+1.  Englesson, E., & Azizpour, H. (2021). Consistency Regularization Can Improve Robustness to Label Noise. *arXiv preprint arXiv:2110.01242*.
+   - consistency loss propose in Equation 1
+     - Weighted sum of
+       - JS divergence between two prediction of two augmentation of same image
+       - JS divergence of true prediction and average prediction for the augmented images. 
+1.  Tai, K. S., Bailis, P. D., & Valiant, G. (2021, July). Sinkhorn label allocation: Semi-supervised classification via annealed self-training. In *International Conference on Machine Learning* (pp. 10065-10075). PMLR.
+   - Self-training: learner’s own predictions on unlabeled data are used as supervision during training (iterative bootstrapping)
+   - Provides a formulation to facilitate a practical annealing strategy for label assignment and allows for the inclusion of prior knowledge on class
+   - Related work: FixMatch (th for selecting pseudo-label)
+   - **TP**: Sinkhorn label allocation (SLA). 
+     - Minimal computational overhead in the inner loop for label assignment. 
+   - ![](data:image/png;base64,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)
+   - Label annealing strategies where the labeled set is slowly grown over time
+   - Provide fast approximation: the typical solution we see. (algorithm 1 and 2)
+1.  Tai, K. S., Bailis, P. D., & Valiant, G. (2021, July). Sinkhorn label allocation: Semi-supervised classification via annealed self-training. In International Conference on Machine Learning (pp. 10065-10075). PMLR.
+1.  Assran, Mahmoud, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Armand Joulin, Nicolas Ballas, and Michael Rabbat. "Semi-Supervised Learning of Visual Features by Non-Parametrically Predicting View Assignments with Support Samples." arXiv preprint arXiv:2104.13963 (2021).
   - PAWS (Predicting view assignments with support samples)
   - Minimize a consistency loss!! different view to get same pseudo labels
   - RQ: can we leverage the labeled data throughout training while also building on advances in self-supervised learning?
@@ -17,23 +30,36 @@
 ## 2020
 
 1. Van Gansbeke, W., Vandenhende, S., Georgoulis, S., Proesmans, M., & Van Gool, L. (2020, August). Scan: Learning to classify images without labels. In European conference on computer vision (pp. 268-285). Springer, Cham.
-  - advocate a two-step approach where feature learning and clustering are decoupled
-    - SSL and SSL prior for learnable clustering.
-    - remove the ability for cluster learning to depend on low-level features (current end-to-end learning approaches.)
-  - Representation **learning  leads to imbalanced clusters and there is no guarantee that the learned clusters aligns with the semantic classes**
-  - end-to-end learning pipelines combine feature learning with clustering.
-    - leverage the architecture of CNNs as a prior to cluster images (DEC)
-    - learn a clustering function by maximizing the mutual information between an image and its augmentations
-      - sensitive to initialization or prone to degenerate solutions
-      - since the cluster learning depends on the network initialization, they are likely to latch onto low-level features
-  - [TP]: SCAN (Semantic Clustering by Adopting Nearest neighbors) - 2-steps
-    - *leaverage advantage of both representation learning and end-end learning*
-    - encourage invariance w.r.t. the nearest neighbors, and not solely w.r.t. augmentations
-  - Methods summary: 1. Representation learning for semantic clustering,
-    - Contrastive learning (loss function 2) with entropy regularizer.
-    - Fine-tuning through self-labeling
+
+     - advocate a two-step approach where feature learning and clustering are decoupled
+       - SSL and SSL prior for learnable clustering.
+       - remove the ability for cluster learning to depend on low-level features (current end-to-end learning approaches.)
+
+     - Representation **learning  leads to imbalanced clusters and there is no guarantee that the learned clusters aligns with the semantic classes**
+
+         - end-to-end learning pipelines combine feature learning with clustering.
+           - leverage the architecture of CNNs as a prior to cluster images (DEC)
+           - learn a clustering function by maximizing the mutual information between an image and its augmentations
+             - sensitive to initialization or prone to degenerate solutions
+             - since the cluster learning depends on the network initialization, they are likely to latch onto low-level features
+
+         - [TP]: SCAN (Semantic Clustering by Adopting Nearest neighbors) - 2-steps
+           - *leaverage advantage of both representation learning and end-end learning*
+           - encourage invariance w.r.t. the nearest neighbors, and not solely w.r.t. augmentations
+
+
+     - Methods summary: 1. Representation learning for semantic clustering,
+       - Contrastive learning (loss function 2) with entropy regularizer.
+         - Fine-tuning through self-labeling
 
 1. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
+   - FixMatch: a significant simplification of existing SSL methods
+     - Generates pseudo-labels using the model’s predictions on weakly augmented unlabeled images
+       - Retained if confidence is high. 
+       - Utilize the retained label to train strongly-augmented (via Cutout, CTAugment, RandAugment) version of same image. 
+     - *Consistency Regularization* and *Pseudo-labeling*
+   - ![](https://miro.medium.com/max/1077/1*5SCSOqvXcrxL-IwZmZaH_g.png)
+   - Simple setup- retraining with the good predictions with consistency losses. 
 
 1. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
   - semi supervised learning (should cover the labeled and unlabeled at the beginning)

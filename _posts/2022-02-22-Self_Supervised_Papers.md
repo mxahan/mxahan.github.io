@@ -24,12 +24,22 @@
 ## 2016
 
 1. Xie, Junyuan, Ross Girshick, and Ali Farhadi. "Unsupervised deep embedding for clustering analysis." In International conference on machine learning, pp. 478-487. PMLR, 2016.
-  - Deep Embedded Clustering (DEC) Learns (i) Feature representation (ii) cluster assignments
-  - Experiment: Image and text corpora
-  - Contribution: (a) joint optimization of deep embedding and clustering; (b) a novel iterative refinement via soft assignment (??); (c) state-of-the-art clustering results in terms of clustering accuracy and speed
-  - target distribution properties: (1) strengthen predictions (i.e., improve cluster purity), (2) put more emphasis on data points assigned with high confidence, and (3) normalize loss contribution of each centroid to prevent large clusters from distorting the hidden feature space.
-  - Computational complexity as iteration over large data samples
-  - <embed src="https://mxahan.github.io/PDF_files/U_DEC.pdf" width="100%" height="850px"/>
+
+     - Deep Embedded Clustering (DEC) Learns (i) Feature representation (ii) cluster assignments
+
+     - Experiment: Image and text corpora
+
+     - Contribution: (a) joint optimization of deep embedding and clustering; (b) a novel iterative refinement via soft assignment (??); (c) state-of-the-art clustering results in terms of clustering accuracy and speed
+
+     - target distribution properties: (1) strengthen predictions (i.e., improve cluster purity), (2) put more emphasis on data points assigned with high confidence, and (3) normalize loss contribution of each centroid to prevent large clusters from distorting the hidden feature space.
+
+     - Computational complexity as iteration over large data samples
+
+     - **Assumptions and objectives:** The underlying assumption of DEC is that the initial classifier’s high confidence predictions are mostly correct
+
+     - Two metrics: NMI (normalized MI), and Generalizablity: L_tr / L_val
+
+     - <embed src="https://mxahan.github.io/PDF_files/U_DEC.pdf" width="100%" height="850px"/>
 
 1. Joulin, Armand, Laurens Van Der Maaten, Allan Jabri, and Nicolas Vasilache. "Learning visual features from large weakly supervised data." In European Conference on Computer Vision, pp. 67-84. Springer, Cham, 2016.
 
@@ -96,16 +106,27 @@
 
 ## 2018
 
-1. Aljalbout, Elie, Vladimir Golkov, Yawar Siddiqui, Maximilian Strobel, and Daniel Cremers. "Clustering with deep learning: Taxonomy and new methods." arXiv preprint arXiv:1801.07648 (2018).
-  - Three components: Main encoder networks (concerns with architecture, Losses, and cluster assignments)
-  - Non-cluster loss: Autoencoder reconstruction losses
-  - Various types of clustering loss (note)
-  - Combine losses: Pretraining / jointly training / variable scheduleing
-  - Cluster update: Jointly update with the network model / Alternating update with network models
-  - Relevant methods: Deep Embedded Clustering (Xie et al, 2016), Deep Clustering Network (yang et al, 2016), Discriminatively Boosted Clustering (Li et al, 2017), ..
-  - <embed src="https://mxahan.github.io/PDF_files/clustering_DL.pdf" width="100%" height="850px"/>
+1. Károly, A. I., Fullér, R., & Galambos, P. (2018). Unsupervised clustering for deep learning: A tutorial survey. *Acta Polytechnica Hungarica*, *15*(8), 29-53.
 
-1. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
+   - NN: Self-organizing maps, Kohonen maps, Adaptive resonance theory, Autoencoders, Co-localization, Generative Models. 
+
+2. Aljalbout, Elie, Vladimir Golkov, Yawar Siddiqui, Maximilian Strobel, and Daniel Cremers. "Clustering with deep learning: Taxonomy and new methods." arXiv preprint arXiv:1801.07648 (2018).
+
+     - Three components: Main encoder networks (concerns with architecture, Losses, and cluster assignments)
+
+     - Non-cluster loss: Autoencoder reconstruction losses
+
+     - Various types of clustering loss (note)
+
+     - Combine losses: Pretraining / jointly training / variable scheduleing
+
+     - Cluster update: Jointly update with the network model / Alternating update with network models
+
+     - Relevant methods: Deep Embedded Clustering (Xie et al, 2016), Deep Clustering Network (yang et al, 2016), Discriminatively Boosted Clustering (Li et al, 2017), ..
+
+     - <embed src="https://mxahan.github.io/PDF_files/clustering_DL.pdf" width="100%" height="850px"/>
+
+   1. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
 
 1. Hjelm, R. Devon, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachman, Adam Trischler, and Yoshua Bengio. "Learning deep representations by mutual information estimation and maximization." arXiv preprint arXiv:1808.06670 (2018).
   - locality of input knowledge and match prior distribution adversarially (DeepInfoMax)
@@ -123,10 +144,14 @@
   - TP: Device a mechanism called augmented memory for the generalization. (a version of momentum update!)
 
 1. Caron, Mathilde, Piotr Bojanowski, Armand Joulin, and Matthijs Douze. "Deep clustering for unsupervised learning of visual features." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 132-149. 2018.
-  - Cluster Deep features and make them pseudo labels. [fig 1]
-  - Cluster (k-means) for training CNN [Avoid trivial solution of all zeros!]
-  - Motivation from Unsupervised feature learning, self-supervised learning, generative model
-  - [More](https://github.com/facebookresearch/deepcluster)
+
+     - Cluster Deep features and make them pseudo labels. [fig 1]
+
+     - Cluster (k-means) for training CNN [Avoid trivial solution of all zeros!]
+
+     - Motivation from Unsupervised feature learning, self-supervised learning, generative model
+
+     - [More](https://github.com/facebookresearch/deepcluster)
 
 1. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
   - Predicting the future [self-supervised task design]
@@ -187,17 +212,26 @@
 1. Li, Xueting, Sifei Liu, Shalini De Mello, Xiaolong Wang, Jan Kautz, and Ming-Hsuan Yang. "Joint-task self-supervised learning for temporal correspondence." arXiv preprint arXiv:1909.11895 (2019).
 
 1. Xie, Qizhe, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le. "Unsupervised data augmentation for consistency training." arXiv preprint arXiv:1904.12848 (2019).
-  - TP: how to effectively noise unlabeled examples (1) and importance of advanced data augmentation (2)
-    - Investigate the role of noise injection and advanced data augmentation
-    - Proposes better data augmentation in consistency training: Unsupervised Data Augmentation (UDA)
-    - Experiments with vision and language tasks
-  - Bunch of experiment with six language tasks and three vision tasks.
-  - Consistency training as regularization.
-  - UDA: Augment unlabeled data!! and quality of the noise for augmentations.
-  - Noise types: Valid noise, Diverse noise, and Targeted Inductive biases
-  - Augmentation types: RandAugment for image, backtranslating the language
-  - Training techniques: confidence based masking, Sharpening Predictions, Domain relevance data filtering.
-  - Interesting graph comparison under three assumption.
+
+     - TP: how to effectively noise unlabeled examples (1) and importance of advanced data augmentation (2)
+       - Investigate the role of noise injection and advanced data augmentation
+       - Proposes better data augmentation in consistency training: Unsupervised Data Augmentation (UDA)
+       - Experiments with vision and language tasks
+
+     - Bunch of experiment with six language tasks and three vision tasks.
+
+     - Consistency training as regularization.
+
+     - UDA: Augment unlabeled data!! and quality of the noise for augmentations.
+
+     - Noise types: Valid noise, Diverse noise, and Targeted Inductive biases
+
+     - Augmentation types: RandAugment for image, backtranslating the language
+
+     - Training techniques: confidence based masking, Sharpening Predictions, Domain relevance data filtering.
+
+     - Interesting graph comparison under three assumption.
+
   - <embed src="https://mxahan.github.io/PDF_files/Unsup_DA.pdf" width="100%" height="850px"/>
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
@@ -268,12 +302,18 @@
   - <embed src="https://mxahan.github.io/PDF_files/contrastive_representation_distillation.pdf" width="100%" height="850px"/>
 
 1. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
-  - present a framework for analyzing CL (is there any previous?)
-    - introduce latent class!! shows generalization bound.
-  - Unsupervised representation learning
-  - TP: notion of latent classes (downstream tasks are subset of latent classes), rademacher complexity of the architecture! (limitation of negative sampling), extension!
-  - CL gives representation learning with plentiful labeled data! TP asks this question.
-  - Theoretical results to include in the works.
+
+     - present a framework for analyzing CL (is there any previous?)
+       - introduce latent class!! shows generalization bound.
+
+     - Unsupervised representation learning
+
+     - TP: notion of latent classes (downstream tasks are subset of latent classes), rademacher complexity of the architecture! (limitation of negative sampling), extension!
+
+     - CL gives representation learning with plentiful labeled data! TP asks this question.
+
+     - Theoretical results to include in the works.
+
   - <embed src="https://mxahan.github.io/PDF_files/theory_cl.pdf" width="100%" height="850px"/>
 
 1. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
@@ -477,7 +517,7 @@
     - Experiments by creating the dataset
       - Digit on imagenet dataset
       - RandBit dataset
-  -<embed src="https://mxahan.github.io/PDF_files/intriguing_pro_cl.pdf" width="100%" height="850px"/>
+    <embed src="https://mxahan.github.io/PDF_files/intriguing_pro_cl.pdf" width="100%" height="850px"/>
 
 1. Xiao, Tete, Xiaolong Wang, Alexei A. Efros, and Trevor Darrell. "What should not be contrastive in contrastive learning." arXiv preprint arXiv:2008.05659 (2020).
   - What if downstream tasks violates data augmentation (invariance) assumption!
@@ -543,7 +583,7 @@
   - Prototypical Contrastive Learning (PCL)
     - See the math notes from section 3
   - Figure 2 - Overview of methods
-  -<embed src="https://mxahan.github.io/PDF_files/Prototypical_CL.pdf" width="100%" height="850px"/>
+    -<embed src="https://mxahan.github.io/PDF_files/Prototypical_CL.pdf" width="100%" height="850px"/>
 
 1. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
   - SwAV (online algorithm) [swapped assignments between multiple vies of same image]
@@ -656,8 +696,8 @@
   - Motivation [section 3 method]
   - similarity constraint between positive keys are also enforced through a prediction problem from an online network to an offline momentum-updated network
   - BYOL tries to match the prediction from an online network to a randomly initialised offline
-  network. This iterations lead to better representation than those of the random offline network.
-  -By continually improving the offline network through the momentum update, the quality of the representation is bootstrapped from just the random initialised network
+    network. This iterations lead to better representation than those of the random offline network.
+    -By continually improving the offline network through the momentum update, the quality of the representation is bootstrapped from just the random initialised network
   - All about architecture! [encoder, projection, predictor and loss function]
   - Works only with batch normalization - else mode collapse
   - [More criticism](https://generallyintelligent.ai/understanding-self-supervised-contrastive-learning.html)
@@ -901,7 +941,7 @@
     - MTL but utilize the adaptive weights between them.
     - Propose PSC and extention of PSC - MPSC loss.
     - Overall architecture figure 2
-![image](https://aitechtogether.com/wp-content/uploads/2022/05/40fae979-d6da-4a84-b865-e88caca82dbf.webp)
+    ![image](https://aitechtogether.com/wp-content/uploads/2022/05/40fae979-d6da-4a84-b865-e88caca82dbf.webp)
 
 1. Li, T., Fan, L., Yuan, Y., He, H., Tian, Y., Feris, R., ... & Katabi, D. (2020). Making contrastive learning robust to shortcuts. arXiv preprint arXiv:2012.09962.
   - contrastive learning is susceptible to feature suppression
@@ -1267,7 +1307,7 @@
   - <embed src="https://mxahan.github.io/PDF_files/Barlow_twin.pdf" width="100%" height="850px"/>
 
 1. Tsai, Yao-Hung Hubert, Martin Q. Ma, Muqiao Yang, Han Zhao, Louis-Philippe Morency, and Ruslan Salakhutdinov. "Self-supervised representation learning with relative predictive coding." arXiv preprint arXiv:2103.11275 (2021).
-  -
+    -
 
 1. Liu, Yang, Keze Wang, Haoyuan Lan, and Liang Lin. "Temporal Contrastive Graph for Self-supervised Video Representation Learning." arXiv preprint arXiv:2101.00820 (2021).
   - Graph Neural Network And Contrastive Learning
@@ -1345,22 +1385,38 @@
 
 ## 2022
 
+1. Shwartz-Ziv, R., Balestriero, R., & LeCun, Y. (2022). What Do We Maximize in Self-Supervised Learning?. *arXiv preprint arXiv:2207.10081*.
+   - Examine VICReg learning methods to provide an information-theoretical understanding of their construction
+   - Demonstrate how information-theoretic quantities can be obtained for a deterministic network (alternative to prior works)
+     - VICReg can be (re)discovered from first principles and its assumptions about data distribution
+     - opening new avenues for theoretical and practical understanding of SSL and transfer learning.
+
 1. Yu, J., Wang, Z., Vasudevan, V., Yeung, L., Seyedhosseini, M., & Wu, Y. (2022). Coca: Contrastive captioners are image-text foundation models. arXiv preprint arXiv:2205.01917.
-  - Combination of two losses (Contrastive and captioning loss)
-    - MT: Contain a flavour of information theoretic losses.
-  - Attention mechanism: utilization of cross attention (image to text) 
+
+     - Combination of two losses (Contrastive and captioning loss)
+       - MT: Contain a flavour of information theoretic losses.
+
+     - Attention mechanism: utilization of cross attention (image to text) 
+
 
 1. Pokle, A., Tian, J., Li, Y., & Risteski, A. (2022). Contrasting the landscape of contrastive and non-contrastive learning. arXiv preprint arXiv:2203.15702.
-  - via a combination of empirical and theoretical results, we provide evidence that non-contrastive methods based on data augmentation can lead to substantially worse representations.
-  - the non-contrastive loss has a prevalence of bad optima that are not collapsed (in neither way, complete or dimension collapse)
-  - prove that the training dynamics can remedy this situation—however, crucially tied to a careful choice of a predictor network model architecture.
+
+     - via a combination of empirical and theoretical results, we provide evidence that non-contrastive methods based on data augmentation can lead to substantially worse representations.
+
+     - the non-contrastive loss has a prevalence of bad optima that are not collapsed (in neither way, complete or dimension collapse)
+
+     - prove that the training dynamics can remedy this situation—however, crucially tied to a careful choice of a predictor network model architecture.
 
 1. Zhang, C., Zhang, K., Zhang, C., Pham, T. X., Yoo, C. D., & Kweon, I. S. (2022). How does simsiam avoid collapse without negative samples? a unified understanding with self-supervised contrastive learning. arXiv preprint arXiv:2203.16262.
-  - Refute SimSiam claims and introduce vector decomposition for analyzing the collapse based on the gradient analysis of the l2-normalized representation
-    - unified perspective on how negative samples and SimSiam alleviate collapse
-  - SSL methods learn an encoder with augmentation-invariant representation
-  - center vector gradient helps prevent collapse via the de-centering effect and its residual gradient achieves de-correlation which also alleviates collapse
-  - Towards simplifying the predictor we have also found that a single bias layer is sufficient for preventing collapse
+
+     - Refute SimSiam claims and introduce vector decomposition for analyzing the collapse based on the gradient analysis of the l2-normalized representation
+       - unified perspective on how negative samples and SimSiam alleviate collapse
+
+     - SSL methods learn an encoder with augmentation-invariant representation
+
+     - center vector gradient helps prevent collapse via the de-centering effect and its residual gradient achieves de-correlation which also alleviates collapse
+
+     - Towards simplifying the predictor we have also found that a single bias layer is sufficient for preventing collapse
 
 1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
   - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
