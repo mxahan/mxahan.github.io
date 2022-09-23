@@ -17,11 +17,16 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - propose a fine graining loss (modified GCD, CL loss) after data partitioning.
 
 1. Sun, Y., & Li, Y. (2022). Open-world Contrastive Learning. arXiv preprint arXiv:2208.02764.
-  - OpenCon learns compact representations for both known and novel classes
-  - leverage the prototype vectors to separate known vs. novel classes in unlabeled data
-  - prototype-based learning can be rigorously interpreted from an Expectation-Maximization (EM) algorithm perspective.
-    - Utilize protoype based solution instead of sinkhorn-knopp approach of clustering novel classes.
-    - Kinda SupCon setting for the CL setting (generalized one).
+
+     - OpenCon learns compact representations for both known and novel classes
+
+     - leverage the prototype vectors to separate known vs. novel classes in unlabeled data
+
+   - prototype-based learning can be rigorously interpreted from an Expectation-Maximization (EM) algorithm perspective.
+       - Utilize protoype based solution instead of sinkhorn-knopp approach of clustering novel classes.
+         - Kinda SupCon setting for the CL setting (generalized one).
+
+   - <embed src="https://mxahan.github.io/PDF_files/open_world_cl.pdf" width="100%" height="850px"/>
 
 1. Zhang, C., Hu, C., Xu, R., Gao, Z., He, Q., & He, X. (2022). Mutual Information-guided Knowledge Transfer for Novel Class Discovery. arXiv preprint arXiv:2206.12063.
   - propose  a principle and general method to transfer semantic knowledge between seen and unseen classes
@@ -29,17 +34,25 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - Well there are some vague formulation!!!!
 
 1. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Novel Class Discovery without Forgetting. arXiv preprint arXiv:2207.10659.
-  - identify and formulate a new, pragmatic problem setting of NCDwF: Novel Class Discovery without Forgetting
-  - propose 1) a method to generate pseudo-latent representations for previously available L to alleviate forgetting 2) a MI based regularizer to enhance unsupervised NCD, and 3) a simple Known Class Identifier for generalized inference form L and U.
-  - Related works: Incremental learning: to alleviate the catastrophic forgetting of model when learning across a sequence of tasks (*requires all labels*) by some regularization, memory based approaches, dynamically expanding and parameter isolation.
-  - *TP*: labeled data can't be accessed during NCD time
+
+     - identify and formulate a new, pragmatic problem setting of NCDwF: Novel Class Discovery without Forgetting
+
+     - propose 1) a method to generate pseudo-latent representations for previously available L to alleviate forgetting 2) a MI based regularizer to enhance unsupervised NCD, and 3) a simple Known Class Identifier for generalized inference form L and U.
+
+     - Related works: Incremental learning: to alleviate the catastrophic forgetting of model when learning across a sequence of tasks (*requires all labels*) by some regularization, memory based approaches, dynamically expanding and parameter isolation.
+
+     - *TP*: labeled data can't be accessed during NCD time
+
+     - <embed src="https://mxahan.github.io/PDF_files/ncd_without_forget.pdf" width="100%" height="850px"/>
 
 1. Yang, M., Zhu, Y., Yu, J., Wu, A., & Deng, C. (2022). Divide and Conquer: Compositional Experts for Generalized Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 14268-14277).
   - focus on this generalized setting of NCD (GNCD) by challenging two-step setup for L and U.
   - propose to divide and conquer it with two groups of Compositional Experts (ComEx).
   - propose to strengthen ComEx with *global-to-local and local-to-local regularization*.
   - Unsup clustering enforce neighborhood consistency and average entropy maximization: achieve clustering and avoid collapse.
-  - two group of experts (lol: final layers MTL)! batch and class-wise ![image](https://amingwu.github.io/assets/images/novelty.png)
+  - two group of experts (lol: final layers MTL)! batch and class-wise 
+  - ![image](https://amingwu.github.io/assets/images/novelty.png)
+  - <embed src="https://mxahan.github.io/PDF_files/div_con_ncd.pdf" width="100%" height="850px"/>
 
 1. Zheng, J., Li, W., Hong, J., Petersson, L., & Barnes, N. (2022). Towards Open-Set Object Detection and Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3961-3970).
   - present a new task, namely Open-Set Object Detection and Discovery (OSODD)
@@ -280,6 +293,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - extends standard CE minimization to an optimal transport problem, which is solved efficiently by Sinkhorn-Knopp algorithm.
     - Overcome DeepCluster Issue: combining inconventional representation learning with clustering: there exist degenerate solution.
   - Utilize equi-partition condition for the labels
+  - <embed src="https://mxahan.github.io/PDF_files/self_label_via_sim_cluster.pdf" width="100%" height="850px"/>
 
 1. Quintanilha, I. M., de ME Filho, R., Lezama, J., Delbracio, M., & Nunes, L. O. (2018). Detecting Out-Of-Distribution Samples Using Low-Order Deep Features Statistics.
   - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
@@ -287,10 +301,16 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - linear classifier over the neural activation stats.
 
 1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
-  - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
-  - TP: OLTR learning from naturally distributed data and optimizing accuracy over a balanced test set of head, tail, and open classes
-  - methodologies: 1. dynamic Meta Embedding. .. conected to Self-attention
-  - overall figure 2
+
+     - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
+
+     - TP: OLTR learning from naturally distributed data and optimizing accuracy over a balanced test set of head, tail, and open classes
+
+     - methodologies: 1. dynamic Meta Embedding.  connected to Self-attention
+
+     - overall figure 2
+
+     - <embed src="https://mxahan.github.io/PDF_files/ls_long_tailed_open_world.pdf" width="100%" height="850px"/>
 
 1. Bendale, A., & Boult, T. (2015). Towards open world recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1893-1902).
 
