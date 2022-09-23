@@ -329,18 +329,24 @@
 ## 2021
 
 1. Liu, D., Ning, J., Wu, J., & Yang, G. (2021). Extending Ordinary-Label Learning Losses to Complementary-Label Learning. IEEE Signal Processing Letters, 28, 852-856.
-  - Weak supervision, learning from complementary label. (related works in intro is nice)
-  - Again distribute complementary output to all others.
 
-1. Kim, Y., Yun, J., Shon, H., & Kim, J. (2021). Joint negative and positive learning for noisy labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9442-9451).
-  - *Learning from complementary labels.*
-  - **TP**: JNPL (Improvement over NLNL)
-    - trains CNN via two losses, NL+ and PL+ (improved NL and PL and also addressing their issues)
-  - Related work: *Design noise-robust loss*, weighting samples, correction methods, selecting clean labels, **use of complementary labels**
-  - Problem: Underfitting of NL (section 3)
-    - focal loss flavor solution
-  - Bad and unclear notation!!
+     - Weak supervision, learning from complementary label. (related works in intro is nice)
 
+     - Again distribute complementary output to all others.
+
+2. Kim, Y., Yun, J., Shon, H., & Kim, J. (2021). Joint negative and positive learning for noisy labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9442-9451).
+
+     - *Learning from complementary labels.*
+         - **TP**: JNPL (Improvement over NLNL)
+           - trains CNN via two losses, NL+ and PL+ (improved NL and PL and also addressing their issues)
+
+
+     - Related work: *Design noise-robust loss*, weighting samples, correction methods, selecting clean labels, **use of complementary labels**
+         - Problem: Underfitting of NL (section 3)
+           - focal loss flavor solution
+
+
+     - Bad and unclear notation!!
 1. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
   - New framework for loss function (taylor series expansion of log function)
   - PolyLoss allows the adjustment of polynomial bases depending on the tasks and datasets (subsumes cross-entropy loss and focal loss as special cases)
@@ -435,12 +441,20 @@
 ## 2017
 
 1. Ishida, T., Niu, G., Hu, W., & Sugiyama, M. (2017). Learning from complementary labels. Advances in neural information processing systems, 30.
-  - PDF formulation, risk minimization
-  - *complementary loss*: incurs a large loss if a predicted complementary label is not correct
-  - terminology: *Ordinary Label* and *complementary label*
-  - A bit strong assumption that the complementary examples are from all other classes!
-    - **I think** this is where the gradient flows to everybody
-      - Causes underfitting
+
+     - PDF formulation, risk minimization
+
+     - *complementary loss*: incurs a large loss if a predicted complementary label is not correct
+
+     - terminology: *Ordinary Label* and *complementary label*
+
+   - A bit strong assumption that the complementary examples are from all other classes!
+       - **I think** this is where the gradient flows to everybody
+         - Causes underfitting
+
+   - <embed src="https://mxahan.github.io/PDF_files/learning_from_comple_label.pdf" width="100%" height="850px"/>
+
+     
 
 1. Lin, Tsung-Yi, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár. "Focal loss for dense object detection." In Proceedings of the IEEE international conference on computer vision, pp. 2980-2988. 2017.
 
