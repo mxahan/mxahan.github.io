@@ -237,12 +237,18 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
   - <embed src="https://mxahan.github.io/PDF_files/Adv_RPL.pdf" width="100%" height="850px"/>
 
 1. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
-  - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
-  - RQ: whether a well-trained closed-set classifier can perform as well as recent algorithms
-  - TP: show that the open-set performance of a classifier can be improved by enhancing its closed-set accuracy
-     - TP: simentic shift benchmark??
-  - Interested related works: Out-of-Distribution (OOD) detection, novelty detection, anomaly detection, novel category discovery, novel feature discovery
-  - Different Baseline: Maximum Softmax probability (MSP), ARPL: Reciprocal point learning, (varies on how to calculate the confidence score)
+
+     - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
+
+     - RQ: whether a well-trained closed-set classifier can perform as well as recent algorithms
+          - TP: show that the open-set performance of a classifier can be improved by enhancing its closed-set accuracy
+             - TP: simentic shift benchmark??
+
+
+     - Interested related works: Out-of-Distribution (OOD) detection, novelty detection, anomaly detection, novel category discovery, novel feature discovery
+
+     - Different Baseline: Maximum Softmax probability (MSP), ARPL: Reciprocal point learning, (varies on how to calculate the confidence score)
+
   - <embed src="https://mxahan.github.io/PDF_files/osr_good_close.pdf" width="100%" height="850px"/>
 
 1. Kodama, Yuto, Yinan Wang, Rei Kawakami, and Takeshi Naemura. "Open-set Recognition with Supervised Contrastive Learning." In 2021 17th International Conference on Machine Vision and Applications (MVA), pp. 1-5. IEEE, 2021.

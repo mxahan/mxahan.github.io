@@ -339,15 +339,17 @@
      - *Learning from complementary labels.*
          - **TP**: JNPL (Improvement over NLNL)
            - trains CNN via two losses, NL+ and PL+ (improved NL and PL and also addressing their issues)
-
-
+     
      - Related work: *Design noise-robust loss*, weighting samples, correction methods, selecting clean labels, **use of complementary labels**
          - Problem: Underfitting of NL (section 3)
            - focal loss flavor solution
-
-
+     
      - Bad and unclear notation!!
+     
+     - <embed src="https://mxahan.github.io/PDF_files/joint_pos_neg_learn.pdf" width="100%" height="850px"/>
+
 1. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
+
   - New framework for loss function (taylor series expansion of log function)
   - PolyLoss allows the adjustment of polynomial bases depending on the tasks and datasets (subsumes cross-entropy loss and focal loss as special cases)
     - Experiment to support the requirement of adjustment.
