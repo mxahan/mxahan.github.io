@@ -1385,12 +1385,26 @@
 
 ## 2022
 
+1. Bardes, A., Ponce, J., & LeCun, Y. (2022). VICRegL: Self-Supervised Learning of Local Visual Features. *arXiv preprint arXiv:2210.01571*.
+   - TP explore the fundamental trade-off between producing a global feature with invariance properties (classification) , and producing set of local features (detection and segmentation).
+   - VicReg applied to global and local (two identical branches of CNN)
+   - local feature vectors are attracted to each other if their 
+     - L2 -distance is below a threshold 
+     - or their relative locations are consistent with a known geometric tx between the two input images (Nice)
+   - Related Works (GEMS): Global Features (invariant to various views), Local Features (a set of local features that describe small parts of the image, mask based approaches): Segmentation tasks
+   - Extra consistency term to cover the local features (top-$\gamma$ matching)
+     - Location based matching (Shift between two shifted images)
+     - *Feature based matching* for the Nearest Neighborhood pixels (addresses the impact of global pooling) of the augmented version
+       -  capture long-range interactions not captured by location-based matching (as not from the same location of seed images)
+       - What if background is captured!!! (background with the object!)
+         - Top-\gamma to avoid such extremes
 1. Shwartz-Ziv, R., Balestriero, R., & LeCun, Y. (2022). What Do We Maximize in Self-Supervised Learning?. *arXiv preprint arXiv:2207.10081*.
    - Examine VICReg learning methods to provide an information-theoretical understanding of their construction
    - Demonstrate how information-theoretic quantities can be obtained for a deterministic network (alternative to prior works)
      - VICReg can be (re)discovered from first principles and its assumptions about data distribution
      - opening new avenues for theoretical and practical understanding of SSL and transfer learning.
-
+   
+   - <embed src="https://mxahan.github.io/PDF_files/what_to_maximize_in_SSL.pdf" width="100%" height="850px"/>
 1. Yu, J., Wang, Z., Vasudevan, V., Yeung, L., Seyedhosseini, M., & Wu, Y. (2022). Coca: Contrastive captioners are image-text foundation models. arXiv preprint arXiv:2205.01917.
 
      - Combination of two losses (Contrastive and captioning loss)
