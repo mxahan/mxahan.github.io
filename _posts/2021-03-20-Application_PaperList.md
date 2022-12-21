@@ -16,7 +16,6 @@ This blog contains state of the art application and research on different applic
 ## 2022
 
 1. Arnab, A., Xiong, X., Gritsenko, A., Romijnders, R., Djolonga, J., Dehghani, M., ... & Schmid, C. (2022). Beyond Transfer Learning: Co-finetuning for Action Localisation. arXiv preprint arXiv:2207.03807.
-
      - question the traditional two-step TL approach, and propose co-finetuning
 
      - co-finetuning significantly improves the performance on rare classes
@@ -27,8 +26,6 @@ This blog contains state of the art application and research on different applic
              - classification and person detection bounding box.
              - Avoid catastrophic forgetting & Tx overfitting & Small dataset.
              - Helps improving mid and tail classes.
-
-
      - Experiment: ViViT, AVA, Kinetics, Moments in time, Something-something v2
 
 2. Xie, B., Yuan, L., Li, S., Liu, C. H., & Cheng, X. (2022). Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 8068-8078).
@@ -64,15 +61,17 @@ This blog contains state of the art application and research on different applic
            - aligning distribution by divergence (i) Maximum Mean Discrepency ii) correlation alignment iii) Contrastive domain D. iv) Wasserstein
            - reconstruction
            - Adversarial
-
-
-     - Domain mapping: Image-image mapping
-    
-     - Normalization Statistics
-    
-     - Ensemble methods
-    
-     - Target Discriminative methods
+     
+      - Domain mapping: Image-image mapping
+     
+     
+      - Normalization Statistics
+     
+     
+      - Ensemble methods
+     
+     
+      - Target Discriminative methods
 
 ## 2016 and prior
 
@@ -110,14 +109,10 @@ This blog contains state of the art application and research on different applic
      - Knowledge distillation
          - Distillation and the effect of temperature.
            - section 2 and 2.1 are important
-
-
-     - Training small network to mimic the large network.
-    
+     -  Training small network to mimic the large network.
+     
      - Train small network to learn the features and logits of the large network.
-    
      - Softmax, temperature and the MSE with the prediction
-    
      - Experimented with MNIST, speech and Specialist models.
 
 
@@ -221,17 +216,14 @@ This blog contains state of the art application and research on different applic
      - Camera matrix background (pinhole camera model) [ref 1](https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf), [ref 2](https://hedivision.github.io/Pinhole.html), [short course](https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/CV/index.html)
          - TP: i) approaches based on 3D representations ii) introduce a new geometric convolutional layer (neural projection layer: an architectural contribution, key contribution) to learn viewpoint invariant representations (target)  iii) new dataset (MLB-Youtube dataset)
            - Neural Projection Layer:
-
-
      - Invariant represtation: by learning global 3D pose
-    
-     - Hypothesis to obtain target: i) implicitly learning from large data ii) use 3D posture information (!! how)
-    
-     - TP: Testimating 3D pose directly from the videos (latent 3D representation and it's multiview 2d projection), then explores using different representations of it for AR.
-    
-     - TP: 3D representation by using 3D geometric transformation and projection.
-    
-     - Network: PoseNet (3D posture), and CalibNet (external camera matrix, however deems error-prone): Loss Function: sum of three losses (cross entropy, metric loss, and camera distribution loss !!!), Dataset: Human3.6M, MLB (baseball), TSH (toyota smart home)
+      - Hypothesis to obtain target: i) implicitly learning from large data ii) use 3D posture information (!! how)
+     
+      - TP: Testimating 3D pose directly from the videos (latent 3D representation and it's multiview 2d projection), then explores using different representations of it for AR.
+     
+      - TP: 3D representation by using 3D geometric transformation and projection.
+     
+      - Network: PoseNet (3D posture), and CalibNet (external camera matrix, however deems error-prone): Loss Function: sum of three losses (cross entropy, metric loss, and camera distribution loss !!!), Dataset: Human3.6M, MLB (baseball), TSH (toyota smart home)
 
 2. Piergiovanni, A. J., and Michael S. Ryoo. "Recognizing Actions in Videos from Unseen Viewpoints." arXiv preprint arXiv:2103.16516 (2021).
 ## 2020
@@ -239,8 +231,8 @@ This blog contains state of the art application and research on different applic
 1. van Amsterdam, Beatrice, Matthew J. Clarkson, and Danail Stoyanov. "Multi-task recurrent neural network for surgical gesture recognition and progress prediction." In 2020 IEEE International Conference on Robotics and Automation (ICRA), pp. 1380-1386. IEEE, 2020.
 
 1. Zhu, Yi, Xinyu Li, Chunhui Liu, Mohammadreza Zolfaghari, Yuanjun Xiong, Chongruo Wu, Zhi Zhang, Joseph Tighe, R. Manmatha, and Mu Li. "A Comprehensive Study of Deep Video Action Recognition." arXiv preprint arXiv:2012.06567 (2020).
-  - Popular dataset descriptions
-    -
+     - Popular dataset descriptions
+       -
 
 1. Jenni, Simon, and Paolo Favaro. "Self-Supervised Multi-View Synchronization Learning for 3D Pose Estimation." In Proceedings of the Asian Conference on Computer Vision. 2020.
   - Experiment Data: Human3.6M dataset, ResNet architectures

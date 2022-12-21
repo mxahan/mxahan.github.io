@@ -144,7 +144,7 @@
            -  using a convnet teacher gives better performance than using a transformer
      - interest of this token-based distillation (convnet as a teacher)
       - Transformer “do not generalize well when trained on insufficient amounts of data” (research gap)
-     
+
       - This Paper:  Data-efficient image Transformers (Deit 4)
 
 1. Ren, S., Gao, Z., Hua, T., Xue, Z., Tian, Y., He, S., & Zhao, H. (2021). Co-advise: Cross inductive bias distillation. arXiv preprint arXiv:2106.12378.
@@ -177,7 +177,7 @@
            - Claim: Involution is a simple instantiation of the attention.
        
      - involution operator could be leveraged as fundamental bricks to build the new generation of neural networks for visual recognition
-     
+
 1. Liu, Ze, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, and Han Hu. "Video Swin Transformer." arXiv preprint arXiv:2106.13230 (2021).
 
 1. Ke, Junjie, Qifei Wang, Yilin Wang, Peyman Milanfar, and Feng Yang. "MUSIQ: Multi-scale Image Quality Transformer." arXiv preprint arXiv:2108.05997 (2021).
@@ -186,17 +186,17 @@
 
 1. Neimark, Daniel, Omri Bar, Maya Zohar, and Dotan Asselmann. "Video transformer network." arXiv preprint arXiv:2102.00719 (2021).
 
-     - long term information in the videos. (unlike 3D CNN that focus on 2s of video)[full video decision]
+      - long term information in the videos. (unlike 3D CNN that focus on 2s of video)[full video decision]
 
-     - Focus on global attention.
+      - Focus on global attention.
 
-     - Related works: i) spatial-temporal network: Slowfast, X3d, 3d convs ii) Transformer in CV: ViT, DeiT!, DETR!, VisTR!, iii) Transformer for long sequences:
+      - Related works: i) spatial-temporal network: Slowfast, X3d, 3d convs ii) Transformer in CV: ViT, DeiT!, DETR!, VisTR!, iii) Transformer for long sequences:
 
-     - VTN description: i) Spatial Backbone (2D image network). ii) temporal attention based encoder (Longformer) iii) Classification MLP head
+      - VTN description: i) Spatial Backbone (2D image network). ii) temporal attention based encoder (Longformer) iii) Classification MLP head
 
-     - Experimented with Three networks i) ViT-B-VTN (Imagenet 21K backbone, transformer) ii) R50/101 VTN (ResNET -50 /101 as backbone) iii) DeiT-B/BD/Ti-VTN (distilled as the backbone for VTN)
+      - Experimented with Three networks i) ViT-B-VTN (Imagenet 21K backbone, transformer) ii) R50/101 VTN (ResNET -50 /101 as backbone) iii) DeiT-B/BD/Ti-VTN (distilled as the backbone for VTN)
 
-     - Ablation Study: Section 5
+      - Ablation Study: Section 5
 
 1. Kondratyuk, Dan, Liangzhe Yuan, Yandong Li, Li Zhang, Mingxing Tan, Matthew Brown, and Boqing Gong. "Movinets: Mobile video networks for efficient video recognition." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 16020-16030. 2021.
 
@@ -366,6 +366,14 @@
 
 
 ## 2017
+1. Arpit, D., Jastrzębski, S., Ballas, N., Krueger, D., Bengio, E., Kanwal, M. S., ... & Lacoste-Julien, S. (2017, July). A closer look at memorization in deep networks. In *International conference on machine learning* (pp. 233-242). PMLR.
+
+     - Contributions
+       - qualitative differences in DNN optimization behavior on real data vs. noise. In other words, DNNs do not just memorize real data
+       - . DNNs learn simple patterns first, before memorizing (content-aware)
+       - Obviously: Regularization helps. 
+     - Critical Sample Ratio: Experimented with curated artificial dataset. 
+
 1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
 
      - Multi scale atrous CNN for Semantic image segmentation & modified ASPP
