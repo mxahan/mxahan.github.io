@@ -12,7 +12,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 ## 2021
 
 1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
-  -
+    -
 
 1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
   - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
@@ -25,57 +25,81 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2020
 
+1. Kavalerov, I., Czaja, W., & Chellappa, R. (2020). A study of quality and diversity in K+ 1 GANs.
+
 1. Lee, Kwot Sin, Ngoc-Trung Tran, and Ngai-Man Cheung. "InfoMax-GAN: Improved Adversarial Image Generation via Information Maximization and Contrastive Learning." arXiv preprint arXiv:2007.04589 (2020).
 
 1. Karras, Tero, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, and Timo Aila. "Training generative adversarial networks with limited data." Advances in Neural Information Processing Systems 33 (2020).
-  - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
-  - prevent the leaking!
-  - nonleaking operation -invertible trasnformation (2.2: Point made)
-  - augmentation Scheme
-  - balanced consistency regularization! (old approach)
-  - stochastic discriminator augmentation
-    - Figure 2 (Whats the benefit!!)
-    - fig2(b): Generator output always go through Augmentation (with p [most significant param]) before hitting D
-  - Adaptive discriminator augmentation (section 3)
-    - Point: What if the D learns nothing for anyone! then r = 0 [Eq1], right? No! Oh got it! [solved :)] 0 (real) < D < 1(generated)
+
+     - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
+
+     - prevent the leaking!
+
+     - nonleaking operation -invertible trasnformation (2.2: Point made)
+
+     - augmentation Scheme
+
+     - balanced consistency regularization! (old approach)
+         - stochastic discriminator augmentation
+           - Figure 2 (Whats the benefit!!)
+           - fig2(b): Generator output always go through Augmentation (with p [most significant param]) before hitting D
+
+      - Adaptive discriminator augmentation (section 3)
+        - Point: What if the D learns nothing for anyone! then r = 0 [Eq1], right? No! Oh got it! [solved :)] 0 (real) < D < 1(generated)
 
 1. Izacard, Gautier, and Edouard Grave. "Distilling Knowledge from Reader to Retriever for Question Answering." arXiv preprint arXiv:2012.04584 (2020).
 
 1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
 
 1. Foret, Pierre, Ariel Kleiner, Hossein Mobahi, and Behnam Neyshabur. "Sharpness-Aware Minimization for Efficiently Improving Generalization." arXiv preprint arXiv:2010.01412 (2020).
-  - Aim to reduce the loss value and **loss sharpness** (motivated by geometry of loss space and generalization)
-  - TP about increasing generalization (how to claim such results, what will be the evidence): Performance over the noisy dataset!
-  - TP: Sharpness-Aware Minimization (SAM) : Aims to find params with uniform low-loss in their neighborhood. *still works with SGD*
-  - Why only Cross-Entropy! Not sufficient everytime!
-  - Efficient, scalable and effective method!! (what results it requires?)
-    - Minimize loss value and loss sharpness!
-    - Model generalization: Experiment with (CIFAR, ImageNet, SVHN, MNIST, ....)
-    - coins m-sharpness terms
-  - Reducing the gap between training loss and the population loss (generalization)
-  - Algorithm 1 summarizes the ways to train the network!
-  - Detailed experiment and discussion section
+
+     - Aim to reduce the loss value and **loss sharpness** (motivated by geometry of loss space and generalization)
+
+     - TP about increasing generalization (how to claim such results, what will be the evidence): Performance over the noisy dataset!
+
+     - TP: Sharpness-Aware Minimization (SAM) : Aims to find params with uniform low-loss in their neighborhood. *still works with SGD*
+
+     - Why only Cross-Entropy! Not sufficient everytime!
+         - Efficient, scalable and effective method!! (what results it requires?)
+           - Minimize loss value and loss sharpness!
+           - Model generalization: Experiment with (CIFAR, ImageNet, SVHN, MNIST, ....)
+           - coins m-sharpness terms
+     - Reducing the gap between training loss and the population loss (generalization)
+     - Algorithm 1 summarizes the ways to train the network!
+     - Detailed experiment and discussion section
+
   - <embed src="https://mxahan.github.io/PDF_files/SAM_p.pdf" width="100%" height="850px"/>
 
 1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
-  - Sentence to hidden features to probability distribution.  
-  - Contextual visual representation
-  - LM architecture with additional voken objective (BERT objective + voken classification)
-  - Need revisit!
+
+     - Sentence to hidden features to probability distribution.  
+
+     - Contextual visual representation
+
+     - LM architecture with additional voken objective (BERT objective + voken classification)
+
+     - Need revisit!
 
 1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
-  - Multiphase pretraining (PT) for NLP- (Domain and task specific)
-  - Pretraining dataset selection strategy
-  - Key motivation: RoBERTa
-  - Experimented with DAPT, TAPT and DAPT+TAPT
+
+     - Multiphase pretraining (PT) for NLP- (Domain and task specific)
+
+     - Pretraining dataset selection strategy
+
+     - Key motivation: RoBERTa
+
+     - Experimented with DAPT, TAPT and DAPT+TAPT
 
 1. Berthelot, David, Peyman Milanfar, and Ian Goodfellow. "Creating High Resolution Images with a Latent Adversarial Generator." arXiv preprint arXiv:2003.02365 (2020).
-  - Close to super-resolution problem [but different as loss is perception loss.]
-    - When noise 0 we want the original image.
-  - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
-  - Gradient penalty loss (To ascertain 1-Lipschitz)
 
-1. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
+     - Close to super-resolution problem [but different as loss is perception loss.]
+       - When noise 0 we want the original image.
+
+     - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
+
+     - Gradient penalty loss (To ascertain 1-Lipschitz)
+
+2. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
   - Under construction
 
 1. Roy, Aurko, Mohammad Saffar, Ashish Vaswani, and David Grangier. "Efficient content-based sparse attention with routing transformers." arXiv preprint arXiv:2003.05997 (2020).
@@ -90,18 +114,25 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2018
 
+1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 3474-3482).
+
 1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
 
 1. Kingma, Durk P., and Prafulla Dhariwal. "Glow: Generative flow with invertible 1x1 convolutions." In Advances in Neural Information Processing Systems, pp. 10215-10224. 2018.
-  - Actnorm
-  - invertible 1x1 convolution
-  - affine coupling layers
+
+     - Actnorm
+
+     - invertible 1x1 convolution
+
+     - affine coupling layers
 
 1. Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. "Density estimation using real nvp." arXiv preprint arXiv:1605.08803 (2016).
 
 1. Mikolov, Tomas, Kai Chen, Greg Corrado, and Jeffrey Dean. "Efficient estimation of word representations in vector space." arXiv preprint arXiv:1301.3781 (2013).
-  - word2vec
-  - Comparison with others [link](https://medium.com/@kashyapkathrani/all-about-embeddings-829c8ff0bf5b)
+
+     - word2vec
+
+     - Comparison with others [link](https://medium.com/@kashyapkathrani/all-about-embeddings-829c8ff0bf5b)
 
 1. Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S. Corrado, and Jeff Dean. "Distributed representations of words and phrases and their compositionality." In Advances in neural information processing systems, pp. 3111-3119. 2013.
   - non-contextual embedding
@@ -133,11 +164,15 @@ We can't worry about everything and nothing. We must stay focused and broad at t
   - Two components: controller and memory with i/o for external interaction
     - Attending to memory (attention) [sharp or distributed attention]
   - <embed src="https://mxahan.github.io/PDF_files/Neural_turing_machine.pdf" width="100%" height="850px"/>
-  
+
 1. Zhao, Junbo, Michael Mathieu, and Yann LeCun. "Energy-based generative adversarial network." arXiv preprint arXiv:1609.03126 (2016).li
-  - D: Assign low energy to data distribution (not normalized probabilities)
-  - G: Sample data from the low energy by a parameterized function.
-  - Convergence proof using hinge loss.
+
+     - D: Assign low energy to data distribution (not normalized probabilities)
+
+     - G: Sample data from the low energy by a parameterized function.
+
+     - Convergence proof using hinge loss.
+
   - <embed src="https://mxahan.github.io/PDF_files/Gan_math.pdf" width="100%" height="850px"/>
 
 1. ani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." In Advances in neural information processing systems, pp. 5998-6008. 2017.

@@ -473,29 +473,26 @@
      - *Learning from complementary labels.*
          - **TP**: JNPL (Improvement over NLNL)
            - trains CNN via two losses, NL+ and PL+ (improved NL and PL and also addressing their issues)
-     
+
      - Related work: *Design noise-robust loss*, weighting samples, correction methods, selecting clean labels, **use of complementary labels**
          - Problem: Underfitting of NL (section 3)
            - focal loss flavor solution
-     
+
      - Bad and unclear notation!!
-     
+
      - <embed src="https://mxahan.github.io/PDF_files/joint_pos_neg_learn.pdf" width="100%" height="850px"/>
 
 3. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
 
-       - New framework for loss function (taylor series expansion of log function)
-           - PolyLoss allows the adjustment of polynomial bases depending on the tasks and datasets (subsumes cross-entropy loss and focal loss as special cases)
-             - Experiment to support the requirement of adjustment.
-             - Introduces an extra hyperparameters
-
-
-       - Contributions: i) insight of common losses ii)  intuitive understanding of requirement to design different loss functions tailored to different imbalanced datasets!!
-    
-       - Proposes to manipulate the weight so the polynomial components
-         - modifying the polynomial weights helps to go beyond the CE loss accuracy?
-           - is it individual class dependent? For all classes or biased setup?
-           - *the idea is to provide extra weights for the initial terms*
+   - New framework for loss function (taylor series expansion of log function)
+       - PolyLoss allows the adjustment of polynomial bases depending on the tasks and datasets (subsumes cross-entropy loss and focal loss as special cases)
+         - Experiment to support the requirement of adjustment.
+         - Introduces an extra hyperparameters
+   - Contributions: i) insight of common losses ii)  intuitive understanding of requirement to design different loss functions tailored to different imbalanced datasets!!
+      - Proposes to manipulate the weight so the polynomial components
+        - modifying the polynomial weights helps to go beyond the CE loss accuracy?
+          - is it individual class dependent? For all classes or biased setup?
+          - *the idea is to provide extra weights for the initial terms*
 
 
   - <embed src="https://mxahan.github.io/PDF_files/polyloss.pdf" width="100%" height="850px"/>
@@ -505,20 +502,21 @@
      - how the choice of training objective affects the transferability of the hidden representations of CNNs trained on ImageNet
        - **Experimental paper**
        - Vanilla Cross-entropy loss as the final layers with different regularizers
-       
+     
          - Too much class separation it bad!
            - How did they measure the transfer accuracy?
              - transferability of the fixed features of our ImageNet-pretrained models by training linear or k-nearest neighbors (kNN) classifiers to classify 8 different natural image datasets (section 3.1)
-       
+     
      - Linear centered kernel alignment (CKA) provides a way to measure similarity of neural network representations that is invariant to rotation and isotropic scaling in representation space
          - Important findings
            - Better objectives improve accuracy, but do not transfer better
            - The choice of objective primarily affects hidden representations close to the output
            - Regularization and alternative losses increase class separation
            - Greater class separation is associated with less transferable features
-
-
+     
      - limited to moderately sized datasets with moderately sized models, and our conclusions are limited to supervised classification settings
+     
+         
 
 ## 2020
 
@@ -574,9 +572,6 @@
              - 3 similarities (self-similarity: S, Negative relative similarity: N, Positive relative similarity: P) [figure 2]
              - state-of-the-art performance on four image retrieval benchmarks (CUB200, Cars-196, Stanford Online Products (SOP) and In-Shop Clothes Retrieval (In-Shop))
 
-
-     - [github notes]
-
   - <embed src="https://mxahan.github.io/PDF_files/msgpw.pdf" width="100%" height="850px"/>
 
 1. Cheung, Brian, Alex Terekhov, Yubei Chen, Pulkit Agrawal, and Bruno Olshausen. "Superposition of many models into one." arXiv preprint arXiv:1902.05522 (2019).
@@ -615,11 +610,11 @@
 
 1. Ishida, T., Niu, G., Hu, W., & Sugiyama, M. (2017). Learning from complementary labels. Advances in neural information processing systems, 30.
 
-     - PDF formulation, risk minimization
+   - PDF formulation, risk minimization
 
-     - *complementary loss*: incurs a large loss if a predicted complementary label is not correct
+   - *complementary loss*: incurs a large loss if a predicted complementary label is not correct
 
-     - terminology: *Ordinary Label* and *complementary label*
+   - terminology: *Ordinary Label* and *complementary label*
 
    - A bit strong assumption that the complementary examples are from all other classes!
        - **I think** this is where the gradient flows to everybody
@@ -633,15 +628,15 @@
 
 1. Wang, Feng, Xiang Xiang, Jian Cheng, and Alan Loddon Yuille. "Normface: L2 hypersphere embedding for face verification." In Proceedings of the 25th ACM international conference on Multimedia, pp. 1041-1049. 2017.
 
-       - Training using normalization features.
-         - modification of softmax and optimize cosine losses
-         - Metric learning
-       
-       - Research gap of necessity of normalization
-       
-       - Four contributions?
-         - why cosine doesn't converge? buy normalized dot succeed.
-           - different loss option explore? why!!
+   - Training using normalization features.
+     - modification of softmax and optimize cosine losses
+     - Metric learning
+
+   - Research gap of necessity of normalization
+
+   - Four contributions?
+     - why cosine doesn't converge? buy normalized dot succeed.
+       - different loss option explore? why!!
 
 ## 2016 and Earlier
 
