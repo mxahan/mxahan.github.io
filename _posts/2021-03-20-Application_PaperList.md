@@ -96,21 +96,24 @@ This blog contains state of the art application and research on different applic
 
 # Model Compression
 
+1. Li, D., Wu, A., Han, Y., & Tian, Q. (2022). Prototype-guided Cross-task Knowledge Distillation for Large-scale Models. *arXiv preprint arXiv:2212.13180*.
+     - Well verbose writing issue!
+     - propose a Prototype-guided Cross-task Knowledge Distillation (ProC-KD) approach to transfer the *intrinsic local-level object knowledge* of a large-scale teacher network to various task scenarios
+       - a prototype learning module
+       - task adaptive feature augmentation
 1. Blalock, Davis, Jose Javier Gonzalez Ortiz, Jonathan Frankle, and John Guttag. "What is the state of neural network pruning?." arXiv preprint arXiv:2003.03033 (2020).
-
 1. Khetan, Ashish, and Zohar Karnin. "PruneNet: Channel Pruning via Global Importance." arXiv preprint arXiv:2005.11282 (2020).
 
      - Importance score: Variance of input layer after filtering
 
      - New regularization scheme.
-
 1. Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
 
      - Knowledge distillation
          - Distillation and the effect of temperature.
            - section 2 and 2.1 are important
      -  Training small network to mimic the large network.
-     
+
      - Train small network to learn the features and logits of the large network.
      - Softmax, temperature and the MSE with the prediction
      - Experimented with MNIST, speech and Specialist models.

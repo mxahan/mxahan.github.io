@@ -12,8 +12,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 ## 2021
 
 1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
-    -
-
+    
 1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
   - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
     - Adaptive gradient clipping (AGC)
@@ -25,10 +24,14 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2020
 
+1. Yao, A., & Sun, D. (2020). Knowledge transfer via dense cross-layer mutual-distillation. In *Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XV 16* (pp. 294-311). Springer International Publishing.
+     - restrict our focus to advance two-way KT research in the perspective of promoting knowledge representation learning and transfer design.
+     - Bidirectional KD between intermediate layers of the identical networks [overview figure 1]
+       - Utilizes auxiliary classifier to enable the distillation [similar to google network auxiliary prediction]
+       - Also bidirectional KT between different stages
+     - Joint optimization of multiple losses: Eq - 6
 1. Kavalerov, I., Czaja, W., & Chellappa, R. (2020). A study of quality and diversity in K+ 1 GANs.
-
 1. Lee, Kwot Sin, Ngoc-Trung Tran, and Ngai-Man Cheung. "InfoMax-GAN: Improved Adversarial Image Generation via Information Maximization and Contrastive Learning." arXiv preprint arXiv:2007.04589 (2020).
-
 1. Karras, Tero, Miika Aittala, Janne Hellsten, Samuli Laine, Jaakko Lehtinen, and Timo Aila. "Training generative adversarial networks with limited data." Advances in Neural Information Processing Systems 33 (2020).
 
      - GAN leaking in case of small dataset augmentation!!Learns augmented distribution
@@ -46,11 +49,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
       - Adaptive discriminator augmentation (section 3)
         - Point: What if the D learns nothing for anyone! then r = 0 [Eq1], right? No! Oh got it! [solved :)] 0 (real) < D < 1(generated)
-
 1. Izacard, Gautier, and Edouard Grave. "Distilling Knowledge from Reader to Retriever for Question Answering." arXiv preprint arXiv:2012.04584 (2020).
-
 1. Gururangan, Suchin, Ana Marasović, Swabha Swayamdipta, Kyle Lo, Iz Beltagy, Doug Downey, and Noah A. Smith. "Don't Stop Pretraining: Adapt Language Models to Domains and Tasks." arXiv preprint arXiv:2004.10964 (2020).
-
 1. Foret, Pierre, Ariel Kleiner, Hossein Mobahi, and Behnam Neyshabur. "Sharpness-Aware Minimization for Efficiently Improving Generalization." arXiv preprint arXiv:2010.01412 (2020).
 
      - Aim to reduce the loss value and **loss sharpness** (motivated by geometry of loss space and generalization)
@@ -114,10 +114,17 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2018
 
+1. Zhang, Y., Xiang, T., Hospedales, T. M., & Lu, H. (2018). Deep mutual learning. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 4320-4328).
+     - mutual learning starts with a pool of untrained students who simultaneously learn to solve the task together
+       -  each student is trained with two losses: a supervised loss, and a mimicry loss (aligns each student’s class posterior with each other) [fig 1]
+       - provide better results in this way! (than the distillation or single model learning)
+     - Assumption: accuracy is the only concern
+     - Related work: Collaborative learning: a different from mutual learning where all models address the same task and domain.
+     - Kind of extra regularization for the classification layers [shallow resembles the momentum update.]
+       - swapped prediction
+       - Can we do it in the embedding layers
 1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 3474-3482).
-
 1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
-
 1. Kingma, Durk P., and Prafulla Dhariwal. "Glow: Generative flow with invertible 1x1 convolutions." In Advances in Neural Information Processing Systems, pp. 10215-10224. 2018.
 
      - Actnorm
@@ -125,15 +132,12 @@ We can't worry about everything and nothing. We must stay focused and broad at t
      - invertible 1x1 convolution
 
      - affine coupling layers
-
 1. Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. "Density estimation using real nvp." arXiv preprint arXiv:1605.08803 (2016).
-
 1. Mikolov, Tomas, Kai Chen, Greg Corrado, and Jeffrey Dean. "Efficient estimation of word representations in vector space." arXiv preprint arXiv:1301.3781 (2013).
 
      - word2vec
 
      - Comparison with others [link](https://medium.com/@kashyapkathrani/all-about-embeddings-829c8ff0bf5b)
-
 1. Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S. Corrado, and Jeff Dean. "Distributed representations of words and phrases and their compositionality." In Advances in neural information processing systems, pp. 3111-3119. 2013.
   - non-contextual embedding
   - Word2vec extensions

@@ -59,7 +59,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
    - distance-based OOD detection methods remain largely unexplored in object-level OOD detection
      -  proposing a distance based framework for detecting OOD objects (model-agnostic representation space both CNN and Tx)
-        -  We explore test-time OOD detection by leveraging the optimized embeddings in a parametric or non-parametric way 
+        -  TP explore test-time OOD detection by leveraging the optimized embeddings in a parametric or non-parametric way 
      -  a trainable loss function to shape the representations into a mixture of von Mises-Fisher (vMF) distributions on the unit hypersphere!!
        -  ShapIng the RepresENtations into a desired parametric form: model the representations by the von Mises-Fisher (vMF) distribution (classic probability distribution in directional statistics for hyperspherical data with the unit norm)
          - vMF avoids estimating large covariance matrices for high-dimensional data (that is costly and unstable in Gaussian case)
@@ -98,6 +98,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
    - Joint optimization of global loss (inter-domain: Prototype based) and local loss (intra-domain: swapped prediction) 
      - finding common classes similar to ranking stat CCD
      - row sum and column sum for a point to detect CCD
+
+   - <embed src="https://mxahan.github.io/PDF_files/UOTDA.pdf" width="100%" height="850px"/>
 8. Zhang, X., Jiang, J., Feng, Y., Wu, Z. F., Zhao, X., Wan, H., ... & Gao, Y. (2022). Grow and Merge: A Unified Framework for Continuous Categories Discovery. *arXiv preprint arXiv:2210.04174* (NeuralIPS-2022).
 
    - Continuous Category discovery (CCD)- a dynamic setting (Figure 1)
@@ -441,7 +443,21 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2021
 
-1. Zhu, F., Zhang, X. Y., Wang, C., Yin, F., & Liu, C. L. (2021). Prototype augmentation and self-supervision for incremental learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 5871-5880).
+1. Abdelsalam, M., Faramarzi, M., Sodhani, S., & Chandar, S. (2021). Iirc: Incremental implicitly-refined classification. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 11038-11047).
+
+     - introduce the “IIRC” setup, an extension to the class incremental learning where incoming batches of classes have two granularity levels.
+       - each sample could have a highlevel (coarse) label like “bear” and a low-level (fine) label like “polar bear” [figure ]
+     - This is a  hard problem as the assumption (granularity) behind the decision changes in between
+       - We are calling it error because not matching with human sense
+       - The human sense is contextual and kind of can be formalized to any notion. 
+       - For DL model the question remain always same: What are the digits, What object in the image, bounding box the object, what actions etc. 
+         - e.g. with a bear image human can decide many thing and provide support for the answer
+           - Semantic segmentation more through answar. 
+     - Benchmark to evaluate IIRC
+     - conclusion: Distillation-based methods perform relatively well but are prone to incorrectly predicting too many labels per image
+     - Metric: Jaccard Similarity (intersection over union)
+
+2. Zhu, F., Zhang, X. Y., Wang, C., Yin, F., & Liu, C. L. (2021). Prototype augmentation and self-supervision for incremental learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 5871-5880).
 
      - simple non-exemplar based method, PASS, to address the catastrophic forgetting problem in incremental learning.
        - propose to memorize one class-representative prototype for each old class and adopt prototype augmentation (protoAug) in the deep feature space to maintain the decision boundary of previous tasks: Maintain decision boundary
@@ -458,7 +474,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Vague in implementation details
      - Key ideas: Figure 2 but back to the question posed above. 
 
-2. Mai, Z., Li, R., Kim, H., & Sanner, S. (2021). Supervised contrastive replay: Revisiting the nearest class mean classifier in online class-incremental continual learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 3589-3599).
+3. Mai, Z., Li, R., Kim, H., & Sanner, S. (2021). Supervised contrastive replay: Revisiting the nearest class mean classifier in online class-incremental continual learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 3589-3599).
 
      - *Recency Bias!!* of continual learning: The latest class has the most impact on the network. 
      - TP: Instead of softmax classification proposes nearest class mean classifier (prototype-based)
@@ -466,7 +482,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Softmax Deficiency: New class (architecture modification)?? Decouple representation and classification, Task-recency bias
        - Proposes class prototype based learning.
 
-3. Sehwag, V., Chiang, M., & Mittal, P. (2021). Ssd: A unified framework for self-supervised outlier detection. *arXiv preprint arXiv:2103.12051*.
+4. Sehwag, V., Chiang, M., & Mittal, P. (2021). Ssd: A unified framework for self-supervised outlier detection. *arXiv preprint arXiv:2103.12051*.
 
      - TP asks what training information is required to design an effective outlier/out-of-distribution (OOD) detector
      - TP: use self-supervised representation learning followed by a Mahalanobis distance based detection in the feature space
@@ -478,12 +494,12 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - requires to make sure the neuron statistics behaves accordingly
        - computational expensive to find the mean and variance for all the classes!
 
-4. Wang, J., Ma, Z., Nie, F., & Li, X. (2021). Progressive self-supervised clustering with novel category discovery. *IEEE Transactions on Cybernetics*.
+5. Wang, J., Ma, Z., Nie, F., & Li, X. (2021). Progressive self-supervised clustering with novel category discovery. *IEEE Transactions on Cybernetics*.
 
      - Graph clustering perspective
      - a novel clustering approach referred to as the progressive self-supervised clustering method with NCD (PSSCNCD),
 
-5. De Lange, M., Aljundi, R., Masana, M., Parisot, S., Jia, X., Leonardis, A., ... & Tuytelaars, T. (2021). A continual learning survey: Defying forgetting in classification tasks. *IEEE transactions on pattern analysis and machine intelligence*, *44*(7), 3366-3385.
+6. De Lange, M., Aljundi, R., Masana, M., Parisot, S., Jia, X., Leonardis, A., ... & Tuytelaars, T. (2021). A continual learning survey: Defying forgetting in classification tasks. *IEEE transactions on pattern analysis and machine intelligence*, *44*(7), 3366-3385.
 
      - Focus on task incremental classification (TP)
        - a taxonomy and extensive overview of the state-of-the-art
@@ -502,7 +518,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
          - Prior-focused: estimate a distribution over the model parameters, used as prior when learning from new data:  Elastic weight consolidation
        - Parameter Isolation: dedicates different model parameters to each task, to prevent any possible forgetting (not-scalable)
 
-6. Cao, K., Brbic, M., & Leskovec, J. (2021). Open-world semi-supervised learning. *arXiv preprint arXiv:2102.03526*.
+7. Cao, K., Brbic, M., & Leskovec, J. (2021). Open-world semi-supervised learning. *arXiv preprint arXiv:2102.03526*.
 
      - goal is to solve the class distribution mismatch between labeled and unlabeled data
 
@@ -534,7 +550,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
        
 
-7. Choudhury, S., Laina, I., Rupprecht, C., & Vedaldi, A. (2021). Unsupervised part discovery from contrastive reconstruction. Advances in Neural Information Processing Systems, 34, 28104-28118.
+8. Choudhury, S., Laina, I., Rupprecht, C., & Vedaldi, A. (2021). Unsupervised part discovery from contrastive reconstruction. Advances in Neural Information Processing Systems, 34, 28104-28118.
 
      - Res.Gap.: representation learning at part level has received significantly less attention (most work focus on object and scene level)
 
@@ -552,7 +568,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
          - no universally accepted formal definition for what constitutes a “part”, the nature of objects and object parts is accepted as different
          - (a) consistency to transformation (equivariance), (b) visual consistency (or self-similarity), and (c) distinctiveness among different parts.
 
-8. Jia, X., Han, K., Zhu, Y., & Green, B. (2021). Joint representation learning and novel category discovery on single-and multi-modal data. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 610-619).
+9. Jia, X., Han, K., Zhu, Y., & Green, B. (2021). Joint representation learning and novel category discovery on single-and multi-modal data. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 610-619).
 
      - a generic, end-to-end framework to jointly learn a reliable representation and assign clusters to unlabelled data.
 
@@ -564,7 +580,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
          - Consistent MSE loss (different view of same data)
          - CE loss
 
-9. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
+10. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
 
    - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
        - favoring synergy between supervised and unsupervised learning
@@ -578,29 +594,29 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
      - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
 
-10. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
+11. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
 
-      - New framework for NCD [NCL]
-        - i) a encoder trained on the L to generates representations (a generic query sample and its neighbors are likely to share the same class)
-          - retrieve and aggregate pseudo-positive pairs with CL
-        - ii) propose to generate hard negatives by mixing L and U samples in the *feature space*.
+     - New framework for NCD [NCL]
+       - i) a encoder trained on the L to generates representations (a generic query sample and its neighbors are likely to share the same class)
+         - retrieve and aggregate pseudo-positive pairs with CL
+       - ii) propose to generate hard negatives by mixing L and U samples in the *feature space*.
 
-          - first idea: the local neighborhood of a query in the embedding space will contain samples most likely belong to the same semantic category (pseudo-+ve)
-            - *numerous positives* obtain a much stronger learning signal compared to the traditional CL with only two views
+         - first idea: the local neighborhood of a query in the embedding space will contain samples most likely belong to the same semantic category (pseudo-+ve)
+           - *numerous positives* obtain a much stronger learning signal compared to the traditional CL with only two views
 
-      - second idea: address the better selection of -ve to further improve CL
-          - related works: negative mining.
-            - Their approach [figure 3]
+     - second idea: address the better selection of -ve to further improve CL
+         - related works: negative mining.
+           - Their approach [figure 3]
 
-      - Well: add bunch of losses together for joint optimization.
+     - Well: add bunch of losses together for joint optimization.
 
-       - kind of avoid false-ve in CL
+          - kind of avoid false-ve in CL
 
-       - Assumption of L intersection U = {}
+          - Assumption of L intersection U = {}
 
-       - <embed src="https://mxahan.github.io/PDF_files/Neighborhood_CL.pdf" width="100%" height="850px"/>
+          - <embed src="https://mxahan.github.io/PDF_files/Neighborhood_CL.pdf" width="100%" height="850px"/>
 
-11. Zhong, Z., Zhu, L., Luo, Z., Li, S., Yang, Y., & Sebe, N. (2021). Openmix: Reviving known knowledge for discovering novel visual categories in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9462-9470).
+12. Zhong, Z., Zhu, L., Luo, Z., Li, S., Yang, Y., & Sebe, N. (2021). Openmix: Reviving known knowledge for discovering novel visual categories in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9462-9470).
 
        - mix the unlabeled examples from an open set and the labeled examples from known classes
          - non-overlapping labels and pseudo-labels are simultaneously mixed into a joint label distribution
@@ -611,63 +627,63 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
          - proposes simple baseline.
          - effectively leveraging the labeled data during the unsupervised clustering in unlabeled data [unsupervised step described in section 3.1]
          - compounds examples in two ways: 1) mix U examples with L samples; and 2) mix U examples with reliable anchors.
-
+      
        - <embed src="https://mxahan.github.io/PDF_files/Openmix.pdf" width="100%" height="850px"/>
 
-12. Zhao, B., & Han, K. (2021). Novel visual category discovery with dual ranking statistics and mutual knowledge distillation. Advances in Neural Information Processing Systems, 34.
+13. Zhao, B., & Han, K. (2021). Novel visual category discovery with dual ranking statistics and mutual knowledge distillation. Advances in Neural Information Processing Systems, 34.
 
-       - semantic partitions of unlabelled images (new classes) by leveraging a labelled dataset (contains different but relevant categories of images) [RS]
-
+      - semantic partitions of unlabelled images (new classes) by leveraging a labelled dataset (contains different but relevant categories of images) [RS]
+      
        - two branch learning (one branch focusing on local part-level information and the other branch focusing on overall characteristics)
            - dual ranking statistics on both branches to generate pseudo labels for training on the unlabelled data
              - transfer knowledge from labelled data to unlabelled data
        - introduce a mutual KD method to allow information exchange and encourage agreement between the two branches for discovering new categories
        - *TP*: Joint optimization of many many losses (eq 10)
 
-13. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2021). Autonovel: Automatically discovering and learning novel visual categories. IEEE Transactions on Pattern Analysis and Machine Intelligence.
+14. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2021). Autonovel: Automatically discovering and learning novel visual categories. IEEE Transactions on Pattern Analysis and Machine Intelligence.
 
-         - self-supervised learning to train the representation from scratch on the union of labeled and unlabeled data (avoid bias of labeled data) [low-level features]
+    - self-supervised learning to train the representation from scratch on the union of labeled and unlabeled data (avoid bias of labeled data) [low-level features]
 
-         - ranking statistics to transfer the model’s knowledge of the labelled classes [high level features]
+     - ranking statistics to transfer the model’s knowledge of the labelled classes [high level features]
 
-         - optimizing a joint objective function on the labelled and unlabelled subsets of the data
+     - optimizing a joint objective function on the labelled and unlabelled subsets of the data
 
-         - Enable estimating the number of classes
+     - Enable estimating the number of classes
 
-         - Utilization of average clustering accuracy (ACC) and Cluster validity index (CVI) [silohouette index]
+     - Utilization of average clustering accuracy (ACC) and Cluster validity index (CVI) [silohouette index]
 
-14. Schott, L., von Kügelgen, J., Träuble, F., Gehler, P., Russell, C., Bethge, M., ... & Brendel, W. (2021). Visual representation learning does not generalize strongly within the same domain. arXiv preprint arXiv:2107.08221.
+15. Schott, L., von Kügelgen, J., Träuble, F., Gehler, P., Russell, C., Bethge, M., ... & Brendel, W. (2021). Visual representation learning does not generalize strongly within the same domain. arXiv preprint arXiv:2107.08221.
 
-        - Empirical paper to test if representation learning approaches correctly infer the generative factors of variation in simple datasets (visual tasks).
+    - Empirical paper to test if representation learning approaches correctly infer the generative factors of variation in simple datasets (visual tasks).
 
-             - To learn effective statistical relationships, the training data needs to cover most combinations of factors of variation (like shape, size, color, viewpoint, etc.) [exponential issues]
-               - large factor variation leads to out-of distribution.
-                 - As soon as a factor of variation is outside the training distribution, models consistently predict previously observed value
-               - learning the underlying mechanisms behind the factors of variation should greatly reduce the need for training data and scale more with factors.
-               - underlying data generation process
+         - To learn effective statistical relationships, the training data needs to cover most combinations of factors of variation (like shape, size, color, viewpoint, etc.) [exponential issues]
+           - large factor variation leads to out-of distribution.
+             - As soon as a factor of variation is outside the training distribution, models consistently predict previously observed value
+           - learning the underlying mechanisms behind the factors of variation should greatly reduce the need for training data and scale more with factors.
+           - underlying data generation process
 
-             - TP: Four dataset with various factors of variations. [dSprites, Shapes3D, MPI3D, celebglow]
-               -  shape, size, color, viewpoint, etc
+         - TP: Four dataset with various factors of variations. [dSprites, Shapes3D, MPI3D, celebglow]
+           -  shape, size, color, viewpoint, etc
 
-             - TP: models mostly struggle to learn the underlying mechanisms regardless of supervision signal and architecture.
-               - Experimented with different controllable factor of variations.
+         - TP: models mostly struggle to learn the underlying mechanisms regardless of supervision signal and architecture.
+           - Experimented with different controllable factor of variations.
 
-             - Thoughts on assumption (inductive biases) for learning generalization
-               - Representation format: PCA
-               - Architectural bias: invariance and equivalence.
+         - Thoughts on assumption (inductive biases) for learning generalization
+           - Representation format: PCA
+           - Architectural bias: invariance and equivalence.
 
-             - Demonstrate empirical results by varying FoVs (6 in totals)
-               - Check for composition, interpolation, extrapolation, and decomposition (4.2)
-                 - Modular performance (good on the in-distribution data)
+         - Demonstrate empirical results by varying FoVs (6 in totals)
+           - Check for composition, interpolation, extrapolation, and decomposition (4.2)
+             - Modular performance (good on the in-distribution data)
 
-             - Good insights for different cases (section 5 conclusion)
-               - Disentanglement helps on downstream task but not necessarily in the OOD cases
-               - **empirically show that among a large variety of models, no tested model succeeds in generalizing to all our proposed OOD settings (extrapolation, interpolation, composition)**
-               - Instead of extrapolating, all models regress the OOD factor towards the mean in the training set
-               - The performance generally decreases when factors are OOD regardless of the supervision signal and architecture
-        - Reiterate the importance of the data. (Even gan fails to learn that)
+         - Good insights for different cases (section 5 conclusion)
+           - Disentanglement helps on downstream task but not necessarily in the OOD cases
+           - **empirically show that among a large variety of models, no tested model succeeds in generalizing to all our proposed OOD settings (extrapolation, interpolation, composition)**
+           - Instead of extrapolating, all models regress the OOD factor towards the mean in the training set
+           - The performance generally decreases when factors are OOD regardless of the supervision signal and architecture
+    - Reiterate the importance of the data. (Even gan fails to learn that)
 
-15. Chen, G., Peng, P., Wang, X., & Tian, Y. (2021). Adversarial reciprocal points learning for open set recognition. arXiv preprint arXiv:2103.00953.
+16. Chen, G., Peng, P., Wang, X., & Tian, Y. (2021). Adversarial reciprocal points learning for open set recognition. arXiv preprint arXiv:2103.00953.
 
       - Target: reduce the empirical classification risk on the labeled known data and the open space risk on the potential unknown data simultaneously.
           - TP formulate the open space risk problem from multi-class integration perspective, and model the unexploited extra-class space with a novel concept **Reciprocal Point**
@@ -676,36 +692,36 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
               - the confrontation among multiple known categories are employed to reduce the empirical risk.!!
               - an adversarial margin constraint to reduce the open space risk by limiting the latent open space constructed by RP!!
               - an instantiated adversarial enhancement method generate diverse and confusing training samples (To estimate the unknown distribution from open space) [using RP and known classes]
-
+      
       - SOTA problems: Figure 1
           - argue that not only the known classes but also the potential unknown deep space should be modeled in the training
             - Well how? - By RP: - RP: Whats not something. (Reciprocal of the prototypical learning) [figure 3]
               - **key Idea**: finds the non-catness and tell cat if otherwise happens (nice), however, is it that easy?? computationally possible
               - Example based solutions!!
               - kinda one vs all setting!! (centre for all other classes)
-
+      
       - Related work: Classifier with rejection option. OOD, Prototype learning
-
+      
        - Good problem formulation: The adversarial section constrain open space.
-
+      
        - Algo 1 (IDEA), **Algo 2 (implemntation details)**
-
+      
        - **Gems** in 3.4 section
-
+      
        - Adversarial setup for generating confusion samples. [Architecture in figure 5]
-
+      
        - TP: adds an extra entropy based terms with GAN G maximization.
-
+      
        - Look into the experimentation of the batch normalization.
-
+      
        - Somehow connected to the disentanglement settings.
-
+      
        - <embed src="https://mxahan.github.io/PDF_files/Adv_RPL.pdf" width="100%" height="850px"/>
 
-16. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
+17. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
 
       - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
-
+      
       - RQ: whether a well-trained closed-set classifier can perform as well as recent algorithms
            - TP: show that the open-set performance of a classifier can be improved by enhancing its closed-set accuracy
               - TP: simentic shift benchmark??
@@ -727,7 +743,9 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - A local embedding-induced classifier from the teacher further supervises the student’s classification confidence
      - decomposes the KD flow into branches for embedding and the top-layer classifier
      - Kind of contrastive learning approaches. 
-       - Teacher network helps in triplet sampling for CL
+       - Teacher network helps in triplet sampling for CL 
+       - instance wise contrastive learning setting for **embedding learning**  (pairwise similarity)
+         - When architectural difference occurs the direct embedding distillation fails. 
 
 2. Wang, Z., Salehi, B., Gritsenko, A., Chowdhury, K., Ioannidis, S., & Dy, J. (2020, November). Open-world class discovery with kernel networks. In *2020 IEEE International Conference on Data Mining (ICDM)* (pp. 631-640). IEEE.
 
