@@ -127,15 +127,18 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Interesting reference section to read through
 10. Rizve, M. N., Kardan, N., Khan, S., Shahbaz Khan, F., & Shah, M. (2022). Openldn: Learning to discover novel classes for open-world semi-supervised learning. In *European Conference on Computer Vision* (pp. 382-401). Springer, Cham.
 
-   -  pairwise similarity loss to discover novel classes.
-   -  bi-level optimization rule this pairwise similarity loss exploits the information available in the labeled set to implicitly cluster novel class samples, while simultaneously recognizing samples from known classes (without pretraining!)
-   - after NCD, OpenLDN tx the open-world SSL into a standard SSL setting to achieve additional performance gains using existing SSL methods
-   -  iterative pseudo-labeling: a simple and efficient method to handle noisy pseudo-labels of novel classes
-   -  Kind of swapped prediction setting!!
-   -  Key is the optimization procedure: multistage sequential alternative optimization (first feature then pairwiseSim and repeat)
-   -  how the heck they determine a novel class sample???? Vague description
-      -  Generate Pseudo-labels: Generate from one image and set it as the target for its augmented version and vice-versa
-         -  Further swapped prediction
+       -  pairwise similarity loss to discover novel classes.
+       -  bi-level optimization rule this pairwise similarity loss exploits the information available in the labeled set to implicitly cluster novel class samples, while simultaneously recognizing samples from known classes (without pretraining!)
+       - after NCD, OpenLDN tx the open-world SSL into a standard SSL setting to achieve additional performance gains using existing SSL methods
+       -  iterative pseudo-labeling: a simple and efficient method to handle noisy pseudo-labels of novel classes
+       -  Kind of swapped prediction setting!!
+       -  Key is the optimization procedure: multistage sequential alternative optimization (first feature then pairwiseSim and repeat)
+    -  how the heck they determine a novel class sample???? Vague description
+         -  Generate Pseudo-labels: Generate from one image and set it as the target for its augmented version and vice-versa
+            -  Further swapped prediction
+
+    -  <embed src="https://mxahan.github.io/PDF_files/openLDN.pdf" width="100%" height="850px"/>
+
 11. Li, Z., Otholt, J., Dai, B., Meinel, C., & Yang, H. (2022). A Closer Look at Novel Class Discovery from the Labeled Set. *arXiv preprint arXiv:2209.09120*.
 
     - Existing research focuses on methodological level, with less emphasis on the analysis of the labeled set itself. 
@@ -171,52 +174,58 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 11. Kalb, T., Roschani, M., Ruf, M., & Beyerer, J. (2021, July). Continual learning for class-and domain-incremental semantic segmentation. In *2021 IEEE Intelligent Vehicles Symposium (IV)* (pp. 1345-1351). IEEE.
 
-   - Previous approaches: Form of KD
+       - Previous approaches: Form of KD
 
-   - evaluate and adapt established solutions for continual object recognition to the task of semantic segmentation
 
-   - provide baseline methods and evaluation protocols for the task of continual semantic segmentation.
+       - evaluate and adapt established solutions for continual object recognition to the task of semantic segmentation
 
-   - Avoid Catastrophic Forgetting/Inference: in class-incremental learning KD and in domain-incremental learning replay methods are the most effective method.
 
-   - Continual Learning Related Works:  replay-based methods, regularization-based methods (prior-focused and data-focused methods.) and parameter isolation methods
+       - provide baseline methods and evaluation protocols for the task of continual semantic segmentation.
 
-     - Data-focused: KD
-     - Prior-focused: vary the plasticity of individual weights based on an estimated importance of the weight in previous tasks (L2 weight loss)
 
-   - $$
-     Input: x\in \mathcal{X} = \mathbb{N}^{H\times W\times 3} \text{ with label} y\in\{0,1\}^{H\times W\times |C|} \\
-     \text{Aim: Learn} f_\theta:\mathcal{X} \rightarrow \mathbb{R}^{H\times W\times |C|} \\
-     l_{ce} = -\frac{1}{H.W}\sum_{i\in I}\sum_{c\in C} y_{i,c} \log (\hat{y}_{i,c}) \\
-     \text{Domain Incremental } P(X_1)\neq P(X_2) \\
-     \text{Class Incremental } P(Y_1) \neq P(Y_2) \\
-     l_{kd} = -\frac{1}{|I|}\sum_{i\in I}\sum_{c\in C} \bar{y}_{i,c} \log (\hat{y}_{i,c}) \\
-     l_{lwf} = l_{ce}(y, \bar{y}) + \lambda l_{kd}(\hat{y}, \bar{y}) \\
-     l_{reg} = l_{ce}(y, \bar{y}) + \lambda \Omega_i(\theta_i, \bar(\theta)_i) \\
-     $$
+       - Avoid Catastrophic Forgetting/Inference: in class-incremental learning KD and in domain-incremental learning replay methods are the most effective method.
+            - Continual Learning Related Works:  replay-based methods, regularization-based methods (prior-focused and data-focused methods.) and parameter isolation methods
 
-      
+              - Data-focused: KD
+              - Prior-focused: vary the plasticity of individual weights based on an estimated importance of the weight in previous tasks (L2 weight loss)
 
-   - 
+
+       - $$
+         Input: x\in \mathcal{X} = \mathbb{N}^{H\times W\times 3} \text{ with label} y\in\{0,1\}^{H\times W\times |C|} \\
+         \text{Aim: Learn} f_\theta:\mathcal{X} \rightarrow \mathbb{R}^{H\times W\times |C|} \\
+         l_{ce} = -\frac{1}{H.W}\sum_{i\in I}\sum_{c\in C} y_{i,c} \log (\hat{y}_{i,c}) \\
+         \text{Domain Incremental } P(X_1)\neq P(X_2) \\
+         \text{Class Incremental } P(Y_1) \neq P(Y_2) \\
+         l_{kd} = -\frac{1}{|I|}\sum_{i\in I}\sum_{c\in C} \bar{y}_{i,c} \log (\hat{y}_{i,c}) \\
+         l_{lwf} = l_{ce}(y, \bar{y}) + \lambda l_{kd}(\hat{y}, \bar{y}) \\
+         l_{reg} = l_{ce}(y, \bar{y}) + \lambda \Omega_i(\theta_i, \bar(\theta)_i) \\
+         $$
+
 
 11. Li, W., Fan, Z., Huo, J., & Gao, Y. (2022). Modeling Inter-Class and Intra-Class Constraints in Novel Class Discovery. *arXiv preprint arXiv:2210.03591*.
 
-   - Single stage joint optimization approach (Relatively Simple)
+       - Single stage joint optimization approach (Relatively Simple)
 
-   - Increase KL divergence between labeled and unlabeled classes (inter-class)
 
-   - Decrease KL divergence between both labeled and unlabeled classes (Intra-class)
+       - Increase KL divergence between labeled and unlabeled classes (inter-class)
 
-   - Figure  with the following set of equation form the overall system
 
-   - $$
-     \mathcal{L} =  \mathcal{L}_{CE} - \alpha\mathcal{L}_{intra-class} + \beta \mathcal{L}_{inter-clas} \\
-     \mathcal{L}_{intra-class} =  \mathcal{L}_{sKLD}^u + \mathcal{L}_{sKLD}^l \\
-     \mathcal{L}_{sKLD}^l =  \frac{1}{2}D_{KL}(p^l_{ih}||\hat{p}^l_{ih}) + \frac{1}{2}D_{KL}(\hat{p}^l_{ih}||p^l_{ih})\\
-     \mathcal{L}_{inter-class} =  \frac{1}{2}D_{KL}(p^l_{i}||p^u_{j}) + \frac{1}{2}D_{KL}(p^u_{j}||p^l_{i})\\
-     $$
+       - Decrease KL divergence between both labeled and unlabeled classes (Intra-class)
 
-   - Experimented with CIFAR Dataset. 
+
+       - Figure  with the following set of equation form the overall system
+
+
+       - $$
+         \mathcal{L} =  \mathcal{L}_{CE} - \alpha\mathcal{L}_{intra-class} + \beta \mathcal{L}_{inter-clas} \\
+         \mathcal{L}_{intra-class} =  \mathcal{L}_{sKLD}^u + \mathcal{L}_{sKLD}^l \\
+         \mathcal{L}_{sKLD}^l =  \frac{1}{2}D_{KL}(p^l_{ih}||\hat{p}^l_{ih}) + \frac{1}{2}D_{KL}(\hat{p}^l_{ih}||p^l_{ih})\\
+         \mathcal{L}_{inter-class} =  \frac{1}{2}D_{KL}(p^l_{i}||p^u_{j}) + \frac{1}{2}D_{KL}(p^u_{j}||p^l_{i})\\
+         $$
+
+
+       - Experimented with CIFAR Dataset. 
+
 
 11. Liu, Y., & Tuytelaars, T. (2022). Residual tuning: Toward novel category discovery without labels. *IEEE Transactions on Neural Networks and Learning Systems*.
 
