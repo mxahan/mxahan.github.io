@@ -118,6 +118,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - The number of novel class is given. [eq 1]
    - Overview approaches: Figure 3
    - Proposes two metrics: Intelligent usages of ACC metrics at different time-step. 
+   - <embed src="https://mxahan.github.io/PDF_files/grow_and_merge.pdf" width="100%" height="850px"/>
 9. Zhuang, J., Chen, Z., Wei, P., Li, G., & Lin, L. (2022). Open Set Domain Adaptation By Novel Class Discovery. *arXiv preprint arXiv:2203.03329*.
 
    - Key ideas: Dynamic/Adaptive (restructuring) class nodes (iterative) [OSDA]
