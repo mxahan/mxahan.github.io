@@ -410,7 +410,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
                - Two characteristics: 1) the ability to transport similar samples to locations equidistant from other dissimilar samples in the latent manifold, 2) the datapoints to refresh their associativity to a group as the learning progresses
 
-               - Spacing loss summary: i) finding equidist point
+           - Spacing loss summary: i) finding **equidistant** point
 
 26. Zhao, Y., Zhong, Z., Sebe, N., & Lee, G. H. (2022). Novel Class Discovery in Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4340-4349).
 
@@ -581,8 +581,6 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
      - <embed src="https://mxahan.github.io/PDF_files/open_world_ssl.pdf" width="100%" height="850px"/>
 
-       
-
 8. Choudhury, S., Laina, I., Rupprecht, C., & Vedaldi, A. (2021). Unsupervised part discovery from contrastive reconstruction. Advances in Neural Information Processing Systems, 34, 28104-28118.
 
      - Res.Gap.: representation learning at part level has received significantly less attention (most work focus on object and scene level)
@@ -615,17 +613,19 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 10. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
 
-   - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
-       - favoring synergy between supervised and unsupervised learning
-       - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
-       - overview figure 2 [multihead network (L and U data)]
-         - replace multi-objective using the multitask setting.
-         - look at the **gradient flow strategy**
-   - similar idea of **swav**
-     - dimension mismatch* in eq 4 and 5  
-       - can be fixed by altering Y and L in the eq 4
+        - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
+            - favoring synergy between supervised and unsupervised learning
+            - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
+            - overview figure 2 [multihead network (L and U data)]
+              - replace multi-objective using the multitask setting.
+              - look at the **gradient flow strategy**
 
-     - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
+        - similar idea of **swav**
+          - dimension mismatch* in eq 4 and 5  
+            - can be fixed by altering Y and L in the eq 4
+
+          - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
+
 
 11. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
 
@@ -754,18 +754,19 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 17. Vaze, Sagar, Kai Han, Andrea Vedaldi, and Andrew Zisserman. "Open-set recognition: A good closed-set classifier is all you need." arXiv preprint arXiv:2110.06207 (2021).
 
       - demonstrate that the ability of a classifier to make the ‘none-of-above’ decision is highly correlated with its accuracy on the closed-set classes
-      
       - RQ: whether a well-trained closed-set classifier can perform as well as recent algorithms
-           - TP: show that the open-set performance of a classifier can be improved by enhancing its closed-set accuracy
-              - TP: simentic shift benchmark??
+      - TP: show that the open-set performance of a classifier can be improved by enhancing its closed-set accuracy
+         - TP: simentic shift benchmark??
       - Interested related works: Out-of-Distribution (OOD) detection, novelty detection, anomaly detection, novel category discovery, novel feature discovery
       - Different Baseline: Maximum Softmax probability (MSP), ARPL: Reciprocal point learning, (varies on how to calculate the confidence score)
+      
 
-  - <embed src="https://mxahan.github.io/PDF_files/osr_good_close.pdf" width="100%" height="850px"/>
+    - <embed src="https://mxahan.github.io/PDF_files/osr_good_close.pdf" width="100%" height="850px"/>
 
-1. Kodama, Yuto, Yinan Wang, Rei Kawakami, and Takeshi Naemura. "Open-set Recognition with Supervised Contrastive Learning." In 2021 17th International Conference on Machine Vision and Applications (MVA), pp. 1-5. IEEE, 2021.
-     - TP: Explicitly uses distance learning (CL!!) to obtain the feature space for the open-set problem
-       - Supcon, EVT to find the normality score.
+18. Kodama, Yuto, Yinan Wang, Rei Kawakami, and Takeshi Naemura. "Open-set Recognition with Supervised Contrastive Learning." In 2021 17th International Conference on Machine Vision and Applications (MVA), pp. 1-5. IEEE, 2021.
+
+    - TP: Explicitly uses distance learning (CL!!) to obtain the feature space for the open-set problem
+      - Supcon, EVT to find the normality score.
 
 ## 2020
 
@@ -839,19 +840,26 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - <embed src="https://mxahan.github.io/PDF_files/self_label_via_sim_cluster.pdf" width="100%" height="850px"/>
 
 1. Quintanilha, I. M., de ME Filho, R., Lezama, J., Delbracio, M., & Nunes, L. O. (2018). Detecting Out-Of-Distribution Samples Using Low-Order Deep Features Statistics.
-  - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
-  - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
-  - linear classifier over the neural activation stats.
+
+       - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
+
+       - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
+
+       - linear classifier over the neural activation stats.
 
 1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
 
      - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
 
+
      - TP: OLTR learning from naturally distributed data and optimizing accuracy over a balanced test set of head, tail, and open classes
+
 
      - methodologies: 1. dynamic Meta Embedding.  connected to Self-attention
 
+
      - overall figure 2
+
 
      - <embed src="https://mxahan.github.io/PDF_files/ls_long_tailed_open_world.pdf" width="100%" height="850px"/>
 
@@ -859,12 +867,12 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 1. Oza, P., & Patel, V. M. (2019). C2ae: Class conditioned auto-encoder for open-set recognition. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2307-2316).
 
-   - TO: an OSR algorithm using class conditioned auto-encoders with novel training and testing methodologies
-     - 2 steps: 1. closed-set classification and, 2. open-set identification
-     - utilize EVT to find the threshold for known/unknown.
-     - *Encoder* learns the first task following the closed-set classification training pipeline, *decoder* learns the second task by reconstructing conditioned on class identity
+     - TO: an OSR algorithm using class conditioned auto-encoders with novel training and testing methodologies
+       - 2 steps: 1. closed-set classification and, 2. open-set identification
+       - utilize EVT to find the threshold for known/unknown.
+       - *Encoder* learns the first task following the closed-set classification training pipeline, *decoder* learns the second task by reconstructing conditioned on class identity
 
- 1. Scheirer, W. J., Rocha, A., Micheals, R. J., & Boult, T. E. (2011). Meta-recognition: The theory and practice of recognition score analysis. IEEE transactions on pattern analysis and machine intelligence, 33(8), 1689-1695.
+1. Scheirer, W. J., Rocha, A., Micheals, R. J., & Boult, T. E. (2011). Meta-recognition: The theory and practice of recognition score analysis. IEEE transactions on pattern analysis and machine intelligence, 33(8), 1689-1695.
 
       - Utilize EVT for OSR (rough note to start)
 
@@ -876,7 +884,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
                 - *observation*: most recognition systems, the distance or similarity scores are bounded from both above and below
 
                 - takes the tail of these scores, which are likely to have been sampled from the extrema of their underlying portfolios, and fits a Weibull distribution to that data.
- 2. Bendale, A., & Boult, T. E. (2016). Towards open set deep networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1563-1572).
+
+1. Bendale, A., & Boult, T. E. (2016). Towards open set deep networks. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1563-1572).
 
       - Introduce OpenMax layer **[alternative to softmax]** to incorporate open set setting.
         - Modify the activation weights before softmax function [eq 2, aglo 1,2]
@@ -888,7 +897,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
       - Utilize EVT to incorporate rejection probability.
 
- 1. Hsu, Y. C., Lv, Z., Schlosser, J., Odom, P., & Kira, Z. (2019). Multi-class classification without multi-class labels. arXiv preprint arXiv:1901.00544.
+1. Hsu, Y. C., Lv, Z., Schlosser, J., Odom, P., & Kira, Z. (2019). Multi-class classification without multi-class labels. arXiv preprint arXiv:1901.00544.
 
       - a new strategy for multi-class classification (no class-specific labels) using pairwise similarity between examples
       - present a probabilistic graphical model for it, and derive a loss function for DL
@@ -897,7 +906,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
         - has the vibe of student teacher model [MCL]
           - pretty standard approach for forming a binary class from multi-class.
 
- 2. Hsu, Yen-Chang, Zhaoyang Lv, and Zsolt Kira. "Learning to cluster in order to transfer across domains and tasks." arXiv preprint arXiv:1711.10125 (2017).
+1. Hsu, Yen-Chang, Zhaoyang Lv, and Zsolt Kira. "Learning to cluster in order to transfer across domains and tasks." arXiv preprint arXiv:1711.10125 (2017).
 
       - perform tx learning across domains and tasks, formulating it as a problem of learning to cluster [KCL]
 
@@ -909,7 +918,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
       - <embed src="https://mxahan.github.io/PDF_files/Learn_cluster.pdf" width="100%" height="850px"/>
 
- 1. Han, K., Vedaldi, A., & Zisserman, A. (2019). Learning to discover novel visual categories via deep transfer clustering. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 8401-8409).
+1. Han, K., Vedaldi, A., & Zisserman, A. (2019). Learning to discover novel visual categories via deep transfer clustering. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 8401-8409).
 
       - problem of discovering novel object categories in an image collection [DTC]
 
@@ -930,13 +939,13 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
       - <embed src="https://mxahan.github.io/PDF_files/deep_tx_cluster.pdf" width="100%" height="850px"/>
 
- 2. Scheirer, Walter J., Anderson de Rezende Rocha, Archana Sapkota, and Terrance E. Boult. "Toward open set recognition." IEEE transactions on pattern analysis and machine intelligence 35, no. 7 (2012): 1757-1772.
+1. Scheirer, Walter J., Anderson de Rezende Rocha, Archana Sapkota, and Terrance E. Boult. "Toward open set recognition." IEEE transactions on pattern analysis and machine intelligence 35, no. 7 (2012): 1757-1772.
 
       - “open set” recognition: incomplete world knowledge is present at training, and unknown classes can be submitted during testing
       - TP:  “1-vs-Set Machine,” which sculpts a decision space from the marginal distances of a 1-class or binary SVM with a linear kernel
       - In classification, one assumes there is a given set of classes between which we must discriminate. For recognition, we assume there are some classes we can recognize in a much larger space of things we do not recognize
 
- 1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3474-3482).
+1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 3474-3482).
 
       - lack of robustness for CNN is caused by the softmax layer (discriminative and based on the assumption of closed world)
         - TP: Proposes convolutional prototype learning (CPL)
@@ -945,5 +954,5 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
           - Looks like requires a lot of computations!
           - Put a constraint: classes need to be inside a circle [prototype loss]!!
             - How the heck it got connected to generative model !!
-      
+
       - <embed src="https://mxahan.github.io/PDF_files/conv_proto_net.pdf" width="100%" height="850px"/>
