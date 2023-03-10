@@ -11,7 +11,20 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 ## 2022
 
-1. Yu, L., Weng, Z., Wang, Y., & Zhu, Y. (2022). Multi-Teacher Knowledge Distillation for Incremental Implicitly-Refined Classification. *arXiv preprint arXiv:2202.11384*.
+1. Yu, L., Twardowski, B., Liu, X., Herranz, L., Wang, K., Cheng, Y., ... & Weijer, J. V. D. (2020). Semantic drift compensation for class-incremental learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 6982-6991).
+
+   - Key Idea: Embedding networks have the advantage that new classes can be naturally included into the network without adding new weights
+     - Estimate drifts and compensate for them to avoid indirect forgetting. 
+   - propose a new method to estimate the drift, called semantic drift, of features and compensate for it without the need of any exemplars!!
+     - show that embedding networks suffer significantly less from catastrophic forgetting than classification networks.
+     - Proposes Semantic Drift Compensation (SDC)
+       - Section 4.1: nice set of equation 8-13
+       - measures semantic drift by proxy task
+   - experiments on fine-grained datasets, CIFAR100 and ImageNetSubset. 
+   - previous works all study continual learning in classification networks : TP works with embedding network (prototype: Embedding mean)
+
+2. Yu, L., Weng, Z., Wang, Y., & Zhu, Y. (2022). Multi-Teacher Knowledge Distillation for Incremental Implicitly-Refined Classification. *arXiv preprint arXiv:2202.11384*.
+
    - TP: Solution Incremental Implicitly-Refined Classification (IIRC)
      - Superclass to subclasses
    - Method overview ( why & how?) Oh really??
@@ -23,7 +36,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - well the final layer is softmax?? How does it make sense????
      -  Instead of should have been in the representation layer
        - Increasing neuron numbers in the representation layer. 
-2. Fang, Z., Li, Y., Lu, J., Dong, J., Han, B., & Liu, F. (2022). Is Out-of-Distribution Detection Learnable?. *arXiv preprint arXiv:2210.14707*.
+
+3. Fang, Z., Li, Y., Lu, J., Dong, J., Han, B., & Liu, F. (2022). Is Out-of-Distribution Detection Learnable?. *arXiv preprint arXiv:2210.14707*.
    - investigate the probably approximately correct (PAC) learning theory of OOD detection
      - find a necessary condition for the learnability of OOD detection. 
      - prove several impossibility theorems for the learnability of OOD detection under some scenarios
@@ -37,7 +51,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
    - TP covers: all OOD data be allocated to one big OOD class (unknown class k=1)
      - Unknown class k>1, falls in unsupervised clustering. 
      - TP: Assumes no earlier available of OOD data, contrast with GCD, unsup cluster setting. 
-3. Deng, Jieren, Jianhua Hu, Haojian Zhang, and Yunkuan Wang. "Incremental Prototype Prompt-tuning with Pre-trained Representation for Class Incremental Learning." *arXiv preprint arXiv:2204.03410* (2022).
+
+4. Deng, Jieren, Jianhua Hu, Haojian Zhang, and Yunkuan Wang. "Incremental Prototype Prompt-tuning with Pre-trained Representation for Class Incremental Learning." *arXiv preprint arXiv:2204.03410* (2022).
    - parameter-additional-tuning (PAT): only changes very few parameters to learn new visual concepts
      - e.g. linear probing, prompt tuning, and adapter
      - PAT based CIL avoids fighting against forgetting by replaying or distilling like most of the existing methods. 
@@ -55,7 +70,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - PAT: adapter-based (injects small-scale NN modules (adapters) connected to the transformer layer), and prompt-based (L2P)
    - Semantic drift is a higher-level forgetting problem, it is less obvious to see the semantic drift when the representation model is not frozen because it is mixed with a lower level of forgetting (representation forgetting).????
    - Kinda Vague approach: Better read L2P that this. 
-4. Du, X., Gozum, G., Ming, Y., & Li, Y. (2022). Siren: Shaping representations for detecting out-of-distribution objects. In *Advances in Neural Information Processing Systems*.
+
+5. Du, X., Gozum, G., Ming, Y., & Li, Y. (2022). Siren: Shaping representations for detecting out-of-distribution objects. In *Advances in Neural Information Processing Systems*.
 
    - distance-based OOD detection methods remain largely unexplored in object-level OOD detection
      -  proposing a distance based framework for detecting OOD objects (model-agnostic representation space both CNN and Tx)
@@ -71,19 +87,22 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Experimented on both transformer-based and CNN-based models.
    - Joint optimization for multiple targets (figure 2)
      - Similar to other prototypical approaches
-5. Azizmalayeri, M., Moakhar, A. S., Zarei, A., Zohrabi, R., Manzuri, M. T., & Rohban, M. H. (2022). Your Out-of-Distribution Detection Method is Not Robust!. *arXiv preprint arXiv:2209.15246*.
+
+6. Azizmalayeri, M., Moakhar, A. S., Zarei, A., Zohrabi, R., Manzuri, M. T., & Rohban, M. H. (2022). Your Out-of-Distribution Detection Method is Not Robust!. *arXiv preprint arXiv:2209.15246*.
 
    - Challenges earlier adversarial methods based OOD prevention mechanism and proposes a new one. 
      - Adopt generative OOD based methods. (OpenGAN as baseline)
      - Proposes ATD (adversarial trained discriminator) [simple overview in figure 3]
        - utilizes a pre-trained robust model to extract robust features, and a generator model to create OOD samples
-6. Wenzel, F., Dittadi, A., Gehler, P. V., Simon-Gabriel, C. J., Horn, M., Zietlow, D., ... & Locatello, F. (2022). Assaying out-of-distribution generalization in transfer learning. *arXiv preprint arXiv:2207.09239*.
+
+7. Wenzel, F., Dittadi, A., Gehler, P. V., Simon-Gabriel, C. J., Horn, M., Zietlow, D., ... & Locatello, F. (2022). Assaying out-of-distribution generalization in transfer learning. *arXiv preprint arXiv:2207.09239*.
 
    - Empirically unified view of previous work (calibration, adversarial robustness, algorithmic corruption, invariance across shift), highlighting message discrepancies, providing recommendations on how to measure the robustness of a model and how to improve it.
      - A lot of experimentation: Massive datasets, a lot of models. 
      -  ID and OOD accuracies tend to increase jointly, but their relation is largely dataset-dependent, more nuanced and more complex than posited by previous, smaller scale studies
    - kind of overview paer, many nice takeaways
-7. Chang, W., Shi, Y., Tuan, H. D., & Wang, J. (2022). Unified Optimal Transport Framework for Universal Domain Adaptation. *arXiv preprint arXiv:2210.17067*. NeuralIPS2022
+
+8. Chang, W., Shi, Y., Tuan, H. D., & Wang, J. (2022). Unified Optimal Transport Framework for Universal Domain Adaptation. *arXiv preprint arXiv:2210.17067*. NeuralIPS2022
 
    - RG: Most existing methods require manually threshold values to detect common samples and hard to extend to UniDA as the diverse ratios of common classes and fail to categories target-private (novel) samples (treated as a whole)
    - TP: propose to use Optimal Transport (OT) to handle these issues under a unified framework (UniOT)
@@ -100,7 +119,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - row sum and column sum for a point to detect CCD
 
    - <embed src="https://mxahan.github.io/PDF_files/UOTDA.pdf" width="100%" height="850px"/>
-8. Zhang, X., Jiang, J., Feng, Y., Wu, Z. F., Zhao, X., Wan, H., ... & Gao, Y. (2022). Grow and Merge: A Unified Framework for Continuous Categories Discovery. *arXiv preprint arXiv:2210.04174* (NeuralIPS-2022).
+
+9. Zhang, X., Jiang, J., Feng, Y., Wu, Z. F., Zhao, X., Wan, H., ... & Gao, Y. (2022). Grow and Merge: A Unified Framework for Continuous Categories Discovery. *arXiv preprint arXiv:2210.04174* (NeuralIPS-2022).
 
    - Continuous Category discovery (CCD)- a dynamic setting (Figure 1)
      - What is the different between class incremental continual learning!!! (I think this time the new examples are unlabeled and novel??)
@@ -119,13 +139,15 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
    - Overview approaches: Figure 3
    - Proposes two metrics: Intelligent usages of ACC metrics at different time-step. 
    - <embed src="https://mxahan.github.io/PDF_files/grow_and_merge.pdf" width="100%" height="850px"/>
-9. Zhuang, J., Chen, Z., Wei, P., Li, G., & Lin, L. (2022). Open Set Domain Adaptation By Novel Class Discovery. *arXiv preprint arXiv:2203.03329*.
 
-   - Key ideas: Dynamic/Adaptive (restructuring) class nodes (iterative) [OSDA]
-     - Two stages (Bi-level optimization)
-     - Better writing is expected but should not be an option!!
-     - Interesting reference section to read through
-10. Rizve, M. N., Kardan, N., Khan, S., Shahbaz Khan, F., & Shah, M. (2022). Openldn: Learning to discover novel classes for open-world semi-supervised learning. In *European Conference on Computer Vision* (pp. 382-401). Springer, Cham.
+10. Zhuang, J., Chen, Z., Wei, P., Li, G., & Lin, L. (2022). Open Set Domain Adaptation By Novel Class Discovery. *arXiv preprint arXiv:2203.03329*.
+
+       - Key ideas: Dynamic/Adaptive (restructuring) class nodes (iterative) [OSDA]
+         - Two stages (Bi-level optimization)
+         - Better writing is expected but should not be an option!!
+         - Interesting reference section to read through
+
+11. Rizve, M. N., Kardan, N., Khan, S., Shahbaz Khan, F., & Shah, M. (2022). Openldn: Learning to discover novel classes for open-world semi-supervised learning. In *European Conference on Computer Vision* (pp. 382-401). Springer, Cham.
 
        -  pairwise similarity loss to discover novel classes.
        -  bi-level optimization rule this pairwise similarity loss exploits the information available in the labeled set to implicitly cluster novel class samples, while simultaneously recognizing samples from known classes (without pretraining!)
@@ -139,7 +161,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
     -  <embed src="https://mxahan.github.io/PDF_files/openLDN.pdf" width="100%" height="850px"/>
 
-11. Li, Z., Otholt, J., Dai, B., Meinel, C., & Yang, H. (2022). A Closer Look at Novel Class Discovery from the Labeled Set. *arXiv preprint arXiv:2209.09120*.
+12. Li, Z., Otholt, J., Dai, B., Meinel, C., & Yang, H. (2022). A Closer Look at Novel Class Discovery from the Labeled Set. *arXiv preprint arXiv:2209.09120*.
 
     - Existing research focuses on methodological level, with less emphasis on the analysis of the labeled set itself. 
     - TP:  closer look at NCD from the labeled set and focus on two questions: 
@@ -154,45 +176,41 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
     - Too much theoretical paper:
     - UNO worked best even under class notion mismatch!
 
-12. Yu, Q., Ikami, D., Irie, G., & Aizawa, K. (2022). Self-Labeling Framework for Novel Category Discovery over Domains.
+13. Yu, Q., Ikami, D., Irie, G., & Aizawa, K. (2022). Self-Labeling Framework for Novel Category Discovery over Domains.
 
-       - Open-set DA
-
+    - Open-set DA
 
     - Kind of noisy writing. However, here's what we got
 
-         - Only entropy loss over the target domain novel classes
+      - Only entropy loss over the target domain novel classes
 
-           - Prototypical based learning
+        - Prototypical based learning
 
-           - The *KEY* equation to cover the NCD problem that performs equipartition is EQUATION 11 (the best we need from here)
+        - The *KEY* equation to cover the NCD problem that performs equipartition is EQUATION 11 (the best we need from here)
 
-           - Two things in Equation 11: (i) Increase the network entropy [uniformly equipartition] (ii) Reduce entropy for each samples [unique decision making]
+        - Two things in Equation 11: (i) Increase the network entropy [uniformly equipartition] (ii) Reduce entropy for each samples [unique decision making]
 
+    - Equation 12 and 13 to realize/calculate the components of equation 11 (statistics of neuron to  match uniformity)
 
-           $$
-           I(Y;X_t) = \mathcal{H}(\mathbb{E}_{x_t}[p_e(y|x_t)]) - \mathbb{E}_{x_t}[\mathcal{H}(p_e(y|x_t)]
-           $$
+    - $$
+      I(Y;X_t) = \mathcal{H}(\mathbb{E}_{x_t}[p_e(y|x_t)]) - \mathbb{E}_{x_t}[\mathcal{H}(p_e(y|x_t)]
+      $$
 
-           - Equation 12 and 13 to realize/calculate the components of equation 11 (statistics of neuron to  match uniformity)
+14. Kalb, T., Roschani, M., Ruf, M., & Beyerer, J. (2021, July). Continual learning for class-and domain-incremental semantic segmentation. In *2021 IEEE Intelligent Vehicles Symposium (IV)* (pp. 1345-1351). IEEE.
 
-13. Kalb, T., Roschani, M., Ruf, M., & Beyerer, J. (2021, July). Continual learning for class-and domain-incremental semantic segmentation. In *2021 IEEE Intelligent Vehicles Symposium (IV)* (pp. 1345-1351). IEEE.
+    - Previous approaches: Form of KD
 
-       - Previous approaches: Form of KD
+    -  evaluate and adapt established solutions for continual object recognition to the task of semantic segmentation
 
+    - provide baseline methods and evaluation protocols for the task of continual semantic segmentation.
 
-       - evaluate and adapt established solutions for continual object recognition to the task of semantic segmentation
+    - Avoid Catastrophic Forgetting/Inference: in class-incremental learning KD and in domain-incremental learning replay methods are the most effective method.
+      - Continual Learning Related Works:  replay-based methods, regularization-based methods (prior-focused and data-focused methods.) and parameter isolation methods
 
+        - Data-focused: KD
+        - Prior-focused: vary the plasticity of individual weights based on an estimated importance of the weight in previous tasks (L2 weight loss)
 
-       - provide baseline methods and evaluation protocols for the task of continual semantic segmentation.
-
-
-       - Avoid Catastrophic Forgetting/Inference: in class-incremental learning KD and in domain-incremental learning replay methods are the most effective method.
-            - Continual Learning Related Works:  replay-based methods, regularization-based methods (prior-focused and data-focused methods.) and parameter isolation methods
-
-              - Data-focused: KD
-              - Prior-focused: vary the plasticity of individual weights based on an estimated importance of the weight in previous tasks (L2 weight loss)
-
+    - 
 
        - $$
          Input: x\in \mathcal{X} = \mathbb{N}^{H\times W\times 3} \text{ with label} y\in\{0,1\}^{H\times W\times |C|} \\
@@ -208,27 +226,23 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 14. Li, W., Fan, Z., Huo, J., & Gao, Y. (2022). Modeling Inter-Class and Intra-Class Constraints in Novel Class Discovery. *arXiv preprint arXiv:2210.03591*.
 
        - Single stage joint optimization approach (Relatively Simple)
-
-
-       - Increase KL divergence between labeled and unlabeled classes (inter-class)
-
-
+    
+       -  Increase KL divergence between labeled and unlabeled classes (inter-class)
+    
        - Decrease KL divergence between both labeled and unlabeled classes (Intra-class)
-
-
+    
        - Figure  with the following set of equation form the overall system
-
-
-       - $$
-         \mathcal{L} =  \mathcal{L}_{CE} - \alpha\mathcal{L}_{intra-class} + \beta \mathcal{L}_{inter-clas} \\
-         \mathcal{L}_{intra-class} =  \mathcal{L}_{sKLD}^u + \mathcal{L}_{sKLD}^l \\
-         \mathcal{L}_{sKLD}^l =  \frac{1}{2}D_{KL}(p^l_{ih}||\hat{p}^l_{ih}) + \frac{1}{2}D_{KL}(\hat{p}^l_{ih}||p^l_{ih})\\
-         \mathcal{L}_{inter-class} =  \frac{1}{2}D_{KL}(p^l_{i}||p^u_{j}) + \frac{1}{2}D_{KL}(p^u_{j}||p^l_{i})\\
-         $$
-
-    - 
-
-    - Experimented with CIFAR Dataset. 
+    
+       - 
+    
+    - $$
+      \mathcal{L} =  \mathcal{L}_{CE} - \alpha\mathcal{L}_{intra-class} + \beta \mathcal{L}_{inter-clas} \\
+           \mathcal{L}_{intra-class} =  \mathcal{L}_{sKLD}^u + \mathcal{L}_{sKLD}^l \\
+           \mathcal{L}_{sKLD}^l =  \frac{1}{2}D_{KL}(p^l_{ih}||\hat{p}^l_{ih}) + \frac{1}{2}D_{KL}(\hat{p}^l_{ih}||p^l_{ih})\\
+           \mathcal{L}_{inter-class} =  \frac{1}{2}D_{KL}(p^l_{i}||p^u_{j}) + \frac{1}{2}D_{KL}(p^u_{j}||p^l_{i})\\
+      $$
+    
+       - Experimented with CIFAR Dataset. 
 
 15. Liu, Y., & Tuytelaars, T. (2022). Residual tuning: Toward novel category discovery without labels. *IEEE Transactions on Neural Networks and Learning Systems*.
 
@@ -254,34 +268,30 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 16. Roy, S., Liu, M., Zhong, Z., Sebe, N., & Ricci, E. (2022). Class-incremental Novel Class Discovery. *arXiv preprint arXiv:2207.08605*.
 
-       - problem of NCD in an unlabelled data set by leveraging a pre-trained model (trained on a labelled data set containing disjoint yet related categories)
+    - problem of NCD in an unlabelled data set by leveraging a pre-trained model (trained on a labelled data set containing disjoint yet related categories)
 
-       - TP: Frost: Inspired by rehearsal-based incremental learning methods!!!
+    - TP: Frost: Inspired by rehearsal-based incremental learning methods!!!
 
-            - Proposes class-iNCD (**New learning scheme**): prevents forgetting of past information about the base classes by jointly exploiting 
-              - base class feature prototypes 
-              - feature-level knowledge distillation (avoid catastrophic forgetting, ResTune paper)
+         - Proposes class-iNCD (**New learning scheme**): prevents forgetting of past information about the base classes by jointly exploiting 
+           - base class feature prototypes 
+           - feature-level knowledge distillation (avoid catastrophic forgetting, ResTune paper)
 
-            - Two step setting: We have a trained net, not the data
-              - Learn the supervision first
-              - Clustering objective (BCE) for Novel classes
-              - Prevent forgetting (feature distillation and feature-replay) for base classes
-              - Joint classifier (self-training)
-
-
-       - propose to store the base class feature prototypes from the previous task as exemplars, instead of raw images (to replay)
-
-            - Related work: NCD and incremental learning
-              - IL: model is trained on a sequence of tasks such that data from only the current task is available for training (evaluated on all)
-              - Regularization-base, Exemplar-based and Task-recency bias!
-
-            - Assumption: 
-              - Old class-prototypes and variances are stored
-
-
-       - <embed src="https://mxahan.github.io/PDF_files/class_incremental_NCD.pdf" width="100%" height="850px"/>
-
-    - dfsd
+         - Two step setting: We have a trained net, not the data
+           - Learn the supervision first
+           - Clustering objective (BCE) for Novel classes
+           - Prevent forgetting (feature distillation and feature-replay) for base classes
+           - Joint classifier (self-training)
+    
+    - propose to store the base class feature prototypes from the previous task as exemplars, instead of raw images (to replay)
+    
+         - Related work: NCD and incremental learning
+           - IL: model is trained on a sequence of tasks such that data from only the current task is available for training (evaluated on all)
+           - Regularization-base, Exemplar-based and Task-recency bias!
+    
+         - Assumption: 
+           - Old class-prototypes and variances are stored
+    
+    - <embed src="https://mxahan.github.io/PDF_files/class_incremental_NCD.pdf" width="100%" height="850px"/>
 
 17. Chi, H., Liu, F., Yang, W., Lan, L., Liu, T., Han, B., ... & Sugiyama, M. (2021). Demystifying Assumptions in Learning to Discover Novel Classes. *arXiv preprint arXiv:2102.04002*.
 
@@ -313,7 +323,6 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
         - Restricted rotation to understand the symbol concept.
       - **error at describing eq 5 (p_c,i should be binary and y_c,i should be Probability value)**
 
-
     - <embed src="https://mxahan.github.io/PDF_files/a_d_NCD_with_prototype_learning.pdf" width="100%" height="850px"/>
 
 19. Fei, Y., Zhao, Z., Yang, S., & Zhao, B. (2022). XCon: Learning with Experts for Fine-grained Category Discovery. arXiv preprint arXiv:2208.01898.
@@ -328,46 +337,40 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 20. Sun, Y., & Li, Y. (2022). Open-world Contrastive Learning. arXiv preprint arXiv:2208.02764.
 
-       - OpenCon learns compact representations for both known and novel classes
+    - OpenCon learns compact representations for both known and novel classes
 
-       - leverage the prototype vectors to separate known vs. novel classes in unlabeled data
-              - prototype-based learning can be rigorously interpreted from an Expectation-Maximization (EM) algorithm perspective.
-                  - Utilize protoype based solution instead of sinkhorn-knopp approach of clustering novel classes.
-                    - Kinda SupCon setting for the CL setting (generalized one).
+    - leverage the prototype vectors to separate known vs. novel classes in unlabeled data
+          - prototype-based learning can be rigorously interpreted from an Expectation-Maximization (EM) algorithm perspective.
+              - Utilize protoype based solution instead of sinkhorn-knopp approach of clustering novel classes.
+                - Kinda SupCon setting for the CL setting (generalized one).
 
-       - **Randomly initialized prototype and update them**
+    - **Randomly initialized prototype and update them**
          - *Great IDEA*, power of randomized learning.
            - K prototyes initialization for the k classes (randomization avoids the class collapse)
            - Contrast based on the prototypes based classification of the unlabeled instances (self-labeling)
            - For both the L and U set. 
            - Avoid sink-horn knopp (N examples to k classes)
-
-
-       - <embed src="https://mxahan.github.io/PDF_files/open_world_cl.pdf" width="100%" height="850px"/>
+    
+    - - <embed src="https://mxahan.github.io/PDF_files/open_world_cl.pdf" width="100%" height="850px"/>
 
 21. Zhang, C., Hu, C., Xu, R., Gao, Z., He, Q., & He, X. (2022). Mutual Information-guided Knowledge Transfer for Novel Class Discovery. arXiv preprint arXiv:2206.12063.
 
     - propose  a principle and general method to transfer semantic knowledge between seen and unseen classes
 
     - insight: MI measures the relation between seen and unseen classes in a *restricted label space* and maximizing MI promotes transferring semantic knowledge.
-
-
+    
     - Well there are some vague formulation!!!!
 
 22. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Novel Class Discovery without Forgetting. arXiv preprint arXiv:2207.10659.
 
       - identify and formulate a new, pragmatic problem setting of NCDwF: Novel Class Discovery without Forgetting
-
-
+    
       - propose 1) a method to generate pseudo-latent representations for previously available L to alleviate forgetting 2) a MI based regularizer to enhance unsupervised NCD, and 3) a simple Known Class Identifier for generalized inference form L and U.
-
-
+    
       - Related works: Incremental learning: to alleviate the catastrophic forgetting of model when learning across a sequence of tasks (*requires all labels*) by some regularization, memory based approaches, dynamically expanding and parameter isolation.
-
-
-      - *TP*: labeled data can't be accessed during NCD time
-
-
+    
+      -  *TP*: labeled data can't be accessed during NCD time
+    
       - <embed src="https://mxahan.github.io/PDF_files/ncd_without_forget.pdf" width="100%" height="850px"/>
 
 23. Yang, M., Zhu, Y., Yu, J., Wu, A., & Deng, C. (2022). Divide and Conquer: Compositional Experts for Generalized Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 14268-14277).
@@ -388,13 +391,9 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 24. Zheng, J., Li, W., Hong, J., Petersson, L., & Barnes, N. (2022). Towards Open-Set Object Detection and Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3961-3970).
 
-       - present a new task, namely Open-Set Object Detection and Discovery (OSODD)
+    - present a new task, namely Open-Set Object Detection and Discovery (OSODD)
          - propose a two-stage method that first uses an open-set object detector to predict both known and unknown objects
-
-
-       - propose a category discovery method using *domain-agnostic augmentation*, CL and *semi-supervised clustering*.
-
-
+    - propose a category discovery method using *domain-agnostic augmentation*, CL and *semi-supervised clustering*.
     - approach: Open-set object detector with memory module, object category discovery with representation learning,
 
 25. Joseph, K. J., Paul, S., Aggarwal, G., Biswas, S., Rai, P., Han, K., & Balasubramanian, V. N. (2022). Spacing Loss for Discovering Novel Categories. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 3761-3766).
@@ -613,18 +612,18 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 10. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
 
-        - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
-            - favoring synergy between supervised and unsupervised learning
-            - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
-            - overview figure 2 [multihead network (L and U data)]
-              - replace multi-objective using the multitask setting.
-              - look at the **gradient flow strategy**
-
-        - similar idea of **swav**
-          - dimension mismatch* in eq 4 and 5  
-            - can be fixed by altering Y and L in the eq 4
-
-          - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
+    - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
+        - favoring synergy between supervised and unsupervised learning
+        - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
+        - overview figure 2 [multihead network (L and U data)]
+          - replace multi-objective using the multitask setting.
+          - look at the **gradient flow strategy**
+    
+    - similar idea of **swav**
+      - dimension mismatch* in eq 4 and 5  
+        - can be fixed by altering Y and L in the eq 4
+    
+      - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
 
 
 11. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
@@ -759,7 +758,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
          - TP: simentic shift benchmark??
       - Interested related works: Out-of-Distribution (OOD) detection, novelty detection, anomaly detection, novel category discovery, novel feature discovery
       - Different Baseline: Maximum Softmax probability (MSP), ARPL: Reciprocal point learning, (varies on how to calculate the confidence score)
-      
+    
 
     - <embed src="https://mxahan.github.io/PDF_files/osr_good_close.pdf" width="100%" height="850px"/>
 
@@ -811,6 +810,11 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
            - Figure 2 demonstrate goal for OSR
 
 ## 2019 and Earlier
+1. Kirkpatrick, J., Pascanu, R., Rabinowitz, N., Veness, J., Desjardins, G., Rusu, A. A., ... & Hadsell, R. (2017). Overcoming catastrophic forgetting in neural networks. *Proceedings of the national academy of sciences*, *114*(13), 3521-3526.
+
+     - Elastic Weight consolidation (EWC): Figure 2 as explanation
+     - Equation three is all we need: Fisher information matrix regularization. 
+
 1. Lee, K., Lee, K., Lee, H., & Shin, J. (2018). A simple unified framework for detecting out-of-distribution samples and adversarial attacks. *Advances in neural information processing systems*, *31*.
 
      - softmax classifier are known to produce highly overconfident posterior distributions even for such abnormal samples
@@ -841,25 +845,21 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 1. Quintanilha, I. M., de ME Filho, R., Lezama, J., Delbracio, M., & Nunes, L. O. (2018). Detecting Out-Of-Distribution Samples Using Low-Order Deep Features Statistics.
 
-       - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
+   - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
 
-       - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
+   - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
 
-       - linear classifier over the neural activation stats.
+   - linear classifier over the neural activation stats.
 
 1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
 
      - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
 
-
      - TP: OLTR learning from naturally distributed data and optimizing accuracy over a balanced test set of head, tail, and open classes
-
 
      - methodologies: 1. dynamic Meta Embedding.  connected to Self-attention
 
-
      - overall figure 2
-
 
      - <embed src="https://mxahan.github.io/PDF_files/ls_long_tailed_open_world.pdf" width="100%" height="850px"/>
 

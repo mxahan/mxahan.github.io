@@ -7,12 +7,36 @@ Any suggestion regarding some new papers are highly appreciated. For some of the
 We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world. however, the papers (many papers!) are as follows
 
 ## 2022
+1. Soviany, P., Ionescu, R. T., Rota, P., & Sebe, N. (2022). Curriculum learning: A survey. *International Journal of Computer Vision*, *130*(6), 1526-1565.
+   - learning models in a meaningful order, from the easy samples to the hard ones instead of random shuffling.
+   - Aim: finding a way to rank the samples from easy to hard,  the right pacing function for introducing more difficult data
+   - Opposite: anti-curriculum learning: hard negative mining
+   - Four main component of ML: Data, model, task, and the performance measurement. 
+   - Division based on: Data type, task, curriculum strategy, ranking criterion, and curriculum schedule
+   - Taxonomy of CuL: 
+     - Vanilla CuL: Rule base criterion for sample selection
+     - self-paced learning: The sample depends on the model itself. Model decides whats easy and whats hard. 
+     - Balanced CuL: Select data from all action groups: Focus on intra group hard and easy instances. 
+     - Self-paced CuL: predefined criteria and learning-based metrics are jointly used. 
+     - Progressive CuL: progressive mutation of the model capacity or task settings
+     - Teacher-student CuL: splits the training into two tasks, a model that learns the principal task (student) and an auxiliary model (teacher) that determines the optimal learning parameters (policy) for the student. 
+     - Implicit CuL:  the easy-to-hard schedule can be regarded as a side effect of a specific training methodology!
 1. Lee, Yoonho, Huaxiu Yao, and Chelsea Finn. "Diversify and Disambiguate: Learning From Underspecified Data." arXiv preprint arXiv:2202.03418 (2022).
+1. Zhao, B., Cui, Q., Song, R., Qiu, Y., & Liang, J. (2022). Decoupled knowledge distillation. In *Proceedings of the IEEE/CVF Conference on computer vision and pattern recognition* (pp. 11953-11962).
+   - TP: Study logit distillation (provide novel insight) instead of the deep embedding features. 
+   - The class overlaps so not the NCD/continual setting
+   - Figure 1 Summarizes all
+   - TCKD transfers the knowledge concerning the “difficulty” of training samples: transfers “dark knowledge” via the binary classification task, related to the sample “difficulty”
+   - NCKD is the prominent reason why logit distillation works but is greatly suppressed:  only NCKD is applied, the performances are comparable or even better than the classical KD
+     - Well **Connected to Negative Learning**
+     - All about complementary labels. 
+     - the more confident the teacher in a sample, the more reliable and valuable knowledge it could provide. However, the loss weights are highly suppressed by this confident predictions. *Hypothesis:* this fact would limit the effectiveness of knowledge transfer.
+   - However, really interesting formulation: See notes
 
 ## 2021
 
 1. Gao, Ruohan, and Kristen Grauman. "VisualVoice: Audio-Visual Speech Separation with Cross-Modal Consistency." arXiv preprint arXiv:2101.03149 (2021).
-    
+   
 1. Brock, Andrew, Soham De, Samuel L. Smith, and Karen Simonyan. "High-Performance Large-Scale Image Recognition Without Normalization." arXiv preprint arXiv:2102.06171 (2021).
   - Proposes alternative to BN [BN suffers instabilities] - Normalization freee models
     - Adaptive gradient clipping (AGC)
@@ -114,6 +138,30 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2018
 
+1. Zhang, C., Bengio, S., Hardt, M., Recht, B., & Vinyals, O. (2021). Understanding deep learning (still) requires rethinking generalization. *Communications of the ACM*, *64*(3), 107-115.
+1. Jiang, L., Zhou, Z., Leung, T., Li, L. J., & Fei-Fei, L. (2018, July). Mentornet: Learning data-driven curriculum for very deep neural networks on corrupted labels. In *International conference on machine learning* (pp. 2304-2313). PMLR.
+     - KD setting to avoid noisy (corrupted) label.
+       - MentorNet provides a curriculum (sample weighting scheme) for StudentNet to focus on the samples with probably correct label
+       - Unlike the existing curriculum predefined by human, MentorNet learns a data-driven curriculum dynamically with StudentNet.
+     - Experimentation: WebVision Dataset.
+     - Related to Curriculum Learning: Gradually learning process. 
+1. Blum, A., & Mitchell, T. (1998, July). Combining labeled and unlabeled data with co-training. In *Proceedings of the eleventh annual conference on Computational learning theory* (pp. 92-100).
+     - Co-training algorithm: In presence of two distinct views of each example suggests strategies
+       - two learning algorithms are trained separately on each view,
+       - then each algorithm's predictions on new unlabeled examples are used to enlarge the training set of the other. 
+     - assume that either view of the example would be sufficient for learning if we had enough labeled data, but TP use both views together to allow inexpensive unlabeled data to augment a much smaller set of labeled examples.
+     - provide a PAC-style analysis for this setting, and, more broadly, a PAC-style framework for the general problem of learning from both labeled and unlabeled data.
+1. Han, B., Yao, Q., Yu, X., Niu, G., Xu, M., Hu, W., ... & Sugiyama, M. (2018). Co-teaching: Robust training of deep neural networks with extremely noisy labels. *Advances in neural information processing systems*, *31*.
+     - Early for of swapped prediction: train be opposite networks' clean performance. 
+       - TP uses two networks to train together. (**Algorithm 1** Tells all)
+         - Motivated from co-training algorithm (Blum et. al 1998)
+       - Each network feeds forward all data and selects some data of possibly clean labels 
+       - two networks communicate with each other what data in this mini-batch should be used for training (cross update)
+         - Boosting
+       - each network back propagates the data selected by its peer network and updates itself.
+     - Related works: decoupled KD, 
+     - Experimented with noisy MNIST, CIFAR
+     - Hypothesis: NN learns the easy labels first and then go for the complex data (in between we can distinguish the noisy data)
 1. Zhang, Y., Xiang, T., Hospedales, T. M., & Lu, H. (2018). Deep mutual learning. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 4320-4328).
      - mutual learning starts with a pool of untrained students who simultaneously learn to solve the task together
        -  each student is trained with two losses: a supervised loss, and a mimicry loss (aligns each student’s class posterior with each other) [fig 1]

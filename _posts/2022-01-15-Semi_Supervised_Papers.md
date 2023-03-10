@@ -2,7 +2,11 @@
 
 ## 2022
 
-1. Xu, Y., Wei, F., Sun, X., Yang, C., Shen, Y., Dai, B., ... & Lin, S. (2022). Cross-model pseudo-labeling for semi-supervised action recognition. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 2959-2968).
+1. Xia, J., Tan, C., Wu, L., Xu, Y., & Li, S. Z. (2022, May). OT Cleaner: Label Correction as Optimal Transport. In *ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)* (pp. 3953-3957). IEEE.
+   - methods to fix the noisy label problem
+     - Finds the clean labels and re-configure the labels with low confidences. 
+     - matches the distribution via SK algorithm
+2. Xu, Y., Wei, F., Sun, X., Yang, C., Shen, Y., Dai, B., ... & Lin, S. (2022). Cross-model pseudo-labeling for semi-supervised action recognition. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 2959-2968).
    - Swapped prediciton approaches utilizing two network primary (F) and auxiliary (A)
    - Very easy setting and loss [equation 6]
      - Two different augmentation and swapped prediction using two different network
@@ -107,44 +111,46 @@
 
 5. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
 
-       - semi supervised learning (should cover the labeled and unlabeled at the beginning)
+   - semi supervised learning (should cover the labeled and unlabeled at the beginning)
 
-           - teacher network - to generate - pseudo labels [extension of pseudo label work]
-             - TP: Contrary to the Pseudo label work: *The teacher network is not fixed* and constantly adapting [claim: teacher learn better pseudo labels]
-             - Connected to Pseudo Labels/self-training (semi-supervised)
+     - teacher network - to generate - pseudo labels [extension of pseudo label work]
+       - TP: Contrary to the Pseudo label work: *The teacher network is not fixed* and constantly adapting [claim: teacher learn better pseudo labels]
+       - Connected to Pseudo Labels/self-training (semi-supervised)
 
-           - Issues with the confirmation bias of pseudo label? does TP solve this??
-             - correct the confirmation bias using a systematic mechanism!!! (how pseudo-label affect the student network) [figure 1]
-             - Parallel training [student's learning feedback goes to teacher]!! (dynamic target!)
+     - Issues with the confirmation bias of pseudo label? does TP solve this??
+       - correct the confirmation bias using a systematic mechanism!!! (how pseudo-label affect the student network) [figure 1]
+       - Parallel training [student's learning feedback goes to teacher]!! (dynamic target!)
 
-           - assumption: Pseudo label of teacher can be adjusted
-             - However, extremely complication optimization as it requires to unroll everything!
+     - assumption: Pseudo label of teacher can be adjusted
+       - However, extremely complication optimization as it requires to unroll everything!
+     - Sampling hard pseudo labels (modified version of REINFORCE algorithm!)
+     - Nice experiment section: Dataset, network, and baseline
 
-      - Sampling hard pseudo labels (modified version of REINFORCE algorithm!)
+   - <embed src="https://mxahan.github.io/PDF_files/Meta_pseudo_label.pdf" width="100%" height="850px"/>
 
-
-      - Nice experiment section: Dataset, network, and baseline
-
-
-      - <embed src="https://mxahan.github.io/PDF_files/Meta_pseudo_label.pdf" width="100%" height="850px"/>
-
-4. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
+6. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
 
    - TP:  divide the training data into a labeled set with clean samples and an unlabeled set with noisy samples (co-training two networks), and trains the model on both data (?). Improved MixMatch
-   
+
+
    - TP: Two diverged network (avoid confirmation bias of self-training) use each others data! GMM to find labeled and unlabeled (too much noisy) data.  Ensemble for the unlabeled.
-   
+
+
    - Related strategy: MixUp (noisy sample contribute less to loss!), co-teaching?  Loss correction approach? Semi-supervised learning, MixMatch (unifies SSL and LNL [consistency regularization, entropy minimization, and MixUp])
-   
+
+
    - Application: Data with noisy label (social media image with tag!) may result poor generalization (as may overfit)!
-   
+
+
    - Hypothesis: DNNs tend to learn simple patterns first before fitting label noise Therefore, many methods treat samples with small loss as clean ones (discards the sample labels that are highly likely to be noisy! and leverages them as unlabeled data)
-   
+
+
    - Algorithm is nice to work with
-   
+
+
    - <embed src="https://mxahan.github.io/PDF_files/DivideMix.pdf" width="100%" height="850px"/>
 
-5. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
+4. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
 
      - Interesting way to improve the Classifier
 
@@ -200,7 +206,7 @@
 
 
      - *summary:* chose two adaptive th for pairwise labels. iterative fix the network and th to reduce number of unlabeled images.  
-
+    
       - *metrics:* Adjusted Rand Index (ARI), Normalized Mutual Information (NMI) and clustering Accuracy (ACC).
 
 1. Rasmus, A., Berglund, M., Honkala, M., Valpola, H., & Raiko, T. (2015). Semi-supervised learning with ladder networks. Advances in neural information processing systems, 28.
@@ -231,13 +237,13 @@
          - Temporal and Pi model suffers from confirmation bias (requires better target) as self-teacher!
 
        - Two ways to improve: chose careful perturbation or chose careful teacher model
-
+       
        - Result: Mean teacher is better! faster converge and higher accuracy
-
+       
        - Importance of good architecture (ThisPaper: Residual networks):
-
+       
        - TP: how to form better teacher model from students.
-
+       
        - TP: Large batch, large dataset, on-line learning.
 1. Laine, Samuli, and Timo Aila. "Temporal ensembling for semi-supervised learning." arXiv preprint arXiv:1610.02242 (2016).
      - A form of consistency regularization.
