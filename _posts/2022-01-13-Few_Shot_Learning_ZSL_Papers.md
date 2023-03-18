@@ -46,8 +46,7 @@
            - Refining Meta-learned parameters
            - Learning the optimizer
        
-
-     - Future works: four possible directions : Problem setup, Techniques, applications, and Theories
+- Future works: four possible directions : Problem setup, Techniques, applications, and Theories
 
 ## 2019
 
@@ -61,7 +60,7 @@
 
 
      - Solution: i) Memory augmented networks ii) Metric learning (there are some approach combined with meta-learning) iii) Gradient based meta-learner iv) data generation  
-
+    
      - Meta-learning Definition: given a task, an algorithm is learning “if its performance at the task improves with experience”, while, *given a family of tasks*, an algorithm is learning to learn if “its performance at each task *improves with experience and with the number of tasks*”: referred as a meta-learning algorithm.
        -
 
@@ -111,10 +110,9 @@
 
          - Interesting related work section : learning to fine-tune (MAML), RNN memory based, Embedding and Metric learning approachs
            - Mostly related to prototypical network and siamese network
-
-
-     - Problem definition and solution: Section 3
-
+     
+     -  Problem definition and solution: Section 3
+     
      - <embed src="https://mxahan.github.io/PDF_files/relation_net.pdf" width="100%" height="850px"/>
 
 ## 2017 and Earlier
@@ -156,16 +154,14 @@
 
          - Episodic training: By selecting some instances randomly from the given example pool
            - Algorithm 1: interesting
-
-
+     
      - This paper: uses Bregman Distance function (euclidean distance) to define embedding metric space
          - One shot learning Scenario (single support example): Prototypical network == matching network
            - matching network: weighted nearest neighborhood classifier.
-
-
+     
      - Experiments: (i) omniglot few-shot data (ii) MiniImagenet few-shot classification (iii) CUB zero-shot classification.
-
-     - <embed src="https://mxahan.github.io/PDF_files/Prototypical_net.pdf" width="100%" height="850px"/>
+     
+      - <embed src="https://mxahan.github.io/PDF_files/Prototypical_net.pdf" width="100%" height="850px"/>
 
 1. Finn, Chelsea, Pieter Abbeel, and Sergey Levine. "Model-agnostic meta-learning for fast adaptation of deep networks." In International Conference on Machine Learning, pp. 1126-1135. PMLR, 2017.
 
@@ -177,7 +173,6 @@
          - Prior arts: Learn update function!
            - MAML: more flexible (loss function and architectures)
        
-
      - MAML: Problem setup:
-
+     
 1. Weston, Jason, Sumit Chopra, and Antoine Bordes. "Memory networks." arXiv preprint arXiv:1410.3916 (2014).

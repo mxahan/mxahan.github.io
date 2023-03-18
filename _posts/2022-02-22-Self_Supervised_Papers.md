@@ -53,19 +53,18 @@
 
 1. Sohn, Kihyuk. "Improved deep metric learning with multi-class n-pair loss objective." In Proceedings of the 30th International Conference on Neural Information Processing Systems, pp. 1857-1865. 2016.
 
-       - Deep metric learning (solves the slow convergence for the contrastive and triple loss)
-         - what is the penalty??
-         - How they compared the convergences
-         
-           - This paper: Multi-class N-pair loss
-             - developed in two steps (i) Generalization of triplet loss (ii) reduces computational complexity by efficient batch construction (figrue 2) taking (N+1)xN examples!!
-   
+   - Deep metric learning (solves the slow convergence for the contrastive and triple loss)
+     - what is the penalty??
+     - How they compared the convergences
 
-       - Experiments on visual recognition, object recognition, and verification, image clustering and retrieval, face verification and identification tasks.
-        
-       - identify multiple negatives [section 3], efficient batch construction
-        
-       -  <embed src="https://mxahan.github.io/PDF_files/N_pair_loss.pdf" width="100%" height="850px"/>
+       - This paper: Multi-class N-pair loss
+         - developed in two steps (i) Generalization of triplet loss (ii) reduces computational complexity by efficient batch construction (figrue 2) taking (N+1)xN examples!!
+
+   - Experiments on visual recognition, object recognition, and verification, image clustering and retrieval, face verification and identification tasks.
+
+   - identify multiple negatives [section 3], efficient batch construction
+
+   -  <embed src="https://mxahan.github.io/PDF_files/N_pair_loss.pdf" width="100%" height="850px"/>
 
 1. Noroozi, Mehdi, and Paolo Favaro. "Unsupervised learning of visual representations by solving jigsaw puzzles." In European conference on computer vision, pp. 69-84. Springer, Cham, 2016.
 
@@ -83,22 +82,21 @@
 
 1. Oh Song, Hyun, Yu Xiang, Stefanie Jegelka, and Silvio Savarese. "Deep metric learning via lifted structured feature embedding." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 4004-4012. 2016.
 
-       - Proposes a different loss function (Equation-3)
-         - Non-smooth and requires special data mining
-         - Solution: This paper: optimize upper bound of eq3, instead of mining use stochastic approach!!
-         - This paper: all pairwise combination in a batch!! O(m<sup>2</sup>)
-           - uses mini batch
-           - Not-random batch formation: Importance Sampling
-           - Hard-negative mining
-           - Gradient finding in the algorithm-1, mathematical analysis
-         
-           - Discusses one of the fundamental issues with contrastive loss and triplet loss!
-             - different batches puts same class in different position
-   
+   - Proposes a different loss function (Equation-3)
+     - Non-smooth and requires special data mining
+     - Solution: This paper: optimize upper bound of eq3, instead of mining use stochastic approach!!
+     - This paper: all pairwise combination in a batch!! O(m<sup>2</sup>)
+       - uses mini batch
+       - Not-random batch formation: Importance Sampling
+       - Hard-negative mining
+       - Gradient finding in the algorithm-1, mathematical analysis
 
-       - Experiment: Amazon Object dataset- multiview .
-       
-       - <embed src="https://mxahan.github.io/PDF_files/lifted_structure.pdf" width="100%" height="850px"/>
+       - Discusses one of the fundamental issues with contrastive loss and triplet loss!
+         - different batches puts same class in different position
+
+   - Experiment: Amazon Object dataset- multiview .
+
+   - <embed src="https://mxahan.github.io/PDF_files/lifted_structure.pdf" width="100%" height="850px"/>
 
 ## 2017
 

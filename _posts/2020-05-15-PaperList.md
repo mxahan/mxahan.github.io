@@ -31,6 +31,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
      - Well **Connected to Negative Learning**
      - All about complementary labels. 
      - the more confident the teacher in a sample, the more reliable and valuable knowledge it could provide. However, the loss weights are highly suppressed by this confident predictions. *Hypothesis:* this fact would limit the effectiveness of knowledge transfer.
+   - Experimentation: Image and video datasets
    - However, really interesting formulation: See notes
 
 ## 2021
@@ -138,7 +139,31 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2018
 
+1. Malach, E., & Shalev-Shwartz, S. (2017). Decoupling" when to update" from" how to update". *Advances in neural information processing systems*, *30*.
+     - TP: meta learning algo against noisy label when combined from different sources
+     - Experiment with gender classification from facial images
+       - experimented with FF networks only
+     - Fairly easy idea: Train two networks and update only when there is a mismatch between them at the end of optimization process
+       - Assumption: Only few are noisy labeled.
+     - multi-agent learning (multi-network training)
+     - closely related to approaches for active learning and selective sampling
+     - tackle two questions: 1. does this algorithm converge? and if so, how quickly? and 2. does it converge to an optimum?
+       - Depends on the initialization of the learners
+     - Explicit regularization (drop out, weight decay, data augmentation) may improve generalization performance, but is neither necessary nor by itself sufficient for controlling generalization error.
+     - SGD acts as an implicit regularizer. For linear models, SGD always converges to a solution with small norm. 
+1. Arpit, D., Jastrzębski, S., Ballas, N., Krueger, D., Bengio, E., Kanwal, M. S., ... & Lacoste-Julien, S. (2017, July). A closer look at memorization in deep networks. In *International conference on machine learning* (pp. 233-242). PMLR.
+     - Examine the role of memorization in deep learning, drawing connections to *capacity*, *generalization*, and *adversarial robustness*
+       -  DL tend to prioritize learning simple patterns first (content-aware)
+       -  expose qualitative differences in gradient-based optimization behavior of DNNs on noise vs. real data.
+         - “memorization” as the behavior exhibited by DNNs trained on noise, and conduct a series of experiments that contrast the learning dynamics of DNNs on real vs. noise data
+       - demonstrate that appropriately tuned explicit regularization (e.g., dropout) can degrade DNN training performance on noise datasets without compromising generalization on real data. 
+       - training data itself plays an important role in determining the degree of memorization.
+     - TP: only examine the representational capacity, that is, the set of hypotheses a model is capable of expressing via some value of its parameters.
 1. Zhang, C., Bengio, S., Hardt, M., Recht, B., & Vinyals, O. (2021). Understanding deep learning (still) requires rethinking generalization. *Communications of the ACM*, *64*(3), 107-115.
+     - Deep neural networks easily fit random labels.
+     - Experimented with two layer FF neural network
+       - model effective capacity: The effective capacity of neural networks is sufficient for memorizing the entire data set
+       - 
 1. Jiang, L., Zhou, Z., Leung, T., Li, L. J., & Fei-Fei, L. (2018, July). Mentornet: Learning data-driven curriculum for very deep neural networks on corrupted labels. In *International conference on machine learning* (pp. 2304-2313). PMLR.
      - KD setting to avoid noisy (corrupted) label.
        - MentorNet provides a curriculum (sample weighting scheme) for StudentNet to focus on the samples with probably correct label
@@ -183,9 +208,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. "Density estimation using real nvp." arXiv preprint arXiv:1605.08803 (2016).
 1. Mikolov, Tomas, Kai Chen, Greg Corrado, and Jeffrey Dean. "Efficient estimation of word representations in vector space." arXiv preprint arXiv:1301.3781 (2013).
 
-     - word2vec
+      - word2vec
 
-     - Comparison with others [link](https://medium.com/@kashyapkathrani/all-about-embeddings-829c8ff0bf5b)
+      - Comparison with others [link](https://medium.com/@kashyapkathrani/all-about-embeddings-829c8ff0bf5b)
 1. Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S. Corrado, and Jeff Dean. "Distributed representations of words and phrases and their compositionality." In Advances in neural information processing systems, pp. 3111-3119. 2013.
   - non-contextual embedding
   - Word2vec extensions
