@@ -1,4 +1,3 @@
-## Introduction
 ---
 layout: post
 title: "RL notes on SB"
@@ -6,6 +5,7 @@ categories: DL
 tag: TD
 date: 2020-02-05
 ---
+## Introduction
 
 
 Deep learning (DL) seems like perform everywhere, as it should. The universal function approximation theorem suggested so. The trick behind succss of DL lies in the Math. I care about the math. I think, I am more of an application oriented guy, but I care about math. I need to convince myself to apply any DL. This conviced me to keep a note for me to track the maths and underline principles that I think about certain methodologies and implementation.
