@@ -2,11 +2,15 @@
 
 ## 2022
 
-1. Xia, J., Tan, C., Wu, L., Xu, Y., & Li, S. Z. (2022, May). OT Cleaner: Label Correction as Optimal Transport. In *ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)* (pp. 3953-3957). IEEE.
+1. Verma, V., Kawaguchi, K., Lamb, A., Kannala, J., Solin, A., Bengio, Y., & Lopez-Paz, D. (2022). Interpolation consistency training for semi-supervised learning. *Neural Networks*, *145*, 90-106.
+   - Interpolation Consistency Training (ICT), a simple and computation efficient algorithm for semi-supervised learning
+     - encourages the prediction at an interpolation of unlabeled points to be consistent with the interpolation of the predictions at those points. 
+     - MixUp for the unlabeled data!!
+2. Xia, J., Tan, C., Wu, L., Xu, Y., & Li, S. Z. (2022, May). OT Cleaner: Label Correction as Optimal Transport. In *ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)* (pp. 3953-3957). IEEE.
    - methods to fix the noisy label problem
      - Finds the clean labels and re-configure the labels with low confidences. 
      - matches the distribution via SK algorithm
-2. Xu, Y., Wei, F., Sun, X., Yang, C., Shen, Y., Dai, B., ... & Lin, S. (2022). Cross-model pseudo-labeling for semi-supervised action recognition. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 2959-2968).
+3. Xu, Y., Wei, F., Sun, X., Yang, C., Shen, Y., Dai, B., ... & Lin, S. (2022). Cross-model pseudo-labeling for semi-supervised action recognition. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 2959-2968).
    - Swapped prediciton approaches utilizing two network primary (F) and auxiliary (A)
    - Very easy setting and loss [equation 6]
      - Two different augmentation and swapped prediction using two different network
@@ -53,7 +57,23 @@
 
 ## 2020
 
-1. Guo, L. Z., Zhang, Z. Y., Jiang, Y., Li, Y. F., & Zhou, Z. H. (2020, November). Safe deep semi-supervised learning for unseen-class unlabeled data. In *International Conference on Machine Learning* (pp. 3897-3906). PMLR.
+1. Wang, Y., Guo, J., Song, S., & Huang, G. (2020). Meta-semi: A meta-learning approach for semi-supervised learning. *arXiv preprint arXiv:2007.02394*.
+
+     - section 2: methods contain the gist. 
+
+2. Yu, Q., Ikami, D., Irie, G., & Aizawa, K. (2020). Multi-task curriculum framework for open-set semi-supervised learning. In *Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XII 16* (pp. 438-454). Springer International Publishing.
+
+     - Assumption: Labeled data and unlabeled data, some common classes in unlabeled data and rest is from novel classes (GCD setting)
+     - Instead of training an OOD detector and SSL separately, TP propose a multitask curriculum learning framework
+       - OOD detection:  estimate the probability of the sample belonging to OOD
+       - a joint optimization framework, which updates the network parameters and the OOD score alternately
+       - to improve performance on the classification (ID) data, TP  select ID samples in unlabeled data having small OOD scores, and retrain training the deep neural networks to classify ID samples in a semi-supervised manner.
+     - **Key assumption:**  that a network trained with a high learning rate is less likely to overfit to noisy labels
+       - train OOD detection and hope that the noisy samples will be filtered automatically.
+     - As simple as heck: Select only top confidence sample from the unlabeled data for retraining the labeled classifier. (curriculum)
+       - Algorithm 1 and 2
+
+3. Guo, L. Z., Zhang, Z. Y., Jiang, Y., Li, Y. F., & Zhou, Z. H. (2020, November). Safe deep semi-supervised learning for unseen-class unlabeled data. In *International Conference on Machine Learning* (pp. 3897-3906). PMLR.
 
      -  unlabeled data contains some classes not seen in the labeled data.
        - TP: proposes a simple and effective safe deep SSL method to alleviate the harm caused by it
@@ -65,7 +85,7 @@
      - Bi-level optimization problem
        - supervised and consistency loss regularization
 
-2. Arazo, E., Ortego, D., Albert, P., O’Connor, N. E., & McGuinness, K. (2020, July). Pseudo-labeling and confirmation bias in deep semi-supervised learning. In *2020 International Joint Conference on Neural Networks (IJCNN)* (pp. 1-8). IEEE.
+4. Arazo, E., Ortego, D., Albert, P., O’Connor, N. E., & McGuinness, K. (2020, July). Pseudo-labeling and confirmation bias in deep semi-supervised learning. In *2020 International Joint Conference on Neural Networks (IJCNN)* (pp. 1-8). IEEE.
 
      - Soft pseudo-label (with correct setting can outperform consistency regularization: Noise Accumulation!)
        - TP: Tries to eliminate the CB without Consistency regularization
@@ -78,7 +98,7 @@
      - Sum of three losses: Entropy loss (enforce single decision), distribution (removing collapse) matching and mixup (counter CB) loss 
        - Relative weight between them matters
 
-3. Van Gansbeke, W., Vandenhende, S., Georgoulis, S., Proesmans, M., & Van Gool, L. (2020, August). Scan: Learning to classify images without labels. In European conference on computer vision (pp. 268-285). Springer, Cham.
+5. Van Gansbeke, W., Vandenhende, S., Georgoulis, S., Proesmans, M., & Van Gool, L. (2020, August). Scan: Learning to classify images without labels. In European conference on computer vision (pp. 268-285). Springer, Cham.
 
      - advocate a two-step approach where feature learning and clustering are decoupled
        - SSL and SSL prior for learnable clustering.
@@ -100,7 +120,7 @@
         - Contrastive learning (loss function 2) with entropy regularizer.
           - Fine-tuning through self-labeling
 
-4. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
+6. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
    - FixMatch: a significant simplification of existing SSL methods
      - Generates pseudo-labels using the model’s predictions on weakly augmented unlabeled images
        - Retained if confidence is high. 
@@ -109,7 +129,7 @@
    - ![](https://miro.medium.com/max/1077/1*5SCSOqvXcrxL-IwZmZaH_g.png)
    - Simple setup- retraining with the good predictions with consistency losses. 
 
-5. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
+7. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
 
    - semi supervised learning (should cover the labeled and unlabeled at the beginning)
 
@@ -128,29 +148,23 @@
 
    - <embed src="https://mxahan.github.io/PDF_files/Meta_pseudo_label.pdf" width="100%" height="850px"/>
 
-6. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
+8. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
 
    - TP:  divide the training data into a labeled set with clean samples and an unlabeled set with noisy samples (co-training two networks), and trains the model on both data (?). Improved MixMatch
 
-
    - TP: Two diverged network (avoid confirmation bias of self-training) use each others data! GMM to find labeled and unlabeled (too much noisy) data.  Ensemble for the unlabeled.
-
 
    - Related strategy: MixUp (noisy sample contribute less to loss!), co-teaching?  Loss correction approach? Semi-supervised learning, MixMatch (unifies SSL and LNL [consistency regularization, entropy minimization, and MixUp])
 
-
    - Application: Data with noisy label (social media image with tag!) may result poor generalization (as may overfit)!
-
 
    - Hypothesis: DNNs tend to learn simple patterns first before fitting label noise Therefore, many methods treat samples with small loss as clean ones (discards the sample labels that are highly likely to be noisy! and leverages them as unlabeled data)
 
-
    - Algorithm is nice to work with
-
 
    - <embed src="https://mxahan.github.io/PDF_files/DivideMix.pdf" width="100%" height="850px"/>
 
-4. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
+9. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
 
      - Interesting way to improve the Classifier
 
@@ -203,11 +217,8 @@
          - learned label features tend to be one-hot vectors (constraint into DAC)
              - single-stage named Adaptive Learning algorithm to  streamline the learning procedure for image clustering
                - dynamically learn the threshold for pairwise label selection [section 3.3]
-
-
      - *summary:* chose two adaptive th for pairwise labels. iterative fix the network and th to reduce number of unlabeled images.  
-    
-      - *metrics:* Adjusted Rand Index (ARI), Normalized Mutual Information (NMI) and clustering Accuracy (ACC).
+       - *metrics:* Adjusted Rand Index (ARI), Normalized Mutual Information (NMI) and clustering Accuracy (ACC).
 
 1. Rasmus, A., Berglund, M., Honkala, M., Valpola, H., & Raiko, T. (2015). Semi-supervised learning with ladder networks. Advances in neural information processing systems, 28.
 
@@ -224,27 +235,26 @@
        - result compared with mixture models ! (entropy methods are better)
        - Connected to cluster assumption and manifold learning
 
-
      - Motivation behind supervised training for unlabeled data
        - Exhaustive generative search
          - More parameters to be estimation that leads to more uncertainty
 
-
-- <embed src="https://mxahan.github.io/PDF_files/Minimum_entropy_reg.pdf" width="100%" height="850px"/>
+     - <embed src="https://mxahan.github.io/PDF_files/Minimum_entropy_reg.pdf" width="100%" height="850px"/>
 
 1. Tarvainen, Antti, and Harri Valpola. "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results." arXiv preprint arXiv:1703.01780 (2017).
-       - Improves Temporal Ensemble by average model weights (usual practice now!) instead of label prediction (WOW!)
-         - Temporal and Pi model suffers from confirmation bias (requires better target) as self-teacher!
 
-       - Two ways to improve: chose careful perturbation or chose careful teacher model
-       
-       - Result: Mean teacher is better! faster converge and higher accuracy
-       
-       - Importance of good architecture (ThisPaper: Residual networks):
-       
-       - TP: how to form better teacher model from students.
-       
-       - TP: Large batch, large dataset, on-line learning.
+     - Improves Temporal Ensemble by average model weights (usual practice now!) instead of label prediction (WOW!)
+          - Temporal and Pi model suffers from confirmation bias (requires better target) as self-teacher!
+
+     - Two ways to improve: chose careful perturbation or chose careful teacher model
+
+     - Result: Mean teacher is better! faster converge and higher accuracy
+
+     - Importance of good architecture (TP: Residual networks):
+
+     - TP: how to form better teacher model from students.
+          - TP: Large batch, large dataset, on-line learning.
+
 1. Laine, Samuli, and Timo Aila. "Temporal ensembling for semi-supervised learning." arXiv preprint arXiv:1610.02242 (2016).
      - A form of consistency regularization.
           - Self-ensemble (Exponential moving average), consensus prediction of unknown labels!!
@@ -258,7 +268,8 @@
                - Pi vs Temporal model:
                  - (Benefit of temporal) Temporal model is faster.In case of temporal, training target is less noisy.
                  - (Downside of temporal) Store auxiliary data! Memory mapped file.
+
 1. Miyato, Takeru, Shin-ichi Maeda, Masanori Koyama, and Shin Ishii. "Virtual adversarial training: a regularization method for supervised and semi-supervised learning." IEEE transactions on pattern analysis and machine intelligence 41, no. 8 (2018): 1979-1993.
 
-- Find the distortion in allowed range for a given input to maximize the loss. (gradient ascent for the input spaces)
-   - Network trains to minimize the loss on the distorted input. (Gradient descent in the network parameter spaces)
+     - Find the distortion in allowed range for a given input to maximize the loss. (gradient ascent for the input spaces)
+        - Network trains to minimize the loss on the distorted input. (Gradient descent in the network parameter spaces)

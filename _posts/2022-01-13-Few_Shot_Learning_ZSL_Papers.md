@@ -53,16 +53,12 @@
 1. Bennequin, Etienne. "Meta-learning algorithms for few-shot computer vision." arXiv preprint arXiv:1909.13579 (2019).
 
      - meta-learning algorithms, i.e. algorithms that learn to learn
-           - TP: Meta learning review (N-way K-shot image classification) reviews
-               - Support set (N number of classes, K example per class)
-               - Query set, Q
-               - Base-dataset, they are different from support set classes.
-
-
+       - TP: Meta learning review (N-way K-shot image classification) reviews
+            - Support set (N number of classes, K example per class)
+            - Query set, Q
+            - Base-dataset, they are different from support set classes.
      - Solution: i) Memory augmented networks ii) Metric learning (there are some approach combined with meta-learning) iii) Gradient based meta-learner iv) data generation  
-    
-     - Meta-learning Definition: given a task, an algorithm is learning “if its performance at the task improves with experience”, while, *given a family of tasks*, an algorithm is learning to learn if “its performance at each task *improves with experience and with the number of tasks*”: referred as a meta-learning algorithm.
-       -
+      - Meta-learning Definition: given a task, an algorithm is learning “if its performance at the task improves with experience”, while, *given a family of tasks*, an algorithm is learning to learn if “its performance at each task *improves with experience and with the number of tasks*”: referred as a meta-learning algorithm.
 
 2. Chen, Wei-Yu, Yen-Cheng Liu, Zsolt Kira, Yu-Chiang Frank Wang, and Jia-Bin Huang. "A closer look at few-shot classification." arXiv preprint arXiv:1904.04232 (2019).
 

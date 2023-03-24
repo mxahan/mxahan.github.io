@@ -139,6 +139,26 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2018
 
+1. Tanaka, D., Ikami, D., Yamasaki, T., & Aizawa, K. (2018). Joint optimization framework for learning with noisy labels. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 5552-5560).
+     - To avoid overfiting to noisy labels TP proposes a joint optimization framework of learning DNN parameters and estimating true labels.
+       -  can correct labels during training by **alternating** update of network parameters and labels
+     - experiments on the noisy CIFAR-10 datasets and the Clothing1M dataset.
+     - observe (empirically find) that a DNN trained on noisy labeled datasets does not memorize noisy labels and maintains high performance for clean data under a high learning rate
+     - Related works: Generalized abilities of DNN, learning on noisy labeled dataset (regularization, noise transition matrix, robust loss function), self-training and pseudo-labeling
+     - **very close to our neural distribution works** 
+1. Salimans, T., Goodfellow, I., Zaremba, W., Cheung, V., Radford, A., & Chen, X. (2016). Improved techniques for training gans. *Advances in neural information processing systems*, *29*.
+     - TP: present a variety of new architectural features and training procedures for GANs framework. 
+       - Proposed Feature matching, minibatch features techniques (applicable to SGAN)
+       - Proposes virtual batch normalization (extension for batch normalization)
+     - achieve state-of-the-art results in semi-supervised classification on MNIST, CIFAR-10 and SVHN
+     - Feature Matching: Essential parts to the stability of the SGAN (semi-supervised GAN by Odena et. al) setting 
+       - Simple setting and key idea: Match discriminator features section **3.1** 
+1. Dai, Z., Yang, Z., Yang, F., Cohen, W. W., & Salakhutdinov, R. R. (2017). Good semi-supervised learning that requires a bad gan. *Advances in neural information processing systems*, *30*.
+     - Why Semi-supervised gan works
+       - how the discriminator benefits from joint training with a generator
+       - why good semi-supervised classification performance and a good generator cannot be obtained at the same time
+     - TP: show that given the discriminator objective, good semi-supervised learning requires a bad generator, and propose the definition of a preferred generator.
+     - Improved upon feature matching GAN
 1. Malach, E., & Shalev-Shwartz, S. (2017). Decoupling" when to update" from" how to update". *Advances in neural information processing systems*, *30*.
      - TP: meta learning algo against noisy label when combined from different sources
      - Experiment with gender classification from facial images
@@ -200,11 +220,11 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
 1. Kingma, Durk P., and Prafulla Dhariwal. "Glow: Generative flow with invertible 1x1 convolutions." In Advances in Neural Information Processing Systems, pp. 10215-10224. 2018.
 
-     - Actnorm
+      - Actnorm
 
-     - invertible 1x1 convolution
+      - invertible 1x1 convolution
 
-     - affine coupling layers
+      - affine coupling layers
 1. Dinh, Laurent, Jascha Sohl-Dickstein, and Samy Bengio. "Density estimation using real nvp." arXiv preprint arXiv:1605.08803 (2016).
 1. Mikolov, Tomas, Kai Chen, Greg Corrado, and Jeffrey Dean. "Efficient estimation of word representations in vector space." arXiv preprint arXiv:1301.3781 (2013).
 

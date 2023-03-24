@@ -42,8 +42,9 @@ This blog contains state of the art application and research on different applic
            - “Region-based Annotating (RA)”: every pixel in the selected regions—high annotation regime
            - “Pixel-based Annotating (PA)”: focus more on the labeling efficiency by selecting the center pixel within the region
        
-- Joint optimization: Pretty much like semi-supervised learning!
-
+     
+     - Joint optimization: Pretty much like semi-supervised learning!
+     
 ## 2020
 
 1. Yuan, Y., Chen, X., & Wang, J. (2020, August). Object-contextual representations for semantic segmentation. In European conference on computer vision (pp. 173-190). Springer, Cham.
@@ -352,19 +353,25 @@ This blog contains state of the art application and research on different applic
 ## 2019 and Earlier
 
 1. Liu, Zhuang, Tinghui Zhou, Hung-Ju Wang, Zhiqiang Shen, Bingyi Kang, Evan Shelhamer, and Trevor Darrell. "Transferable recognition-aware image processing." arXiv preprint arXiv:1910.09185 (2019).
-  - optimizing the recognition loss directly on the image processing network or through an intermediate transforming model (transferable)
-    -a neural network for image processing: maps an input image to an output image with some desired properties.
-  - propose add a recognition loss optimized jointly with the image processing loss.
-  - Figure 2: sums the work. (process loss + recognition task)
 
-1. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).
+     - optimizing the recognition loss directly on the image processing network or through an intermediate transforming model (transferable)
+       -a neural network for image processing: maps an input image to an output image with some desired properties.
 
-1. Zhang, Hongyi, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. "mixup: Beyond empirical risk minimization." arXiv preprint arXiv:1710.09412 (2017).
-  - supervised setup, linear interpolation between input and corresponding labels
-  - a regularization method: design choices in ablation studies
-  - A connection with ERM (interesting read)
-  - MT (my thoughts): mixing 1 and 2 still gives 1/2 of both of it? whats the significance of the weights between mixing. I get it still can it be improved?
+     - propose add a recognition loss optimized jointly with the image processing loss.
 
+     - Figure 2: sums the work. (process loss + recognition task)
+
+2. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).
+
+3. Zhang, Hongyi, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. "mixup: Beyond empirical risk minimization." arXiv preprint arXiv:1710.09412 (2017).
+
+     - supervised setup, linear interpolation between input and corresponding labels
+
+     - a regularization method: design choices in ablation studies
+
+     - A connection with ERM (interesting read)
+
+     - MT (my thoughts): mixing 1 and 2 still gives 1/2 of both of it? whats the significance of the weights between mixing. I get it still can it be improved?
 ## 2020
 
 1. Lee, Kibok, Yian Zhu, Kihyuk Sohn, Chun-Liang Li, Jinwoo Shin, and Honglak Lee. "i-mix: A domain-agnostic strategy for contrastive representation learning." arXiv preprint arXiv:2010.08887 (2020).

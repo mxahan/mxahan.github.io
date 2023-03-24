@@ -68,17 +68,16 @@
 
 1. Noroozi, Mehdi, and Paolo Favaro. "Unsupervised learning of visual representations by solving jigsaw puzzles." In European conference on computer vision, pp. 69-84. Springer, Cham, 2016.
 
-       - Pretext tasks (solving jigsaw puzzle) - self-supervised
+   - Pretext tasks (solving jigsaw puzzle) - self-supervised
 
 1. Misra, Ishan, C. Lawrence Zitnick, and Martial Hebert. "Shuffle and learn: unsupervised learning using temporal order verification." In European Conference on Computer Vision, pp. 527-544. Springer, Cham, 2016.
 
-       - Pretext Task: a sequence of frames from a video is in the correct temporal order (figure 1) [sampling method for CL]
-         - Capture temporary variations
-         - Fusion and classification [not the CL directly]
-        
-       - experiment Net: CNN Based network, data: UCF101, HMDB51 & FLIC, MPII (pose Estimation)
-        
-       - self note: There's more.
+   - Pretext Task: a sequence of frames from a video is in the correct temporal order (figure 1) [sampling method for CL]
+     - Capture temporary variations
+     - Fusion and classification [not the CL directly]
+   - experiment Net: CNN Based network, data: UCF101, HMDB51 & FLIC, MPII (pose Estimation)
+
+   - self note: There's more.
 
 1. Oh Song, Hyun, Yu Xiang, Stefanie Jegelka, and Silvio Savarese. "Deep metric learning via lifted structured feature embedding." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 4004-4012. 2016.
 
@@ -195,77 +194,66 @@
 6. Caron, Mathilde, Piotr Bojanowski, Armand Joulin, and Matthijs Douze. "Deep clustering for unsupervised learning of visual features." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 132-149. 2018.
 
      - Cluster Deep features and make them pseudo labels. [fig 1]
-
-
      - Cluster (k-means) for training CNN [Avoid trivial solution of all zeros!]
-
-
      - Motivation from Unsupervised feature learning, self-supervised learning, generative model
-
-
      - [More](https://github.com/facebookresearch/deepcluster)
 
 7. Oord, Aaron van den, Yazhe Li, and Oriol Vinyals. "Representation learning with contrastive predictive coding." arXiv preprint arXiv:1807.03748 (2018).
 
-       - Predicting the future [self-supervised task design]
-         - derive the concept of context vector (from earlier representation)
-           - use the context vector for future representation prediction.
-       
-       - TP: Great works with some foundation of CL
-           - probabilistic (AR) contrastive loss!!
-             - in latent space
-
-
-       - Experiments on the speech, image, text and RL
-           - CPC (3 things)  - Aka- InfoNCE (coining the term)
-             - compression, autoregressive and NCE
-
-
-       - Energy based like setup
-    
-       - Figure 4: about what they did!
-    
-       - <embed src="https://mxahan.github.io/PDF_files/cpc_2017.pdf" width="100%" height="850px"/>
+   - Predicting the future [self-supervised task design]
+     - derive the concept of context vector (from earlier representation)
+       - use the context vector for future representation prediction.
+   
+   - TP: Great works with some foundation of CL
+       - probabilistic (AR) contrastive loss!!
+         - in latent space
+   
+   - Experiments on the speech, image, text and RL
+     - CPC (3 things)  - Aka- InfoNCE (coining the term)
+       - compression, autoregressive and NCE
+   
+   - Energy based like setup
+   
+      - Figure 4: about what they did!
+   
+      - <embed src="https://mxahan.github.io/PDF_files/cpc_2017.pdf" width="100%" height="850px"/>
 
 8. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
 
-       - non-parametric classifier via feature representation **(Memory Bank)**
-       
-           - Memory bank stores instance features (used for kNN classifier)
-             - Dimention reduction: one of the key [algorithmic] contribution
-       
-           - Experiments
-             - obj detect and image classification
-       
-           - connect to
-             - selfsupervised learning (related works) and Metric learning (unsupervised fashion)
-             - NCE (to tackle class numbers) - [great idea, just contrast with everything else in E we get the classifier]
-       
-           - instance-level discrimination, non-parametric classifier.
-             - compared with known example (non-param.)
-       
-           - interesting setup section 3
-             - representation -> class (image itself) (compare with instance) -> loss function (plays the key role to distinguish)
-             - NCE from memory bank
-             - Monte carlo sampling to get the all contrastive normalizing value for denominator
-             - proximal parameter to ensure the smoothness for the representations {proximal regularization:}
-
-
-       - <embed src="https://mxahan.github.io/PDF_files/memory_bank.pdf" width="100%" height="850px"/>
+   - non-parametric classifier via feature representation **(Memory Bank)**
+   
+       - Memory bank stores instance features (used for kNN classifier)
+         - Dimention reduction: one of the key [algorithmic] contribution
+   
+       - Experiments
+         - obj detect and image classification
+   
+       - connect to
+         - selfsupervised learning (related works) and Metric learning (unsupervised fashion)
+         - NCE (to tackle class numbers) - [great idea, just contrast with everything else in E we get the classifier]
+   
+       - instance-level discrimination, non-parametric classifier.
+         - compared with known example (non-param.)
+   
+       - interesting setup section 3
+         - representation -> class (image itself) (compare with instance) -> loss function (plays the key role to distinguish)
+         - NCE from memory bank
+         - Monte carlo sampling to get the all contrastive normalizing value for denominator
+         - proximal parameter to ensure the smoothness for the representations {proximal regularization:}
+   
+   - <embed src="https://mxahan.github.io/PDF_files/memory_bank.pdf" width="100%" height="850px"/>
 
 9. Sermanet, Pierre, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine, and Google Brain. "Time-contrastive networks: Self-supervised learning from video." In 2018 IEEE International Conference on Robotics and Automation (ICRA), pp. 1134-1141. IEEE, 2018.
-
-       - Multiple view point [same times are same, different time frames are different], motion blur, viewpoint invariant
-         - Regardless of the viewpoint [same time same thing , same representation]
-         - Considered images [sampling method for CL]
-         - Representation is the reward
-         - TCN - a embedding {multitask embedding!}
-       
-       - imitation learning
-       
-       - PILQR for RL parts
-       
-       - Huber-style loss
+   - Multiple view point [same times are same, different time frames are different], motion blur, viewpoint invariant
+     - Regardless of the viewpoint [same time same thing , same representation]
+     - Considered images [sampling method for CL]
+     - Representation is the reward
+     - TCN - a embedding {multitask embedding!}
+   - imitation learning
+   
+   - PILQR for RL parts
+   
+   - Huber-style loss
 
 
 ## 2019
@@ -928,20 +916,17 @@
 
 27. Wang, Tongzhou, and Phillip Isola. "Understanding contrastive representation learning through alignment and uniformity on the hypersphere." In International Conference on Machine Learning, pp. 9929-9939. PMLR, 2020.
 
-      - How to contraint on these and they perform better? weighted loss
+    - How to contraint on these and they perform better? weighted loss
         - Alignment (how close the positive features) [E<sub>pos</sub>[f(x)-f(y)]<sup>2</sup>]
         - Uniformly [take all spaces in the hyperplane] [little complex but tangible 4.1.2]
           - l_uniform loss definition [!!]
           - Interpretation of 4.2 see our future paper !!
 
-      - cluster need to form spherical cap
-          - Theoretical metric for above two constraints??
-            - Congruous with CL
-            - gaussing RBF kernel e^{[f(x) -f(y)]^2} helps on uniform distribution achieving.
-
-
-      - Result figure-7 [interesting]
-    
+    - cluster need to form spherical cap
+         - Theoretical metric for above two constraints??
+           - Congruous with CL
+           - gaussing RBF kernel e^{[f(x) -f(y)]^2} helps on uniform distribution achieving.
+    - Result figure-7 [interesting]
       - Alignment and uniform loss
 
 28. Xiong, Yuwen, Mengye Ren, and Raquel Urtasun. "LoCo: Local contrastive representation learning." arXiv preprint arXiv:2008.01342 (2020).
