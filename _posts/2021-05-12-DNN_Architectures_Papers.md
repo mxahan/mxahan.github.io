@@ -1,3 +1,7 @@
+---
+tags: Papers
+---
+
 # Architectural contributions
 
 ## 2022

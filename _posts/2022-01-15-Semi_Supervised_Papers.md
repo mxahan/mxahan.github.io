@@ -1,3 +1,7 @@
+---
+tags: Papers
+---
+
 # Semi-Supervised
 
 ## 2022

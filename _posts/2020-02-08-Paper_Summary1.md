@@ -1,3 +1,7 @@
+---
+tags: Papers
+---
+
 # Paper Review Part 1
 
 I understand the hard-work a researcher has to go through to get a publication or continuing research. As a researcher I take ideas from multiple sources for my own research to contribute in a effective way towards my fields. It is absolutely devilish/unacceptable to knowingly plagiarize/steal ideas from people without properly crediting them.

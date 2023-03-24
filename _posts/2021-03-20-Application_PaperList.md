@@ -1,3 +1,6 @@
+---
+tags: Papers
+---
 
 # Introduction
 
@@ -42,7 +45,6 @@ This blog contains state of the art application and research on different applic
            - “Region-based Annotating (RA)”: every pixel in the selected regions—high annotation regime
            - “Pixel-based Annotating (PA)”: focus more on the labeling efficiency by selecting the center pixel within the region
        
-     
      - Joint optimization: Pretty much like semi-supervised learning!
      
 ## 2020

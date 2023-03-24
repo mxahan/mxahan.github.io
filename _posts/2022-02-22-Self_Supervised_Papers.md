@@ -1,3 +1,7 @@
+---
+tags: Papers
+---
+
 # Self-Supervised Learning
 
 ## 2015

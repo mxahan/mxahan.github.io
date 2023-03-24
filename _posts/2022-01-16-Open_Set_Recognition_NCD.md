@@ -1,3 +1,7 @@
+---
+tags: Papers
+---
+
 # Open-Set Recognition problem (OSR)
 
 Here, we will review papers regarding novel class detection (NCD), Out of distribution detection (OOD) mostly in computer vision.

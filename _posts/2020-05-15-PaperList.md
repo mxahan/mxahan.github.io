@@ -1,3 +1,7 @@
+---
+tags: Papers
+---
+
 # Introduction
 
 This blog contains regularly updated paperlist (generlized but top-notch) of my personal interest with minimal summary.
