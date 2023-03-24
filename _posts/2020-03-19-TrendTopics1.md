@@ -1,6 +1,4 @@
 ---
-layout: post
-title: "TrendingTopics1"
 tags: Hotopics
 ---
 # Trending Topics

@@ -1,6 +1,4 @@
 ---
-layout: post
-title: "RL notes on SB"
 categories: DL
 tags: TD
 date: 2020-02-05
