@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TrendingTopics1"
-categories: Hotopics
+tags: Hotopics
 ---
 # Trending Topics
 

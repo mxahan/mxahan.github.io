@@ -2,7 +2,7 @@
 layout: post
 title: "RL notes on SB"
 categories: DL
-tag: TD
+tags: TD
 date: 2020-02-05
 ---
 ## Introduction
