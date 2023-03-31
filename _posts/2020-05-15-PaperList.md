@@ -97,7 +97,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
      - Algorithm 1 summarizes the ways to train the network!
      - Detailed experiment and discussion section
 
-  - <embed src="https://mxahan.github.io/PDF_files/SAM_p.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/SAM_p.pdf" width="100%" height="850px"/>
 
 1. Tan, Hao, and Mohit Bansal. "Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision." arXiv preprint arXiv:2010.06775 (2020).
 
@@ -128,11 +128,14 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
      - Gradient penalty loss (To ascertain 1-Lipschitz)
 
-2. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
-  - Under construction
+1. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
+
+        - Under construction
 
 1. Roy, Aurko, Mohammad Saffar, Ashish Vaswani, and David Grangier. "Efficient content-based sparse attention with routing transformers." arXiv preprint arXiv:2003.05997 (2020).
-  - Under construction
+
+        - Under construction
+
 
 ## 2019
 

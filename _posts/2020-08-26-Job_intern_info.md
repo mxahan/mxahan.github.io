@@ -4,6 +4,13 @@ This blog contains prospective job / Internship / Collaboration opportunities in
 
 **Disclaimer:** I will only note the parts interesting to me from a particular research group. Definitely there are more opportunities in the names I will put in my radar.
 
+
+
+Research Sorrounding Links (updated frequent): 
+
+
+[Important links](https://github.com/mxahan/PDFS_notes/blob/master/Surroundings%20research.pdf)
+
 ### Intel
 
 ##### Cognitive computing Research group:

@@ -10,6 +10,7 @@ tags: Papers
    - Interpolation Consistency Training (ICT), a simple and computation efficient algorithm for semi-supervised learning
      - encourages the prediction at an interpolation of unlabeled points to be consistent with the interpolation of the predictions at those points. 
      - MixUp for the unlabeled data!!
+     - Figure 2 summarizes the approaches. 
 2. Xia, J., Tan, C., Wu, L., Xu, Y., & Li, S. Z. (2022, May). OT Cleaner: Label Correction as Optimal Transport. In *ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)* (pp. 3953-3957). IEEE.
    - methods to fix the noisy label problem
      - Finds the clean labels and re-configure the labels with low confidences. 

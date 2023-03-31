@@ -802,7 +802,14 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2020
 
-1. Ye, H. J., Lu, S., & Zhan, D. C. (2020). Distilling cross-task knowledge via relationship matching. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 12396-12405).
+1. Liang, S., Li, Y., & Srikant, R. (2017). Enhancing the reliability of out-of-distribution image detection in neural networks. *arXiv preprint arXiv:1706.02690*.
+
+     - propose ODIN, a simple and effective method that does not require any change to a pre-trained neural network
+       - Observation: using temperature scaling and adding small perturbations to the input can separate the softmax score distributions between ID and OOD images
+     - Equation 2 (input processing section: **Key point**) and 3 (threshold based OOD detection) describe overall approaches
+       - Idea from adversarial perturbation. 
+
+2. Ye, H. J., Lu, S., & Zhan, D. C. (2020). Distilling cross-task knowledge via relationship matching. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 12396-12405).
 
      - TP deals with reusing the knowledge from a cross-task teacher — two models are targeting non-overlapping label spaces
      - emphasize that the comparison ability between instances acts as an essential factor threading knowledge across domains
@@ -813,7 +820,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - instance wise contrastive learning setting for **embedding learning**  (pairwise similarity)
          - When architectural difference occurs the direct embedding distillation fails. 
 
-2. Wang, Z., Salehi, B., Gritsenko, A., Chowdhury, K., Ioannidis, S., & Dy, J. (2020, November). Open-world class discovery with kernel networks. In *2020 IEEE International Conference on Data Mining (ICDM)* (pp. 631-640). IEEE.
+3. Wang, Z., Salehi, B., Gritsenko, A., Chowdhury, K., Ioannidis, S., & Dy, J. (2020, November). Open-world class discovery with kernel networks. In *2020 IEEE International Conference on Data Mining (ICDM)* (pp. 631-640). IEEE.
 
      - may not be scalable for large image dataset!
      - Still cluster and retrain network expansion.
@@ -821,7 +828,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Alternative to spectral clustering!
      - Network expansion idea from the continual learning
 
-3. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2020). Automatically discovering and learning new visual categories with ranking statistics. arXiv preprint arXiv:2002.05714.
+4. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2020). Automatically discovering and learning new visual categories with ranking statistics. arXiv preprint arXiv:2002.05714.
 
      - hypothesize that a general notion of what constitutes a “good class” can be extracted from labeled to Unlabeled
 
@@ -833,11 +840,11 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
      - <embed src="https://mxahan.github.io/PDF_files/Ncd_ranking_loss.pdf" width="100%" height="850px"/>
 
-4. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
+5. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
      - Reciprocal Point (RP), a potential representation of the extra-class space corresponding to each known category.
        - sample is classified to known or unknown by the otherness with RP
 
-5. Geng, Chuanxing, Sheng-jun Huang, and Songcan Chen. "Recent advances in open set recognition: A survey." IEEE transactions on pattern analysis and machine intelligence 43, no. 10 (2020): 3614-3631.
+6. Geng, Chuanxing, Sheng-jun Huang, and Songcan Chen. "Recent advances in open set recognition: A survey." IEEE transactions on pattern analysis and machine intelligence 43, no. 10 (2020): 3614-3631.
      - Very good terminologies to get
          - Four types of class categories: Known known class (KKC), K Unknown C (KUC), UKC: provided side information, UUC
            - Figure 2 demonstrate goal for OSR

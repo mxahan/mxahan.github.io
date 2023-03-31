@@ -1957,6 +1957,13 @@ tags: Papers
 
 ## 2022
 
+1. Yeh, C. H., Hong, C. Y., Hsu, Y. C., Liu, T. L., Chen, Y., & LeCun, Y. (2022, November). Decoupled contrastive learning. In *Computer Vision–ECCV 2022: 17th European Conference, Tel Aviv, Israel, October 23–27, 2022, Proceedings, Part XXVI* (pp. 668-684). Cham: Springer Nature Switzerland.
+
+   - Decouple negative and positive components from the InfoNCE losses
+     - Section 3 describes all
+       - Proposition 1: shows that the InfoNCE gradient is weighted by coupled positive and negative terms
+       - Proposition 2: decouple by removing positive contribution from the denominators. 
+
 1. Jang, M., & Chung, S. Y. (2022). Few-Example Clustering via Contrastive Learning. *arXiv preprint arXiv:2207.04050*.'
 
    - Novel algorithm (!) that perform CL to cluster few examples
@@ -2021,16 +2028,17 @@ tags: Papers
 
 1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
 
-       - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
-         - CL does not learn domain-invariant features, diverging from UDA intuitions.
-         - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
-         - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
-         - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
-           - That is where it comes connect this but not to collapse them.
+   - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
+     - CL does not learn domain-invariant features, diverging from UDA intuitions.
+     - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
+     - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
+     - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
+       - That is where it comes connect this but not to collapse them.
 
-     - Assumption and definition of class domain connectivity (figure 1)
-         - Connected the graph theory [section 4.2]: Good read.
-           - discusses the importance of augmentation strengths.
+   - Assumption and definition of class domain connectivity (figure 1)
+
+   - Connected the graph theory [section 4.2]: Good read.
+     - discusses the importance of augmentation strengths.
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
 
@@ -2061,70 +2069,70 @@ tags: Papers
 
 1. Hoffmann, David T., Nadine Behrmann, Juergen Gall, Thomas Brox, and Mehdi Noroozi. "Ranking Info Noise Contrastive Estimation: Boosting Contrastive Learning via Ranked Positives." arXiv preprint arXiv:2201.11736 (2022).
 
-     - TP: New loss function: Ranking Info Noise Contrastive Estimation (RINCE) (modified InfoNCE losses)
-         - preserved the ranked ordering of the InfoNCE loss. (not all negatives are equal)
-           - Okay: Now how?: Does it use the supervised information!!!
-             - Requires a strong notion of hierarchical positive sets!!
-             - Very irritating formulation [equation 5] - learn to avoid such
-             - Variation of temperature allows ranking (weight of the losses)
-             - Application: Class similarities and gradual changes in video (!!)
-     - <embed src="https://mxahan.github.io/PDF_files/ranking_infonce.pdf" width="100%" height="850px"/>
+      - TP: New loss function: Ranking Info Noise Contrastive Estimation (RINCE) (modified InfoNCE losses)
+          - preserved the ranked ordering of the InfoNCE loss. (not all negatives are equal)
+            - Okay: Now how?: Does it use the supervised information!!!
+              - Requires a strong notion of hierarchical positive sets!!
+              - Very irritating formulation [equation 5] - learn to avoid such
+              - Variation of temperature allows ranking (weight of the losses)
+              - Application: Class similarities and gradual changes in video (!!)
+      - <embed src="https://mxahan.github.io/PDF_files/ranking_infonce.pdf" width="100%" height="850px"/>
 
 1. Lee, Yoonho, Huaxiu Yao, and Chelsea Finn. "Diversify and Disambiguate: Learning From Underspecified Data." arXiv preprint arXiv:2202.03418 (2022).
-     - DivDis: Two stage framework (learn diverse hypothesis [pretraining] and Disambiguate by selecting one of these hypothesis [fine tune])
-     - Loss function of diversify is interesting
+      - DivDis: Two stage framework (learn diverse hypothesis [pretraining] and Disambiguate by selecting one of these hypothesis [fine tune])
+      - Loss function of diversify is interesting
 
 1. Goyal, Priya, Quentin Duval, Isaac Seessel, Mathilde Caron, Mannat Singh, Ishan Misra, Levent Sagun, Armand Joulin, and Piotr Bojanowski. "Vision Models Are More Robust And Fair When Pretrained On Uncurated Images Without Supervision." arXiv preprint arXiv:2202.08360 (2022).
 
-         - Utilized Uncurated Image data across the globe [LOL! GPU please] (fair!! group): Jokes: Guys be fair in GPU usage.
-           - Dense 10 Million model params
-           - 50 benchmarks including fairness, robustness to distribution shift, geographical diversity, fine grained recognition, image copy detection and many image classification datasets
-         
-         - obvious result: the more data the better
-         
-         - key findings: self-supervised learning on random internet data leads to models that are more fair, less biased and less harmful
+          - Utilized Uncurated Image data across the globe [LOL! GPU please] (fair!! group): Jokes: Guys be fair in GPU usage.
+            - Dense 10 Million model params
+            - 50 benchmarks including fairness, robustness to distribution shift, geographical diversity, fine grained recognition, image copy detection and many image classification datasets
+          
+          - obvious result: the more data the better
+          
+          - key findings: self-supervised learning on random internet data leads to models that are more fair, less biased and less harmful
 
 1. Saunshi, Nikunj, Jordan Ash, Surbhi Goel, Dipendra Misra, Cyril Zhang, Sanjeev Arora, Sham Kakade, and Akshay Krishnamurthy. "Understanding Contrastive Learning Requires Incorporating Inductive Biases." arXiv preprint arXiv:2202.14037 (2022).
 
-         - Argues that requires to include **inductive biases of function class and training algorithm** to explain the success of CL with previous attempts (augmentation and loss function.) [algorithmic]
-         
-             - Key findings:  ignoring the architecture and the training algorithm can make the current theoretical analyses of contrastive learning vacuous
-               - Theoretical result: incorporating inductive *biases of the function class (ResNet/VGGNet)* allows contrastive learning to work with less stringent conditions compared to prior analyses
-               - different function classes and algorithms (SGD/ADAM) behave very differently on downstream tasks,
-         
-             - Some outcoms
-               -  Is the contrastive loss indeed a good indicator of downstream performance? **No**
-               - Do augmentations overlap sufficiently enough in practice to explain the success of contrastive learning? **NO**
-               - Can contrastive learning succeed even when there is little to no overlap? **YES**
-         
-             - Three key terms:
-               - i) Function class sensitivity (encoder architecture and optimization)
-               - ii) Brittleness of transfer (sometime CL loss reduction cause detrimental impact)
-               - iii) The disjoint augmentation regime: (when augmentation distribution do not overlap it may lead to false sense of security [may not work for downstream task, especially using linear classifier head]) [figure 1].
-                 - Details in section 3 example
-               - Easy but interesting theory in lemma 4.1
-                 - if augmentation distribution is disjoint then even if contrastive loss is low, the downstream classification loss can be high.
+          - Argues that requires to include **inductive biases of function class and training algorithm** to explain the success of CL with previous attempts (augmentation and loss function.) [algorithmic]
+          
+              - Key findings:  ignoring the architecture and the training algorithm can make the current theoretical analyses of contrastive learning vacuous
+                - Theoretical result: incorporating inductive *biases of the function class (ResNet/VGGNet)* allows contrastive learning to work with less stringent conditions compared to prior analyses
+                - different function classes and algorithms (SGD/ADAM) behave very differently on downstream tasks,
+          
+              - Some outcoms
+                -  Is the contrastive loss indeed a good indicator of downstream performance? **No**
+                - Do augmentations overlap sufficiently enough in practice to explain the success of contrastive learning? **NO**
+                - Can contrastive learning succeed even when there is little to no overlap? **YES**
+          
+              - Three key terms:
+                - i) Function class sensitivity (encoder architecture and optimization)
+                - ii) Brittleness of transfer (sometime CL loss reduction cause detrimental impact)
+                - iii) The disjoint augmentation regime: (when augmentation distribution do not overlap it may lead to false sense of security [may not work for downstream task, especially using linear classifier head]) [figure 1].
+                  - Details in section 3 example
+                - Easy but interesting theory in lemma 4.1
+                  - if augmentation distribution is disjoint then even if contrastive loss is low, the downstream classification loss can be high.
 
 1. Lee, Hyungtae, and Heesung Kwon. "Self-supervised Contrastive Learning for Cross-domain Hyperspectral Image Representation." arXiv preprint arXiv:2202.03968 (2022).
 
-         - Method: Contrative learning for Hyperspectral image
-           - uses a property of Hyperspectral: same area's image are in same class
-         
-         - Network: Cross-Domain CNN
+          - Method: Contrative learning for Hyperspectral image
+            - uses a property of Hyperspectral: same area's image are in same class
+          
+          - Network: Cross-Domain CNN
 
 1. Baevski, Alexei, Wei-Ning Hsu, Qiantong Xu, Arun Babu, Jiatao Gu, and Michael Auli. "Data2vec: A general framework for self-supervised learning in speech, vision and language." arXiv preprint arXiv:2202.03555 (2022).
 
-     - TP: target for generalized SSL
-       - core idea is to predict latent representations of the full input data based on a masked view of the input in a self distillation (Transformer architecture)
-       -  data2vec predicts contextualized **latent representations** that contain information from the entire input
+      - TP: target for generalized SSL
+        - core idea is to predict latent representations of the full input data based on a masked view of the input in a self distillation (Transformer architecture)
+        -  data2vec predicts contextualized **latent representations** that contain information from the entire input
 
-     - Masked prediction with latent target representation.
+      - Masked prediction with latent target representation.
 
-     - Methods:  1. transformer architecture (Vit-B for vision tasks, ) 2. Masking input 3.  Training target
+      - Methods:  1. transformer architecture (Vit-B for vision tasks, ) 2. Masking input 3.  Training target
 
-     - Interesing discussion and ablation studies section.
+      - Interesing discussion and ablation studies section.
 
-     - <embed src="https://mxahan.github.io/PDF_files/Data2Vec.pdf" width="100%" height="850px"/>
+      - <embed src="https://mxahan.github.io/PDF_files/Data2Vec.pdf" width="100%" height="850px"/>
 
 
 ## 2014 and previous

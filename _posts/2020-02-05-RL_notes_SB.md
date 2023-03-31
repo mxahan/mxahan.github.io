@@ -12,3 +12,4 @@ This blog intends to cover some of the math behind different DL techniques. This
 <embed src="https://mxahan.github.io/PDF_files/reinforce_note_1_12.pdf" width="100%" height="850px"/>
 
 <embed src="https://mxahan.github.io/PDF_files/rl_part2.pdf" width="100%" height="850px"/>
+
