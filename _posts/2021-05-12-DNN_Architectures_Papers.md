@@ -6,6 +6,17 @@ tags: Papers
 
 ## 2022
 
+1. Jia, M., Tang, L., Chen, B. C., Cardie, C., Belongie, S., Hariharan, B., & Lim, S. N. (2022, November). Visual prompt tuning. In *Computer Vision–ECCV 2022: 17th European Conference, Tel Aviv, Israel, October 23–27, 2022, Proceedings, Part XXXIII* (pp. 709-727). Cham: Springer Nature Switzerland.
+
+     - inspirated from efficiently tuning large language models, VPT introduces only a small amount of trainable parameters in the **input space** while keeping the model backbone frozen
+       -  VPT instead adds extra parameters in the input space. 
+       -  TP: modify the input to the Vision Transformer
+          -   introduces a small amount of task-specific learnable parameters into the input space, freezing the entire pre-trained Transformer backbone during downstream training
+          -  prepended into the input sequence of each Transformer layer and learned together with a linear head during fine-tuning
+     - **RQ:** what is the best way to adapt large pre-trained Transformers to downstream tasks in terms of effectiveness and efficiency?
+     - Gap: ViT fine-tuning: Classifier training only underperform!
+     - Two approaches: VPT-shallow, VPT-Deep
+
 1. Lee, H., Eum, S., & Kwon, H. (2022). Negative Samples are at Large: Leveraging Hard-distance Elastic Loss for Re-identification. In *European Conference on Computer Vision* (pp. 604-620). Springer, Cham.
 
      - Hard-distance elastic loss

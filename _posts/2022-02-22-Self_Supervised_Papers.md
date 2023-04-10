@@ -4,6 +4,10 @@ tags: Papers
 
 # Self-Supervised Learning
 
+## 2023
+
+1. Shwartz-Ziv, R., Balestriero, R., Kawaguchi, K., Rudner, T. G., & LeCun, Y. (2023). An Information-Theoretic Perspective on Variance-Invariance-Covariance Regularization. *arXiv preprint arXiv:2303.00633*.
+
 ## 2015
 
 1. Dosovitskiy, Alexey, Philipp Fischer, Jost Tobias Springenberg, Martin Riedmiller, and Thomas Brox. "Discriminative unsupervised feature learning with exemplar convolutional neural networks." IEEE transactions on pattern analysis and machine intelligence 38, no. 9 (2015): 1734-1747.
@@ -759,40 +763,38 @@ tags: Papers
 
 17. Li, Junnan, Pan Zhou, Caiming Xiong, Richard Socher, and Steven CH Hoi. "Prototypical contrastive learning of unsupervised representations." arXiv preprint arXiv:2005.04966 (2020).
 
-      - Addresses the issues of instance wise learning (?)
+    - Addresses the issues of instance wise learning (?)
         - issue 1: semantic structure missing
 
-      - claims to do two things
+    - claims to do two things
         - Learn low-level features for instance discrimination
         - encode semantic structure of the data
 
-      - prototypes as latent variables to help find the maximum-likelihood estimation of the network parameters in an Expectation-Maximization framework.
+    - prototypes as latent variables to help find the maximum-likelihood estimation of the network parameters in an Expectation-Maximization framework.
         - E-step as finding the distribution of prototypes via clustering
         - M-step as optimizing the network via contrastive learning
 
-      - Offers new loss function ProtoNCE (Generalized InfoNCE)
+    - Offers new loss function ProtoNCE (Generalized InfoNCE)
 
-      - Show performance for the unsupervised representation learning benchmarking (?) and low-resolution transfer tasks
-          - Prototype: a representative embedding for a group of semantically similar instances
-            - prototype finding by standard clustering methods
-
-
-      - Goal described in figure 1
+    - Show performance for the unsupervised representation learning benchmarking (?) and low-resolution transfer tasks
+         - Prototype: a representative embedding for a group of semantically similar instances
+           - prototype finding by standard clustering methods
     
-          - EM problem?
-            - goal is to find the parameters of a Deep Neural Network (DNN) that best describes the data distribution, by iteratively approximating and maximizing the log-likelihood function.
-            - assumption that the data distribution around each prototype is isotropic Gaussian
+    - Goal described in figure 1
     
-          - Related works: MoCo
-            - Deep unsupervised Clustering: not transferable?
+         - EM problem?
+           - goal is to find the parameters of a Deep Neural Network (DNN) that best describes the data distribution, by iteratively approximating and maximizing the log-likelihood function.
+           - assumption that the data distribution around each prototype is isotropic Gaussian
     
-          - Prototypical Contrastive Learning (PCL)
-            - See the math notes from section 3
-
-
-      - Figure 2 - Overview of methods
-        
-        - <embed src="https://mxahan.github.io/PDF_files/Prototypical_CL.pdf" width="100%" height="850px"/>
+         - Related works: MoCo
+           - Deep unsupervised Clustering: not transferable?
+    
+         - Prototypical Contrastive Learning (PCL)
+           - See the math notes from section 3
+    
+    - Figure 2 - Overview of methods
+    
+         - <embed src="https://mxahan.github.io/PDF_files/Prototypical_CL.pdf" width="100%" height="850px"/>
 
 18. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
 
@@ -1962,7 +1964,9 @@ tags: Papers
    - Decouple negative and positive components from the InfoNCE losses
      - Section 3 describes all
        - Proposition 1: shows that the InfoNCE gradient is weighted by coupled positive and negative terms
+         - Describes some short coming of such coupling
        - Proposition 2: decouple by removing positive contribution from the denominators. 
+   - My thoughts: It removes the idea of probabilistic interpretation of InfoNCE loss???
 
 1. Jang, M., & Chung, S. Y. (2022). Few-Example Clustering via Contrastive Learning. *arXiv preprint arXiv:2207.04050*.'
 

@@ -146,6 +146,14 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2018
 
+1. Song, G., & Chai, W. (2018). Collaborative learning for deep neural networks. *Advances in neural information processing systems*, *31*.
+     - TP: a novel training framework by proposing multiple head learning to same task
+       - Figure 1: some design option.
+     - multiple classifier heads of the same network are simultaneously trained on the same training data to improve generalization and robustness to label noise with no extra inference cost.
+       -  acquires the strengths from auxiliary training, multi-task learning and knowledge distillation.
+       - Act as regularizer to each other at extra parameter cost. 
+       - intermediate-level representation (ILR) sharing with backpropagation rescaling aggregates the gradient flows from all heads, which reduces training computational complexity, facilitates supervision to the shared layers.
+     - Related works: General Label smoothing, Two-way distillation, Self-distillation/born-again NN. 
 1. Tanaka, D., Ikami, D., Yamasaki, T., & Aizawa, K. (2018). Joint optimization framework for learning with noisy labels. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 5552-5560).
      - To avoid overfiting to noisy labels TP proposes a joint optimization framework of learning DNN parameters and estimating true labels.
        -  can correct labels during training by **alternating** update of network parameters and labels
@@ -215,14 +223,14 @@ We can't worry about everything and nothing. We must stay focused and broad at t
      - Experimented with noisy MNIST, CIFAR
      - Hypothesis: NN learns the easy labels first and then go for the complex data (in between we can distinguish the noisy data)
 1. Zhang, Y., Xiang, T., Hospedales, T. M., & Lu, H. (2018). Deep mutual learning. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 4320-4328).
-     - mutual learning starts with a pool of untrained students who simultaneously learn to solve the task together
-       -  each student is trained with two losses: a supervised loss, and a mimicry loss (aligns each student’s class posterior with each other) [fig 1]
-       - provide better results in this way! (than the distillation or single model learning)
-     - Assumption: accuracy is the only concern
-     - Related work: Collaborative learning: a different from mutual learning where all models address the same task and domain.
-     - Kind of extra regularization for the classification layers [shallow resembles the momentum update.]
-       - swapped prediction
-       - Can we do it in the embedding layers
+      - mutual learning starts with a pool of untrained students who simultaneously learn to solve the task together
+        -  each student is trained with two losses: a supervised loss, and a mimicry loss (aligns each student’s class posterior with each other) [fig 1]
+        - provide better results in this way! (than the distillation or single model learning)
+      - Assumption: accuracy is the only concern
+      - Related work: Collaborative learning: a different from mutual learning where all models address the same task and domain.
+      - Kind of extra regularization for the classification layers [shallow resembles the momentum update.]
+        - swapped prediction
+        - Can we do it in the embedding layers
 1. Yang, H. M., Zhang, X. Y., Yin, F., & Liu, C. L. (2018). Robust classification with convolutional prototype learning. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 3474-3482).
 1. Fernandes, Patrick, Miltiadis Allamanis, and Marc Brockschmidt. "Structured neural summarization." arXiv preprint arXiv:1811.01824 (2018).
 1. Kingma, Durk P., and Prafulla Dhariwal. "Glow: Generative flow with invertible 1x1 convolutions." In Advances in Neural Information Processing Systems, pp. 10215-10224. 2018.
