@@ -786,16 +786,15 @@ tags: Papers
            - goal is to find the parameters of a Deep Neural Network (DNN) that best describes the data distribution, by iteratively approximating and maximizing the log-likelihood function.
            - assumption that the data distribution around each prototype is isotropic Gaussian
     
-         - Related works: MoCo
-           - Deep unsupervised Clustering: not transferable?
-    
+         - Related works: MoCo, Deep unsupervised Clustering: not transferable?
+           
          - Prototypical Contrastive Learning (PCL)
            - See the math notes from section 3
-    
+         
     - Figure 2 - Overview of methods
     
          - <embed src="https://mxahan.github.io/PDF_files/Prototypical_CL.pdf" width="100%" height="850px"/>
-
+    
 18. Caron, Mathilde, Ishan Misra, Julien Mairal, Priya Goyal, Piotr Bojanowski, and Armand Joulin. "Unsupervised learning of visual features by contrasting cluster assignments." arXiv preprint arXiv:2006.09882 (2020).
 
       - SwAV (online algorithm) [swapped assignments between multiple vies of same image]
@@ -842,22 +841,19 @@ tags: Papers
 
 20. Morgado, Pedro, Nuno Vasconcelos, and Ishan Misra. "Audio-visual instance discrimination with cross-modal agreement." arXiv preprint arXiv:2004.12943 (2020).
 
-      - learning audio and video representation [audio to video and video to audio!]
+    - learning audio and video representation [audio to video and video to audio!]
         - How they showed its better??
         - Exploit cross-modal agreement [what setup!] how it make sense!
 
-      - consider in-sync audio video, proposed AVID (au-visu-instan-discrim)
+    - consider in-sync audio video, proposed AVID (au-visu-instan-discrim)
 
-      - Experiments with UCF-101, HMDB-51
-          - Discussed limitation AVID & proposed improvement
-            - Optimization method - [dimentional reduction by LeCunn and NCE paper]
-              - Training procedure in section 3.2 AVID
-            - Cross modal agreement!! it groups (how?) similar videos [both audio and visual]
-
-
-      - Prior arts - binary task of audio-video alignment instance-based
-        - This paper: matches in the representation embedding domain.
-    
+    - Experiments with UCF-101, HMDB-51
+         - Discussed limitation AVID & proposed improvement
+           - Optimization method - [dimentional reduction by LeCunn and NCE paper]
+             - Training procedure in section 3.2 AVID
+           - Cross modal agreement!! it groups (how?) similar videos [both audio and visual]
+    - Prior arts - binary task of audio-video alignment instance-based
+         - This paper: matches in the representation embedding domain.
       - AVID calibrated by formulating CMA??
     
           - Figure 2: Variant of avids [summary of the papers]
@@ -957,80 +953,77 @@ tags: Papers
 
       - similarity constraint between positive keys are also enforced through a prediction problem from an online network to an offline momentum-updated network
 
-      - BYOL tries to match the prediction from an online network to a randomly initialised offline
-        network. This iterations lead to better representation than those of the random offline network.
-        -By continually improving the offline network through the momentum update, the quality of the representation is bootstrapped from just the random initialised network
-
+      - BYOL tries to match the prediction from an online network to a randomly initialised offline network. This iterations lead to better representation than those of the random offline network.
+        - By continually improving the offline network through the momentum update, the quality of the representation is bootstrapped from just the random initialised network
+        
       - All about architecture! [encoder, projection, predictor and loss function]
-
+    
       - Works only with batch normalization - else mode collapse
-
+    
       - [More criticism](https://generallyintelligent.ai/understanding-self-supervised-contrastive-learning.html)
-
+    
 31. Qi, Di, Lin Su, Jia Song, Edward Cui, Taroon Bharti, and Arun Sacheti. "Imagebert: Cross-modal pre-training with large-scale weak-supervised image-text data." arXiv preprint arXiv:2001.07966 (2020).
 
-      - vision pre-training /cross modal pretraining
+    - vision pre-training /cross modal pretraining
 
-      - New data collection (LAIT)
+    - New data collection (LAIT)
 
-          - pretraining (see the loss functions)
-            - Image/text from same context? (ITM)
-            - Missing pixel detection?
-            - Masked object Classification (MOC)
-            - Masked region feature regression (MRFR)
-            - Masked Language Models
+         - pretraining (see the loss functions)
+           - Image/text from same context? (ITM)
+           - Missing pixel detection?
+           - Masked object Classification (MOC)
+           - Masked region feature regression (MRFR)
+           - Masked Language Models
 
-          - Fine tune Tasks
-            - Binary classification losses
-            - Multi-class classification losses
-            - Triplet loss
-
-
-      - Multistage pretraining
-    
+         - Fine tune Tasks
+           - Binary classification losses
+           - Multi-class classification losses
+           - Triplet loss
+    - Multistage pretraining
       - Experimented with VQA and others. image language
 
 32. Purushwalkam, Senthil, and Abhinav Gupta. "demystifying contrastive self-supervised learning: Invariances, augmentations and dataset biases." arXiv preprint arXiv:2007.13916 (2020).
 
-      - object detection and classification
-          - quantitative experiment to Demystify CL gains! (reason behind success)
-            - Observation1: MOCO and PIRL (occlusion invariant)
-              - but Fails to capture viewpoint
-            - gain from object-centric dataset - imagenet!
-            - Propose methods to leverage learn from unstructured video (viewpoint invariant)
-
-
-      - Utility of systems: How much invarinces the system encodes
+    - object detection and classification
+         - quantitative experiment to Demystify CL gains! (reason behind success)
+           - Observation1: MOCO and PIRL (occlusion invariant)
+             - but Fails to capture viewpoint
+           - gain from object-centric dataset - imagenet!
+           - Propose methods to leverage learn from unstructured video (viewpoint invariant)
     
-      - most contrastive setup - occlusion invariant! what about viewpoint invariant?
+    - Utility of systems: How much invarinces the system encodes
     
-      - Related works
-        - Pretext tasks
-          - Video SSL
-          - Understanding SSRL
-            - Mutual information
-          - This work - Why CL is useful
-          - study two aspects: (invariances encoding & role of dataset)
+         - most contrastive setup - occlusion invariant! what about viewpoint invariant?
     
-      - Demystifying Contrastive SSL
-        - what is good Representation? Utilitarian analysis: how good the downstream task is?
-          - What about the insights? and qualitative analysis?
-        - Measuring Invariances
-          - What invariance do we need? - invariant to all transformation!!
-            - Viewpoint change, deformation, illumination, occlusion, category instance
-          - Metrics: Firing representation, global firing rate, local firing rate, target conditioned invariance, representation invariant score.
-          - Experimental dataset
-            - occlusion (GOR-10K), viewpoint+instance invariance (Pascal3D+)
-          - image and video careful augmentation
+         - Related works
+           - Pretext tasks
+             - Video SSL
+             - Understanding SSRL
+               - Mutual information
+             - This work - Why CL is useful
+             - study two aspects: (invariances encoding & role of dataset)
     
-      - <embed src="https://mxahan.github.io/PDF_files/Demys_CL.pdf" width="100%" height="850px"/>)
+         - Demystifying Contrastive SSL
+           - what is good Representation? Utilitarian analysis: how good the downstream task is?
+             - What about the insights? and qualitative analysis?
+           - Measuring Invariances
+             - What invariance do we need? - invariant to all transformation!!
+               - Viewpoint change, deformation, illumination, occlusion, category instance
+             - Metrics: Firing representation, global firing rate, local firing rate, target conditioned invariance, representation invariant score.
+             - Experimental dataset
+               - occlusion (GOR-10K), viewpoint+instance invariance (Pascal3D+)
+             - image and video careful augmentation
+    
+         - <embed src="https://mxahan.github.io/PDF_files/Demys_CL.pdf" width="100%" height="850px"/>
 
 33. Ermolov, Aleksandr, Aliaksandr Siarohin, Enver Sangineto, and Nicu Sebe. "Whitening for self-supervised representation learning." arXiv preprint arXiv:2007.06346 (2020).
 
-      - New loss function (why? and where it works?)
+      - New loss function (why? and where it works?) W-MSE
         - Generalization of the BYOL approach?
         - No negative examples (the scatters are preserved)
-
+        - Whitening feature is the key:  Cholesky decomposition to find Whitening matrix and Backprogation
+          - Triangular decomposition of covariance matrix and inversing. 
+        
       - Whitening operation (scattering effect)
 
       - <embed src="https://mxahan.github.io/PDF_files/whitening_loss.pdf" width="100%" height="850px"/>
@@ -1093,27 +1086,24 @@ tags: Papers
 
 40. Tian, Yonglong, Chen Sun, Ben Poole, Dilip Krishnan, Cordelia Schmid, and Phillip Isola. "What makes for good views for contrastive learning." arXiv preprint arXiv:2005.10243 (2020).
 
-      - Multi-view in-variance
+    - Multi-view in-variance
 
-      - What is invariant?? (shared information between views)
+    - What is invariant?? (shared information between views)
 
-      - balance to share the information we need in view!!
+    - balance to share the information we need in view!!
 
-      - Questions
+    - Questions
         - Knowing task what will be the view??!
         - generate views to control the MI
 
-      - Maximize task related shared information, minimize nuisance variables. (InfoMin principle)
+    - Maximize task related shared information, minimize nuisance variables. (InfoMin principle)
 
-      - Contributions (4 - method, representation and task-dependencies, ImageNet experimentation)
+    - Contributions (4 - method, representation and task-dependencies, ImageNet experimentation)
 
-      - Figure 1: summary.
-          - Optimal view encoder.
-            - Sufficient (careful notation overloaded! all info there), minimal sufficient (someinfo dropped), optimal representation (4.3)- only task specific information retrieved
-
-
-      - InfoMin Principle: views should have different background noise else min encoder reduces the nuisance variable info. (proposition 4.1 with constraints.)
-    
+    - Figure 1: summary.
+         - Optimal view encoder.
+           - Sufficient (careful notation overloaded! all info there), minimal sufficient (someinfo dropped), optimal representation (4.3)- only task specific information retrieved
+    - InfoMin Principle: views should have different background noise else min encoder reduces the nuisance variable info. (proposition 4.1 with constraints.)
       - suggestion: Make contrastive learning hard
     
       - Figure 2: interesting. [experiment - 4.2]
@@ -1130,28 +1120,26 @@ tags: Papers
 
 42. Misra, Ishan, and Laurens van der Maaten. "Self-supervised learning of pretext-invariant representations." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6707-6717. 2020.
 
-      - Pre-training method [algorithmic]
+    - Pre-training method [algorithmic]
 
-      - Pretext learning with transformation invariant + data augmentation invariant
+    - Pretext learning with transformation invariant + data augmentation invariant
 
-            - See the loss functions
-              - Tries to retain small amount of the transformation properties too !!
+         - See the loss functions
+             - Tries to retain small amount of the transformation properties too !!
 
-            - Use contrastive learning (See NCE)
-                - Maximize MI
-                - Utilizes extra head on the features.
-
-
-      - Motivation from predicting video frames
+         - Use contrastive learning (See NCE)
+              - Maximize MI
+              - Utilizes extra head on the features.
     
-      - Experiment of jigsaw pretext learning
+    - Motivation from predicting video frames
     
-      - Hypothesis: Representation of image and its transformation should be same
-            - Use different head for image and jigsaw counterpart of that particular image.
-                - Motivation for learning some extra things by different head network
-
-
-      - Noise Contrastive learning (contrast with other images)
+    - Experiment of jigsaw pretext learning
+    
+    - Hypothesis: Representation of image and its transformation should be same
+         - Use different head for image and jigsaw counterpart of that particular image.
+              - Motivation for learning some extra things by different head network
+    
+    - Noise Contrastive learning (contrast with other images)
     
       - As two head so two component of contrastive loss. (One component to dampen memory update.)
     
@@ -1959,6 +1947,14 @@ tags: Papers
 
 ## 2022
 
+1. Li, W., Kong, M., Yang, X., Wang, L., Huo, J., Gao, Y., & Luo, J. (2022). A Unified Framework for Contrastive Learning from a Perspective of Affinity Matrix. *arXiv preprint arXiv:2211.14516*.
+
+      - TP: Unified the contrastive losses from the affinity matrix (similarity matrix) between embedding (**figure 1**)
+        - three variants, i.e., SimAffinity, SimWhitening and SimTrace
+        - Propose novel simple symmetric loss: Accelerate training and alleviate false negative problem!
+        -  SimTrace avoid the mode collapse by maximizing the whitened affinity matrix trace without relying on asymmetry designs or stop-gradients.
+      - Roughly classified into four categories: (1) standard CL with an InfoNCE like MoCo and SimCLR; (2) *non-contrastive* methods with only positive pairs, such as BYOL and SimSiam; (3) **whitening regularization**: W-MSE and VICReg; and (4) consistency regularization based methods
+
 1. Yeh, C. H., Hong, C. Y., Hsu, Y. C., Liu, T. L., Chen, Y., & LeCun, Y. (2022, November). Decoupled contrastive learning. In *Computer Vision–ECCV 2022: 17th European Conference, Tel Aviv, Israel, October 23–27, 2022, Proceedings, Part XXVI* (pp. 668-684). Cham: Springer Nature Switzerland.
 
    - Decouple negative and positive components from the InfoNCE losses
@@ -2057,19 +2053,19 @@ tags: Papers
 
 1. Karim, Nazmul, Mamshad Nayeem Rizve, Nazanin Rahnavard, Ajmal Mian, and Mubarak Shah. "UNICON: Combating Label Noise Through Uniform Selection and Contrastive Learning." arXiv preprint arXiv:2203.14542 (2022).
 
-       - SOTA: To combat label noise, : i) label correction and ii) sample separation
-         - employ sort of sample selection mechanism to select a possibly clean data subset
-         - an off-the-shelf semi-supervised learning method is used for training where rejected samples are treated as unlabeled data.
-         - **Issues:** TP shows that current selection methods disproportionately select samples from easy (fast learnable) classes and create class imbalance. [close claim with LeCunn's DA paper [2022]]
-       
-       - TP: UNICON: noble! **sample selection method**, robust to high label noise
-         - a JS divergence based uniform selection mechanism (no probabilistic modelling or hyperparameter tuning)
-           - Figure 1 could be more efficient !! just use two of them and a loop.
-         - Class layer and CL projection layer in parallel.
-         - Computational issues! divergence for all the samples!!
-         - Section 4.1 reveals all.
-       
-       - More of a Semi-sup paper, CL part is auxiliary. [anyways]
+         - SOTA: To combat label noise, : i) label correction and ii) sample separation
+           - employ sort of sample selection mechanism to select a possibly clean data subset
+           - an off-the-shelf semi-supervised learning method is used for training where rejected samples are treated as unlabeled data.
+           - **Issues:** TP shows that current selection methods disproportionately select samples from easy (fast learnable) classes and create class imbalance. [close claim with LeCunn's DA paper [2022]]
+         
+         - TP: UNICON: noble! **sample selection method**, robust to high label noise
+           - a JS divergence based uniform selection mechanism (no probabilistic modelling or hyperparameter tuning)
+             - Figure 1 could be more efficient !! just use two of them and a loop.
+           - Class layer and CL projection layer in parallel.
+           - Computational issues! divergence for all the samples!!
+           - Section 4.1 reveals all.
+         
+         - More of a Semi-sup paper, CL part is auxiliary. [anyways]
 
 1. Hoffmann, David T., Nadine Behrmann, Juergen Gall, Thomas Brox, and Mehdi Noroozi. "Ranking Info Noise Contrastive Estimation: Boosting Contrastive Learning via Ranked Positives." arXiv preprint arXiv:2201.11736 (2022).
 

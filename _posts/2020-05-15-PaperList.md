@@ -154,6 +154,7 @@ We can't worry about everything and nothing. We must stay focused and broad at t
        - Act as regularizer to each other at extra parameter cost. 
        - intermediate-level representation (ILR) sharing with backpropagation rescaling aggregates the gradient flows from all heads, which reduces training computational complexity, facilitates supervision to the shared layers.
      - Related works: General Label smoothing, Two-way distillation, Self-distillation/born-again NN. 
+     - Optimization: Propose to update all head and network simultaneously.
 1. Tanaka, D., Ikami, D., Yamasaki, T., & Aizawa, K. (2018). Joint optimization framework for learning with noisy labels. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 5552-5560).
      - To avoid overfiting to noisy labels TP proposes a joint optimization framework of learning DNN parameters and estimating true labels.
        -  can correct labels during training by **alternating** update of network parameters and labels
