@@ -6,18 +6,44 @@ tags: Papers
 
 ## 2021
 
-1. Liu, D., Ning, J., Wu, J., & Yang, G. (2021). Extending Ordinary-Label Learning Losses to Complementary-Label Learning. IEEE Signal Processing Letters, 28, 852-856.
+1. Liu, W., Lin, R., Liu, Z., Xiong, L., Schölkopf, B., & Weller, A. (2021, March). Learning with hyperspherical uniformity. In *International Conference On Artificial Intelligence and Statistics* (pp. 1180-1188). PMLR.
+
+     - to achieve good generalization on unseen data, a suitable inductive bias is of great importance for neural networks. 
+     -  hyperspherical uniformity is proposed as a novel family of **relational regularizations** that impact the interaction among neurons
+       - several geometrically distinct ways to achieve hyperspherical uniformity and justified by theoretical insights and empirical evaluations.
+       - neuron inhibit properties!!!
+       - Uniform in the hypersphere! more generalization than orthogonal conditions
+     - Current prevailing weight regularizations can be divided into two major categories: Individual regularization and relational regularization.
+     - In order to promote hyperspherical uniformity with an explicit regularization, we formulate several distinct geometric learning objectives: minimum hyperspherical energy (MHE), maximum hyperspherical separation (MHS), maximum hyperspherical polarization (MHP), minimum hyperspherical covering (MHC), and maximum Gram determinant (MGD).
+       - inspirated from statistical uniformity testing on the hypersphere and provide a novel and unified view on understanding those objectives
+     - Motivation
+       - hyperspherical uniformity leads to better optimization and generalization
+       - hyperspherical uniformity can remove neuron redundancy and encourage the neurons to be diverse on the hypersphere
+       - hyperspherical uniformity has a clear geometric interpretation and theoretical merits and close connection between orthogonality.
+     - Related works: Relational regularization and hypersperical learning. **Very interesting**
+       - orthogonality regularization, unitary constraint, decorrelation, spectral regularization, low-rank regularization, angular constraint
+       - angular information in neural networks, in contrast to magnitude, preserves the key semantics and is very crucial to generalization
+     - MHE: most related works. one seeks to find an equilibrium state with minimum potential energy that distributes N electrons on a unit sphere as evenly as possible (NCD!)
+     - MHS: sphere packing problem: one packs a given number of circles on the sphere surface i.e. the minimum distance between circles can be maximized
+       -  MHE has a global regularization effect (updates all vectors in each iteration), MHS focuses on the local separation (updates two vectors)
+       - When the vectors are relatively diverse on the hypersphere, MHS tends to have stronger regularization effects than MHE. 
+         - MHS gradient resulted from the two closest vectors has only one direction component and will not be cancelled out. In contrast, the MHE gradient that comes from all the vectors has many direction components and may be largely cancelled out. More intuitively, MHS only activates the repulsive force from the closest vectors at a time while MHE simultaneously activates the repulsive force from all pairwise vectors
+       - Optimizing MHS is straightforward and efficient: rank all the pairwise distances and obtain the vectors with the smallest distance (i.e., maximal similarity) and maximize the minimal distance by updating these two closest vectors via gradient ascent.
+     - Interesting discussion section
+
+2. Liu, D., Ning, J., Wu, J., & Yang, G. (2021). Extending Ordinary-Label Learning Losses to Complementary-Label Learning. IEEE Signal Processing Letters, 28, 852-856.
 
      - Weak supervision, learning from complementary label. (related works in intro is nice)
 
      - Again distribute complementary output to all others.
 
-2. Kim, Y., Yun, J., Shon, H., & Kim, J. (2021). Joint negative and positive learning for noisy labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9442-9451).
+3. Kim, Y., Yun, J., Shon, H., & Kim, J. (2021). Joint negative and positive learning for noisy labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9442-9451).
 
      - *Learning from complementary labels.*
+         
          - **TP**: JNPL (Improvement over NLNL)
            - trains CNN via two losses, NL+ and PL+ (improved NL and PL and also addressing their issues)
-
+         
      - Related work: *Design noise-robust loss*, weighting samples, correction methods, selecting clean labels, **use of complementary labels**
          - Problem: Underfitting of NL (section 3)
            - focal loss flavor solution
@@ -26,7 +52,7 @@ tags: Papers
 
      - <embed src="https://mxahan.github.io/PDF_files/joint_pos_neg_learn.pdf" width="100%" height="850px"/>
 
-3. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
+4. Leng, Z., Tan, M., Liu, C., Cubuk, E. D., Shi, J., Cheng, S., & Anguelov, D. (2021, September). PolyLoss: A Polynomial Expansion Perspective of Classification Loss Functions. In International Conference on Learning Representations.
 
    - New framework for loss function (taylor series expansion of log function)
        - PolyLoss allows the adjustment of polynomial bases depending on the tasks and datasets (subsumes cross-entropy loss and focal loss as special cases)

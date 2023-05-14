@@ -15,7 +15,14 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2023
 
-1. Wang, L., Zhang, X., Su, H., & Zhu, J. (2023). A Comprehensive Survey of Continual Learning: Theory, Method and Application. *arXiv preprint arXiv:2302.00487*.
+1. Troisemaine, C., Lemaire, V., Gosselin, S., Reiffers-Masson, A., Flocon-Cholet, J., & Vaton, S. (2023). Novel Class Discovery: an Introduction and Key Concepts. *arXiv preprint arXiv:2302.12028*.
+   - Two Stage Methods: 
+     - Learned similarity based: CCN and MCL (BCE Loss)
+     - Latent-space-based: DTC, Meta discovery with MAML
+   - One-stage methods
+     - AutoNovel, Class discovery kernel network with expansion, OpenMIX, NCL
+   - Related works: Unsupervised Clustering, Semi-supervised learning, transfer learning, Open world learning, Anomaly detection, Novelty detection, open set recognition, out-of-distribution detection, outlier detection. 
+2. Wang, L., Zhang, X., Su, H., & Zhu, J. (2023). A Comprehensive Survey of Continual Learning: Theory, Method and Application. *arXiv preprint arXiv:2302.00487*.
    - ![](data:image/png;base64,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)
    - growing and widespread interest in this direction demonstrates its realistic significance as well as complexity.
    - TP: basic settings, theoretical foundations, representative methods, and practical applications
@@ -152,26 +159,24 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 10. Chang, W., Shi, Y., Tuan, H. D., & Wang, J. (2022). Unified Optimal Transport Framework for Universal Domain Adaptation. *arXiv preprint arXiv:2210.17067*. NeuralIPS2022
 
-       - RG: Most existing methods require manually threshold values to detect common samples and hard to extend to UniDA as the diverse ratios of common classes and fail to categories target-private (novel) samples (treated as a whole)
-            - TP: propose to use Optimal Transport (OT) to handle these issues under a unified framework (UniOT)
-              -  OT-based partial alignment with adaptive filling  to detect common classes without any predefined threshold values for realistic UniDA!
-              - automatically discover the difference between common and private classes using the statistical information of the assignment matrix
-              - OT-based target representation learning that encourages both global discrimination and local consistency to avoid source over-reliance
-              - Proposes a novel metric!!
-              - What are the required assumption??
-
-
-       - Interesting relevant works related to OT based methods (provide benefits in global mapping, avoid degenerate solution)
+    - RG: Most existing methods require manually threshold values to detect common samples and hard to extend to UniDA as the diverse ratios of common classes and fail to categories target-private (novel) samples (treated as a whole)
+         - TP: propose to use Optimal Transport (OT) to handle these issues under a unified framework (UniOT)
+           -  OT-based partial alignment with adaptive filling  to detect common classes without any predefined threshold values for realistic UniDA!
+           - automatically discover the difference between common and private classes using the statistical information of the assignment matrix
+           - OT-based target representation learning that encourages both global discrimination and local consistency to avoid source over-reliance
+           - Proposes a novel metric!!
+           - What are the required assumption??
     
-       - OT can be extended towards unbalanced class distribution (generalized sinkhorn algo)
+    - Interesting relevant works related to OT based methods (provide benefits in global mapping, avoid degenerate solution)
     
-       - wow got the idea!: Instead of softmax base P matrix they go for prototype based model. 
-            - Joint optimization of global loss (inter-domain: Prototype based) and local loss (intra-domain: swapped prediction) 
-              - finding common classes similar to ranking stat CCD
-              - row sum and column sum for a point to detect CCD
-
-
-       - <embed src="https://mxahan.github.io/PDF_files/UOTDA.pdf" width="100%" height="850px"/>
+    - OT can be extended towards unbalanced class distribution (generalized sinkhorn algo)
+    
+    - wow got the idea!: Instead of softmax base P matrix they go for prototype based model. 
+         - Joint optimization of global loss (inter-domain: Prototype based) and local loss (intra-domain: swapped prediction) 
+           - finding common classes similar to ranking stat CCD
+           - row sum and column sum for a point to detect CCD
+    
+    - <embed src="https://mxahan.github.io/PDF_files/UOTDA.pdf" width="100%" height="850px"/>
 
 
 11. Zhang, X., Jiang, J., Feng, Y., Wu, Z. F., Zhao, X., Wan, H., ... & Gao, Y. (2022). Grow and Merge: A Unified Framework for Continuous Categories Discovery. *arXiv preprint arXiv:2210.04174* (NeuralIPS-2022).
@@ -653,30 +658,30 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 9. Jia, X., Han, K., Zhu, Y., & Green, B. (2021). Joint representation learning and novel category discovery on single-and multi-modal data. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 610-619).
 
-     - a generic, end-to-end framework to jointly learn a reliable representation and assign clusters to unlabelled data.
+      - a generic, end-to-end framework to jointly learn a reliable representation and assign clusters to unlabelled data.
 
-     - Propose to overcluster than the original unknown classe (U Cardinality is known) [**Well! Gives something to work with!!!!**]
+      - Propose to overcluster than the original unknown classe (U Cardinality is known) [**Well! Gives something to work with!!!!**]
 
-     - Joint optimization of many Losses
-       - CL (both instance and cluster [for known label])
-         - BCE (siamese network setup) [pseudo label]
-         - Consistent MSE loss (different view of same data)
-         - CE loss
+      - Joint optimization of many Losses
+        - CL (both instance and cluster [for known label])
+          - BCE (siamese network setup) [pseudo label]
+          - Consistent MSE loss (different view of same data)
+          - CE loss
 
 10. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
 
-    - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
-        - favoring synergy between supervised and unsupervised learning
-        - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
-        - overview figure 2 [multihead network (L and U data)]
-          - replace multi-objective using the multitask setting.
-          - look at the **gradient flow strategy**
-    
-    - similar idea of **swav**
-      - dimension mismatch* in eq 4 and 5  
-        - can be fixed by altering Y and L in the eq 4
-    
-      - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
+       - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
+           - favoring synergy between supervised and unsupervised learning
+           - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
+           - overview figure 2 [multihead network (L and U data)]
+             - replace multi-objective using the multitask setting.
+             - look at the **gradient flow strategy**
+
+       - similar idea of **swav**
+         - dimension mismatch* in eq 4 and 5  
+           - can be fixed by altering Y and L in the eq 4
+
+         - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
 
 
 11. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
@@ -871,6 +876,12 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2019 and Earlier
 
+1. Chaudhry, A., Rohrbach, M., Elhoseiny, M., Ajanthan, T., Dokania, P. K., Torr, P. H., & Ranzato, M. A. (2019). On tiny episodic memories in continual learning. *arXiv preprint arXiv:1902.10486*.
+
+     - dubbed episodic memory, that stores few examples from previous tasks and then to replay these examples when training for future tasks
+     - empirically analyze the effectiveness of a very small episodic memory in a CL setup where each training example is only seen once
+       - Very simple/naive idea of external memory save for the past experiences [algo 1]
+
 1. Javed, K., & White, M. (2019). Meta-learning representations for continual learning. *Advances in neural information processing systems*, *32*.
 
      - Propose OML, an objective that directly minimizes catastrophic interference by learning representations that accelerate future learning (?) and robust to forgetting under online updates in continual learning. 
@@ -959,15 +970,15 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
 
-     - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
+      - *Aim:* classify among majority and minority classes, generalize from a few known instances, and acknowledge novelty upon a never seen instance.
 
-     - TP: OLTR learning from naturally distributed data and optimizing accuracy over a balanced test set of head, tail, and open classes
+      - TP: OLTR learning from naturally distributed data and optimizing accuracy over a balanced test set of head, tail, and open classes
 
-     - methodologies: 1. dynamic Meta Embedding.  connected to Self-attention
+      - methodologies: 1. dynamic Meta Embedding.  connected to Self-attention
 
-     - overall figure 2
+      - overall figure 2
 
-     - <embed src="https://mxahan.github.io/PDF_files/ls_long_tailed_open_world.pdf" width="100%" height="850px"/>
+      - <embed src="https://mxahan.github.io/PDF_files/ls_long_tailed_open_world.pdf" width="100%" height="850px"/>
 
 1. Bendale, A., & Boult, T. (2015). Towards open world recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1893-1902).
 
