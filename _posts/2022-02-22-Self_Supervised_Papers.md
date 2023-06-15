@@ -6,6 +6,8 @@ tags: Papers
 
 ## 2023
 
+1. Balestriero, R., Ibrahim, M., Sobal, V., Morcos, A., Shekhar, S., Goldstein, T., ... & Goldblum, M. (2023). A cookbook of self-supervised learning. *arXiv preprint arXiv:2304.12210*.
+
 1. Cabannes, V., Bottou, L., Lecun, Y., & Balestriero, R. (2023). Active Self-Supervised Learning: A Few Low-Cost Relationships Are All You Need. *arXiv preprint arXiv:2303.15256*.
    - generalize and formalize this principle through Positive Active Learning (PAL) where an oracle queries semantic relationships between samples
      - unveils a theoretical learning framework beyond SSL, that can be extended to tackle supervised and semi-supervised depending on oracle
@@ -590,52 +592,50 @@ tags: Papers
        - Video object detection
 
      - Zeroshot and fewshot AcRecog
-           - introduce concept of loss function evolving (automatically find optimal combination of loss functions capturing many (self-supervised) tasks and modalities)
-               - using an evolutionary search algorithm (!!)
-
-
+       - introduce concept of loss function evolving (automatically find optimal combination of loss functions capturing many (self-supervised) tasks and modalities)
+            - using an evolutionary search algorithm (!!)
+     
      - Evaluation using distribution matching and Zipf's law!
-    
+     
      - only outperformed by fully labeled dataset
-    
-           - This paper: new unsupervised learning of video representations from unlabeled video data.
-             - multimodal, multitask, unsupervised learning
-               - Youtube dataset
-             - combination of single modal tasks and multi-modal tasks
-             - too much task! how they combined it!! Engineering problem
-               - evolutionary algorithm to solve these puzzle
-               - Power law constraints and KL divergence
-             - Evolutionary search for a loss function that automatically combines self-supervised and distillation task
-             - unsupervised representation evaluation metric based on power law distribution matching
-    
-           - Multimodal task, multimodal distillation
-             - show their efficacy by the power distribution of video classes (zipf's law)
-    
-           - Figure 2:
-             - overwhelming of tasks! what if no commonalities.
-    
-           - Hypo: Synchronized multi-modal data source should benefit representation learning
-             - Distillation losses between the multiple streams of networks + self supervised loss
-    
-           - Methods
-             - Multimodal learning
-             - Evolving an unsupervised loss function
-               - [0-1] constraints
-               - zipfs distribution matching
-                 - Fitness measurement - k-means clustering
-                 - use smaller subset of data for representation learning
-                 - Cluster the learned representations
-                 - the activity classes of videos follow a Zipf distribution
-                 - HMDB, AVA, Kinetics dataset, UCF101
-               - ELo methods with baseline weakly-supervised methods
-               - Self-supervised learning
-                 - reconstruction (encoder-decoder) and prediction tasks (L2 distance minimization)
-                 - Temporal ordering
-                 - Multi-modal contrastive loss {maxmargin loss}
-               - ELo and ELo+Distillation
-
-
-     - <embed src="https://mxahan.github.io/PDF_files/evolving_loss.pdf" width="100%" height="850px"/>
+     
+         - This paper: new unsupervised learning of video representations from unlabeled video data.
+              - multimodal, multitask, unsupervised learning
+                - Youtube dataset
+              - combination of single modal tasks and multi-modal tasks
+              - too much task! how they combined it!! Engineering problem
+                - evolutionary algorithm to solve these puzzle
+                - Power law constraints and KL divergence
+              - Evolutionary search for a loss function that automatically combines self-supervised and distillation task
+              - unsupervised representation evaluation metric based on power law distribution matching
+     
+         - Multimodal task, multimodal distillation
+              - show their efficacy by the power distribution of video classes (zipf's law)
+     
+         - Figure 2:
+              - overwhelming of tasks! what if no commonalities.
+     
+         - Hypo: Synchronized multi-modal data source should benefit representation learning
+              - Distillation losses between the multiple streams of networks + self supervised loss
+     
+         - Methods
+              - Multimodal learning
+              - Evolving an unsupervised loss function
+                - [0-1] constraints
+                - zipfs distribution matching
+                  - Fitness measurement - k-means clustering
+                  - use smaller subset of data for representation learning
+                  - Cluster the learned representations
+                  - the activity classes of videos follow a Zipf distribution
+                  - HMDB, AVA, Kinetics dataset, UCF101
+                - ELo methods with baseline weakly-supervised methods
+                - Self-supervised learning
+                  - reconstruction (encoder-decoder) and prediction tasks (L2 distance minimization)
+                  - Temporal ordering
+                  - Multi-modal contrastive loss {maxmargin loss}
+                - ELo and ELo+Distillation
+     
+     - - <embed src="https://mxahan.github.io/PDF_files/evolving_loss.pdf" width="100%" height="850px"/>
 
 9. Chen, Ting, Simon Kornblith, Kevin Swersky, Mohammad Norouzi, and Geoffrey Hinton. "Big self-supervised models are strong semi-supervised learners." arXiv preprint arXiv:2006.10029 (2020).
 
@@ -1973,6 +1973,24 @@ tags: Papers
 
 ## 2022
 
+1. Balestriero, R., & LeCun, Y. (2022). Contrastive and non-contrastive self-supervised learning recover global and local spectral embedding methods. *arXiv preprint arXiv:2205.11508*.
+
+      - RG: SSL theoretical foundations are limited, method-specific, and fail to provide principled design guidelines to practitioners
+      - TP: propose a unifying framework under the helm of **spectral manifold learning** to address those limitations
+        - demonstrate that VICReg, SimCLR, BarlowTwins et al. correspond to eponymous spectral methods such as Laplacian Eigenmaps, Multidimensional Scaling et al
+        - (i) the closed-form optimal representation for each method
+        - (ii) the closed-form optimal network parameters in the linear regime for each method
+        - (iii) the impact of the pairwise relations used during training on each of those quantities and on downstream task performances
+        - (iv) theoretical bridge between contrastive and non-contrastive methods towards global and local spectral embedding methods
+          -  (i) if the pairwise relation is aligned with the downstream task, any SSL method can be employed successfully and will recover the supervised method, but in the low data regime, VICReg’s invariance hyperparameter should be high; 
+          - (ii) if the pairwise relation is misaligned with the downstream task, VICReg with small invariance hyper-parameter should be preferred over SimCLR or BarlowTwins.
+      - SSL places itself in-between supervised and unsupervised learning as it does not require labels but **does require knowledge of what makes some samples semantically close to others.**
+      - SSL relies on inputs and inter-sample relations (X, G) that indicate semantic similarity akin to weak-supervision used in metric learning
+      - a more fundamental and principled understanding of SSL mostly take one of the three following approaches: 
+        - (i) studying the training dynamics and optimization landscapes in a linear network regime e.g. validating some empirically found tricks as necessary conditions for stable gradient dynamics
+        - (ii) studying the role of individual SSL components separately e.g. the projector and predictor networks 
+        - (iii) developing novel SSL criteria that often combine multiple interpretable objectives that a SSL model must fulfill
+
 1. Li, W., Kong, M., Yang, X., Wang, L., Huo, J., Gao, Y., & Luo, J. (2022). A Unified Framework for Contrastive Learning from a Perspective of Affinity Matrix. *arXiv preprint arXiv:2211.14516*.
 
       - TP: Unified the contrastive losses from the affinity matrix (similarity matrix) between embedding (**figure 1**)
@@ -2068,13 +2086,13 @@ tags: Papers
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
 
-   - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
-     - Siamese Network with masked augmentation!!
-     - Pretext task for Network: Vision transformer [data sampling approach]
-     - Low-shot detection
-     - Loss function (cross entropy with Mean entropy maximization regularization)
-   - Joint-embedding architecture avoids reconstruction
-     - TP leverages the idea of mask-denoising while avoiding pixel and token-level reconstruction
+    - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
+      - Siamese Network with masked augmentation!!
+      - Pretext task for Network: Vision transformer [data sampling approach]
+      - Low-shot detection
+      - Loss function (cross entropy with Mean entropy maximization regularization)
+    - Joint-embedding architecture avoids reconstruction
+      - TP leverages the idea of mask-denoising while avoiding pixel and token-level reconstruction
 
 1. Karim, Nazmul, Mamshad Nayeem Rizve, Nazanin Rahnavard, Ajmal Mian, and Mubarak Shah. "UNICON: Combating Label Noise Through Uniform Selection and Contrastive Learning." arXiv preprint arXiv:2203.14542 (2022).
 
@@ -2159,8 +2177,14 @@ tags: Papers
 
 ## 2014 and previous
 
-1. Goldberger, Jacob, Geoffrey E. Hinton, Sam Roweis, and Russ R. Salakhutdinov. "Neighbourhood components analysis." Advances in neural information processing systems 17 (2004).
-
+1. Cuturi, M. (2013). Sinkhorn distances: Lightspeed computation of optimal transport. *Advances in neural information processing systems*, *26*.
+     - Optimal transport distances are a fundamental family of distances for probability measure
+       -  appealing theoretical properties, excellent performance in retrieval tasks and intuitive formulation
+     - propose a new family of optimal transport distances that look at transport problems from a maximum entropy perspective
+       - smooth the classic optimal transport problem with an entropic regularization term, and show that the resulting optimum is also a distance which can be computed through Sinkhorn’s matrix scaling algorithm
+     - when probability space is a metric space, optimal transport distances, earth mover’s (EMD), define a powerful geometry to compare probabilities.
+       - Prob. metric Space: distance between two point is a probability distribution function
+2. Goldberger, Jacob, Geoffrey E. Hinton, Sam Roweis, and Russ R. Salakhutdinov. "Neighbourhood components analysis." Advances in neural information processing systems 17 (2004).
      - Non-parametric classification model (Early projection)
        - application: Dimensional reduction and metric learning.
 
@@ -2169,29 +2193,21 @@ tags: Papers
      - The neighborhood class instance should be closure.
 
      - The non-similar instance should be projected far away.
-
-2. Divvala, Santosh K., Ali Farhadi, and Carlos Guestrin. "Learning everything about anything: Webly-supervised visual concept learning." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3270-3277. 2014.
+3. Divvala, Santosh K., Ali Farhadi, and Carlos Guestrin. "Learning everything about anything: Webly-supervised visual concept learning." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3270-3277. 2014.
 
      - a fully-automated approach for learning extensive models for a wide range of variations (e.g. actions, interactions, attributes and beyond) within any concept
-
-3. Hadsell, Raia, Sumit Chopra, and Yann LeCun. "Dimensionality reduction by learning an invariant mapping." In 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'06), vol. 2, pp. 1735-1742. IEEE, 2006.
+4. Hadsell, Raia, Sumit Chopra, and Yann LeCun. "Dimensionality reduction by learning an invariant mapping." In 2006 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'06), vol. 2, pp. 1735-1742. IEEE, 2006.
 
      - Algorithm 1: distance based loss optimization [algorithmic]
-
-4. Bromley, Jane, J. W. Bentz, L. Bottou, I. Guyon, Y. LeCun, C. Moore, E. Sackinger, and R. Shah. "Signature Veriﬁcation using a “Siamese” Time Delay Neural Network." Int.]. Pattern Recognit. Artzf Intell 7 (1993).
+5. Bromley, Jane, J. W. Bentz, L. Bottou, I. Guyon, Y. LeCun, C. Moore, E. Sackinger, and R. Shah. "Signature Veriﬁcation using a “Siamese” Time Delay Neural Network." Int.]. Pattern Recognit. Artzf Intell 7 (1993).
 
      - Gold in old
 
      - Siamese network early application for hand writing
-
-5. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
-
-6. G. W. Taylor, I. Spiro, C. Bregler, and R. Fergus, ‘‘Learning invariance through imitation,’’ in Proc. CVPR, Jun. 2011, pp. 2729–2736, doi:10.1109/CVPR.2011.5995538
-
-7. Kingma, Diederik P., and Max Welling. "Auto-encoding variational bayes." arXiv preprint arXiv:1312.6114 (2013).
-
-8. Gutmann, Michael, and Aapo Hyvärinen. "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models." In Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics, pp. 297-304. 2010.
-
-9. Weinberger, Kilian Q., John Blitzer, and Lawrence K. Saul. "Distance metric learning for large margin nearest neighbor classification." In Advances in neural information processing systems, pp. 1473-1480. 2006.
+6. Becker, Suzanna, and Geoffrey E. Hinton. "Self-organizing neural network that discovers surfaces in random-dot stereograms." Nature 355, no. 6356 (1992): 161-163.
+7. G. W. Taylor, I. Spiro, C. Bregler, and R. Fergus, ‘‘Learning invariance through imitation,’’ in Proc. CVPR, Jun. 2011, pp. 2729–2736, doi:10.1109/CVPR.2011.5995538
+8. Kingma, Diederik P., and Max Welling. "Auto-encoding variational bayes." arXiv preprint arXiv:1312.6114 (2013).
+9. Gutmann, Michael, and Aapo Hyvärinen. "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models." In Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics, pp. 297-304. 2010.
+10. Weinberger, Kilian Q., John Blitzer, and Lawrence K. Saul. "Distance metric learning for large margin nearest neighbor classification." In Advances in neural information processing systems, pp. 1473-1480. 2006.
 
      - Triplet loss proposal

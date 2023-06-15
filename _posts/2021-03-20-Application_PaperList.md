@@ -345,28 +345,33 @@ This blog contains state of the art application and research on different applic
   - <embed src="https://mxahan.github.io/PDF_files/Perceptual_reward.pdf" width="100%" height="850px"/>
 
 1. Ziebart, Brian D., Andrew L. Maas, J. Andrew Bagnell, and Anind K. Dey. "Maximum entropy inverse reinforcement learning." In Aaai, vol. 8, pp. 1433-1438. 2008.
-  - Framing problem as Imitation learning as solutions to MDP
-  - Model navigation and driving behavior -> under noisy data
-  - Issues in imitation learning during the imperfect demonstration
-    - alternative solution: IRL : Matching feature count (algo 1)
-  - <embed src="https://mxahan.github.io/PDF_files/Maximum_entropy_IRL.pdf" width="100%" height="850px"/>
+
+     - Framing problem as Imitation learning as solutions to MDP
+
+     - Model navigation and driving behavior -> under noisy data
+         - Issues in imitation learning during the imperfect demonstration
+           - alternative solution: IRL : Matching feature count (algo 1)
+
+
+     - <embed src="https://mxahan.github.io/PDF_files/Maximum_entropy_IRL.pdf" width="100%" height="850px"/>
 
 # Data augmentation
 
 ## 2019 and Earlier
 
-1. Liu, Zhuang, Tinghui Zhou, Hung-Ju Wang, Zhiqiang Shen, Bingyi Kang, Evan Shelhamer, and Trevor Darrell. "Transferable recognition-aware image processing." arXiv preprint arXiv:1910.09185 (2019).
-
+1. Yun, S., Han, D., Oh, S. J., Chun, S., Choe, J., & Yoo, Y. (2019). Cutmix: Regularization strategy to train strong classifiers with localizable features. In *Proceedings of the IEEE/CVF international conference on computer vision* (pp. 6023-6032).
+     - CutMix augmentation strategy: patches are cut and pasted among training images where the ground truth labels are also mixed proportionally to the area of the patches
+       - making efficient use of training pixels and retaining the regularization effect of regional dropout
+     - Experiments:  CIFAR and ImageNet, ImageNet weakly-supervised localization task
+2. Liu, Zhuang, Tinghui Zhou, Hung-Ju Wang, Zhiqiang Shen, Bingyi Kang, Evan Shelhamer, and Trevor Darrell. "Transferable recognition-aware image processing." arXiv preprint arXiv:1910.09185 (2019).
      - optimizing the recognition loss directly on the image processing network or through an intermediate transforming model (transferable)
        -a neural network for image processing: maps an input image to an output image with some desired properties.
 
      - propose add a recognition loss optimized jointly with the image processing loss.
 
      - Figure 2: sums the work. (process loss + recognition task)
-
-2. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).
-
-3. Zhang, Hongyi, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. "mixup: Beyond empirical risk minimization." arXiv preprint arXiv:1710.09412 (2017).
+3. Cubuk, Ekin D., Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V. Le. "Autoaugment: Learning augmentation policies from data." arXiv preprint arXiv:1805.09501 (2018).
+4. Zhang, Hongyi, Moustapha Cisse, Yann N. Dauphin, and David Lopez-Paz. "mixup: Beyond empirical risk minimization." arXiv preprint arXiv:1710.09412 (2017).
 
      - supervised setup, linear interpolation between input and corresponding labels
 
@@ -407,12 +412,22 @@ This blog contains state of the art application and research on different applic
 
 ## 2022
 
-1. Alaa, A., Van Breugel, B., Saveliev, E. S., & van der Schaar, M. (2022, June). How faithful is your synthetic data? sample-level metrics for evaluating and auditing generative models. In International Conference on Machine Learning (pp. 290-306). PMLR.
+1. Park, C., Yun, S., & Chun, S. (2022). A unified analysis of mixed sample data augmentation: A loss function perspective. *arXiv preprint arXiv:2208.09913*.
+
+     - Unified theoretical analysis of mixed sample data augmentation (MSDA)
+       - results: **regardless of the choice of the mixing strategy, MSDA behaves as a pixel-level regularization of the underlying training loss and a regularization of the first layer parameters.**
+       - MSDA training strategy can improve adversarial robustness and generalization compared to the vanilla training strategy
+       - provide a high-level understanding of how different design choices of MSDA work differently
+       - **CutMix** regularizes the input gradients by pixel distances, while **Mixup** regularizes the input gradients regardless of pixel distances
+       - optimal MSDA strategy depends on tasks, datasets, or model parameters.
+     -  propose generalized MSDAs, a Hybrid version of Mixup and CutMix (HMix) and Gaussian Mixup (GMix)
+
+2. Alaa, A., Van Breugel, B., Saveliev, E. S., & van der Schaar, M. (2022, June). How faithful is your synthetic data? sample-level metrics for evaluating and auditing generative models. In International Conference on Machine Learning (pp. 290-306). PMLR.
 
      - Devising domain- and model-agnostic evaluation for generative Models  
        - 3 metrics, alpha-precision, beta-recall, authenticity, to characterize the fidelity, diversity and generalization
 
-2. Balestriero, Randall, Leon Bottou, and Yann LeCun. "The Effects of Regularization and Data Augmentation are Class Dependent." arXiv preprint arXiv:2204.03632 (2022).
+3. Balestriero, Randall, Leon Bottou, and Yann LeCun. "The Effects of Regularization and Data Augmentation are Class Dependent." arXiv preprint arXiv:2204.03632 (2022).
 
      - Aims to understand the impact of regularization
 
@@ -429,7 +444,7 @@ This blog contains state of the art application and research on different applic
            - even for uninformative regularizers such as weight decay a per-class bias is introduced, reducing performances for some of the classes
          - The Class-Dependent Bias Transfers to Other Downstream Tasks
 
-3. Balestriero, Randall, Ishan Misra, and Yann LeCun. "A Data-Augmentation Is Worth A Thousand Samples: Exact Quantification From Analytical Augmented Sample Moments." arXiv preprint arXiv:2202.08325 (2022).
+4. Balestriero, Randall, Ishan Misra, and Yann LeCun. "A Data-Augmentation Is Worth A Thousand Samples: Exact Quantification From Analytical Augmented Sample Moments." arXiv preprint arXiv:2202.08325 (2022).
 
      - Theoretically analyze the effect of DA by studying:
        - how many augmented samples are needed to correctly estimate the information encoded by that DA?

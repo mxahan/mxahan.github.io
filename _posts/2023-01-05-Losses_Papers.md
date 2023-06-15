@@ -4,6 +4,8 @@ tags: Papers
 
 # Metrics and Losses
 
+## 2022
+
 ## 2021
 
 1. Liu, W., Lin, R., Liu, Z., Xiong, L., Schölkopf, B., & Weller, A. (2021, March). Learning with hyperspherical uniformity. In *International Conference On Artificial Intelligence and Statistics* (pp. 1180-1188). PMLR.
@@ -27,7 +29,7 @@ tags: Papers
      - MHS: sphere packing problem: one packs a given number of circles on the sphere surface i.e. the minimum distance between circles can be maximized
        -  MHE has a global regularization effect (updates all vectors in each iteration), MHS focuses on the local separation (updates two vectors)
        - When the vectors are relatively diverse on the hypersphere, MHS tends to have stronger regularization effects than MHE. 
-         - MHS gradient resulted from the two closest vectors has only one direction component and will not be cancelled out. In contrast, the MHE gradient that comes from all the vectors has many direction components and may be largely cancelled out. More intuitively, MHS only activates the repulsive force from the closest vectors at a time while MHE simultaneously activates the repulsive force from all pairwise vectors
+         - MHS gradient resulted from the two closest vectors has only one direction component and will not be cancelled out. In contrast, the MHE gradient comes from all the vectors has many direction components and may be largely cancelled out. Intuitively, MHS only activates the repulsive force from the closest vectors at a time while MHE simultaneously activates the repulsive force from all pairwise vectors
        - Optimizing MHS is straightforward and efficient: rank all the pairwise distances and obtain the vectors with the smallest distance (i.e., maximal similarity) and maximize the minimal distance by updating these two closest vectors via gradient ascent.
      - Interesting discussion section
 
@@ -40,7 +42,7 @@ tags: Papers
 3. Kim, Y., Yun, J., Shon, H., & Kim, J. (2021). Joint negative and positive learning for noisy labels. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 9442-9451).
 
      - *Learning from complementary labels.*
-         
+       
          - **TP**: JNPL (Improvement over NLNL)
            - trains CNN via two losses, NL+ and PL+ (improved NL and PL and also addressing their issues)
          
@@ -117,21 +119,24 @@ tags: Papers
 
 ## 2019
 
+1. Mettes, P., Van der Pol, E., & Snoek, C. (2019). Hyperspherical prototype networks. *Advances in neural information processing systems*, *32*.
+     - unify classification and regression with prototypes on hyperspherical output spaces
+     - propose to use hyperspheres as output spaces, with class prototypes defined a priori with large margin separation
+       -  Training and inference is achieved through cosine similarities between examples and their fixed class prototypes.
+     - position prototypes through data-independent optimization, with an extension to incorporate priors from class semantics (**how**)
+       - Prototypes with privileged information (pairwise cross-entropy setting)
+     -  generalize to regression, by optimizing outputs as an interpolation between two prototypes on the hypersphere [figure 1]
 1. Ishida, T., Niu, G., Menon, A., & Sugiyama, M. (2019, May). Complementary-label learning for arbitrary losses and models. In International Conference on Machine Learning (pp. 2971-2980). PMLR.
-
      - derive a novel framework of complementary-label learning
 
      - Idea of gradient ascend.
-
 1. Kim, Y., Yim, J., Yun, J., & Kim, J. (2019). Nlnl: Negative learning for noisy labels. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 101-110).
 
      - “input image belongs to this label” (Positive Learning; PL)
 
      - Negative learning: Randomly select other label than the not label !!!???
-
 1. Zhao, S., Wang, Y., Yang, Z., & Cai, D. (2019). Region mutual information loss for semantic segmentation. Advances in Neural Information Processing Systems, 32.
      - Joint distribution for neighborhood pixels.
-
 1. Wang, Xun, Xintong Han, Weilin Huang, Dengke Dong, and Matthew R. Scott. "Multi-similarity loss with general pair weighting for deep metric learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5022-5030. 2019.
 
      - (TP) Establish a General Pair Weighting (GPW) framework: casts the sampling problem of deep metric learning into a unified view of pair weighting through gradient analysis, (tool for understanding recent pair-based loss functions)
@@ -148,6 +153,19 @@ tags: Papers
      - Multiply weights to project them in orthogonal space and sum them.
 
 ## 2018
+
+1. Liu, W., Lin, R., Liu, Z., Liu, L., Yu, Z., Dai, B., & Song, L. (2018). Learning towards minimum hyperspherical energy. *Advances in neural information processing systems*, *31*.
+
+     - how to regularize the network to avoid undesired representation redundancy becomes an important issue
+     - draw inspiration from physics-based Thomson problem: seeks to find a state that distributes N electrons on a unit sphere as evenly as possible with minimum potential energy
+     - reformulate redundancy regularization problem to generic energy minimization, and propose a minimum hyperspherical energy (MHE) objective as generic regularization for neural network (also some variants of MHE: Angular MHE [A-MHE])
+     - Related works: Diversity learning (enforce diversity in the prediction space), diversity regularization, ensemble learning, self-paced learning, metric learning, 
+       -  formulating the diversity of neurons on the entire hypersphere, promoting diversity from a more global, top-down perspective
+     - feature the significance of angular learning at both loss and convolution levels based on the observation that the angles in deep embeddings learned by CNNs tend to encode semantic difference
+       -  key intuition is that angles preserve the most abundant and discriminative information for visual recognition
+         - Keep the projection uniformly in the hypersphere. (global equidistance) 
+       - MHE faces different situations when it is applied to hidden layers and output layers
+     - characterize the diversity for a group of neurons by defining a generic hyperspherical potential energy using their pairwise relationship. Higher energy implies higher redundancy, while lower energy indicates that these neurons are more diverse and more uniformly spaced.
 
 1. Kim, Wonsik, Bhavya Goyal, Kunal Chawla, Jungmin Lee, and Keunjoo Kwon. "Attention-based ensemble for deep metric learning." In Proceedings of the European Conference on Computer Vision (ECCV), pp. 736-751. 2018.
 

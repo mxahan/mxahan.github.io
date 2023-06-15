@@ -355,7 +355,7 @@ tags: Papers
 
      - Figure 2 sums all (design choice of f and g)
 
-  - <embed src="https://mxahan.github.io/PDF_files/non_local_neuron.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/non_local_neuron.pdf" width="100%" height="850px"/>
 
 1. Xie, Saining, Chen Sun, Jonathan Huang, Zhuowen Tu, and Kevin Murphy. "Rethinking spatiotemporal feature learning: Speed-accuracy trade-offs in video classification." In Proceedings of the European conference on computer vision (ECCV), pp. 305-321. 2018.
 
@@ -381,15 +381,22 @@ tags: Papers
 
 
 ## 2017
-1. Arpit, D., Jastrzębski, S., Ballas, N., Krueger, D., Bengio, E., Kanwal, M. S., ... & Lacoste-Julien, S. (2017, July). A closer look at memorization in deep networks. In *International conference on machine learning* (pp. 233-242). PMLR.
+1. Gomez, A. N., Ren, M., Urtasun, R., & Grosse, R. B. (2017). The reversible residual network: Backpropagation without storing activations. *Advances in neural information processing systems*, *30*.
 
-     - Contributions
-       - qualitative differences in DNN optimization behavior on real data vs. noise. In other words, DNNs do not just memorize real data
-       - . DNNs learn simple patterns first, before memorizing (content-aware)
-       - Obviously: Regularization helps. 
-     - Critical Sample Ratio: Experimented with curated artificial dataset. 
+   - present the Reversible Residual Network (**RevNet**), a variant of ResNets: each layer’s activations can be reconstructed exactly from the next layer
+     - memory efficient: no need to store all the activations.
+   - Experiments: Cifar10/100, imagenet
 
-1. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
+2. Arpit, D., Jastrzębski, S., Ballas, N., Krueger, D., Bengio, E., Kanwal, M. S., ... & Lacoste-Julien, S. (2017, July). A closer look at memorization in deep networks. In *International conference on machine learning* (pp. 233-242). PMLR.
+
+   - Contributions
+     - qualitative differences in DNN optimization behavior on real data vs. noise. In other words, DNNs do not just memorize real data
+     - . DNNs learn simple patterns first, before memorizing (content-aware)
+     - Obviously: Regularization helps. 
+
+   - Critical Sample Ratio: Experimented with curated artificial dataset. 
+
+3. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
 
      - Multi scale atrous CNN for Semantic image segmentation & modified ASPP
 
@@ -403,35 +410,35 @@ tags: Papers
 
      - Related works: Context Module!
 
-1. Carreira, Joao, and Andrew Zisserman. "Quo vadis, action recognition? a new model and the kinetics dataset." In proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 6299-6308. 2017.
+4. Carreira, Joao, and Andrew Zisserman. "Quo vadis, action recognition? a new model and the kinetics dataset." In proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 6299-6308. 2017.
      - I3D/R3D model
 
-1. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
+5. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
 
-1. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
+6. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
 
-1. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
+7. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
 
-1. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
+8. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
 
      - TP: proposes computational efficient 3D CNN (and their extensions) [p3d network]
        - Decomposes 3D CNN as DD spatial filter and 1D temporal filter
-       - Combines of 3-inter-leaving P3D blocks [figure 3].
+         - Combines of 3-inter-leaving P3D blocks [figure 3].
 
      - <embed src="https://mxahan.github.io/PDF_files/pseudo_3D.pdf" width="100%" height="850px"/>
 
-1. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
+9. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
 
      - ResNeXt: highly modulated network (figure 1) [another network engineering with a very simple idea]
          - Name origin: as it adds **Next dimension: Cardinality** so it refers to ResNeXt
            - Not Inception as no downsampling in between.
      - Why? how is it better than the ResNet? Introduces new parameters " Cardinality (the size of set of transformation)"! [with addition of deeper and wider in ResNet]
       - TP: extends *split-transform-merge* and ResNet
-     
+
       - TP: Transformation to Low dimension and outputs are *aggregated* by summation.
-     
+
       - Related works: Multi-branch CN, grouped CN, compressed CN, Ensembling.
-     
+
       - Experiments with ImageNet, COCO object detection. [outperforms ResNet, Inception, VGG.]
       - ![ResNeXt summary](https://production-media.paperswithcode.com/methods/Screen_Shot_2020-06-06_at_4.32.52_PM.png)
 

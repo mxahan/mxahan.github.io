@@ -52,21 +52,41 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2022
 
-1. Caccia, Lucas, and Joelle Pineau. "Special: Self-supervised pretraining for continual learning." *Continual Semi-Supervised Learning: First International Workshop, CSSL 2021, Virtual Event, August 19–20, 2021, Revised Selected Papers*. Cham: Springer International Publishing, 2022.
+1. Zhang, L., Qi, L., Yang, X., Qiao, H., Yang, M. H., & Liu, Z. (2022). Automatically Discovering Novel Visual Categories with Self-supervised Prototype Learning. *arXiv preprint arXiv:2208.00979*.
+   - leverage the prototypes to emphasize the importance of category discrimination and alleviate the issue with missing annotations of novel classes
+   - propose a novel adaptive prototype learning method consisting of two main stages:
+     - **prototypical representation learning:** obtain a robust feature extractor for all images (instance and category discrimination): boosted by self-supervised learning and adaptive prototypes. [DINO+Online prototype learning (OPL)]
+       - OPL: maintain adaptive prototypes for novel categories, allowing online updates and then assigning class-level pseudo labels on-the-fly
+     - **prototypical self-training:**  utilize the prototypes again to rectify offline pseudo labels and train parametric classifier for category clustering
+       - Pseudo labelling, prototypical pseudo label rectification, and joint optimization
+   - present a new *data augmentation* strategy named restricted rotation for multi-view construction of symbolic data (e.g., shape and character).
+2. Zang, Z., Shang, L., Yang, S., Sun, B., & Li, S. Z. (2022). Boosting Novel Category Discovery Over Domains with Soft Contrastive Learning and All-in-One Classifier. *arXiv preprint arXiv:2211.11262*.
+   - propose *Soft-contrastive* **All-in-one** Network (SAN) for ODA and UNDA tasks
+     - SAN includes a novel data-augmentation-based CL loss and a more human-intuitive classifier to improve the new class discovery capability.
+     - soft contrastive learning (SCL) loss weaken the adverse effects of the data-augmentation label noise problem (amplified in domain transfer)
+       - addresses the view-noise problem by incorporating the idea of self-distillation
+   - All-in-One (AIO) classifier overcomes the overconfidence problem of the current closed-set classifier and open-set classifier in a more human-intuitive way. 
+   - UNDA (universal) account for the uncertainty about the category shift. 
+     - The assumption is that the label distributions of labeled and unlabeled data can differ, but we do not know the difference in advance.
+   - Problem 1: The view-noise problem in data augmentation affects the pre-training of the backbone
+   - Problem 2: Overconfident classifiers (closed-set classifier and open-set classifier) affect novel category recognition performance
+     - An all-in-one (AIO) classifier is designed to replace the closed-set classifier and open-set classifier.
+     - Assumption: identifying a sample as belonging to a novel category requires determining that it does not belong to all known classes.
+   - Figure 1(b) - b4 summarizes the idea. 
+   - Math heavy paper!!
+3. Caccia, Lucas, and Joelle Pineau. "Special: Self-supervised pretraining for continual learning." *Continual Semi-Supervised Learning: First International Workshop, CSSL 2021, Virtual Event, August 19–20, 2021, Revised Selected Papers*. Cham: Springer International Publishing, 2022.
 
    - for unsupervised pretraining of representations amenable to continual learning
    - efficiently reuses past computations, reducing its computational and memory footprint??? (How)
    - Experimenation with FSL objectives. 
    - Related works: Self-supervised learning, continual learning, meta-learning (meta-continual learning!!, Unsup. meta learning)
-
-2. Zhang, S., Khan, S., Shen, Z., Naseer, M., Chen, G., & Khan, F. (2022). PromptCAL: Contrastive Affinity Learning via Auxiliary Prompts for Generalized Novel Category Discovery. *arXiv preprint arXiv:2212.05590*.
+4. Zhang, S., Khan, S., Shen, Z., Naseer, M., Chen, G., & Khan, F. (2022). PromptCAL: Contrastive Affinity Learning via Auxiliary Prompts for Generalized Novel Category Discovery. *arXiv preprint arXiv:2212.05590*.
 
    - a two-stage Contrastive Affinity Learning method with auxiliary visual Prompt (PromptCAL)
      - Discovers reliable pairwise sample affinities to learn better semantic clustering of both known and novel classes for the class token and visual prompt
      -  propose a discriminative prompt regularization loss: reinforce semantic discriminativeness of prompt-adapted pre-trained ViT for refined affinity relationship
      -  propose contrastive affinity learning to calibrate semantic representations based on iterative semi-supervised affinity graph generation method for semantically-enhanced supervision
-
-3. Yu, L., Twardowski, B., Liu, X., Herranz, L., Wang, K., Cheng, Y., ... & Weijer, J. V. D. (2020). Semantic drift compensation for class-incremental learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 6982-6991).
+5. Yu, L., Twardowski, B., Liu, X., Herranz, L., Wang, K., Cheng, Y., ... & Weijer, J. V. D. (2020). Semantic drift compensation for class-incremental learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 6982-6991).
 
    - Key Idea: Embedding networks have the advantage that new classes can be naturally included into the network without adding new weights
      - Estimate drifts and compensate for them to avoid indirect forgetting. 
@@ -77,8 +97,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - measures semantic drift by proxy task
    - experiments on fine-grained datasets, CIFAR100 and ImageNetSubset. 
    - previous works all study continual learning in classification networks : TP works with embedding network (prototype: Embedding mean)
-
-4. Yu, L., Weng, Z., Wang, Y., & Zhu, Y. (2022). Multi-Teacher Knowledge Distillation for Incremental Implicitly-Refined Classification. *arXiv preprint arXiv:2202.11384*.
+6. Yu, L., Weng, Z., Wang, Y., & Zhu, Y. (2022). Multi-Teacher Knowledge Distillation for Incremental Implicitly-Refined Classification. *arXiv preprint arXiv:2202.11384*.
 
    - TP: Solution Incremental Implicitly-Refined Classification (IIRC)
      - Superclass to subclasses
@@ -91,8 +110,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - well the final layer is softmax?? How does it make sense????
      -  Instead of should have been in the representation layer
        - Increasing neuron numbers in the representation layer. 
-
-5. Fang, Z., Li, Y., Lu, J., Dong, J., Han, B., & Liu, F. (2022). Is Out-of-Distribution Detection Learnable?. *arXiv preprint arXiv:2210.14707*.
+7. Fang, Z., Li, Y., Lu, J., Dong, J., Han, B., & Liu, F. (2022). Is Out-of-Distribution Detection Learnable?. *arXiv preprint arXiv:2210.14707*.
    - investigate the probably approximately correct (PAC) learning theory of OOD detection
      - find a necessary condition for the learnability of OOD detection. 
      - prove several impossibility theorems for the learnability of OOD detection under some scenarios
@@ -106,8 +124,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
    - TP covers: all OOD data be allocated to one big OOD class (unknown class k=1)
      - Unknown class k>1, falls in unsupervised clustering. 
      - TP: Assumes no earlier available of OOD data, contrast with GCD, unsup cluster setting. 
-
-6. Deng, Jieren, Jianhua Hu, Haojian Zhang, and Yunkuan Wang. "Incremental Prototype Prompt-tuning with Pre-trained Representation for Class Incremental Learning." *arXiv preprint arXiv:2204.03410* (2022).
+8. Deng, Jieren, Jianhua Hu, Haojian Zhang, and Yunkuan Wang. "Incremental Prototype Prompt-tuning with Pre-trained Representation for Class Incremental Learning." *arXiv preprint arXiv:2204.03410* (2022).
    - parameter-additional-tuning (PAT): only changes very few parameters to learn new visual concepts
      - e.g. linear probing, prompt tuning, and adapter
      - PAT based CIL avoids fighting against forgetting by replaying or distilling like most of the existing methods. 
@@ -125,8 +142,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - PAT: adapter-based (injects small-scale NN modules (adapters) connected to the transformer layer), and prompt-based (L2P)
    - Semantic drift is a higher-level forgetting problem, it is less obvious to see the semantic drift when the representation model is not frozen because it is mixed with a lower level of forgetting (representation forgetting).????
    - Kinda Vague approach: Better read L2P that this. 
-
-7. Du, X., Gozum, G., Ming, Y., & Li, Y. (2022). Siren: Shaping representations for detecting out-of-distribution objects. In *Advances in Neural Information Processing Systems*.
+9. Du, X., Gozum, G., Ming, Y., & Li, Y. (2022). Siren: Shaping representations for detecting out-of-distribution objects. In *Advances in Neural Information Processing Systems*.
 
    - distance-based OOD detection methods remain largely unexplored in object-level OOD detection
      -  proposing a distance based framework for detecting OOD objects (model-agnostic representation space both CNN and Tx)
@@ -142,22 +158,20 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Experimented on both transformer-based and CNN-based models.
    - Joint optimization for multiple targets (figure 2)
      - Similar to other prototypical approaches
-
-8. Azizmalayeri, M., Moakhar, A. S., Zarei, A., Zohrabi, R., Manzuri, M. T., & Rohban, M. H. (2022). Your Out-of-Distribution Detection Method is Not Robust!. *arXiv preprint arXiv:2209.15246*.
+10. Azizmalayeri, M., Moakhar, A. S., Zarei, A., Zohrabi, R., Manzuri, M. T., & Rohban, M. H. (2022). Your Out-of-Distribution Detection Method is Not Robust!. *arXiv preprint arXiv:2209.15246*.
 
    - Challenges earlier adversarial methods based OOD prevention mechanism and proposes a new one. 
      - Adopt generative OOD based methods. (OpenGAN as baseline)
      - Proposes ATD (adversarial trained discriminator) [simple overview in figure 3]
        - utilizes a pre-trained robust model to extract robust features, and a generator model to create OOD samples
-
-9. Wenzel, F., Dittadi, A., Gehler, P. V., Simon-Gabriel, C. J., Horn, M., Zietlow, D., ... & Locatello, F. (2022). Assaying out-of-distribution generalization in transfer learning. *arXiv preprint arXiv:2207.09239*.
+11. Wenzel, F., Dittadi, A., Gehler, P. V., Simon-Gabriel, C. J., Horn, M., Zietlow, D., ... & Locatello, F. (2022). Assaying out-of-distribution generalization in transfer learning. *arXiv preprint arXiv:2207.09239*.
 
    - Empirically unified view of previous work (calibration, adversarial robustness, algorithmic corruption, invariance across shift), highlighting message discrepancies, providing recommendations on how to measure the robustness of a model and how to improve it.
      - A lot of experimentation: Massive datasets, a lot of models. 
      -  ID and OOD accuracies tend to increase jointly, but their relation is largely dataset-dependent, more nuanced and more complex than posited by previous, smaller scale studies
    - kind of overview paer, many nice takeaways
 
-10. Chang, W., Shi, Y., Tuan, H. D., & Wang, J. (2022). Unified Optimal Transport Framework for Universal Domain Adaptation. *arXiv preprint arXiv:2210.17067*. NeuralIPS2022
+11. Chang, W., Shi, Y., Tuan, H. D., & Wang, J. (2022). Unified Optimal Transport Framework for Universal Domain Adaptation. *arXiv preprint arXiv:2210.17067*. NeuralIPS2022
 
     - RG: Most existing methods require manually threshold values to detect common samples and hard to extend to UniDA as the diverse ratios of common classes and fail to categories target-private (novel) samples (treated as a whole)
          - TP: propose to use Optimal Transport (OT) to handle these issues under a unified framework (UniOT)
@@ -166,16 +180,16 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
            - OT-based target representation learning that encourages both global discrimination and local consistency to avoid source over-reliance
            - Proposes a novel metric!!
            - What are the required assumption??
-    
+
     - Interesting relevant works related to OT based methods (provide benefits in global mapping, avoid degenerate solution)
-    
+
     - OT can be extended towards unbalanced class distribution (generalized sinkhorn algo)
-    
+
     - wow got the idea!: Instead of softmax base P matrix they go for prototype based model. 
          - Joint optimization of global loss (inter-domain: Prototype based) and local loss (intra-domain: swapped prediction) 
            - finding common classes similar to ranking stat CCD
            - row sum and column sum for a point to detect CCD
-    
+
     - <embed src="https://mxahan.github.io/PDF_files/UOTDA.pdf" width="100%" height="850px"/>
 
 
