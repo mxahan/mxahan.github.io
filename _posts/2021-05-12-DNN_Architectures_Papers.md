@@ -86,6 +86,12 @@ tags: Papers
 
 ## 2021
 
+1. Dherin, B., Munn, M., & Barrett, D. G. (2021). The Geometric Occam's Razor Implicit in Deep Learning. *arXiv preprint arXiv:2111.15090*.
+
+   - argue that over-parameterized neural networks trained withSGD are subject to a Geometric Occam’s Razor; that is, these networks are implicitly regularized by the geometric model complexity
+   - For one-dimensional regression, the geometric model complexity is simply given by the arc length of the function. For higher-dimensional settings, the geometric model complexity depends on the Dirichlet energy of the function
+   - explore the relationship between this Geometric Occam’s Razor, the Dirichlet energy and other known forms of implicit regularization
+
 1. Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., ... & Guo, B. (2021). Swin transformer: Hierarchical vision transformer using shifted windows. In *Proceedings of the IEEE/CVF International Conference on Computer Vision* (pp. 10012-10022).
 
    - address these differences of language and vision domain (scale variation of visual entities and high pixel resolutions)
@@ -93,7 +99,7 @@ tags: Papers
      - brings greater efficiency by limiting self-attention computation to non-overlapping local windows, allow for cross-window connection
      - linear computational complexity with respect to image size
      - shift of the window partition between consecutive self-attention layers
-   - compatible with a broad range of vision tasks: image classification (Imagenet-1K), dense prediction tasks (Obj. detection e.g. coco), semantic segmentation (ADE20kval)
+   - compatible with a broad range of vision tasks: image classification (Imagenet-1K), dense prediction tasks (Obj. detection e.g. coco), semantic segmentation
    - hierarchical feature maps of the Swin can leverage techniques for dense prediction e.g. feature pyramid networks (FPN) or U-Net
    -  linear computational complexity is achieved by computing SA locally within non-overlapping windows that partition an image
    - Overall Architecture: 
@@ -381,13 +387,29 @@ tags: Papers
 
 
 ## 2017
-1. Gomez, A. N., Ren, M., Urtasun, R., & Grosse, R. B. (2017). The reversible residual network: Backpropagation without storing activations. *Advances in neural information processing systems*, *30*.
+1. Klambauer, G., Unterthiner, T., Mayr, A., & Hochreiter, S. (2017). Self-normalizing neural networks. *Advances in neural information processing systems*, *30*.
+
+   - Investigate why Standard Feed forward NN (FNN) fails? 
+   - FNNs that perform well are typically shallow and, therefore cannot exploit many levels of abstract representations. 
+     - introduce self-normalizing neural networks (SNNs) to enable high-level abstract representations.
+     - TP: activation function of SNNs are “scaled exponential linear units” (SELUs), which **induce self-normalizing properties**
+     - prove that activations close to zero mean and unit variance that are propagated through many network layers will converge towards zero mean and unit variance (under the presence of noise and perturbations)
+     - activations **not** close to unit var, there exits an upper and lower bound on the var, thus, vanishing and exploding gradients are impossible.
+   - convergence property of SNNs allows to 
+     - (1) train deep networks with many layers, 
+     - (2) employ strong regularization schemes,
+     - (3) to make learning highly robust.
+   -  FNNs we considered (i) ReLU networks without normalization, (ii) batch normalization, (iii) layer normalization, (iv) weight normalization, (v) highway networks, and (vi) residual networks
+     - Experimented with different initialization, 121 UCI dataset
+   - My thoughts: SeLU works best with FNN!
+
+2. Gomez, A. N., Ren, M., Urtasun, R., & Grosse, R. B. (2017). The reversible residual network: Backpropagation without storing activations. *Advances in neural information processing systems*, *30*.
 
    - present the Reversible Residual Network (**RevNet**), a variant of ResNets: each layer’s activations can be reconstructed exactly from the next layer
      - memory efficient: no need to store all the activations.
    - Experiments: Cifar10/100, imagenet
 
-2. Arpit, D., Jastrzębski, S., Ballas, N., Krueger, D., Bengio, E., Kanwal, M. S., ... & Lacoste-Julien, S. (2017, July). A closer look at memorization in deep networks. In *International conference on machine learning* (pp. 233-242). PMLR.
+3. Arpit, D., Jastrzębski, S., Ballas, N., Krueger, D., Bengio, E., Kanwal, M. S., ... & Lacoste-Julien, S. (2017, July). A closer look at memorization in deep networks. In *International conference on machine learning* (pp. 233-242). PMLR.
 
    - Contributions
      - qualitative differences in DNN optimization behavior on real data vs. noise. In other words, DNNs do not just memorize real data
@@ -396,7 +418,7 @@ tags: Papers
 
    - Critical Sample Ratio: Experimented with curated artificial dataset. 
 
-3. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
+4. Chen, Liang-Chieh, George Papandreou, Florian Schroff, and Hartwig Adam. "Rethinking atrous convolution for semantic image segmentation." arXiv preprint arXiv:1706.05587 (2017).
 
      - Multi scale atrous CNN for Semantic image segmentation & modified ASPP
 
@@ -410,16 +432,16 @@ tags: Papers
 
      - Related works: Context Module!
 
-4. Carreira, Joao, and Andrew Zisserman. "Quo vadis, action recognition? a new model and the kinetics dataset." In proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 6299-6308. 2017.
+5. Carreira, Joao, and Andrew Zisserman. "Quo vadis, action recognition? a new model and the kinetics dataset." In proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 6299-6308. 2017.
      - I3D/R3D model
 
-5. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
+6. Chollet, François. "Xception: Deep learning with depthwise separable convolutions." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1251-1258. 2017.
 
-6. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
+7. Zhang, Xiangyu, Xinyu Zhou, Mengxiao Lin, and Jian Sun. "Shufflenet: An extremely efficient convolutional neural network for mobile devices.(2017)." arXiv preprint arXiv:1707.01083 (2017).
 
-7. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
+8. Howard, Andrew G., Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. "Mobilenets: Efficient convolutional neural networks for mobile vision applications." arXiv preprint arXiv:1704.04861 (2017).
 
-8. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
+9. Qiu, Zhaofan, Ting Yao, and Tao Mei. "Learning spatio-temporal representation with pseudo-3d residual networks." In proceedings of the IEEE International Conference on Computer Vision, pp. 5533-5541. 2017.
 
      - TP: proposes computational efficient 3D CNN (and their extensions) [p3d network]
        - Decomposes 3D CNN as DD spatial filter and 1D temporal filter
@@ -427,7 +449,7 @@ tags: Papers
 
      - <embed src="https://mxahan.github.io/PDF_files/pseudo_3D.pdf" width="100%" height="850px"/>
 
-9. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
+10. Xie, Saining, Ross Girshick, Piotr Dollár, Zhuowen Tu, and Kaiming He. "Aggregated residual transformations for deep neural networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 1492-1500. 2017.
 
      - ResNeXt: highly modulated network (figure 1) [another network engineering with a very simple idea]
          - Name origin: as it adds **Next dimension: Cardinality** so it refers to ResNeXt

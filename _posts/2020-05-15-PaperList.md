@@ -144,8 +144,12 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 1. Grathwohl, Will, Kuan-Chieh Wang, Jörn-Henrik Jacobsen, David Duvenaud, Mohammad Norouzi, and Kevin Swersky. "Your Classifier is Secretly an Energy Based Model and You Should Treat it Like One." arXiv preprint arXiv:1912.03263 (2019).
 
 
-## 2018
+## 2018 and earlier
 
+1. Banerjee, A., Dhillon, I. S., Ghosh, J., Sra, S., & Ridgeway, G. (2005). Clustering on the Unit Hypersphere using von Mises-Fisher Distributions. *Journal of Machine Learning Research*, *6*(9).
+     - Mixture of vMF distribution in hyperspherical representation.  	Directional statistics
+       - Two EM algorithm to do such (soft movMF and Hard movMF)
+         - **Algo1 and Algo2 : Key contribution**
 1. Song, G., & Chai, W. (2018). Collaborative learning for deep neural networks. *Advances in neural information processing systems*, *31*.
      - TP: a novel training framework by proposing multiple head learning to same task
        - Figure 1: some design option.
@@ -213,16 +217,16 @@ We can't worry about everything and nothing. We must stay focused and broad at t
      - assume that either view of the example would be sufficient for learning if we had enough labeled data, but TP use both views together to allow inexpensive unlabeled data to augment a much smaller set of labeled examples.
      - provide a PAC-style analysis for this setting, and, more broadly, a PAC-style framework for the general problem of learning from both labeled and unlabeled data.
 1. Han, B., Yao, Q., Yu, X., Niu, G., Xu, M., Hu, W., ... & Sugiyama, M. (2018). Co-teaching: Robust training of deep neural networks with extremely noisy labels. *Advances in neural information processing systems*, *31*.
-     - Early for of swapped prediction: train be opposite networks' clean performance. 
-       - TP uses two networks to train together. (**Algorithm 1** Tells all)
-         - Motivated from co-training algorithm (Blum et. al 1998)
-       - Each network feeds forward all data and selects some data of possibly clean labels 
-       - two networks communicate with each other what data in this mini-batch should be used for training (cross update)
-         - Boosting
-       - each network back propagates the data selected by its peer network and updates itself.
-     - Related works: decoupled KD, 
-     - Experimented with noisy MNIST, CIFAR
-     - Hypothesis: NN learns the easy labels first and then go for the complex data (in between we can distinguish the noisy data)
+      - Early for of swapped prediction: train be opposite networks' clean performance. 
+        - TP uses two networks to train together. (**Algorithm 1** Tells all)
+          - Motivated from co-training algorithm (Blum et. al 1998)
+        - Each network feeds forward all data and selects some data of possibly clean labels 
+        - two networks communicate with each other what data in this mini-batch should be used for training (cross update)
+          - Boosting
+        - each network back propagates the data selected by its peer network and updates itself.
+      - Related works: decoupled KD, 
+      - Experimented with noisy MNIST, CIFAR
+      - Hypothesis: NN learns the easy labels first and then go for the complex data (in between we can distinguish the noisy data)
 1. Zhang, Y., Xiang, T., Hospedales, T. M., & Lu, H. (2018). Deep mutual learning. In *Proceedings of the IEEE conference on computer vision and pattern recognition* (pp. 4320-4328).
       - mutual learning starts with a pool of untrained students who simultaneously learn to solve the task together
         -  each student is trained with two losses: a supervised loss, and a mimicry loss (aligns each student’s class posterior with each other) [fig 1]

@@ -154,6 +154,30 @@ tags: Papers
 
 ## 2018
 
+1. Golts, A., Freedman, D., & Elad, M. (2018). Deep-energy: unsupervised training of deep neural networks. *arXiv preprint arXiv:1805.12355*.
+
+     - This work offers an unsupervised alternative that relies on the availability of task-specific energy functions, replacing the generic supervised loss
+     - Experimentations: three different tasks – seeded segmentation, image matting and single image dehazing
+
+1. Li, H., Xu, Z., Taylor, G., Studer, C., & Goldstein, T. (2018). Visualizing the loss landscape of neural nets. *Advances in neural information processing systems*, *31*.
+
+     - certain network architecture designs (e.g., skip connections) produce loss functions that train easier
+     - well-chosen training parameters (batch size, learning rate, optimizer) produce minimizers that generalize better
+       -  the reasons for these differences, and their effect on the underlying loss landscape, are not well understood
+     - TP: explore the structure of neural loss functions, and the effect of loss landscapes on generalization, using a range of visualization methods
+       -  introduce a simple **“filter normalization”** method that helps us visualize loss function curvature and make meaningful comparisons 
+       - Section 4: filter normalization
+     - Explore how network architecture affects the loss landscape, and how training parameters affect the shape of minimizers
+     -  when networks become sufficiently deep, neural loss landscapes quickly transition from nearly convex to highly chaotic, causing a dramatic drop in generalization error
+     - quantitatively measure non-convexity by calculating the smallest (most negative) eigenvalues of the Hessian around local minima, and visualizing the results as a heat map
+     - Experimentation with convolution network. 
+     - Some Insights:
+       - The effect of Network Depth: has a dramatic effect on the loss surfaces of neural networks when skip connections are not used
+       - Shortcut Connections to the Rescue: 
+       - Wide Models vs Thin Models: wider models have loss landscapes less chaotic behavior
+       - Implications for Network Initialization: loss landscapes  seem to be partitioned into a well-defined  low loss value and convex contours region, surrounded by a well-defined region of high and non-convex contours. This  may explain the importance of good initialization strategies, and also the easy training behavior of “good” architectures.
+       - Landscape Geometry Affects Generalization
+
 1. Liu, W., Lin, R., Liu, Z., Liu, L., Yu, Z., Dai, B., & Song, L. (2018). Learning towards minimum hyperspherical energy. *Advances in neural information processing systems*, *31*.
 
      - how to regularize the network to avoid undesired representation redundancy becomes an important issue
@@ -228,8 +252,12 @@ tags: Papers
 
 ## 2016 and Earlier
 
+1. Burges, C., Shaked, T., Renshaw, E., Lazier, A., Deeds, M., Hamilton, N., & Hullender, G. (2005, August). Learning to rank using gradient descent. In *Proceedings of the 22nd international conference on Machine learning* (pp. 89-96).
+     - propose a probabilistic cost function: RankNet: an implementation of these ideas using a NN to model the underlying ranking function
+1. Vapnik, V., & Izmailov, R. (2015). Learning using privileged information: similarity control and knowledge transfer. *J. Mach. Learn. Res.*, *16*(1), 2023-2049.
+     - TP provides two mechanisms to significantly accelerate the speed of Student’s learning using privileged information: (1) correction of Student’s concepts of similarity between examples, and (2) direct Teacher-Student knowledge transfer.
+       - Early form of student-teacher representation learning!!
 1. Wen, Yandong, Kaipeng Zhang, Zhifeng Li, and Yu Qiao. "A discriminative feature learning approach for deep face recognition." In European conference on computer vision, pp. 499-515. Springer, Cham, 2016.
-
      - TP: To enhance discriminative power proposes a new loss: Center loss (distance loss from center of class clusters)
        - Inter-class dispension and intra-class compactness
 
@@ -238,12 +266,10 @@ tags: Papers
      - Dataset: LFW, YTF, tasks: Face recognition and verification.
 
      - Interesting discussion section (kinda ablation study)
-
 1. Hoffer, Elad, and Nir Ailon. "Deep metric learning using triplet network." In International Workshop on Similarity-Based Pattern Recognition, pp. 84-92. Springer, Cham, 2015.
 
      - Triplet networks
 
      - Experimented on the MNIST dataset.
-
 1. Yi, Dong, Zhen Lei, Shengcai Liao, and Stan Z. Li. "Deep metric learning for person re-identification." In 2014 22nd international conference on pattern recognition, pp. 34-39. IEEE, 2014.
 

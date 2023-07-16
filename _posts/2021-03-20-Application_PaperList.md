@@ -11,8 +11,26 @@ This blog contains state of the art application and research on different applic
 - [Multiview application](#Multi-View-Application)
 - [Domain Adaptation](#Domain-Adaptation)
 
+# 2023
 
-# Multi View Application
+1. Wang, Q., Chang, Y. Y., Cai, R., Li, Z., Hariharan, B., Holynski, A., & Snavely, N. (2023). Tracking Everything Everywhere All at Once. *arXiv preprint arXiv:2306.05422*.
+   -  estimating dense and long-range motion from a video sequence
+   - complete and globally consistent motion representation: OmniMotion: allows for accurate, full-length motion estimation of every video pixels
+   -  represents a video using a quasi-3D canonical volume and performs pixel-wise tracking via bijections between local and canonical space
+     - Bijections serve as a flexible relaxation of dynamic multi-view geometry, modeling a combination of camera and scene motion
+   - Experiment: evaluations on the TAP-Vid benchmark and real-world footage
+   - Related works: sparse feature tracking and dense optical flow
+     - pairwise optical flow fails to capture motion trajectories over long temporal windows, and sparse tracking does not model all pixels
+     - two-frame/multi-frame flow, feature matching, particle flow, **neural video representation**. 
+   - a **test-time optimization approach** for estimating dense and long-range motion from a video sequence
+     -  input: a collection of frames and pairwise noisy motion estimates (e.g., optical flow fields), and uses these to solve for a complete, globally consistent motion representation for the entire video.
+   - identifies when points are occluded, and even tracks points through occlusions
+   - RQ: can we accurately track real-world motion without explicit dynamic 3D reconstruction?
+   - TP: represents the scene in a video as a canonical 3D volume that is mapped to local volumes for each frame through local-canonical bijections. 
+     - local-canonical bijections are parametrized as neural networks and capture both camera and scene motion
+     - representation is not a physically accurate 3D scene reconstruction, hence, quasi-3D representation.
+
+
 
 # Domain Adaptation
 
@@ -30,7 +48,6 @@ This blog contains state of the art application and research on different applic
              - Avoid catastrophic forgetting & Tx overfitting & Small dataset.
              - Helps improving mid and tail classes.
      - Experiment: ViViT, AVA, Kinetics, Moments in time, Something-something v2
-
 2. Xie, B., Yuan, L., Li, S., Liu, C. H., & Cheng, X. (2022). Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 8068-8078).
 
      - TP: region-based active learning approach for semantic segmentation under a domain shift (RIPU)
@@ -46,7 +63,25 @@ This blog contains state of the art application and research on different applic
            - “Pixel-based Annotating (PA)”: focus more on the labeling efficiency by selecting the center pixel within the region
        
      - Joint optimization: Pretty much like semi-supervised learning!
-     
+
+
+## 2021
+
+1. Shin, I., Kim, D. J., Cho, J. W., Woo, S., Park, K., & Kweon, I. S. (2021). Labor: Labeling only if required for domain adaptive semantic segmentation. In *Proceedings of the IEEE/CVF International Conference on Computer Vision* (pp. 8588-8598).
+   - Introduce a human-in-the-loop approach to adaptively give scarce labels to points that a UDA model is uncertain about.
+   - generate an inconsistency mask using the proposed adaptive pixel selector
+     - segment based pixel-labeling (SPL)
+     - Point-based pixel labeling (PPL)
+   - Related works: Adversarial based and Self-training based
+   - Research Gap: Self-training based DA far underperforms as 
+     - cutting out unconfident pixels and retraining with the thresholded force the model to train with only the confident pixels.  (easy)
+     - existing pseudo label generation originates from specific manually set hyperparameters causes incorrect pseudo labels
+   - key question “what is an informative pixel to label?” 
+   - Adversarial learning before self-training
+   - **Two way distillation** (two networks aggregation approach): Consistency checking
+
+
+
 ## 2020
 
 1. Yuan, Y., Chen, X., & Wang, J. (2020, August). Object-contextual representations for semantic segmentation. In European conference on computer vision (pp. 173-190). Springer, Cham.
@@ -64,17 +99,30 @@ This blog contains state of the art application and research on different applic
            - aligning distribution by divergence (i) Maximum Mean Discrepency ii) correlation alignment iii) Contrastive domain D. iv) Wasserstein
            - reconstruction
            - Adversarial
-     
+
       - Domain mapping: Image-image mapping
-     
-     
+
+
       - Normalization Statistics
-     
-     
+
+
       - Ensemble methods
-     
-     
+
+
       - Target Discriminative methods
+
+## 2019
+
+1. Zou, Y., Yu, Z., Liu, X., Kumar, B. V. K., & Wang, J. (2019). Confidence regularized self-training. In *Proceedings of the IEEE/CVF international conference on computer vision* (pp. 5982-5991).
+   - pseudo-labels can be noisy, self-training put overconfident label belief on wrong classes, leading to deviated solutions with propagated errors
+   - propose a confidence regularized self-training (CRST) framework, formulated as regularized self-training. 
+     - treats pseudo-labels as continuous latent variables jointly optimized via alternating optimization!!
+     - two types of confidence regularization: label regularization (LR) and model regularization (MR)
+       - **Extra regularizer terms with self-training**
+     - CRST-LR generates soft pseudo-labels while CRST-MR encourages the smoothness on network output.
+   - Hypothesis: one can also encourage the smoothness of output probabilities and prevent overconfident prediction in network training.
+   -  continuous CBST: where we relax the feasible space of pseudo-labels from one-hot vectors to a probability simplex
+   - Related works: Self-training, DA, SSL, Noisy label learning, Network Regularization. 
 
 ## 2016 and prior
 

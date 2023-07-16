@@ -7,7 +7,16 @@ tags: Papers
 ## 2023
 
 1. Balestriero, R., Ibrahim, M., Sobal, V., Morcos, A., Shekhar, S., Goldstein, T., ... & Goldblum, M. (2023). A cookbook of self-supervised learning. *arXiv preprint arXiv:2304.12210*.
-
+   - Origin of SSL: 
+     - information restoration: masked image prediction, colorization,  
+     - Temporal relationship in the video: 
+     - Learning spatial context: RotNet, Jigsaw
+     - Grouping similar image together: k-mean clustering, mean-shift, optimal-transport
+     - Generative Model: autoencoder, RBM, GAN
+     - Multi-view invariance: modern methods. 
+   - Deep metric learning family: SimCLR/NNCLR/Meanshift/SCL
+   - self-distillation family: BYOL/SimSIAM/DINO
+   - Canonical correlation analysis: VICReg/BarlowTwins/SWAV/W-MSE
 1. Cabannes, V., Bottou, L., Lecun, Y., & Balestriero, R. (2023). Active Self-Supervised Learning: A Few Low-Cost Relationships Are All You Need. *arXiv preprint arXiv:2303.15256*.
    - generalize and formalize this principle through Positive Active Learning (PAL) where an oracle queries semantic relationships between samples
      - unveils a theoretical learning framework beyond SSL, that can be extended to tackle supervised and semi-supervised depending on oracle
@@ -22,7 +31,6 @@ tags: Papers
      - **GEM paper of k-partitioned graphs**
        - supervised setting: C partitioned (C disconnected components)
    - direct observation that VICReg is akin to Laplacian Eigenmaps or multidimensional scaling, SimCLR is akin to Cross-entropy and BarlowTwins is akin to Canonical Correlation Analysis *[theorem 1]*
-
 1. Shwartz-Ziv, R., Balestriero, R., Kawaguchi, K., Rudner, T. G., & LeCun, Y. (2023). An Information-Theoretic Perspective on Variance-Invariance-Covariance Regularization. *arXiv preprint arXiv:2303.00633*.
 
    - Same paper of what do we maximize in SSL (paper from 2022)
@@ -1973,6 +1981,19 @@ tags: Papers
 
 ## 2022
 
+1. Chuang, C. Y., Hjelm, R. D., Wang, X., Vineet, V., Joshi, N., Torralba, A., ... & Song, Y. (2022). Robust contrastive learning against noisy views. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 16670-16681).
+
+      - CL relies on an assumption that positive pairs share certain underlying information about an instance. 
+        - But what if this assumption is violated? **CL produces suboptimal representations in the presence of noisy views**
+      - TP: propose a new contrastive loss function that is robust against noisy views (RINCE: robust InfoNCE)
+        - provide rigorous theoretical justifications by
+          - show connections to robust symmetric losses for noisy binary classification 
+          - establish a new contrastive bound for mutual information maximization based on the Wasserstein distance measure
+        -  completely modality-agnostic and a simple drop-in replacement for the InfoNCE loss
+        - the q can be thought of temperature parameter
+      - Figure 3: loss and gradient visualization. **interesting**
+      - Symmetric loss functions are robust against noisy labels in binary classification
+
 1. Balestriero, R., & LeCun, Y. (2022). Contrastive and non-contrastive self-supervised learning recover global and local spectral embedding methods. *arXiv preprint arXiv:2205.11508*.
 
       - RG: SSL theoretical foundations are limited, method-specific, and fail to provide principled design guidelines to practitioners
@@ -2072,27 +2093,27 @@ tags: Papers
 
 1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
 
-   - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
-     - CL does not learn domain-invariant features, diverging from UDA intuitions.
-     - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
-     - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
-     - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
-       - That is where it comes connect this but not to collapse them.
+    - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
+      - CL does not learn domain-invariant features, diverging from UDA intuitions.
+      - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
+      - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
+      - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
+        - That is where it comes connect this but not to collapse them.
 
-   - Assumption and definition of class domain connectivity (figure 1)
+    - Assumption and definition of class domain connectivity (figure 1)
 
-   - Connected the graph theory [section 4.2]: Good read.
-     - discusses the importance of augmentation strengths.
+    - Connected the graph theory [section 4.2]: Good read.
+      - discusses the importance of augmentation strengths.
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
 
-    - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
-      - Siamese Network with masked augmentation!!
-      - Pretext task for Network: Vision transformer [data sampling approach]
-      - Low-shot detection
-      - Loss function (cross entropy with Mean entropy maximization regularization)
-    - Joint-embedding architecture avoids reconstruction
-      - TP leverages the idea of mask-denoising while avoiding pixel and token-level reconstruction
+     - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
+       - Siamese Network with masked augmentation!!
+       - Pretext task for Network: Vision transformer [data sampling approach]
+       - Low-shot detection
+       - Loss function (cross entropy with Mean entropy maximization regularization)
+     - Joint-embedding architecture avoids reconstruction
+       - TP leverages the idea of mask-denoising while avoiding pixel and token-level reconstruction
 
 1. Karim, Nazmul, Mamshad Nayeem Rizve, Nazanin Rahnavard, Ajmal Mian, and Mubarak Shah. "UNICON: Combating Label Noise Through Uniform Selection and Contrastive Learning." arXiv preprint arXiv:2203.14542 (2022).
 

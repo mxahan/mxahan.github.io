@@ -4,6 +4,19 @@ tags: Papers
 
 # Few-Shot learning and ZSL
 
+# 2023
+
+1. Trosten, Daniel J., et al. "Hubs and Hyperspheres: Reducing Hubness and Improving Transductive Few-shot Learning with Hyperspherical Embeddings." *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*. 2023.
+   -  **RG:** FSL classifiers are prone to hubness problem: few points (hubs) occur frequently in multiple nearest neighbour lists of other points. 
+     - If a support sample is a hub, many query samples will be assigned to it regardless of their true label, resulting in low accuracy
+   - Hubness negatively impacts distance-based classification when hubs from one class appear often among the nearest neighbors of points from another class, degrading the classifier’s performance.
+   - TP: prove that hubness can be eliminated by distributing representations uniformly on the hypersphere.
+   - propose two new approaches to embed representations on the hypersphere, which optimize a tradeoff between **uniformity and local similarity preservation (LSP) on the hypersphere  –** reducing hubness while retaining class structure.
+     - leverage a decomposition of the KL divergence between representation and embedding similarities
+   - Related works: FSL, Hubness problem
+     - ZN: zero mean reduces hubness, hyperspherical Uniformity
+   - TP: Uniform Hyperspherical Structure-preserving Embeddings (noHub) and noHub with Support labels (noHub-S)
+
 ## 2021
 
 1. Chen, Da, Yuefeng Chen, Yuhong Li, Feng Mao, Yuan He, and Hui Xue. "Self-supervised learning for few-shot image classification." In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1745-1749. IEEE, 2021.
