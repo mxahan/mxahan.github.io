@@ -92,12 +92,12 @@ tags: Papers
 
 ## 2020
 
+1. Ren, J., Yu, C., Ma, X., Zhao, H., & Yi, S. (2020). Balanced meta-softmax for long-tailed visual recognition. *Advances in neural information processing systems*, *33*, 4175-4186.
+     - Balanced cross entropy loss: Equation 3 is the proposed softmax operation. weighted by each sample number. 
 1. Feng, L., Kaneko, T., Han, B., Niu, G., An, B., & Sugiyama, M. (2020, November). Learning with multiple complementary labels. In International Conference on Machine Learning (pp. 3072-3081). PMLR.
-
      - design two wrappers that decompose MCLs into many single CLs
 
      - Reverse the prediction and apply cross entropy loss.
-
 1. Boudiaf, Malik, Jérôme Rony, Imtiaz Masud Ziko, Eric Granger, Marco Pedersoli, Pablo Piantanida, and Ismail Ben Ayed. "A unifying mutual information view of metric learning: cross-entropy vs. pairwise losses." In European Conference on Computer Vision, pp. 548-564. Springer, Cham, 2020.
 
      - TP: a theoretical analysis to link the cross-entropy to several well-known and recent pairwise losses from two perspective

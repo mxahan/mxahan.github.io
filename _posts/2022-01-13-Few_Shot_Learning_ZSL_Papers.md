@@ -19,12 +19,20 @@ tags: Papers
 
 ## 2021
 
-1. Chen, Da, Yuefeng Chen, Yuhong Li, Feng Mao, Yuan He, and Hui Xue. "Self-supervised learning for few-shot image classification." In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1745-1749. IEEE, 2021.
+1. Cui, W., & Guo, Y. (2021, July). Parameterless transductive feature re-representation for few-shot learning. In *International Conference on Machine Learning* (pp. 2212-2221). PMLR.
+     -  propose a parameterless (no extra-training parameters) transductive feature re-representation framework !!  compatible with existing FSL methods, including meta-learning and fine tuning based models. 
+     - RG:
+     - Experiments:  three benchmark datasets by applying the framework to both representative meta-learning baselines and state-ofthe-art FSL methods
+     - Attention among the query samples!!
+     - section 3.2 methodology description. Attention mechanism to propagate information between them. 
+       - attention mechanism and cross matching. 
+         - Low when it accumulates similar example by attention. 
+     - what's preventing collapse?
+2. Chen, Da, Yuefeng Chen, Yuhong Li, Feng Mao, Yuan He, and Hui Xue. "Self-supervised learning for few-shot image classification." In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1745-1749. IEEE, 2021.
      - TP: apply a much larger embedding network with self-supervised learning (SSL) to incorporate with episodic task based meta-learning.
        - WTF: Pretraining and then Meta-learning!!
-
-2. Ramesh, Aditya, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever. "Zero-shot text-to-image generation." arXiv preprint arXiv:2102.12092 (2021).
-3. Dumoulin, Vincent, Neil Houlsby, Utku Evci, Xiaohua Zhai, Ross Goroshin, Sylvain Gelly, and Hugo Larochelle. "Comparing Transfer and Meta Learning Approaches on a Unified Few-Shot Classification Benchmark." arXiv preprint arXiv:2104.02638 (2021).
+3. Ramesh, Aditya, Mikhail Pavlov, Gabriel Goh, Scott Gray, Chelsea Voss, Alec Radford, Mark Chen, and Ilya Sutskever. "Zero-shot text-to-image generation." arXiv preprint arXiv:2102.12092 (2021).
+4. Dumoulin, Vincent, Neil Houlsby, Utku Evci, Xiaohua Zhai, Ross Goroshin, Sylvain Gelly, and Hugo Larochelle. "Comparing Transfer and Meta Learning Approaches on a Unified Few-Shot Classification Benchmark." arXiv preprint arXiv:2104.02638 (2021).
 
 
 

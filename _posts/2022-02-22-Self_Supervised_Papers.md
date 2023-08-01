@@ -1454,6 +1454,9 @@ tags: Papers
 1. Cui, Jiequan, Zhisheng Zhong, Shu Liu, Bei Yu, and Jiaya Jia. "Parametric contrastive learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 715-724. 2021.
 
       - Application scenario: Unbalanced classes
+        - SupCon setting
+
+      - Supervised contrastive learning. 
 
       - tackle long-tailed recognition
         - Too much **complex paper** for then.
@@ -1685,7 +1688,9 @@ tags: Papers
 
 1. Liu, Xiao, Fanjin Zhang, Zhenyu Hou, Li Mian, Zhaoyu Wang, Jing Zhang, and Jie Tang. "Self-supervised learning: Generative or contrastive." IEEE Transactions on Knowledge and Data Engineering (2021).
 
-     -  Another Survey Paper
+      -  Another Survey Paper
+      -  summarize them into three main categories according to their objectives: generative, contrastive, and generative-contrastive (adversarial).
+      -  collect related theoretical analysis on SSL to provide deeper thoughts on why self-supervised learning works
 
 1. Akbari, Hassan, Linagzhe Yuan, Rui Qian, Wei-Hong Chuang, Shih-Fu Chang, Yin Cui, and Boqing Gong. "Vatt: Transformers for multimodal self-supervised learning from raw video, audio and text." arXiv preprint arXiv:2104.11178 (2021).
 
@@ -1981,6 +1986,15 @@ tags: Papers
 
 ## 2022
 
+1. Govindarajan, H., Sidén, P., Roll, J., & Lindsten, F. (2022, September). DINO as a von Mises-Fisher mixture model. In *The Eleventh International Conference on Learning Representations*.
+
+      - DINO and its derivatives, such as iBOT, can be interpreted as a mixture model of von Mises-Fisher components. 
+      - propose DINO-vMF, that adds appropriate normalization constants when computing the cluster assignment probabilities.
+        - More stable than DINO for larger ViT-Base model. 
+        - **added one extra term (normalization of vMF distribution C_p(k)) with the dino equation: equation 6 and 7**
+          - the normalization term as it depends on the temperature and hard to predict. 
+      - mixture model is beneficial in terms of better image representations
+
 1. Chuang, C. Y., Hjelm, R. D., Wang, X., Vineet, V., Joshi, N., Torralba, A., ... & Song, Y. (2022). Robust contrastive learning against noisy views. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 16670-16681).
 
       - CL relies on an assumption that positive pairs share certain underlying information about an instance. 
@@ -2082,38 +2096,38 @@ tags: Papers
 
 1. Zhang, C., Zhang, K., Zhang, C., Pham, T. X., Yoo, C. D., & Kweon, I. S. (2022). How does simsiam avoid collapse without negative samples? a unified understanding with self-supervised contrastive learning. arXiv preprint arXiv:2203.16262.
 
-     - Refute SimSiam claims and introduce vector decomposition for analyzing the collapse based on the gradient analysis of the l2-normalized representation
-       - unified perspective on how negative samples and SimSiam alleviate collapse
+      - Refute SimSiam claims and introduce vector decomposition for analyzing the collapse based on the gradient analysis of the l2-normalized representation
+        - unified perspective on how negative samples and SimSiam alleviate collapse
 
-     - SSL methods learn an encoder with augmentation-invariant representation
+      - SSL methods learn an encoder with augmentation-invariant representation
 
-     - center vector gradient helps prevent collapse via the de-centering effect and its residual gradient achieves de-correlation which also alleviates collapse
+      - center vector gradient helps prevent collapse via the de-centering effect and its residual gradient achieves de-correlation which also alleviates collapse
 
-     - Towards simplifying the predictor we have also found that a single bias layer is sufficient for preventing collapse
+      - Towards simplifying the predictor we have also found that a single bias layer is sufficient for preventing collapse
 
 1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
 
-    - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
-      - CL does not learn domain-invariant features, diverging from UDA intuitions.
-      - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
-      - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
-      - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
-        - That is where it comes connect this but not to collapse them.
+     - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
+       - CL does not learn domain-invariant features, diverging from UDA intuitions.
+       - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
+       - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
+       - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
+         - That is where it comes connect this but not to collapse them.
 
-    - Assumption and definition of class domain connectivity (figure 1)
+     - Assumption and definition of class domain connectivity (figure 1)
 
-    - Connected the graph theory [section 4.2]: Good read.
-      - discusses the importance of augmentation strengths.
+     - Connected the graph theory [section 4.2]: Good read.
+       - discusses the importance of augmentation strengths.
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
 
-     - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
-       - Siamese Network with masked augmentation!!
-       - Pretext task for Network: Vision transformer [data sampling approach]
-       - Low-shot detection
-       - Loss function (cross entropy with Mean entropy maximization regularization)
-     - Joint-embedding architecture avoids reconstruction
-       - TP leverages the idea of mask-denoising while avoiding pixel and token-level reconstruction
+      - matches the representation of an image view containing randomly masked patches to the original unmasked image (occlusion invariant) [MSN]
+        - Siamese Network with masked augmentation!!
+        - Pretext task for Network: Vision transformer [data sampling approach]
+        - Low-shot detection
+        - Loss function (cross entropy with Mean entropy maximization regularization)
+      - Joint-embedding architecture avoids reconstruction
+        - TP leverages the idea of mask-denoising while avoiding pixel and token-level reconstruction
 
 1. Karim, Nazmul, Mamshad Nayeem Rizve, Nazanin Rahnavard, Ajmal Mian, and Mubarak Shah. "UNICON: Combating Label Noise Through Uniform Selection and Contrastive Learning." arXiv preprint arXiv:2203.14542 (2022).
 

@@ -11,6 +11,10 @@ Any suggestion regarding some new papers are highly appreciated. For some of the
 We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world. however, the papers (many papers!) are as follows
 
 ## 2022
+1. Nguyen, T. T., Huynh, T. T., Nguyen, P. L., Liew, A. W. C., Yin, H., & Nguyen, Q. V. H. (2022). A survey of machine unlearning. *arXiv preprint arXiv:2209.02299*.
+   - a comprehensive examination of machine unlearning’s concepts, scenarios, methods, and applications.
+   -  comprehensive resource for researchers and practitioners seeking an introduction to machine unlearning and its formulations, design criteria, removal requests, algorithms, and applications
+   - highlight the key findings, current trends, and new research areas that have not yet featured the use of machine unlearning but could benefit
 1. Soviany, P., Ionescu, R. T., Rota, P., & Sebe, N. (2022). Curriculum learning: A survey. *International Journal of Computer Vision*, *130*(6), 1526-1565.
    - learning models in a meaningful order, from the easy samples to the hard ones instead of random shuffling.
    - Aim: finding a way to rank the samples from easy to hard,  the right pacing function for introducing more difficult data

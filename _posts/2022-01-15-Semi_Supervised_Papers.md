@@ -6,7 +6,14 @@ tags: Papers
 
 ## 2022
 
-1. Yang, F., Wu, K., Zhang, S., Jiang, G., Liu, Y., Zheng, F., ... & Zeng, L. (2022). Class-aware contrastive semi-supervised learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 14421-14430).
+1. Tan, C., Gao, Z., Wu, L., Li, S., & Li, S. Z. (2022). Hyperspherical consistency regularization. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 7244-7255).
+   - Utilize both contrastive learning and supervised learning
+   - Proposes an kind of consistency loss for prediction heads (HCR) Hyperspherical consistency regularization. 
+     - Maximize agreement between classification and projection layer for two samples
+       - BCE setting to maximize their agreement (Eq 3). 
+     - Joint optimization with other losses
+   - Theory: connection of euclidean distance distribution of the uniformly selected samples in the hypersphere. 
+2. Yang, F., Wu, K., Zhang, S., Jiang, G., Liu, Y., Zheng, F., ... & Zeng, L. (2022). Class-aware contrastive semi-supervised learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 14421-14430).
    -  Confirmation Bias of Pseudo-labeling based approaches and worsening by out-of-distribution data
    - TP: Joint optimization for three losses (sup, modified pseudo-label and modified CL)
    - TP:  Class-aware Contrastive Semi-Supervised Learning (CCSSL): a drop-in helper to improve the pseudo-label quality and robustness 
@@ -17,16 +24,16 @@ tags: Papers
    - Framework: Data Augmentation, Encoder, Semi-Supervised Module (Pseudo-label based approach), Class-Aware CL
      - Class-aware CL: SCL and reweight. 
        - Key modification  in equation 8: takes multiple positives from the same-class set and high confidency unlabeled data. 
-2. Verma, V., Kawaguchi, K., Lamb, A., Kannala, J., Solin, A., Bengio, Y., & Lopez-Paz, D. (2022). Interpolation consistency training for semi-supervised learning. *Neural Networks*, *145*, 90-106.
+3. Verma, V., Kawaguchi, K., Lamb, A., Kannala, J., Solin, A., Bengio, Y., & Lopez-Paz, D. (2022). Interpolation consistency training for semi-supervised learning. *Neural Networks*, *145*, 90-106.
    - Interpolation Consistency Training (ICT), a simple and computation efficient algorithm for semi-supervised learning
      - encourages the prediction at an interpolation of unlabeled points to be consistent with the interpolation of the predictions at those points. 
      - MixUp for the unlabeled data!!
      - Figure 2 summarizes the approaches. 
-3. Xia, J., Tan, C., Wu, L., Xu, Y., & Li, S. Z. (2022, May). OT Cleaner: Label Correction as Optimal Transport. In *ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)* (pp. 3953-3957). IEEE.
+4. Xia, J., Tan, C., Wu, L., Xu, Y., & Li, S. Z. (2022, May). OT Cleaner: Label Correction as Optimal Transport. In *ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)* (pp. 3953-3957). IEEE.
    - methods to fix the noisy label problem
      - Finds the clean labels and re-configure the labels with low confidences. 
      - matches the distribution via SK algorithm
-4. Xu, Y., Wei, F., Sun, X., Yang, C., Shen, Y., Dai, B., ... & Lin, S. (2022). Cross-model pseudo-labeling for semi-supervised action recognition. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 2959-2968).
+5. Xu, Y., Wei, F., Sun, X., Yang, C., Shen, Y., Dai, B., ... & Lin, S. (2022). Cross-model pseudo-labeling for semi-supervised action recognition. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 2959-2968).
    - Swapped prediciton approaches utilizing two network primary (F) and auxiliary (A)
    - Very easy setting and loss [equation 6]
      - Two different augmentation and swapped prediction using two different network
@@ -192,8 +199,13 @@ tags: Papers
 
 ## 2019
 
-1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
+1. Sarfraz, S., Sharma, V., & Stiefelhagen, R. (2019). Efficient parameter-free clustering using first neighbor relations. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 8934-8943).
+     - FINCH methods: equation 1 is the key	
+       - Cluster by nearest 1 neighborhood
+       - Hierarchical clustering: first the 1-nearest neighbor then merge them to form new points and then again clustering (easy-pesy)
+       - Euclidean distance based clustering.
 
+1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
      - Pretext task of rotation angle prediction!!
        - Rotation, invariant across augmentation
 
