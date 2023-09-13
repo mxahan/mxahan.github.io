@@ -298,7 +298,14 @@ tags: Papers
 ## 2019
 
 
-1. Wu, J., Long, K., Wang, F., Qian, C., Li, C., Lin, Z., & Zha, H. (2019). Deep comprehensive correlation mining for image clustering. In *Proceedings of the IEEE/CVF International Conference on Computer Vision* (pp. 8150-8159).
+1. Kang, B., Xie, S., Rohrbach, M., Yan, Z., Gordo, A., Feng, J., & Kalantidis, Y. (2019). Decoupling representation and classifier for long-tailed recognition. *arXiv preprint arXiv:1910.09217*.
+
+     - decouple the learning procedure into representation learning and classification, and systematically explore how different balancing strategies affect them for long-tailed recognition
+       - Findings (1) data imbalance might not be an issue in learning high-quality representations; (2) with representations learned with the simplest instance-balanced (natural) sampling, achieve strong long-tailed recognition ability by adjusting only the classifier.
+     - common long-tailed benchmarks like ImageNet-LT, Places-LT and iNaturalist (achieve sota with decoupling representation and classifier)
+     - Approach: first train models to learn representations with different sampling strategies (standard instance-based sampling, class-balanced sampling and their mixture). Next, we study three different basic approaches to obtain a classifier with balanced decision boundaries, on top of the learned representations. (re-training the parametric linear classifier in a class-balancing manner (i.e., re-sampling);  non-parametric nearest class mean classifier, normalizing the classifier weights, which adjusts the weight magnitude directly to be more balanced by adding a temperature to modulate the normalization procedure.
+
+2. Wu, J., Long, K., Wang, F., Qian, C., Li, C., Lin, Z., & Zha, H. (2019). Deep comprehensive correlation mining for image clustering. In *Proceedings of the IEEE/CVF International Conference on Computer Vision* (pp. 8150-8159).
 
    - TP DCCM
    - incorporate other (three??) useful correlation! (as traditional approaches only utilizes the sample correlation)
@@ -310,7 +317,7 @@ tags: Papers
      - Pseudo-graph supervision: Pairwise matching (contrastive loss)
      - Pseudo-label supervision: k-label partition and supervision (e.g. sinkhorn-knopp, knn)
 
-2. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Temporal cycle-consistency learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1801-1810. 2019.
+3. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "Temporal cycle-consistency learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1801-1810. 2019.
 
      - Temporal video alignment problem: the task of finding correspondences across multiple videos despite many factors of variation
      - TP: Temporal cycle consistency losses (complementary to other methods [TCN, shuffle and learn])
@@ -322,38 +329,38 @@ tags: Papers
 
      - <embed src="https://mxahan.github.io/PDF_files/Temporal_consistency.pdf" width="100%" height="850px"/>
 
-3. Li, Xueting, Sifei Liu, Shalini De Mello, Xiaolong Wang, Jan Kautz, and Ming-Hsuan Yang. "Joint-task self-supervised learning for temporal correspondence." arXiv preprint arXiv:1909.11895 (2019).
+4. Li, Xueting, Sifei Liu, Shalini De Mello, Xiaolong Wang, Jan Kautz, and Ming-Hsuan Yang. "Joint-task self-supervised learning for temporal correspondence." arXiv preprint arXiv:1909.11895 (2019).
 
-4. Xie, Qizhe, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le. "Unsupervised data augmentation for consistency training." arXiv preprint arXiv:1904.12848 (2019).
+5. Xie, Qizhe, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le. "Unsupervised data augmentation for consistency training." arXiv preprint arXiv:1904.12848 (2019).
 
      - TP: how to effectively noise unlabeled examples (1) and importance of advanced data augmentation (2)
        - Investigate the role of noise injection and advanced data augmentation
        - Proposes better data augmentation in consistency training: Unsupervised Data Augmentation (UDA)
        - Experiments with vision and language tasks
-     
+
      - Bunch of experiment with six language tasks and three vision tasks.
-     
+
      -   Consistency training as regularization.
-     
+
      -  UDA: Augment unlabeled data!! and quality of the noise for augmentations.
-     
+
      -  Noise types: Valid noise, Diverse noise, and Targeted Inductive biases
-     
+
      -  Augmentation types: RandAugment for image, backtranslating the language
-     
+
      - Training techniques: confidence based masking, Sharpening Predictions, Domain relevance data filtering.
-     
+
      - Interesting graph comparison under three assumption.
-     
+
      - <embed src="https://mxahan.github.io/PDF_files/Unsup_DA.pdf" width="100%" height="850px"/>
 
-5. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
+6. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
-6. Alwassel, Humam, Dhruv Mahajan, Bruno Korbar, Lorenzo Torresani, Bernard Ghanem, and Du Tran. "Self-supervised learning by cross-modal audio-video clustering." arXiv preprint arXiv:1911.12667 (2019).
+7. Alwassel, Humam, Dhruv Mahajan, Bruno Korbar, Lorenzo Torresani, Bernard Ghanem, and Du Tran. "Self-supervised learning by cross-modal audio-video clustering." arXiv preprint arXiv:1911.12667 (2019).
 
-7. Sun, Chen, Fabien Baradel, Kevin Murphy, and Cordelia Schmid. "Learning video representations using contrastive bidirectional transformer." arXiv preprint arXiv:1906.05743 (2019).
+8. Sun, Chen, Fabien Baradel, Kevin Murphy, and Cordelia Schmid. "Learning video representations using contrastive bidirectional transformer." arXiv preprint arXiv:1906.05743 (2019).
 
-8. Han, Tengda, Weidi Xie, and Andrew Zisserman. "Video representation learning by dense predictive coding." In Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops, pp. 0-0. 2019.
+9. Han, Tengda, Weidi Xie, and Andrew Zisserman. "Video representation learning by dense predictive coding." In Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops, pp. 0-0. 2019.
 
    - Self-supervised AR (DPC)
      - Learn dense coding of spatio-temporal blocks by predicting future frames (decrease with time!)
@@ -367,45 +374,45 @@ tags: Papers
 
    - Section 3.1 and 3.2 are core (contrastive equation - 5)
 
-9. Ye, Mang, Xu Zhang, Pong C. Yuen, and Shih-Fu Chang. "Unsupervised embedding learning via invariant and spreading instance feature." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6210-6219. 2019.
+10. Ye, Mang, Xu Zhang, Pong C. Yuen, and Shih-Fu Chang. "Unsupervised embedding learning via invariant and spreading instance feature." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 6210-6219. 2019.
 
    -  Contrastive idea but uses siamese network.
 
-10. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
+11. Bachman, Philip, R. Devon Hjelm, and William Buchwalter. "Learning representations by maximizing mutual information across views." arXiv preprint arXiv:1906.00910 (2019).
 
-       - Multiple view of shared context
-           - Why MI (analogous to human representation, How??) - same understanding regardless of view
-             - Whats the problem with others !!
-    
-    - Experimented with Imagenet
-        - Extension of local DIM in 3 ways (this paper calls it - augmented multi-scale DIM (AMDIM))
-             - Predicts features for independently-augmented views
-             - predicts features across multiple views
-             - Uses more powerful encoder 
-    - Methods relevance: Local DIM, NCE, Efficient NCE computation, Data Augmentation, Multi-scale MI, Encoder, mixture based representation
+         - Multiple view of shared context
+             - Why MI (analogous to human representation, How??) - same understanding regardless of view
+               - Whats the problem with others !!
 
-11. Goyal, Priya, Dhruv Mahajan, Abhinav Gupta, and Ishan Misra. "Scaling and benchmarking self-supervised visual representation learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6391-6400. 2019.
+      - Experimented with Imagenet
+          - Extension of local DIM in 3 ways (this paper calls it - augmented multi-scale DIM (AMDIM))
+               - Predicts features for independently-augmented views
+               - predicts features across multiple views
+               - Uses more powerful encoder 
+      - Methods relevance: Local DIM, NCE, Efficient NCE computation, Data Augmentation, Multi-scale MI, Encoder, mixture based representation
 
-12. Chen, Xinlei, Haoqi Fan, Ross Girshick, and Kaiming He. "Improved baselines with momentum contrastive learning." arXiv preprint arXiv:2003.04297 (2020).
+12. Goyal, Priya, Dhruv Mahajan, Abhinav Gupta, and Ishan Misra. "Scaling and benchmarking self-supervised visual representation learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6391-6400. 2019.
 
-13. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive multiview coding." arXiv preprint arXiv:1906.05849 (2019).
+13. Chen, Xinlei, Haoqi Fan, Ross Girshick, and Kaiming He. "Improved baselines with momentum contrastive learning." arXiv preprint arXiv:2003.04297 (2020).
 
-    - Find the invariant representation
+14. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive multiview coding." arXiv preprint arXiv:1906.05849 (2019).
 
-    - Multiple view of objects (image) (CMC) - multisensor view or same object!!]
-      - Same object but different sensors (positive keys)
-      - Different object same sensors (negative keys)
-      - Experiment: ImageNEt, STL-10, two views, DIV2K cropped images
+      - Find the invariant representation
 
-    - Positive pairs (augmentation)
+      - Multiple view of objects (image) (CMC) - multisensor view or same object!!]
+        - Same object but different sensors (positive keys)
+        - Different object same sensors (negative keys)
+        - Experiment: ImageNEt, STL-10, two views, DIV2K cropped images
 
-    - Follow-up of Contrastive Predictive coding (no RNN but more generalized)
+      - Positive pairs (augmentation)
 
-    - Compared with baseline: cross-view prediction!!
+      - Follow-up of Contrastive Predictive coding (no RNN but more generalized)
 
-    - Interesting math: Section 3 and experiment 4
-      - Mutual information lower bound Log(k = negative samples)- L<sub>contrastive</sub>
-        - Memory bank implementation
+      - Compared with baseline: cross-view prediction!!
+
+      - Interesting math: Section 3 and experiment 4
+        - Mutual information lower bound Log(k = negative samples)- L<sub>contrastive</sub>
+          - Memory bank implementation
 
 15. Zhuang, Chengxu, Alex Lin Zhai, and Daniel Yamins. "Local aggregation for unsupervised learning of visual embeddings." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 6002-6012. 2019.
 
@@ -415,67 +422,75 @@ tags: Papers
 
 18. Tian, Yonglong, Dilip Krishnan, and Phillip Isola. "Contrastive representation distillation." arXiv preprint arXiv:1910.10699 (2019).
 
-    - Missed structural knowledge of the teacher network!!
+      - Missed structural knowledge of the teacher network!!
 
-    - Cross modal distillation!!
-        - KD -all dimension are independent (intro 1.2)
-          - Capture the correlation/higher-order dependencies in the representation (how??).
-          - Maximize MI between teacher and student.
-    
-    - Three scenario considered [fig 1]
-    
-    - KD and representation learning connection (!!)
-    
-    - large temperature increases entropy  [look into the equation! easy-pesy]
-    
-    - interesting proof and section 3.1 [great!]
-    
-    - Student takes query - matches with positive keys from teacher and contrast with negative keys from the teacher network.
-    
-    - Equation 20 is cross entropy (stupid notation)
-    
-    - Key contribution: New loss function: 3.4 eq21
-    
-    - <embed src="https://mxahan.github.io/PDF_files/contrastive_representation_distillation.pdf" width="100%" height="850px"/>
+      - Cross modal distillation!!
+          - KD -all dimension are independent (intro 1.2)
+            - Capture the correlation/higher-order dependencies in the representation (how??).
+            - Maximize MI between teacher and student.
+
+      - Three scenario considered [fig 1]
+
+      - KD and representation learning connection (!!)
+
+      - large temperature increases entropy  [look into the equation! easy-pesy]
+
+      - interesting proof and section 3.1 [great!]
+
+      - Student takes query - matches with positive keys from teacher and contrast with negative keys from the teacher network.
+
+      - Equation 20 is cross entropy (stupid notation)
+
+      - Key contribution: New loss function: 3.4 eq21
+
+      - <embed src="https://mxahan.github.io/PDF_files/contrastive_representation_distillation.pdf" width="100%" height="850px"/>
 
 19. Saunshi, Nikunj, Orestis Plevrakis, Sanjeev Arora, Mikhail Khodak, and Hrishikesh Khandeparkar. "A theoretical analysis of contrastive unsupervised representation learning." In International Conference on Machine Learning, pp. 5628-5637. 2019.
 
-      - present a framework for analyzing CL (is there any previous?)
-        - introduce latent class!! shows generalization bound.
-
-      - Unsupervised representation learning
-
-      - TP: notion of latent classes (downstream tasks are subset of latent classes), rademacher complexity of the architecture! (limitation of negative sampling), extension!
-      - CL gives representation learning with plentiful labeled data! TP asks this question.
-      - Theoretical results to include in the works.
-
-        - <embed src="https://mxahan.github.io/PDF_files/theory_cl.pdf" width="100%" height="850px"/>
+        - present a framework for analyzing CL (is there any previous?)
+          - introduce latent class!! shows generalization bound.
+        
+        - Unsupervised representation learning
+        
+        - TP: notion of latent classes (downstream tasks are subset of latent classes), rademacher complexity of the architecture! (limitation of negative sampling), extension!
+        - CL gives representation learning with plentiful labeled data! TP asks this question.
+        - Theoretical results to include in the works.
+        
+          - <embed src="https://mxahan.github.io/PDF_files/theory_cl.pdf" width="100%" height="850px"/>
 
 20. Anand, Ankesh, Evan Racah, Sherjil Ozair, Yoshua Bengio, Marc-Alexandre Côté, and R. Devon Hjelm. "Unsupervised state representation learning in atari." arXiv preprint arXiv:1906.08226 (2019).
 
 21. Kolesnikov, Alexander, Xiaohua Zhai, and Lucas Beyer. "Revisiting self-supervised visual representation learning." In Proceedings of the IEEE conference on Computer Vision and Pattern Recognition, pp. 1920-1929. 2019.
 
-    - Insight about the network used for learning [experimentation]
+      - Insight about the network used for learning [experimentation]
 
-    - Challenges the choice of different CNNs as network for vision tasks.
+      - Challenges the choice of different CNNs as network for vision tasks.
 
-    - Experimentation with different architectures [ResNet, RevNet, VGG] and their widths and depths.
+      - Experimentation with different architectures [ResNet, RevNet, VGG] and their widths and depths.
 
-    - key findings : hat (1) lessons from architecture design in the fully supervised setting do not necessarily translate to the self-supervised setting; (2) contrary to previously popular architectures like AlexNet, in residual architectures, the final prelogits layer consistently results in the best performance; (3) the widening factor of CNNs has a drastic effect on performance of self-supervised techniques and (4) SGD training of linear logistic regression may require very long time to converge
+      - key findings : hat (1) lessons from architecture design in the fully supervised setting do not necessarily translate to the self-supervised setting; (2) contrary to previously popular architectures like AlexNet, in residual architectures, the final prelogits layer consistently results in the best performance; (3) the widening factor of CNNs has a drastic effect on performance of self-supervised techniques and (4) SGD training of linear logistic regression may require very long time to converge
 
-    - pretext tasks for self-supervised learning should not be considered in isolation, but in conjunction with underlying architectures.
+      - pretext tasks for self-supervised learning should not be considered in isolation, but in conjunction with underlying architectures.
 
 22. Hendrycks, Dan, Mantas Mazeika, Saurav Kadavath, and Dawn Song. "Using self-supervised learning can improve model robustness and uncertainty." arXiv preprint arXiv:1906.12340 (2019).
 
-    - TP: self-supervision can benefit robustness in a variety of ways, including robustness to adversarial examples, label corruption, and common input corruptions (how is this new!!)
-      - Interesting problem and experiment setup for each of the problems
+      - TP: self-supervision can benefit robustness in a variety of ways, including robustness to adversarial examples, label corruption, and common input corruptions (how is this new!!)
+        - Interesting problem and experiment setup for each of the problems
 
-    - Besides a collection of techniques allowing models to catch up to full supervision, SSL is used two in conjunction of providing strong regularization that improves robustness and uncertainty estimation
+      - Besides a collection of techniques allowing models to catch up to full supervision, SSL is used two in conjunction of providing strong regularization that improves robustness and uncertainty estimation
 
 
 ## 2020
 
-1. Wei, C., Wang, H., Shen, W., & Yuille, A. (2020). Co2: Consistent contrast for unsupervised visual representation learning. *arXiv preprint arXiv:2010.02217*.
+1. Zhan, X., Xie, J., Liu, Z., Ong, Y. S., & Loy, C. C. (2020). Online deep clustering for unsupervised representation learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 6688-6697).
+
+   - RG: training schedule alternating between feature clustering and network update leads to unstable representations learning.
+   - propose Online Deep Clustering (ODC) that performs clustering and network update simultaneously rather than alternatingly??
+     -  **insight** : the cluster centroids should evolve steadily in keeping the classifier stably updated
+     - design and maintain two dynamic memory modules (i) samples memory to store samples’ labels and features, (ii) centroids memory for centroids evolution
+     -  break down the abrupt global clustering into steady memory update and batchwise label re-assignment. The process is integrated into network update iterations. 
+
+2. Wei, C., Wang, H., Shen, W., & Yuille, A. (2020). Co2: Consistent contrast for unsupervised visual representation learning. *arXiv preprint arXiv:2010.02217*.
 
    - introduces a consistency regularization term into the current contrastive learning framework.
      - addressing the problem of treating all as equal negatives (class collision problem)
@@ -484,7 +499,7 @@ tags: Papers
    - takes the corresponding similarity of a positive crop as a pseudo label, and encourages consistency between these two similarities
    -  view this instance discrimination task from the perspective of semi-supervised learning. 
 
-2. Cai, T. T., Frankle, J., Schwab, D. J., & Morcos, A. S. (2020). Are all negatives created equal in contrastive instance discrimination?. arXiv preprint arXiv:2010.06682.
+3. Cai, T. T., Frankle, J., Schwab, D. J., & Morcos, A. S. (2020). Are all negatives created equal in contrastive instance discrimination?. arXiv preprint arXiv:2010.06682.
 
    - divided negatives by their difficulty for a given query
      - studied which difficulty ranges were most important for learning useful representations (how?)
@@ -501,7 +516,7 @@ tags: Papers
            - only issue for cosine distance.
          - Some negatives are consistently easy or hard across queries.
 
-3. Sohoni, Nimit, Jared Dunnmon, Geoffrey Angus, Albert Gu, and Christopher Ré. "No subclass left behind: Fine-grained robustness in coarse-grained classification problems." Advances in Neural Information Processing Systems 33 (2020): 19339-19352.
+4. Sohoni, Nimit, Jared Dunnmon, Geoffrey Angus, Albert Gu, and Christopher Ré. "No subclass left behind: Fine-grained robustness in coarse-grained classification problems." Advances in Neural Information Processing Systems 33 (2020): 19339-19352.
 
      - Hidden stratification: unavailable subclass labels
          - TP: GEORGE, a method to both measure and mitigate hidden stratification even when subclass labels are unknown.
@@ -516,7 +531,7 @@ tags: Papers
 
       - <embed src="https://mxahan.github.io/PDF_files/No_subclass_left_behind.pdf" width="100%" height="850px"/>
 
-3. Patacchiola, Massimiliano, and Amos Storkey. "Self-supervised relational reasoning for representation learning." arXiv preprint arXiv:2006.05849 (2020).
+5. Patacchiola, Massimiliano, and Amos Storkey. "Self-supervised relational reasoning for representation learning." arXiv preprint arXiv:2006.05849 (2020).
 
      - Relation network head instead of direct contrastivie loss [architectural][Pretext task design]
          - differentiate from previous one in several ways:
@@ -525,12 +540,12 @@ tags: Papers
            - (iii) in previous work training the relation head was the main goal, here is a pretext task for learning useful representations in the underlying backbone
      - Related works: pretext task, metric learning, CL, pseudo labeling, InfoMax,
       - Intra-inter reasoning increases mutual information.
-     
+
       - Easy-pesy loss functions to minimize (care about the sharping of the weight of the loss function!)
 
-4. Huang, Zhenyu, Peng Hu, Joey Tianyi Zhou, Jiancheng Lv, and Xi Peng. "Partially view-aligned clustering." Advances in Neural Information Processing Systems 33 (2020).
+6. Huang, Zhenyu, Peng Hu, Joey Tianyi Zhou, Jiancheng Lv, and Xi Peng. "Partially view-aligned clustering." Advances in Neural Information Processing Systems 33 (2020).
 
-5. Zhu, Benjin, Junqiang Huang, Zeming Li, Xiangyu Zhang, and Jian Sun. "EqCo: Equivalent Rules for Self-supervised Contrastive Learning." arXiv preprint arXiv:2010.01929 (2020).
+7. Zhu, Benjin, Junqiang Huang, Zeming Li, Xiangyu Zhang, and Jian Sun. "EqCo: Equivalent Rules for Self-supervised Contrastive Learning." arXiv preprint arXiv:2010.01929 (2020).
 
      - Theoretical paper: Challenges the large number of negative samples [algorithmic]
        - Though more negative pairs are usually reported to derive better results, Interpretation: it may be because the hyper-parameters in the loss are not set to the optimum according to different numbers of keys respectively
@@ -543,10 +558,10 @@ tags: Papers
            - linear scaling rule needs to be applied corresponding to N rather than K
        
      - SiMo: cancel the memory bank as rely on a few negative samples per batch. Instead, use the momentum encoder to extract both positive and negative key embeddings from the current batch.
-     
+
      - <embed src="https://mxahan.github.io/PDF_files/EqCo.pdf" width="100%" height="850px"/>
-     
-6. Miech, Antoine, Jean-Baptiste Alayrac, Lucas Smaira, Ivan Laptev, Josef Sivic, and Andrew Zisserman. "End-to-end learning of visual representations from uncurated instructional videos." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9879-9889. 2020.
+
+8. Miech, Antoine, Jean-Baptiste Alayrac, Lucas Smaira, Ivan Laptev, Josef Sivic, and Andrew Zisserman. "End-to-end learning of visual representations from uncurated instructional videos." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 9879-9889. 2020.
 
      - Experiments with Dataset: HowTo100M (task progression) [video with narration]
 
@@ -562,7 +577,7 @@ tags: Papers
 
      - Experiments: Network: 3D CNN
 
-7. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
+9. Xie, Zhenda, Yutong Lin, Zheng Zhang, Yue Cao, Stephen Lin, and Han Hu. "Propagate Yourself: Exploring Pixel-Level Consistency for Unsupervised Visual Representation Learning." arXiv preprint arXiv:2011.10043 (2020).
 
      - Argue that instance level CL reaches suboptimal representation!
        - Can we go better.
@@ -1310,6 +1325,21 @@ tags: Papers
 
 ## 2021
 
+1. Li, T., Wang, L., & Wu, G. (2021). Self supervision to distillation for long-tailed visual recognition. In *Proceedings of the IEEE/CVF international conference on computer vision* (pp. 630-639).
+
+      - address the long-tailed classes by soft-label (self) distillation based fine-tuning. 
+        - Existing alternatives: class re-balanced training (may cause overfit), multistage training
+      - Figure 1: Interesting perspective of soft-labeling and class re-balanced training. 
+      - Method: ssl feature learning, intermediate soft-label generation (smoothening labels), Joint training with self-distillation (both hard and soft labeling) [eq 5]. 
+      - Experimented dataset: ImageNet-LT, CIFAR100-LT, and iNaturalist 2018
+
+1. Liu, H., HaoChen, J. Z., Gaidon, A., & Ma, T. (2021). Self-supervised learning is more robust to dataset imbalance. *arXiv preprint arXiv:2110.05025*.
+
+   - off-the-shelf selfsupervised representations are already more robust to class imbalance
+   - towards understanding the robustness of SSL, hypothesize that SSL learns richer features from frequent data: it may learn label-irrelevant-but-transferable features that help classify the rare classes and downstream tasks
+     - empirically validate this intuition by visualizing the features on a semi-synthetic dataset
+   - devise a re-weighted regularization technique that consistently improves the SSL representation quality on imbalanced datasets
+
 1. Zhang, S., Zhu, F., Yan, J., Zhao, R., & Yang, X. (2021). Zero-cl: Instance and feature decorrelation for negative-free symmetric contrastive learning. In *International Conference on Learning Representations*.
 
    -  To prevent collapse, TP develop two novel methods by decorrelating on different dimensions on the instance *embedding stacking matrix*, i.e., Instance-wise (ICL) and Feature-wise (FCL) Contrastive Learning
@@ -1429,20 +1459,20 @@ tags: Papers
 
 1. Nan, Guoshun, Rui Qiao, Yao Xiao, Jun Liu, Sicong Leng, Hao Zhang, and Wei Lu. "Interventional video grounding with dual contrastive learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 2765-2775. 2021.
 
-     - [Video Understanding]
+      - [Video Understanding]
 
-     - Gap: models may suffer from spurious correlations between the language and video features due to the dataset selection bias
+      - Gap: models may suffer from spurious correlations between the language and video features due to the dataset selection bias
 
-     - TP: used some form of causal inference (Interventional video grounding) based on Structural causal model
+      - TP: used some form of causal inference (Interventional video grounding) based on Structural causal model
 
-     - a dual CL approach (DCL) to better align the text and video i) query and video clips, and the ii) between start/end frames of a target moment and the others within a video [figure 2 - trivial approach]
+      - a dual CL approach (DCL) to better align the text and video i) query and video clips, and the ii) between start/end frames of a target moment and the others within a video [figure 2 - trivial approach]
 
 1. Wang, Yu, Jingyang Lin, Jingjing Zou, Yingwei Pan, Ting Yao, and Tao Mei. "Improving Self-supervised Learning with Automated Unsupervised Outlier Arbitration." Advances in Neural Information Processing Systems 34 (2021).
-     - Chanllanges the instance label DA for selfsupervised
-       - argue that the existing DA for positive views naturally introduces out-of-distribution (OOD) samples that undermine the downstream tasks.
-       - introduce a lightweight latent variable model UOTA, targeting the view sampling issue for SSL
-       - adaptively searches for the most important sampling region to produce views, and provides viable choice for outlier-robust SSL
-       - explore the potential OOD noise issue for SSL approaches.
+      - Chanllanges the instance label DA for selfsupervised
+        - argue that the existing DA for positive views naturally introduces out-of-distribution (OOD) samples that undermine the downstream tasks.
+        - introduce a lightweight latent variable model UOTA, targeting the view sampling issue for SSL
+        - adaptively searches for the most important sampling region to produce views, and provides viable choice for outlier-robust SSL
+        - explore the potential OOD noise issue for SSL approaches.
 
 1. Zimmermann, Roland S., Yash Sharma, Steffen Schneider, Matthias Bethge, and Wieland Brendel. "Contrastive learning inverts the data generating process." In International Conference on Machine Learning, pp. 12979-12990. PMLR, 2021.
 
@@ -1526,25 +1556,25 @@ tags: Papers
 
 1. Jahanian, Ali, Xavier Puig, Yonglong Tian, and Phillip Isola. "Generative models as a data source for multiview representation learning." arXiv preprint arXiv:2106.05258 (2021).
 
-     - RQ: why bother using dataset when you have generator!! (used no real-data)
+      - RQ: why bother using dataset when you have generator!! (used no real-data)
 
-     - off-the-shelf image generator to get multiview data
-       - Requires careful sampling and training method (!!!)
-         - *Hypothesis*: Generator (a organized copy of compressed dataset)
+      - off-the-shelf image generator to get multiview data
+        - Requires careful sampling and training method (!!!)
+          - *Hypothesis*: Generator (a organized copy of compressed dataset)
 
-     - We provide an exploratory study of representation learning in the setting of synthetic data sampled from pre-trained generative models:
+      - We provide an exploratory study of representation learning in the setting of synthetic data sampled from pre-trained generative models:
 
-     -  **Assumption** Generator is able to get a good multiview data (sufficient capable generator)
+      -  **Assumption** Generator is able to get a good multiview data (sufficient capable generator)
 
-     - **Findings**: i) CL can be naturally extended to learning from generative samples (different “views” of the data are created via transformations in the model’s latent space) ii) further can be combined with data augmentation iii) sub-logarithmic performance improvement with generator  
+      - **Findings**: i) CL can be naturally extended to learning from generative samples (different “views” of the data are created via transformations in the model’s latent space) ii) further can be combined with data augmentation iii) sub-logarithmic performance improvement with generator  
 
-     - Interesting related work section
+      - Interesting related work section
 
-     - Figure 1: summary
+      - Figure 1: summary
 
-     - Key analysis on how to make latent tx to get multiview data. i) gaussian approaches, ii) steered latent views
+      - Key analysis on how to make latent tx to get multiview data. i) gaussian approaches, ii) steered latent views
 
-     - <embed src="https://mxahan.github.io/PDF_files/GM_as_data_source.pdf" width="100%" height="850px"/>
+      - <embed src="https://mxahan.github.io/PDF_files/GM_as_data_source.pdf" width="100%" height="850px"/>
 
 1. Islam, Ashraful, Chun-Fu Richard Chen, Rameswar Panda, Leonid Karlinsky, Richard Radke, and Rogerio Feris. "A broad study on the transferability of visual representations with contrastive learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 8845-8855. 2021.
 
@@ -1567,14 +1597,14 @@ tags: Papers
 
 1. Fu, Daniel Yang, Mayee F. Chen, Michael Zhang, Kayvon Fatahalian, and Christopher Ré. "The Details Matter: Preventing Class Collapse in Supervised Contrastive Learning." (2021).
 
-     - modification to supervised contrastive (SupCon) loss that prevents class collapse (keeps strata) by uniformly pulling apart individual points from the same class.
-       - SupCon losses information. (collapse the strata information), not good for the downstream tasks.
-         - Enforces one embedding per class: a regular simplex inscribed in hypersphere.
-       - Proposes L_{spread} loss [a slight modification of L_{sc}] to preserve the strata in embedding space.
+      - modification to supervised contrastive (SupCon) loss that prevents class collapse (keeps strata) by uniformly pulling apart individual points from the same class.
+        - SupCon losses information. (collapse the strata information), not good for the downstream tasks.
+          - Enforces one embedding per class: a regular simplex inscribed in hypersphere.
+        - Proposes L_{spread} loss [a slight modification of L_{sc}] to preserve the strata in embedding space.
 
-     - Hypothesis: Rarer and distinct strata are further away from common strata. (nice idea, in a unsupervised setup what is even important??) : has entropy flavour.
+      - Hypothesis: Rarer and distinct strata are further away from common strata. (nice idea, in a unsupervised setup what is even important??) : has entropy flavour.
 
-     - <embed src="https://mxahan.github.io/PDF_files/Details_matter_supcon.pdf" width="100%" height="850px"/>
+      - <embed src="https://mxahan.github.io/PDF_files/Details_matter_supcon.pdf" width="100%" height="850px"/>
 
 1. Shah, Anshul, Suvrit Sra, Rama Chellappa, and Anoop Cherian. "Max-Margin Contrastive Learning." arXiv preprint arXiv:2112.11450 (2021).
 
@@ -1623,10 +1653,10 @@ tags: Papers
 
 1. Das, Srijan, and Michael S. Ryoo. "ViewCLR: Learning Self-supervised Video Representation for Unseen Viewpoints." arXiv preprint arXiv:2112.03905 (2021).
 
-     - View generator (3d geometric transformations): Learnable augmentation for pretext task (maximizing viewpoint similarities).
-          - **Aim: Generalize over unseen camera viewpoints**. Camera invariant features
-            - learnable augmentation to induce viewpoint (by VG) changes while for self-supervised representation.
-     - Dataset: NTU RGB+D and NUCLA, MOCO for instance discrimination. (New PRETraining!!), arch: S3D, Evaluation: Cross subject and cross setting protocol.
+      - View generator (3d geometric transformations): Learnable augmentation for pretext task (maximizing viewpoint similarities).
+           - **Aim: Generalize over unseen camera viewpoints**. Camera invariant features
+             - learnable augmentation to induce viewpoint (by VG) changes while for self-supervised representation.
+      - Dataset: NTU RGB+D and NUCLA, MOCO for instance discrimination. (New PRETraining!!), arch: S3D, Evaluation: Cross subject and cross setting protocol.
 
 1. Hua, Tianyu, Wenxiao Wang, Zihui Xue, Sucheng Ren, Yue Wang, and Hang Zhao. "On feature decorrelation in self-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 9598-9608. 2021.
 
@@ -1647,42 +1677,42 @@ tags: Papers
 
 1. Chen, Kai, Lanqing Hong, Hang Xu, Zhenguo Li, and Dit-Yan Yeung. "MultiSiam: Self-supervised Multi-instance Siamese Representation Learning for Autonomous Driving." arXiv preprint arXiv:2108.12178 (2021).
 
-     - TP: Two issues: (1) define positive samples for cross-view consistency ? (2) measure similarity in multi-instance circumstances ?
+      - TP: Two issues: (1) define positive samples for cross-view consistency ? (2) measure similarity in multi-instance circumstances ?
 
-     - Experiments data: WayMo, SODA10M
+      - Experiments data: WayMo, SODA10M
 
-     - Global consistency to local consistency?
+      - Global consistency to local consistency?
 
-          - basic assumption of instance discrimination: different views of the same image should be consistent in the feature space
-            - what about multi-instance in a single image (realistic case)!!!
-            - definition of positive samples is definitely needed to extend cross-view consistency framework to multi-instance circumstances. (multiple things in single image)
+           - basic assumption of instance discrimination: different views of the same image should be consistent in the feature space
+             - what about multi-instance in a single image (realistic case)!!!
+             - definition of positive samples is definitely needed to extend cross-view consistency framework to multi-instance circumstances. (multiple things in single image)
 
-          - Methods: Uses IoU as proxy for data and Noise. (les IoU - More Noise)
-            - Remove global pooling (counter the multiple instance collapse)
-            - Well, very complex loss function!
+           - Methods: Uses IoU as proxy for data and Noise. (les IoU - More Noise)
+             - Remove global pooling (counter the multiple instance collapse)
+             - Well, very complex loss function!
 
-     - Related works: VirTex, ConVIRT, ICMLM (proof of concept)
+      - Related works: VirTex, ConVIRT, ICMLM (proof of concept)
 
-      - <embed src="https://mxahan.github.io/PDF_files/multisiam.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/multisiam.pdf" width="100%" height="850px"/>
 
 1. Yang, Ceyuan, Zhirong Wu, Bolei Zhou, and Stephen Lin. "Instance localization for self-supervised detection pretraining." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3987-3996. 2021.
 
-     - Propose a new self-supervised tasks : Instance Localization. [self-supervised task design]
+      - Propose a new self-supervised tasks : Instance Localization. [self-supervised task design]
 
-      - Put image crop into another and try to predict using RPN!!
+       - Put image crop into another and try to predict using RPN!!
 
 1. Wang, Feng, and Huaping Liu. "Understanding the behaviour of contrastive loss." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 2495-2504. 2021.
 
-     - Studies the impact of the temperature in loss function (uniformity and temperature).
-       - How to ensure tolerant for semantic similar examples [uniformity tolerance dilemma]
-     - This paper: studies hardness aware properties (parameter in loss function).
+      - Studies the impact of the temperature in loss function (uniformity and temperature).
+        - How to ensure tolerant for semantic similar examples [uniformity tolerance dilemma]
+      - This paper: studies hardness aware properties (parameter in loss function).
 
 1. Pan, Tian, Yibing Song, Tianyu Yang, Wenhao Jiang, and Wei Liu. "Videomoco: Contrastive video representation learning with temporally adversarial examples." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 11205-11214. 2021.
 
-     - TP:  adversarial learning as a temporal data augmentation strategy to improve feature representations.
-       - The output of ConvLSTM predicts the importance of each frame and drops some of them.
-       - C3D architecture as our encoder.
-       - An extra generator to kinda get hard negative query and temporal decay for the keys.
+      - TP:  adversarial learning as a temporal data augmentation strategy to improve feature representations.
+        - The output of ConvLSTM predicts the importance of each frame and drops some of them.
+        - C3D architecture as our encoder.
+        - An extra generator to kinda get hard negative query and temporal decay for the keys.
 
 1. Xu, Jiarui, and Xiaolong Wang. "Rethinking Self-supervised Correspondence Learning: A Video Frame-level Similarity Perspective." arXiv preprint arXiv:2103.17263 (2021).
 
@@ -1698,63 +1728,63 @@ tags: Papers
 
 1. Yang, Mouxing, Yunfan Li, Zhenyu Huang, Zitao Liu, Peng Hu, and Xi Peng. "Partially view-aligned representation learning with noise-robust contrastive loss." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 1134-1143. 2021.
 
-     - Partially view alignment Problem (PVP)???
+      - Partially view alignment Problem (PVP)???
 
-      - Objective: aligning data and learning representation (why it is important??)
+       - Objective: aligning data and learning representation (why it is important??)
 
-      - TP: Propose noise robust Contrastive loss to eliminate False negative {related to learning with noisy labels, any evidence on this?}
+       - TP: Propose noise robust Contrastive loss to eliminate False negative {related to learning with noisy labels, any evidence on this?}
 
-      - New definition of noisy labels (why, is it valid?) [false negative pair as noisy label! ]
+       - New definition of noisy labels (why, is it valid?) [false negative pair as noisy label! ]
 
-      - Experiment: 10 SOTA classification and clustering tasks!
+       - Experiment: 10 SOTA classification and clustering tasks!
 
-      - Two assumption on Data: Completeness (contains all views [partially data-missing problem]) and Consistency (no false negative/positive [partial view alignment problem]) of views.
+       - Two assumption on Data: Completeness (contains all views [partially data-missing problem]) and Consistency (no false negative/positive [partial view alignment problem]) of views.
 
-      - Proposed modified distance loss for the negative pairs.
+       - Proposed modified distance loss for the negative pairs.
 
-      - <embed src="https://mxahan.github.io/PDF_files/partially_view_aligned.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/partially_view_aligned.pdf" width="100%" height="850px"/>
 
 1. Dave, Ishan, Rohit Gupta, Mamshad Nayeem Rizve, and Mubarak Shah. "TCLR: Temporal Contrastive Learning for Video Representation." arXiv preprint arXiv:2101.07974 (2021).
 
-     - temporal CL framework!!- (why?) - two novel loss functions
-       - (local-local): non-overlapping of same videos!!
-       - (global-local): increase temporal diversity!!
-       - NCE based loss function formulation.
-      - Interesting way to sample local and global (why is it necessary???) [figure 2, 3, and 4]
+      - temporal CL framework!!- (why?) - two novel loss functions
+        - (local-local): non-overlapping of same videos!!
+        - (global-local): increase temporal diversity!!
+        - NCE based loss function formulation.
+       - Interesting way to sample local and global (why is it necessary???) [figure 2, 3, and 4]
 
-      - Architecture: 3D ResNet-18
+       - Architecture: 3D ResNet-18
 
 1. Tian, Yuandong, Xinlei Chen, and Surya Ganguli. "Understanding self-supervised learning dynamics without contrastive pairs." arXiv preprint arXiv:2102.06810 (2021).
 
-     - Theoretical: Why non-contrastive (without negative pairs) methods do not collapse (BYOL, SimSiam by using extra predictors/stop-gradient)
-       - TP: DirectPred (Directly sets the linear predictor based on the statistics of its inputs, without gradient training)
-       - motivated by theoretical study of the nonlinear learning dynamics of non-contrastive SSL in simple linear networks
-         - yields conceptual insights into how non-contrastive SSL methods learn, how they avoid representational collapse, and impact of multiple factors, like *predictor networks, stop-gradients, exponential moving averages, and weight decay*
+      - Theoretical: Why non-contrastive (without negative pairs) methods do not collapse (BYOL, SimSiam by using extra predictors/stop-gradient)
+        - TP: DirectPred (Directly sets the linear predictor based on the statistics of its inputs, without gradient training)
+        - motivated by theoretical study of the nonlinear learning dynamics of non-contrastive SSL in simple linear networks
+          - yields conceptual insights into how non-contrastive SSL methods learn, how they avoid representational collapse, and impact of multiple factors, like *predictor networks, stop-gradients, exponential moving averages, and weight decay*
 
-      - Empirical impacts of multiple hyperparams: i) EMA/momentum encoder ii) predictor optimality and LR iii) Weight decay (good ablation studies) [**section 3.2**]
+       - Empirical impacts of multiple hyperparams: i) EMA/momentum encoder ii) predictor optimality and LR iii) Weight decay (good ablation studies) [**section 3.2**]
 
-      - [**Essential part of non-contrastive SSL: existance of the predictor and the stop-gradient**]
+       - [**Essential part of non-contrastive SSL: existance of the predictor and the stop-gradient**]
 
-      - TP directPred: thereby avoiding complicated predictor dynamics and initialization issues by using PCA and setting predictor weight [*section 4*].
+       - TP directPred: thereby avoiding complicated predictor dynamics and initialization issues by using PCA and setting predictor weight [*section 4*].
 
-      - Th 1: ((Weight decay promotes balancing of the predictor and online networks), Th 2: (The stop-gradient signal is essential for success.)
+       - Th 1: ((Weight decay promotes balancing of the predictor and online networks), Th 2: (The stop-gradient signal is essential for success.)
 
-      - <embed src="https://mxahan.github.io/PDF_files/Understanding_SSL_without_negative.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/Understanding_SSL_without_negative.pdf" width="100%" height="850px"/>
 
 1. Caron, Mathilde, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. "Emerging properties in self-supervised vision transformers." arXiv preprint arXiv:2104.14294 (2021).
 
-     - DINO: knowledge Distillation with NO labels (Figure 2, Algorithm 1)
+      - DINO: knowledge Distillation with NO labels (Figure 2, Algorithm 1)
 
-     - Self-supervised learning with ViT
-          - Observations: (i) T features contain explicit information (!!!) about the semantic segmentation of an image
-            - explicit information: scene layout, object boundaries (directly accessible)
-            - Performs basic k-NN without any supervision.
+      - Self-supervised learning with ViT
+           - Observations: (i) T features contain explicit information (!!!) about the semantic segmentation of an image
+             - explicit information: scene layout, object boundaries (directly accessible)
+             - Performs basic k-NN without any supervision.
 
-     - Cross entropy loss (sharpening and centering requires to avoid collapse)
+      - Cross entropy loss (sharpening and centering requires to avoid collapse)
 
-      - Experiments: Architecture (i) ViT and (ii) ResNet
+       - Experiments: Architecture (i) ViT and (ii) ResNet
 
-      - <embed src="https://mxahan.github.io/PDF_files/Dino.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/Dino.pdf" width="100%" height="850px"/>
 
 1. Tan, Hao, Jie Lei, Thomas Wolf, and Mohit Bansal. "VIMPAC: Video Pre-Training via Masked Token Prediction and Contrastive Learning." arXiv preprint arXiv:2106.11250 (2021).
 
@@ -1775,216 +1805,226 @@ tags: Papers
 
 1. Zheltonozhskii, Evgenii, Chaim Baskin, Avi Mendelson, Alex M. Bronstein, and Or Litany. "Contrast to Divide: Self-Supervised Pre-Training for Learning with Noisy Labels." arXiv preprint arXiv:2103.13646 (2021).
 
-     - **warm-up obstacle**: the inability of standard warm-up stages to train high quality feature extractors and avert memorization of noisy labels.!!
-       - SoTA depends on warm-up stage where standard supervised training is performed using the full (noisy) training set
+      - **warm-up obstacle**: the inability of standard warm-up stages to train high quality feature extractors and avert memorization of noisy labels.!!
+        - SoTA depends on warm-up stage where standard supervised training is performed using the full (noisy) training set
 
-         - TP: contrast to divide (C2D)
-           - benefit: drastically reducing the warm-up stage’s susceptibility to noise level, shortening its duration, and increasing extracted feature quality
-     - warp-up stages!! Current works focus on warm up length only! requires optimal warm-up length! or relying on external dataset! TP: Self-supervised pretraining!
-      - TP: firstly perform simclr, then proceed with standard LNL algorithm (: ELR+ and DivideMix!!)
+          - TP: contrast to divide (C2D)
+            - benefit: drastically reducing the warm-up stage’s susceptibility to noise level, shortening its duration, and increasing extracted feature quality
+      - warp-up stages!! Current works focus on warm up length only! requires optimal warm-up length! or relying on external dataset! TP: Self-supervised pretraining!
+       - TP: firstly perform simclr, then proceed with standard LNL algorithm (: ELR+ and DivideMix!!)
 
 1. Huang, Lianghua, Yu Liu, Bin Wang, Pan Pan, Yinghui Xu, and Rong Jin. "Self-supervised Video Representation Learning by Context and Motion Decoupling." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 13886-13895. 2021.
 
-     - a method that explicitly decouples motion supervision from context bias through a *carefully designed* pretext task
-       - (i) Context matching (CL between key frame (how to find it?? - Random frame selection) and video clips) & Motion Prediction (estimate motion features in the future & also a regularizer)
-       - Architecture: Shared backbone and separate head for the tasks
-      - Figure 2: says all: Two target for the V-network (context {top, extracted from image} & motion {bottom, derived using the motion vectors?})
+      - a method that explicitly decouples motion supervision from context bias through a *carefully designed* pretext task
+        - (i) Context matching (CL between key frame (how to find it?? - Random frame selection) and video clips) & Motion Prediction (estimate motion features in the future & also a regularizer)
+        - Architecture: Shared backbone and separate head for the tasks
+       - Figure 2: says all: Two target for the V-network (context {top, extracted from image} & motion {bottom, derived using the motion vectors?})
 
-      - Related works: representation learning, AR in compressed videos, Motion prediction
-          - Experiments:
-            - Networks: Video backbone: C3D, R(2+1)D-26 and R3D-26 (V, video), shallow R2D-10 (I, context), and R3D-10 (video).
-            - Data: UCF, Kinetics, HMDB51, with augmentation (same for one example), hard negatives,
+       - Related works: representation learning, AR in compressed videos, Motion prediction
+           - Experiments:
+             - Networks: Video backbone: C3D, R(2+1)D-26 and R3D-26 (V, video), shallow R2D-10 (I, context), and R3D-10 (video).
+             - Data: UCF, Kinetics, HMDB51, with augmentation (same for one example), hard negatives,
 
 1. Feichtenhofer, Christoph, Haoqi Fan, Bo Xiong, Ross Girshick, and Kaiming He. "A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3299-3309. 2021.
 
-     - A large-scale study on unsupervised spatiotemporal representation learning from videos
-       - Generalize image based method into space-time. (e.g. crop [image] to clip [video])
-       - *Provides many empirical results*
+      - A large-scale study on unsupervised spatiotemporal representation learning from videos
+        - Generalize image based method into space-time. (e.g. crop [image] to clip [video])
+        - *Provides many empirical results*
 
 1. Hénaff, Olivier J., Skanda Koppula, Jean-Baptiste Alayrac, Aaron van den Oord, Oriol Vinyals, and João Carreira. "Efficient Visual Pretraining with Contrastive Detection." arXiv preprint arXiv:2103.10957 (2021).
 
-     - Tackles the computational complexity of the self-supervised learning
-       - By providing new objective (extract rich information from each image!! ) named *Contrastive Detection* (Figure 2)
-         - Two variants: SimCLR and the BYOL
-         - Knowledge tx across the dataset
-         - Heuristic mask on image and train!
-           - Of the shelf unsupervised/human annotators [external methods]
-         - Pull the features spaces close!!
-       -  maximizes the similarity of object-level features across augmentations.
-       - Result 5x less pretraining
-       - Compared with SEER!!
-      - Experiment with imagenet to COCO dataset
+      - Tackles the computational complexity of the self-supervised learning
+        - By providing new objective (extract rich information from each image!! ) named *Contrastive Detection* (Figure 2)
+          - Two variants: SimCLR and the BYOL
+          - Knowledge tx across the dataset
+          - Heuristic mask on image and train!
+            - Of the shelf unsupervised/human annotators [external methods]
+          - Pull the features spaces close!!
+        -  maximizes the similarity of object-level features across augmentations.
+        - Result 5x less pretraining
+        - Compared with SEER!!
+       - Experiment with imagenet to COCO dataset
 
-      - This paper: Special Data augmentation scheme
+       - This paper: Special Data augmentation scheme
 
 1. Goyal, Priya, Mathilde Caron, Benjamin Lefaudeux, Min Xu, Pengchao Wang, Vivek Pai, Mannat Singh et al. "Self-supervised pretraining of visual features in the wild." arXiv preprint arXiv:2103.01988 (2021).
 
-     - SEER and connection to few shot learning
-       - RQ: pretraining extremely large collection of uncurated, unlabeled images for good achievement?
-         - Solution: Continuous learning in a self-supervised manner! (online fashion training)
-     - TP: pretrain high capacity model (RegNet Architecture!! 700M params) on billions images! using SwAV approaches with large BS.
-      - Results: One of the best model!! both on curated and uncarated data.
+      - SEER and connection to few shot learning
+        - RQ: pretraining extremely large collection of uncurated, unlabeled images for good achievement?
+          - Solution: Continuous learning in a self-supervised manner! (online fashion training)
+      - TP: pretrain high capacity model (RegNet Architecture!! 700M params) on billions images! using SwAV approaches with large BS.
+       - Results: One of the best model!! both on curated and uncarated data.
 
-      - Related works: Scale on large uncurated images. (also scaling the network - Good Reads)
+       - Related works: Scale on large uncurated images. (also scaling the network - Good Reads)
 
-      - Results on finetuning large models, low shot learning and transfer learning.
+       - Results on finetuning large models, low shot learning and transfer learning.
 
-      - Ablation studies: Model architecture, scaling the training data, scaling the self-supervised model head
+       - Ablation studies: Model architecture, scaling the training data, scaling the self-supervised model head
 
 1. Zbontar, Jure, Li Jing, Ishan Misra, Yann LeCun, and Stéphane Deny. "Barlow Twins: Self-Supervised Learning via Redundancy Reduction." arXiv preprint arXiv:2103.03230 (2021).
 
-     - Tries to avoid trivial solution (by new objective function, cross-correlation matrix)!!
-       - A new loss function
+      - Tries to avoid trivial solution (by new objective function, cross-correlation matrix)!!
+        - A new loss function
 
-     - Same images ~ augmentation representations are distorted version of each other.
+      - Same images ~ augmentation representations are distorted version of each other.
 
-     - Motivation: Barlows Redundancy-reduction principle
+      - Motivation: Barlows Redundancy-reduction principle
 
-     - Pair of identical neurons
-          - Just WOW: The hell the idea is!!
-            - Intriguingly avoids trivial solutions
-            - Should require large batch size
+      - Pair of identical neurons
+           - Just WOW: The hell the idea is!!
+             - Intriguingly avoids trivial solutions
+             - Should require large batch size
 
-     - Figure 1 & algorithm 1: Crack of all jack
+      - Figure 1 & algorithm 1: Crack of all jack
 
-     - BOYL follow up works
+      - BOYL follow up works
 
-          - Contrastive learning
-            - Either Negative examples
-            - Or architectural constraint/ Asymmetric update
+           - Contrastive learning
+             - Either Negative examples
+             - Or architectural constraint/ Asymmetric update
 
-          - Motivated from Barlow-twin (redundancy-reduction principle) 1961!
-            - H. Barlow hypothesized that the goal of sensory processing is to recode highly redundant sensory inputs into a factorial code (a code with statistically independent components).
-            - propose new loss function:  tries to make the cross-correlation matrix computed from twin representations as close to the identity matrix as possible
-              - Advantages: Not required Asymmetric update or large batch size
+           - Motivated from Barlow-twin (redundancy-reduction principle) 1961!
+             - H. Barlow hypothesized that the goal of sensory processing is to recode highly redundant sensory inputs into a factorial code (a code with statistically independent components).
+             - propose new loss function:  tries to make the cross-correlation matrix computed from twin representations as close to the identity matrix as possible
+               - Advantages: Not required Asymmetric update or large batch size
 
-          - Methods description
-            - What is Barlow twins
-              - connection to Information bottleneck (IB)
-            - Implementation details
+           - Methods description
+             - What is Barlow twins
+               - connection to Information bottleneck (IB)
+             - Implementation details
 
-          - Result
-            - Linear and Semi-supervised Evalution of imagenet
-            - Transfer learning
-            - Object detection and segmentation
+           - Result
+             - Linear and Semi-supervised Evalution of imagenet
+             - Transfer learning
+             - Object detection and segmentation
 
-          - Ablation study
-            - Variation of Loss function
-            - Impacts of Batch Size
-              - Outperformed by Large BS with BYOL and SimCLR
-            - network selection impacts
-              - projection head importance
-            - Importance of the data augmentation
+           - Ablation study
+             - Variation of Loss function
+             - Impacts of Batch Size
+               - Outperformed by Large BS with BYOL and SimCLR
+             - network selection impacts
+               - projection head importance
+             - Importance of the data augmentation
 
-          - Discussion (interesting)
-            - Comparison with Prior Art
-              - InfoNCE
+           - Discussion (interesting)
+             - Comparison with Prior Art
+               - InfoNCE
 
-     - <embed src="https://mxahan.github.io/PDF_files/Barlow_twin.pdf" width="100%" height="850px"/>
+      - <embed src="https://mxahan.github.io/PDF_files/Barlow_twin.pdf" width="100%" height="850px"/>
 
 1. Tsai, Yao-Hung Hubert, Martin Q. Ma, Muqiao Yang, Han Zhao, Louis-Philippe Morency, and Ruslan Salakhutdinov. "Self-supervised representation learning with relative predictive coding." arXiv preprint arXiv:2103.11275 (2021).
 
 1. Liu, Yang, Keze Wang, Haoyuan Lan, and Liang Lin. "Temporal Contrastive Graph for Self-supervised Video Representation Learning." arXiv preprint arXiv:2101.00820 (2021).
 
-     - Graph Neural Network And Contrastive Learning
-      - Video frame shuffling
+      - Graph Neural Network And Contrastive Learning
+       - Video frame shuffling
 
 1. Bulat, Adrian, Enrique Sánchez-Lozano, and Georgios Tzimiropoulos. "Improving memory banks for unsupervised learning with large mini-batch, consistency and hard negative mining." arXiv preprint arXiv:2102.04442 (2021).
 
-     - Improvement for the memory bank based formulation (whats the problem??)
-       - TP: (I) Large mini-batch: Multiple augmentation! (II) Consistency: Not negative enforce! The heck? how to prevent collapse? (III) Hard Negative Mining
-       - Results: Improve the vanilla memory bank! Evidence!! Dataset experimentation!
+      - Improvement for the memory bank based formulation (whats the problem??)
+        - TP: (I) Large mini-batch: Multiple augmentation! (II) Consistency: Not negative enforce! The heck? how to prevent collapse? (III) Hard Negative Mining
+        - Results: Improve the vanilla memory bank! Evidence!! Dataset experimentation!
 
-      - Exploration:  With Batch Size and visually similar instances (is the argument 2 is valid?)
+       - Exploration:  With Batch Size and visually similar instances (is the argument 2 is valid?)
 
-      - Contribution 2 seems important!
+       - Contribution 2 seems important!
 
-      - Each image is augmented k times: More data augmentation!
+       - Each image is augmented k times: More data augmentation!
 
-      - Interesting way to put the negative contrastive parts to avoid collapse (eq 3)
+       - Interesting way to put the negative contrastive parts to avoid collapse (eq 3)
 
-      - Experiments: Seen testing categories (CIFAR, STL), & unseen testing categories (Stanford Online Product). ResNet-18 as baseline model
+       - Experiments: Seen testing categories (CIFAR, STL), & unseen testing categories (Stanford Online Product). ResNet-18 as baseline model
 
-      - <embed src="https://mxahan.github.io/PDF_files/Improving_MB.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/Improving_MB.pdf" width="100%" height="850px"/>
 
 1. Dwibedi, Debidatta, Yusuf Aytar, Jonathan Tompson, Pierre Sermanet, and Andrew Zisserman. "With a Little Help from My Friends: Nearest-Neighbor Contrastive Learning of Visual Representations." arXiv preprint arXiv:2104.14548 (2021).
 
-     - Positive from other instance (instead of augmented version of same image!)
+      - Positive from other instance (instead of augmented version of same image!)
 
-      - positive sampling: Nearest neighbor in the latent space (NNCLR) [this covers both same samples and Nearest neighbor in the latent spaces]
+       - positive sampling: Nearest neighbor in the latent space (NNCLR) [this covers both same samples and Nearest neighbor in the latent spaces]
 
-      - Benefit: Less reliant on complex data augmentation (empirical results)
+       - Benefit: Less reliant on complex data augmentation (empirical results)
 
-      - Experiments: semi-sup benchmark, tx-learning benchmark
+       - Experiments: semi-sup benchmark, tx-learning benchmark
 
-      - Training: figure 1 (support set similar to memory bank but only provides positive samples)
+       - Training: figure 1 (support set similar to memory bank but only provides positive samples)
 
-      - Similarity across previously seen objects! (tricky implementation)! Initialization!!
+       - Similarity across previously seen objects! (tricky implementation)! Initialization!!
 
-      - Figure 2: details and key difference with others! (requires support set!)
+       - Figure 2: details and key difference with others! (requires support set!)
 
-      - <embed src="https://mxahan.github.io/PDF_files/NNCLR.pdf" width="100%" height="850px"/>
+       - <embed src="https://mxahan.github.io/PDF_files/NNCLR.pdf" width="100%" height="850px"/>
 
 1. Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry et al. "Learning transferable visual models from natural language supervision." arXiv preprint arXiv:2103.00020 (2021).
 
-     - CLIP (contrastive learning from language image pretraining)
-     - RQ: Can we reduce the necessity for requiring additional labelled data!
-          - TP: predict caption and the images (!self-supervised task) [self-supervised task design]
-            - Learning image representation from the text
-            - Result matches SOTA
-     - Related works: VirTex, ICMLM, ConVIRT
+      - CLIP (contrastive learning from language image pretraining)
+      - RQ: Can we reduce the necessity for requiring additional labelled data!
+           - TP: predict caption and the images (!self-supervised task) [self-supervised task design]
+             - Learning image representation from the text
+             - Result matches SOTA
+      - Related works: VirTex, ICMLM, ConVIRT
 
 1. Tosh, Christopher, Akshay Krishnamurthy, and Daniel Hsu. "Contrastive learning, multi-view redundancy, and linear models." In Algorithmic Learning Theory, pp. 1179-1206. PMLR, 2021.
 
-     - TP: Theory for contrastive learning in the multi-view setting, where two views of each datum are available.
-       - learned representations are nearly optimal on downstream prediction tasks whenever the two views provide **redundant information** about the label.
-         - what is redundant information!! := whenever the best linear prediction of the label on each individual view is nearly as good as the best linear prediction of the label when both views are used together.
+      - TP: Theory for contrastive learning in the multi-view setting, where two views of each datum are available.
+        - learned representations are nearly optimal on downstream prediction tasks whenever the two views provide **redundant information** about the label.
+          - what is redundant information!! := whenever the best linear prediction of the label on each individual view is nearly as good as the best linear prediction of the label when both views are used together.
 
 1. Teng, Jiaye, Weiran Huang, and Haowei He. "Can pretext-based self-supervised learning be boosted by downstream data? a theoretical analysis." arXiv preprint arXiv:2103.03568 (2021).
 
-     - Highly theoretical paper.
-       - whether we can make the CI (conditional independence) condition hold by using downstream data to refine the unlabeled data to boost self-supervised learning [*Not always true though it seems intuitive*]
-         - Shows some result to prove the counter intuitive results (Hence focusing the importance of the conditional independence)
-         - Can we make the CI condition hold with the help of downstream data to boost self-supervised learning? (as CI rearly helds)
-         - Validate self-supervised approach (not to used fine-tune data during pretraining)
+      - Highly theoretical paper.
+        - whether we can make the CI (conditional independence) condition hold by using downstream data to refine the unlabeled data to boost self-supervised learning [*Not always true though it seems intuitive*]
+          - Shows some result to prove the counter intuitive results (Hence focusing the importance of the conditional independence)
+          - Can we make the CI condition hold with the help of downstream data to boost self-supervised learning? (as CI rearly helds)
+          - Validate self-supervised approach (not to used fine-tune data during pretraining)
 
 1. Ren, Xuanchi, Tao Yang, Yuwang Wang, and Wenjun Zeng. "Do Generative Models Know Disentanglement? Contrastive Learning is All You Need." arXiv preprint arXiv:2102.10543 (2021).
 
 1. Jing, Li, Pascal Vincent, Yann LeCun, and Yuandong Tian. "Understanding Dimensional Collapse in Contrastive Self-supervised Learning." arXiv preprint arXiv:2110.09348 (2021).
 
-     - Discusses about dimension collapse ( the embedding vectors end up spanning a lower-dimensional subspace instead of the entire available embedding space.)
-       - key findings.
-         - along the feature direction where data augmentation variance is larger than the data distribution variance, the weight collapses. (strong augmentation along feature dimensions)
-         - even if the covariance of data augmentation has a smaller magnitude than the data variance along all dimensions, the weight will still collapse due to the interplay of weight matrices at different layers known as [implicit regularization](http://old.ins.sjtu.edu.cn/files/paper/20200722191948_slide.pdf). (implicit regularization driving models toward low-rank solutions)
-     - looks into the covariance matrix (their eigen decomposition; some eigenvalues become zeros) to measure dimensional collapse
-      - Theoretically justify the importance of the projection layers.
+      - Discusses about dimension collapse ( the embedding vectors end up spanning a lower-dimensional subspace instead of the entire available embedding space.)
+        - key findings.
+          - along the feature direction where data augmentation variance is larger than the data distribution variance, the weight collapses. (strong augmentation along feature dimensions)
+          - even if the covariance of data augmentation has a smaller magnitude than the data variance along all dimensions, the weight will still collapse due to the interplay of weight matrices at different layers known as [implicit regularization](http://old.ins.sjtu.edu.cn/files/paper/20200722191948_slide.pdf). (implicit regularization driving models toward low-rank solutions)
+      - looks into the covariance matrix (their eigen decomposition; some eigenvalues become zeros) to measure dimensional collapse
+       - Theoretically justify the importance of the projection layers.
 
-      - TP: proposed DirectCLR (uses direct Optimization on the representation layer by selecting a subsection of the layer for loss calculation. remove the requirement of trainable projection. )
+       - TP: proposed DirectCLR (uses direct Optimization on the representation layer by selecting a subsection of the layer for loss calculation. remove the requirement of trainable projection. )
 
 1. Sordoni, Alessandro, Nouha Dziri, Hannes Schulz, Geoff Gordon, Philip Bachman, and Remi Tachet Des Combes. "Decomposed Mutual Information Estimation for Contrastive Representation Learning." In International Conference on Machine Learning, pp. 9859-9869. PMLR, 2021.
 
 1. Ryali, Chaitanya K., David J. Schwab, and Ari S. Morcos. "Leveraging background augmentations to encourage semantic focus in self-supervised contrastive learning." arXiv preprint arXiv:2103.12719 (2021).
 
-     - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation" [sampling method for CL]
-       - How they separate the subject background in the first places!! What prior knowledge!!
-       - May use different existing methods!!
+      - This Paper: Image augmentation regarding the subject and background relationship - "background Augmentation" [sampling method for CL]
+        - How they separate the subject background in the first places!! What prior knowledge!!
+        - May use different existing methods!!
 
-         - Augmentation Scheme: Another data engineering
-           - Used with methods like BYOL, SwAV, MoCo to push SOTA forward
-           - Figure 1: Shows all
+          - Augmentation Scheme: Another data engineering
+            - Used with methods like BYOL, SwAV, MoCo to push SOTA forward
+            - Figure 1: Shows all
 
 1. Tosh, Christopher, Akshay Krishnamurthy, and Daniel Hsu. "Contrastive estimation reveals topic posterior information to linear models." Journal of Machine Learning Research 22, no. 281 (2021): 1-31.
 
 1. Ericsson, Linus, Henry Gouk, Chen Change Loy, and Timothy M. Hospedales. "Self-Supervised Representation Learning: Introduction, Advances and Challenges." arXiv preprint arXiv:2110.09327 (2021).
 
-     - Provides a good workflow for selfsupervised Learning
-       - extractor function, classifer function, pretext output function (good terminology)
+      - Provides a good workflow for selfsupervised Learning
+        - extractor function, classifer function, pretext output function (good terminology)
 
-         - (Four pretext): masked prediction, transformation prediction, instance discrimination, and clustering
-           - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well-modeled.
+          - (Four pretext): masked prediction, transformation prediction, instance discrimination, and clustering
+            - Masked prediction: context can be used to infer some types of missing information in the data if the domain is well-modeled.
 
 
 ## 2022
+
+1. Wang, H., Guo, X., Deng, Z. H., & Lu, Y. (2022). Rethinking minimal sufficient representation in contrastive learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 16041-16050).
+
+      -  Supervision information for one view comes from the other view, CL approximately obtains the minimal sufficient representation which contains the shared information and eliminates the non-shared information between views
+        - risk of over-fitting to the shared information between views
+        - cannot be guaranteed that all task-relevant information is shared between views (TP proves it)
+        - How to capture the non-shared tasks!!?? revert input from the representation may be. 
+      - propose to **increase the MI between the representation and input** as regularization to introduce more task-relevant information
+        - two implementations to increase MI. 1. reconstructs the input 2. relies on the high-dimensional MI estimate
+        - Eq 14 and 15: alternative to increase MI between input-representation with re parametrization trick.
 
 1. Govindarajan, H., Sidén, P., Roll, J., & Lindsten, F. (2022, September). DINO as a von Mises-Fisher mixture model. In *The Eleventh International Conference on Learning Representations*.
 
@@ -2088,11 +2128,11 @@ tags: Papers
 
 1. Pokle, A., Tian, J., Li, Y., & Risteski, A. (2022). Contrasting the landscape of contrastive and non-contrastive learning. arXiv preprint arXiv:2203.15702.
 
-     - via a combination of empirical and theoretical results, we provide evidence that non-contrastive methods based on data augmentation can lead to substantially worse representations.
+      - via a combination of empirical and theoretical results, we provide evidence that non-contrastive methods based on data augmentation can lead to substantially worse representations.
 
-     - the non-contrastive loss has a prevalence of bad optima that are not collapsed (in neither way, complete or dimension collapse)
+      - the non-contrastive loss has a prevalence of bad optima that are not collapsed (in neither way, complete or dimension collapse)
 
-     - prove that the training dynamics can remedy this situation—however, crucially tied to a careful choice of a predictor network model architecture.
+      - prove that the training dynamics can remedy this situation—however, crucially tied to a careful choice of a predictor network model architecture.
 
 1. Zhang, C., Zhang, K., Zhang, C., Pham, T. X., Yoo, C. D., & Kweon, I. S. (2022). How does simsiam avoid collapse without negative samples? a unified understanding with self-supervised contrastive learning. arXiv preprint arXiv:2203.16262.
 
@@ -2107,17 +2147,17 @@ tags: Papers
 
 1. Shen, K., Jones, R. M., Kumar, A., Xie, S. M., HaoChen, J. Z., Ma, T., & Liang, P. (2022, June). Connect, not collapse: Explaining contrastive learning for unsupervised domain adaptation. In International Conference on Machine Learning (pp. 19847-19878). PMLR.
 
-     - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
-       - CL does not learn domain-invariant features, diverging from UDA intuitions.
-       - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
-       - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
-       - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
-         - That is where it comes connect this but not to collapse them.
+      - CL pre-training learns features on unlabeled source and target data and then fine-tunes on labeled source data, is competitive with strong UDA methods.
+        - CL does not learn domain-invariant features, diverging from UDA intuitions.
+        - CL learn features vary subtantially across domains but still generalize to the target domain, by disentangling domain and class information.
+        - find that a UDA is out-of-the-box contrastive pre-training on source and target unlabeled data, followed by fine-tuning on source labeled data
+        - Simple findings: CL keeps everything separated, sufficient for downstream tasks.
+          - That is where it comes connect this but not to collapse them.
 
-     - Assumption and definition of class domain connectivity (figure 1)
+      - Assumption and definition of class domain connectivity (figure 1)
 
-     - Connected the graph theory [section 4.2]: Good read.
-       - discusses the importance of augmentation strengths.
+      - Connected the graph theory [section 4.2]: Good read.
+        - discusses the importance of augmentation strengths.
 
 1. Assran, M., Caron, M., Misra, I., Bojanowski, P., Bordes, F., Vincent, P., ... & Ballas, N. (2022). Masked Siamese Networks for Label-Efficient Learning. arXiv preprint arXiv:2204.07141.
 

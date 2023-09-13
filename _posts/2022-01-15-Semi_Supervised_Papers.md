@@ -44,12 +44,22 @@ tags: Papers
 
 ## 2021
 
-1.  Englesson, E., & Azizpour, H. (2021). Consistency Regularization Can Improve Robustness to Label Noise. *arXiv preprint arXiv:2110.01242*.
+1. Wei, C., Sohn, K., Mellina, C., Yuille, A., & Yang, F. (2021). Crest: A class-rebalancing self-training framework for imbalanced semi-supervised learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 10857-10866).
+
+   - CReST iteratively retrains a baseline SSL model with a labeled set expanded by adding pseudolabeled samples from an unlabeled set, where pseudolabeled samples from minority classes are selected more frequently according to an estimated class distribution.
+   - propose a progressive distribution alignment to adaptively adjust the rebalancing strength dubbed CReST+.
+   - Pseudo-label, balance the samples by selecting more the tail pseudo-labels. 
+     - Ratio by equation 1
+   - exploit the high precision of minority classes to alleviate their recall degradation
+
+1. Englesson, E., & Azizpour, H. (2021). Consistency Regularization Can Improve Robustness to Label Noise. *arXiv preprint arXiv:2110.01242*.
+
    - consistency loss propose in Equation 1
      - Weighted sum of
        - JS divergence between two prediction of two augmentation of same image
        - JS divergence of true prediction and average prediction for the augmented images. 
-1.  Tai, K. S., Bailis, P. D., & Valiant, G. (2021, July). Sinkhorn label allocation: Semi-supervised classification via annealed self-training. In *International Conference on Machine Learning* (pp. 10065-10075). PMLR.
+
+1. Tai, K. S., Bailis, P. D., & Valiant, G. (2021, July). Sinkhorn label allocation: Semi-supervised classification via annealed self-training. In *International Conference on Machine Learning* (pp. 10065-10075). PMLR.
    - Self-training: learner’s own predictions on unlabeled data are used as supervision during training (iterative bootstrapping)
    - Provides a formulation to facilitate a practical annealing strategy for label assignment and allows for the inclusion of prior knowledge on class
    - Related work: FixMatch (th for selecting pseudo-label)
@@ -59,7 +69,9 @@ tags: Papers
    - Label annealing strategies where the labeled set is slowly grown over time
    - Provide fast approximation: the typical solution we see. (algorithm 1 and 2)
    - <embed src="https://mxahan.github.io/PDF_files/sinkhorn_knopp_label_allocation.pdf" width="100%" height="850px"/>
-1.  Tai, K. S., Bailis, P. D., & Valiant, G. (2021, July). Sinkhorn label allocation: Semi-supervised classification via annealed self-training. In International Conference on Machine Learning (pp. 10065-10075). PMLR.
+
+1. Tai, K. S., Bailis, P. D., & Valiant, G. (2021, July). Sinkhorn label allocation: Semi-supervised classification via annealed self-training. In International Conference on Machine Learning (pp. 10065-10075). PMLR.
+
 1. Assran, Mahmoud, Mathilde Caron, Ishan Misra, Piotr Bojanowski, Armand Joulin, Nicolas Ballas, and Michael Rabbat. "Semi-Supervised Learning of Visual Features by Non-Parametrically Predicting View Assignments with Support Samples." arXiv preprint arXiv:2104.13963 (2021).
 
      - PAWS (Predicting view assignments with support samples)
@@ -68,7 +80,7 @@ tags: Papers
 
      - RQ: can we leverage the labeled data throughout training while also building on advances in self-supervised learning?
 
-     - How it is different than augmentation (may be using some unlabeled counterparts)
+     - How it is different than augmentation (may be using some unlabeled co unterparts)
 
      - How the heck the distance between view representation and labeled representation is used to provide weights over class labels (why is makes sense, and what benefits it offers??)
 
@@ -80,11 +92,15 @@ tags: Papers
 
 ## 2020
 
-1. Wang, Y., Guo, J., Song, S., & Huang, G. (2020). Meta-semi: A meta-learning approach for semi-supervised learning. *arXiv preprint arXiv:2007.02394*.
+1. Yang, Y., & Xu, Z. (2020). Rethinking the value of labels for improving class-imbalanced learning. *Advances in neural information processing systems*, *33*, 19290-19301.
+
+     - Idea to SSL pretraining by abandoning label initially and later use them. (semi-sup and self-sup training helps the tailed classes. )
+
+2. Wang, Y., Guo, J., Song, S., & Huang, G. (2020). Meta-semi: A meta-learning approach for semi-supervised learning. *arXiv preprint arXiv:2007.02394*.
 
      - section 2: methods contain the gist. 
 
-2. Yu, Q., Ikami, D., Irie, G., & Aizawa, K. (2020). Multi-task curriculum framework for open-set semi-supervised learning. In *Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XII 16* (pp. 438-454). Springer International Publishing.
+3. Yu, Q., Ikami, D., Irie, G., & Aizawa, K. (2020). Multi-task curriculum framework for open-set semi-supervised learning. In *Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XII 16* (pp. 438-454). Springer International Publishing.
 
      - Assumption: Labeled data and unlabeled data, some common classes in unlabeled data and rest is from novel classes (GCD setting)
      - Instead of training an OOD detector and SSL separately, TP propose a multitask curriculum learning framework
@@ -96,7 +112,7 @@ tags: Papers
      - As simple as heck: Select only top confidence sample from the unlabeled data for retraining the labeled classifier. (curriculum)
        - Algorithm 1 and 2
 
-3. Guo, L. Z., Zhang, Z. Y., Jiang, Y., Li, Y. F., & Zhou, Z. H. (2020, November). Safe deep semi-supervised learning for unseen-class unlabeled data. In *International Conference on Machine Learning* (pp. 3897-3906). PMLR.
+4. Guo, L. Z., Zhang, Z. Y., Jiang, Y., Li, Y. F., & Zhou, Z. H. (2020, November). Safe deep semi-supervised learning for unseen-class unlabeled data. In *International Conference on Machine Learning* (pp. 3897-3906). PMLR.
 
      -  unlabeled data contains some classes not seen in the labeled data.
        - TP: proposes a simple and effective safe deep SSL method to alleviate the harm caused by it
@@ -108,7 +124,7 @@ tags: Papers
      - Bi-level optimization problem
        - supervised and consistency loss regularization
 
-4. Arazo, E., Ortego, D., Albert, P., O’Connor, N. E., & McGuinness, K. (2020, July). Pseudo-labeling and confirmation bias in deep semi-supervised learning. In *2020 International Joint Conference on Neural Networks (IJCNN)* (pp. 1-8). IEEE.
+5. Arazo, E., Ortego, D., Albert, P., O’Connor, N. E., & McGuinness, K. (2020, July). Pseudo-labeling and confirmation bias in deep semi-supervised learning. In *2020 International Joint Conference on Neural Networks (IJCNN)* (pp. 1-8). IEEE.
 
      - Soft pseudo-label (with correct setting can outperform consistency regularization: Noise Accumulation!)
        - TP: Tries to eliminate the CB without Consistency regularization
@@ -121,7 +137,7 @@ tags: Papers
      - Sum of three losses: Entropy loss (enforce single decision), distribution (removing collapse) matching and mixup (counter CB) loss 
        - Relative weight between them matters
 
-5. Van Gansbeke, W., Vandenhende, S., Georgoulis, S., Proesmans, M., & Van Gool, L. (2020, August). Scan: Learning to classify images without labels. In European conference on computer vision (pp. 268-285). Springer, Cham.
+6. Van Gansbeke, W., Vandenhende, S., Georgoulis, S., Proesmans, M., & Van Gool, L. (2020, August). Scan: Learning to classify images without labels. In European conference on computer vision (pp. 268-285). Springer, Cham.
 
      - advocate a two-step approach where feature learning and clustering are decoupled
        - SSL and SSL prior for learnable clustering.
@@ -143,7 +159,7 @@ tags: Papers
         - Contrastive learning (loss function 2) with entropy regularizer.
           - Fine-tuning through self-labeling
 
-6. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
+7. Sohn, Kihyuk, David Berthelot, Chun-Liang Li, Zizhao Zhang, Nicholas Carlini, Ekin D. Cubuk, Alex Kurakin, Han Zhang, and Colin Raffel. "Fixmatch: Simplifying semi-supervised learning with consistency and confidence." arXiv preprint arXiv:2001.07685 (2020).
    - FixMatch: a significant simplification of existing SSL methods
      - Generates pseudo-labels using the model’s predictions on weakly augmented unlabeled images
        - Retained if confidence is high. 
@@ -152,7 +168,7 @@ tags: Papers
    - ![](https://miro.medium.com/max/1077/1*5SCSOqvXcrxL-IwZmZaH_g.png)
    - Simple setup- retraining with the good predictions with consistency losses. 
 
-7. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
+8. Pham, Hieu, Zihang Dai, Qizhe Xie, Minh-Thang Luong, and Quoc V. Le. "Meta pseudo labels." arXiv preprint arXiv:2003.10580 (2020).
 
    - semi supervised learning (should cover the labeled and unlabeled at the beginning)
 
@@ -171,7 +187,7 @@ tags: Papers
 
    - <embed src="https://mxahan.github.io/PDF_files/Meta_pseudo_label.pdf" width="100%" height="850px"/>
 
-8. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
+9. Li, Junnan, Richard Socher, and Steven CH Hoi. "Dividemix: Learning with noisy labels as semi-supervised learning." arXiv preprint arXiv:2002.07394 (2020).
 
    - TP:  divide the training data into a labeled set with clean samples and an unlabeled set with noisy samples (co-training two networks), and trains the model on both data (?). Improved MixMatch
 
@@ -187,7 +203,7 @@ tags: Papers
 
    - <embed src="https://mxahan.github.io/PDF_files/DivideMix.pdf" width="100%" height="850px"/>
 
-9. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
+10. Xie, Qizhe, Minh-Thang Luong, Eduard Hovy, and Quoc V. Le. "Self-training with noisy student improves imagenet classification." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10687-10698. 2020.
 
      - Interesting way to improve the Classifier
 
@@ -199,21 +215,22 @@ tags: Papers
 
 ## 2019
 
+1. Berthelot, D., Carlini, N., Cubuk, E. D., Kurakin, A., Sohn, K., Zhang, H., & Raffel, C. (2019). Remixmatch: Semi-supervised learning with distribution alignment and augmentation anchoring. *arXiv preprint arXiv:1911.09785*.
+     - improve mixmatch by two contributions
+       - Distribution alignment encourages the marginal distribution of predictions on unlabeled data to be close to the marginal distribution of groundtruth labels. 
+       - Augmentation anchoring feeds multiple strongly augmented versions of an input into the model and encourages each output to be close to the prediction for a weakly-augmented version of the same input (AutoAugment)
 1. Sarfraz, S., Sharma, V., & Stiefelhagen, R. (2019). Efficient parameter-free clustering using first neighbor relations. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 8934-8943).
      - FINCH methods: equation 1 is the key	
        - Cluster by nearest 1 neighborhood
        - Hierarchical clustering: first the 1-nearest neighbor then merge them to form new points and then again clustering (easy-pesy)
        - Euclidean distance based clustering.
-
 1. Zhai, Xiaohua, Avital Oliver, Alexander Kolesnikov, and Lucas Beyer. "S4l: Self-supervised semi-supervised learning." In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1476-1485. 2019.
      - Pretext task of rotation angle prediction!!
        - Rotation, invariant across augmentation
 
      - Baseline: vitrural adversarial training [inject noise with the original images], EntMin
        - EntMin is bad: because the model can easily become extremely confident by increasing the weights of the last layer
-
 1. Gupta, Divam, Ramachandran Ramjee, Nipun Kwatra, and Muthian Sivathanu. "Unsupervised Clustering using Pseudo-semi-supervised Learning." In International Conference on Learning Representations. 2019.
-
 1. Berthelot, David, Nicholas Carlini, Ian Goodfellow, Nicolas Papernot, Avital Oliver, and Colin Raffel. "Mixmatch: A holistic approach to semi-supervised learning." arXiv preprint arXiv:1905.02249 (2019).
 
      - TP: guesses low-entropy labels for data-augmented unlabeled examples and mixes labeled and unlabeled data using MixUp (Algorithm 1)

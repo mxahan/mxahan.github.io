@@ -143,13 +143,34 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2019
 
+1. Saxe, A. M., Bansal, Y., Dapello, J., Advani, M., Kolchinsky, A., Tracey, B. D., & Cox, D. D. (2019). On the information bottleneck theory of deep learning. *Journal of Statistical Mechanics: Theory and Experiment*, *2019*(12), 124020.
+   - Study the information bottleneck (IB) theory of deep learning, which makes three specific claims: 
+     - that deep networks undergo two distinct phases consisting of an initial fitting phase and a subsequent compression phase; 
+     - that the compression phase is causally related to the excellent generalization performance of deep networks; 
+     - that the compression phase occurs due to the diffusion-like behavior of stochastic gradient descent. 
+       - **TP show that none of these claims hold true in the general case**
+   - demonstrate that the information plane trajectory is predominantly a function of the neural nonlinearity employed: double-sided saturating nonlinearities like tanh yield a compression phase as neural activations enter the saturation regime, but linear activation functions and single-sided saturating nonlinearities like the widely used ReLU in fact do not
+   - there is no evident causal connection between compression and generalization: networks that do not compress are still capable of generalization, and vice versa.
+   - show that the compression phase, when it exists, does not arise from stochasticity in training by demonstrating that we can replicate the IB findings using full batch gradient descent rather than stochastic gradient descent.
+   - show that when an input domain consists of a subset of task-relevant and task-irrelevant information, hidden representations do compress the task-irrelevant information
 1. Du, Yilun, and Igor Mordatch. "Implicit Generation and Modeling with Energy Based Models." In Advances in Neural Information Processing Systems, pp. 3603-3613. 2019.
-
 1. Grathwohl, Will, Kuan-Chieh Wang, Jörn-Henrik Jacobsen, David Duvenaud, Mohammad Norouzi, and Kevin Swersky. "Your Classifier is Secretly an Energy Based Model and You Should Treat it Like One." arXiv preprint arXiv:1912.03263 (2019).
 
 
 ## 2018 and earlier
 
+1. Tishby, N., & Zaslavsky, N. (2015, April). Deep learning and the information bottleneck principle. In *2015 ieee information theory workshop (itw)* (pp. 1-5). IEEE.
+     - show that any DNN can be quantified by the mutual information between the layers and the input and output variables
+     - Using this representation they calculate the optimal information theoretic limits of the DNN and obtain finite sample generalization bounds
+     - argue that both the optimal architecture, number of layers and features/connections at each layer, are related to the bifurcation points of the information bottleneck tradeoff, namely, relevant compression of the input layer with respect to the output layer.
+     - formulate the goal of deep learning as an information theoretic tradeoff between compression and prediction
+     - connection with minimal sufficient statistics: formulate the goal of deep learning as an information theoretic tradeoff between compression and prediction (IB method)
+       - closely related to successive refinement of information in Rate Distortion Theory
+     - 
+1. Pei, Z., Cao, Z., Long, M., & Wang, J. (2018, April). Multi-adversarial domain adaptation. In *Proceedings of the AAAI conference on artificial intelligence* (Vol. 32, No. 1).
+     - Multiple domain has different label instead of collapsing all domain into single unknown domain.  
+       - Inherently increasing the power of the discriminator (multi-class setting)
+     - Equation 3 is the key modification. (multiple domain discriminator)
 1. Banerjee, A., Dhillon, I. S., Ghosh, J., Sra, S., & Ridgeway, G. (2005). Clustering on the Unit Hypersphere using von Mises-Fisher Distributions. *Journal of Machine Learning Research*, *6*(9).
      - Mixture of vMF distribution in hyperspherical representation.  	Directional statistics
        - Two EM algorithm to do such (soft movMF and Hard movMF)
@@ -209,17 +230,17 @@ We can't worry about everything and nothing. We must stay focused and broad at t
        - model effective capacity: The effective capacity of neural networks is sufficient for memorizing the entire data set
        - 
 1. Jiang, L., Zhou, Z., Leung, T., Li, L. J., & Fei-Fei, L. (2018, July). Mentornet: Learning data-driven curriculum for very deep neural networks on corrupted labels. In *International conference on machine learning* (pp. 2304-2313). PMLR.
-     - KD setting to avoid noisy (corrupted) label.
-       - MentorNet provides a curriculum (sample weighting scheme) for StudentNet to focus on the samples with probably correct label
-       - Unlike the existing curriculum predefined by human, MentorNet learns a data-driven curriculum dynamically with StudentNet.
-     - Experimentation: WebVision Dataset.
-     - Related to Curriculum Learning: Gradually learning process. 
+      - KD setting to avoid noisy (corrupted) label.
+        - MentorNet provides a curriculum (sample weighting scheme) for StudentNet to focus on the samples with probably correct label
+        - Unlike the existing curriculum predefined by human, MentorNet learns a data-driven curriculum dynamically with StudentNet.
+      - Experimentation: WebVision Dataset.
+      - Related to Curriculum Learning: Gradually learning process. 
 1. Blum, A., & Mitchell, T. (1998, July). Combining labeled and unlabeled data with co-training. In *Proceedings of the eleventh annual conference on Computational learning theory* (pp. 92-100).
-     - Co-training algorithm: In presence of two distinct views of each example suggests strategies
-       - two learning algorithms are trained separately on each view,
-       - then each algorithm's predictions on new unlabeled examples are used to enlarge the training set of the other. 
-     - assume that either view of the example would be sufficient for learning if we had enough labeled data, but TP use both views together to allow inexpensive unlabeled data to augment a much smaller set of labeled examples.
-     - provide a PAC-style analysis for this setting, and, more broadly, a PAC-style framework for the general problem of learning from both labeled and unlabeled data.
+      - Co-training algorithm: In presence of two distinct views of each example suggests strategies
+        - two learning algorithms are trained separately on each view,
+        - then each algorithm's predictions on new unlabeled examples are used to enlarge the training set of the other. 
+      - assume that either view of the example would be sufficient for learning if we had enough labeled data, but TP use both views together to allow inexpensive unlabeled data to augment a much smaller set of labeled examples.
+      - provide a PAC-style analysis for this setting, and, more broadly, a PAC-style framework for the general problem of learning from both labeled and unlabeled data.
 1. Han, B., Yao, Q., Yu, X., Niu, G., Xu, M., Hu, W., ... & Sugiyama, M. (2018). Co-teaching: Robust training of deep neural networks with extremely noisy labels. *Advances in neural information processing systems*, *31*.
       - Early for of swapped prediction: train be opposite networks' clean performance. 
         - TP uses two networks to train together. (**Algorithm 1** Tells all)
