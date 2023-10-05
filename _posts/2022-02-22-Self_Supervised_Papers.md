@@ -6,6 +6,14 @@ tags: Papers
 
 ## 2023
 
+1. Shwartz-Ziv, R., & LeCun, Y. (2023). To Compress or Not to Compress--Self-Supervised Learning and Information Theory: A Review. *arXiv preprint arXiv:2304.09355*.
+   - RG: The role of information theoretic information bottleneck is unclear in SSL context. 
+   - TP: scrutinize various SSL approaches from an information theoretic perspective, introducing a unified framework that encapsulates  SS information-theoretic learning problem
+   - weave together existing research into a cohesive narrative, delve into contemporary self-supervised methodologies, and spotlight potential research avenues and inherent challenges
+   - discuss the empirical evaluation of information-theoretic quantities and their estimation methods
+   - TP furnishes an exhaustive review of the intersection of information theory, self-supervised learning, and deep neural networks.
+   - Section 5: Optimizing Information in Deep Neural Networks: Challenges and Approaches 
+     - **Measuring the information in High dimensional spaces.**
 1. Balestriero, R., Ibrahim, M., Sobal, V., Morcos, A., Shekhar, S., Goldstein, T., ... & Goldblum, M. (2023). A cookbook of self-supervised learning. *arXiv preprint arXiv:2304.12210*.
    - Origin of SSL: 
      - information restoration: masked image prediction, colorization,  
@@ -205,18 +213,19 @@ tags: Papers
 
 3. Belghazi, Mohamed Ishmael, Aristide Baratin, Sai Rajeshwar, Sherjil Ozair, Yoshua Bengio, Aaron Courville, and Devon Hjelm. "Mutual information neural estimation." In International Conference on Machine Learning, pp. 531-540. 2018.
 
+     - present a Mutual Information Neural Estimator (MINE): linearly scalable with dimensionality and sample size, trainable through back-prop
+       -  improve adversarially trained generative models and implement the Information Bottleneck, applying it to supervised classification
+     - Algorithm 1: Key (careful about the bar)
+
 4. Hjelm, R. Devon, Alex Fedorov, Samuel Lavoie-Marchildon, Karan Grewal, Phil Bachman, Adam Trischler, and Yoshua Bengio. "Learning deep representations by mutual information estimation and maximization." arXiv preprint arXiv:1808.06670 (2018).
 
-       - locality of input knowledge and match prior distribution adversarially (DeepInfoMax)
-         - Maximize input and output MI
-         
-           - Experimented on Images
-             - Compared with VAE, BiGAN, CPC
-   
+   - locality of input knowledge and match prior distribution adversarially (DeepInfoMax)
+     - Maximize input and output MI
 
-       - Evaluate represenation by Neural Dependency Measures (NDM)
-        
-       - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images
+       - Experimented on Images
+         - Compared with VAE, BiGAN, CPC
+   - Evaluate represenation by Neural Dependency Measures (NDM)
+   - Global features (Anchor, Query) and Local features of the query (+), local feature map of random images
 
      - <embed src="https://mxahan.github.io/PDF_files/deepinfomax_paper.pdf" width="100%" height="850px"/>
 
@@ -242,44 +251,44 @@ tags: Papers
    - Predicting the future [self-supervised task design]
      - derive the concept of context vector (from earlier representation)
        - use the context vector for future representation prediction.
-   
+
    - TP: Great works with some foundation of CL
        - probabilistic (AR) contrastive loss!!
          - in latent space
-   
+
    - Experiments on the speech, image, text and RL
      - CPC (3 things)  - Aka- InfoNCE (coining the term)
        - compression, autoregressive and NCE
-   
+
    - Energy based like setup
-   
+
       - Figure 4: about what they did!
-   
+
       - <embed src="https://mxahan.github.io/PDF_files/cpc_2017.pdf" width="100%" height="850px"/>
 
 8. Wu, Zhirong, Yuanjun Xiong, Stella X. Yu, and Dahua Lin. "Unsupervised feature learning via non-parametric instance discrimination." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 3733-3742. 2018.
 
    - non-parametric classifier via feature representation **(Memory Bank)**
-   
+
        - Memory bank stores instance features (used for kNN classifier)
          - Dimention reduction: one of the key [algorithmic] contribution
-   
+
        - Experiments
          - obj detect and image classification
-   
+
        - connect to
          - selfsupervised learning (related works) and Metric learning (unsupervised fashion)
          - NCE (to tackle class numbers) - [great idea, just contrast with everything else in E we get the classifier]
-   
+
        - instance-level discrimination, non-parametric classifier.
          - compared with known example (non-param.)
-   
+
        - interesting setup section 3
          - representation -> class (image itself) (compare with instance) -> loss function (plays the key role to distinguish)
          - NCE from memory bank
          - Monte carlo sampling to get the all contrastive normalizing value for denominator
          - proximal parameter to ensure the smoothness for the representations {proximal regularization:}
-   
+
    - <embed src="https://mxahan.github.io/PDF_files/memory_bank.pdf" width="100%" height="850px"/>
 
 9. Sermanet, Pierre, Corey Lynch, Yevgen Chebotar, Jasmine Hsu, Eric Jang, Stefan Schaal, Sergey Levine, and Google Brain. "Time-contrastive networks: Self-supervised learning from video." In 2018 IEEE International Conference on Robotics and Automation (ICRA), pp. 1134-1141. IEEE, 2018.
@@ -289,9 +298,9 @@ tags: Papers
      - Representation is the reward
      - TCN - a embedding {multitask embedding!}
    - imitation learning
-   
+
    - PILQR for RL parts
-   
+
    - Huber-style loss
 
 

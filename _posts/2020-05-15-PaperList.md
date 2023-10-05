@@ -10,7 +10,18 @@ Any suggestion regarding some new papers are highly appreciated. For some of the
 
 We can't worry about everything and nothing. We must stay focused and broad at the same time. Very true! I know the Feynman's thoughts on knowing name, which means nothing, it's just the entrance to the grand scheme of the world. however, the papers (many papers!) are as follows
 
+## 2023
+
+1. Mao, J., Griniasty, I., Teoh, H. K., Ramesh, R., Yang, R., Transtrum, M. K., ... & Chaudhari, P. (2023). The Training Process of Many Deep Networks Explores the Same Low-Dimensional Manifold. *arXiv preprint arXiv:2305.01604*.
+   - develop information-geometric techniques to analyze the trajectories of the predictions of deep networks during training!!!
+     -  examine: the underlying high-dimensional probabilistic models. **Observation:** the training process explores an effectively low-dimensional manifold
+     - study the details of this manifold to find that networks with different architectures follow distinguishable trajectories but other factors have a minimal influence;
+     - key idea: analyze the probabilistic model underlying a  DNN via their representation as probabilistic models
+   - the number of samples N is large, distances such as the Bhattacharyya distance (or  kl/geodesic distance on the product space) are better behaved due to their logarithms.
+   - measure progress along the trajectory by the projection onto the geodesic between ignorance and truth
+
 ## 2022
+
 1. Nguyen, T. T., Huynh, T. T., Nguyen, P. L., Liew, A. W. C., Yin, H., & Nguyen, Q. V. H. (2022). A survey of machine unlearning. *arXiv preprint arXiv:2209.02299*.
    - a comprehensive examination of machine unlearning’s concepts, scenarios, methods, and applications.
    -  comprehensive resource for researchers and practitioners seeking an introduction to machine unlearning and its formulations, design criteria, removal requests, algorithms, and applications
