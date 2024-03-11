@@ -22,6 +22,8 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2022
 
+1. Harley, A. W., Fang, Z., & Fragkiadaki, K. (2022, October). Particle video revisited: Tracking through occlusions using point trajectories. In *European Conference on Computer Vision* (pp. 59-75). Cham: Springer Nature Switzerland.
+   - Figure 2, all you need. 
 1. Nguyen, T. T., Huynh, T. T., Nguyen, P. L., Liew, A. W. C., Yin, H., & Nguyen, Q. V. H. (2022). A survey of machine unlearning. *arXiv preprint arXiv:2209.02299*.
    - a comprehensive examination of machine unlearning’s concepts, scenarios, methods, and applications.
    -  comprehensive resource for researchers and practitioners seeking an introduction to machine unlearning and its formulations, design criteria, removal requests, algorithms, and applications
@@ -68,7 +70,9 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 ## 2020
 
+1. Teed, Z., & Deng, J. (2020). Raft: Recurrent all-pairs field transforms for optical flow. In *Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part II 16* (pp. 402-419). Springer International Publishing.
 1. Yao, A., & Sun, D. (2020). Knowledge transfer via dense cross-layer mutual-distillation. In *Computer Vision–ECCV 2020: 16th European Conference, Glasgow, UK, August 23–28, 2020, Proceedings, Part XV 16* (pp. 294-311). Springer International Publishing.
+
      - restrict our focus to advance two-way KT research in the perspective of promoting knowledge representation learning and transfer design.
      - Bidirectional KD between intermediate layers of the identical networks [overview figure 1]
        - Utilizes auxiliary classifier to enable the distillation [similar to google network auxiliary prediction]
@@ -136,20 +140,20 @@ We can't worry about everything and nothing. We must stay focused and broad at t
 
 1. Berthelot, David, Peyman Milanfar, and Ian Goodfellow. "Creating High Resolution Images with a Latent Adversarial Generator." arXiv preprint arXiv:2003.02365 (2020).
 
-     - Close to super-resolution problem [but different as loss is perception loss.]
-       - When noise 0 we want the original image.
+      - Close to super-resolution problem [but different as loss is perception loss.]
+        - When noise 0 we want the original image.
 
-     - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
+      - LAG From {R<sup>y</sup>(low resolution) x R<sup>z</sup>(noise)} to {R<sup>x</sup> (high resolution sample of natural image)}.
 
-     - Gradient penalty loss (To ascertain 1-Lipschitz)
+      - Gradient penalty loss (To ascertain 1-Lipschitz)
 
 1. Ravfogel, Shauli, Yanai Elazar, Hila Gonen, Michael Twiton, and Yoav Goldberg. "Null it out: Guarding protected attributes by iterative nullspace projection." arXiv preprint arXiv:2004.07667 (2020).
 
-        - Under construction
+         - Under construction
 
 1. Roy, Aurko, Mohammad Saffar, Ashish Vaswani, and David Grangier. "Efficient content-based sparse attention with routing transformers." arXiv preprint arXiv:2003.05997 (2020).
 
-        - Under construction
+         - Under construction
 
 
 ## 2019

@@ -86,6 +86,11 @@ tags: Papers
 
 ## 2021
 
+1. Tolstikhin, I. O., Houlsby, N., Kolesnikov, A., Beyer, L., Zhai, X., Unterthiner, T., ... & Dosovitskiy, A. (2021). Mlp-mixer: An all-mlp architecture for vision. *Advances in neural information processing systems*, *34*, 24261-24272.
+
+   - Figure 1 summarizes the approach. 
+     - Patches -> MLP mixer (patch [inter patches, same channel] and channel [inter channel, same patch]) -> repeat
+
 1. Dherin, B., Munn, M., & Barrett, D. G. (2021). The Geometric Occam's Razor Implicit in Deep Learning. *arXiv preprint arXiv:2111.15090*.
 
    - argue that over-parameterized neural networks trained withSGD are subject to a Geometric Occam’s Razor; that is, these networks are implicitly regularized by the geometric model complexity
@@ -224,8 +229,6 @@ tags: Papers
 1. Jaegle, Andrew, Felix Gimeno, Andrew Brock, Andrew Zisserman, Oriol Vinyals, and Joao Carreira. "Perceiver: General perception with iterative attention." arXiv preprint arXiv:2103.03206 (2021).
 
 1. Jaegle, Andrew, Sebastian Borgeaud, Jean-Baptiste Alayrac, Carl Doersch, Catalin Ionescu, David Ding, Skanda Koppula et al. "Perceiver IO: A General Architecture for Structured Inputs & Outputs." arXiv preprint arXiv:2107.14795 (2021).
-
-1. Tolstikhin, Ilya, Neil Houlsby, Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung et al. "Mlp-mixer: An all-mlp architecture for vision." arXiv preprint arXiv:2105.01601 (2021).
 
 ## 2020
 

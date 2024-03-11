@@ -4,6 +4,18 @@ tags: Papers
 
 # Semi-Supervised
 
+## 2023
+
+1. Mittal, Sudhanshu, Joshua Niemeijer, Jörg P. Schäfer, and Thomas Brox. "Revisiting Deep Active Learning for Semantic Segmentation." *arXiv preprint arXiv:2302.04075* (2023).
+   -  investigates the various types of existing active learning methods for SS under diverse conditions across three dimensions data distribution
+     - different redundancy levels, integration of semi-supervised learning, and different labeling budgets.
+       - three underlying factors are decisive for the selection of the best active learning approach
+     - provide a comprehensive usage guide to obtain the best performance for each case
+     - propose an exemplary evaluation task for driving scenarios (data redundancy)
+   - uncertainty measurement: entropy, consistency (dropout, data augmentation), pixel-wise MI, 
+   - TP: Diverse datasets need a single-sample method and redundant datasets need a batch-based method.
+   - Redundant datasets favour the integration of batchbased active learning and semi-supervised learning
+
 ## 2022
 
 1. Tan, C., Gao, Z., Wu, L., Li, S., & Li, S. Z. (2022). Hyperspherical consistency regularization. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 7244-7255).

@@ -15,7 +15,21 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2023
 
-1. Gawlikowski, J., Tassi, C. R. N., Ali, M., Lee, J., Humt, M., Feng, J., ... & Zhu, X. X. (2023). A survey of uncertainty in deep neural networks. *Artificial Intelligence Review*, 1-77.
+1. Ulmer, D., Hardmeier, C., & Frellsen, J. (2023). Prior and posterior networks: A survey on evidential deep learning methods for uncertainty estimation. *Transactions on Machine Learning Research*.
+   - EDL: aim to admit “what they don’t know”, and fall back onto a prior belief
+2. Rastegar, S., Doughty, H., & Snoek, C. G. (2023). Learn to Categorize or Categorize to Learn? Self-Coding for Generalized Category Discovery. *arXiv preprint arXiv:2310.19776*.
+   - conceptualize a category through the lens of optimization, viewing it as an optimal solution to a well-defined problem!!
+   - efficient and self-supervised method capable of discovering previously unknown categories at **test time.**
+     - assignment of minimum length category codes to individual data instances, which encapsulates the implicit category hierarchy prevalent in real-world datasets.
+   - Enhanced control over category granularity, thereby equipping our model to handle fine-grained categories adeptly
+   - reframing the concept of a category as the solution to an optimization problem. We argue that categories serve to describe input data and that there is not a singular correct category but a sequence of descriptions that span different levels of abstraction.
+   - Why category happens:  
+     - One theory is categorization was a survival necessity that the human brain developed to retrieve data as fast and as accurately as possible
+     - a trade-off between retrieval speed and accuracy of prediction
+     -  frequent categories can be recognized in a shorter time, with more time needed to recognize fine-grained nested subcategories
+   - propose categorization as an optimization problem with analogous goals to the human brain. We hypothesize that we can do the category assignment to encode objects hierarchically to retrieve them as accurately and quickly as possible
+   - Joint Optimization rules
+3. Gawlikowski, J., Tassi, C. R. N., Ali, M., Lee, J., Humt, M., Feng, J., ... & Zhu, X. X. (2023). A survey of uncertainty in deep neural networks. *Artificial Intelligence Review*, 1-77.
    - basic NN do not deliver certainty estimates or suffer from over- or under-confidence, i.e. are badly calibrated.
    - gives a comprehensive overview of uncertainty estimation in NN, recent advances in the field, highlights current challenges, and identifies potential research opportunities
    - modeling of these uncertainties based on deterministic neural networks, Bayesian neural networks (BNNs), ensemble of neural networks, and test-time data augmentation approaches
@@ -42,7 +56,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - Distributional Uncertainty: 
      - Regression tasks and Semantic segmentation tasks. 
    - Calibration: Regularization methods, post-processing methods, NN uncertainty estimation. 
-2. Pu, N., Zhong, Z., Ji, X., & Sebe, N. (2023). Federated Generalized Category Discovery. *arXiv preprint arXiv:2305.14107*.
+4. Pu, N., Zhong, Z., Ji, X., & Sebe, N. (2023). Federated Generalized Category Discovery. *arXiv preprint arXiv:2305.14107*.
    - Explored GCD in federated setting: data class variation across clients (not shareable)
    - Fed-GCD: train a generic GCD model by client collaboration under the privacy-protected constraint
    - propose a novel Associated Gaussian Contrastive Learning (AGCL) framework based on learnable GMMs, 
@@ -51,7 +65,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
    - On each client, GCL builds class-level CL with both local and global GMMs. local GCL learns robust representation with limited local data. 
    - AGCL unifies the discriminative representation learning on the limited local data & heterogeneous category aggregation on the central server
    - Benchmark: Fed Avg-based baseline. 
-3. Ming, Y., Sun, Y., Dia, O., & Li, Y. (2022). How to Exploit Hyperspherical Embeddings for Out-of-Distribution Detection?. *arXiv preprint arXiv:2203.04450*.
+5. Ming, Y., Sun, Y., Dia, O., & Li, Y. (2022). How to Exploit Hyperspherical Embeddings for Out-of-Distribution Detection?. *arXiv preprint arXiv:2203.04450*.
    - prior methods applies CL that suffice for classifying ID samples (not optimally designed when test inputs contain OOD samples)
    - CIDER, a novel representation learning framework that exploits hyperspherical embeddings for OOD detection
      - jointly optimizes two losses to promote strong ID-OOD separability
@@ -60,14 +74,14 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
    - related works: Distance based approaches: SSD+, KNN+
    - motivated by the desirable properties of hyperspherical embeddings: naturally modeled by the **von Mises-Fisher (vMF) distribution**.
    - Straight forward loss function: Equation 1 -7 
-4. Troisemaine, C., Lemaire, V., Gosselin, S., Reiffers-Masson, A., Flocon-Cholet, J., & Vaton, S. (2023). Novel Class Discovery: an Introduction and Key Concepts. *arXiv preprint arXiv:2302.12028*.
+6. Troisemaine, C., Lemaire, V., Gosselin, S., Reiffers-Masson, A., Flocon-Cholet, J., & Vaton, S. (2023). Novel Class Discovery: an Introduction and Key Concepts. *arXiv preprint arXiv:2302.12028*.
    - Two Stage Methods: 
      - Learned similarity based: CCN and MCL (BCE Loss)
      - Latent-space-based: DTC, Meta discovery with MAML
    - One-stage methods
      - AutoNovel, Class discovery kernel network with expansion, OpenMIX, NCL
    - Related works: Unsupervised Clustering, Semi-supervised learning, transfer learning, Open world learning, Anomaly detection, Novelty detection, open set recognition, out-of-distribution detection, outlier detection. 
-5. Wang, L., Zhang, X., Su, H., & Zhu, J. (2023). A Comprehensive Survey of Continual Learning: Theory, Method and Application. *arXiv preprint arXiv:2302.00487*.
+7. Wang, L., Zhang, X., Su, H., & Zhu, J. (2023). A Comprehensive Survey of Continual Learning: Theory, Method and Application. *arXiv preprint arXiv:2302.00487*.
    - ![](data:image/png;base64,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)
    - growing and widespread interest in this direction demonstrates its realistic significance as well as complexity.
    - TP: basic settings, theoretical foundations, representative methods, and practical applications
@@ -97,7 +111,8 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2022
 
-1. Dong, J., Wang, L., Fang, Z., Sun, G., Xu, S., Wang, X., & Zhu, Q. (2022). Federated class-incremental learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 10164-10173).
+1. Jung, M. C., Zhao, H., Dipnall, J., Gabbe, B., & Du, L. (2022). Uncertainty estimation for multi-view data: The power of seeing the whole picture. *Advances in Neural Information Processing Systems*, *35*, 6517-6530.
+2. Dong, J., Wang, L., Fang, Z., Sun, G., Xu, S., Wang, X., & Zhu, Q. (2022). Federated class-incremental learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 10164-10173).
    - RG: Local and global forgetting under the incremental learning for federated setting. 
    - Proposes a novel Global-Local Forgetting Compensation (GLFC) model, to learn a global class-incremental model for alleviating the catastrophic forgetting from both local and global perspectives
      -  address local forgetting at local clients (caused by class imbalance at the local clients) by designing 
@@ -106,7 +121,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      -  To tackle the global forgetting (by the non-i.i.d class imbalance across clients) TP propose a proxy server that selects the best old global model to assist the local relation distillation. 
        - A bit complex part
      - a prototype gradient-based communication mechanism is developed to protect the privacy
-2. Zhang, L., Qi, L., Yang, X., Qiao, H., Yang, M. H., & Liu, Z. (2022). Automatically Discovering Novel Visual Categories with Self-supervised Prototype Learning. *arXiv preprint arXiv:2208.00979*.
+3. Zhang, L., Qi, L., Yang, X., Qiao, H., Yang, M. H., & Liu, Z. (2022). Automatically Discovering Novel Visual Categories with Self-supervised Prototype Learning. *arXiv preprint arXiv:2208.00979*.
    - leverage the prototypes to emphasize the importance of category discrimination and alleviate the issue with missing annotations of novel classes
    - propose a novel adaptive prototype learning method consisting of two main stages:
      - **prototypical representation learning:** obtain a robust feature extractor for all images (instance and category discrimination): boosted by self-supervised learning and adaptive prototypes. [DINO+Online prototype learning (OPL)]
@@ -114,7 +129,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - **prototypical self-training:**  utilize the prototypes again to rectify offline pseudo labels and train parametric classifier for category clustering
        - Pseudo labelling, prototypical pseudo label rectification, and joint optimization
    - present a new *data augmentation* strategy named restricted rotation for multi-view construction of symbolic data (e.g., shape and character).
-3. Zang, Z., Shang, L., Yang, S., Sun, B., & Li, S. Z. (2022). Boosting Novel Category Discovery Over Domains with Soft Contrastive Learning and All-in-One Classifier. *arXiv preprint arXiv:2211.11262*.
+4. Zang, Z., Shang, L., Yang, S., Sun, B., & Li, S. Z. (2022). Boosting Novel Category Discovery Over Domains with Soft Contrastive Learning and All-in-One Classifier. *arXiv preprint arXiv:2211.11262*.
    - propose *Soft-contrastive* **All-in-one** Network (SAN) for ODA and UNDA tasks
      - SAN includes a novel data-augmentation-based CL loss and a more human-intuitive classifier to improve the new class discovery capability.
      - soft contrastive learning (SCL) loss weaken the adverse effects of the data-augmentation label noise problem (amplified in domain transfer)
@@ -128,19 +143,19 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Assumption: identifying a sample as belonging to a novel category requires determining that it does not belong to all known classes.
    - Figure 1(b) - b4 summarizes the idea. 
    - Math heavy paper!!
-4. Caccia, Lucas, and Joelle Pineau. "Special: Self-supervised pretraining for continual learning." *Continual Semi-Supervised Learning: First International Workshop, CSSL 2021, Virtual Event, August 19–20, 2021, Revised Selected Papers*. Cham: Springer International Publishing, 2022.
+5. Caccia, Lucas, and Joelle Pineau. "Special: Self-supervised pretraining for continual learning." *Continual Semi-Supervised Learning: First International Workshop, CSSL 2021, Virtual Event, August 19–20, 2021, Revised Selected Papers*. Cham: Springer International Publishing, 2022.
 
    - for unsupervised pretraining of representations amenable to continual learning
    - efficiently reuses past computations, reducing its computational and memory footprint??? (How)
    - Experimenation with FSL objectives. 
    - Related works: Self-supervised learning, continual learning, meta-learning (meta-continual learning!!, Unsup. meta learning)
-5. Zhang, S., Khan, S., Shen, Z., Naseer, M., Chen, G., & Khan, F. (2022). PromptCAL: Contrastive Affinity Learning via Auxiliary Prompts for Generalized Novel Category Discovery. *arXiv preprint arXiv:2212.05590*.
+6. Zhang, S., Khan, S., Shen, Z., Naseer, M., Chen, G., & Khan, F. (2022). PromptCAL: Contrastive Affinity Learning via Auxiliary Prompts for Generalized Novel Category Discovery. *arXiv preprint arXiv:2212.05590*.
 
    - a two-stage Contrastive Affinity Learning method with auxiliary visual Prompt (PromptCAL)
      - Discovers reliable pairwise sample affinities to learn better semantic clustering of both known and novel classes for the class token and visual prompt
      -  propose a discriminative prompt regularization loss: reinforce semantic discriminativeness of prompt-adapted pre-trained ViT for refined affinity relationship
      -  propose contrastive affinity learning to calibrate semantic representations based on iterative semi-supervised affinity graph generation method for semantically-enhanced supervision
-6. Yu, L., Twardowski, B., Liu, X., Herranz, L., Wang, K., Cheng, Y., ... & Weijer, J. V. D. (2020). Semantic drift compensation for class-incremental learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 6982-6991).
+7. Yu, L., Twardowski, B., Liu, X., Herranz, L., Wang, K., Cheng, Y., ... & Weijer, J. V. D. (2020). Semantic drift compensation for class-incremental learning. In *Proceedings of the IEEE/CVF conference on computer vision and pattern recognition* (pp. 6982-6991).
 
    - Key Idea: Embedding networks have the advantage that new classes can be naturally included into the network without adding new weights
      - Estimate drifts and compensate for them to avoid indirect forgetting. 
@@ -151,7 +166,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - measures semantic drift by proxy task
    - experiments on fine-grained datasets, CIFAR100 and ImageNetSubset. 
    - previous works all study continual learning in classification networks : TP works with embedding network (prototype: Embedding mean)
-7. Yu, L., Weng, Z., Wang, Y., & Zhu, Y. (2022). Multi-Teacher Knowledge Distillation for Incremental Implicitly-Refined Classification. *arXiv preprint arXiv:2202.11384*.
+8. Yu, L., Weng, Z., Wang, Y., & Zhu, Y. (2022). Multi-Teacher Knowledge Distillation for Incremental Implicitly-Refined Classification. *arXiv preprint arXiv:2202.11384*.
 
    - TP: Solution Incremental Implicitly-Refined Classification (IIRC)
      - Superclass to subclasses
@@ -164,7 +179,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - well the final layer is softmax?? How does it make sense????
      -  Instead of should have been in the representation layer
        - Increasing neuron numbers in the representation layer. 
-8. Fang, Z., Li, Y., Lu, J., Dong, J., Han, B., & Liu, F. (2022). Is Out-of-Distribution Detection Learnable?. *arXiv preprint arXiv:2210.14707*.
+9. Fang, Z., Li, Y., Lu, J., Dong, J., Han, B., & Liu, F. (2022). Is Out-of-Distribution Detection Learnable?. *arXiv preprint arXiv:2210.14707*.
    - investigate the probably approximately correct (PAC) learning theory of OOD detection
      - find a necessary condition for the learnability of OOD detection. 
      - prove several impossibility theorems for the learnability of OOD detection under some scenarios
@@ -178,7 +193,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
    - TP covers: all OOD data be allocated to one big OOD class (unknown class k=1)
      - Unknown class k>1, falls in unsupervised clustering. 
      - TP: Assumes no earlier available of OOD data, contrast with GCD, unsup cluster setting. 
-9. Deng, Jieren, Jianhua Hu, Haojian Zhang, and Yunkuan Wang. "Incremental Prototype Prompt-tuning with Pre-trained Representation for Class Incremental Learning." *arXiv preprint arXiv:2204.03410* (2022).
+10. Deng, Jieren, Jianhua Hu, Haojian Zhang, and Yunkuan Wang. "Incremental Prototype Prompt-tuning with Pre-trained Representation for Class Incremental Learning." *arXiv preprint arXiv:2204.03410* (2022).
    - parameter-additional-tuning (PAT): only changes very few parameters to learn new visual concepts
      - e.g. linear probing, prompt tuning, and adapter
      - PAT based CIL avoids fighting against forgetting by replaying or distilling like most of the existing methods. 
@@ -196,7 +211,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - PAT: adapter-based (injects small-scale NN modules (adapters) connected to the transformer layer), and prompt-based (L2P)
    - Semantic drift is a higher-level forgetting problem, it is less obvious to see the semantic drift when the representation model is not frozen because it is mixed with a lower level of forgetting (representation forgetting).????
    - Kinda Vague approach: Better read L2P that this. 
-10. Du, X., Gozum, G., Ming, Y., & Li, Y. (2022). Siren: Shaping representations for detecting out-of-distribution objects. In *Advances in Neural Information Processing Systems*.
+11. Du, X., Gozum, G., Ming, Y., & Li, Y. (2022). Siren: Shaping representations for detecting out-of-distribution objects. In *Advances in Neural Information Processing Systems*.
 
    - distance-based OOD detection methods remain largely unexplored in object-level OOD detection
      -  proposing a distance based framework for detecting OOD objects (model-agnostic representation space both CNN and Tx)
@@ -601,12 +616,17 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2021
 
-1. Bao, W., Yu, Q., & Kong, Y. (2021). Evidential deep learning for open set action recognition. In *Proceedings of the IEEE/CVF International Conference on Computer Vision* (pp. 13349-13358).
+1. Hüllermeier, Eyke, and Willem Waegeman. "Aleatoric and epistemic uncertainty in machine learning: An introduction to concepts and methods." *Machine Learning* 110 (2021): 457-506.
+
+     - introduction to the topic of uncertainty in machine learning as well as an overview of attempts so far at handling uncertainty in general and formalizing this distinction in particular. 
+       - Distinguish between aleatoric and epistemic uncertainty. 
+
+2. Bao, W., Yu, Q., & Kong, Y. (2021). Evidential deep learning for open set action recognition. In *Proceedings of the IEEE/CVF International Conference on Computer Vision* (pp. 13349-13358).
 
      - performs novel evidential learning to support open set action recognition with principled and efficient uncertainty evaluation.
      - Evidential Uncertainty Calibration (EUC: Equation 3) and Contrastive Evidential Debiasing (CED) modules effectively mitigate over-confident predictions and static bias problems, respectively.
 
-2. Saito, K., & Saenko, K. (2021). Ovanet: One-vs-all network for universal domain adaptation. In *Proceedings of the ieee/cvf international conference on computer vision* (pp. 9000-9009).
+3. Saito, K., & Saenko, K. (2021). Ovanet: One-vs-all network for universal domain adaptation. In *Proceedings of the ieee/cvf international conference on computer vision* (pp. 9000-9009).
 
      - Universal Domain Adaptation (UNDA) aims to handle both domain-shift and category-shift between two datasets
      - RG: Existing methods manually set a threshold to reject ”unknown” samples based on a pre-defined ratio of unknown samples
@@ -619,7 +639,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - Open-set entropy minimization
        - Utilize both open-set and close-set classifier. [equation 2, 3]
 
-3. Abdelsalam, M., Faramarzi, M., Sodhani, S., & Chandar, S. (2021). Iirc: Incremental implicitly-refined classification. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 11038-11047).
+4. Abdelsalam, M., Faramarzi, M., Sodhani, S., & Chandar, S. (2021). Iirc: Incremental implicitly-refined classification. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 11038-11047).
 
      - introduce the “IIRC” setup, an extension to the class incremental learning where incoming batches of classes have two granularity levels.
        - each sample could have a highlevel (coarse) label like “bear” and a low-level (fine) label like “polar bear” [figure ]
@@ -633,7 +653,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - conclusion: Distillation-based methods perform relatively well but are prone to incorrectly predicting too many labels per image
      - Metric: Jaccard Similarity (intersection over union)
 
-4. Zhu, F., Zhang, X. Y., Wang, C., Yin, F., & Liu, C. L. (2021). Prototype augmentation and self-supervision for incremental learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 5871-5880).
+5. Zhu, F., Zhang, X. Y., Wang, C., Yin, F., & Liu, C. L. (2021). Prototype augmentation and self-supervision for incremental learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 5871-5880).
 
      - simple non-exemplar based method, PASS, to address the catastrophic forgetting problem in incremental learning.
        - propose to memorize one class-representative prototype for each old class and adopt prototype augmentation (protoAug) in the deep feature space to maintain the decision boundary of previous tasks: Maintain decision boundary
@@ -650,7 +670,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Vague in implementation details
      - Key ideas: Figure 2 but back to the question posed above. 
 
-5. Mai, Z., Li, R., Kim, H., & Sanner, S. (2021). Supervised contrastive replay: Revisiting the nearest class mean classifier in online class-incremental continual learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 3589-3599).
+6. Mai, Z., Li, R., Kim, H., & Sanner, S. (2021). Supervised contrastive replay: Revisiting the nearest class mean classifier in online class-incremental continual learning. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 3589-3599).
 
      - *Recency Bias!!* of continual learning: The latest class has the most impact on the network. 
      - TP: Instead of softmax classification proposes nearest class mean classifier (prototype-based)
@@ -658,7 +678,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Softmax Deficiency: New class (architecture modification)?? Decouple representation and classification, Task-recency bias
        - Proposes class prototype based learning.
 
-6. Sehwag, V., Chiang, M., & Mittal, P. (2021). Ssd: A unified framework for self-supervised outlier detection. *arXiv preprint arXiv:2103.12051*.
+7. Sehwag, V., Chiang, M., & Mittal, P. (2021). Ssd: A unified framework for self-supervised outlier detection. *arXiv preprint arXiv:2103.12051*.
 
      - TP asks what training information is required to design an effective outlier/out-of-distribution (OOD) detector
      - TP: use self-supervised representation learning followed by a Mahalanobis distance based detection in the feature space
@@ -670,12 +690,12 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - requires to make sure the neuron statistics behaves accordingly
        - computational expensive to find the mean and variance for all the classes!
 
-7. Wang, J., Ma, Z., Nie, F., & Li, X. (2021). Progressive self-supervised clustering with novel category discovery. *IEEE Transactions on Cybernetics*.
+8. Wang, J., Ma, Z., Nie, F., & Li, X. (2021). Progressive self-supervised clustering with novel category discovery. *IEEE Transactions on Cybernetics*.
 
      - Graph clustering perspective
      - a novel clustering approach referred to as the progressive self-supervised clustering method with NCD (PSSCNCD),
 
-8. De Lange, M., Aljundi, R., Masana, M., Parisot, S., Jia, X., Leonardis, A., ... & Tuytelaars, T. (2021). A continual learning survey: Defying forgetting in classification tasks. *IEEE transactions on pattern analysis and machine intelligence*, *44*(7), 3366-3385.
+9. De Lange, M., Aljundi, R., Masana, M., Parisot, S., Jia, X., Leonardis, A., ... & Tuytelaars, T. (2021). A continual learning survey: Defying forgetting in classification tasks. *IEEE transactions on pattern analysis and machine intelligence*, *44*(7), 3366-3385.
 
      - Focus on task incremental classification (TP)
        - a taxonomy and extensive overview of the state-of-the-art
@@ -694,7 +714,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
          - Prior-focused: estimate a distribution over the model parameters, used as prior when learning from new data:  Elastic weight consolidation
        - Parameter Isolation: dedicates different model parameters to each task, to prevent any possible forgetting (not-scalable)
 
-9. Cao, K., Brbic, M., & Leskovec, J. (2021). Open-world semi-supervised learning. *arXiv preprint arXiv:2102.03526*.
+10. Cao, K., Brbic, M., & Leskovec, J. (2021). Open-world semi-supervised learning. *arXiv preprint arXiv:2102.03526*.
 
      - goal is to solve the class distribution mismatch between labeled and unlabeled data
 
@@ -724,50 +744,50 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
      - <embed src="https://mxahan.github.io/PDF_files/open_world_ssl.pdf" width="100%" height="850px"/>
 
-10. Choudhury, S., Laina, I., Rupprecht, C., & Vedaldi, A. (2021). Unsupervised part discovery from contrastive reconstruction. Advances in Neural Information Processing Systems, 34, 28104-28118.
+11. Choudhury, S., Laina, I., Rupprecht, C., & Vedaldi, A. (2021). Unsupervised part discovery from contrastive reconstruction. Advances in Neural Information Processing Systems, 34, 28104-28118.
 
-     - Res.Gap.: representation learning at part level has received significantly less attention (most work focus on object and scene level)
+       - Res.Gap.: representation learning at part level has received significantly less attention (most work focus on object and scene level)
 
-     - Propose an unsup approach to object part discovery and segmentation
+       - Propose an unsup approach to object part discovery and segmentation
 
-     - three contributions
-       - construct a proxy task through a set of objectives (encourages the model to learn a meaningful decomposition of the image into its parts) [*CL*]
-         - prior work argues for reconstructing or clustering pre-computed features as a proxy to parts
-         - this paper shows that: this alone is unlikely to find meaningful parts;
-         - because of their low resolution and the tendency of classification networks to spatially smear out information
-         - image reconstruction at the level of pixels can alleviate this problem, acting as a complementary cue
-         - the standard evaluation based on keypoint regression does not correlate well with segmentation quality
-         - introduce different metrics, NMI and ARI (better characterize the decomposition of objects into parts)
-         - given a collection of images of a certain object category (e.g., birds) and corresponding object masks, we want to learn to decompose an object into a collection of repeatable and informative parts.
-         - no universally accepted formal definition for what constitutes a “part”, the nature of objects and object parts is accepted as different
-         - (a) consistency to transformation (equivariance), (b) visual consistency (or self-similarity), and (c) distinctiveness among different parts.
+       - three contributions
+         - construct a proxy task through a set of objectives (encourages the model to learn a meaningful decomposition of the image into its parts) [*CL*]
+           - prior work argues for reconstructing or clustering pre-computed features as a proxy to parts
+           - this paper shows that: this alone is unlikely to find meaningful parts;
+           - because of their low resolution and the tendency of classification networks to spatially smear out information
+           - image reconstruction at the level of pixels can alleviate this problem, acting as a complementary cue
+           - the standard evaluation based on keypoint regression does not correlate well with segmentation quality
+           - introduce different metrics, NMI and ARI (better characterize the decomposition of objects into parts)
+           - given a collection of images of a certain object category (e.g., birds) and corresponding object masks, we want to learn to decompose an object into a collection of repeatable and informative parts.
+           - no universally accepted formal definition for what constitutes a “part”, the nature of objects and object parts is accepted as different
+           - (a) consistency to transformation (equivariance), (b) visual consistency (or self-similarity), and (c) distinctiveness among different parts.
 
-11. Jia, X., Han, K., Zhu, Y., & Green, B. (2021). Joint representation learning and novel category discovery on single-and multi-modal data. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 610-619).
+12. Jia, X., Han, K., Zhu, Y., & Green, B. (2021). Joint representation learning and novel category discovery on single-and multi-modal data. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 610-619).
 
-        - a generic, end-to-end framework to jointly learn a reliable representation and assign clusters to unlabelled data.
-
-        - Propose to overcluster than the original unknown classe (U Cardinality is known) [**Well! Gives something to work with!!!!**]
-
-        - Joint optimization of many Losses
-          - CL (both instance and cluster [for known label])
-            - BCE (siamese network setup) [pseudo label]
-            - Consistent MSE loss (different view of same data)
-            - CE loss
-
-12. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
-
-            - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
-                - favoring synergy between supervised and unsupervised learning
-                - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
-                - overview figure 2 [multihead network (L and U data)]
-                  - replace multi-objective using the multitask setting.
-                  - look at the **gradient flow strategy**
+          - a generic, end-to-end framework to jointly learn a reliable representation and assign clusters to unlabelled data.
           
-            - similar idea of **swav**
-              - dimension mismatch* in eq 4 and 5  
-                - can be fixed by altering Y and L in the eq 4
+          - Propose to overcluster than the original unknown classe (U Cardinality is known) [**Well! Gives something to work with!!!!**]
           
-              - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
+          - Joint optimization of many Losses
+            - CL (both instance and cluster [for known label])
+              - BCE (siamese network setup) [pseudo label]
+              - Consistent MSE loss (different view of same data)
+              - CE loss
+
+13. Fini, E., Sangineto, E., Lathuilière, S., Zhong, Z., Nabi, M., & Ricci, E. (2021). A unified objective for novel class discovery. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 9284-9292).
+
+              - depart from this traditional multi-objective and introduce a UNified Objective function [UNO] for NCD
+                  - favoring synergy between supervised and unsupervised learning
+                  - multi-view self-labeling strategy generate pseudo-labels homogeneously with GT
+                  - overview figure 2 [multihead network (L and U data)]
+                    - replace multi-objective using the multitask setting.
+                    - look at the **gradient flow strategy**
+            
+              - similar idea of **swav**
+                - dimension mismatch* in eq 4 and 5  
+                  - can be fixed by altering Y and L in the eq 4
+            
+                - <embed src="https://mxahan.github.io/PDF_files/UNO.pdf" width="100%" height="850px"/>
 
 
 11. Zhong, Z., Fini, E., Roy, S., Luo, Z., Ricci, E., & Sebe, N. (2021). Neighborhood Contrastive Learning for Novel Class Discovery. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 10867-10875).
@@ -913,7 +933,15 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 # 2020
 
-1. Liu, J., Lin, Z., Padhy, S., Tran, D., Bedrax Weiss, T., & Lakshminarayanan, B. (2020). Simple and principled uncertainty estimation with deterministic deep learning via distance awareness. *Advances in Neural Information Processing Systems*, *33*, 7498-7512.
+1. Amini, A., Schwarting, W., Soleimany, A., & Rus, D. (2020). Deep evidential regression. *Advances in Neural Information Processing Systems*, *33*, 14927-14937.
+
+     - Estimate a continuous target as well as its associated evidence in order to learn both aleatoric and epistemic uncertainty
+       - Place evidential priors over the original Gaussian likelihood function and training the NN to infer the hyperparameters of the evidential distribution
+       - 
+
+2. Allen-Zhu, Z., & Li, Y. (2020). Towards understanding ensemble, knowledge distillation and self-distillation in deep learning. *arXiv preprint arXiv:2012.09816*.
+
+3. Liu, J., Lin, Z., Padhy, S., Tran, D., Bedrax Weiss, T., & Lakshminarayanan, B. (2020). Simple and principled uncertainty estimation with deterministic deep learning via distance awareness. *Advances in Neural Information Processing Systems*, *33*, 7498-7512.
 
      - RG: The practicality in real-time, industrial-scale applications of Bayesian neural networks and deep ensembles approaches to estimate the predictive uncertainty of a deep learning model are limited due to their heavy memory and inference cost.
      - TP: study principled approaches to high-quality uncertainty estimation that require only a single deep neural network (DNN).
@@ -921,14 +949,14 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - identify distance awareness, i.e., the model’s ability to properly quantify the distance of a testing example from the training data manifold, as a necessary condition for a DNN to achieve high-quality (i.e., minimax optimal) uncertainty estimation
        - propose Spectral-normalized Neural Gaussian Process (SNGP) that improves the distance-awareness ability of modern DNNs, by adding a weight normalization step during training and replacing the output layer with a Gaussian Process
 
-2. Liang, S., Li, Y., & Srikant, R. (2017). Enhancing the reliability of out-of-distribution image detection in neural networks. *arXiv preprint arXiv:1706.02690*.
+4. Liang, S., Li, Y., & Srikant, R. (2017). Enhancing the reliability of out-of-distribution image detection in neural networks. *arXiv preprint arXiv:1706.02690*.
 
      - propose ODIN, a simple and effective method that does not require any change to a pre-trained neural network
        - Observation: using temperature scaling and adding small perturbations to the input can separate the softmax score distributions between ID and OOD images
      - Equation 2 (input processing section: **Key point**) and 3 (threshold based OOD detection) describe overall approaches
        - Idea from adversarial perturbation. 
 
-3. Ye, H. J., Lu, S., & Zhan, D. C. (2020). Distilling cross-task knowledge via relationship matching. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 12396-12405).
+5. Ye, H. J., Lu, S., & Zhan, D. C. (2020). Distilling cross-task knowledge via relationship matching. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 12396-12405).
 
      - TP deals with reusing the knowledge from a cross-task teacher — two models are targeting non-overlapping label spaces
      - emphasize that the comparison ability between instances acts as an essential factor threading knowledge across domains
@@ -939,7 +967,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
        - instance wise contrastive learning setting for **embedding learning**  (pairwise similarity)
          - When architectural difference occurs the direct embedding distillation fails. 
 
-4. Wang, Z., Salehi, B., Gritsenko, A., Chowdhury, K., Ioannidis, S., & Dy, J. (2020, November). Open-world class discovery with kernel networks. In *2020 IEEE International Conference on Data Mining (ICDM)* (pp. 631-640). IEEE.
+6. Wang, Z., Salehi, B., Gritsenko, A., Chowdhury, K., Ioannidis, S., & Dy, J. (2020, November). Open-world class discovery with kernel networks. In *2020 IEEE International Conference on Data Mining (ICDM)* (pp. 631-640). IEEE.
 
      - may not be scalable for large image dataset!
      - Still cluster and retrain network expansion.
@@ -947,7 +975,7 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
      - Alternative to spectral clustering!
      - Network expansion idea from the continual learning
 
-5. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2020). Automatically discovering and learning new visual categories with ranking statistics. arXiv preprint arXiv:2002.05714.
+7. Han, K., Rebuffi, S. A., Ehrhardt, S., Vedaldi, A., & Zisserman, A. (2020). Automatically discovering and learning new visual categories with ranking statistics. arXiv preprint arXiv:2002.05714.
 
      - hypothesize that a general notion of what constitutes a “good class” can be extracted from labeled to Unlabeled
 
@@ -959,20 +987,34 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
      - <embed src="https://mxahan.github.io/PDF_files/Ncd_ranking_loss.pdf" width="100%" height="850px"/>
 
-6. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
+8. Chen, Guangyao, Limeng Qiao, Yemin Shi, Peixi Peng, Jia Li, Tiejun Huang, Shiliang Pu, and Yonghong Tian. "Learning open set network with discriminative reciprocal points." In European Conference on Computer Vision, pp. 507-522. Springer, Cham, 2020.
      - Reciprocal Point (RP), a potential representation of the extra-class space corresponding to each known category.
        - sample is classified to known or unknown by the otherness with RP
 
-7. Geng, Chuanxing, Sheng-jun Huang, and Songcan Chen. "Recent advances in open set recognition: A survey." IEEE transactions on pattern analysis and machine intelligence 43, no. 10 (2020): 3614-3631.
+9. Geng, Chuanxing, Sheng-jun Huang, and Songcan Chen. "Recent advances in open set recognition: A survey." IEEE transactions on pattern analysis and machine intelligence 43, no. 10 (2020): 3614-3631.
      - Very good terminologies to get
          - Four types of class categories: Known known class (KKC), K Unknown C (KUC), UKC: provided side information, UUC
            - Figure 2 demonstrate goal for OSR
 
 # 2019 and Earlier
 
+1. Malinin, A., & Gales, M. (2018). Predictive uncertainty estimation via prior networks. *Advances in neural information processing systems*, *31*.
+
+     - Dirichlet prior
+     - Uncertainty in predictive can result from uncertainty in model parameters, irreducible data uncertainty and uncertainty due to distributional mismatch between the test and training data distributions.
+       -  Different actions might be taken depending on the source of the uncertainty (how to distinguish)
+     - TP: proposes a new framework for modeling predictive uncertainty called Prior Networks (PNs) which explicitly models distributional uncertainty
+       - PN allows distributional uncertainty to be treated as distinct from both data uncertainty and model uncertainty
+         - Model uncertainty, or epistemic uncertainty measures the uncertainty in estimating the model parameters given the training data - this measures how well the model is matched to the data. Model uncertainty is reducible as the size of training data increases. 
+         - Data uncertainty, or aleatoric uncertainty is irreducible uncertainty which arises from the natural complexity of the data, such as class overlap, label noise, homoscedastic and heteroscedastic noise. Data uncertainty can be considered a ’known-unknown’ - the model understands (knows) the data and can confidently state whether a given input is difficult to classify (an unknown). 
+         - Distributional uncertainty arises due to mismatch between the training and test distributions (also called dataset shift) - a situation which often arises for real world problems. Distributional uncertainty is an ’unknown-unknown’ - the model is unfamiliar with the test data and thus cannot confidently make predictions
+     - PNs do this by parameterizing a prior distribution over predictive distributions. Focuses on uncertainty for classification and evaluates PNs on the tasks of identifying OOD samples and detecting misclassification
+
 1. Hein, M., Andriushchenko, M., & Bitterwolf, J. (2019). Why relu networks yield high-confidence predictions far away from the training data and how to mitigate the problem. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 41-50).
 
-     - 
+     - ReLU NN yield a piecewise linear classifier function produce almost always high confidence predictions far away from the training data
+     - propose a new robust optimization technique kinda adversarial training which enforces low confidence predictions for OOD
+       - ACET (section 4): easy pesy- enforce uniform distribution prediction for OOD data. (how to find OOD data!!)
 
 1. Sensoy, M., Kaplan, L., & Kandemir, M. (2018). Evidential deep learning to quantify classification uncertainty. *Advances in neural information processing systems*, *31*.
 
@@ -1054,9 +1096,9 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 1. Li, Z., & Hoiem, D. (2017). Learning without forgetting. *IEEE transactions on pattern analysis and machine intelligence*, *40*(12), 2935-2947.
 
-     - ![overview](https://miro.medium.com/max/1400/1*NsrlVEld_yjKFMQU-_rMGQ.png)
-     - ![Algorithm](https://miro.medium.com/max/1400/1*bINnVFjzkIFq1OLDmqtmpw.png)
-     - Good utilization of sharpening to train LOSS_OLD
+      - ![overview](https://miro.medium.com/max/1400/1*NsrlVEld_yjKFMQU-_rMGQ.png)
+      - ![Algorithm](https://miro.medium.com/max/1400/1*bINnVFjzkIFq1OLDmqtmpw.png)
+      - Good utilization of sharpening to train LOSS_OLD
 
 1. Asano, Y. M., Rupprecht, C., & Vedaldi, A. (2019). Self-labelling via simultaneous clustering and representation learning. arXiv preprint arXiv:1911.05371.
 
@@ -1071,11 +1113,11 @@ Here, we will review papers regarding novel class detection (NCD), Out of distri
 
 1. Quintanilha, I. M., de ME Filho, R., Lezama, J., Delbracio, M., & Nunes, L. O. (2018). Detecting Out-Of-Distribution Samples Using Low-Order Deep Features Statistics.
 
-     - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
+      - a simple ensembling of first and second order deep feature statistics (mean and standard deviation within feature) can differentiate ID and OOD.
 
-     - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
+      - Figure 1: Plug-and-play propose solution. ![image](https://d3i71xaburhd42.cloudfront.net/6e1f7b326dd795377a631cf76fc5e5df05f1dce2/3-Figure1-1.png)
 
-     - linear classifier over the neural activation stats.
+      - linear classifier over the neural activation stats.
 
 1. Liu, Z., Miao, Z., Zhan, X., Wang, J., Gong, B., & Yu, S. X. (2019). Large-scale long-tailed recognition in an open world. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 2537-2546).
 
